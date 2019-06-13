@@ -1,0 +1,301 @@
+CREATE TABLE FP_Event (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  title VARCHAR(200) NULL,
+  content VARCHAR(4096) NULL,
+  startDate CHAR(8) NULL,
+  endDate CHAR(8) NULL,
+  viewCount INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_startDate_FP_Event ON FP_Event(startDate);
+CREATE INDEX idx_endDate_FP_Event ON FP_Event(endDate);
+CREATE TABLE FP_Banner (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  imageUrl VARCHAR(1024) NULL,
+  postUrl VARCHAR(1024) NULL,
+  startDate CHAR(8) NULL,
+  endDate CHAR(8) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_startDate_FP_Banner ON FP_Banner(startDate);
+CREATE INDEX idx_endDate_FP_Banner ON FP_Banner(endDate);
+CREATE TABLE FP_Report (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  reportDate DATETIME NULL,
+  reporter BIGINT NULL,
+  reportType CHAR(1) NULL,
+  tableType CHAR(1) NULL,
+  content VARCHAR(4096) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE TABLE FP_Message (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  content TEXT NULL,
+  viewCount INT NULL,
+  likeCount INT NULL,
+  shareCount INT NULL,
+  commentCount INT NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_createDate_FP_Message ON FP_Message(createDate);
+CREATE INDEX idx_creator_FP_Message ON FP_Message(creator);
+CREATE TABLE FP_MessageImage (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  messageIdKey BIGINT NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  status CHAR(1) NULL,
+  sortOrder INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_messageIdKey_FP_MessageImage ON FP_MessageImage(messageIdKey);
+CREATE TABLE FP_MessageComment (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  messageIdKey BIGINT NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  likeCount INT NULL,
+  parentIdKey BIGINT NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_messageIdKey_FP_MessageComment ON FP_MessageComment(messageIdKey);
+CREATE INDEX idx_parentIdKey_FP_MessageComment ON FP_MessageComment(parentIdKey);
+CREATE TABLE FP_MessageLikeHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  messageIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  likeDate DATETIME NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_messageIdKey_FP_MessageLikeHistory ON FP_MessageLikeHistory(messageIdKey);
+CREATE INDEX idx_userIdKey_FP_MessageLikeHistory ON FP_MessageLikeHistory(userIdKey);
+CREATE TABLE FP_MessageCommentLikeHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  messageCommentIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  likeDate DATETIME NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_messageCommentIdKey_FP_MessageCommentLikeHistory ON FP_MessageCommentLikeHistory(messageCommentIdKey);
+CREATE INDEX idx_userIdKey_FP_MessageCommentLikeHistory ON FP_MessageCommentLikeHistory(userIdKey);
+CREATE TABLE FP_MessageShareHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  messageIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  shareDate DATETIME NULL,
+  shareType CHAR(2) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_messageIdKey_FP_MessageShareHistory ON FP_MessageShareHistory(messageIdKey);
+CREATE INDEX idx_userIdKey_FP_MessageShareHistory ON FP_MessageShareHistory(userIdKey);
+CREATE TABLE FP_Follow (
+  userIdKey BIGINT NOT NULL,
+  followIdKey BIGINT NOT NULL,
+  PRIMARY KEY (userIdKey, followIdKey)
+);
+CREATE INDEX idx_userIdKey_FP_Follow ON FP_Follow(userIdKey);
+CREATE INDEX idx_followIdKey_FP_Follow ON FP_Follow(followIdKey);
+CREATE TABLE FP_Goods (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  title VARCHAR(200) NULL,
+  content VARCHAR(4096) NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  rewardType CHAR(1) NULL,
+  reviewCount INT NULL,
+  viewCount INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_createDate_FP_Goods ON FP_Goods(createDate);
+CREATE INDEX idx_creator_FP_Goods ON FP_Goods(creator);
+CREATE TABLE FP_GoodsInfo (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  goodsIdKey BIGINT NULL,
+  registerDate DATETIME NULL,
+  subTitle VARCHAR(200) NULL,
+  price DOUBLE NULL,
+  stock INT NULL,
+  soldCount INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_goodsIdKey_FP_GoodsInfo ON FP_GoodsInfo(goodsIdKey);
+CREATE TABLE FP_GoodsImage (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  goodsIdKey BIGINT NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  sortOrder INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_goodsIdKey_FP_GoodsImage ON FP_GoodsImage(goodsIdKey);
+CREATE TABLE FP_GoodsReview (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  goodsIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  reviewDate DATETIME NULL,
+  content VARCHAR(4096) NULL,
+  grade CHAR(1) NULL,
+  thumbnailUrl VARCHAR(1024) NULL,
+  imageUrl VARCHAR(1024) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_goodsIdKey_FP_GoodsReviewe ON FP_GoodsReview(goodsIdKey);
+CREATE INDEX idx_userIdKey_FP_GoodsReviewe ON FP_GoodsReview(userIdKey);
+CREATE INDEX idx_grade_FP_GoodsReviewe ON FP_GoodsReview(grade);
+CREATE TABLE FP_GoodsQNA (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  goodsIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  askDate DATETIME NULL,
+  question VARCHAR(4096) NULL,
+  answer VARCHAR(4096) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_goodsIdKey_FP_GoodsQNA ON FP_GoodsQNA(goodsIdKey);
+CREATE INDEX idx_userIdKey_FP_GoodsQNA ON FP_GoodsQNA(userIdKey);
+CREATE INDEX idx_askDate_FP_GoodsQNA ON FP_GoodsQNA(askDate);
+CREATE TABLE FP_Order (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  orderDate DATETIME NULL,
+  userIdKey BIGINT NULL,
+  totalPrice DOUBLE NULL,
+  totalCount INT NULL,
+  returnStatus CHAR(1),
+  exchangeStatus CHAR(1),
+  status CHAR(1),
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_orderDate_FP_Order ON FP_Order(orderDate);
+CREATE INDEX idx_userIdKey_FP_Order ON FP_Order(userIdKey);
+CREATE INDEX idx_status_FP_Order ON FP_Order(status);
+CREATE TABLE FP_OrderItem (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  orderIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  price DOUBLE NULL,
+  goodsCount INT NULL,
+  subTotalPrice DOUBLE NULL,
+  status CHAR(1),
+  shippingNo VARCHAR(64),
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_orderIdKey_FP_OrderItem ON FP_OrderItem(orderIdKey);
+CREATE INDEX idx_userIdKey_FP_OrderItem ON FP_OrderItem(userIdKey);
+CREATE INDEX idx_status_FP_OrderItem ON FP_OrderItem(status);
+CREATE TABLE FP_Cart (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NULL,
+  goodsInfoIdKey BIGINT NULL,
+  price DOUBLE NULL,
+  goodsCount INT NULL,
+  subTotalPrice DOUBLE NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_userIdKey_FP_Cart ON FP_Cart(userIdKey);
+CREATE INDEX idx_goodsInfoIdKey_FP_Cart ON FP_Cart(goodsInfoIdKey);
+CREATE TABLE FP_Payment (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  orderIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  paymentPrice DOUBLE NULL,
+  paymentType CHAR(2) NULL,
+  paymentDate DATETIME NULL,
+  transactionId VARCHAR(1024) NULL,
+  status CHAR(1),
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_orderIdKey_FP_Payment ON FP_Payment(orderIdKey);
+CREATE INDEX idx_userIdKey_FP_Payment ON FP_Payment(userIdKey);
+CREATE INDEX idx_paymentType_FP_Payment ON FP_Payment(paymentType);
+CREATE INDEX idx_paymentDate_FP_Payment ON FP_Payment(paymentDate);
+CREATE TABLE FP_Coupon (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  couponType CHAR(1) NULL,
+  expiryDate CHAR(8) NULL,
+  content VARCHAR(4096) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_couponType_FP_Coupon ON FP_Coupon(couponType);
+CREATE INDEX idx_expiryDate_FP_Coupon ON FP_Coupon(expiryDate);
+CREATE TABLE FP_CouponHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  couponIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  createDate DATETIME NULL,
+  useYN CHAR(1) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_couponIdKey_FP_CouponHistory ON FP_CouponHistory(couponIdKey);
+CREATE INDEX idx_userIdKey_FP_CouponHistory ON FP_CouponHistory(userIdKey);
+CREATE INDEX idx_createDate_FP_CouponHistory ON FP_CouponHistory(createDate);
+CREATE INDEX idx_useYN_FP_CouponHistory ON FP_CouponHistory(useYN);
+CREATE TABLE FP_Reward (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  orderIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  rewardDate DATETIME NULL,
+  rewardPoint DOUBLE NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_orderIdKey_FP_Reward ON FP_Reward(orderIdKey);
+CREATE INDEX idx_userIdKey_FP_Reward ON FP_Reward(userIdKey);
+CREATE TABLE FP_Policy (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  countryId VARCHAR(2),
+  content VARCHAR(4096),
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_countryId_FP_Policy ON FP_Policy(countryId);
+CREATE TABLE FP_UserStyle (
+  userIdKey BIGINT NULL,
+  gender CHAR(1) NULL,
+  country CHAR(2) NULL,
+  PRIMARY KEY (userIdKey)
+);
+CREATE TABLE FP_UserImageStyle (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NULL,
+  label VARCHAR(1024) NULL,
+  score DOUBLE NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_userIdKey_FP_UserImageStyle ON FP_UserImageStyle(userIdKey);
+CREATE TABLE FP_UserBodySize (
+  userIdKey BIGINT NULL,
+  bustSize DOUBLE NULL,
+  weistSize DOUBLE NULL,
+  hipSize DOUBLE NULL,
+  height DOUBLE NULL,
+  weight DOUBLE NULL,
+  PRIMARY KEY (userIdKey)
+);
+CREATE TABLE FP_MatchSize(
+  size VARCHAR(12),
+  score INT(10),
+  category VARCHAR(64)
+);
+CREATE TABLE FP_Notice (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  title VARCHAR(200) NULL,
+  content VARCHAR(4096) NULL,
+  viewCount INT NULL,
+  startDate CHAR(8) NULL,
+  endDate CHAR(8) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_startDate_FP_Notice ON FP_Notice(startDate);
+CREATE INDEX idx_endDate_FP_Notice ON FP_Notice(endDate);

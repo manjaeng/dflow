@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {margin:0;padding:0;border:0; }
+html, body {height:100%}
+body{font-family:"SpoqaHanSansRegular",sans-serif; font-size:16px; line-height:1.6; color:#333; word-break:keep-all;-webkit-text-size-adjust:none;-webkit-user-select:none; min-width:320px; letter-spacing:-1px; word-break:break-all  }
+h1, h2, h3, h4, h5, h6 {font-size: 100%;}
+a:link, a:visited, a:hover, a:active, a:focus  {color:#333; text-decoration:none; }
+
+#wrap {position:relative; width:100%; height:100%;  box-sizing:border-box;}
+
+.bg2 {background:#ffffff !important}
+.top-area {position:fixed; width:100%; top:0; text-align:center; height:50px; background:#fff; line-height:50px; z-index:30; padding-top:20px;}
+.top-area h1 { font-size:20px; font-weight:normal;}
+
+.top-area + #content {padding-top:70px;}
+#content {position:relative; box-sizing:border-box;}
+
+.tab-swiper-wrap {position:fixed;width:100%;z-index:30;}
+.tab-swiper {background: url(../images/line.gif) repeat-x left bottom #fff;}
+.tab-swiper .swiper-slide {cursor:pointer; width:auto !important; line-height:45px; font-size:15px; color:#999;}
+.tab-swiper .swiper-slide a {position:relative; display:block; width:100%; padding:0 16px; box-sizing: border-box; color:#999;}
+.tab-swiper .swiper-slide a.on {color:#333; font-weight:bold;}
+.tab-swiper .swiper-slide a.on:after {content:""; position:absolute; left:0; bottom:-0px; width:100%; height:2px; background:#6495ED; z-index:50;}
+
+.cont-box {padding:0 20px;}
+.cont-box.type2 {padding:20px; background:#ffffff;}
+
+.comm-list-item {position:relative; background:#fff; margin-top:10px}
+.comm-list-item .img {position:relative; vertical-align:top;}
+.comm-list-item .text-part {line-height:1.5;  vertical-align:top }
+.comm-list-item .text-part .part {display:block;font-size:12px; color:#6495ED;}
+.comm-list-item .text-part .part a {display:inline-block; color:#6495ED;}
+.comm-list-item .text-part .part.company {color:#666} 
+.comm-list-item .text-part .tit {display:block;}
+.comm-list-item .text-part .tit .tits {display:block; font-weight:bold; overflow: hidden; text-overflow: ellipsis;  -webkit-line-clamp:2;  -webkit-box-orient: vertical;  max-height:50px; word-break:break-all }
+.comm-list-item .text-part .txt {display:block; font-size:14px; margin:8px 0 8px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1;  -webkit-box-orient: vertical;  max-height: 24px; width:99%; }
+
+.list-bottom {clear:both; border-top:1px solid #f2f2f2; font-size:12px;  padding-top:13px; margin-top:15px; color:#999}
+.list-bottom:after { content:"";  display:block; clear:both;}
+.list-bottom div {float:right}
+.list-bottom div:first-child {float:left}
+.list-bottom span {display:inline-block; vertical-align:middle; color:#999; margin-right:15px}
+.list-bottom em {color:#333; letter-spacing:0}
+
+.view-user-area {position:relative;}
+.userimg {position:absolute; display:inline-block; top:0; left:0; width:40.5px; height:40.5px; background-size:40.5px 40.5px }
+.userimg img {width:45px; height:45px; border-radius:50%}
+/*.userimg.type2 {width:45px; height:45px; background:url(../images/bg_user2.png) no-repeat 0 0; background-size:45px 45px}*/
+.view-user-area .img:before {display:none}
+.view-user-area .view-user {padding-left:17%; color:#666; font-size:14px;}
+.user {line-height:1.4; color:#333;}
+.user strong {display:inline-block;  margin-right:12px}
+.user span{position:relative;display:inline-block; padding-right:8px; margin-right:6px }
+.user span:after {content:""; position:absolute; right:0; top:8px; height:2px; width:2px; border-radius:50%; background:#7d7d7d; }i
+.user .level:after {display:none !important}
+.user span:last-child:after {display:none !important}
+
+body { padding-top: 40px !important }
+.header {
+	width: 720px;
+	height: 100px;
+	z-index: 10;
+	top: 0px; 
+	position: fixed;
+	background-color: #fff;
+	border-bottom: 1px solid rgba(150, 150, 150, 0.2);
+	box-sizing: border-box;
+	transition: All 0.2s ease;
+	-webkit-transition: All 0.2s ease;
+	-moz-transition: All 0.2s ease;
+	-o-transition: All 0.2s ease;
+}
+.header h1 {
+	padding:14px;
+	font-size:40px;
+	font-weight:normal;
+}
+.nav-up { top: -40px; }
+.footer { 
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 720px;
+	height:100px;
+	background: #ff0000;
+	transition: top 0.2s ease-in-out;
+}
+

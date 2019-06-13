@@ -1,0 +1,141 @@
+
+<style type="text/css">
+.section_Intro {
+	padding: 10px;
+}
+
+.section .article {
+	margin-bottom: 20%;
+}
+
+.checkListTable {
+	width: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.checkListTable td {
+	width: 25%;
+	height: 30px;
+	font-size: 13px;
+}
+
+input[type=checkbox]:checked+label {
+	color: #70F5C4;
+}
+
+.mainFontSize {
+	font-size: 20px;
+	color: black;
+}
+
+.section .subTitle {
+	margin-top: 10%;
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20%;
+}
+
+.section .article .tpMainColor {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.ckbox {
+	display: none;
+}
+
+.section .introStage {
+	width: 100%;
+	height: 10%;
+	background-color: black;
+	color: white;
+	text-align: right;
+	font-size: 0;
+	font-weight: bold;
+	border-top: 1px solid black;
+}
+
+.section .introStage .getStep {
+	width: 28%;
+	display: inline-block;
+	padding-right: 10px;
+	margin-right: 0;
+	font-size: 25px;
+	border-left: 1px solid black;
+}
+
+.section .introStage .getSecondStep {
+	width: 29%;
+	display: inline-block;
+	padding-right: 10px;
+	margin-left: : 0;
+	margin-right: 0;
+	font-size: 25px;
+	border-right: 1px solid black;
+}
+
+.section .introFinalButton {
+	width: 100%;
+	height: 50px;
+	background-color: #70F5C4;
+	display: table;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.introButtonText {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.introPhotos {
+	display: table;
+	font-size: 25px;
+	font-weight: bold;
+	width: 45%;
+	height: 200px;
+	margin: auto;
+}
+
+.introPhotos .photoSelector {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid black;
+}
+</style>
+<div class="section">
+	<div class="article">
+		<p class="subTitle text-center">
+			UPLOAD YOUR<br>STYLE PHOTOS
+		</p>
+		<div class="introPhotos text-center">
+			<div class="photoSelector">onclick alert</div>
+		</div>
+	</div>
+</div>
+<div class="section" style="margin-top: 30%;">
+	<div style="position: fixed; bottom: 0; width: 100%;">
+		<div class="introStage">
+			<div class="getStep">
+				<label for="1">1</label>
+			</div>
+			<div class="getSecondStep">
+				<label for="2">2</label>
+			</div>
+			<div class="getStep"
+				style="border-right: 0; background-color: white; color: black;">
+				<label for="3">3</label>
+			</div>
+		</div>
+		<div class="introFinalButton">
+			<p class="introButtonText" id="introButton">
+				<label for="introButton" onclick="page.load('intro3.html')">NEXT</label>
+			</p>
+		</div>
+	</div>
+</div>

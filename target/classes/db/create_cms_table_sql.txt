@@ -1,0 +1,181 @@
+CREATE TABLE MC_StaticHtml (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  htmlId VARCHAR(30) NOT NULL,
+  htmlType CHAR(1) NOT NULL,
+  htmlName VARCHAR(200) NULL,
+  fileName VARCHAR(200) NULL,
+  filePath VARCHAR(1024) NULL,
+  urlPath VARCHAR(1024) NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  status CHAR(1) NULL,
+  version INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_htmlId_MC_StaticHtml ON MC_StaticHtml(htmlId);
+CREATE INDEX idx_htmlType_MC_StaticHtml ON MC_StaticHtml(htmlType);
+CREATE INDEX idx_status_MC_StaticHtml ON MC_StaticHtml(status);
+CREATE TABLE MC_StaticHtmlHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  htmlIdKey BIGINT NOT NULL,
+  version INT NOT NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  contents TEXT NULL,
+  status CHAR(1) NULL,
+  reviewer BIGINT NULL,
+  distributer BIGINT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_htmlIdKey_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(htmlIdKey);
+CREATE INDEX idx_version_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(version);
+CREATE INDEX idx_status_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(status);
+CREATE INDEX idx_creator_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(creator);
+CREATE INDEX idx_reviewer_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(reviewer);
+CREATE INDEX idx_distributer_MC_StaticHtmlHistory ON MC_StaticHtmlHistory(distributer);
+CREATE TABLE MC_PublishServer (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  serverName VARCHAR(50) NULL,
+  serverIP VARCHAR(40) NULL,
+  status CHAR(1) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE TABLE MC_Resource (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  resourceId VARCHAR(30) NOT NULL,
+  resourceType CHAR(1) NOT NULL,
+  resourceName VARCHAR(200) NULL,
+  fileName VARCHAR(200) NULL,
+  filePath VARCHAR(1024) NULL,
+  urlPath VARCHAR(1024) NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  status CHAR(1) NULL,
+  version INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_resourceId_MC_Resource ON MC_Resource(resourceId);
+CREATE INDEX idx_resourceType_MC_Resource ON MC_Resource(resourceType);
+CREATE INDEX idx_status_MC_Resource ON MC_Resource(status);
+CREATE TABLE MC_ResourceHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  resourceIdKey BIGINT NOT NULL,
+  version INT NOT NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  serverFilePath TEXT NULL,
+  status CHAR(1) NULL,
+  reviewer BIGINT NULL,
+  distributer BIGINT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_resourceIdKey_MC_ResourceHistory ON MC_ResourceHistory(resourceIdKey);
+CREATE INDEX idx_version_MC_ResourceHistory ON MC_ResourceHistory(version);
+CREATE INDEX idx_status_MC_ResourceHistory ON MC_ResourceHistory(status);
+CREATE INDEX idx_creator_MC_ResourceHistory ON MC_ResourceHistory(creator);
+CREATE INDEX idx_reviewer_MC_ResourceHistory ON MC_ResourceHistory(reviewer);
+CREATE INDEX idx_distributer_MC_ResourceHistory ON MC_ResourceHistory(distributer);
+CREATE TABLE MC_SimpleBoard (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  boardId VARCHAR(30) NOT NULL,
+  boardName VARCHAR(200) NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  status CHAR(1) NULL,
+  version INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_boardId_MC_SimpleBoard ON MC_SimpleBoard(boardId);
+CREATE INDEX idx_status_MC_SimpleBoard ON MC_SimpleBoard(status);
+CREATE TABLE MC_SimpleBoardHistory (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  boardIdKey BIGINT NOT NULL,
+  version INT NOT NULL,
+  createDate DATETIME NULL,
+  creator BIGINT NULL,
+  modifyDate DATETIME NULL,
+  modifier BIGINT NULL,
+  titleYN CHAR(1) NULL,
+  contentYN CHAR(1) NULL,
+  contentAnswerYN CHAR(1) NULL,
+  authorYN CHAR(1) NULL,
+  createDateYN CHAR(1) NULL,
+  viewCountYN CHAR(1) NULL,
+  likeYN CHAR(1) NULL,
+  likeCountYN CHAR(1) NULL,
+  answerYN CHAR(1) NULL,
+  replyYN CHAR(1) NULL,
+  replyCountYN CHAR(1) NULL,
+  replyLikeYN CHAR(1) NULL,
+  replyLikeCountYN CHAR(1) NULL,
+  privateYN CHAR(1) NULL,
+  status CHAR(1) NULL,
+  reviewer BIGINT NULL,
+  distributer BIGINT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_htmlIdKey_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(boardIdKey);
+CREATE INDEX idx_version_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(version);
+CREATE INDEX idx_status_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(status);
+CREATE INDEX idx_creator_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(creator);
+CREATE INDEX idx_reviewer_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(reviewer);
+CREATE INDEX idx_distributer_MC_SimpleBoardHistory ON MC_SimpleBoardHistory(distributer);
+CREATE TABLE MC_SimpleBoardBaseTable (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  boardIdKey BIGINT NOT NULL,
+  parentItemIdKey BIGINT NULL,
+  title VARCHAR(255) NULL,
+  content VARCHAR(4096) NULL,
+  answer VARCHAR(4096) NULL,
+  author BIGINT NULL,
+  createDate DATETIME NULL,
+  viewCount INT NULL,
+  likeCount INT NULL,
+  replyCount INT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_boardId_MC_SimpleBoardBaseTable ON MC_SimpleBoardBaseTable(boardId);
+CREATE INDEX idx_parentItemIdKey_MC_SimpleBoardBaseTable ON MC_SimpleBoardBaseTable(parentItemIdKey);
+CREATE INDEX idx_author_MC_SimpleBoardBaseTable ON MC_SimpleBoardBaseTable(author);
+CREATE TABLE MC_SimpleBoardLikeTable (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  boardItemIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  likeType CHAR(1) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_boardItemIdKey_MC_SimpleBoardLikeTable ON MC_SimpleBoardLikeTable(boardItemIdKey);
+CREATE INDEX idx_userIdKey_MC_SimpleBoardLikeTable ON MC_SimpleBoardLikeTable(userIdKey);
+CREATE TABLE MC_SimpleBoardReplyTable (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  boardItemIdKey BIGINT NULL,
+  author BIGINT NULL,
+  reply VARCHAR(4096) NULL,
+  createDate DATETIME NULL,
+  viewCount INT NULL,
+  likeCount INT NULL,
+  parentReplyIdKey BIGINT NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_boardItemIdKey_MC_SimpleBoardReplyTable ON MC_SimpleBoardReplyTable(boardItemIdKey);
+CREATE INDEX idx_author_MC_SimpleBoardReplyTable ON MC_SimpleBoardReplyTable(author);
+CREATE INDEX idx_parentReplyIdKey_MC_SimpleBoardReplyTable ON MC_SimpleBoardReplyTable(parentReplyIdKey);
+CREATE TABLE MC_SimpleBoardReplyLikeTable (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  replyIdKey BIGINT NULL,
+  userIdKey BIGINT NULL,
+  likeType CHAR(1) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_replyIdKey_MC_SimpleBoardReplyLikeTable ON MC_SimpleBoardReplyLikeTable(replyIdKey);
+CREATE INDEX idx_userIdKey_MC_SimpleBoardReplyLikeTable ON MC_SimpleBoardReplyLikeTable(userIdKey);

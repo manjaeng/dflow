@@ -1,0 +1,150 @@
+<style type="text/css">
+.section_Intro {
+	padding: 10px;
+}
+
+.section .article {
+	margin-bottom: 20%;
+}
+
+.checkListTable {
+	width: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.checkListTable td {
+	width: 25%;
+	height: 30px;
+	font-size: 13px;
+}
+
+input[type=checkbox]:checked+label {
+	color: #70F5C4;
+}
+
+.mainFontSize {
+	font-size: 21px;
+	color: black;
+}
+
+.section .subTitle {
+	margin-top: 10%;
+	font-size: 25px;
+	font-weight: bold;
+	margin-bottom: 20%;
+}
+
+.section .article .tpMainColor {
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.ckbox {
+	display: none;
+}
+
+.section .introStage {
+	width: 100%;
+	height: 10%;
+	background-color: black;
+	color: white;
+	text-align: right;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.section .introStage .get2Step {
+	width: 29%;
+	display: inline-block;
+}
+
+.section .introStage .getLastStep {
+	width: 33%;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.section .introFinalButton {
+	width: 100%;
+	height: 50px;
+	background-color: #70F5C4;
+	display: table;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.introButtonText {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+</style>
+<div class="section">
+	<div class="article">
+		<p class="subTitle text-center">
+			CHOOSE YOUR <br> FAVORITE STYLE
+		</p>
+		<div class="mainFontSize text-center">
+			<div class="tpMainColor">
+				<input class="ckbox" id="CASUAL" type="checkbox" name="style">
+				<label for="CASUAL">CASUAL</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="GIRLY" type="checkbox" name="style">
+				<label for="GIRLY">GIRLY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="TOMBOY" type="checkbox" name="style">
+				<label for="TOMBOY">TOMBOY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="BUSINESS" type="checkbox" name="style">
+				<label for="BUSINESS">BUSINESS</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="CHIC" type="checkbox" name="style">
+				<label for="CHIC">CHIC</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="BOHEMIAN" type="checkbox" name="style">
+				<label for="BOHEMIAN">BOHEMIAN</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="SEXY" type="checkbox" name="style">
+				<label for="SEXY">SEXY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="PUNK" type="checkbox" name="style">
+				<label for="PUNK">PUNK</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="SPORTY" type="checkbox" name="style">
+				<label for="SPORTY">SPORTY</label>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="section">
+	<div style="position: fixed; width: 100%; bottom: 0;">
+		<div class="introStage">
+			<div class="get2Step">
+				<label for="1">1</label>
+			</div>
+			<div class="get2Step">
+				<label for="2">2</label>
+			</div>
+			<div class="getLastStep">
+				<label for="3">3</label>
+			</div>
+		</div>
+		<div class="introFinalButton">
+			<p class="introButtonText">
+				<label for="introButton" onclick="page.load('intro4.html')">DONE</label>
+			</p>
+		</div>
+	</div>
+</div>
+

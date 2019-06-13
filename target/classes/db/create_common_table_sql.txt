@@ -1,0 +1,48 @@
+CREATE TABLE CM_User (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userId VARCHAR(30) NOT NULL,
+  password VARCHAR(1024) NULL,
+  userType CHAR(1) NOT NULL,
+  userName VARCHAR(200) NULL,
+  mobileNumber VARCHAR(20) NULL,
+  email VARCHAR(100) NULL,
+  snsType CHAR(2) NULL,
+  snsId VARCHAR(1024) NULL,
+  status CHAR(1) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_userId_CM_User ON CM_User(userId);
+CREATE INDEX idx_userType_CM_User ON CM_User(userType);
+CREATE TABLE CM_UserSumup (
+  userIdKey BIGINT NOT NULL,
+  loginFailCount INT NULL,
+  lastLoginDate DATETIME NULL,
+  rewardPoint DOUBLE NULL,
+  userLevel CHAR(1) NULL,
+  lastLoginSeq BIGINT NULL,
+  PRIMARY KEY (userIdKey)
+);
+CREATE INDEX idx_snsType_CM_UserSumup ON CM_UserSumup(snsType);
+CREATE INDEX idx_snsId_CM_UserSumup ON CM_UserSumup(snsId);
+CREATE INDEX idx_userLevel_CM_UserSumup ON CM_UserSumup(userLevel);
+CREATE TABLE CM_Device (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NOT NULL,
+  uniqueId VARCHAR(4096) NULL,
+  pushKey VARCHAR(4096) NULL,
+  deviceType VARCHAR(20) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_uniqueId_CM_Device ON CM_Device(uniqueId);
+CREATE INDEX idx_pushKey_CM_Device ON CM_Device(pushKey);
+CREATE INDEX idx_userIdKey_CM_Device ON CM_Device(userIdKey);
+CREATE TABLE CM_Version (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  version VARCHAR(30) NULL,
+  status CHAR(1) NULL,
+  iosUpgradeUrl VARCHAR(1024) NULL,
+  androidUpgradeUrl VARCHAR(1024) NULL,
+  PRIMARY KEY (idKey)
+);
+CREATE INDEX idx_version_CM_Version ON CM_Version(version);
+
