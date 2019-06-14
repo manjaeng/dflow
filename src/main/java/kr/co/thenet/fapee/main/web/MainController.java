@@ -4,14 +4,17 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.main.service.MainService;
+import lombok.extern.log4j.Log4j;
 
-
+@Log4j
 @Controller
 public class MainController {
 	
@@ -20,7 +23,9 @@ public class MainController {
 	
 	
 	@RequestMapping("/main.do")
-	public String initMain(ModelMap model) throws Exception {
+	public String initMain(ModelMap model, HttpServletRequest req) throws Exception {
+		
+		log.info(CommonUtils.getRemoteIP(req));
 		
 		List<HashMap<String, Object>> mainList = mainService.selectMainServiceUserList();
 

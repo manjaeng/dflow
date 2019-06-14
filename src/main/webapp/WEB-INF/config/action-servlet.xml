@@ -43,5 +43,13 @@
           </list>
       </property>
    </bean>
-	
+   
+  	<!-- Logger Interceptor -->
+    <mvc:interceptors>
+            <mvc:interceptor>
+                <mvc:mapping path="/**"/>
+                <bean class="kr.co.thenet.fapee.common.logger.LoggerInterceptor"/>
+            </mvc:interceptor>    
+        </mvc:interceptors>
+
 </beans>

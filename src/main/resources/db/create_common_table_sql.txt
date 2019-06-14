@@ -13,18 +13,16 @@ CREATE TABLE CM_User (
 );
 CREATE INDEX idx_userId_CM_User ON CM_User(userId);
 CREATE INDEX idx_userType_CM_User ON CM_User(userType);
+
 CREATE TABLE CM_UserSumup (
   userIdKey BIGINT NOT NULL,
   loginFailCount INT NULL,
   lastLoginDate DATETIME NULL,
-  rewardPoint DOUBLE NULL,
-  userLevel CHAR(1) NULL,
   lastLoginSeq BIGINT NULL,
+  loginIp VARCHAR(50) NULL,
   PRIMARY KEY (userIdKey)
 );
-CREATE INDEX idx_snsType_CM_UserSumup ON CM_UserSumup(snsType);
-CREATE INDEX idx_snsId_CM_UserSumup ON CM_UserSumup(snsId);
-CREATE INDEX idx_userLevel_CM_UserSumup ON CM_UserSumup(userLevel);
+
 CREATE TABLE CM_Device (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   userIdKey BIGINT NOT NULL,

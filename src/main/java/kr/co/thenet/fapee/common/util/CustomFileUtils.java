@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-public class CustomFileUtil {
+public class CustomFileUtils {
 
 	public static final String SAVE_FOLDER = "/files";
 	public static final String FORM_FILE_NAME = "uploadfile";

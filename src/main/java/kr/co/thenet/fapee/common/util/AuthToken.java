@@ -1,13 +1,10 @@
 package kr.co.thenet.fapee.common.util;
 
 import java.util.Date;
-
 import org.apache.commons.net.util.Base64;
-
-import com.thenetglobal.appserver.common.dao.UserDao;
-import com.thenetglobal.appserver.common.model.CM_UserSumup;
-
+ 
 public class AuthToken {
+	
 	public static String getToken(long idKey, long expireDateTime, String userType, long lastSeq) {
 		String origin = String.format("%s=%s=%s=%s",
 								String.valueOf(idKey),
@@ -117,7 +114,6 @@ public class AuthToken {
 		return AuthToken.isValidToken(token, null);
 	}
 	
-	private static UserDao userDao = null;
 	public static boolean isValidToken(String token, String token2) {
 		if (token == null && token2 == null) {
 			return false;
@@ -141,14 +137,6 @@ public class AuthToken {
 			return false;
 		}
 		
-		// 최종일련번호 체크
-		if (userDao == null) {
-			userDao = new UserDao();
-		}
-		CM_UserSumup userSumup = userDao.selectUserSumupByIdKey(Long.parseLong(fields[0]));
-		if (userSumup.getLastLoginSeq() != Long.parseLong(fields[3])) {
-			return false;
-		}
 		return true;
 	}
 }

@@ -1,4 +1,4 @@
-package kr.co.thenet.fapee.persistence;
+package kr.co.thenet.fapee.mapper;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
