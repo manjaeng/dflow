@@ -7,15 +7,18 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CM_User {
-	private long idKey;
+public class CM_Login{
 	private String userId;
 	private String password;
+	private String authToken;
+	private String uniqueId;
+	private String pushKey;
+	private String deviceType;
+	private Long userIdKey;
 	private String userType;
 	private String userName;
-	private String mobileNumber;
-	private String email;
 	private String snsType;
 	private String snsId;
-	private String status;
+	private String version;
+	private String upgradeUrl;
 }

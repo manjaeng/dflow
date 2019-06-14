@@ -14,6 +14,7 @@
 <script src="../js/jquery.min.js"></script>
 <script src="../js/loadPageTest.js"></script>
 <script src="../js/jqList.js"></script>
+<script src="../js/common.js"></script>
 <script>
 	$(function() {
 

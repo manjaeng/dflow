@@ -2,6 +2,8 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="egovMap" type="kr.co.thenet.fapee.common.util.EgovMap" />
+		<typeAlias alias="egovMap"      type="kr.co.thenet.fapee.common.util.EgovMap" />
+		<typeAlias alias="CM_User"      type="kr.co.thenet.fapee.common.model.CM_User" />
+		<typeAlias alias="CM_UserSumup" type="kr.co.thenet.fapee.common.model.CM_UserSumup" />
 	</typeAliases>
 </configuration>

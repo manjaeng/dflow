@@ -17,7 +17,7 @@ public class UserController {
 	@Resource
 	private UserService userService;
  
-	@GetMapping()
+	@GetMapping("/login.do")
 	public String login(ModelMap model) throws Exception {
 
 		List<CM_User> userList = userService.selectUserServiceList();
