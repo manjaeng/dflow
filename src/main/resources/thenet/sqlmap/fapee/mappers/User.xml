@@ -3,39 +3,46 @@
 
 <mapper namespace="kr.co.thenet.fapee.user.service.impl.UserMapper">
 	
-	<select id="selectUserServiceList" resultType="CM_User">
-		SELECT *
-		  FROM CM_User
-	</select>
-	
-	<select id="selectUserServiceInfo" resultType="CM_User" parameterType="string">
-		SELECT idKey       , userId, password, userType, userName,
-			   mobileNumber, email , snsType , snsId   , status
-		  FROM CM_User
+	<select id="selectUserServiceInfo" resultType="FP_User" parameterType="string">
+		SELECT  idKey
+		      , userId
+		      , password
+		      , userType
+		      , userName
+		      , mobileNumber
+		      , email
+		      , loginTotalCount
+		      , loginFailCount
+		      , lastLoginDate
+		      , loginIp
+		      , snsType
+		      , snsId
+		      , status
+		  FROM FP_User
 		 WHERE idKey <![CDATA[ > ]]> 0
 		<if test="_parameter != null">
 		   AND userId = #{_parameter}
 		</if>
 	</select>
 	
-	<select id="selectUserServiceSumupInfo" resultType="CM_UserSumup" parameterType="long">
-		SELECT userIdKey   , loginFailCount, lastLoginDate, rewardPoint, userLevel,
-			   lastLoginSeq
-		  FROM CM_UserSumup
-		 WHERE userIdKey <![CDATA[ > ]]> 0
-		<if test="_parameter != null">
-		   AND userIdKey = #{_parameter}
-		</if>
-	</select>
-	
-	<update id="updateUserServiceSumupInfo" parameterType="CM_UserSumup" >
-		UPDATE CM_UserSumup
-		   SET loginFailCount=#{loginFailCount},
-			   lastLoginDate=#{lastLoginDate},
-			   rewardPoint=#{rewardPoint},
-			   userLevel=#{userLevel},
-			   lastLoginSeq=#{lastLoginSeq}
-		 WHERE userIdKey=#{userIdKey}
+	<update id="updateUserServiceFailCount">
+		UPDATE FP_User
+		   SET loginFailCount=loginFailCount+1
+		 WHERE idKey=#{_parameter}
 	</update>
+	
+	<update id="updateUserServiceInfo" parameterType="FP_User">
+		UPDATE FP_User
+		   SET loginFailCount=0,
+		       lastLoginDate=#{lastLoginDate},
+		       loginTotalCount=#{loginTotalCount},
+		       loginIp=#{loginIp}
+		 WHERE idKey=#{idKey}
+	</update>
+	
+	<select id="selectUserServiceList" resultType="FP_User">
+		SELECT *
+		  FROM FP_User
+	</select>
 	
 </mapper>

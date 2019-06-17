@@ -3,7 +3,6 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="egovMap"      type="kr.co.thenet.fapee.common.util.EgovMap" />
-		<typeAlias alias="CM_User"      type="kr.co.thenet.fapee.common.model.CM_User" />
-		<typeAlias alias="CM_UserSumup" type="kr.co.thenet.fapee.common.model.CM_UserSumup" />
+		<typeAlias alias="FP_User"      type="kr.co.thenet.fapee.common.model.FP_User" />
 	</typeAliases>
 </configuration>

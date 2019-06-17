@@ -2,17 +2,14 @@ package kr.co.thenet.fapee.user.service;
 
 import java.util.List;
 
-import kr.co.thenet.fapee.common.model.CM_User;
-import kr.co.thenet.fapee.common.model.CM_UserSumup;
+import javax.servlet.http.HttpServletRequest;
+
+import kr.co.thenet.fapee.common.model.FP_Login;
+import kr.co.thenet.fapee.common.model.FP_User;
 
 public interface UserService {
 
-	List<CM_User> selectUserServiceList() throws Exception;
+	FP_Login selectUserServiceLoginInfo(FP_Login login, HttpServletRequest req) throws Exception;
 
-	CM_User selectUserServiceInfo(String userId) throws Exception;
-
-	CM_UserSumup selectUserServiceSumupInfo(long idKey) throws Exception;
-
-	void updateUserServiceSumupInfo(CM_UserSumup existUserSumup) throws Exception;
-
+	List<FP_User> selectUserServiceList() throws Exception;
 }
