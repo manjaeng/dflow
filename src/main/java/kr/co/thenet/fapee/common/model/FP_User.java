@@ -1,5 +1,7 @@
 package kr.co.thenet.fapee.common.model;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,18 +9,19 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class CM_Login{
+public class FP_User {
+	private long idKey;
 	private String userId;
 	private String password;
-	private String authToken;
-	private String uniqueId;
-	private String pushKey;
-	private String deviceType;
-	private Long userIdKey;
 	private String userType;
 	private String userName;
+	private String mobileNumber;
+	private String email;
+	private long loginTotalCount;
+	private int loginFailCount;
+	private Date lastLoginDate;
+	private String loginIp;
 	private String snsType;
 	private String snsId;
-	private String version;
-	private String upgradeUrl;
+	private String status;
 }

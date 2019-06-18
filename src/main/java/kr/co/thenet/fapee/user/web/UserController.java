@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kr.co.thenet.fapee.common.model.CM_User;
+import kr.co.thenet.fapee.common.model.FP_User;
 import kr.co.thenet.fapee.user.service.UserService;
 
 @Controller
@@ -20,7 +20,7 @@ public class UserController {
 	@GetMapping("/login.do")
 	public String login(ModelMap model) throws Exception {
 
-		List<CM_User> userList = userService.selectUserServiceList();
+		List<FP_User> userList = userService.selectUserServiceList();
 		
 		model.addAttribute("userList", userList);
 		
