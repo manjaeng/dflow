@@ -232,7 +232,7 @@ input[type=number]{-moz-appearance:textfield;}
 .contain.ui .device #userAgent{ color:#7d51da; }
 .contain.ui .device #cssStatus{ color:#000000; }
 .contain.ui .device #browserStatus{ color:#e84e4e; }
-.contain.ui{padding: 10px;}
+.contain.ui{padding: 10px;position: static;}
 .contain.ui .codeBox{ position:relative; margin:10px 0; overflow:hidden; }
 .contain.ui .codeBox .bts{padding:5px 0px 0px 0px;/* position:absolute; right:10px; top:10px;*/margin-bottom: 5px;}
 .contain.ui .codeBox .bts .btn{border-color:#bbbbbb;color:#555555;border-radius:3px;height:24px;line-height:22px;padding:0px 7px;background-color: #fff;}

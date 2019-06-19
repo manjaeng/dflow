@@ -13,8 +13,10 @@
 	<article class="popLayer win type a popSample1" id="popSample1">
 		<div class="pbd">
 			<div class="phd">
-				<h1 class="tit">윈도우 팝업</h1>
-				<button type="button" class="close" onclick="window.self.close();">닫기</button>
+				<div class="in">
+					<h1 class="tit">윈도우 팝업</h1>
+					<button type="button" class="btnPopClose" onclick="window.self.close();">닫기</button>
+				</div>
 			</div>
 			<div class="pct">
 				<main class="poptents">

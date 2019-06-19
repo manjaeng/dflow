@@ -651,14 +651,14 @@ var ui = {
 	popLayer: { // 레이어팝업
 		init: function() {
 
-			$(document).on("click", ".popLayer:not(.win) button.close", function() {
+			$(document).on("click", ".popLayer:not(.win) .btnPopClose", function() {
 				var id = $(this).closest(".popLayer").attr("id");
 				// console.log(id);
 				ui.popLayer.close(id);
 			});
 
 			$(document).on("click", ".popLayer", function(e) {
-				$(this).find("button.close").trigger("click");
+				$(this).find(".btnPopClose").trigger("click");
 			});
 
 			$(document).on("click", ".popLayer>.pbd", function(e) {
@@ -711,12 +711,15 @@ var ui = {
 			});
 		},
 		resize:function(id){
-			var pctnH =  $(".popLayer:visible").outerHeight() - $(".popLayer:visible>.pbd>.phd").outerHeight() ;
+			var pctnH =  $(".popLayer:visible").outerHeight() ;
+			if ( $(".popLayer:visible>.pbd>.phd").length ){
+				pctnH = pctnH - $(".popLayer:visible>.pbd>.phd").outerHeight()
+			}
 			if ( $(".popLayer:visible>.pbd>.pbt").length ){
 				pctnH = pctnH - $(".popLayer:visible>.pbd>.pbt").outerHeight()
 			}
 			$(".popLayer.a:visible>.pbd>.pct").css({"height": pctnH });
-			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH -70 });
+			$(".popLayer.b:visible>.pbd>.pct").css({"height": pctnH -70 });
 		},
 		scroll:{},
 		lyScroll: function(id) {

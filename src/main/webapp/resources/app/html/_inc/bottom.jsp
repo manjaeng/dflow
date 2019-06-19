@@ -4,8 +4,10 @@
 <article class="popLayer type a popSample1" id="popSample1">
 	<div class="pbd">
 		<div class="phd">
-			<h1 class="tit">타이틀</h1>
-			<button type="button" class="close">닫기</button>
+			<div class="in">
+				<h1 class="tit">타이틀</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
 		</div>
 		<div class="pct">
 			<main class="poptents">
@@ -66,8 +68,10 @@
 <article class="popLayer type b popSample2" id="popSample2">
 	<div class="pbd">
 		<div class="phd">
-			<h1 class="tit">타이틀</h1>
-			<button type="button" class="close">닫기</button>
+			<div class="in">
+				<h1 class="tit">타이틀</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
 		</div>
 		<div class="pct">
 			<main class="poptents">

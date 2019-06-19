@@ -12,21 +12,20 @@
 
 	<article class="popLayer type a popSample2" id="popSample2">
 		<div class="pbd">
+			<button type="button" class="btnPopClose">닫기</button>
 			<div class="phd">
-				<h1 class="tit">레이어팝업</h1>
-				<button type="button" class="close">닫기</button>
+				<div class="in">
+					<h1 class="tit">레이어팝업</h1>
+					<button type="button" class="btnPopClose">닫기</button>
+				</div>
 			</div>
 			<div class="pct">
 				<main class="poptents">
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
+					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
+					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
+					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
+					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
+					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
 				</main>
 			</div>
 			<div class="pbt">

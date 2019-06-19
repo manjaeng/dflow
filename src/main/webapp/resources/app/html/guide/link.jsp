@@ -51,8 +51,8 @@
 				<h3><a href="javascript:;">로그인,가입</a></h3>
 				<ul>
 					<li>
-						<h4>로그인</h4> <em>ing</em>
-						<mark>/resources/app/html/member/login.jsp</mark>
+						<h4>로그인(팝)</h4> <em>ing</em>
+						<mark>/resources/app/html/member/popLogin.jsp</mark>
 					</li>
 				</ul>
 			</li>

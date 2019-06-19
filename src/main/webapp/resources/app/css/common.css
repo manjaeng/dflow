@@ -194,12 +194,12 @@ html.lock {position: fixed;width: 100%;height: 100%;overflow: hidden;}
 .header .menu .bt.size{ background-image: url(../images/common/top_menu_size.png)}
 .header .menu .bt.filter{ background-image: url(../images/common/top_menu_filter.png)}
 
-.menubar{height:60px; position:relative;}
-.menubar>.inner{ position:fixed;background:#fff; z-index:300; bottom: 0px; left:0px; right: 0px; border-top: #ddd solid 1px;}
+.menubar{height: 50px;position:relative;}
+.menubar>.inner{position:fixed;background:#fff;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;padding: 0 10px;}
 .menubar .menu{display:flex; justify-content:  space-between; align-content: center; align-items: center;}
 .menubar .menu>li{width:100%;display:flex;align-items: center;align-content: center;}
-.menubar .menu>li>a{ font-family:"BlairMd"; color: #a3a3a3; font-size: 11px; height:60px;display:flex;align-items: center;align-content: center; justify-content: center; width: 100%;text-align: center;}
-.menubar .menu>li>a em{ font-family:"NotoSansCJKkr-Md"; line-height: 8px;}
+.menubar .menu>li>a{font-family:"BlairMd";color: #a3a3a3;font-size: 10px;height: 50px;display:flex;align-items: center;align-content: center;justify-content: center;width: 100%;text-align: center;}
+.menubar .menu>li>a em{font-family:"NotoSansCJKkr-Md";line-height: 10px;display: inline-block;margin: 0 4px 0px 4px;}
 .menubar .menu>li.active>a{color: #000000;}
 .menubar .menu>li.home>a{}
 .menubar .menu>li.adds>a{}
@@ -330,7 +330,7 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .noData + .uiListMore .btnMore{border-top: #e0e0e0 solid 1px;}
 
 /* 플로팅 탑버튼 */
-.floatNav{position:fixed;right: 10px;bottom: 70px;z-index: 200;transition:all 0.4s;}
+.floatNav{position:fixed;right: 10px;bottom: 60px;z-index: 200;transition:all 0.4s;}
 .floatNav.active{}
 .floatNav .bt{font-size: 0px;width:32px;height:32px; display:block; background: no-repeat rgba(255, 255, 255, 0.7); border: solid #999999 1px;transform: translateY(100px);transition: all 0.4s; background-size: 100% auto; margin-top: 10px;}
 .floatNav .bt.refresh{background-image: url(../images/common/ico_load.png); transition-delay: 0.0s;}
@@ -432,10 +432,11 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 
 /* 팝업 레이어 */
 .popLayer{display:none;position:fixed;left:0px;right:0px;top:0px;bottom:0;z-index:1000;background-color: rgba(0,0,0,0.52);outline:none;}
-.popLayer>.pbd{background: #ffffff;position:relative;overflow: hidden;padding-top:50px;min-width: 200px;}
-.popLayer>.pbd>.phd{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 50px;text-align:center;background-color: #ffffff;box-sizing:border-box;border-bottom: #c7c7c7 solid 1px;display: flex;align-items: center;justify-content: center;}
+.popLayer>.pbd{background: #ffffff;position:relative;overflow: hidden;/* padding-top:50px; */min-width: 200px;}
+.popLayer>.pbd>.phd{height: 50px;position: relative;}
+.popLayer>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 50px;text-align:center;background-color: #ffffff;box-sizing:border-box;border-bottom: #c7c7c7 solid 1px;display: flex;align-items: center;justify-content: center;}
 .popLayer>.pbd>.phd .tit{font-size: 20px;color:#000000;font-family:"CJ Medium";width: calc(100% - 70px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.popLayer>.pbd>.phd button.close{position:absolute;right: 10px;top: 9px;width: 30px;height: 30px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;background-color:transparent;border:none;padding:0;cursor: pointer;}
+.popLayer>.pbd .btnPopClose{position:absolute;right: 10px;top: 9px;width: 30px;height: 30px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}
 .popLayer>.pbd>.pct{position: relative;}
 .popLayer>.pbd>.pbt{position:relative;width:100%;min-height: 40px;}
 .popLayer>.pbd>.pbt .bts {width:100%;display: flex;}
@@ -453,9 +454,10 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .popLayer.type.b:after{content: '';width:0;height:100%;display:inline-block;vertical-align:middle;}
 .popLayer.type.b .pbd{font-size:16px;display:inline-block;max-width: calc(100% - 60px);vertical-align:middle;text-align:left;white-space:normal;padding-top: 0;}
 .popLayer.type.b .phd{position: relative;border-bottom-color: #c7c7c7;}
+.popLayer.type.b .phd>.in{ position:relative;}
 .popLayer.type.b .phd .tit{ font-size: 18px;}
 .popLayer.type.b .phd button.close{ background-image: url(../images/common/popLayerClose.png)}
-.popLayer.type.b .pct{min-width: 250px;/* max-height: 500px !important; */min-height: 70px;}
+.popLayer.type.b .pct{min-width: 250px;max-height: 240px;min-height: 70px;}
 .popLayer.type.b .pct .poptents{}
 .popLayer.type.b .pbt{}
 .popLayer.type.b .pbt .bots{/* position:fixed; *//* width: auto; *//* right: 0; */}
