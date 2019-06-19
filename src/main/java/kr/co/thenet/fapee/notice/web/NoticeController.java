@@ -9,7 +9,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.co.thenet.fapee.common.model.FP_Notice;
-import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 
 @Controller

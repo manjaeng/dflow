@@ -1,3 +1,7 @@
+DROP DATABASE fapee;
+CREATE DATABASE fapee;
+USE fapee;
+
 CREATE TABLE FP_User (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   userId VARCHAR(30) NOT NULL,
@@ -9,6 +13,7 @@ CREATE TABLE FP_User (
   loginTotalCount BIGINT NULL,
   loginFailCount INT NULL,
   lastLoginDate DATETIME NULL,
+  joinDate DATETIME NULL,
   loginIp VARCHAR(50) NULL,
   snsType VARCHAR(20) NULL,
   snsId VARCHAR(1024) NULL,
@@ -18,8 +23,8 @@ CREATE TABLE FP_User (
 CREATE INDEX idx_userId_FP_User ON FP_User(userId);
 CREATE INDEX idx_userType_FP_User ON FP_User(userType);
 
-NSERT INTO `fp_user` (`idKey`, `userId`, `password`, `userType`, `userName`, `mobileNumber`, `email`, `loginTotalCount`, `loginFailCount`, `lastLoginDate`, `loginIp`, `snsType`, `snsId`, `status`) VALUES
-	(1, 'admin', 'a27bd1680f0b780f5ac60932a3afc316a31791491a865113acaafc3ee4589241', '1', '어드민', '01022222222', '1', 4, 0, '2019-06-17 17:41:05', '127.0.0.1', NULL, NULL, NULL);
+INSERT INTO `fp_user` (`idKey`, `userId`, `password`, `userType`, `userName`, `mobileNumber`, `email`, `loginTotalCount`, `loginFailCount`, `lastLoginDate`,`joinDate` , `loginIp`, `snsType`, `snsId`, `status`) VALUES
+	(1, 'admin', 'a27bd1680f0b780f5ac60932a3afc316a31791491a865113acaafc3ee4589241', '1', '어드민', '01022222222', '1', 4, 0, '2019-06-17 17:41:05','2019-06-17 17:41:05' ,'127.0.0.1', NULL, NULL, NULL);
 
 CREATE TABLE FP_Notice (
   idKey BIGINT NOT NULL AUTO_INCREMENT,

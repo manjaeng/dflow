@@ -1,3 +1,7 @@
+<!-- <script>
+	alert(new Date.);
+</script>
+ -->
 <script>
 function login() {
 	if ($("#userId").val().trim() == "") {
@@ -16,27 +20,31 @@ function login() {
 	login.deviceType = "WEB"
 	login.version = "1.0.0"
 	
-	var url = "/v1/user/login.do"
-		nesAjax(url, JSON.stringify(login),
-			function(data) {
-				setAuthToken(data.authToken)
-				setUserIdKey(data.userIdKey)
-				setUserId(data.userId)
-				setUserType(data.userType)
-				setUserName(data.userName)
-				loadPage_Main()
-			},
-			function(data) {
-				alert("로그인에 실패했습니다.");
-			},
-			"POST");
+	fp.util.jsonAjax({
+		url : '/v1/user/login.do',
+		data: login,
+		success: function(data) {
+			fp.util.setCookie({
+				authToken : data.authToken,
+				userIdKey : data.userIdKey,
+				userId : data.userId,
+				userType : data.userType,
+				userName : data.userName
+			});
+			
+			alert('success');
+		}
+	});
+	
 }
 </script>
 <div align="center">
-	<img src="images/clip.png" style="width:512px;height:512px;"><br>
-	<span class="text1">아이디</span>&nbsp;&nbsp;
-	<input class="default_input" type="text" id="userId" name="userId"><br><br>
-	<span class="text1">비밀번호</span>&nbsp;&nbsp;
-	<input class="default_input" type="password" id="userPw" name="userPw"><br><br>
-	<button class="default_button" onclick="login()">로그인</button><br>
+	<img src="images/clip.png" style="width: 512px; height: 512px;"><br>
+	<span class="text1">아이디</span>&nbsp;&nbsp; <input class="default_input"
+		type="text" id="userId" name="userId"><br>
+	<br> <span class="text1">비밀번호</span>&nbsp;&nbsp; <input
+		class="default_input" type="password" id="userPw" name="userPw"><br>
+	<br>
+	<button class="default_button" onclick="login()">로그인</button>
+	<br>
 </div>

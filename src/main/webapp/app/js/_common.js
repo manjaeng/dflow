@@ -5,14 +5,14 @@ fp.util.jsonAjax = function(obj) {
 	$.ajax({
 		type : 'post',
 		url : obj.url,
-		data : JSON.stringfy(obj.data),
+		data : JSON.stringify(obj.data),
 		contentType : 'application/json; charset=utf-8',
 		dataType : 'json',
 		success : function(data) {
 			obj.success(data);
 		},
-		error : function(data) {
-			alert('jsonAjax error');
+		error : function(xhr,status,error) {
+			console.log('status : ',xhr.status);
 		}
 	});
 }

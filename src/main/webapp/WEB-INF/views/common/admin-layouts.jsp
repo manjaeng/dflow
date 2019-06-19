@@ -6,10 +6,13 @@
 <tiles:insertAttribute name="header" />
 </head>
 <body>
-	<tiles:insertAttribute name="nav" />
-	<tiles:insertAttribute name="left" />
-	<tiles:insertAttribute name="content" />
-	<tiles:insertAttribute name="footer" />
+	<div id="wrapper">
+		<tiles:insertAttribute name="nav" />
+		<tiles:insertAttribute name="left" />
+		<tiles:insertAttribute name="content" />
+		<div class="clearfix"></div>
+	</div>
 	<tiles:insertAttribute name="js" />
 </body>
+
 </html>
