@@ -20,41 +20,11 @@
 			</div>
 			<div class="pct">
 				<main class="poptents">
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<input type="text" class="myInput">
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
-					<input type="text" class="myInput">
-					<p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p>
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+					<input type="text">
+					<p>내용</p>
+					<input type="text">
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 					
 				</main>
 			</div>
@@ -68,7 +38,7 @@
 	</article>
 	<script>
 	$(document).ready(function(){
-		// ui.lnb.act("WOMEN","JACKETS");
+		
 	});
 	</script>
 	

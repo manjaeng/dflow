@@ -10,12 +10,7 @@
 	
 	<article class="popLayer type a popLogin" id="popLogin">
 		<div class="pbd">
-			<div class="phd">
-				<div class="in">
-					<h1 class="tit">레이어팝업</h1>
-					<button type="button" class="btnPopClose">닫기</button>
-				</div>
-			</div>
+			<button type="button" class="btnPopClose">닫기</button>
 			<div class="pct">
 				<main class="poptents">
 					<p>sdfsdfsfsd</p>
@@ -31,15 +26,11 @@
 			</div>
 		</div>
 	</article>
-	<script>
-	$(document).ready(function(){
-		ui.popLayer.open('popLogin');
-	});
-	</script>
 	
 	<!--// 컨텐츠 끝 -->
 	
 	<button type="button" class="btn" onclick="ui.popLayer.open('popLogin');" >ui.popLayer.open('popLogin');</button>
+	<script>$(document).ready(function(){  ui.popLayer.open('popLogin'); });</script>
 
 </div>
 

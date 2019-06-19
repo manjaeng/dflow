@@ -14,43 +14,14 @@
 				<a class="btn" href="javascript:ui.popLayer.open('popSample2');">팝레이어2</a>
 				<p>sdfsdfsfsd</p>
 				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text">
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text">
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p>
 				<label class="checkbox"><input type="checkbox"><span></span></label>
 				<label class="radio"><input type="radio"><span></span></label>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text">
 			</main>
 		</div>
@@ -76,28 +47,11 @@
 		<div class="pct">
 			<main class="poptents">
 				
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text">
 				<p>sdfsdfsfsd</p>
 				<textarea></textarea>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
-				<p>sdfsdfsfsd</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				
 			</main>
 		</div>

@@ -21,11 +21,10 @@
 			</div>
 			<div class="pct">
 				<main class="poptents">
-					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
-					<p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p><p>sdfsdfsfsd</p>
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+					<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				</main>
 			</div>
 			<div class="pbt">
@@ -36,15 +35,13 @@
 			</div>
 		</div>
 	</article>
-	<script>
-	$(document).ready(function(){
-		ui.popLayer.open('popSample2');
-	});
-	</script>
 	
 	<!--// 컨텐츠 끝 -->
 	
-	<button type="button" class="btn" onclick="ui.popLayer.open('popSample2');" >ui.popLayer.open('popSample2');</button>
+	<div class="btnGuide">
+		<button type="button" onclick="ui.popLayer.open('popSample2');" >ui.popLayer.open('popSample2');</button>
+	</div>
+	<script>$(document).ready(function(){	ui.popLayer.open('popSample2');} );</script>
 	
 </div>
 

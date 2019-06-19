@@ -27,6 +27,15 @@ var ui = {
 			// 		ui.movePage.next(e.type);
 			// 	}
 			// });
+			$.fn.scrollStopped = function(callback) { // 스크롤 스톱 scroll stop event  
+				$(this).scroll(function(){
+					var self = this, $this = $(self);
+					if($this.data('scrollTimeout')) {
+						clearTimeout($this.data('scrollTimeout'));
+					}
+					$this.data('scrollTimeout', setTimeout(callback,250,self));
+				});
+			};
 		}
 	},
 	movePage:{ // 스와이프로 이동할 페이지
@@ -55,7 +64,71 @@ var ui = {
             $(window).on("load resize", this.resize );
 			
 			this.floating.init();
+			this.botNav.init();
+
         },
+		botNav:{
+			show:function(){
+				$("#menubar").removeClass("hide");
+			},
+			hide:function(){
+				$("#menubar").addClass("hide");
+			},
+			init:function(){
+
+				var prevPosition = 0;
+				var dnVar = 0;
+				var upVar = 0;
+				var scrStopEvent = null;
+			
+				$(window).on("pageshow scroll ", function(e){  // 스크롤 내리는 중 OR 올리는중 
+
+					var initPosition = $(this).scrollTop();
+					if(initPosition > prevPosition){
+						dnVar ++ ;
+						console.log("dn");
+						ui.ly.botNav.hide();
+						//스크롤다운중;
+						upVar = 0;
+						$(window).scrollStopped(function(){
+							console.log("scroll 스톱");
+							// console.log(scrStopEvent);
+
+							clearTimeout(scrStopEvent);
+							scrStopEvent = window.setTimeout(function(){
+								ui.ly.botNav.show();
+								clearTimeout(scrStopEvent);
+							},800);
+						});
+
+					}else {
+						upVar ++ ;
+						console.log("up");
+						//스크롤 업중;
+						dnVar = 0;
+						ui.ly.botNav.show();
+					}
+					prevPosition = initPosition ;
+
+				});
+
+				$(window).on("pageshow scroll ", function(e){ // 스크롤 맨 밑에 일때
+					var docH = $(document).height();
+					var scr = $(window).scrollTop() + $(window).height();
+					// console.log(docH,scr);
+					if(docH <= scr + 0 ){				
+						console.log("바닥");						
+						ui.ly.botNav.show();
+						// return false;
+					}else{
+						// ui.ly.botNav.hide();
+						// return false;
+					}
+				});
+
+
+			}
+		},
 		floating:{
 			init:function(){
 				this.event();

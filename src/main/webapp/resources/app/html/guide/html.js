@@ -3,7 +3,7 @@
 		this.menu.init();
 		var tit = window.location.pathname.split("/");
 		// console.log( tit , tit.length);
-		document.title = "FP > " + tit[tit.length - 1];
+		document.title = "/" + tit[tit.length - 2] + "/" + tit[tit.length - 1];
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기
 		if (a == "") return {};
