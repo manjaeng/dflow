@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 @font-face {
 	font-family: "NotoSansCJKkr";
 	font-style: 400;
@@ -8,7 +8,7 @@
 	url('../fonts/NotoSansCJKkr-Regular.otf') format('truetype');
 }
 @font-face {
-	font-family: "NotoSansCJKkr-Medium";
+	font-family: "NotoSansCJKkr-Md";
 	font-style: 500;
 	src: url('../fonts/NotoSansCJKkr-Medium.eot');
 	src: url('../fonts/NotoSansCJKkr-Medium.eot') format('embedded-opentype'),
@@ -16,14 +16,21 @@
 	url('../fonts/NotoSansCJKkr-Medium.otf') format('truetype');
 }
 @font-face {
-	font-family: "NotoSansCJKkr-Bold";
+	font-family: "NotoSansCJKkr-Bd";
 	font-style: 900;
 	src: url('../fonts/NotoSansCJKkr-Bold.eot');
 	src: url('../fonts/NotoSansCJKkr-Bold.eot') format('embedded-opentype'),
 	url('../fonts/NotoSansCJKkr-Bold.woff') format('woff'),
 	url('../fonts/NotoSansCJKkr-Bold.otf') format('truetype');
 }
-
+@font-face {font-family: "BlairMd";
+  src: url("../fonts/BlairMdITC TT Medium.eot"); /* IE9*/
+  src: url("../fonts/BlairMdITC TT Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../fonts/BlairMdITC TT Medium.woff2") format("woff2"), /* chrome、firefox */
+  url("../fonts/BlairMdITC TT Medium.woff") format("woff"), /* chrome、firefox */
+  url("../fonts/BlairMdITC TT Medium.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../fonts/BlairMdITC TT Medium.svg#BlairMdITC TT Medium") format("svg"); /* iOS 4.1- */
+}
 
 
 
@@ -231,7 +238,7 @@ input[type=number]{-moz-appearance:textfield;}
 .contain.ui .codeBox .bts .btn{border-color:#bbbbbb;color:#555555;border-radius:3px;height:24px;line-height:22px;padding:0px 7px;background-color: #fff;}
 .contain.ui .codeBox .code{ line-height:20px; color:#541717; font-size:11px; background-color:#fbfbfb; border:#dddddd solid 1px; border-radius:3px; padding:0 5px; margin:0px; font-family:"Consolas"; }
 .contain.ui .codeBox pre{display:none;}
-.contain.ui .btn.loadingClose{ position:relative; z-index:1000; }
+.contain.ui .btn.loadingClose{position:relative;z-index: 2000;}
 .contain.ui div.syntaxhighlighter{ margin:5px 0px !important; }
 .contain.ui div.syntaxhighlighter table td.gutter .line{ min-width:14px;}
 .contain.ui div.syntaxhighlighter table td.gutter .line,

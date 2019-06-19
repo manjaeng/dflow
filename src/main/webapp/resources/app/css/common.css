@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 img{max-width: 100%;}
 a,button,textarea{outline:none;}
 button{cursor:pointer;background: none;border: none;}
@@ -185,10 +185,39 @@ table.list.a>tbody>tr.nodata>td {width:100%; text-align:center !important;}
 html.lock {position: fixed;width: 100%;height: 100%;overflow: hidden;}
 
 .wrap{min-width: 320px;}
+.header{ height:56px;  position:relative; z-index:300;}
+.header>.inner{height:56px;background:#fff; position:fixed; top: 0px; left:0px; right: 0px; border-bottom: #ddd solid 1px;}
+.header .logo{position:absolute;left: 0px;top: 0px;}
+.header .logo a{display:block;font-family:"BlairMd";font-size: 20px;height: 56px;line-height: 56px;padding: 0 15px;}
+.header .menu{position:absolute;right: 8px;top: 9px;display:flex;}
+.header .menu .bt{width:36px;height:36px;display:block;margin-left: 9px;font-size: 0px;background: no-repeat;background-size: 100% auto;}
+.header .menu .bt.size{ background-image: url(../images/common/top_menu_size.png)}
+.header .menu .bt.filter{ background-image: url(../images/common/top_menu_filter.png)}
 
-.contain{position:relative;min-height:100vh;}
+.menubar{height:60px; position:relative;}
+.menubar>.inner{ position:fixed;background:#fff; z-index:300; bottom: 0px; left:0px; right: 0px; border-top: #ddd solid 1px;}
+.menubar .menu{display:flex; justify-content:  space-between; align-content: center; align-items: center;}
+.menubar .menu>li{width:100%;display:flex;align-items: center;align-content: center;}
+.menubar .menu>li>a{ font-family:"BlairMd"; color: #a3a3a3; font-size: 11px; height:60px;display:flex;align-items: center;align-content: center; justify-content: center; width: 100%;text-align: center;}
+.menubar .menu>li>a em{ font-family:"NotoSansCJKkr-Md"; line-height: 8px;}
+.menubar .menu>li.active>a{color: #000000;}
+.menubar .menu>li.home>a{}
+.menubar .menu>li.adds>a{}
+.menubar .menu>li.look>a{}
+.menubar .menu>li.myge>a{}
+
+.contain{position:relative; z-index:200;}
 .contain>.container{}
 .contents{/* padding:0; */}
+
+
+
+
+
+
+
+
+
 
 /* 페이지 타이틀 */
 .pageHd{ height:50px;  }
@@ -301,7 +330,7 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .noData + .uiListMore .btnMore{border-top: #e0e0e0 solid 1px;}
 
 /* 플로팅 탑버튼 */
-.floatNav{position:fixed;right: 10px;bottom: 10px;z-index:100;transition:all 0.4s;}
+.floatNav{position:fixed;right: 10px;bottom: 70px;z-index: 200;transition:all 0.4s;}
 .floatNav.active{}
 .floatNav .bt{font-size: 0px;width:32px;height:32px; display:block; background: no-repeat rgba(255, 255, 255, 0.7); border: solid #999999 1px;transform: translateY(100px);transition: all 0.4s; background-size: 100% auto; margin-top: 10px;}
 .floatNav .bt.refresh{background-image: url(../images/common/ico_load.png); transition-delay: 0.0s;}

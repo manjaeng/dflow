@@ -37,7 +37,7 @@
 			<a href="javascript:;" class="btn lg">버튼</a>
 			<a href="javascript:;" class="btn xl">버튼</a>
 			<a href="javascript:;" class="btn" disabled="disabled">버튼</a>
-			<button class="btn" disabled="disabled">버튼</button>
+			<button type="button" class="btn" disabled="disabled">버튼</button>
 			<p class="gap"></p>
 			<a href="javascript:;" class="btn type a">버튼</a>
 			<a href="javascript:;" class="btn type b">버튼</a>
@@ -77,18 +77,6 @@
 			<p class="gap"></p>
 
 			<%@ include file="../_inc/paging.jsp" %>
-
-			<section class="codeBox">
-				<div class="code">
-					<div class="bts">
-						<a class="btn" href="javascript:ui.loading.show();">로딩열기</a>
-						<a class="btn loadingClose" href="javascript:ui.loading.hide();">로딩닫기</a>
-					</div>
-					<pre class="brush: js">
-						ui.loading.show(); // 로딩열기
-						ui.loading.hide(); // 로딩닫기 </pre>
-				</div>
-			</section>
 
 			<section class="codeBox"> 
 				<div class="code">
@@ -204,6 +192,19 @@
 			</script>
 			
 
+			<section class="codeBox">
+				<div class="code">
+					<div class="bts">
+						<a class="btn" href="javascript:ui.loading.show();">로딩열기</a>
+						<a class="btn loadingClose" href="javascript:ui.loading.hide();">로딩닫기</a>
+					</div>
+					<pre class="brush: js">
+						ui.loading.show(); // 로딩열기
+						ui.loading.hide(); // 로딩닫기 </pre>
+				</div>
+			</section>
+
+
 
 			<p class="gap"></p>
 			<input type="text" placeholder="텍스트">
@@ -235,8 +236,6 @@
 				<input type="search" placeholder="검색어를 입력하세요">
 				<button type="button" class="sch"></button>
 			</div>
-
-			<p class="gap"></p><p class="gap"></p><p class="gap"></p><p class="gap"></p>
 
 			<p class="gap"></p>
 
@@ -534,6 +533,10 @@
 	
 	</div>
 
+	<div class="popLayerArea">
+		<!-- 레이어팝업 자리 -->
+	</div>
+
 	<div class="floatNav">
 		<button type="button" class="bt refresh">Refresh</button>
 		<button type="button" class="bt top">TOP</button>
@@ -541,7 +544,7 @@
 
 	<!--// 컨텐츠 끝 -->
 
-	<%@ include file="../_inc/foot.jsp" %>
+	<%@ include file="../_inc/menubar.jsp" %>
 
 	
 

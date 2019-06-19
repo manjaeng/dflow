@@ -114,6 +114,11 @@ var ui = {
 			*/
 		}
 	},
+	menu:{
+		nav:function(dep1){
+			$("nav.menubar ul.menu>li."+dep1+"").addClass("active").siblings("li").removeClass("active");
+		}
+	},
 	form:{  //  폼요소
 		init:function(){
 			this.attach();
@@ -807,4 +812,3 @@ var ui = {
 };
 
 ui.init();
-

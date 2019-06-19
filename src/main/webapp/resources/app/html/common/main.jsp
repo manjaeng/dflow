@@ -9,19 +9,34 @@
 	<%@ include file="../_inc/head.jsp" %>
 	
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contiain">
+	
+	<div id="contain" class="contain mn">
 		<main id="contents" class="contents">
-			내용
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
 		</main>
 	</div>
-	<!--// 컨텐츠 끝 -->
+
+	<!-- 레이어팝업 넣을  자리 -->
+	<div class="popLayerArea">
+		
+	</div>
+
 	<script>
 	$(document).ready(function(){
-		// 
+		ui.menu.nav("home");  // 하단 메뉴 활성화
 	});
 	</script>
 	
-	<%@ include file="../_inc/foot.jsp" %>
+	<!--// 컨텐츠 끝 -->
+	
+	<%@ include file="../_inc/menubar.jsp" %>
 
 </div>
 

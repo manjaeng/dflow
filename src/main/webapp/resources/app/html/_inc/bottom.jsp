@@ -1,6 +1,6 @@
 ﻿
 
-<!-- 팝레이어 -->
+<!-- 팝레이어 샘플1 -->
 <article class="popLayer type a popSample1" id="popSample1">
 	<div class="pbd">
 		<div class="phd">
@@ -62,7 +62,7 @@
 </article>
 
 
-<!-- 팝레이어 -->
+<!-- 팝레이어 샘플2 -->
 <article class="popLayer type b popSample2" id="popSample2">
 	<div class="pbd">
 		<div class="phd">
@@ -96,12 +96,6 @@
 				<p>sdfsdfsfsd</p>
 				
 			</main>
-		</div>
-		<div class="pbt">
-			<div class="bts">
-				<a href="javascript:;" class="btn type e">버튼</a>
-				<a href="javascript:;" class="btn type a">버튼</a>
-			</div>
 		</div>
 	</div>
 </article>

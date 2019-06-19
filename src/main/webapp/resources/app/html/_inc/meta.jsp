@@ -3,7 +3,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title></title>
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#000000">
 <link href="/resources/app/images/common/favicon.ico" rel="shrtcut icon">
 <link href="/resources/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
 
@@ -22,7 +22,7 @@ String ss = Integer.toString( now.getSeconds() ) ;
 String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 %>
 
-<%-- <link href="/resources/app/css/style.css" rel="stylesheet"> --%>
+<%-- <link href="/resources/app/css/style.css" rel="stylesheet">  --%>
 
 <link href="/resources/app/css/jquery-ui.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources/app/css/swiper.css?v=<%=version%>" rel="stylesheet">

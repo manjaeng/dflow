@@ -111,7 +111,7 @@
 				var link = $(this).find(">mark").text();
 				if (link) {
 					$(this).find(">mark").wrapInner('<a href="' + link + '"></a>');
-					var lk = link.replace("/static/", "./");
+					var lk = link.replace("/resources/app/", "./");
 					$(this).find("mark>a").text(lk);
 				} else {
 					$(this).wrapInner('<a href="javascript:;"></a>');

@@ -22,24 +22,28 @@
 				<h3><a href="javascript:;">공통</a></h3>
 				<ul>
 					<li>
-						<h4>가이드(MO)</h4> <em>ing</em>
-						<mark>/resources/app/html/guide/ui.jsp</mark>
+						<h4>UI가이드</h4> <em>ing</em>
+						<mark>/resources/app/html/guide/guide.jsp</mark>
 					</li>
 					<li>
 						<h4>메인</h4> <em>ing</em>
 						<mark>/resources/app/html/common/main.jsp</mark>
 					</li>
 					<li>
-						<h4>레이아웃</h4> <em>ing</em>
-						<mark>/resources/app/html/common/layout.jsp</mark>
+						<h4>레이아웃_기본</h4> <em>ing</em>
+						<mark>/resources/app/html/common/layout_default.jsp</mark>
+					</li>
+					<li>
+						<h4>레이아웃_빈거</h4> <em>ing</em>
+						<mark>/resources/app/html/common/layout_blank.jsp</mark>
 					</li>
 					<li>
 						<h4>팝업샘플</h4> <em>ing</em>
-						<mark>/resources/app/html/common/popSample.jsp</mark>
+						<mark>/resources/app/html/guide/popLayerSample.jsp</mark>
 					</li>
 					<li>
 						<h4>팝업윈도우</h4> <em>ing</em>
-						<mark>/resources/app/html/common/popWin.jsp</mark>
+						<mark>/resources/app/html/guide/popWinSample.jsp</mark>
 					</li>
 				</ul>
 			</li>
@@ -55,7 +59,7 @@
 		</ul>
 	</section>
 </div>
-<script src="/resources/app/js/jquery.min.js"></script>
+<script src="/resources/app/js/jquery-3.4.1.js"></script>
 <script src="/resources/app/html/guide/html.js"></script>
 <script>
 	uiHtml.menu.linkStat();
