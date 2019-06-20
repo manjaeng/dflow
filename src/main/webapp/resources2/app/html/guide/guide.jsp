@@ -462,7 +462,7 @@
 
 
 <style>
-#debug{ position:fixed; left:10px;; bottom: 10px;}
+#debug{ position:fixed; left:10px;; bottom: 100px;}
 </style>
 <div id="debug"></div>
 

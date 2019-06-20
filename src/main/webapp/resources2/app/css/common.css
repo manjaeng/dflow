@@ -524,7 +524,7 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .slideSample2 .slide>li .item .info .prc{ font-size:12px; padding-top:8px;}
 
 
-
+/* 필터 */
 .popFilter{}
 .popFilter .filters{padding:20px;}
 .popFilter .filters>li{margin-top: 20px;}

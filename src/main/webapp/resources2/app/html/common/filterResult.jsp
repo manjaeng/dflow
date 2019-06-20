@@ -8,7 +8,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain mn">
+	<div id="contain" class="contain filter result">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -36,7 +36,7 @@
 
 	<script>
 	$(document).ready(function(){
-		ui.menu.nav("home");  // 하단 메뉴 활성화
+		// ui.nav.act("home");  // 하단 메뉴 활성화
 	});
 	</script>
 	

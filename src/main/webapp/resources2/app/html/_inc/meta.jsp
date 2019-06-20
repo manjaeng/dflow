@@ -7,8 +7,6 @@
 <link href="/resources/app/images/common/favicon.ico" rel="shrtcut icon">
 <link href="/resources/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
 
-
-
 <!-- 개발에서 아래코드 삭제 -->
 <%@ page import="java.util.*" %>
 <%
@@ -21,15 +19,14 @@ String nn = Integer.toString( now.getMinutes() ) ;
 String ss = Integer.toString( now.getSeconds() ) ;
 String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 %>
+<link href="/resources/app/css/style.css" rel="stylesheet">
 
-<%-- <link href="/resources/app/css/style.css" rel="stylesheet">  --%>
-
+<!-- CSS Import -->
 <link href="/resources/app/css/jquery-ui.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources/app/css/swiper.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources/app/css/base.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources/app/css/common.css?v=<%=version%>" rel="stylesheet">
-
-
+<!-- Jqurey Core -->
 <script src="/resources/app/js/jquery-3.4.1.js"></script>
 <script src="/resources/app/js/jquery-ui.js"></script>
 <script src="/resources/app/js/jquery.ui.touch-punch.js"></script>
