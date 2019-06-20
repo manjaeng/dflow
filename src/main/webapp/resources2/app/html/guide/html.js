@@ -111,7 +111,7 @@
 				var link = $(this).find(">mark").text();
 				if (link) {
 					$(this).find(">mark").wrapInner('<a href="' + link + '"></a>');
-					var lk = link.replace("/resources/app/", "./");
+					var lk = link.replace("/resources2/app/", "./");
 					$(this).find("mark>a").text(lk);
 				} else {
 					$(this).wrapInner('<a href="javascript:;"></a>');
@@ -159,7 +159,7 @@
 					'</article>';
 				$("body").append(list);
 
-				$(".tempLink>.pan").load("/resources/app/html/guide/link.jsp .linkHtml", function () {
+				$(".tempLink>.pan").load("/resources2/app/html/guide/link.jsp .linkHtml", function () {
 					uiHtml.menu.linkStat();
 				});
 
