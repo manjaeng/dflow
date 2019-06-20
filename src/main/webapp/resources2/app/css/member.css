@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.popJoinPre{}
+.popJoinPre .poptents{}
+.popJoinPre .box{padding: 69px 16px 170px 16px;min-height: calc(100vh - 169px);text-align: center;}
+.popJoinPre .box .hdt{font-size: 24px;}
+.popJoinPre .box .hdt em{ font-weight: bold;}
+.popJoinPre .box .bts{margin-top: 30px;}
+.popJoinPre .box .bts .btn{ width:100%; margin-top: 16px}
+.popJoinPre .joinSet{min-height: 160px;text-align: center;width: 100%;padding: 28px 0;position: fixed;bottom: 0;}
+.popJoinPre .joinSet .hdt{font-size: 14px;}
+.popJoinPre .joinSet .list{display:flex;justify-content: space-between;width: 230px;margin: auto;padding-top: 23px;}
+.popJoinPre .joinSet .list>li{}
+.popJoinPre .joinSet .list>li .bt{width:56px;height:56px; background:no-repeat; background-size: 100% auto; display:block;  font-size: 0px;}
+.popJoinPre .joinSet .list>li.instar .bt{background-image:url(../images/common/ico_instargram.png);}
+.popJoinPre .joinSet .list>li.kakao .bt{background-image:url(../images/common/ico_kakaotalk.png);}
+.popJoinPre .joinSet .list>li.facebook .bt{background-image:url(../images/common/ico_facebook.png);}

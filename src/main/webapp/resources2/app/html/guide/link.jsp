@@ -68,6 +68,10 @@
 				<h3><a href="javascript:;">로그인,가입</a></h3>
 				<ul>
 					<li>
+						<h4>로긴,가입</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/joinPre.jsp</mark>
+					</li>
+					<li>
 						<h4>로그인</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/login.jsp</mark>
 					</li>

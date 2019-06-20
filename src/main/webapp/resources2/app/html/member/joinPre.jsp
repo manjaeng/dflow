@@ -13,18 +13,22 @@
 			<button type="button" class="btnPopClose" onclick="history.back();">뒤로</button>
 			<div class="pct">
 				<main class="poptents">
-					<div class="hdt">JOIN <em>FAPEE</em></div>
-					<div class="bts">
-						<a href="javascript:;" class="btn lg btnLogin">LOGIN</a>
-						<a href="javascript:;" class="btn lg btnJoin">SIGN UP</a>
+					<div class="box">
+						<div class="hdt">JOIN <em>FAPEE</em></div>
+						<div class="bts">
+							<a href="./login.jsp" class="btn xl type a btnLogin">LOGIN</a>
+							<a href="./join.jsp" class="btn xl type b btnJoin">SIGN UP</a>
+						</div>
 					</div>
 					<div class="joinSet">
-						<div class="hdt">Sign with</div>
+						
+						<div class="hdt">Sign in with</div>
 						<ul class="list">
 							<li class="instar"><a href="javascript:;" class="bt">Instargram</a></li>
 							<li class="kakao"><a href="javascript:;" class="bt">Kakaotalk</a></li>
 							<li class="facebook"><a href="javascript:;" class="bt">Facebook</a></li>
 						</ul>
+					
 					</div>
 				</main>
 			</div>

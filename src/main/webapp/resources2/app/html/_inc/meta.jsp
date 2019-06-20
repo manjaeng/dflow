@@ -26,6 +26,7 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <link href="/resources2/app/css/swiper.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/base.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/common.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources2/app/css/member.css?v=<%=version%>" rel="stylesheet">
 <!-- Jqurey Core -->
 <script src="/resources2/app/js/jquery-3.4.1.js"></script>
 <script src="/resources2/app/js/jquery-ui.js"></script>
