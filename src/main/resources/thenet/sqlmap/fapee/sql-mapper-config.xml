@@ -4,5 +4,6 @@
 	<typeAliases>
 		<typeAlias alias="egovMap"      type="kr.co.thenet.fapee.common.util.EgovMap" />
 		<typeAlias alias="FP_User"      type="kr.co.thenet.fapee.common.model.FP_User" />
+		<typeAlias alias="FP_Notice"      type="kr.co.thenet.fapee.common.model.FP_Notice" />
 	</typeAliases>
 </configuration>

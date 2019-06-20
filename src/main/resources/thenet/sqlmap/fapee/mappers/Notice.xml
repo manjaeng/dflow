@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.co.thenet.fapee.notice.service.impl.NoticeMapper">
 	
-	<select id="selectNoticeServiceAllList" resultType="egovMap">
+	<select id="selectNoticeServiceAllList" resultType="FP_Notice">
 		select 
 			idKey,
 			userIdKey,
@@ -17,7 +17,7 @@
 		order by createDate ASC
 	</select>
 	
-	<select id="selectNoticeServiceList" resultType="egovMap">
+	<select id="selectNoticeServiceList" resultType="FP_Notice">
 		select 
 			idKey,
 			userIdKey,
