@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="brand">
-		<a href="/admin/main.do"><img src="/resources/admin/img/logo2.png" width=180px;
+		<a href="/admin/main.do"><img src="/resources/admin/img/logo3.png" width=180px;
 			alt="Klorofil Logo" class="img-responsive logo"></a>
 	</div>
 	<div class="container-fluid">
