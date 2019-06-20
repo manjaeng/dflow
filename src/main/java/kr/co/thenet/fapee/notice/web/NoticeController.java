@@ -24,6 +24,6 @@ public class NoticeController {
 		
 		model.addAttribute("noticeList", noticeList);
 		
-		return "notice/notice";
+		return "notice/noticeList";
 	}
 }

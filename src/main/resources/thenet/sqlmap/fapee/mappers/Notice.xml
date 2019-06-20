@@ -4,7 +4,17 @@
 <mapper namespace="kr.co.thenet.fapee.notice.service.impl.NoticeMapper">
 	
 	<select id="selectNoticeServiceList" resultType="egovMap">
-		select sysdate()
+		select 
+			idKey,
+			userIdKey,
+			createDate,
+			title,
+			content,
+			viewCount,
+			startDate,
+			endDate
+		from FP_Notice
+		order by idKey ASC
 	</select>
 	
 </mapper>

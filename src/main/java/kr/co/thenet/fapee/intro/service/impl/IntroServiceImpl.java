@@ -17,7 +17,7 @@ public class IntroServiceImpl implements IntroService {
 
 	@Override
 	public EgovMap selectIntroServiceInfo(int idKey) throws Exception {
-		return introMapper.selectIntroServiceInfo(idKey);
+		return (EgovMap)introMapper.selectIntroServiceInfo(idKey);
 	}
 
 }
