@@ -15,13 +15,13 @@ import kr.co.thenet.fapee.common.util.ResponseUtil;
 import kr.co.thenet.fapee.user.service.UserService;
 
 @RestController
-@RequestMapping("/{version}/user")
+@RequestMapping("/rest/{version}/user")
 public class UserAppController {
 
 	@Resource
 	private UserService userService;
 
-	@PostMapping("/login.do")
+	@PostMapping("/login")
 	public ResponseEntity<?> login(@RequestBody FP_Login login, HttpServletRequest req) throws Exception {
 
 		login = userService.selectUserServiceLogin(login, req);

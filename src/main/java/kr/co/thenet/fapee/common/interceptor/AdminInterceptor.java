@@ -15,7 +15,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		if (log.isDebugEnabled()) {
-			log.debug(" LoginInfo \t:  " + request.getSession().getAttribute("LoginInfo"));
+			log.debug(" LoginInfo \t:  " + request.getSession().getAttribute("loginInfo"));
 		}
 		return super.preHandle(request, response, handler);
 	}

@@ -1,0 +1,44 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<%@ include file="../_inc/meta.jsp" %>
+</head>
+<body class="body">
+<div class="wrap" id="wrap">
+		
+	<!-- 컨텐츠 시작 -->
+	
+	<article class="popPage popJoinPre" id="popJoinPre">
+		<div class="pbd">
+			<button type="button" class="btnPopClose" onclick="history.back();">뒤로</button>
+			<div class="pct">
+				<main class="poptents">
+					<div class="hdt">JOIN <em>FAPEE</em></div>
+					<div class="bts">
+						<a href="javascript:;" class="btn lg btnLogin">LOGIN</a>
+						<a href="javascript:;" class="btn lg btnJoin">SIGN UP</a>
+					</div>
+					<div class="joinSet">
+						<div class="hdt">Sign with</div>
+						<ul class="list">
+							<li class="instar"><a href="javascript:;" class="bt">Instargram</a></li>
+							<li class="kakao"><a href="javascript:;" class="bt">Kakaotalk</a></li>
+							<li class="facebook"><a href="javascript:;" class="bt">Facebook</a></li>
+						</ul>
+					</div>
+				</main>
+			</div>
+		</div>
+	</article>
+	
+	<!--// 컨텐츠 끝 -->
+	
+	
+
+</div>
+
+
+<%@ include file="../_inc/bottom.jsp" %>
+<%@ include file="../_inc/scripts.jsp" %>
+</body>
+</html>

@@ -10,18 +10,14 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.FP_Login;
 import kr.co.thenet.fapee.common.model.FP_User;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.user.service.UserService;
-import lombok.extern.log4j.Log4j;
 
 @Controller
-@RequestMapping("/admin")
-@Log4j
 public class UserController {
 
 	@Resource
