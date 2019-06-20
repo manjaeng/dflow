@@ -10,6 +10,8 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 @Mapper
 public interface NoticeMapper {
 
+	List<FP_Notice> selectNoticeServiceAllList() throws Exception;
+	
 	List<FP_Notice> selectNoticeServiceList() throws Exception;
 
 }

@@ -3,6 +3,20 @@
 
 <mapper namespace="kr.co.thenet.fapee.notice.service.impl.NoticeMapper">
 	
+	<select id="selectNoticeServiceAllList" resultType="egovMap">
+		select 
+			idKey,
+			userIdKey,
+			createDate,
+			title,
+			content,
+			viewCount,
+			startDate,
+			endDate
+		from FP_Notice
+		order by createDate ASC
+	</select>
+	
 	<select id="selectNoticeServiceList" resultType="egovMap">
 		select 
 			idKey,
@@ -14,7 +28,7 @@
 			startDate,
 			endDate
 		from FP_Notice
-		order by idKey ASC
+		order by createDate ASC
 	</select>
 	
 </mapper>

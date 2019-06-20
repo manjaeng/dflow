@@ -14,6 +14,11 @@ public class NoticeServiceImpl implements NoticeService{
 	
 	@Resource
 	private NoticeMapper noticeMapper;
+	
+	@Override
+	public List<FP_Notice> selectNoticeServiceAllList() throws Exception {
+		return noticeMapper.selectNoticeServiceAllList();
+	}
 
 	@Override
 	public List<FP_Notice> selectNoticeServiceList() throws Exception {
