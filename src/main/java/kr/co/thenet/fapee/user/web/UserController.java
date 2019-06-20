@@ -3,10 +3,12 @@ package kr.co.thenet.fapee.user.web;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.thenet.fapee.common.model.FP_User;
@@ -21,6 +23,13 @@ public class UserController {
  
 	@GetMapping("/login.do")
 	public String login() throws Exception {
+		return "main/login";
+	}
+	
+	@PostMapping("/login.do")
+	public String login(FP_User user, HttpServletRequest req) throws Exception {
+		
+		
 		return "main/login";
 	}
 	
