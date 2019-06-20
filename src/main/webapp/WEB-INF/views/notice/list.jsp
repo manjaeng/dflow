@@ -58,11 +58,6 @@
 											</td>
 										</tr>
 									</c:forEach>
-									<c:if test="${empty noticeList}">
-										<tr class="text-center">
-											<td colspan="8">No Data</td>
-										</tr>
-									</c:if>
 								</tbody>
 							</table>
 						</div>
