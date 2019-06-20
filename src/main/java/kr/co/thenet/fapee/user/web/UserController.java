@@ -19,7 +19,6 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.user.service.UserService;
 import lombok.extern.log4j.Log4j;
 
-@Log4j
 @Controller
 @RequestMapping("/admin")
 public class UserController {
@@ -38,8 +37,6 @@ public class UserController {
 
 		EgovMap egovMap = userService.selectUserServiceAdminLogin(login, req);
 
-		log.info(login);
-		
 		return egovMap;
 	}
 

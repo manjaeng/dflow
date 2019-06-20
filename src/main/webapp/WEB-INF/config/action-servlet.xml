@@ -44,12 +44,16 @@
       </property>
    </bean>
    
-  	<!-- Logger Interceptor -->
+  	<!-- Interceptor -->
     <mvc:interceptors>
             <mvc:interceptor>
                 <mvc:mapping path="/**"/>
                 <bean class="kr.co.thenet.fapee.common.logger.LoggerInterceptor"/>
             </mvc:interceptor>    
+            <mvc:interceptor>
+                <mvc:mapping path="/admin/**"/>
+                <bean class="kr.co.thenet.fapee.common.interceptor.AdminInterceptor"/>
+            </mvc:interceptor>
         </mvc:interceptors>
 
 </beans>

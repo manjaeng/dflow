@@ -112,6 +112,9 @@ public class UserServiceImpl implements UserService {
 		user.setLoginTotalCount(user.getLoginTotalCount() + 1);
 		user.setLoginIp(CommonUtils.getRemoteIP(req));
 		
+		user.setPassword("");
+		req.getSession().setAttribute("loginInfo", user);
+		
 		userMapper.updateUserServiceInfo(user);
 		
 		egovMap.put("status", "t");
