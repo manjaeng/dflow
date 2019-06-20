@@ -19,40 +19,57 @@
 	<section class="cont">
 		<ul>
 			<li>
-				<h3><a href="javascript:;">공통</a></h3>
+				<h3><a href="javascript:;">가이드</a></h3>
 				<ul>
 					<li>
 						<h4>UI가이드</h4> <em>ing</em>
 						<mark>/resources/app/html/guide/guide.jsp</mark>
 					</li>
 					<li>
+						<h4>레이아웃_기본</h4> <em>ing</em>
+						<mark>/resources/app/html/guide/layout_default.jsp</mark>
+					</li>
+					<li>
+						<h4>레이아웃_빈거</h4> <em>ing</em>
+						<mark>/resources/app/html/guide/layout_blank.jsp</mark>
+					</li>
+					<li>
+						<h4>팝(페이지)</h4> <em>ing</em>
+						<mark>/resources/app/html/guide/popPage.jsp</mark>
+					</li>
+					<li>
+						<h4>팝(레이어)</h4> <em>ing</em>
+						<mark>/resources/app/html/guide/popLayer.jsp</mark>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<h3><a href="javascript:;">공통</a></h3>
+				<ul>
+					<li>
 						<h4>메인</h4> <em>ing</em>
 						<mark>/resources/app/html/common/main.jsp</mark>
 					</li>
 					<li>
-						<h4>레이아웃_기본</h4> <em>ing</em>
-						<mark>/resources/app/html/common/layout_default.jsp</mark>
+						<h4>필터</h4> <em>ing</em>
+						<mark>/resources/app/html/common/filter.jsp</mark>
 					</li>
 					<li>
-						<h4>레이아웃_빈거</h4> <em>ing</em>
-						<mark>/resources/app/html/common/layout_blank.jsp</mark>
+						<h4>필터결과</h4> <em>ing</em>
+						<mark>/resources/app/html/common/filterResult.jsp</mark>
 					</li>
-					<li>
-						<h4>팝업샘플</h4> <em>ing</em>
-						<mark>/resources/app/html/guide/popLayerSample.jsp</mark>
-					</li>
-					<li>
+					<!-- <li>
 						<h4>팝업윈도우</h4> <em>ing</em>
-						<mark>/resources/app/html/guide/popWinSample.jsp</mark>
-					</li>
+						<mark>/resources/app/html/guide/popWin.jsp</mark>
+					</li> -->
 				</ul>
 			</li>
 			<li>
 				<h3><a href="javascript:;">로그인,가입</a></h3>
 				<ul>
 					<li>
-						<h4>로그인(팝)</h4> <em>ing</em>
-						<mark>/resources/app/html/member/popLogin.jsp</mark>
+						<h4>로그인</h4> <em>ing</em>
+						<mark>/resources/app/html/member/login.jsp</mark>
 					</li>
 				</ul>
 			</li>

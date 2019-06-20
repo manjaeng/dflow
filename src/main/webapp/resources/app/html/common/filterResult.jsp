@@ -6,11 +6,17 @@
 <body class="body">
 <div class="wrap" id="wrap">
 	
-	<%@ include file="../_inc/head.jsp" %>
-	
 	<!-- 컨텐츠 시작 -->
 	
 	<div id="contain" class="contain mn">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="hisback">뒤로</a>
+				</div>
+				<h1 class="tit">FILTER RESULT </h1>
+			</div>
+		</div>
 		<main id="contents" class="contents">
 			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
 			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
@@ -30,7 +36,7 @@
 
 	<script>
 	$(document).ready(function(){
-		ui.nav.act("home");  // 하단 메뉴 활성화
+		ui.menu.nav("home");  // 하단 메뉴 활성화
 	});
 	</script>
 	

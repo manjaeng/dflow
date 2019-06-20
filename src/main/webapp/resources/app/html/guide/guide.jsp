@@ -74,10 +74,6 @@
 			</div>
 			
 
-			<p class="gap"></p>
-
-			<%@ include file="../_inc/paging.jsp" %>
-
 			<section class="codeBox"> 
 				<div class="code">
 					<div class="bts">
@@ -104,93 +100,7 @@
 				});
 			</script>
 
-			<section class="codeBox">
-				<div class="code">
-					<div class="bts">
-						<a class="btn" href="javascript:alert_sample();">알럿</a>
-						<a class="btn" href="javascript:confirm_sample();">컨펌</a>
-					</div>
-					<pre class="brush: js">
-					ui.alert({  // 알럿창 띄우기
-						msg:'<p>알럿 메시지<br> 입니다.</p>' ,
-						ycb:function(){
-							console.log('알럿확인결과');
-						},
-						ybt:'확인'	
-					});	
-
-					ui.confirm({ // 컨펌 창 띄우기
-						msg:'<p>공통 컨펌창 샘플  <br><u>kimkee@naver.com</u> 님은</p>' +
-							'<p>이미 <b>네이버</b> 인증을 통해 회원<br> 가입되었습니다.</p>'+
-							'<p>(회원가입 : 2017-08-08)</p>',
-						ycb:function(){
-							console.log('컨펌확인결과');
-						},
-						ncb:function(){
-							console.log('컨펌취소결과');
-						},
-						ybt:'로그인하기',
-						nbt:'닫기'	
-					});</pre>
-				</div>	
-			</section>
-
-			<section class="codeBox">
-				<div class="code">
-					<div class="bts">
-						<a class="btn" href="javascript:toast_sample1();">토스트1</a>
-						<a class="btn" href="javascript:toast_sample2();">토스트2</a>
-					</div>
-					<pre class="brush: js">
-						ui.toast({  // 토스트 창띄우기
-							msg:'<p>토스트메시지입니다.</p>', // 메시지(HTML)
-							cls:'wish', // null, 'wish' , 'cart'
-							sec:1500 // 사라질 시간
-						});</pre>
-				</div>
-			</section>
-			<script>
-			var confirm_sample = function(){
-				ui.confirm({ // 컨펌 창 띄우기
-					msg:'<p>공통 컨펌창 샘플  <br><u>kimkee@naver.com</u> 님은</p>' +
-						'<p>이미 <b>네이버</b> 인증을 통해 회원<br> 가입되었습니다.</p>'+
-						'<p>(회원가입 : 2017-08-08)</p>',
-					ycb:function(){
-						console.log('컨펌확인결과');
-					},
-					ncb:function(){
-						console.log('컨펌취소결과');
-					},
-					ybt:'로그인하기',
-					nbt:'닫기'	
-				});
-			}
-			var alert_sample = function(){
-				ui.alert({  // 알럿창 띄우기
-					msg:'<p><b>알럿</b> <u>메시지</u><br> 입니다.</p>' ,
-					ycb:function(){
-						console.log('알럿확인결과');
-					},
-					ybt:'확인'	
-				});
-			}
-			var toast_sample1 = function(){
-				ui.toast({   // 토스트 창띄우기
-					msg:'<p>토스트메시지입니다.</p>',
-					cls:'type a',
-					sec:1500
-				});
-			}
-			var toast_sample2 = function(){
-				ui.toast({   // 토스트 창띄우기
-					msg:'<p>토222스트메시지입니다.</p>',
-					cls:'type b',
-					sec:1500,
-					bot:50
-				});
-			}
-			</script>
-			
+	
 
 			<section class="codeBox">
 				<div class="code">
@@ -511,7 +421,7 @@
 								ui.listMore.active = true;
 								console.log("페이징 = " + page);
 								$("#debug").html("페이징 = " + page );
-								if (page >= 5) {
+								if (page >= 3) {
 									console.log("끝");
 									ui.listMore.removeEvent();
 								}
@@ -535,18 +445,17 @@
 
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->
+		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
 
 	<div class="floatNav">
 		<button type="button" class="bt refresh">Refresh</button>
 		<button type="button" class="bt top">TOP</button>
 	</div>
-
+	
 	<!--// 컨텐츠 끝 -->
 
 	<%@ include file="../_inc/menubar.jsp" %>
-
-	
 
 	
 </div>
