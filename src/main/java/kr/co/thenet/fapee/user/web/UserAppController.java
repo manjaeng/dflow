@@ -24,7 +24,7 @@ public class UserAppController {
 	@PostMapping("/login.do")
 	public ResponseEntity<?> login(@RequestBody FP_Login login, HttpServletRequest req) throws Exception {
 
-		login = userService.selectUserServiceLoginInfo(login, req);
+		login = userService.selectUserServiceLogin(login, req);
 
 		if (login.getHttpStatus().equals(HttpStatus.OK)) {
 			return ResponseUtil.getResponse(login);

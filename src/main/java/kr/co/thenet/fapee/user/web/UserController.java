@@ -9,37 +9,47 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.thenet.fapee.common.model.FP_Login;
 import kr.co.thenet.fapee.common.model.FP_User;
+import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.user.service.UserService;
+import lombok.extern.log4j.Log4j;
 
+@Log4j
 @Controller
 @RequestMapping("/admin")
 public class UserController {
-	
+
 	@Resource
 	private UserService userService;
- 
+
 	@GetMapping("/login.do")
 	public String login() throws Exception {
 		return "main/login";
 	}
-	
+
 	@PostMapping("/login.do")
-	public String login(FP_User user, HttpServletRequest req) throws Exception {
+	@ResponseBody
+	public EgovMap login(@RequestBody FP_Login login, HttpServletRequest req) throws Exception {
+
+		EgovMap egovMap = userService.selectUserServiceAdminLogin(login, req);
+
+		log.info(login);
 		
-		
-		return "main/login";
+		return egovMap;
 	}
-	
+
 	@GetMapping("/user/list.do")
 	public String userList(ModelMap model) throws Exception {
 
 		List<FP_User> userList = userService.selectUserServiceList();
-		
+
 		model.addAttribute("userList", userList);
-		
+
 		return "user/userList.tiles";
 	}
 }
