@@ -376,23 +376,29 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .uiLoadMore.error .btnLoad{text-indent:-9999px;overflow:hidden;}
 
 
-.uiTbList{}
-.uiTbList>.list{display:block;overflow:hidden;margin-right: -2px;}
-.uiTbList>.list>li{width: calc(33.3333% - 2px);margin-right: 2px;margin-bottom: 2px;float:left;overflow: hidden;}
-.uiTbList>.list>li .box{}
-.uiTbList>.list>li .box a{display:block;}
-.uiTbList>.list>li .box .img{display:block; position:relative; padding-bottom: 100%;}
-.uiTbList>.list>li .box .img img{position:absolute;left:0px;top: 50%;width:100%;height:100%;transform: translateY(-50%);}
-.uiTbList>.list>li:nth-child(10n+1){}
-.uiTbList>.list>li:nth-child(10n+2){}
-.uiTbList>.list>li:nth-child(10n+3){}
-.uiTbList>.list>li:nth-child(10n+4){}
-.uiTbList>.list>li:nth-child(10n+5){width: calc(66.6666% - 2px);float: right;}
-.uiTbList>.list>li:nth-child(10n+6){}
-.uiTbList>.list>li:nth-child(10n+7){width: calc(100.0% - 2px);clear: both;}
-.uiTbList>.list>li:nth-child(10n+8){}
-.uiTbList>.list>li:nth-child(10n+9){}
-.uiTbList>.list>li:nth-child(10n+10){}
+.uiItemList{border-top: #ddd solid 1px; padding: 2px;}
+.uiItemList>.list{display:block;overflow:hidden;margin-right: -2px;}
+.uiItemList>.list>li{width: calc(33.3333% - 2px);margin-right: 2px;margin-bottom: 2px;float:left;overflow: hidden;}
+.uiItemList>.list>li .item{position: relative;overflow: hidden;}
+.uiItemList>.list>li .item .img{display:block;position:relative;padding-bottom: 100%;}
+.uiItemList>.list>li .item .img>a{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;}
+.uiItemList>.list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;}
+.uiItemList>.list>li .item .bts{position:absolute;right: 6px;top: 6px;z-index: 100;}
+.uiItemList>.list>li .item .bts .bt{width: 20px;height: 20px;background: url(../images/common/delete.png ) no-repeat center center rgba(255, 255, 255, 0.5);background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
+.uiItemList>.list>li .item .bts .bt.del{}
+.uiItemList>.list>li .item .num{position:absolute;right: 10px;bottom: 11px;z-index: 100;}
+.uiItemList>.list>li .item .num:before{width: 18px;height: 18px;content:"";position:absolute;right: -4px;bottom: -4px;z-index:0;border-radius: 0 3px 7px;border: rgba(255, 255, 255, 0.5) solid  2px;box-sizing: border-box;border-width: 0px 2px 2px 0px;}
+.uiItemList>.list>li .item .num .n{width: 18px;height: 18px;background: rgba(255, 255, 255, 0.6);display:flex;justify-content: center;align-items: center;font-size: 11px;z-index:10;position:relative;border-radius: 4px;}
+.uiItemList>.list>li:nth-child(10n+1){}
+.uiItemList>.list>li:nth-child(10n+2){}
+.uiItemList>.list>li:nth-child(10n+3){}
+.uiItemList>.list>li:nth-child(10n+4){}
+.uiItemList>.list>li:nth-child(10n+5){width: calc(66.6666% - 2px);float: right;}
+.uiItemList>.list>li:nth-child(10n+6){}
+.uiItemList>.list>li:nth-child(10n+7){width: calc(100.0% - 2px);clear: both;}
+.uiItemList>.list>li:nth-child(10n+8){}
+.uiItemList>.list>li:nth-child(10n+9){}
+.uiItemList>.list>li:nth-child(10n+10){}
 
 
 
@@ -551,8 +557,8 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .popFilter .filters>li.gender label + label{ margin-left: 20px;}
 .popFilter .filters>li.country{}
 .popFilter .filters>li.style{}
-.popFilter .filters>li.style ul.list{display:flex; flex-wrap: wrap;}
-.popFilter .filters>li.style ul.list>li{width:calc( 25% - 5px); margin-left: 5px;}
+.popFilter .filters>li.style ul.list{display:flex;flex-wrap: wrap;justify-content: flex-start;margin: 0 -5px;}
+.popFilter .filters>li.style ul.list>li{width: calc( 25% - 0px);/* margin-left: 5px; */padding: 0 5px;}
 .popFilter .filters>li.style ul.list>li label{ position:relative; display:block;}
 .popFilter .filters>li.style ul.list>li input{ position:absolute; left:0px;;}
 .popFilter .filters>li.style ul.list>li .img{ display:block; position:relative;}

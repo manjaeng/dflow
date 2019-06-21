@@ -388,7 +388,7 @@
 
 			<p class="gap"></p>
 
-			<section class="uiTbList">
+			<section class="uiItemList">
 				<ul class="list" id="dp_list"></ul>
 				<div class="uiLoadMore">
 					<em></em>
