@@ -227,7 +227,7 @@ input[type=number]{-moz-appearance:textfield;}
 }
 @media screen and ( max-width:360px)  {
 }
-#debug{position:fixed;left: 4px;top: 0px;z-index: 1000000;}
+#debug{position:fixed;left: 4px;top: 0px;z-index: 1000000;font-size: 11px;}
 .contain.ui .device{ border:#ddd solid 1px; border-radius:4px; padding:10px; font-size:10px;}
 .contain.ui .device h3{ font-weight:bold; }
 .contain.ui .device #userAgent{ color:#7d51da; }

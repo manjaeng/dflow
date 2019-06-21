@@ -345,7 +345,7 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .floatNav .bt.top{background-image: url(../images/common/btn_top.png); transition-delay: 0.1s;}
 .floatNav.active .refresh{ transform: translateY(0px);}
 .floatNav.active .top{ transform: translateY(0px); }
-
+.floatNav.hide{transform: translateY(50px);}
 
 
 /* 페이지 로딩 */

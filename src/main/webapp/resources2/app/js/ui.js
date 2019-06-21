@@ -63,9 +63,11 @@ var ui = {
 		botNav:{
 			show:function(){
 				$("#menubar").removeClass("hide");
+				$(".floatNav").removeClass("hide");
 			},
 			hide:function(){
 				$("#menubar").addClass("hide");
+				$(".floatNav").addClass("hide");
 			},
 			init:function(){
 
@@ -74,7 +76,7 @@ var ui = {
 				var upVar = 0;
 				var scrStopEvent = null;
 			
-				$(window).on("pageshow scroll ", function(e){  // 스크롤 내리는 중 OR 올리는중 
+				$(window).on("pageshow scroll orientationchange", function(e){  // 스크롤 내리는 중 OR 올리는중 
 
 					var initPosition = $(this).scrollTop();
 					if(initPosition > prevPosition){
@@ -107,7 +109,7 @@ var ui = {
 
 				});
 
-				$(window).on("pageshow scroll ", function(e){ // 스크롤 맨 밑에 일때
+				$(window).on("pageshow scroll orientationchange", function(e){ // 스크롤 맨 밑에 일때
 					var docH = $(document).height();
 					var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 					// console.log(docH,scr);
@@ -813,13 +815,20 @@ var ui = {
 		},
 		scroll:{},
 		lyScroll: function(id) {
+			
+			if ( ui.isUA("Mac OS") ){
+				bounce = true;
+			}else{
+				bounce = false;
+			}
+
 			if( this.scroll[id] == undefined ) {
 				this.scroll[id] = new IScroll('#'+id+'>.pbd>.pct', {
 					// click:true,
 					mouseWheel: true,
 					probeType: 3,
 					preventDefaultException: {tagName:/.*/},
-					bounce:false,
+					bounce:bounce,
 					// bounceTime: 600,
 					// scrollbars: true,
 					// interactiveScrollbars: true,

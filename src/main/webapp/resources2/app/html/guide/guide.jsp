@@ -100,48 +100,32 @@
 				});
 			</script>
 
-	
-
-			<section class="codeBox">
-				<div class="code">
-					<div class="bts">
-						<a class="btn" href="javascript:ui.loading.show();">로딩열기</a>
-						<a class="btn loadingClose" href="javascript:ui.loading.hide();">로딩닫기</a>
-					</div>
-					<pre class="brush: js">
-						ui.loading.show(); // 로딩열기
-						ui.loading.hide(); // 로딩닫기 </pre>
-				</div>
-			</section>
-
-
-
 			<p class="gap"></p>
-			<input type="text" placeholder="텍스트">
-			<p class="gap"></p>
-			<input type="text" class="valid" placeholder="텍스트">
-			<p class="gap"></p>
-			<input type="text" class="valid ok" placeholder="텍스트 ok">
-			<p class="gap"></p>
-			<input type="text" class="valid no" placeholder="텍스트 no">
-			<p class="gap"></p>
-			<input type="password" class="valid" placeholder="비밀번호">
-			<p class="gap"></p>
-			<input type="text" readonly="readonly" value="readonly">
-			<p class="gap"></p>
-			<input type="text" disabled="disabled" value="disabled">
-			<p class="gap"></p>
-			<textarea class="textarea" placeholder="내용"></textarea>
-			<p class="gap"></p>
+			
+			<input type="text" placeholder="텍스트">								<p class="gap"></p>
+			
+			<input type="text" class="valid" placeholder="텍스트">					<p class="gap"></p>
+			
+			<input type="text" class="valid ok" placeholder="텍스트 ok">			<p class="gap"></p>
+			
+			<input type="text" class="valid no" placeholder="텍스트 no">			<p class="gap"></p>
+			
+			<input type="password" class="valid" placeholder="비밀번호">			<p class="gap"></p>
+			
+			<input type="text" readonly="readonly" value="readonly">				<p class="gap"></p>
+			
+			<input type="text" disabled="disabled" value="disabled">				<p class="gap"></p>
+			
+			<textarea class="textarea" placeholder="내용"></textarea>				<p class="gap"></p>
+			
 			<select class="select">
 				<option>선택</option>
 			</select>
-			<p class="gap"></p>
+																					<p class="gap"></p>
 			<select class="select" disabled="disabled">
 				<option>선택</option>
 			</select>
-			
-			<p class="gap"></p>
+																					<p class="gap"></p>
 			<div class="uiSchIpt">
 				<input type="search" placeholder="검색어를 입력하세요">
 				<button type="button" class="sch"></button>
@@ -172,27 +156,32 @@
 			
 			<p class="gap"></p>
 			
-			<label class="checkbox"><input type="checkbox"><span>선택</span></label>
+			<label class="checkbox"><input type="checkbox"><span>첵크박스</span></label>
 
-			<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
+			<label class="checkbox"><input type="checkbox" checked="checked"><span>첵크박스</span></label>
 			<label class="checkbox"><input type="checkbox" checked="checked" disabled="disabled"><span></span></label>
 			<label class="checkbox"><input type="checkbox" disabled="disabled"><span></span></label>
 
-			<label class="radio"><input type="radio" name="radio1"><span>선택</span></label>
-			<label class="radio"><input type="radio" name="radio1" checked="checked"><span>선택</span></label>
-			<label class="radio"><input type="radio" name="radio2" checked="checked" disabled="disabled"><span>선택</span></label>
-			<label class="radio"><input type="radio" name="radio2" disabled="disabled"><span>선택</span></label>
+			<p class="gap"></p>
+
+			<label class="radio"><input type="radio" name="radio1"><span>라디오</span></label>
+			<label class="radio"><input type="radio" name="radio1" checked="checked"><span>라디오</span></label>
+			<label class="radio"><input type="radio" name="radio2" checked="checked" disabled="disabled"><span></span></label>
+			<label class="radio"><input type="radio" name="radio2" disabled="disabled"><span></span></label>
 
 			<p class="gap"></p>
+			
 			<label class="checkbox"><input type="checkbox" data-check="all" data-check-id="checkTest1"><span>전체선택</span></label>
 			<label class="checkbox"><input type="checkbox" data-check="check" data-check-id="checkTest1"><span>선택1</span></label>
 			<label class="checkbox"><input type="checkbox" data-check="check" data-check-id="checkTest1"><span>선택2</span></label>
 			<label class="checkbox"><input type="checkbox" data-check="check" data-check-id="checkTest1"><span>선택3</span></label>
+			
 			<p class="gap"></p>
+			
 			<div class="uiChk"><input type="checkbox" checked="checked"><em></em></div>
 			<div class="uiChk"><input type="checkbox" checked="checked" disabled="disabled"><em></em></div>
 
-			<div class="codeBox">
+			<section class="codeBox">
 				<div class="code">
 					<pre class="brush: html">
 						<label class="checkbox"><input type="checkbox" data-check="all" data-check-id="checkTest1"><span>전체선택</span></label>
@@ -200,9 +189,19 @@
 						<label class="checkbox"><input type="checkbox" data-check="check" data-check-id="checkTest1"><span>선택2</span></label>
 						<label class="checkbox"><input type="checkbox" data-check="check" data-check-id="checkTest1"><span>선택3</span></label></pre>
 				</div>
-			</div>
+			</section>
 
-			<p class="gap"></p>
+			<section class="codeBox">
+				<div class="code">
+					<div class="bts">
+						<a class="btn" href="javascript:ui.loading.show();">로딩열기</a>
+						<a class="btn loadingClose" href="javascript:ui.loading.hide();">로딩닫기</a>
+					</div>
+					<pre class="brush: js">
+						ui.loading.show(); // 로딩열기
+						ui.loading.hide(); // 로딩닫기 </pre>
+				</div>
+			</section>
 
 			<div class="uiDate"><input type="text"  placeholder="YYYY-MM-DD" class="datepicker" readonly="readonly"></div>
 			<p class="gap"></p>
