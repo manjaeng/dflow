@@ -3,7 +3,7 @@
 .popJoinPre{}
 .popJoinPre .poptents{}
 .popJoinPre .box{padding: 69px 16px 170px 16px;min-height: calc(100vh - 169px);text-align: center;}
-.popJoinPre .box .hdt{font-size: 24px;}
+.popJoinPre .box .hdt{font-size: 24px;color: #000000;}
 .popJoinPre .box .hdt em{ font-weight: bold;}
 .popJoinPre .box .bts{margin-top: 30px;}
 .popJoinPre .box .bts .btn{ width:100%; margin-top: 16px}
@@ -15,3 +15,24 @@
 .popJoinPre .joinSet .list>li.instar .bt{background-image:url(../images/common/ico_instargram.png);}
 .popJoinPre .joinSet .list>li.kakao .bt{background-image:url(../images/common/ico_kakaotalk.png);}
 .popJoinPre .joinSet .list>li.facebook .bt{background-image:url(../images/common/ico_facebook.png);}
+
+
+.popLogin{}
+.popLogin .poptents{}
+.popLogin .loginForm{padding: 69px 16px 20px 16px;}
+.popLogin .loginForm .hdt{font-size: 24px;text-align: center;color: #000000;}
+.popLogin .loginForm .hdt em{ font-weight: bold;}
+.popLogin .loginForm .form{
+    margin-top: -5px;
+}
+.popLogin .loginForm .form .uiIptPlc{}
+.popLogin .loginForm .form .uiIptPlc .plc{}
+.popLogin .loginForm .form .uiIptPlc .input{}
+.popLogin .loginForm .form .msg_error{margin-top: 4px;}
+.popLogin .loginForm .form .btns{margin-top: 12px;}
+.popLogin .loginForm .form .btns .btn{width:100%;}
+.popLogin .loginForm .info{display:flex; justify-content: space-between; font-size: 12px; align-items: center; margin-top: 10px;}
+.popLogin .loginForm .info .save{}
+.popLogin .loginForm .info .save label{}
+.popLogin .loginForm .info .txt{}
+.popLogin .loginForm .info .txt .link{display: block;padding: 4px 0;}

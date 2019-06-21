@@ -190,6 +190,31 @@ var ui = {
 			this.chkall();
 			this.spinner.init();
 			this.star.init();
+			this.placeholder.init();
+		},
+		placeholder:{ // uiIptPlc
+			init:function(){
+				var _this =  this;
+				$(".uiIptPlc").find(">.plc").on("click",function(){
+					$(this).prev(".input").trigger("focus");
+				});
+				$(".uiIptPlc").find(">.input").on("focus blur",function(){
+					_this.using();
+				});
+
+				_this.using();
+			},
+			using:function(){
+				$(".uiIptPlc").find(">.input").each(function(){
+					var myEls = $(this);
+					var myVal = $(this).val();
+					if( myVal) {
+						myEls.addClass("on");
+					}else{
+						myEls.removeClass("on");
+					}
+				});
+			}
 		},
 		search:function(){
 			$(document).on("keyup",".uiSchIpt input",function (e) {

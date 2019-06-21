@@ -35,6 +35,17 @@
 		</div>
 	</article>
 	
+	<div class="popLayerArea">
+		<!-- 레이어팝업 자리 -->
+		<%@ include file="../_inc/inc_layers.jsp" %>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			
+		});
+	</script>
+
 	<!--// 컨텐츠 끝 -->
 	
 	

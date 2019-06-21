@@ -10,6 +10,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 
+	<!-- 모양은 레이어팝업이만  페이지 형태임 -->
 	<article class="popPage popSample1" id="popSample1">
 		<div class="pbd">
 			<div class="phd">
@@ -38,6 +39,13 @@
 			</div>
 		</div>
 	</article>
+
+
+	<div class="popLayerArea">
+		<!-- 레이어팝업 자리 -->
+		<%@ include file="../_inc/inc_layers.jsp" %>
+	</div>
+
 	<script>
 	$(document).ready(function(){
 		

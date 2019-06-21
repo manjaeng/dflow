@@ -121,9 +121,9 @@
 			<p class="gap"></p>
 			<input type="text" class="valid" placeholder="텍스트">
 			<p class="gap"></p>
-			<input type="text" class="valid ok" placeholder="텍스트">
+			<input type="text" class="valid ok" placeholder="텍스트 ok">
 			<p class="gap"></p>
-			<input type="text" class="valid no" placeholder="텍스트">
+			<input type="text" class="valid no" placeholder="텍스트 no">
 			<p class="gap"></p>
 			<input type="password" class="valid" placeholder="비밀번호">
 			<p class="gap"></p>
@@ -461,9 +461,6 @@
 </div>
 
 
-<style>
-#debug{ position:fixed; left:10px;; bottom: 100px;}
-</style>
 <div id="debug"></div>
 
 

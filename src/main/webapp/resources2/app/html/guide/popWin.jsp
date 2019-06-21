@@ -10,6 +10,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 
+	<!-- 아직 미사용 케이스 형태 -->
 	<article class="popLayer win type a popSample1" id="popSample1">
 		<div class="pbd">
 			<div class="phd">
@@ -36,6 +37,12 @@
 			</div>
 		</div>
 	</article>
+
+	<div class="popLayerArea">
+		<!-- 레이어팝업 자리 -->
+		<%@ include file="../_inc/inc_layers.jsp" %>
+	</div>
+	
 	<script>
 	$(document).ready(function(){
 		

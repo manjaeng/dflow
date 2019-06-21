@@ -39,6 +39,7 @@
 	<!--// 컨텐츠 끝 -->
 	
 	<div class="btnGuide">
+		<div>레이어팝업</div>
 		<button type="button" onclick="ui.popLayer.open('popSample2');" >ui.popLayer.open('popSample2');</button>
 	</div>
 	<script>$(document).ready(function(){	ui.popLayer.open('popSample2');} );</script>

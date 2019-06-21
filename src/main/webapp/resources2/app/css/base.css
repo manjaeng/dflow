@@ -149,7 +149,7 @@ input[type=number]{-moz-appearance:textfield;}
 
 
 
-.btnGuide{position:absolute;top:50%;left:50%;transform: translate3d(-50%, -50%, 0px);font-size: 13px;}
+.btnGuide{position:absolute;top: 10px;left: 10px;/* transform: translate3d(-50%, -50%, 0px); *//* font-size: 13px; */right: 10px;}
 .btnGuide button{border:#ccc solid 1px;border-radius:5px;padding: 5px 10px;}
 
 .tempLink {position:fixed;left:0px;right:0px;top:0px;bottom:0px;z-index:10000;background-color:rgba(0,0,0,0.6);letter-spacing:0;display:block;box-sizing:border-box;}
@@ -227,7 +227,7 @@ input[type=number]{-moz-appearance:textfield;}
 }
 @media screen and ( max-width:360px)  {
 }
-
+#debug{position:fixed;left: 4px;top: 0px;z-index: 1000000;}
 .contain.ui .device{ border:#ddd solid 1px; border-radius:4px; padding:10px; font-size:10px;}
 .contain.ui .device h3{ font-weight:bold; }
 .contain.ui .device #userAgent{ color:#7d51da; }
