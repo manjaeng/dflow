@@ -53,10 +53,15 @@
     <mvc:interceptors>
             <mvc:interceptor>
                 <mvc:mapping path="/**"/>
+                <mvc:exclude-mapping path="/resources/**"/>
                 <bean class="kr.co.thenet.fapee.common.logger.LoggerInterceptor"/>
             </mvc:interceptor>    
             <mvc:interceptor>
                 <mvc:mapping path="/**"/>
+                <mvc:exclude-mapping path="/rest/**"/>
+                <mvc:exclude-mapping path="/resources/**"/>
+                <mvc:exclude-mapping path="/login.do"/>
+                <mvc:exclude-mapping path="/logout.do"/>
                 <bean class="kr.co.thenet.fapee.common.interceptor.AdminInterceptor"/>
             </mvc:interceptor>
         </mvc:interceptors>

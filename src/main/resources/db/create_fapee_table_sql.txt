@@ -18,6 +18,7 @@ CREATE TABLE FP_User (
   loginIp VARCHAR(50) NULL,
   snsType VARCHAR(20) NULL,
   snsId VARCHAR(1024) NULL,
+  deviceId VARCHAR(100) NULL,
   status CHAR(1) NULL,
   PRIMARY KEY (idKey)
 );
@@ -41,11 +42,19 @@ CREATE TABLE FP_Notice (
 CREATE INDEX idx_startDate_FP_Notice ON FP_Notice(startDate);
 CREATE INDEX idx_endDate_FP_Notice ON FP_Notice(endDate);
 
-CREATE TABLE FP_UserStyle (
+CREATE TABLE FP_UserFilter (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  deviceId VARCHAR(100) NULL,
   userIdKey BIGINT NULL,
   gender CHAR(1) NULL,
-  country CHAR(2) NULL,
+  country VARCHAR(20) NULL,
+  filterImages VARCHAR(200) NULL,
   favoriteStyle VARCHAR(500),
-  PRIMARY KEY (userIdKey)
+  PRIMARY KEY (idKey)
 );
-CREATE INDEX idx_userIdKey_FP_UserStyle ON FP_UserStyle(userIdKey);
+CREATE INDEX idx_userIdKey_FP_UserFilter ON FP_UserFilter(userIdKey);
+CREATE INDEX idx_deviceId_FP_UserFilter ON FP_UserFilter(deviceId);
+
+CREATE TABLE FP_UserSize (
+  
+);

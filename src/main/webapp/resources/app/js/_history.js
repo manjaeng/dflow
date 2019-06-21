@@ -1,5 +1,6 @@
 fp.history = {};
 fp.history.pageUrl = [];
+//pageList
 fp.history.currentPageName = "";
 
 fp.history.pushPage = function(pageName) {

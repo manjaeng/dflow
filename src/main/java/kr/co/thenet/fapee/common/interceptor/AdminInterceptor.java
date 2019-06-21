@@ -14,13 +14,10 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		if (log.isDebugEnabled()) {
-			
-			if (request.getRequestURI().indexOf("rest") == -1) {
-				log.debug(" LoginInfo \t:  " + request.getSession().getAttribute("loginInfo"));
-			}
-		}
-		return super.preHandle(request, response, handler);
+		
+		log.debug(" AdminLoginInfo \t:  " + request.getSession().getAttribute("loginInfo"));
+		
+		return true;
 	}
 
 	@Override
