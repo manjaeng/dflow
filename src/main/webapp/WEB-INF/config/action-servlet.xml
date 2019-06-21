@@ -56,7 +56,7 @@
                 <bean class="kr.co.thenet.fapee.common.logger.LoggerInterceptor"/>
             </mvc:interceptor>    
             <mvc:interceptor>
-                <mvc:mapping path="/admin/**"/>
+                <mvc:mapping path="/**"/>
                 <bean class="kr.co.thenet.fapee.common.interceptor.AdminInterceptor"/>
             </mvc:interceptor>
         </mvc:interceptors>

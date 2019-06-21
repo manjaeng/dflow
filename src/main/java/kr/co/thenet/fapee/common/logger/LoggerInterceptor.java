@@ -15,9 +15,8 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		if (log.isDebugEnabled()) {
-			
-			if(request.getRequestURI().indexOf("/resources") == -1 &&
-				request.getRequestURI().indexOf("/admin") != -1 ) {
+
+			if (request.getRequestURI().indexOf("/resources") == -1) {
 				log.debug(" Request URI \t:  " + request.getRequestURI());
 			}
 		}
