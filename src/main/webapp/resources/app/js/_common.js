@@ -1,4 +1,5 @@
 var fp = {};
+fp.intro = {};
 fp.util = {};
 
 fp.util.jsonAjax = function(obj) {

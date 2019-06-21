@@ -1,28 +1,15 @@
-<!-- <script>
-	alert(new Date.);
-</script>
- -->
+
 <script>
 function login() {
-	if ($("#userId").val().trim() == "") {
-		alert("아이디를 입력하세요.");
-		return
-	}
-	
-	if ($("#userPw").val().trim() == "") {
-		alert("비밀번호를 입력하세요.");
-		return
-	}
-
-	var login = {}
-	login.userId = $("#userId").val().trim();
-	login.password = $("#userPw").val().trim();
-	login.deviceType = "WEB"
-	login.version = "1.0.0"
 	
 	fp.util.jsonAjax({
 		url : '/rest/v1/user/login',
-		data: login,
+		data: {
+			userId : $("#userId").val().trim(),
+			password : $("#userPw").val().trim(),
+			deviceType : "WEB",
+			version : "1.0.0"
+		},
 		success: function(data) {
 			fp.util.setCookie({
 				authToken : data.authToken,
@@ -36,15 +23,14 @@ function login() {
 		}
 	});
 	
+	return false;
+	
 }
 </script>
-<div align="center">
-	<img src="/resources/app/images/clip.png" style="width: 512px; height: 512px;"><br>
-	<span class="text1">아이디</span>&nbsp;&nbsp; <input class="default_input"
-		type="text" id="userId" name="userId"><br>
-	<br> <span class="text1">비밀번호</span>&nbsp;&nbsp; <input
-		class="default_input" type="password" id="userPw" name="userPw"><br>
-	<br>
-	<button class="default_button" onclick="login()">로그인</button>
-	<br>
+<div style="padding: 30px; text-align:center;">
+	<form onsubmit="return login();">
+		<input class="default_input" type="text" id="userId" placeholder="id"><br>
+		<input class="default_input" type="password" id="userPw" placeholder="pw"><br><br>
+		<button class="default_button">로그인</button>
+	</form>
 </div>

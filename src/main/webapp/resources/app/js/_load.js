@@ -4,6 +4,15 @@ fp.load.url_prefix = "/app/";
 
 fp.load.move = function(obj) {
 	
+	if(typeof obj === 'string') {
+		
+		fp.history.pushPage(obj);
+		
+		$(this.targetSelector).load(this.url_prefix+obj);
+		
+		return
+	}
+	
 	if(obj.clear) {
 		fp.history.clearPage();
 	} else {
@@ -23,11 +32,15 @@ fp.load.back = function() {
 	var beforePageUrl;
 
 	if (fp.history.pageUrl.length === 0) {
-		oHybridNative.callNativeBack();
+		//oHybridNative.callNativeBack();
+		alert('이전페이지없음');
 	} else {
-		beforePageUrl = fp.history.pagePop();
 		
-		if(beforePageName === null || beforePageName === "") {
+		//뒤로가기시 이전 URL을 임시 변수에 넣어놓음
+		beforePageUrl = fp.history.popPage();
+		fp.history.currentPageName = beforePageUrl;
+		
+		if(beforePageUrl === null || beforePageUrl === "") {
 			return
 		} else {
 			
