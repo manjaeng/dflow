@@ -31,4 +31,24 @@
 		order by createDate ASC
 	</select>
 	
+	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" statementType="PREPARED" useGeneratedKeys="true" keyProperty="idKey">
+		insert into FP_Notice(
+			  userIdKey
+			, createDate
+			, title
+			, content
+			, viewCount
+			, startDate
+			, endDate
+		) values (
+			  #{userIdKey}
+			, now()
+			, #{title}
+			, #{content}
+			, 0
+			, #{startDate}
+			, #{endDate}
+		)
+	</insert>
+	
 </mapper>

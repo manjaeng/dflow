@@ -13,4 +13,6 @@ public interface NoticeMapper {
 	
 	List<FP_Notice> selectNoticeServiceList() throws Exception;
 
+	int insertNoticeServiceInfo(FP_Notice notice) throws Exception;
+
 }

@@ -13,7 +13,7 @@
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">User List</h3>
+			<h3 class="page-title">Notice List</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- TABLE HOVER -->
@@ -47,7 +47,7 @@
 												<c:out value="${item.content}" />
 											</td>
 											<td>
-												<fmt:formatDate value="${item.createDate}" type="date" pattern="yyyy-MM-dd" />
+												<fmt:formatDate value="${item.createDate}" type="date" pattern="yyyy-MM-dd HH:mm" />
 											</td>
 											<td>
 												<c:out value="${item.viewCount}" />
@@ -60,6 +60,7 @@
 									</c:forEach>
 								</tbody>
 							</table>
+							<a href="/notice/add.do">작성</a>
 						</div>
 					</div>
 					<!-- END TABLE HOVER -->
