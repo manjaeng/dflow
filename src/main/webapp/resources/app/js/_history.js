@@ -8,7 +8,7 @@ fp.history.pushPage = function(pageName) {
 	if (this.currentPageName !== "") {
 		fp.history.pageUrl.push(this.currentPageName);
 	}
-	this.currentPageName = pageName
+	this.currentPageName = pageName;
 	
 }
 
@@ -20,6 +20,7 @@ fp.history.popPage = function() {
 	return beforePageUrl;
 }
 
-fp.history.clearPage = function() {
+fp.history.clearPage = function(pageName) {
 	fp.history.pageUrl = [];
+	this.currentPageName = pageName;
 }

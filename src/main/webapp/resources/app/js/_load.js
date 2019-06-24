@@ -14,7 +14,7 @@ fp.load.move = function(obj) {
 	}
 	
 	if(obj.clear) {
-		fp.history.clearPage();
+		fp.history.clearPage(obj.url);
 	} else {
 		fp.history.pushPage(obj.url);
 	}

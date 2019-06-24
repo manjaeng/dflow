@@ -1,4 +1,29 @@
 
+<script>
+	function next() {
+		
+		fp.intro.favoriteStyle = [];
+		
+		if($('input[name=style]:checked').length > 3) {
+			alert('최대 3개 가능');
+			return;
+		}
+		
+		
+		$('input[name=style]:checked').each(function(i,e) {
+			fp.intro.favoriteStyle.push(this.value);
+		});
+		
+	 	fp.load.move({
+			clear : false,
+			url : 'intro/intro3.html',
+			callBack : function() {
+				
+			}
+		});
+	}
+</script>
+
 <style type="text/css">
 .section_Intro {
 	padding: 10px;
@@ -27,7 +52,7 @@ input[type=checkbox]:checked+label {
 }
 
 .mainFontSize {
-	font-size: 20px;
+	font-size: 21px;
 	color: black;
 }
 
@@ -53,28 +78,19 @@ input[type=checkbox]:checked+label {
 	background-color: black;
 	color: white;
 	text-align: right;
-	font-size: 0;
-	font-weight: bold;
-	border-top: 1px solid black;
-}
-
-.section .introStage .getStep {
-	width: 28%;
-	display: inline-block;
-	padding-right: 10px;
-	margin-right: 0;
 	font-size: 25px;
-	border-left: 1px solid black;
+	font-weight: bold;
 }
 
-.section .introStage .getSecondStep {
+.section .introStage .get2Step {
 	width: 29%;
 	display: inline-block;
-	padding-right: 10px;
-	margin-left: : 0;
-	margin-right: 0;
-	font-size: 25px;
-	border-right: 1px solid black;
+}
+
+.section .introStage .getLastStep {
+	width: 33%;
+	display: inline-block;
+	margin-right: 10px;
 }
 
 .section .introFinalButton {
@@ -91,51 +107,51 @@ input[type=checkbox]:checked+label {
 	text-align: center;
 	vertical-align: middle;
 }
-
-.introPhotos {
-	display: table;
-	font-size: 25px;
-	font-weight: bold;
-	width: 45%;
-	height: 200px;
-	margin: auto;
-}
-
-.introPhotos .photoSelector {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	border: 1px solid black;
-}
 </style>
 <div class="section">
 	<div class="article">
 		<p class="subTitle text-center">
-			UPLOAD YOUR<br>STYLE PHOTOS
+			CHOOSE YOUR <br> FAVORITE STYLE
 		</p>
-		<div class="introPhotos text-center">
-			<div class="photoSelector">onclick alert</div>
+		<div class="mainFontSize text-center">
+			<div class="tpMainColor">
+				<input class="ckbox" id="CASUAL" type="checkbox" value="casual" name="style">
+				<label for="CASUAL">CASUAL</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="GIRLY" type="checkbox" value="girly" name="style">
+				<label for="GIRLY">GIRLY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="TOMBOY" type="checkbox" value="tomboy" name="style">
+				<label for="TOMBOY">TOMBOY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="BUSINESS" type="checkbox" value="business" name="style">
+				<label for="BUSINESS">BUSINESS</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="CHIC" type="checkbox" value="chic" name="style">
+				<label for="CHIC">CHIC</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="BOHEMIAN" type="checkbox" value="bohemian" name="style">
+				<label for="BOHEMIAN">BOHEMIAN</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="SEXY" type="checkbox" value="sexy" name="style">
+				<label for="SEXY">SEXY</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="PUNK" type="checkbox" value="punk" name="style">
+				<label for="PUNK">PUNK</label>
+			</div>
+			<div class="tpMainColor" style="border-top: 0">
+				<input class="ckbox" id="SPORTY" type="checkbox" value="sporty" name="style">
+				<label for="SPORTY">SPORTY</label>
+			</div>
 		</div>
 	</div>
 </div>
-<div class="section" style="margin-top: 30%;">
-	<div style="position: fixed; bottom: 0; width: 100%;">
-		<div class="introStage">
-			<div class="getStep">
-				<label for="1">1</label>
-			</div>
-			<div class="getSecondStep">
-				<label for="2">2</label>
-			</div>
-			<div class="getStep"
-				style="border-right: 0; background-color: white; color: black;">
-				<label for="3">3</label>
-			</div>
-		</div>
-		<div class="introFinalButton">
-			<p class="introButtonText" id="introButton">
-				<label for="introButton" onclick="page.load('intro3.html')">NEXT</label>
-			</p>
-		</div>
-	</div>
-</div>
+
+<button type="button" style="font-size:30px;" onclick="next()">다음</button>

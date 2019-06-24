@@ -1,3 +1,25 @@
+
+<script>
+	function later() {
+
+		fp.load.move({
+			clear : false,
+			url : 'intro/intro4.html',
+			callBack : function() {
+
+			}
+		});
+	}
+
+	function start() {
+
+		fp.load.move({
+			clear : true,
+			url : 'user/login.html'
+		});
+	}
+</script>
+
 <style type="text/css">
 .section_Intro {
 	padding: 10px;
@@ -134,16 +156,5 @@ input[type=checkbox]:checked+label {
 		</div>
 	</div>
 </div>
-<div class="section" style="margin-top: 45%;">
-	<div style="position: fixed; bottom: 0; width: 100%;">
-		<div class="introFinalButton">
-			<div class="introButtonText" id="later"
-				style="width: 50%; background-color: white; color: black;">
-				<label for="later">LATER</label>
-			</div>
-			<div class="introButtonText" id="start">
-				<label for="start">START</label>
-			</div>
-		</div>
-	</div>
-</div>
+<button type="button" style="font-size: 30px;" onclick="later()">LATER</button>
+<button type="button" style="font-size: 30px;" onclick="start()">START</button>
