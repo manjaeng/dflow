@@ -19,7 +19,7 @@ public class FP_Notice {
 	private String content;
 	private int viewCount;
 	
-	@JsonFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(pattern="yyyy/MM/dd")
 	private Date startDate;
 	private Date endDate;
 }

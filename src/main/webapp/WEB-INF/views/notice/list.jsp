@@ -53,14 +53,14 @@
 												<c:out value="${item.content}" />
 											</td>
 											<td>
-												<fmt:formatDate value="${item.createDate}" type="date" pattern="yyyy-MM-dd HH:mm" />
+												<fmt:formatDate value="${item.createDate}" type="date" pattern="yyyy/MM/dd HH:mm" />
 											</td>
 											<td>
 												<c:out value="${item.viewCount}" />
 											</td>
 											<td>
-												<fmt:formatDate value="${item.startDate}" type="date" pattern="yyyy-MM-dd" /> ~
-												<fmt:formatDate value="${item.endDate}" type="date" pattern="yyyy-MM-dd" />
+												<fmt:formatDate value="${item.startDate}" type="date" pattern="yyyy/MM/dd" /> ~
+												<fmt:formatDate value="${item.endDate}" type="date" pattern="yyyy/MM/dd" />
 											</td>
 										</tr>
 									</c:forEach>

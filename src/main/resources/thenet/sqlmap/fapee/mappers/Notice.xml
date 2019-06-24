@@ -52,7 +52,7 @@
 		 WHERE idKey = #{idKey}
 	</update>
 	
-	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" statementType="PREPARED" useGeneratedKeys="true" keyProperty="idKey">
+	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT into FP_Notice(
 								  userIdKey
 								, createDate

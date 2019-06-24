@@ -15,7 +15,7 @@
 
          autoclose: true,
 
-         format: "yyyy-mm-dd",
+         format: "yyyy/mm/dd",
 
          language: "UTF-8"
 
@@ -78,7 +78,7 @@
 
 						        <div class="bootstrap-filestyle input-group date">
 						            <input type="text" id="userfile1" class="form-control" name="startDate" style="height:36px;" 
-						            required value="<fmt:formatDate value='${noticeInfo.startDate}' type='date' pattern='yyyy-MM-dd' />" >
+						            required value="<fmt:formatDate value='${noticeInfo.startDate}' type='date' pattern='yyyy/MM/dd' />" >
 												
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default "> 
@@ -91,7 +91,7 @@
 						     <div class="panel-body fileWrap">
 						       <div class="bootstrap-filestyle input-group date">
 						            <input type="text" id="userfile1" class="form-control" name="endDate" style="height:36px;"
-						            required value="<fmt:formatDate value='${noticeInfo.endDate}' type='date' pattern='yyyy-MM-dd' />" >
+						            required value="<fmt:formatDate value='${noticeInfo.endDate}' type='date' pattern='yyyy/MM/dd' />" >
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default"> 
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -106,8 +106,8 @@
 						<div class="panel">
 							<div class="panel-body">
 								<div class="form-group text-center" style="margin-bottom: 0">
-									<button class="btn btn-primary">공지추가</button>
-									<button type="reset" class="btn btn-danger">다시작성</button>
+									<button class="btn btn-primary">공지삭제</button>
+									<button type="reset" class="btn btn-danger">수정완료</button>
 								</div>
 							</div>
 						</div>
