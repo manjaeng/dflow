@@ -20,6 +20,7 @@ public class FP_User {
 	private long loginTotalCount;
 	private int loginFailCount;
 	private Date lastLoginDate;
+	private Date joinDate;
 	private String loginIp;
 	private String snsType;
 	private String snsId;

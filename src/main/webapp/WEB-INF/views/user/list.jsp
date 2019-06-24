@@ -26,18 +26,26 @@
 								style="width: 100%">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>이름</th>
-										<th>핸드폰번호</th>
-										<th>이메일</th>
+										<th>idKey</th>
+										<th>userId</th>
+										<th>userName</th>
+										<th>userType</th>
+										<th>loginIp</th>
+										<th>loginTotalCount</th>
+										<th>lastLoginDate</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:if test="${empty userList}">
-										<tr class="text-center">
-											<td colspan="8">No Data</td>
-										</tr>
-									</c:if>
+									<c:forEach var="item" items="${userList}">
+										<td><c:out value="${item.idKey}" /></td>
+										<td><c:out value="${item.userId}" /></td>
+										<td><c:out value="${item.userName}" /></td>
+										<td><c:out value="${item.userType}" /></td>
+										<td><c:out value="${item.loginIp}" /></td>
+										<td><c:out value="${item.loginTotalCount}" /></td>
+										<td><fmt:formatDate value="${item.lastLoginDate}"
+												type="date" pattern="yyyy-MM-dd" /></td>
+									</c:forEach>
 								</tbody>
 							</table>
 						</div>
