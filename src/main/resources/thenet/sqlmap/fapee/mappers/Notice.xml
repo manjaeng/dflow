@@ -72,4 +72,19 @@
 		)
 	</insert>
 	
+	
+	
+	
+	
+	
+	<update id="updateNoticeServiceInfo" parameterType="FP_Notice">
+		UPDATE FP_Notice
+		   SET   createDate = now()
+		   	   , title = #{title}
+		   	   , content = #{content}
+		   	   , startDate = #{startDate}
+		   	   , endDate = #{endDate}
+		 WHERE idKey = #{idKey}
+	</update>
+	
 </mapper>

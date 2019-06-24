@@ -40,5 +40,17 @@ public class NoticeServiceImpl implements NoticeService{
 	public void updateNoticeServiceViewCountInfo(int num) {
 		noticeMapper.updateNoticeServiceViewCountInfo(num);
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	@Override
+	public int updateNoticeServiceInfo(FP_Notice notice) throws Exception {
+		return noticeMapper.insertNoticeServiceInfo(notice);
+	}
 	
 }

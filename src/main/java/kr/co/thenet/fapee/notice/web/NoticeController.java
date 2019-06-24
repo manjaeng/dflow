@@ -45,7 +45,7 @@ public class NoticeController {
 	}
 	
 	@GetMapping(value = "/notice/modify.do")
-	public String noticeModify(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
+	public String noticeDetail(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
 
 		FP_Notice noticeInfo = noticeService.selectNoticeServiceInfo(num);
 		noticeService.updateNoticeServiceViewCountInfo(num);
@@ -53,6 +53,26 @@ public class NoticeController {
 		model.addAttribute("noticeInfo", noticeInfo);
 
 		return "notice/modify.tiles";
+	}
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	@PostMapping("/notice/modify.do")
+	public String noticeModify(FP_Notice notice, HttpServletRequest req) throws Exception {
+		
+		noticeService.updateNoticeServiceInfo(notice);
+		
+		return "redirect:/notice/list.do";
 	}
 	
 

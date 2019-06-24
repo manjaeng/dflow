@@ -35,6 +35,7 @@
 						<div class="panel">
 							<div class="panel-heading">
 								<h3 class="panel-title">공지 사항 내용</h3>
+								<input type="text" name="idKey" class="form-control" required value="<c:out value='${noticeInfo.idKey}'/>" style="display:none;">
 							</div>
 							<div class="panel-body">
 								<input type="text" name="title" class="form-control" required value="<c:out value='${noticeInfo.title}'/>"> <br>
@@ -106,8 +107,8 @@
 						<div class="panel">
 							<div class="panel-body">
 								<div class="form-group text-center" style="margin-bottom: 0">
-									<button class="btn btn-primary">공지삭제</button>
-									<button type="reset" class="btn btn-danger">수정완료</button>
+									<button class="btn btn-primary">수정완료</button>
+									<button type="reset" class="btn btn-danger">삭제</button>
 								</div>
 							</div>
 						</div>

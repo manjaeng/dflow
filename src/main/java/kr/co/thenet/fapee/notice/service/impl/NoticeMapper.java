@@ -18,5 +18,9 @@ public interface NoticeMapper {
 	FP_Notice selectNoticeServiceInfo(int num) throws Exception;
 
 	void updateNoticeServiceViewCountInfo(int num);
+	
+	
+	
+	int updateNoticeServiceInfo(FP_Notice notice) throws Exception;
 
 }
