@@ -21,8 +21,8 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public List<FP_Notice> selectNoticeServiceList() throws Exception {
-		return noticeMapper.selectNoticeServiceList();
+	public List<FP_Notice> selectNoticeServiceList(int pageStart) throws Exception {
+		return noticeMapper.selectNoticeServiceList(pageStart);
 	}
 
 	@Override

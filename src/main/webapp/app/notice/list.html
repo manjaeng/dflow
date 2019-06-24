@@ -1,0 +1,20 @@
+<script>
+$('#noticeList').jqList({
+	url : '/rest/v1/notice/list',
+	method : 'init',
+	empty : function() {
+		alert('데이터가 없습니다.');
+	}
+});
+
+function more() {
+	$('#noticeList').jqList({
+		method : 'more',
+		empty : function() {
+			alert('데이터가 없습니다.');
+		}
+	});
+}
+</script>
+<table id= "noticeList"></table>
+<button type="button" id="more" onclick="more()">more</button>

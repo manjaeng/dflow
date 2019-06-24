@@ -11,7 +11,7 @@ public interface NoticeMapper {
 
 	List<FP_Notice> selectNoticeServiceAllList() throws Exception;
 	
-	List<FP_Notice> selectNoticeServiceList() throws Exception;
+	List<FP_Notice> selectNoticeServiceList(int pageStart) throws Exception;
 
 	int insertNoticeServiceInfo(FP_Notice notice) throws Exception;
 

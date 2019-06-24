@@ -13,7 +13,7 @@
 		has_more_records : true
 	};
 
-	var authTokenQueryString = '?q=';
+	var authTokenQueryString = ' ';
 
 	$.fn.jqList = function(obj) {
 
@@ -34,7 +34,7 @@
 
 			info.curId = this.attr('id');
 			info.server_url = obj.url;
-			info.curPage = 1;
+			info.curPage = 0;
 			info.loading_status = false;
 			info.has_more_records = true;
 
@@ -59,7 +59,7 @@
 
 			} else if (!info.loading_status) {
 
-				info.curPage++;
+				info.curPage  = info.curPage + info.page_size;
 
 				req_url = info.server_url + '/' + info.curPage;
 
@@ -79,7 +79,7 @@
 
 			$.ajax({
 				url : url + authTokenQueryString,
-				type : 'get',
+				type : 'post',
 				dataType : 'json',
 				success : function(jsonArr) {
 

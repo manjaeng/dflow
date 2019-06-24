@@ -4,31 +4,33 @@
 <mapper namespace="kr.co.thenet.fapee.notice.service.impl.NoticeMapper">
 	
 	<select id="selectNoticeServiceAllList" resultType="FP_Notice">
-		select 
-			idKey,
-			userIdKey,
-			createDate,
-			title,
-			content,
-			viewCount,
-			startDate,
-			endDate
-		from FP_Notice
-		order by createDate ASC
+		SELECT idKey
+					, userIdKey 
+					, createDate
+					, title
+					, content
+					, viewCount
+					, startDate
+					, endDate
+		FROM FP_Notice
+		ORDER BY createDate ASC
 	</select>
 	
-	<select id="selectNoticeServiceList" resultType="FP_Notice">
-		select 
-			idKey,
-			userIdKey,
-			createDate,
-			title,
-			content,
-			viewCount,
-			startDate,
-			endDate
-		from FP_Notice
-		order by createDate ASC
+	<select id="selectNoticeServiceList" resultType="FP_Notice" parameterType="int">
+		SELECT idKey
+					, userIdKey 
+					, createDate
+					, title
+					, content
+					, viewCount
+					, startDate
+					, endDate
+		FROM FP_Notice
+		WHERE idKey <![CDATA[>]]> 0
+		ORDER BY idKey DESC
+		<if test="_parameter != null">
+		LIMIT #{_parameter}, 10
+		</if>
 	</select>
 	
 	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" statementType="PREPARED" useGeneratedKeys="true" keyProperty="idKey">

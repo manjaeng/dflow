@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +20,9 @@ public class NoticeAppController {
 	private NoticeService noticeService;
 	
 	@PostMapping("/list/{pageStart}")
-	public List<FP_Notice> selectNoticeServiceList() throws Exception {
+	public List<FP_Notice> selectNoticeServiceList(@PathVariable int pageStart) throws Exception {
 	
-		List<FP_Notice> noticeLsit = noticeService.selectNoticeServiceList();
+		List<FP_Notice> noticeLsit = noticeService.selectNoticeServiceList(pageStart);
 	
 		return noticeLsit;
 	}
