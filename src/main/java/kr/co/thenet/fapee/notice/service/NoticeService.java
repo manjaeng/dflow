@@ -12,5 +12,8 @@ public interface NoticeService {
 
 	int insertNoticeServiceInfo(FP_Notice notice) throws Exception;
 	
+	FP_Notice selectNoticeServiceInfo(int num) throws Exception;
+
+	void updateNoticeServiceViewCountInfo(int num);
 
 }

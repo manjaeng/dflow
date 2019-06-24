@@ -1,37 +1,33 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
+ <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+ <script type='text/javascript'>
+ $(function(){
 
-    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
+     $('.input-group.date').datepicker({
 
-    <script type='text/javascript'>
+         calendarWeeks: false,
 
-    $(function(){
+         todayHighlight: true,
 
-        $('.input-group.date').datepicker({
+         autoclose: true,
 
-            calendarWeeks: false,
+         format: "yyyy-mm-dd",
 
-            todayHighlight: true,
+         language: "UTF-8"
 
-            autoclose: true,
+     });
 
-            format: "yyyy/mm/dd",
+ });
 
-            language: "kr"
-
-        });
-
-    });
-
-    </script>
+ </script>
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
 			<h3 class="page-title">Notice Add</h3>
 			<div class="row">
-				<form action="/admin/noticeAdd.do" method="post"
+				<form action="/notice/add.do" method="post"
 					enctype="multipart/form-data">
 					<div class="col-md-6">
 						<div class="panel">
@@ -39,9 +35,9 @@
 								<h3 class="panel-title">공지 사항 작성</h3>
 							</div>
 							<div class="panel-body">
-								<input type="text" name="n_title" class="form-control" required
+								<input type="text" name="title" class="form-control" required
 									placeholder="제목"> <br>
-								<textarea name="n_content" class="form-control"
+								<textarea name="content" class="form-control"
 									style="resize: none" placeholder="공지내용" rows="20"></textarea>
 								<br>
 							</div>
@@ -80,7 +76,7 @@
 							<div class="panel-body fileWrap">
 
 						        <div class="bootstrap-filestyle input-group date">
-						            <input type="text" id="userfile1" class="form-control" name="userfile" style="height:36px;" placeholder="시작일">
+						            <input type="text" id="userfile1" class="form-control" name="startDate" style="height:36px;" placeholder="시작일">
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default "> 
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -91,7 +87,7 @@
 						     
 						     <div class="panel-body fileWrap">
 						       <div class="bootstrap-filestyle input-group date">
-						            <input type="text" id="userfile1" class="form-control" name="userfile" style="height:36px;" placeholder="종료일">
+						            <input type="text" id="userfile1" class="form-control" name="endDate" style="height:36px;" placeholder="종료일">
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default"> 
 												<span class="glyphicon glyphicon-calendar"></span>

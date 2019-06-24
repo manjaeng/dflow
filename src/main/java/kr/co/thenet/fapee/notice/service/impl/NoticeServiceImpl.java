@@ -31,4 +31,14 @@ public class NoticeServiceImpl implements NoticeService{
 		
 	}
 	
+	@Override
+	public FP_Notice selectNoticeServiceInfo(int num) throws Exception {
+		return noticeMapper.selectNoticeServiceInfo(num);
+	}
+
+	@Override
+	public void updateNoticeServiceViewCountInfo(int num) {
+		noticeMapper.updateNoticeServiceViewCountInfo(num);
+	}
+	
 }

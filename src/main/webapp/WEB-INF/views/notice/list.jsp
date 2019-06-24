@@ -8,6 +8,12 @@
 		$('#example1').DataTable({
 			"order" : [ [ 0, "desc" ] ]
 		});
+		
+		$('.table tbody tr').click(
+				function() {
+					location.href = '/notice/modify.do?num='
+							+ $(this).children().eq(0).html();
+				});
 	});
 </script>
 <div class="main">
@@ -26,8 +32,8 @@
 								style="width: 100%">
 								<thead>
 									<tr>
+										<th>idKey</th>
 										<th>제목</th>
-										<th>작성자</th>
 										<th>내용</th>
 										<th>작성일</th>
 										<th>조회수</th>
@@ -38,10 +44,10 @@
 									<c:forEach var="item" items="${noticeList}">
 										<tr>
 											<td>
-												<c:out value="${item.title}" />
+												<c:out value="${item.idKey}" />
 											</td>
 											<td>
-												<c:out value="${item.userIdKey}" />
+												<c:out value="${item.title}" />
 											</td>
 											<td>
 												<c:out value="${item.content}" />

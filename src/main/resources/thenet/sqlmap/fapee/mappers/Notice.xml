@@ -32,24 +32,43 @@
 		LIMIT #{_parameter}, 10
 		</if>
 	</select>
+
+	<select id="selectNoticeServiceInfo" parameterType="int" resultType="FP_Notice">
+		SELECT idKey,
+			   userIdKey,
+			   createDate,
+			   title,
+			   content,
+			   viewCount,
+			   startDate,
+			   endDate
+		  FROM FP_Notice
+		 WHERE idKey = #{idKey}
+	</select>
+		
+	<update id="updateNoticeServiceViewCountInfo" parameterType="int">
+		UPDATE FP_Notice
+		   SET viewCount = viewCount+1
+		 WHERE idKey = #{idKey}
+	</update>
 	
 	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" statementType="PREPARED" useGeneratedKeys="true" keyProperty="idKey">
-		insert into FP_Notice(
-			  userIdKey
-			, createDate
-			, title
-			, content
-			, viewCount
-			, startDate
-			, endDate
-		) values (
-			  #{userIdKey}
-			, now()
-			, #{title}
-			, #{content}
-			, 0
-			, #{startDate}
-			, #{endDate}
+		INSERT into FP_Notice(
+								  userIdKey
+								, createDate
+								, title
+								, content
+								, viewCount
+								, startDate
+								, endDate
+		) VALUES (
+								  #{userIdKey}
+								, now()
+								, #{title}
+								, #{content}
+								, 0
+								, #{startDate}
+								, #{endDate}
 		)
 	</insert>
 	

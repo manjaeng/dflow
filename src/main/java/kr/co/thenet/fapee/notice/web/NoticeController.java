@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.thenet.fapee.common.model.FP_Notice;
 import kr.co.thenet.fapee.notice.service.NoticeService;
@@ -37,11 +38,22 @@ public class NoticeController {
 	
 	@PostMapping("/notice/add.do")
 	public String noticeAdd(FP_Notice notice, HttpServletRequest req) throws Exception {
-
+		
 		noticeService.insertNoticeServiceInfo(notice);
-		return "notice/list.tiles";
+		
+		return "redirect:/notice/list.do";
 	}
 	
+	@GetMapping(value = "/notice/modify.do")
+	public String noticeModify(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
+
+		FP_Notice noticeInfo = noticeService.selectNoticeServiceInfo(num);
+		noticeService.updateNoticeServiceViewCountInfo(num);
+
+		model.addAttribute("noticeInfo", noticeInfo);
+
+		return "notice/modify.tiles";
+	}
 	
 
 }
