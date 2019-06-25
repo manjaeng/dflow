@@ -71,11 +71,11 @@
 								, #{endDate}
 		)
 	</insert>
-	
-	
-	
-	
-	
+
+	<delete id="deleteNoticeServiceInfo" parameterType="int">
+        DELETE FROM FP_Notice
+        WHERE idKey = #{idKey}
+    </delete>	
 	
 	<update id="updateNoticeServiceInfo" parameterType="FP_Notice">
 		UPDATE FP_Notice
