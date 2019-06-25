@@ -257,9 +257,9 @@ html.lock {position: fixed;width: 100%;height: 100%;overflow: hidden;}
 .contents{}
 
 /* 페이지 타이틀 */
-.pageHd{ height:56px;  }
-.pageHd>.in{height: 56px;border-bottom:#ddd solid 1px;position:fixed;left:0px;top:0px;right:0px;background-color:#ffffff;z-index:500;display: flex;justify-content: left;padding-left: 50px;}
-.pageHd .bts{position:absolute;left: 2px;top: 5px;}
+.pageHd{height: 50px;}
+.pageHd>.in{height: 50px;border-bottom:#ddd solid 1px;position:fixed;left:0px;top:0px;right:0px;background-color:#ffffff;z-index:500;display: flex;justify-content: left;padding-left: 50px;}
+.pageHd .bts{position:absolute;left: 2px;top: 2px;}
 .pageHd .bts .hisback{width:44px;height:44px;display:block;background:url(../images/common/hisback.png) no-repeat;background-size:100% auto;font-size:0px;}
 .pageHd .tit{margin:auto 0px;font-size: 20px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
 
@@ -485,8 +485,8 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 
 /* 팝업 레이어 */
 .popPage{ position:relative;left:0px;right:0px;top:0px;bottom:0;z-index:1000;background-color: rgba(0,0,0,0.52);outline:none;}
-.popPage>.pbd{background: #ffffff;position:relative;overflow: hidden;/* padding-top:50px; */min-width: 200px;}
-.popPage>.pbd .btnPopClose{position: fixed;right: 15px;top: 35px;width: 30px;height: 30px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}
+.popPage>.pbd{background: #ffffff;position:relative;overflow: hidden; min-width: 200px;}
+.popPage>.pbd .btnPopClose{position: fixed;right: 10px;top: 35px;width: 30px;height: 30px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}
 .popPage>.pbd>.phd{height: 50px;position: relative;}
 .popPage>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 50px;background-color: #ffffff;box-sizing:border-box;border-bottom: #c7c7c7 solid 1px;display: flex;align-items: center;}
 .popPage>.pbd>.phd .tit{font-size: 20px;color:#000000;font-family:"CJ Medium";white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left: 15px;}
@@ -504,6 +504,8 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 
 .popSample1 .poptents{padding: 15px;}
 .popSample2 .poptents{padding: 15px;}
+
+.popSample3 .pct{height:auto !important;max-height: inherit !important;}
 
 .noData{text-align: center;padding: 40px 0;position: relative;display: flex;align-content: center;flex-wrap: wrap;}
 .noData:before{width: 36px;height: 36px;display: block;margin: 0px auto 5px auto;background: url(../images/common/ico_warning.png) no-repeat;background-size: 100% auto;content: "";}
