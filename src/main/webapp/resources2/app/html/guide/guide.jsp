@@ -44,6 +44,7 @@
 			<a href="javascript:;" class="btn type c">버튼</a>
 			<a href="javascript:;" class="btn type d">버튼</a>
 			<a href="javascript:;" class="btn type e">버튼</a>
+			<a href="javascript:;" class="btn type f">버튼</a>
 
 			<p class="gap"></p>
 			<div class="btnSet">
@@ -117,9 +118,8 @@
 					});	
 
 					ui.confirm({ // 컨펌 창 띄우기
-						msg:'<p>공통 컨펌창 샘플  <br><u>kimkee@naver.com</u> 님은</p>' +
-							'<p>이미 <b>네이버</b> 인증을 통해 회원<br> 가입되었습니다.</p>'+
-							'<p>(회원가입 : 2017-08-08)</p>',
+						msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+							'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
 						ycb:function(){
 							console.log('컨펌확인결과');
 						},
@@ -149,9 +149,8 @@
 			<script>
 			var confirm_sample = function(){
 				ui.confirm({ // 컨펌 창 띄우기
-					msg:'<p>공통 컨펌창 샘플  <br><u>kimkee@naver.com</u> 님은</p>' +
-						'<p>이미 <b>네이버</b> 인증을 통해 회원<br> 가입되었습니다.</p>'+
-						'<p>(회원가입 : 2017-08-08)</p>',
+					msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+						'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
 					ycb:function(){
 						console.log('컨펌확인결과');
 					},
@@ -164,7 +163,7 @@
 			}
 			var alert_sample = function(){
 				ui.alert({  // 알럿창 띄우기
-					msg:'<p><b>알럿</b> <u>메시지</u><br> 입니다.</p>' ,
+					msg:'<p>등록이 완료 되었습니다.</p>' ,
 					ycb:function(){
 						console.log('알럿확인결과');
 					},

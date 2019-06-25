@@ -635,9 +635,9 @@ var ui = {
 				'<div class="pbd">'+
 					'<div class="pct">'+opt.msg+'</div>'+
 					'<div class="pbt">'+						
-						'<button type="button" class="btn type a btnConfirm">'+ opt.ybt +'</button>'+
+						'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
 					'</div>'+
-					'<button type="button" class="btnClose">닫기</button>'+
+					// '<button type="button" class="btnClose">닫기</button>'+
 				'</div>'+
 			'</article>';
 
@@ -676,10 +676,10 @@ var ui = {
 				'<div class="pbd">'+
 					'<div class="pct">'+opt.msg+'</div>'+
 					'<div class="pbt">'+						
-						'<button type="button" class="btn type e btnCancel">'+ opt.nbt +'</button>'+
-						'<button type="button" class="btn type a btnConfirm">'+ opt.ybt +'</button>'+
+						'<button type="button" class="btn type sm f btnCancel">'+ opt.nbt +'</button>'+
+						'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
 					'</div>'+
-					'<button type="button" class="btnClose">닫기</button>'+
+					// '<button type="button" class="btnClose">닫기</button>'+
 				'</div>'+
 			'</article>';
 			$("body").append(lyConfirm);
