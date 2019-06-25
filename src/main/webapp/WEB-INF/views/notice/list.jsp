@@ -9,12 +9,10 @@
 			"order" : [ [ 0, "desc" ] ]
 		});
 		
-		$('.table tbody tr').click(
-				function() {
-					location.href = '/notice/modify.do?num='
-							+ $(this).children().eq(0).html();
-				});
 	});
+	function gogo(idKey) {
+		location.href = '/notice/modify.do?num='+idKey
+	}
 </script>
 <div class="main">
 	<div class="main-content">
@@ -42,7 +40,7 @@
 								</thead>
 								<tbody>
 									<c:forEach var="item" items="${noticeList}">
-										<tr>
+										<tr style="cursor:pointer;" onclick="gogo('<c:out value="${item.idKey}"/>');">
 											<td>
 												<c:out value="${item.idKey}" />
 											</td>
