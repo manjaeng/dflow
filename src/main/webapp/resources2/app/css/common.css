@@ -580,11 +580,13 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .popFilter .filters>li.style{}
 .popFilter .filters>li.style ul.list{display:flex;flex-wrap: wrap;justify-content: flex-start;margin: 0 -1px 0 0;}
 .popFilter .filters>li.style ul.list>li{width: calc( 25% - 1px);margin-left: 1px;padding: 0 0px;}
-.popFilter .filters>li.style ul.list>li label{ position:relative; display:block;}
+.popFilter .filters>li.style ul.list>li label{position:relative;display:block;/* padding-bottom: 100%; */}
 .popFilter .filters>li.style ul.list>li input{ position:absolute; left:0px;;}
-.popFilter .filters>li.style ul.list>li .img{ display:block; position:relative;}
-.popFilter .filters>li.style ul.list>li .img::before{width:30px;height: 30px;background: url(../images/common/form.png) no-repeat;display:inline-block;vertical-align: -10px;background-size: 75px auto;margin-left: -4px;content:"";position: absolute;right: 0px;top: 0px;}
-.popFilter .filters>li.style ul.list>li input:checked + .img::before{background-position-y: -30px;}
+.popFilter .filters>li.style ul.list>li .thumb{  position:relative; display:block; padding-bottom: 100%;}
+.popFilter .filters>li.style ul.list>li .thumb .img{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;}
+.popFilter .filters>li.style ul.list>li .thumb .img::before{width:30px;height: 30px;background: url(../images/common/form.png) no-repeat;display:inline-block;vertical-align: -10px;background-size: 75px auto;margin-left: -4px;content:"";position: absolute;right: 0px;top: 0px;z-index: 100;}
+.popFilter .filters>li.style ul.list>li .thumb .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;}
+.popFilter .filters>li.style ul.list>li input:checked + .thumb .img::before{background-position-y: -30px;}
 .popFilter .filters>li.style ul.list>li .tit{display:block;text-align: center;min-height: 44px;font-size: 10px;font-family: "BlairMd";padding-top: 5px;}
 .popFilter .filters>li.match{}
 .popFilter .filters>li.match .uiSlider{/* margin: 50px 0px 30px 0px; */}

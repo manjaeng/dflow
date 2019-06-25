@@ -42,70 +42,70 @@
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Casual</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Elegant</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Curvy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Boho</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Vintage</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Rock</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Sporty</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Grunge</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Sexy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
+											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
 											<span class="tit">Trendy</span>
 										</label>
 									</li>
