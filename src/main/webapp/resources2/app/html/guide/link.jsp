@@ -81,6 +81,19 @@
 					</li>
 				</ul>
 			</li>
+			<li>
+				<h3><a href="javascript:;">룩</a></h3>
+				<ul>
+					<li>
+						<h4>리스트</h4> <em>ing</em>
+						<mark>/resources2/app/html/look/look.jsp</mark>
+					</li>
+					<li>
+						<h4>상세</h4> <em>ing</em>
+						<mark>/resources2/app/html/look/view.jsp</mark>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</section>
 </div>

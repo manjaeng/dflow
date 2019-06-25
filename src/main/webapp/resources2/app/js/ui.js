@@ -573,6 +573,35 @@ var ui = {
         init:function(){
         	$(this.sample1.els +" ul.slide" ).length && this.sample1.using();
         	$(this.sample2.els +" ul.slide" ).length && this.sample2.using();
+        	$(this.lookPic.els +" ul.slide" ).length && this.lookPic.using();
+        },
+		lookPic:{  //  샘플1
+            els: ".slideLookPic .swiper-container:not(.swiper-container-horizontal)",
+            opt: {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				watchOverflow:true,
+				pagination: {
+					type:'fraction',
+					el: '.pagination'
+				},
+                autoHeight:true,
+				autoplay:false,
+				preloadImages: true,
+				lazy: true,
+				loop: true
+            },
+			slide:[],
+            using: function() {
+				$(this.els).each(function(i){
+					if (  $(this).find(".swiper-slide").length  >= 2  ) {
+                        var _this = $(this);
+						ui.slides.lookPic.slide[i] = new Swiper( _this , ui.slides.lookPic.opt );
+						// console.log(ui.slides.lookPic.slide[i]);
+                    } 
+				});
+			}
         },
 		sample1:{  //  샘플1
             els: ".slideSample1 .swiper-container",

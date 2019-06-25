@@ -110,7 +110,7 @@
 					</div>
 					<pre class="brush: js">
 					ui.alert({  // 알럿창 띄우기
-						msg:'<p>알럿 메시지<br> 입니다.</p>' ,
+						msg:'<p>등록이 완료 되었습니다.</p>' ,
 						ycb:function(){
 							console.log('알럿확인결과');
 						},
