@@ -26,12 +26,12 @@
 								<label class="checkbox"><input type="checkbox"><span>남자</span></label>
 							</div>
 						</li>
-						<li class="contry">
+						<li class="country">
 							<div class="ht">COUNTRY</div>
 							<div class="ct">
 								<select class="select">
-									<option>Korea</option>
-									<option>Korea</option>
+									<option>KOREA</option>
+									<option>KOREA</option>
 								</select>
 							</div>
 						</li>
@@ -42,70 +42,70 @@
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Casual</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Elegant</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Curvy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Boho</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Vintage</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Rock</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Sporty</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Grunge</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Sexy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<span class="img"><img src="https://dummyimage.com/120" alt=""></span>
+											<span class="img"><img src="https://dummyimage.com/160" alt=""></span>
 											<span class="tit">Trendy</span>
 										</label>
 									</li>
@@ -116,10 +116,13 @@
 							<div class="ht">MATCH</div>
 							<div class="ct">
 								<div class="uiSlider" id="matchSlider">
-									<span class="num min">0%</span>
-									<span class="num max">100%</span>
 									<em class="bar"></em>
 									<div class="ui-slider-handle"><span id="custom-handle"></span></div>
+									<div class="nums">
+										<span class="num min">0</span>
+										<span class="ds">~</span>
+										<span class="num max">100<i>%</i></span>
+									</div>
 								</div>
 							</div>
 						</li>
@@ -134,8 +137,8 @@
 			<div class="pbt">
 				<div class="in">
 					<div class="bts">
-						<a class="btn type e btnReset" href="javascript:;">초기화</a>
-						<a class="btn type a btnSch" href="/resources2/app/html/common/filterResult.jsp">검색</a>
+						<a class="btn type xl b btnReset" href="javascript:;">초기화</a>
+						<a class="btn type xl d btnSch" href="/resources2/app/html/common/filterResult.jsp">검색</a>
 					</div>
 				</div>
 			</div>
