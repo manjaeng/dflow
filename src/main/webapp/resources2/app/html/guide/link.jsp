@@ -75,6 +75,10 @@
 						<h4>로그인</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/login.jsp</mark>
 					</li>
+					<li>
+						<h4>가입</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/join.jsp</mark>
+					</li>
 				</ul>
 			</li>
 		</ul>

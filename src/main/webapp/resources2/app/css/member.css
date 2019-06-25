@@ -1,5 +1,5 @@
 @charset "utf-8";
-
+/* 로긴,가입 */
 .popJoinPre{}
 .popJoinPre .poptents{}
 .popJoinPre .box{padding: 69px 16px 170px 16px;min-height: calc(100vh - 169px);text-align: center;}
@@ -16,15 +16,13 @@
 .popJoinPre .joinSet .list>li.kakao .bt{background-image:url(../images/common/ico_kakaotalk.png);}
 .popJoinPre .joinSet .list>li.facebook .bt{background-image:url(../images/common/ico_facebook.png);}
 
-
+/* 로그인 */
 .popLogin{}
 .popLogin .poptents{}
 .popLogin .loginForm{padding: 69px 16px 20px 16px;}
 .popLogin .loginForm .hdt{font-size: 24px;text-align: center;color: #000000;}
 .popLogin .loginForm .hdt em{ font-weight: bold;}
-.popLogin .loginForm .form{
-    margin-top: -5px;
-}
+.popLogin .loginForm .form{margin-top: -5px;}
 .popLogin .loginForm .form .uiIptPlc{}
 .popLogin .loginForm .form .uiIptPlc .plc{}
 .popLogin .loginForm .form .uiIptPlc .input{}
@@ -36,3 +34,20 @@
 .popLogin .loginForm .info .save label{}
 .popLogin .loginForm .info .txt{}
 .popLogin .loginForm .info .txt .link{display: block;padding: 4px 0;}
+
+
+/* 가입 */
+.popJoin{}
+.popJoin .poptents{}
+.popJoin .joinForm{padding: 69px 16px 20px 16px;}
+.popJoin .joinForm .hdt{font-size: 24px;text-align: center;color: #000000;}
+.popJoin .joinForm .hdt em{ font-weight: bold;}
+.popJoin .joinForm .form{margin-top: -5px;}
+.popJoin .joinForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
+.popJoin .joinForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
+.popJoin .joinForm .form .uiIptPlc{}
+.popJoin .joinForm .form .uiIptPlc .plc{}
+.popJoin .joinForm .form .uiIptPlc .input{}
+.popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
+.popJoin .joinForm .form .btns{margin-top: 20px;}
+.popJoin .joinForm .form .btns .btn{width:100%;}

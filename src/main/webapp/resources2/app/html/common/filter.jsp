@@ -137,7 +137,7 @@
 			<div class="pbt">
 				<div class="in">
 					<div class="bts">
-						<a class="btn type xl b btnReset" href="javascript:;">초기화</a>
+						<a class="btn type xl e btnReset" href="javascript:;">초기화</a>
 						<a class="btn type xl d btnSch" href="/resources2/app/html/common/filterResult.jsp">검색</a>
 					</div>
 				</div>
