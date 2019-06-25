@@ -76,7 +76,7 @@ var ui = {
 				var upVar = 0;
 				var scrStopEvent = null;
 			
-				$(window).on("pageshow scroll orientationchange", function(e){  // 스크롤 내리는 중 OR 올리는중 
+				$(window).on("pageshow scroll", function(e){  // 스크롤 내리는 중 OR 올리는중 
 
 					var initPosition = $(this).scrollTop();
 					if(initPosition > prevPosition){
@@ -109,7 +109,7 @@ var ui = {
 
 				});
 
-				$(window).on("pageshow scroll orientationchange", function(e){ // 스크롤 맨 밑에 일때
+				$(window).on("pageshow scroll", function(e){ // 스크롤 맨 밑에 일때
 					var docH = $(document).height();
 					var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 					// console.log(docH,scr);
@@ -836,6 +836,13 @@ var ui = {
 					//fadeScrollbars: true
 				});
 				//  ui.popLayer.scroll.popLayerSample1.scrollTo(0, ui.popLayer.scroll.popLayerSample1.maxScrollY, 400);
+				this.scroll[id].on('scrollEnd', function () {
+					if( this.maxScrollY == this.y ){						
+						// console.log("끝",this.maxScrollY , this.y);
+						// $('#'+id+'>.pbd>.pct .poptents').append('<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>')
+						// ui.popLayer.refresh(id);
+					}
+				});
 			}
 		},
 		refresh:function(id){

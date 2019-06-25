@@ -20,6 +20,12 @@
          language: "UTF-8"
 
      });
+     
+     $('.btn-danger').click(function() {
+         if (confirm('삭제하시겠습니까?')) {
+             location.href = '/notice/delete.do?idKey=' + '${noticeInfo.idKey}';
+         }
+     });
 
  });
 
@@ -108,7 +114,7 @@
 							<div class="panel-body">
 								<div class="form-group text-center" style="margin-bottom: 0">
 									<button class="btn btn-primary">수정완료</button>
-									<button type="reset" class="btn btn-danger">삭제</button>
+									<button type="button" class="btn btn-danger">삭제</button>
 								</div>
 							</div>
 						</div>

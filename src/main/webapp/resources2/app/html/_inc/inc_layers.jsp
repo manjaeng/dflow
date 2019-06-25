@@ -57,3 +57,23 @@
 		</div>
 	</div>
 </article>
+
+
+
+<!-- 팝레이어 샘플3 -->
+<article class="popLayer type a popSample3" id="popSample3">
+	<div class="pbd">
+		<div class="phd">
+			<div class="in">
+				<h1 class="tit">타이틀</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
+		</div>
+		<div class="pct">
+			<main class="poptents">
+				<img src="http://placeimg.com/640/640/any/5" alt="">
+				
+			</main>
+		</div>
+	</div>
+</article>

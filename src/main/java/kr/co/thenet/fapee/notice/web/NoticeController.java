@@ -55,18 +55,6 @@ public class NoticeController {
 		return "notice/modify.tiles";
 	}
 	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
 	@PostMapping("/notice/modify.do")
 	public String noticeModify(FP_Notice notice, HttpServletRequest req) throws Exception {
 		
@@ -74,6 +62,14 @@ public class NoticeController {
 		
 		return "redirect:/notice/list.do";
 	}
+	
+	@GetMapping("/notice/delete.do")
+    public String noticeDelete(@RequestParam int idKey) throws Exception{
+        
+        noticeService.deleteNoticeServiceInfo(idKey);
+        
+        return "redirect:/notice/list.do";
+    }
 	
 
 }
