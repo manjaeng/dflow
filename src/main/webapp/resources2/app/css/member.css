@@ -51,3 +51,61 @@
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
 .popJoin .joinForm .form .btns{margin-top: 20px;}
 .popJoin .joinForm .form .btns .btn{width:100%;}
+
+
+/* 마이페이지 타이틀 */
+.prfeHd{height: 56px;}
+.prfeHd>.in{height: 56px;/* border-bottom: #c2c2c2 solid 1px; */position:fixed;left:0px;top:0px;right:0px;background-color:rgba(255,255,255,0.9);z-index:500;display: flex;justify-content: left;padding: 0px 92px 0px 54px;}
+.prfeHd .tit{margin:auto 0px;font-size: 17px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;/* font-family:"BlairMd"; */}
+.prfeHd .bts{position:absolute;left: 5px;top: 5px;}
+.prfeHd .bts .hisback{width:44px;height:44px;display:block;background:url(../images/common/hisback.png) no-repeat;background-size:100% auto;font-size:0px;}
+.prfeHd .set{position:absolute;right: 5px;top: 5px; overflow:hidden;}
+.prfeHd .set .bt{width:44px;height:44px;background: no-repeat;background-size:100% auto;font-size:0px;float: left;}
+.prfeHd .set .bt.alim{background-image: url(../images/common/ico_my_alim.png); position:relative; }
+.prfeHd .set .bt.alim.on{}
+.prfeHd .set .bt.alim.on:after{width:6px;height:6px;background:#ff0000;content:"";position:absolute;right: 7px;top: 13px;border-radius: 100%;}
+.prfeHd .set .bt.conf{background-image: url(../images/common/ico_my_set.png) }
+.prfeHd .set .bt.more{background-image: url(../images/common/ico_my_more.png) }
+
+
+
+/* 프로필 박스 */
+.uiPrfeBox{}
+.uiPrfeBox .user{background:#f3fcf9;padding:25px 15px;display:flex;justify-content: center;align-items: center;}
+.uiPrfeBox .user .photo{position:relative;}
+.uiPrfeBox .user .photo .pic{}
+.uiPrfeBox .user .photo .pic img{width:80px;height:80px;border-radius: 100px;}
+.uiPrfeBox .user .photo .bts{position:absolute;right:0px; bottom: 0px;}
+.uiPrfeBox .user .photo .bts .bt{width:29px;height:29px;display:block;border: #e5e5e5 solid 1px;border-radius: 100%;font-size: 0px;background: #ffffff no-repeat;background-size: 100% auto;}
+.uiPrfeBox .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
+.uiPrfeBox .user .infos{margin-left: 20px;}
+.uiPrfeBox .user .infos .name{font-size: 24px;line-height: 100%;max-width: 51vw;}
+.uiPrfeBox .user .infos .summ{font-size: 15px; margin-top: 5px;}
+.uiPrfeBox .user .infos .summ .cm{color: #66dfb2;}
+.uiPrfeBox .user .infos .summ .nt{color: #7a7a7a;}
+.uiPrfeBox .user .infos .summ .nt:before{ content:""; display: inline-block; vertical-align: middle; width: 1px; background:#e5e5e5; margin: 0 5px; height:14px;}
+.uiPrfeBox .user .infos .amount{display:flex; margin-top: 10px;}
+.uiPrfeBox .user .infos .amount .fw{margin-right: 20px;}
+.uiPrfeBox .user .infos .amount .fwers{}
+.uiPrfeBox .user .infos .amount .fwing{}
+.uiPrfeBox .user .infos .amount .fw em{color: #101010;display:block; line-height: 14px;}
+.uiPrfeBox .user .infos .amount .fw i{color: #cccccc;display:block; line-height: 12px; font-size: 9px;}
+.uiPrfeBox .foll{position:relative;min-height: 20px;}
+.uiPrfeBox .foll .btn{height:30px;font-size: 12px;position:absolute;right: 15px;bottom: 0px;min-width: 84px;}
+.uiPrfeBox .desc{padding: 20px 30px 35px 60px;}
+.uiPrfeBox .desc .ment{font-size: 14px;color: #8a8a8a;position:relative;margin-bottom: 15px;}
+.uiPrfeBox .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px;background-size:32px auto;content:"";}
+.uiPrfeBox .desc .url {font-size: 12px;margin-top: 10px;}
+.uiPrfeBox .desc .url a{color: #66dfb2; }
+.uiPrfeBox .desc .tag{ margin:0px -2px; display:flex; margin-top: 7px;}
+.uiPrfeBox .desc .tag .hash{font-size: 12px;; color: #101010; border: #66dfb2 solid 1px; border-radius: 20px;padding:0 8px; margin:0 2px;}
+
+.prInfoList{}
+.prInfoList .tabs{}
+.prInfoList .tabs .menu{display:flex; justify-content: center;}
+.prInfoList .tabs .menu>li{width:100%; background:#000;position:relative;}
+.prInfoList .tabs .menu>li::before{ content:"";width:1px; height:24px; background:#666666; position:absolute; left:0px; top: 12px;}
+.prInfoList .tabs .menu>li:first-child::before{display:none;}
+.prInfoList .tabs .menu>li a{height:48px; display:flex; justify-content: center; align-items: center; color:rgba(255,255,255,0.6);}
+.prInfoList .tabs .menu>li.active a{color: #ffffff;}
+.prInfoCont{}
