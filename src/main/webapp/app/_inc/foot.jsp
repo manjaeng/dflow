@@ -1,0 +1,1 @@
+﻿<div id="foot" class="foot">푸터</div>

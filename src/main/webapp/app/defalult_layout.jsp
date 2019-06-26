@@ -43,9 +43,7 @@
 	height: 50px;
 	margin-bottom: 30px;
 }
-</style>
-</head>
-<style>
+
 td {
 	width: 10%;
 }
@@ -61,6 +59,7 @@ tr {
 	font-size:30px;
 }
 </style>
+</head>
 <body>
 	<input type="text" id="location" placeholder="직접 페이지 입력 ">
 	<div class="article1">

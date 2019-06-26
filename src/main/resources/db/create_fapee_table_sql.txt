@@ -58,3 +58,7 @@ CREATE INDEX idx_deviceId_FP_UserFilter ON FP_UserFilter(deviceId);
 CREATE TABLE FP_UserSize (
   
 );
+
+CREATE TABLE FP_Look (
+  
+);

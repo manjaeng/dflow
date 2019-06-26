@@ -1,5 +1,5 @@
 fp.load = {};
-fp.load.targetSelector = "#main";
+fp.load.targetSelector = "#wrap";
 fp.load.url_prefix = "/app/";
 
 fp.load.move = function(obj) {

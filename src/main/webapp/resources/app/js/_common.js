@@ -13,7 +13,9 @@ fp.util.jsonAjax = function(obj) {
 			obj.success(data);
 		},
 		error : function(xhr,status,error) {
-			console.log('status : ',xhr.status);
+			if(obj.error) {
+				obj.error(xhr,status,error);
+			}
 		}
 	});
 }
