@@ -189,19 +189,19 @@
 
 			<p class="gap"></p>
 			
-			<input type="text" placeholder="텍스트">								<p class="gap"></p>
+			<input type="text" class="input" placeholder="텍스트">								<p class="gap"></p>
 			
-			<input type="text" class="valid" placeholder="텍스트">					<p class="gap"></p>
+			<input type="text" class="input valid" placeholder="텍스트">					<p class="gap"></p>
 			
-			<input type="text" class="valid ok" placeholder="텍스트 ok">			<p class="gap"></p>
+			<input type="text" class="input valid ok" placeholder="텍스트 ok">			<p class="gap"></p>
 			
-			<input type="text" class="valid no" placeholder="텍스트 no">			<p class="gap"></p>
+			<input type="text" class="input valid no" placeholder="텍스트 no">			<p class="gap"></p>
 			
-			<input type="password" class="valid" placeholder="비밀번호">			<p class="gap"></p>
+			<input type="password" class="input valid" placeholder="비밀번호">			<p class="gap"></p>
 			
-			<input type="text" readonly="readonly" value="readonly">				<p class="gap"></p>
+			<input type="text" class="input" readonly="readonly" value="readonly">				<p class="gap"></p>
 			
-			<input type="text" disabled="disabled" value="disabled">				<p class="gap"></p>
+			<input type="text" class="input" disabled="disabled" value="disabled">				<p class="gap"></p>
 			
 			<textarea class="textarea" placeholder="내용"></textarea>				<p class="gap"></p>
 			
@@ -214,7 +214,7 @@
 			</select>
 																					<p class="gap"></p>
 			<div class="uiSchIpt">
-				<input type="search" placeholder="검색어를 입력하세요">
+				<input type="search" class="input" placeholder="검색어를 입력하세요">
 				<button type="button" class="sch"></button>
 			</div>
 
@@ -222,7 +222,7 @@
 
 			<span class="uiAddFile" data-ui="attach">
 				<span class="file">
-					<input type="text" class="loc" readonly="readonly" value="" placeholder="첨부파일">
+					<input type="text" class="input loc" readonly="readonly" value="" placeholder="첨부파일">
 					<button type="button" class="delete">삭제</button>
 				</span>
 				<span class="btnAttach">

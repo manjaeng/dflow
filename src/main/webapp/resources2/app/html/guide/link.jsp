@@ -98,6 +98,10 @@
 				<h3><a href="javascript:;">마이페이지</a></h3>
 				<ul>
 					<li>
+						<h4>설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/setting.jsp</mark>
+					</li>
+					<li>
 						<h4>프로필</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/profile.jsp</mark>
 					</li>

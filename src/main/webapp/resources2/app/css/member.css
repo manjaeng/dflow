@@ -70,35 +70,35 @@
 
 
 /* 프로필 박스 */
-.uiPrfeBox{}
-.uiPrfeBox .user{background:#f3fcf9;padding:25px 15px;display:flex;justify-content: center;align-items: center;}
-.uiPrfeBox .user .photo{position:relative;}
-.uiPrfeBox .user .photo .pic{}
-.uiPrfeBox .user .photo .pic img{width:80px;height:80px;border-radius: 100px;}
-.uiPrfeBox .user .photo .bts{position:absolute;right:0px; bottom: 0px;}
-.uiPrfeBox .user .photo .bts .bt{width:29px;height:29px;display:block;border: #e5e5e5 solid 1px;border-radius: 100%;font-size: 0px;background: #ffffff no-repeat;background-size: 100% auto;}
-.uiPrfeBox .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
-.uiPrfeBox .user .infos{margin-left: 20px;}
-.uiPrfeBox .user .infos .name{font-size: 24px;line-height: 100%;max-width: 51vw;}
-.uiPrfeBox .user .infos .summ{font-size: 15px; margin-top: 5px;}
-.uiPrfeBox .user .infos .summ .cm{color: #66dfb2;}
-.uiPrfeBox .user .infos .summ .nt{color: #7a7a7a;}
-.uiPrfeBox .user .infos .summ .nt:before{ content:""; display: inline-block; vertical-align: middle; width: 1px; background:#e5e5e5; margin: 0 5px; height:14px;}
-.uiPrfeBox .user .infos .amount{display:flex; margin-top: 10px;}
-.uiPrfeBox .user .infos .amount .fw{margin-right: 20px;}
-.uiPrfeBox .user .infos .amount .fwers{}
-.uiPrfeBox .user .infos .amount .fwing{}
-.uiPrfeBox .user .infos .amount .fw em{color: #101010;display:block; line-height: 14px;}
-.uiPrfeBox .user .infos .amount .fw i{color: #cccccc;display:block; line-height: 12px; font-size: 9px;}
-.uiPrfeBox .foll{position:relative;min-height: 20px;}
-.uiPrfeBox .foll .btn{height:30px;font-size: 12px;position:absolute;right: 15px;bottom: 0px;min-width: 84px;}
-.uiPrfeBox .desc{padding: 20px 30px 35px 60px;}
-.uiPrfeBox .desc .ment{font-size: 14px;color: #8a8a8a;position:relative;margin-bottom: 15px;}
-.uiPrfeBox .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px;background-size:32px auto;content:"";}
-.uiPrfeBox .desc .url {font-size: 12px;margin-top: 10px;}
-.uiPrfeBox .desc .url a{color: #66dfb2; }
-.uiPrfeBox .desc .tag{ margin:0px -2px; display:flex; margin-top: 7px;}
-.uiPrfeBox .desc .tag .hash{font-size: 12px;; color: #101010; border: #66dfb2 solid 1px; border-radius: 20px;padding:0 8px; margin:0 2px;}
+.uiPrfeSet.a{}
+.uiPrfeSet.a .user{background:#f3fcf9;padding:25px 15px;display:flex;justify-content: center;align-items: center;}
+.uiPrfeSet.a .user .photo{position:relative;}
+.uiPrfeSet.a .user .photo .pic{}
+.uiPrfeSet.a .user .photo .pic img{width:80px;height:80px;border-radius: 100px;}
+.uiPrfeSet.a .user .photo .bts{position:absolute;right:0px; bottom: 0px;}
+.uiPrfeSet.a .user .photo .bts .bt{width:29px;height:29px;display:block;border: #e5e5e5 solid 1px;border-radius: 100%;font-size: 0px;background: #ffffff no-repeat;background-size: 100% auto;}
+.uiPrfeSet.a .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
+.uiPrfeSet.a .user .infos{margin-left: 20px;}
+.uiPrfeSet.a .user .infos .name{font-size: 24px;line-height: 100%;max-width: 51vw;}
+.uiPrfeSet.a .user .infos .summ{font-size: 15px; margin-top: 5px;}
+.uiPrfeSet.a .user .infos .summ .cm{color: #66dfb2;}
+.uiPrfeSet.a .user .infos .summ .nt{color: #7a7a7a;}
+.uiPrfeSet.a .user .infos .summ .nt:before{ content:""; display: inline-block; vertical-align: middle; width: 1px; background:#e5e5e5; margin: 0 5px; height:14px;}
+.uiPrfeSet.a .user .infos .amount{display:flex; margin-top: 10px;}
+.uiPrfeSet.a .user .infos .amount .fw{margin-right: 20px;}
+.uiPrfeSet.a .user .infos .amount .fwers{}
+.uiPrfeSet.a .user .infos .amount .fwing{}
+.uiPrfeSet.a .user .infos .amount .fw em{color: #101010;display:block; line-height: 14px;}
+.uiPrfeSet.a .user .infos .amount .fw i{color: #cccccc;display:block; line-height: 12px; font-size: 9px;}
+.uiPrfeSet.a .foll{position:relative;min-height: 20px;}
+.uiPrfeSet.a .foll .btn{height:30px;font-size: 12px;position:absolute;right: 15px;bottom: 0px;min-width: 84px;}
+.uiPrfeSet.a .desc{padding: 20px 30px 35px 60px;}
+.uiPrfeSet.a .desc .ment{font-size: 14px;color: #8a8a8a;position:relative;margin-bottom: 15px;}
+.uiPrfeSet.a .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px;background-size:32px auto;content:"";}
+.uiPrfeSet.a .desc .url {font-size: 12px;margin-top: 7px;}
+.uiPrfeSet.a .desc .url a{color: #66dfb2;display: inline-block;padding: 3px 0px;}
+.uiPrfeSet.a .desc .tag{margin:0px -2px;display:flex;margin-top: 4px;}
+.uiPrfeSet.a .desc .tag .hash{font-size: 12px;; color: #101010; border: #66dfb2 solid 1px; border-radius: 20px;padding:0 8px; margin:0 2px;}
 
 .prInfoList{}
 .prInfoList .tabs{}
@@ -109,3 +109,60 @@
 .prInfoList .tabs .menu>li a{height:48px; display:flex; justify-content: center; align-items: center; color:rgba(255,255,255,0.6);}
 .prInfoList .tabs .menu>li.active a{color: #ffffff;}
 .prInfoCont{}
+
+
+
+
+/* 설정 */
+.popSetting{ background:#f2f2f2; min-height: 100vh;}
+.popSetting>.pbd{ background:#f2f2f2;}
+.popSetting>.pbd>.phd>.in{background: #f2f2f2;border-bottom-width: 0px;justify-content: center;}
+.popSetting>.pbd>.phd>.in .tit{ padding:0px;}
+.popSetting .secMySets{padding: 0px 20px 20px 20px;}
+.popSetting .secMySets .list{}
+.popSetting .secMySets .list>li{background:#ffffff;margin-top: 15px;box-shadow: rgba(0,0,0,0.2) 0px 0px 3px;border-radius: 5px;padding: 25px 20px 25px 15px;}
+.popSetting .secMySets .list>li>a{color: #999999;font-size: 16px;display:block;padding: 3px 0 3px 35px;position:relative;}
+.popSetting .secMySets .list>li>a:before{width:22px;height:22px;background: url(../images/common/ico_my_set_a.png) no-repeat;background-size: 100% auto;position:absolute;left: 3px;top: 4px;content:"";}
+.popSetting .secMySets .list>li>ul{margin-left: 35px;}
+.popSetting .secMySets .list>li>ul>li{margin-top: 5px;position:relative;}
+.popSetting .secMySets .list>li>ul>li>a{ color: #101010; font-size: 16px;  display:block;padding: 3px 0 3px 0px;}
+.popSetting .secMySets .list>li>ul>li>a:before{width:16px;height:16px;background: url(../images/common/ico_my_set_ar.png) no-repeat;background-size: 100% auto;position:absolute;right: 0px;top: 8px;content:"";}
+
+
+
+.uiPrfeSet.b{}
+.uiPrfeSet.b .user{background:#f3fcf9;padding:25px 15px;display:flex;justify-content: center;align-items: center;}
+.uiPrfeSet.b .user .photo{position:relative;}
+.uiPrfeSet.b .user .photo .pic{}
+.uiPrfeSet.b .user .photo .pic img{width:80px;height:80px;border-radius: 100px;}
+.uiPrfeSet.b .user .photo .bts{position:absolute;right:0px; bottom: 0px;}
+.uiPrfeSet.b .user .photo .bts .bt{width:29px;height:29px;display:block;border: #e5e5e5 solid 1px;border-radius: 100%;font-size: 0px;background: #ffffff no-repeat;background-size: 100% auto;}
+.uiPrfeSet.b .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
+
+.prfeForm{padding:16px 16px 16px 16px ;}
+.prfeForm .list{}
+.prfeForm .list>li{border-bottom: #cccccc solid 1px;}
+.prfeForm .list>li .dt{font-size: 12px; color: #66dfb2; margin-top: 10px; display:block;}
+.prfeForm .list>li .dd{position:relative;display: block;}
+.prfeForm .list>li .dd{}
+.prfeForm .list>li .dd .input{padding-top: 2px;}
+.prfeForm .list>li .dd .textarea{height:40px;padding-top: 9px;}
+.prfeForm .list>li .dd .num{position:absolute;right: 0px;top: -20px;font-size: 12px;color: #999999;}
+.prfeForm .list>li .dd label + label{ margin-left: 30px;}
+.prfeForm .list>li .dd .select.nt{display: inline-block; width:initial; padding-left: 0px; min-width:150px;}
+.prfeForm .memDis{margin-top: 10px;}
+.prfeForm .memDis a{display:block; padding:10px 0px; width:100%; text-decoration: underline;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

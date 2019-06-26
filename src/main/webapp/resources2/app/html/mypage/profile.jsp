@@ -17,15 +17,15 @@
 				</div>
 				<h1 class="tit">패피루키</h1>
 				<div class="set">
-					<a href="javascript:;" class="bt alim on">알림</a>
-					<a href="javascript:;" class="bt conf">설정</a>
-					<a href="javascript:;" class="bt more">더보기</a>
+					<a class="bt alim on" href="javascript:;">알림</a>
+					<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
+					<a class="bt more" href="javascript:;">더보기</a>
 				</div>
 			</div>
 		</div>
 		<main id="contents" class="contents">
 
-			<section class="uiPrfeBox">
+			<section class="uiPrfeSet a">
 				<div class="user">
 					<div class="photo">
 						<div class="pic"><img src="https://placeimg.com/160/160/1" alt=""></div>
