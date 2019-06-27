@@ -14,7 +14,7 @@
 				<div class="bts">
 					<a href="javascript:history.back();" class="hisback">뒤로</a>
 				</div>
-				<h1 class="tit">FILTER RESULT </h1>
+				<h1 class="tit"><a href="javascript:;"  onclick="addItemFnc();">FILTER RESULT</a> </h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
@@ -42,7 +42,11 @@
 				</div>
 				<div class="tots"><span class="dt">RESULT</span><span class="num">52,623</span> </div>
 				<div class="uiItemList resultList">
-					<ul class="list" id="dp_list"></ul>
+					<ul class="list" id="dp_list">
+
+
+
+					</ul>
 
 					<div class="uiLoadMore">
 						<em></em>
@@ -58,48 +62,103 @@
 	<div class="popLayerArea">
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
-
+	<script src="/resources2/app/js/masonry.pkgd.js"></script>
+	<script src="/resources2/app/js/imagesloaded.pkgd.min.js"></script>
 	<script>
+		
+
 	$(document).ready(function(){
-		ui.listMore.init(itemListAdd);
+
+	
+		$cult_grid = $('#dp_list').masonry({
+			itemSelector: '#dp_list .box',
+			percentPosition: true,
+			gutter:2,
+			transitionDuration: 700
+		});
+		$cult_grid.imagesLoaded().progress( function() {
+			$cult_grid.masonry('layout');
+		}); 
+		// $(window).resize(function() {
+		// 	$('#dp_list').masonry('layout');
+		// });
+
+
+		$cult_grid.on( 'click', '.del', function(event) {
+			// remove clicked element
+			// console.log( $(event.currentTarget).closest(".box") );
+
+			$cult_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );
+			// $cult_grid.masonry('layout');
+			
+			window.setTimeout(function(){
+				$cult_grid.masonry('layout');
+			},750);
+			// layout remaining item elements
+			
+		});
+
+		appendStat = true ;
+		addItemFnc = function(){
+			$(".uiLoadMore").addClass("active");
+			//ui.loading.show();
+			$.ajax({
+				type: "post",
+				url: "./filterResult_more.jsp",
+				dataType: "html",
+				success: function(html) {
+					window.setTimeout(function(){
+						$items = $(html)
+						$cult_grid.append( $items ).masonry( 'appended', $items );
+						window.setTimeout(function(){
+						},10);
+							$cult_grid.masonry('layout');
+							$('#dp_list').addClass("load");
+						appendStat = true;
+						$(".uiLoadMore").removeClass("active");
+						//ui.loading.hide();
+					},500);
+				}
+			});	
+		};
+
+		$(window).on("scroll load", function() {
+			
+			var docH = $(document).height();
+			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
+			console.log(docH,scr);
+			if (docH <= scr  && appendStat == true) {
+				console.log("바닥sss");
+				addItemFnc();
+				appendStat = false;
+				
+				
+			}
+		});
+
+		window.setTimeout(function(){
+
+		},1000)
+			addItemFnc();
+
+
+
+		$(document).on("click",".uiItemList>.list>li .item .bts .bt.del",function(e){
+			// $(this).closest(".box").fadeOut(0,function(){
+			// 	$(this).remove();
+			// 		$('#dp_list').masonry('destroy')
+			// 	window.setTimeout(function(){
+			// 		$('#dp_list').masonry('layout');
+			// 	},210);
+			// });
+
+		});
+
+
 	});
 
-	var page = 0;
-	var itemListAdd = function(){
-		ui.listLoad.attach(); // 로딩이미지 Show
-		$("#btnListMore").prop("disabled",true);
-		if( ui.listMore.active ){
-			ui.listMore.active = false;
-			ui.listMore.using();
-			page ++;
-			window.setTimeout(function(){
-				$.ajax({
-					type: "post",
-					url: "./filterResult_more.jsp",
-					dataType: "html",
-					success: function(html) {
-						$("#dp_list").append(html).addClass("load");
-						$("#btnListMore").prop("disabled",false);
-						ui.listLoad.detach();
-						ui.listMore.active = true;
-						console.log("페이징 = " + page);
-						$("#debug").html("페이징 = " + page );
-						if (page >= 3) {
-							console.log("끝");
-							ui.listMore.removeEvent();
-						}
-					},
-					error:function(error){
-						page --;
-						console.log("페이징 = " + page);
-						console.log("에러 = " + error.readyState);
-						ui.listLoad.error();
-						$("#btnListMore").prop("disabled",false);
-					}
-				});
-			},1000);
-		}
-	};
+
+
 	</script>
 	
 	<!--// 컨텐츠 끝 -->

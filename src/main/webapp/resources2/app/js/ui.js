@@ -1,4 +1,4 @@
-﻿//*******************************************//
+//*******************************************//
 // 김기현 : kimkee@naver.com    
 // date : 2019-06-12 ~
 //*******************************************//
@@ -114,7 +114,7 @@ var ui = {
 					var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 					// console.log(docH,scr);
 					if(docH <= scr + 0 ){				
-						console.log("바닥");						
+// 						console.log("바닥");						
 						ui.ly.botNav.show();
 						// return false;
 					}else{
@@ -875,7 +875,7 @@ var ui = {
 			}
 		},
 		refresh:function(id){
-			$(window).trigger("resize");
+			// $(window).trigger("resize");
 			ui.popLayer.scroll[id].refresh();
 		}
 	},
