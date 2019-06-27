@@ -65,7 +65,11 @@
 					</ul>
 				</div>
 				<div class="prInfoCont">
-					탭 내용
+					
+					<div class="tabConts look">
+						
+					</div>
+
 				</div>
 			</section>
 

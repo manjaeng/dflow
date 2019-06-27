@@ -290,7 +290,7 @@
 				</div>
 			</section>
 
-			<div class="uiDate"><input type="text"  placeholder="YYYY-MM-DD" class="datepicker" readonly="readonly"></div>
+			<div class="uiDate"><input type="text"  placeholder="YYYY-MM-DD" class="input datepicker" readonly="readonly"></div>
 			<p class="gap"></p>
 						
 			<ul class="uiTab type a">

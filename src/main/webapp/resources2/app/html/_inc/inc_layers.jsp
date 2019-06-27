@@ -15,14 +15,14 @@
 				<p>sdfsdfsfsd</p>
 				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text">
+				<input type="text" class="input">
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text">
+				<input type="text" class="input">
 				<p>내용</p><p>내용</p>
 				<label class="checkbox"><input type="checkbox"><span></span></label>
 				<label class="radio"><input type="radio"><span></span></label>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text">
+				<input type="text" class="input">
 			</main>
 		</div>
 		<div class="pbt">
@@ -48,9 +48,9 @@
 			<main class="poptents">
 				
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text">
+				<input type="text" class="input">
 				<p>sdfsdfsfsd</p>
-				<textarea></textarea>
+				<textarea class="textarea"></textarea>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				
 			</main>
