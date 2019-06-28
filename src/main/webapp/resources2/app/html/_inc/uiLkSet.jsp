@@ -35,9 +35,9 @@
 	</div>
 	<div class="tags">
 		<ul class="list">
-			<li><span class="hash"><em class="tt">#캐쥬얼스타일</em> </span></li>
-			<li><span class="hash"><em class="tt">#대한민국</em> </span></li>
-			<li><span class="hash"><em class="tt">#GGondae_st.</em> </span></li>
+			<li><a href="javascrript:;" class="hash"><em class="tt">#캐쥬얼스타일</em> </a></li>
+			<li><a href="javascrript:;" class="hash"><em class="tt">#대한민국</em> </a></li>
+			<li><a href="javascrript:;" class="hash"><em class="tt">#GGondae_st.</em> </a></li>
 		</ul>
 	</div>
 </div>

@@ -79,34 +79,83 @@
 
 
 	<script>
-	prfTabFnc = function(opt){
+	var prfTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
 		ui.loading.show();
 		// console.log(opt);
-		pageUrl={
+		var pageUrl={
 			look:"./profile_tab_look.jsp",
 			foll:"./profile_tab_foll.jsp",
 			cool:"./profile_tab_cool.jsp",
 		};
+		$("#prInfoCont").attr("data-tab", opt);
 		$.ajax({
 			type: "post",
 			url: pageUrl[opt],
 			dataType: "html",
 			success: function(html) {
 				
-				setTimeout(function(){
-					
+				window.setTimeout(function(){
 					$(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
 					$("#prInfoCont").html(html);
 					$("#prInfoCont").removeClass("look , foll , cool").addClass(opt);
 					ui.loading.hide();
-
+					appendStat = true ;
+					page = 0 ;
+					console.log( "현재탭 =" , opt );
 				},300);
 			}
 		});	
 	}
 
-	coolEditFnc = function(opt){
 
+	var page = 0 ;
+	var appendStat = true ;
+	addItemFnc = function(opt){  //  탭 내용 아래 추가 하기
+		appendStat = false ;
+		$(".uiLoadMore").addClass("active");
+		var pageUrl={
+			look:"./profile_tab_look_li.jsp",
+			foll:"./profile_tab_foll_li.jsp",
+			cool:"./profile_tab_cool_li.jsp",
+		};
+		$.ajax({
+			type: "post",
+			url: pageUrl[opt],
+			dataType: "html",
+			success: function(html) {
+				window.setTimeout(function(){
+					page ++ ;
+					console.log();
+					$(".prInfoCont .tabCtn."+opt+" .list").append(html);
+					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
+					appendStat = true ;
+					if (page >= 3) {
+						console.log("끝");
+						$(".uiLoadMore").hide();
+						appendStat = false ;
+						page = 0 ;
+					}
+					$(".uiLoadMore").removeClass("active");
+					
+				},500);
+			}
+		});	
+	};
+
+	$(window).on("scroll", function() { // 바닥 확인
+		var docH = $(document).height();
+		var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
+		// console.log(docH,scr);
+		var tabAct = $("#prInfoCont").attr("data-tab");
+		if (docH <= scr  && appendStat == true) {
+			console.log("바닥입니다.",tabAct);
+			addItemFnc(tabAct);
+			appendStat = false;
+		}
+	});
+
+
+	var coolEditFnc = function(opt){  //  cool 탭에서  편집 버튼 눌렀을때 
 		if (opt==true) {
 			$("#btnset_modi").show();
 			$("#btnset_edit").hide();
@@ -119,8 +168,10 @@
 		}
 	}
 
+
 	$(document).ready(function(){
-		prfTabFnc('look');
+		prfTabFnc('look');  // 최초 탭 활성화
+		ui.nav.act("mypg");  // 하단 메뉴 활성화
 	});
 	</script>
 	

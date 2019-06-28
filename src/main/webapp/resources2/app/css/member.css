@@ -121,7 +121,7 @@
 .prInfoCont .tabCtn ul.menu>li>a>i{margin-left:4px;}
 .prInfoCont .tabCtn ul.menu>li.active>a{ border-color: #101010; color: #101010;}
 .prInfoCont .tabCtn .itemList{}
-.prInfoCont .tabCtn .itemList .list{display: block;margin-right: -0px; position: relative;overflow: hidden;}
+.prInfoCont .tabCtn .itemList .list{display: block;position: relative;overflow: hidden;}
 .prInfoCont .tabCtn .itemList .list>li{width: calc(33.3333% - 0px);margin-bottom:0px;float:left;overflow: hidden; margin-right: 0px;}
 .prInfoCont .tabCtn .itemList .list>li .item{position: relative;overflow: hidden;background:#000;padding:1px;}
 .prInfoCont .tabCtn .itemList .list>li .item .img{display:block;position:relative;padding-bottom: calc( 400% / 300 * 100 );}
@@ -143,7 +143,9 @@
 .prInfoCont .tabCtn .memList .list>li .item .img>a{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;border-radius: 100%;/* max-height: 100px; */}
 .prInfoCont .tabCtn .memList .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;}
 .prInfoCont .tabCtn .memList .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;}
-.prInfoCont .tabCtn .memList .list>li .item .foll{text-align: center;}
+.prInfoCont .tabCtn .memList .list>li .item .foll{/* text-align: center; */}
+.prInfoCont .tabCtn .memList .list>li .item .foll .checkbox>span:after{ content:"Follow";}
+.prInfoCont .tabCtn .memList .list>li .item .foll .checkbox input:checked + span:after{ content:"Following";}
 
 .prInfoCont .tabCtn .edit{padding:14px 16px 8px 16px;}
 .prInfoCont .tabCtn .edit .bts{display:flex;justify-content: flex-end;}
