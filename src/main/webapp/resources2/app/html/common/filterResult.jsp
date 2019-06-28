@@ -62,41 +62,24 @@
 	<div class="popLayerArea">
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
-	<script src="/resources2/app/js/masonry.pkgd.js"></script>
-	<script src="/resources2/app/js/imagesloaded.pkgd.min.js"></script>
+
 	<script>
 		
 
 	$(document).ready(function(){
 
-	
-		$cult_grid = $('#dp_list').masonry({
+		// https://masonry.desandro.com/
+		$filter_grid = $('#dp_list').masonry({
 			itemSelector: '#dp_list .box',
 			percentPosition: true,
 			gutter:2,
 			transitionDuration: 700
 		});
-		$cult_grid.imagesLoaded().progress( function() {
-			$cult_grid.masonry('layout');
-		}); 
-		// $(window).resize(function() {
-		// 	$('#dp_list').masonry('layout');
-		// });
+		// $filter_grid.imagesLoaded().progress( function() {
+		// 	$filter_grid.masonry('layout');
+		// }); 
 
 
-		$cult_grid.on( 'click', '.del', function(event) {
-			// remove clicked element
-			// console.log( $(event.currentTarget).closest(".box") );
-
-			$cult_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );
-			// $cult_grid.masonry('layout');
-			
-			window.setTimeout(function(){
-				$cult_grid.masonry('layout');
-			},750);
-			// layout remaining item elements
-			
-		});
 
 		appendStat = true ;
 		addItemFnc = function(){
@@ -109,11 +92,11 @@
 				success: function(html) {
 					window.setTimeout(function(){
 						$items = $(html)
-						$cult_grid.append( $items ).masonry( 'appended', $items );
+						$filter_grid.append( $items ).masonry( 'appended', $items );
 						window.setTimeout(function(){
 						},10);
-							$cult_grid.masonry('layout');
-							$('#dp_list').addClass("load");
+						$filter_grid.masonry('layout');
+						$('#dp_list').addClass("load");
 						appendStat = true;
 						$(".uiLoadMore").removeClass("active");
 						//ui.loading.hide();
@@ -122,8 +105,8 @@
 			});	
 		};
 
-		$(window).on("scroll load", function() {
-			
+		$(window).on("scroll", function() {
+
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 			console.log(docH,scr);
@@ -131,27 +114,35 @@
 				console.log("바닥sss");
 				addItemFnc();
 				appendStat = false;
-				
-				
 			}
 		});
 
-		window.setTimeout(function(){
+		addItemFnc();
 
-		},1000)
-			addItemFnc();
+		// $(document).on("click",".uiItemList>.list>li .item .bts .bt.del",function(e){
+		// 	$(this).closest(".box").fadeOut(500,function(){
+		// 		$(this).remove();
+		// 		// $('#dp_list').masonry('destroy')
+		// 		$('#dp_list').masonry('layout');
+		// 		window.setTimeout(function(){
+		// 		},210);
+		// 	});
 
+		// });
+	
 
+		$filter_grid.on( 'click', '.del', function(event) {
+			// remove clicked element
+			// console.log( $(event.currentTarget).closest(".box") );
 
-		$(document).on("click",".uiItemList>.list>li .item .bts .bt.del",function(e){
-			// $(this).closest(".box").fadeOut(0,function(){
-			// 	$(this).remove();
-			// 		$('#dp_list').masonry('destroy')
-			// 	window.setTimeout(function(){
-			// 		$('#dp_list').masonry('layout');
-			// 	},210);
-			// });
-
+			$filter_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );
+			// $filter_grid.masonry('layout');
+			
+			window.setTimeout(function(){
+				$filter_grid.masonry('layout');
+			},750);
+			// layout remaining item elements
+			
 		});
 
 
