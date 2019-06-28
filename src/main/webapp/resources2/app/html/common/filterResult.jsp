@@ -12,7 +12,8 @@
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
-					<a href="javascript:history.back();" class="hisback">뒤로</a>
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
+					<a href="javascript:history.back();" class="bt close">닫기</a>
 				</div>
 				<h1 class="tit"><a href="javascript:;"  onclick="addItemFnc();">FILTER RESULT</a> </h1>
 			</div>
@@ -72,7 +73,7 @@
 		$filter_grid = $('#dp_list').masonry({
 			itemSelector: '#dp_list .box',
 			percentPosition: true,
-			gutter:2,
+			gutter:0,
 			transitionDuration: 700
 		});
 		// $filter_grid.imagesLoaded().progress( function() {
@@ -109,7 +110,7 @@
 
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
-			console.log(docH,scr);
+			// console.log(docH,scr);
 			if (docH <= scr  && appendStat == true) {
 				console.log("바닥sss");
 				addItemFnc();

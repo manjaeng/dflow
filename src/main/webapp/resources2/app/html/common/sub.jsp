@@ -8,11 +8,12 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain mn">
+	<div id="contain" class="contain">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
-					<a href="javascript:history.back();" class="hisback">뒤로</a>
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
+					<a href="javascript:history.back();" class="bt close">닫기</a>
 				</div>
 				<h1 class="tit">Titles</h1>
 			</div>
@@ -36,7 +37,7 @@
 
 	<script>
 	$(document).ready(function(){
-		ui.menu.nav("home");  // 하단 메뉴 활성화
+		ui.nav.act("look");  // 하단 메뉴 활성화
 	});
 	</script>
 	

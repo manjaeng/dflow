@@ -35,7 +35,7 @@
 						<div class="name">패피루키</div>
 						<div class="summ">
 							<span class="cm">163cm</span>
-							<span class="nt">대한민국</span>
+							<span class="nt">Korea</span>
 						</div>
 						<div class="amount">
 							<div class="fw fwers"><em>1.1K</em><i>followers</i></div>
@@ -51,7 +51,7 @@
 					</div>
 					<div class="url"><a href="http://www.beautyitem.com" target="_blank">www.beautyitem.com</a></div>
 					<div class="tag">
-						<span class="hash">#Casual</span> <span class="hash">#Elegant</span> <span class="hash">#Vintage</span> 
+						<a href="javascript:;" class="hash">#Casual</a> <a href="javascript:;" class="hash">#Elegant</a> <a href="javascript:;" class="hash">#Vintage</a> 
 					</div>
 				</div>
 			</section>
@@ -59,18 +59,14 @@
 			<section class="prInfoList">
 				<div class="tabs">
 					<ul class="menu">
-						<li class="active"><a href="javascript:;">LOOK</a></li>
-						<li><a href="javascript:;">FOLLOW</a></li>
-						<li><a href="javascript:;">LIKE</a></li>
+						<li class="look"><a href="javascript:;" onclick="prfTabFnc('look')">LOOK</a></li>
+						<li class="foll"><a href="javascript:;" onclick="prfTabFnc('foll')">FOLLOW</a></li>
+						<li class="cool"><a href="javascript:;" onclick="prfTabFnc('cool')">COOL</a></li>
 					</ul>
 				</div>
-				<div class="prInfoCont">
-					
-					<div class="tabConts look">
-						
-					</div>
-
+				<div class="prInfoCont" id="prInfoCont">
 				</div>
+
 			</section>
 
 		</main>
@@ -83,8 +79,48 @@
 
 
 	<script>
+	prfTabFnc = function(opt){
+		ui.loading.show();
+		// console.log(opt);
+		pageUrl={
+			look:"./profile_tab_look.jsp",
+			foll:"./profile_tab_foll.jsp",
+			cool:"./profile_tab_cool.jsp",
+		};
+		$.ajax({
+			type: "post",
+			url: pageUrl[opt],
+			dataType: "html",
+			success: function(html) {
+				
+				setTimeout(function(){
+					
+					$(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
+					$("#prInfoCont").html(html);
+					$("#prInfoCont").removeClass("look , foll , cool").addClass(opt);
+					ui.loading.hide();
+
+				},300);
+			}
+		});	
+	}
+
+	coolEditFnc = function(opt){
+
+		if (opt==true) {
+			$("#btnset_modi").show();
+			$("#btnset_edit").hide();
+			$(".prInfoCont .tabCtn .itemList").addClass("check");
+		}
+		if (opt==false){
+			$("#btnset_modi").hide();
+			$("#btnset_edit").show();
+			$(".prInfoCont .tabCtn .itemList").removeClass("check");
+		}
+	}
+
 	$(document).ready(function(){
-		
+		prfTabFnc('look');
 	});
 	</script>
 	

@@ -30,6 +30,7 @@
 
 	<script>
 	$(document).ready(function(){
+		ui.nav.act("look");  // 하단 메뉴 활성화
 		ui.listMore.init(itemListAdd);
 	});
 
