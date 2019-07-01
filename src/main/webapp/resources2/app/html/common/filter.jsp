@@ -42,70 +42,70 @@
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/1" alt=""></span></div>
 											<span class="tit">Casual</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/2" alt=""></span></div>
 											<span class="tit">Elegant</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/3" alt=""></span></div>
 											<span class="tit">Curvy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/4" alt=""></span></div>
 											<span class="tit">Boho</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/5" alt=""></span></div>
 											<span class="tit">Vintage</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/6" alt=""></span></div>
 											<span class="tit">Rock</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/7" alt=""></span></div>
 											<span class="tit">Sporty</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/8" alt=""></span></div>
 											<span class="tit">Grunge</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/9" alt=""></span></div>
 											<span class="tit">Sexy</span>
 										</label>
 									</li>
 									<li>
 										<label>
 											<input type="checkbox">
-											<div class="thumb"><span class="img"><img src="https://dummyimage.com/160x160" alt=""></span></div>
+											<div class="thumb"><span class="img"><img src="//placeimg.com/160/160/any/10" alt=""></span></div>
 											<span class="tit">Trendy</span>
 										</label>
 									</li>

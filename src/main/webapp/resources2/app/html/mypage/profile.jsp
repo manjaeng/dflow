@@ -110,7 +110,7 @@
 
 	var page = 0 ;
 	var appendStat = true ;
-	addItemFnc = function(opt){  //  탭 내용 아래 추가 하기
+	var addItemFnc = function(opt){  //  탭 내용 아래 추가 하기
 		appendStat = false ;
 		$(".uiLoadMore").addClass("active");
 		var pageUrl={

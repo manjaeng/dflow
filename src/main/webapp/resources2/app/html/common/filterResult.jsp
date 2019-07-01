@@ -65,7 +65,35 @@
 	</div>
 
 	<script>
-		
+
+	var page = 0 ;
+	var appendStat = true ;
+	var addItemFnc = function(){
+		$(".uiLoadMore").addClass("active");
+		//ui.loading.show();
+		$.ajax({
+			type: "post",
+			url: "./filterResult_more.jsp",
+			dataType: "html",
+			success: function(html) {
+				window.setTimeout(function(){
+					page ++ ;
+					$items = $(html)
+					$filter_grid.append( $items ).masonry( 'appended', $items );
+					$filter_grid.masonry('layout');
+					$('#dp_list').addClass("load");
+					appendStat = true;
+					if (page >= 3) {
+						console.log("끝");
+						$(".uiLoadMore").hide();
+						appendStat = false ;
+						page = 0 ;
+					}
+					$(".uiLoadMore").removeClass("active");
+				},500);
+			}
+		});	
+	};
 
 	$(document).ready(function(){
 
@@ -79,32 +107,6 @@
 		// $filter_grid.imagesLoaded().progress( function() {
 		// 	$filter_grid.masonry('layout');
 		// }); 
-
-
-
-		appendStat = true ;
-		addItemFnc = function(){
-			$(".uiLoadMore").addClass("active");
-			//ui.loading.show();
-			$.ajax({
-				type: "post",
-				url: "./filterResult_more.jsp",
-				dataType: "html",
-				success: function(html) {
-					window.setTimeout(function(){
-						$items = $(html)
-						$filter_grid.append( $items ).masonry( 'appended', $items );
-						window.setTimeout(function(){
-						},10);
-						$filter_grid.masonry('layout');
-						$('#dp_list').addClass("load");
-						appendStat = true;
-						$(".uiLoadMore").removeClass("active");
-						//ui.loading.hide();
-					},500);
-				}
-			});	
-		};
 
 		$(window).on("scroll", function() {
 
