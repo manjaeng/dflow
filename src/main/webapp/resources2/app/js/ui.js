@@ -574,8 +574,75 @@ var ui = {
         	$(this.sample1.els +" ul.slide" ).length && this.sample1.using();
         	$(this.sample2.els +" ul.slide" ).length && this.sample2.using();
         	$(this.lookPic.els +" ul.slide" ).length && this.lookPic.using();
+        	$(this.mnPic.els +" ul.slide" ).length && this.mnPic.using();
+        	$(this.newBie.els +" ul.slide" ).length && this.newBie.using();
+        	$(this.newUp.els +" ul.slide" ).length && this.newUp.using();
         },
-		lookPic:{  //  샘플1
+		newBie:{  //  
+            els: ".slideNewbie.swiper-container",
+            opt: {
+                slidesPerView: "auto",
+                freeMode: true,
+                observer: true,
+                observeParents: true,
+                spaceBetween:0,
+                watchOverflow:true,
+                loop: false
+            },
+            using: function() {
+                if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+                    this.opt.loop = false;
+                }
+                this.slide = new Swiper(this.els, this.opt);
+			}
+        },
+		newUp:{  //  
+            els: ".slideNewup.swiper-container",
+            opt: {
+                slidesPerView: 2,
+                freeMode: true,
+                observer: true,
+                observeParents: true,
+                spaceBetween:0,
+                watchOverflow:true,
+                loop: false
+            },
+            using: function() {
+                if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+                    this.opt.loop = false;
+                }
+                this.slide = new Swiper(this.els, this.opt);
+			}
+        },
+		mnPic:{  //  
+            els: ".slideMnPic .swiper-container:not(.swiper-container-horizontal)",
+            opt: {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				watchOverflow:true,
+				pagination: {
+					type:'fraction',
+					el: '.pagination'
+				},
+                autoHeight:true,
+				autoplay:false,
+				preloadImages: true,
+				lazy: true,
+				loop: true
+            },
+			slide:[],
+            using: function() {
+				$(this.els).each(function(i){
+					if (  $(this).find(".swiper-slide").length  >= 2  ) {
+                        var _this = $(this);
+						ui.slides.lookPic.slide[i] = new Swiper( _this , ui.slides.lookPic.opt );
+						// console.log(ui.slides.lookPic.slide[i]);
+                    } 
+				});
+			}
+        },
+		lookPic:{  // 
             els: ".slideLookPic .swiper-container:not(.swiper-container-horizontal)",
             opt: {
 				slidesPerView: 1,
@@ -848,7 +915,7 @@ var ui = {
 			if ( ui.isUA("Mac OS") ){
 				bounce = true;
 			}else{
-				bounce = false;
+				bounce = true;
 			}
 
 			if( this.scroll[id] == undefined ) {

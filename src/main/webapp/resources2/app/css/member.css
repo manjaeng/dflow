@@ -132,32 +132,26 @@
 .prInfoCont .tabCtn .itemList .list>li{width: calc(33.3333% - 0px);margin-bottom:0px;float:left;overflow: hidden; margin-right: 0px;}
 .prInfoCont .tabCtn .itemList .list>li .item{position: relative;overflow: hidden;background:#000;padding:1px;}
 .prInfoCont .tabCtn .itemList .list>li .item .img{display:block;position:relative;padding-bottom: calc( 400% / 300 * 100 );}
-.prInfoCont .tabCtn .itemList .list>li .item .img>a{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;}
+.prInfoCont .tabCtn .itemList .list>li .item .img>.lk{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;}
 .prInfoCont .tabCtn .itemList .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;}
 .prInfoCont .tabCtn .itemList .list>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .prInfoCont .tabCtn .itemList .list>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .prInfoCont .tabCtn .itemList .list>li .item .bts .bt.del{}
-.prInfoCont .tabCtn .itemList .list>li .item .num{width:20px; height: 20px; position:absolute;right: 5px;bottom: 6px;z-index: 100; background: url(../images/common/ico_pic_num.png) no-repeat; background-size: 100% auto;}
+.prInfoCont .tabCtn .itemList .list>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
 .prInfoCont .tabCtn .itemList .list>li .item .num:before{}
-.prInfoCont .tabCtn .itemList .list>li .item .num .n{font-size: 10px;z-index:10;position: absolute;left: 0;color: #fff;right: 4px;text-align: center;}
+.prInfoCont .tabCtn .itemList .list>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
 .prInfoCont .tabCtn .itemList .list>li .item .checkbox{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .prInfoCont .tabCtn .itemList .uiLoadMore{padding:0 8px;}
 
-.prInfoCont .tabCtn .memList{
-    padding-bottom: 0;
-}
-.prInfoCont .tabCtn .memList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;justify-content: space-between;padding: 0 0px 0px 0px;}
+.prInfoCont .tabCtn .memList{    padding-bottom: 0;}
+.prInfoCont .tabCtn .memList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;/* justify-content: space-between; */padding: 0 0px 0px 0px;}
 .prInfoCont .tabCtn .memList .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;padding: 0px 10px;}
 .prInfoCont .tabCtn .memList .list>li .item{position: relative;margin: auto;padding: 0 0px;}
 .prInfoCont .tabCtn .memList .list>li .item .img{display:block;position:relative;/* padding-bottom: 100%; */margin: auto;/* max-width: 80px; *//* max-height: 80px; */width: 80px;height: 80px;}
-.prInfoCont .tabCtn .memList .list>li .item .img>a{display: block;position: relative;/* height: 100%; *//* left: 0; *//* top: 0; */width: 100%;overflow: hidden;/* border-radius: 100%; */padding-bottom: 100%;}
+.prInfoCont .tabCtn .memList .list>li .item .img>.lk{display: block;position: relative;/* height: 100%; *//* left: 0; *//* top: 0; */width: 100%;overflow: hidden;/* border-radius: 100%; */padding-bottom: 100%;}
 .prInfoCont .tabCtn .memList .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
 .prInfoCont .tabCtn .memList .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"NotoSansCJKkr-Md";}
-.prInfoCont .tabCtn .memList .list>li .item .foll{
-    text-align: center;
-    white-space: nowrap;
-    margin-top: -3px;
-}
+.prInfoCont .tabCtn .memList .list>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
 .prInfoCont .tabCtn .memList .list>li .item .foll .checkbox>span:after{ content:"Follow";}
 .prInfoCont .tabCtn .memList .list>li .item .foll .checkbox input:checked + span:after{ content:"Following";}
 .prInfoCont .tabCtn .memList .uiLoadMore{padding:0 8px;}
@@ -184,9 +178,9 @@
 .popSetting .secMySets .list>li>a:before{width:22px;height:22px;background: url(../images/common/ico_my_set_a.png) no-repeat;background-size: 100% auto;position:absolute;left: 3px;top: 4px;content:"";}
 .popSetting .secMySets .list>li>ul{margin-left: 35px;}
 .popSetting .secMySets .list>li>ul>li{margin-top: 5px;position:relative;}
-.popSetting .secMySets .list>li>ul>li>a{ color: #101010; font-size: 16px;  display:block;padding: 3px 0 3px 0px;}
+.popSetting .secMySets .list>li>ul>li>a{color: #101010;font-size: 16px;display:block;padding: 3px 0 3px 0px;position: relative;}
 .popSetting .secMySets .list>li>ul>li>a:before{width:16px;height:16px;background: url(../images/common/ico_my_set_ar.png) no-repeat;background-size: 100% auto;position:absolute;right: 0px;top: 8px;content:"";}
-
+.popSetting .secMySets .list>li>ul>li>a .ver{ color: #66dfb2; position:absolute;right:22px;}
 
 
 .uiPrfeSet.b{}

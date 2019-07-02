@@ -20,18 +20,18 @@
 				<main class="poptents">
 					<ul class="filters">
 						<li class="gender">
-							<div class="ht">GENDER</div>
+							<div class="ht">성별</div>
 							<div class="ct">
-								<label class="checkbox"><input type="checkbox"><span>여자</span></label>
-								<label class="checkbox"><input type="checkbox"><span>남자</span></label>
+								<label class="radio"><input type="radio" name="filter_gender"><span>여자</span></label>
+								<label class="radio"><input type="radio" name="filter_gender"><span>남자</span></label>
 							</div>
 						</li>
 						<li class="country">
-							<div class="ht">COUNTRY</div>
+							<div class="ht">국가</div>
 							<div class="ct">
 								<select class="select">
-									<option>KOREA</option>
-									<option>KOREA</option>
+									<option>Korea</option>
+									<option>Korea</option>
 								</select>
 							</div>
 						</li>

@@ -17,14 +17,14 @@
 	</div>
 	<div class="info">
 		<div class="user">
-			<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
-			<div class="mem">
+			<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+			<a href="javascript:;" class="mem">
 				<div class="nm">패피루키</div>
 				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
-			</div>
-			<div class="bts"><a href="javascript:;" class="bt more">더보기</a></div>
+			</a>
+			<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 		</div>
-		<div class="desc">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</div>
+		<div class="desc"><a href="javascript:;">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a></div>
 	</div>
 	<div class="data">
 		<ul class="list">

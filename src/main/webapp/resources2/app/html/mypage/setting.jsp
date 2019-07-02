@@ -70,6 +70,12 @@
 								</ul>
 							</li>
 							<li>
+								<a href="javascript:;">업데이트</a>
+								<ul>
+									<li><a href="javascript:;">앱버전정보 <em class="ver">0.1</em></a></li>
+								</ul>
+							</li>
+							<li>
 								<a href="javascript:;">로그아웃</a>
 							</li>
 						</ul>
