@@ -28,7 +28,7 @@
 			<section class="uiPrfeSet a">
 				<div class="user">
 					<div class="photo">
-						<div class="pic"><img src="https://placeimg.com/160/160/1" alt=""></div>
+						<div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div>
 						<div class="bts"><a href="javascript:;" class="bt mod">수정</a></div>
 					</div>
 					<div class="infos">
@@ -38,12 +38,12 @@
 							<span class="nt">Korea</span>
 						</div>
 						<div class="amount">
-							<div class="fw fwers"><em>1.1K</em><i>followers</i></div>
-							<div class="fw fwing"><em>51</em><i>following</i></div>
+							<div class="fw fwers"><em>1.1K</em><i>Followers</i></div>
+							<div class="fw fwing"><em>51</em><i>Following</i></div>
 						</div>
+						<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
 					</div>
 				</div>
-				<div class="foll"><a href="javascript:;" class="btn type a">FOLLOW</a></div>
 				<div class="desc">
 					<div class="ment">
 						하늘색과 트렌치 코트를 좋아합니다.<br>
@@ -80,8 +80,6 @@
 
 	<script>
 	var prfTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
-		ui.loading.show();
-		// console.log(opt);
 		var pageUrl={
 			look:"./profile_tab_look.jsp",
 			foll:"./profile_tab_foll.jsp",
@@ -92,17 +90,14 @@
 			type: "post",
 			url: pageUrl[opt],
 			dataType: "html",
-			success: function(html) {
-				
-				window.setTimeout(function(){
-					$(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
-					$("#prInfoCont").html(html);
-					$("#prInfoCont").removeClass("look , foll , cool").addClass(opt);
-					ui.loading.hide();
-					appendStat = true ;
-					page = 0 ;
-					console.log( "현재탭 =" , opt );
-				},300);
+			success: function(html) {			
+				$(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
+				$("#prInfoCont").html(html);
+				// addItemFnc(opt);
+				$("#prInfoCont").removeClass("look , foll , cool").addClass(opt);
+				appendStat = true ;
+				page = 1 ;
+				console.log( "현재탭 =" , opt );
 			}
 		});	
 	}
@@ -112,6 +107,7 @@
 	var appendStat = true ;
 	var addItemFnc = function(opt){  //  탭 내용 아래 추가 하기
 		appendStat = false ;
+		page ++ ;
 		$(".uiLoadMore").addClass("active");
 		var pageUrl={
 			look:"./profile_tab_look_li.jsp",
@@ -124,8 +120,6 @@
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					page ++ ;
-					console.log();
 					$(".prInfoCont .tabCtn."+opt+" .list").append(html);
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
@@ -138,6 +132,11 @@
 					$(".uiLoadMore").removeClass("active");
 					
 				},500);
+			},
+			error:function(error){
+				page --;
+				console.log("페이징 = " + page);
+				$(".uiLoadMore").removeClass("active").addClass("error");
 			}
 		});	
 	};

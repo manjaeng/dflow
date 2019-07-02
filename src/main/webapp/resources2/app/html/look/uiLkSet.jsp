@@ -19,8 +19,8 @@
 		<div class="user">
 			<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
 			<div class="mem">
-				<div class="nm">JENNY</div>
-				<div class="dt">170CM,KOREA</div>
+				<div class="nm">패피루키</div>
+				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 			</div>
 			<div class="bts"><a href="javascript:;" class="bt more">더보기</a></div>
 		</div>
@@ -28,8 +28,8 @@
 	</div>
 	<div class="data">
 		<ul class="list">
-			<li class="like"><a href="javascript:;" class="bt"><span>95</span></a></li>
-			<li class="reply"><a href="javascript:;" class="bt"><span>11</span></a></li>
+			<li class="like"><a href="javascript:;" class="bt"><span>120</span></a></li>
+			<li class="reply"><a href="javascript:;" class="bt"><span>77</span></a></li>
 			<li class="scrap"><a href="javascript:;" class="bt">찜</a></li>
 		</ul>
 	</div>

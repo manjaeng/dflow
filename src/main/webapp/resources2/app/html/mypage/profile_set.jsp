@@ -15,7 +15,7 @@
 				<div class="bts">
 					<a href="javascript:history.back();" class="hisback">뒤로</a>
 				</div>
-				<h1 class="tit">패피루키</h1>
+				<h1 class="tit">프로필 관리</h1>
 				<div class="set">
 					<a class="bt alim on" href="javascript:;">알림</a>
 					<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>

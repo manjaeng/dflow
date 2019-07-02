@@ -1,7 +1,7 @@
 ﻿<div class="tabCtn look">
 	<ul class="menu">
-		<li class="active"><a href="javascript:;"><em>My Look</em><i>(53)</i></a></li>
-		<li><a href="javascript:;"><em>Save Look</em><i>(50)</i></a></li>
+		<li class="active"><a href="javascript:;"><em>My Look</em><i>53</i></a></li>
+		<li><a href="javascript:;"><em>Save Look</em><i>50</i></a></li>
 	</ul>
 
 	<div class="lknums" style="display: none;"><em>LOOK</em> <i>53</i></div>
@@ -47,6 +47,7 @@
 		</ul>
 		<div class="uiLoadMore">
 			<em></em>
+			<button type="button" class="btnLoad" onclick="addItemFnc('look')" id="btnListMore">불러오기</button>
 		</div>
 	</div>
 

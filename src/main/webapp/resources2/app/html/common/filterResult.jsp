@@ -51,7 +51,7 @@
 
 					<div class="uiLoadMore">
 						<em></em>
-						<button type="button" class="btnLoad" onclick="itemListAdd()" id="btnListMore">불러오기</button>
+						<button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
 					</div>
 				</div>
 			</section>
@@ -70,18 +70,18 @@
 	var appendStat = true ;
 	var addItemFnc = function(){
 		$(".uiLoadMore").addClass("active");
-		//ui.loading.show();
+		page ++ ;
 		$.ajax({
 			type: "post",
 			url: "./filterResult_more.jsp",
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					page ++ ;
 					$items = $(html)
 					$filter_grid.append( $items ).masonry( 'appended', $items );
 					$filter_grid.masonry('layout');
 					$('#dp_list').addClass("load");
+					console.log(page);
 					appendStat = true;
 					if (page >= 3) {
 						console.log("끝");
@@ -91,6 +91,12 @@
 					}
 					$(".uiLoadMore").removeClass("active");
 				},500);
+			},
+			error:function(error){
+				page --;
+				console.log("페이징 = " + page);
+				$(".uiLoadMore").removeClass("active").addClass("error");
+				
 			}
 		});	
 	};

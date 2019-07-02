@@ -1,8 +1,8 @@
 ﻿
 <div class="tabCtn foll">
 	<ul class="menu">
-		<li class="active"><a href="javascript:;"><em>Followers</em><i>(5)</i></a></li>
-		<li><a href="javascript:;"><em>Following</em><i>(33)</i></a></li>
+		<li class="active"><a href="javascript:;"><em>Followers</em><i>5</i></a></li>
+		<li><a href="javascript:;"><em>Following</em><i>33</i></a></li>
 	</ul>
 	<div class="memList">
 		<ul class="list">
@@ -73,6 +73,7 @@
 		</ul>
 		<div class="uiLoadMore">
 			<em></em>
+			<button type="button" class="btnLoad" onclick="addItemFnc('foll')" id="btnListMore">불러오기</button>
 		</div>
 	</div>
 </div>
