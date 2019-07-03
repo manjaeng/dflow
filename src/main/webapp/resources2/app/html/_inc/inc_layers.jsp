@@ -202,7 +202,7 @@ function popMyStyle(){
 			<main class="poptents">
 				
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text" class="input">
+				<a class="btn" href="javascript:ui.popLayer.open('popSample3');">팝레이어2</a>
 				<p>sdfsdfsfsd</p>
 				<textarea class="textarea"></textarea>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
@@ -226,7 +226,8 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<img src="http://placeimg.com/640/640/any/5" alt="">
-				
+				<a class="btn" href="javascript:popMatching();">매칭</a>
+				<a class="btn" href="/resources2/app/html/look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>
 		</div>
 	</div>

@@ -562,7 +562,9 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .popAccus .list>li .bt{padding: 10px 10px;font-size: 14px;display:block;}
 
 /* 매칭율 */
-.popMatching{}
+.popMatching{
+    z-index: 1010;
+}
 .popMatching.type.b .pbd{ vertical-align:bottom;}
 .popMatching .poptents{padding:20px;}
 

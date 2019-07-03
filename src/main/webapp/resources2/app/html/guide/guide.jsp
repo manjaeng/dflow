@@ -107,7 +107,8 @@
 							},
 							ccb:function(){
 								console.log("popSample1 닫힘");
-							}						
+							},
+							// hash:true,
 						});
 					}
 				});

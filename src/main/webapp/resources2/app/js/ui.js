@@ -838,11 +838,15 @@ var ui = {
 	},
 	popLayer: { // 레이어팝업
 		init: function() {
-
+			var _this = this;
 			$(document).on("click", ".popLayer:not(.win) .btnPopClose", function() {
 				var id = $(this).closest(".popLayer").attr("id");
 				// console.log(id);
-				ui.popLayer.close(id);
+				if (_this.opt.hash) {
+					window.history.back();
+				}else{
+					ui.popLayer.close(id);
+				}
 			});
 
 			$(document).on("click", ".popLayer", function(e) {
@@ -858,25 +862,54 @@ var ui = {
 				ui.popLayer.open(id);
 			}
 			$(window).on("load resize",this.resize);
+			$(window).on("hashchange",function(){
+				// ui.popLayer.history(true);
+			});
+			window.onpopstate = history.onpushstate = function(e) {
+				ui.popLayer.history(true);
+			}
+
 		},
+		history:function(){
+			var h_before = ui.popLayer.openPop ; 
+			ui.popLayer.openPop = location.hash.replace("#pop=","").split(",");
+			if ( ui.popLayer.openPop == "" ) { ui.popLayer.openPop = []	}
+			var h_now = ui.popLayer.openPop ; 			
+			console.log( h_before , h_now );
+			if( h_before > h_now ){
+				result = h_before.filter(function (a) { 
+ 					return h_now.indexOf(a) === -1;			
+				});
+				console.log("뒤로옴" , result[0]);
+				ui.popLayer.close(result[0]);
+			}else{
+			}
+		},
+		openPop:[],
 		callbacks:{},
 		open: function(id,params) {
 			// console.log(id,params);
 			_this = this;
 
-			if (params) {
-				var opt = $.extend({
-					ocb: null ,
-					ccb: null
-				}, params);
+			_this.opt = $.extend({
+				ocb: null ,
+				ccb: null,
+				hash: false
+			}, params); 
 
+			if (_this.opt.ocb || _this.opt.ccb ) {
 				_this.callbacks[id] = {} ;
-				_this.callbacks[id].open = opt.ocb  ;
-				_this.callbacks[id].close = opt.ccb  ;
+				_this.callbacks[id].open = this.opt.ocb  ;
+				_this.callbacks[id].close = this.opt.ccb  ;
 			}
-			
 
 			if( $("#" + id).length ) {
+
+				if (_this.opt.hash) {
+					ui.popLayer.openPop.push(id);
+					window.history.pushState({}, 'pop', '#pop='+ui.popLayer.openPop );
+				}
+
 				ui.lock.using(true);
 				$("#" + id).attr("tabindex","0").fadeIn(0,function(){
 					if (_this.callbacks[id])  _this.callbacks[id].open();
@@ -904,11 +937,17 @@ var ui = {
 		},
 		close: function(id) {
 			_this = this;
+
 			$("#"+id).fadeOut(0,function(){
 				if( $(".popLayer:visible").length < 1 ){
 					ui.lock.using(false);
 				}
-				if (_this.callbacks[id]) _this.callbacks[id].close();
+				// if (_this.opt.hash == true && _this.opt.hist == true ) {
+					//window.history.back();
+				// }
+				if (_this.callbacks[id]) {
+					_this.callbacks[id].close();
+				}
 			});
 		},
 		resize:function(id){
