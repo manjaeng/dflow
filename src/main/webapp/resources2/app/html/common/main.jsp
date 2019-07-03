@@ -35,8 +35,8 @@
 			<section class="secMn match">
 				<div class="hdt"><p>Maybe it's right <br> for you</p></div>
 				<div class="mats">
-					<a href="javascript:;" onclick="ui.popLayer.open('popMatching');" class="dd"><em class="tt">매칭율</em><i class="nm">80%</i></a>
-					<a href="javascript:;" onclick="ui.popLayer.open('popMyStyle');" class="dd"><em class="tt">선호스타일</em><i class="nm">ON</i></a>
+					<a href="javascript:;" onclick="popMatching();" class="dd"><em class="tt">매칭율</em><i class="nm" id="match_amount">85%</i></a>
+					<a href="javascript:;" onclick="popMyStyle();" class="dd"><em class="tt">선호스타일</em><i class="nm" id="mystyle_chk">ON</i></a>
 				</div>
 				<ul class="matchList" id="matchList">
 					<li>

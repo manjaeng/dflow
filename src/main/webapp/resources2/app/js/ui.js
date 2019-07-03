@@ -717,9 +717,9 @@ var ui = {
         }
 	},
 	alert:function(params){ // 커스텀 알럿
-
+		if ( typeof params == "string") { var txt  = params }
 		var opt = $.extend({
-			msg:"<p>알럿메시지</p>",
+			msg:"<p>"+txt+"</p>",
 			ycb:"",
 			ybt:"확인"
 		}, params);
@@ -853,49 +853,62 @@ var ui = {
 				e.stopPropagation();
 			});
 
-
-
 			if( $(".popLayer.win").length ) {
 				var id = $(".popLayer.win").attr("id");
 				ui.popLayer.open(id);
 			}
 			$(window).on("load resize",this.resize);
 		},
-		open: function(id) {
+		callbacks:{},
+		open: function(id,params) {
+			// console.log(id,params);
+			_this = this;
+
+			if (params) {
+				var opt = $.extend({
+					ocb: null ,
+					ccb: null
+				}, params);
+
+				_this.callbacks[id] = {} ;
+				_this.callbacks[id].open = opt.ocb  ;
+				_this.callbacks[id].close = opt.ccb  ;
+			}
+			
+
 			if( $("#" + id).length ) {
 				ui.lock.using(true);
 				$("#" + id).attr("tabindex","0").fadeIn(0,function(){
-					if( ui.popLayer.open[id] ) {
-						ui.popLayer.open[id]();
-					}
+					if (_this.callbacks[id])  _this.callbacks[id].open();
 				}).focus();
 				this.resize(id);
 				this.lyScroll(id);
+
+				$(document).on("click focusin",  "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
+					var $this = $(this);
+					window.setTimeout(function(){
+						var myTop = $this.position().top - 50 ;
+						var myMax =  Math.abs( ui.popLayer.scroll[id].maxScrollY );
+						console.log(myTop , myMax);
+						if ( myTop >= myMax ) {
+							myTop = myMax ;
+						}					
+						ui.popLayer.scroll[id].scrollTo(0,-myTop);
+
+					},600);
+
+				});
+
 			}
 
-			$(document).on("click focusin",  "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
-				var $this = $(this);
-				window.setTimeout(function(){
-					var myTop = $this.position().top - 50 ;
-					var myMax =  Math.abs( ui.popLayer.scroll[id].maxScrollY );
-					console.log(myTop , myMax);
-					if ( myTop >= myMax ) {
-						myTop = myMax ;
-					}					
-					ui.popLayer.scroll[id].scrollTo(0,-myTop);
-
-				},600);
-
-			});
 		},
 		close: function(id) {
+			_this = this;
 			$("#"+id).fadeOut(0,function(){
 				if( $(".popLayer:visible").length < 1 ){
 					ui.lock.using(false);
 				}
-				if( ui.popLayer.close[id] ) {
-					ui.popLayer.close[id]();
-				}
+				if (_this.callbacks[id]) _this.callbacks[id].close();
 			});
 		},
 		resize:function(id){
@@ -907,7 +920,7 @@ var ui = {
 				pctnH = pctnH - $(".popLayer:visible>.pbd>.pbt").outerHeight()
 			}
 			$(".popLayer.a:visible>.pbd>.pct").css({"height": pctnH });
-			$(".popLayer.b:visible>.pbd>.pct").css({"height": pctnH -70 });
+			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH -70 });
 		},
 		scroll:{},
 		lyScroll: function(id) {

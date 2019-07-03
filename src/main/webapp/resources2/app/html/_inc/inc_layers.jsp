@@ -30,13 +30,13 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-				<li><a href="javascript:;" class="bt">저작권침해 우려됨</a></li>
-				<li><a href="javascript:;" class="bt">다른스타일과 중복됨</a></li>
-				<li><a href="javascript:;" class="bt">혐오스러움</a></li>
-				<li><a href="javascript:;" class="bt">외설적임</a></li>
-				<li><a href="javascript:;" class="bt">패션과 무관함</a></li>
-				<li><a href="javascript:;" class="bt">지나친 광고성게시물</a></li>
-				<li><a href="javascript:;" class="bt">사기피해 우려가 있음</a></li>
+					<li><a href="javascript:;" class="bt">저작권침해 우려됨</a></li>
+					<li><a href="javascript:;" class="bt">다른스타일과 중복됨</a></li>
+					<li><a href="javascript:;" class="bt">혐오스러움</a></li>
+					<li><a href="javascript:;" class="bt">외설적임</a></li>
+					<li><a href="javascript:;" class="bt">패션과 무관함</a></li>
+					<li><a href="javascript:;" class="bt">지나친 광고성게시물</a></li>
+					<li><a href="javascript:;" class="bt">사기피해 우려가 있음</a></li>
 				</ul>
 				
 			</main>
@@ -59,47 +59,64 @@
 				
 				<p>내용</p>
 				<p>내용</p>
-				<p>내용</p>
-				<div class="uiSlider" id="popMmatchSlider">
+				
+				<div class="uiSlider" id="popMatchSlider" data-amount="85">
 					<em class="bar"></em>
-					<div class="ui-slider-handle"><span id="custom-handle"></span></div>
+					<div class="ui-slider-handle"><span class="match-handle"></span></div>
 					<div class="nums">
 						<span class="num min">0</span>
 						<span class="ds">~</span>
 						<span class="num max">100<i>%</i></span>
 					</div>
 				</div>
+				<p>내용</p>
+				<div class="botBts">
+					<div class="btnSet">
+					<a href="javascript:;" class="btn type a btnFind" onclick="ui.popLayer.close('popMatching')">다시찾기</a></div>
+				</div>		
 				
 			</main>
 		</div>
-		<script>
-		$(document).ready(function(){
-			
-			ui.popLayer.open.popMatching  = function(){
-				var bar = $("#popMmatchSlider em.bar")
-				var handle = $( "#popMmatchSlider #custom-handle" );
-				$( "#popMmatchSlider" ).slider({
-					value:85,
-					min: 0,
-					max: 100,
-					step: 1,
-					create: function() {
-						handle.text( $( this ).slider( "value" ) + "%");
-						bar.css("width", $( this ).slider( "value" ) + "%");
-					},
-					slide: function( event, ui ) {
-						handle.text( ui.value + "%");
-						bar.css("width", $( this ).slider( "value" ) + "%");
-						console.log(ui.value);	
-					}
-				});
-				$(".ui-slider-handle").triggerHandler("click")
-			}
-
-		});	
-		</script>
 	</div>
 </article>
+
+<script>
+function popMatching(){
+	ui.popLayer.open('popMatching',{
+		ocb:function(){
+			var $slider = $("#popMatchSlider");
+			var bar = $slider.find("em.bar");
+			var handle = $slider.find(".match-handle");
+			$slider.slider({
+				value: $slider.attr("data-amount") ,
+				min: 0,
+				max: 100,
+				step: 1,
+				create: function(event, ui) {
+					handle.text( $(this).slider( "value" ) + "%");
+				}
+			});
+
+			$slider.on("slidechange slide", function( event, ui ) {
+				handle.text( ui.value + "%");
+				bar.css("width", $(this).slider( "value" ) + "%");
+				console.log(ui.value);
+				$(this).attr("data-amount",ui.value);
+				$("#match_amount").text(  ui.value + "%"  );
+			} );
+			console.log("매칭 오픈");
+		},
+		ccb:function(){
+			console.log("매칭 닫힘");
+		}
+	});
+
+};
+</script>
+
+
+
+
 
 <!-- 선호스타일 -->
 <article class="popLayer type b popMyStyle" id="popMyStyle">
@@ -114,11 +131,28 @@
 			<main class="poptents">
 				
 				<div class="uiChk"><input type="checkbox" checked="checked"><em></em></div>
-				
+				<p>내용</p>
+				<div class="botBts">
+					<div class="btnSet">
+					<a href="javascript:;" class="btn type a btnFind" onclick="ui.popLayer.close('popMyStyle')">확인</a></div>
+				</div>	
 			</main>
 		</div>
 	</div>
 </article>
+<script>
+function popMyStyle(){
+	ui.popLayer.open('popMyStyle',{
+		ocb:function(){
+			console.log("선호스타일 열림");
+		},
+		ccb:function(){
+			console.log("선호스타일 닫힘");
+		}
+	});
+};
+</script>
+
 
 <!-- 팝레이어 샘플1 -->
 <article class="popLayer type a popSample1" id="popSample1">

@@ -115,9 +115,9 @@
 						<li class="match">
 							<div class="ht">MATCH</div>
 							<div class="ct">
-								<div class="uiSlider" id="matchSlider">
+								<div class="uiSlider" id="filtMatchSlider" data-amount="85">
 									<em class="bar"></em>
-									<div class="ui-slider-handle"><span id="custom-handle"></span></div>
+									<div class="ui-slider-handle"><span class="match-handle"></span></div>
 									<div class="nums">
 										<span class="num min">0</span>
 										<span class="ds">~</span>
@@ -145,26 +145,32 @@
 		</div>
 	</article>
 	<script>
-	$(document).ready(function(){
-
-		var bar = $(".filters em.bar")
-		var handle = $( "#matchSlider #custom-handle" );
-		$( "#matchSlider" ).slider({
-			value:85,
+		
+	function filtMatchSlider(){	
+		var $slider = $("#filtMatchSlider");
+		var bar = $slider.find("em.bar");
+		var handle = $slider.find(".match-handle");
+		$slider.slider({
+			value: $slider.attr("data-amount") ,
 			min: 0,
 			max: 100,
 			step: 1,
-			create: function() {
-				handle.text( $( this ).slider( "value" ) + "%");
-				bar.css("width", $( this ).slider( "value" ) + "%");
-			},
-			slide: function( event, ui ) {
-				handle.text( ui.value + "%");
-				bar.css("width", $( this ).slider( "value" ) + "%");
-				console.log(ui.value);	
+			create: function(event, ui) {
+				handle.text( $(this).slider( "value" ) + "%");
 			}
 		});
 
+		$slider.on("slidechange slide", function( event, ui ) {
+			handle.text( ui.value + "%");
+			bar.css("width", $(this).slider( "value" ) + "%");
+			console.log(ui.value);
+			$(this).attr("data-amount",ui.value);
+		} );
+		console.log("매칭 오픈");
+	}
+
+	$(document).ready(function(){
+		filtMatchSlider();
 	});
 	</script>
 	

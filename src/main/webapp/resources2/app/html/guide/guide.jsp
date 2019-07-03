@@ -78,26 +78,37 @@
 			<section class="codeBox"> 
 				<div class="code">
 					<div class="bts">
-						<a class="btn" href="javascript:ui.popLayer.open('popSample1');">팝레이어1</a>
+						<a class="btn" href="javascript:samplePop1();">팝레이어1</a>
 						<a class="btn" href="javascript:ui.popLayer.open('popSample2');">팝레이어2</a>
 						<a class="btn" href="javascript:ui.popLayer.open('popSample3');">팝레이어3</a>
 					</div>
 					<pre class="brush: js">
-						ui.popLayer.open('popSample1'); // 팝레이어열기
+						ui.popLayer.open('popSample1'); // 팝레이어열기 
 						ui.popLayer.close('popSample1'); // 팝레이어닫기
-						ui.popLayer.refresh('popSample1'); // 팝스크롤새로고침</pre>
+						ui.popLayer.refresh('popSample1'); // 팝스크롤새로고침
+						ui.popLayer.open('popSample1',{  // 팝레이어열기 콜백
+							ocb:function(){
+								console.log("popSample1 열림");
+							},
+							ccb:function(){
+								console.log("popSample1 닫힘");
+							}						
+						});</pre>
 				</div>	
 			</section>
 			<script>
 				$(document).ready(function(){
 
-					// 레이어팝업 열기 콜백
-					ui.popLayer.open.popSample1 = function(){
-						console.log("popSample1 열기");
-					}
-					// 레이어팝업 닫기 콜백
-					ui.popLayer.close.popSample1 = function(){
-						console.log("popSample1 닫힘");
+					samplePop1 = function(){
+						// 레이어팝업 열기 콜백
+						ui.popLayer.open('popSample1',{
+							ocb:function(){
+								console.log("popSample1 열림");
+							},
+							ccb:function(){
+								console.log("popSample1 닫힘");
+							}						
+						});
 					}
 				});
 			</script>
