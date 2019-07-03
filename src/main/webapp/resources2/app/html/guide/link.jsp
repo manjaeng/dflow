@@ -47,8 +47,8 @@
 				<h3><a href="javascript:;">공통</a></h3>
 				<ul>
 					<li>
-						<h4>메인</h4> <em>ing</em>
-						<mark>/resources2/app/html/common/main.jsp</mark>
+						<h4>홈</h4> <em>ing</em>
+						<mark>/resources2/app/html/common/home.jsp</mark>
 					</li>
 					<li>
 						<h4>필터</h4> <em>ing</em>

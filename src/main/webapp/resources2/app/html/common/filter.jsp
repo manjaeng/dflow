@@ -145,33 +145,7 @@
 		</div>
 	</article>
 	<script>
-		
-	function filtMatchSlider(){	
-		var $slider = $("#filtMatchSlider");
-		var bar = $slider.find("em.bar");
-		var handle = $slider.find(".match-handle");
-		$slider.slider({
-			value: $slider.attr("data-amount") ,
-			min: 0,
-			max: 100,
-			step: 1,
-			create: function(event, ui) {
-				handle.text( $(this).slider( "value" ) + "%");
-			}
-		});
 
-		$slider.on("slidechange slide", function( event, ui ) {
-			handle.text( ui.value + "%");
-			bar.css("width", $(this).slider( "value" ) + "%");
-			console.log(ui.value);
-			$(this).attr("data-amount",ui.value);
-		} );
-		console.log("매칭 오픈");
-	}
-
-	$(document).ready(function(){
-		filtMatchSlider();
-	});
 	</script>
 	
 	<!--// 컨텐츠 끝 -->

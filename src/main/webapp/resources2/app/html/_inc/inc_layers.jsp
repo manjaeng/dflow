@@ -13,7 +13,7 @@
 					<li><a href="javascript:;" class="bt">저장하기</a></li>
 					<li><a href="javascript:;" class="bt">공유하기</a></li>
 					<li><a href="javascript:;" class="bt">링크복사</a></li>
-					<li><a href="javascript:;" class="bt" onclick="ui.popLayer.open('popAccus');">신고하기</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
 					<li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li>
 				</ul>
 			</main>
@@ -43,6 +43,21 @@
 		</div>
 	</div>
 </article>
+<script>
+function popAccus(){
+	ui.popLayer.open('popAccus',{
+		ocb:function(){
+			console.log("신고하기팝업 열림");
+			// ui.popLayer.close('popPrfOthers');
+		},
+		ccb:function(){
+			console.log("신고하기팝업 닫힘");
+		}
+	});
+};
+</script>
+
+
 
 
 <!-- 매칭율 -->
@@ -81,37 +96,45 @@
 </article>
 
 <script>
-function popMatching(){
-	ui.popLayer.open('popMatching',{
-		ocb:function(){
-			var $slider = $("#popMatchSlider");
-			var bar = $slider.find("em.bar");
-			var handle = $slider.find(".match-handle");
-			$slider.slider({
-				value: $slider.attr("data-amount") ,
-				min: 0,
-				max: 100,
-				step: 1,
-				create: function(event, ui) {
-					handle.text( $(this).slider( "value" ) + "%");
-				}
-			});
-
-			$slider.on("slidechange slide", function( event, ui ) {
-				handle.text( ui.value + "%");
+var popMatching={
+	using:function(){
+		ui.popLayer.open('popMatching',{
+			ocb:function(){
+				popMatching.slider();
+			},
+			ccb:function(){
+				console.log("매칭 닫힘");
+			}
+		});
+	},
+	slider:function(){
+		var $slider = $("#popMatchSlider");
+		var bar = $slider.find("em.bar");
+		var handle = $slider.find(".match-handle");
+		$slider.slider({
+			value: $slider.attr("data-amount") ,
+			min: 0,
+			max: 100,
+			step: 1,
+			create: function(event, ui) {
+				handle.text( $(this).slider( "value" ) + "%");
 				bar.css("width", $(this).slider( "value" ) + "%");
-				console.log(ui.value);
-				$(this).attr("data-amount",ui.value);
-				$("#match_amount").text(  ui.value + "%"  );
-			} );
-			console.log("매칭 오픈");
-		},
-		ccb:function(){
-			console.log("매칭 닫힘");
-		}
-	});
+			}
+		});
 
+		$slider.on("slidechange slide", function( event, ui ) {
+			handle.text( ui.value + "%");
+			bar.css("width", $(this).slider( "value" ) + "%");
+			$(this).attr("data-amount",ui.value);
+			$("#match_amount").text(  ui.value + "%"  );
+			// console.log(ui.value);
+		} );
+		console.log("매칭 오픈");
+	}
 };
+$(document).ready(function(){
+	popMatching.slider();
+});
 </script>
 
 
@@ -154,6 +177,111 @@ function popMyStyle(){
 </script>
 
 
+
+
+
+<!-- 프로필 기타 팝업 -->
+<article class="popLayer type b popPrfOthers" id="popPrfOthers">
+	<div class="pbd">
+		<button type="button" class="btnPopClose">닫기</button>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li><a href="javascript:;" class="bt" onclick="popShare();">공유하기</a></li>
+					<li><a href="javascript:;" class="bt">링크복사</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
+				</ul>	
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popPrfOthers(){
+	ui.popLayer.open('popPrfOthers',{
+		ocb:function(){
+			console.log("프로필 기타팝업 열림");
+		},
+		ccb:function(){
+			console.log("프로필 기타팝업 닫힘");
+		}
+	});
+};
+</script>
+
+
+
+<!-- 공유하기 팝업 -->
+<article class="popLayer type b popShare" id="popShare">
+	<div class="pbd">
+		<div class="phd">
+			<div class="in">
+				<h1 class="tit">공유하기</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
+		</div>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li class="twitter"><a href="javascript:;" class="bt">트위터</a></li>
+					<li class="katalk"><a href="javascript:;" class="bt">카카오톡</a></li>
+					<li class="facebook"><a href="javascript:;" class="bt">페이스북</a></li>
+					<li class="kastory"><a href="javascript:;" class="bt">카카오스토리</a></li>
+				</ul>	
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popShare(){
+	ui.popLayer.open('popShare',{
+		ocb:function(){
+			// ui.popLayer.close('popPrfOthers');
+			console.log("공유하기 열림");
+		},
+		ccb:function(){
+			console.log("공유하기 닫힘");
+		}
+	});
+};
+</script>
+
+
+
+<!-- 프로필사진변경 -->
+<article class="popLayer type b popPrfPicMod" id="popPrfPicMod">
+	<div class="pbd">
+		<div class="phd">
+			<div class="in">
+				<h1 class="tit">프로필사진변경</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
+		</div>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li><a href="javascript:;" class="bt">프로필 사진변경</a></li>
+					<li><a href="javascript:;" class="bt">프로필 사진삭제</a></li>
+				</ul>
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popPrfPicMod(){
+	ui.popLayer.open('popPrfPicMod',{
+		ocb:function(){
+			console.log("프로필사진변경 열림");
+		},
+		ccb:function(){
+			console.log("프로필사진변경 닫힘");
+		}
+	});
+};
+</script>
+
+
+
+
 <!-- 팝레이어 샘플1 -->
 <article class="popLayer type a popSample1" id="popSample1">
 	<div class="pbd">
@@ -188,7 +316,6 @@ function popMyStyle(){
 	</div>
 </article>
 
-
 <!-- 팝레이어 샘플2 -->
 <article class="popLayer type b popSample2" id="popSample2">
 	<div class="pbd">
@@ -211,8 +338,6 @@ function popMyStyle(){
 		</div>
 	</div>
 </article>
-
-
 
 <!-- 팝레이어 샘플3 -->
 <article class="popLayer type a popSample3" id="popSample3">

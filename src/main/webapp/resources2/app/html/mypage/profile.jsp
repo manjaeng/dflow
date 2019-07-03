@@ -19,7 +19,7 @@
 				<div class="set">
 					<a class="bt alim on" href="javascript:;">알림</a>
 					<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
-					<a class="bt more" href="javascript:;">더보기</a>
+					<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
 				</div>
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 				<div class="user">
 					<div class="photo">
 						<div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div>
-						<div class="bts"><a href="javascript:;" class="bt mod">수정</a></div>
+						<div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div>
 					</div>
 					<div class="infos">
 						<div class="name">패피루키</div>
@@ -125,7 +125,7 @@
 					appendStat = true ;
 					if (page >= 3) {
 						console.log("끝");
-						$(".uiLoadMore").hide();
+						$(".uiLoadMore").addClass("hide");
 						appendStat = false ;
 						page = 0 ;
 					}

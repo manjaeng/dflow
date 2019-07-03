@@ -28,14 +28,45 @@
 					<li><%@ include file="../common/uiMnSet.jsp" %></li>
 				</ul>
 				<div class="uiListMore">
-					<a class="btMore" href="javascript:;"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
+					<em></em>
+					<a class="btMore" href="javascript:;" onclick="addItemFnc_post(this)"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
 				</div>
 			</section>
+			<script>
+				var page_post = 0 ;
+				var appendStat_post = true ;
+				var addItemFnc_post = function(els){
+					$thisEls = $(els).closest(".uiListMore");
+					appendStat_post = false ;
+					$thisEls.addClass("active");
+					$.ajax({
+						type: "post",
+						url: "./home_more_post.jsp",
+						dataType: "html",
+						success: function(html) {
+							window.setTimeout(function(){
+								page_post ++ ;
+								$("#postList").append(html);
+								console.log("페이징 = " + page_post);
+								appendStat_post = true ;
+								if (page_post >= 3) {
+									console.log("끝");
+									$thisEls.addClass("hide");
+									appendStat_post = false ;
+								}
+								ui.slides.mnPic.using();
+								$thisEls.removeClass("active");
+								
+							},500);
+						}
+					});	
+				};
+			</script>
 
 			<section class="secMn match">
 				<div class="hdt"><p>Maybe it's right <br> for you</p></div>
 				<div class="mats">
-					<a href="javascript:;" onclick="popMatching();" class="dd"><em class="tt">매칭율</em><i class="nm" id="match_amount">85%</i></a>
+					<a href="javascript:;" onclick="popMatching.using();" class="dd"><em class="tt">매칭율</em><i class="nm" id="match_amount">85%</i></a>
 					<a href="javascript:;" onclick="popMyStyle();" class="dd"><em class="tt">선호스타일</em><i class="nm" id="mystyle_chk">ON</i></a>
 				</div>
 				<ul class="matchList" id="matchList">
@@ -56,10 +87,39 @@
 					</li>
 				</ul>
 				<div class="uiListMore">
-					<a class="btMore" href="javascript:;"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
+					<em></em>
+					<a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
 				</div>
 			</section>
-
+			<script>
+				var page_match = 0 ;
+				var appendStat_match = true ;
+				var addItemFnc_match = function(els){
+					$thisEls = $(els).closest(".uiListMore");
+					appendStat_match = false ;
+					$thisEls.addClass("active");
+					$.ajax({
+						type: "post",
+						url: "./home_more_match.jsp",
+						dataType: "html",
+						success: function(html) {
+							window.setTimeout(function(){
+								page_match ++ ;
+								$("#matchList").append(html);
+								console.log("페이징 = " + page_match);
+								appendStat_match = true ;
+								if (page_match >= 3) {
+									console.log("끝");
+									$thisEls.addClass("hide");
+									appendStat_match = false ;
+								}
+								$thisEls.removeClass("active");
+								
+							},500);
+						}
+					});	
+				};
+			</script>
 
 			<section class="secMn newb">
 				<div class="hdt">
@@ -128,11 +188,11 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
-									<div class="mem">
+									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
-									</div>
+									</a>
 								</div>
 							</div>
 						</li>
@@ -143,11 +203,11 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
-									<div class="mem">
+									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
-									</div>
+									</a>
 								</div>
 							</div>
 						</li>
@@ -158,11 +218,11 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
-									<div class="mem">
+									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
-									</div>
+									</a>
 								</div>
 							</div>
 						</li>
@@ -173,11 +233,11 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<div class="pic"><img src="//placeimg.com/80/94" alt=""></div>
-									<div class="mem">
+									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""a>
+									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
-									</div>
+									</a>
 								</div>
 							</div>
 						</li>

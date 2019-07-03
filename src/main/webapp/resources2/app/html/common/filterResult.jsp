@@ -85,7 +85,7 @@
 					appendStat = true;
 					if (page >= 3) {
 						console.log("끝");
-						$(".uiLoadMore").hide();
+						$(".uiLoadMore").addClass("hide");
 						appendStat = false ;
 						page = 0 ;
 					}

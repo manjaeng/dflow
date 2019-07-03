@@ -12,7 +12,7 @@
 	
 	<div id="contain" class="contain look list">
 		<main id="contents" class="contents">
-			<section class="secLookWrap">
+			<section class="secLk look">
 				<ul class="lookList" id="lookList"></ul>
 				<div class="uiLoadMore">
 					<em></em>
@@ -43,12 +43,11 @@
 					window.setTimeout(function(){
 						page ++ ;
 						$("#lookList").append(html);
-						$("#btnListMore").prop("disabled",false);
 						console.log("페이징 = " + page);
 						appendStat = true ;
 						if (page >= 3) {
 							console.log("끝");
-							$(".uiLoadMore").hide();
+							$(".uiLoadMore").addClass("hide");
 							appendStat = false ;
 						}
 						ui.slides.lookPic.using();

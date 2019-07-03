@@ -14,6 +14,7 @@ var ui = {
 		this.slides.init();
 		this.datePick.init();
 		this.listLoad.init();
+		this.filter.init();
 	},
 	cm:{ // 공통
 		init:function(){
@@ -22,6 +23,34 @@ var ui = {
 	},
 	isUA:function(t){
 		return navigator.userAgent.indexOf(t) > -1;
+	},
+	filter: {
+		init:function(){
+			$("#filtMatchSlider").length && this.match();
+		},
+		match:function(){
+			var $slider = $("#filtMatchSlider");
+			var bar = $slider.find("em.bar");
+			var handle = $slider.find(".match-handle");
+			$slider.slider({
+				value: $slider.attr("data-amount") ,
+				min: 0,
+				max: 100,
+				step: 1,
+				create: function(event, ui) {
+					handle.text( $(this).slider( "value" ) + "%");
+					bar.css("width", $(this).slider( "value" ) + "%");
+				}
+			});
+
+			$slider.on("slidechange slide", function( event, ui ) {
+				handle.text( ui.value + "%");
+				bar.css("width", $(this).slider( "value" ) + "%");
+				$(this).attr("data-amount",ui.value);
+				// console.log(ui.value);
+			} );
+			console.log("매칭 오픈");
+		}
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기  ui.param.***
 		if (a == "") return {};
@@ -871,14 +900,14 @@ var ui = {
 
 		},
 		history:function(){
-			var h_before = ui.popLayer.openPop ; 
+			var h_prev = ui.popLayer.openPop ; 
 			ui.popLayer.openPop = location.hash.replace("#pop=","").split(",");
 			if ( ui.popLayer.openPop == "" ) { ui.popLayer.openPop = []	}
 			var h_now = ui.popLayer.openPop ; 			
-			console.log( h_before , h_now );
-			if( h_before > h_now ){
-				result = h_before.filter(function (a) { 
- 					return h_now.indexOf(a) === -1;			
+			console.log( h_prev , h_now );
+			if( h_prev > h_now ){
+				result = h_prev.filter(function (a) {
+ 					return h_now.indexOf(a) === -1;
 				});
 				console.log("뒤로옴" , result[0]);
 				ui.popLayer.close(result[0]);
@@ -894,7 +923,7 @@ var ui = {
 			_this.opt = $.extend({
 				ocb: null ,
 				ccb: null,
-				hash: false
+				hash: true, // true
 			}, params); 
 
 			if (_this.opt.ocb || _this.opt.ccb ) {
@@ -911,7 +940,7 @@ var ui = {
 				}
 
 				ui.lock.using(true);
-				$("#" + id).attr("tabindex","0").fadeIn(0,function(){
+				$("#" + id).attr("tabindex","0").fadeIn(200,function(){
 					if (_this.callbacks[id])  _this.callbacks[id].open();
 				}).focus();
 				this.resize(id);
@@ -927,9 +956,7 @@ var ui = {
 							myTop = myMax ;
 						}					
 						ui.popLayer.scroll[id].scrollTo(0,-myTop);
-
 					},600);
-
 				});
 
 			}
@@ -938,13 +965,10 @@ var ui = {
 		close: function(id) {
 			_this = this;
 
-			$("#"+id).fadeOut(0,function(){
+			$("#"+id).fadeOut(100,function(){
 				if( $(".popLayer:visible").length < 1 ){
 					ui.lock.using(false);
 				}
-				// if (_this.opt.hash == true && _this.opt.hist == true ) {
-					//window.history.back();
-				// }
 				if (_this.callbacks[id]) {
 					_this.callbacks[id].close();
 				}
