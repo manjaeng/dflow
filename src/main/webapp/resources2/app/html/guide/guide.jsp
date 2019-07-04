@@ -79,8 +79,8 @@
 				<div class="code">
 					<div class="bts">
 						<a class="btn" href="javascript:samplePop1();">팝레이어1</a>
-						<a class="btn" href="javascript:ui.popLayer.open('popSample2');">팝레이어2</a>
-						<a class="btn" href="javascript:ui.popLayer.open('popSample3');">팝레이어3</a>
+						<a class="btn" href="javascript:samplePop2();">팝레이어2</a>
+						<a class="btn" href="javascript:samplePop3();">팝레이어3</a>
 					</div>
 					<pre class="brush: js">
 						ui.popLayer.open('popSample1'); // 팝레이어열기 
@@ -107,8 +107,23 @@
 							},
 							ccb:function(){
 								console.log("popSample1 닫힘");
-							},
-							// hash:true,
+							}
+						});
+					}
+					samplePop2 = function(){
+						// 레이어팝업 열기 콜백
+						ui.popLayer.open('popSample2',{
+							ocb:function(){
+								console.log("popSample2 열림");
+							}
+						});
+					}
+					samplePop3 = function(){
+						// 레이어팝업 열기 콜백
+						ui.popLayer.open('popSample3',{
+							ccb:function(){
+								console.log("popSample3 닫힘");
+							}
 						});
 					}
 				});

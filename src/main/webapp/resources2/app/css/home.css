@@ -71,7 +71,7 @@
 .secMn.match .mats .dd .tt{}
 .secMn.match .mats .dd .nm{color: #fd5555; margin-left: 5px;}
 
-.secMn.match .matchList{display: block;position: relative;overflow: hidden;border-top: 1px solid #000000;background: #000000;}
+.secMn.match .matchList{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; */background: #000000;padding: 1px 1px 1px 1px;}
 .secMn.match .matchList>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden; margin-right: 0px;}
 .secMn.match .matchList>li .item{position: relative;overflow: hidden;background:#000;padding:1px;}
 .secMn.match .matchList>li .item .img{display:block;position:relative;padding-bottom: calc( 4% / 3 * 100 );}
@@ -131,7 +131,7 @@
 .secMn.hash .pgtd .bts{}
 .secMn.hash .pgtd .bts .link{color: #999999;text-decoration: underline;font-size: 12px;display: block;padding: 5px 0;}
 .secMn.hash .hashList{}
-.secMn.hash .hashList{display: block;position: relative;overflow: hidden;border-top: 1px solid #000000;background: #000000;}
+.secMn.hash .hashList{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; */background: #000000;padding: 1px;}
 .secMn.hash .hashList>li{width: calc(33.3333% - 0px);margin-bottom:0px;float:left;overflow: hidden; margin-right: 0px;}
 .secMn.hash .hashList>li .item{position: relative;overflow: hidden;background:#000;padding:1px;}
 .secMn.hash .hashList>li .item .img{display:block;position:relative;padding-bottom: calc( 4% / 3 * 100 );}

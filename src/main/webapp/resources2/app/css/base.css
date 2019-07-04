@@ -85,7 +85,7 @@ input[type=number]{-moz-appearance:textfield;}
 .ui-datepicker-title{ margin:0px; }
 .ui-datepicker-title select{ width:100%; }
 .ui-datepicker .ui-datepicker-prev, 
-.ui-datepicker .ui-datepicker-next{background: no-repeat center;background-size: 100% auto;width: 40px;height: 40px;border: 1px solid #cccccc;border-radius: 0px;box-sizing:border-box;vertical-align:middle;position:absolute;top: 0;left:auto;cursor: pointer;}
+.ui-datepicker .ui-datepicker-next{background: no-repeat center;background-size: 30px auto;width: 40px;height: 40px;border: 1px solid #cccccc;border-radius: 0px;box-sizing:border-box;vertical-align:middle;position:absolute;top: 0;left:auto;cursor: pointer;}
 .ui-datepicker .ui-datepicker-prev{background-image:url(../images/common/datePickPrev.png);right: 45px;}
 .ui-datepicker .ui-datepicker-next{background-image:url(../images/common/datePickNext.png);right: 0px;}
 .ui-datepicker .ui-datepicker-prev span,
@@ -122,7 +122,7 @@ input[type=number]{-moz-appearance:textfield;}
 .ui-datepicker th:first-child{color:#ec151e}
 .ui-datepicker-trigger{ cursor:pointer;}
 .ui-datepicker .ui-datepicker-title{text-align: left;}
-.ui-datepicker .ui-datepicker-title select{margin: 0 6px 0 0;height: 40px;border-color: #c7c7c7;width: 100px;padding: 0 45px 0 10px;background: url(../images/common/select.png) no-repeat right 2px top 5px transparent;background-size: 28px auto;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;appearance:none;}
+.ui-datepicker .ui-datepicker-title select{margin: 0 6px 0 0;height: 40px;border-color: #c7c7c7;width: 100px;padding: 0 45px 0 10px;background: url(../images/common/select.png) no-repeat right 8px top 50% transparent;background-size: 18px auto;-webkit-appearance:none;-moz-appearance:none;-ms-appearance:none;appearance:none;}
 .ui-datepicker .ui-datepicker-title select.ui-datepicker-month{width: 80px;}
 
 
@@ -228,7 +228,7 @@ input[type=number]{-moz-appearance:textfield;}
 @media screen and ( max-width:360px)  {
 }
 #debug{position:fixed;left: 4px;top: 0px;z-index: 1000000;font-size: 11px;}
-.contain.ui .device{ border:#ddd solid 1px; border-radius:4px; padding:10px; font-size:10px;}
+.contain.ui .device{border:#ddd solid 1px;border-radius:4px;padding:10px;font-size: 11px;font-family: Consolas;}
 .contain.ui .device h3{ font-weight:bold; }
 .contain.ui .device #userAgent{ color:#7d51da; }
 .contain.ui .device #cssStatus{ color:#000000; }

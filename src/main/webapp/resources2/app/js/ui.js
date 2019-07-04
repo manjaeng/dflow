@@ -22,7 +22,14 @@ var ui = {
 		}
 	},
 	isUA:function(t){
-		return navigator.userAgent.indexOf(t) > -1;
+		t = t.split(" ");
+		for (let i = 0; i < t.length; i++) {
+			result = navigator.userAgent.indexOf(t[i]) > -1 ? true : false ;
+			if (!result) {
+				return result ;
+			}
+		}
+		return result ;
 	},
 	filter: {
 		init:function(){
@@ -181,7 +188,7 @@ var ui = {
 				} else {
 					$(".floatNav").removeClass("active");
 				}
-				if (ui.isUA("NAVER") || ui.isUA("DaumApps")) {
+				if ( ui.isUA("NAVER") || ui.isUA("DaumApps")) {
 					$(".floatNav").removeClass("active");
 				}
 			}
@@ -585,15 +592,15 @@ var ui = {
 			if(opt === true && this.stat === false ){
 				this.stat = true;
 				// ui.lock.sct = $(window).scrollTop();
-				// $("body , html").addClass("lock");
 				// $("html").css({"top":""+(-ui.lock.sct)+"px"});
+				$("body , html").addClass("lock");
 				$(lockDiv).bind("touchmove scroll", function(e){ e.preventDefault() });
 			}
 			if(opt === false){
 				this.stat = false;
-				// $("body , html").removeClass("lock");
 				// $("html").css({"top":""});
 				// $(window).scrollTop( ui.lock.sct );
+				$("body , html").removeClass("lock");
 				$(lockDiv).unbind("touchmove scroll");
 			}
 		}
@@ -904,14 +911,15 @@ var ui = {
 			ui.popLayer.openPop = location.hash.replace("#pop=","").split(",");
 			if ( ui.popLayer.openPop == "" ) { ui.popLayer.openPop = []	}
 			var h_now = ui.popLayer.openPop ; 			
-			console.log( h_prev , h_now );
+			// console.log( h_prev , h_now );
 			if( h_prev > h_now ){
 				result = h_prev.filter(function (a) {
  					return h_now.indexOf(a) === -1;
 				});
-				console.log("뒤로옴" , result[0]);
+				console.log("뒤로옴" , result[0] ,h_prev , h_now  );
 				ui.popLayer.close(result[0]);
 			}else{
+				// console.log("앞으로");
 			}
 		},
 		openPop:[],
@@ -923,14 +931,14 @@ var ui = {
 			_this.opt = $.extend({
 				ocb: null ,
 				ccb: null,
-				hash: true, // true
+				hash: true, // true  //  뒤로가기 버튼으로 팝업닫기 옵션
 			}, params); 
 
-			if (_this.opt.ocb || _this.opt.ccb ) {
-				_this.callbacks[id] = {} ;
-				_this.callbacks[id].open = this.opt.ocb  ;
-				_this.callbacks[id].close = this.opt.ccb  ;
-			}
+			_this.callbacks[id] = {} ;
+			_this.callbacks[id].open  = _this.opt.ocb ? _this.opt.ocb : null ;
+			_this.callbacks[id].close = _this.opt.ccb ? _this.opt.ccb : null ;
+			// if( _this.opt.ocb )	_this.callbacks[id].open  = _this.opt.ocb ;
+			// if( _this.opt.ccb )	_this.callbacks[id].close = _this.opt.ccb ;
 
 			if( $("#" + id).length ) {
 
@@ -941,7 +949,7 @@ var ui = {
 
 				ui.lock.using(true);
 				$("#" + id).attr("tabindex","0").fadeIn(200,function(){
-					if (_this.callbacks[id])  _this.callbacks[id].open();
+					if (_this.callbacks[id].open)  _this.callbacks[id].open();
 				}).focus();
 				this.resize(id);
 				this.lyScroll(id);
@@ -964,14 +972,9 @@ var ui = {
 		},
 		close: function(id) {
 			_this = this;
-
 			$("#"+id).fadeOut(100,function(){
-				if( $(".popLayer:visible").length < 1 ){
-					ui.lock.using(false);
-				}
-				if (_this.callbacks[id]) {
-					_this.callbacks[id].close();
-				}
+				if( !$(".popLayer:visible").length ) ui.lock.using(false);
+				try { _this.callbacks[id].close(); } catch (error) { }
 			});
 		},
 		resize:function(id){
@@ -988,11 +991,7 @@ var ui = {
 		scroll:{},
 		lyScroll: function(id) {
 			
-			if ( ui.isUA("Mac OS") ){
-				bounce = true;
-			}else{
-				bounce = true;
-			}
+			bounce = ui.isUA("Mac OS") ?  true : false;
 
 			if( this.scroll[id] == undefined ) {
 				this.scroll[id] = new IScroll('#'+id+'>.pbd>.pct', {

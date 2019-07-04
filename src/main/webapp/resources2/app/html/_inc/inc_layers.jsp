@@ -101,6 +101,7 @@ var popMatching={
 		ui.popLayer.open('popMatching',{
 			ocb:function(){
 				popMatching.slider();
+				console.log("매칭 열림");
 			},
 			ccb:function(){
 				console.log("매칭 닫힘");
@@ -129,7 +130,7 @@ var popMatching={
 			$("#match_amount").text(  ui.value + "%"  );
 			// console.log(ui.value);
 		} );
-		console.log("매칭 오픈");
+		// console.log("매칭 오픈");
 	}
 };
 $(document).ready(function(){
@@ -351,7 +352,7 @@ function popPrfPicMod(){
 		<div class="pct">
 			<main class="poptents">
 				<img src="http://placeimg.com/640/640/any/5" alt="">
-				<a class="btn" href="javascript:popMatching();">매칭</a>
+				<a class="btn" href="javascript:popMatching.using();">매칭</a>
 				<a class="btn" href="/resources2/app/html/look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>
 		</div>
