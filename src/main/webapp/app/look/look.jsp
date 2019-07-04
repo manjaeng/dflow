@@ -10,13 +10,13 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain look">
+	<div id="contain" class="contain look list">
 		<main id="contents" class="contents">
 			<section class="secLookWrap">
 				<ul class="lookList" id="lookList"></ul>
 				<div class="uiLoadMore">
 					<em></em>
-					<button type="button" class="btnLoad" onclick="itemListAdd()" id="btnListMore">불러오기</button>
+					<button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
 				</div>
 			</section>
 		</main>
@@ -29,49 +29,56 @@
 
 
 	<script>
-	$(document).ready(function(){
-		ui.listMore.init(itemListAdd);
-	});
-
-	var page = 0;
-	var itemListAdd = function(){
-		ui.listLoad.attach(); // 로딩이미지 Show
-		$("#btnListMore").prop("disabled",true);
-		if( ui.listMore.active ){
-			ui.listMore.active = false;
-			ui.listMore.using();
-			page ++;
-			window.setTimeout(function(){
-				$.ajax({
-					type: "post",
-					url: "./look_more.jsp",
-					dataType: "html",
-					success: function(html) {
+		
+		var page = 0 ;
+		appendStat = true ;
+		addItemFnc = function(){
+			appendStat = false ;
+			$(".uiLoadMore").addClass("active");
+			$.ajax({
+				type: "post",
+				url: "/app/look/look_more.jsp",
+				dataType: "html",
+				success: function(html) {
+					window.setTimeout(function(){
+						page ++ ;
 						$("#lookList").append(html);
 						$("#btnListMore").prop("disabled",false);
-						ui.listLoad.detach();
-						ui.listMore.active = true;
 						console.log("페이징 = " + page);
+						appendStat = true ;
 						if (page >= 3) {
 							console.log("끝");
-							ui.listMore.removeEvent();
+							$(".uiLoadMore").hide();
+							appendStat = false ;
 						}
-						setTimeout(function(){
+						ui.slides.lookPic.using();
+						$(".uiLoadMore").removeClass("active");
+						
+					},500);
+				}
+			});	
+		};
 
-						},500);
-							ui.slides.lookPic.using();
-					},
-					error:function(error){
-						page --;
-						console.log("페이징 = " + page);
-						console.log("에러 = " + error.readyState);
-						ui.listLoad.error();
-						$("#btnListMore").prop("disabled",false);
-					}
-				});
-			},1000);
-		}
-	};
+		$(window).on("scroll", function() { // 바닥 확인
+
+			var docH = $(document).height();
+			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
+			// console.log(docH,scr);
+			if (docH <= scr  && appendStat == true) {
+				console.log("바닥sss");
+				addItemFnc();
+				appendStat = false;
+			}
+		});
+
+		addItemFnc();
+
+
+		$(document).ready(function(){
+			ui.nav.act("look");  // 하단 메뉴 활성화
+		});
+
+
 	</script>
 	
 
