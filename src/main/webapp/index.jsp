@@ -1,3 +1,3 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:forward page="/app/look/look.jsp"/>
+<jsp:forward page="/resources2/app/html/common/home.jsp"/>
