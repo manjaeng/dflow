@@ -561,7 +561,7 @@ var ui = {
 
 		}
 	},
-	tab:{ //탭형식컨텐츠
+	tab:{ // 탭형식컨텐츠
 		init:function(){
 			this.using();
 			// console.log(  ui.param.tab );
@@ -881,7 +881,7 @@ var ui = {
 				if (_this.opt.hash) {
 					window.history.back();
 				}else{
-					ui.popLayer.close(id);
+					_this.close(id);
 				}
 			});
 
@@ -895,29 +895,30 @@ var ui = {
 
 			if( $(".popLayer.win").length ) {
 				var id = $(".popLayer.win").attr("id");
-				ui.popLayer.open(id);
+				_this.open(id);
 			}
 			$(window).on("load resize",this.resize);
 			$(window).on("hashchange",function(){
-				// ui.popLayer.history(true);
+				// _this.history(true);
 			});
 			window.onpopstate = history.onpushstate = function(e) {
-				ui.popLayer.history(true);
+				_this.history(true);
 			}
 
 		},
 		history:function(){
-			var h_prev = ui.popLayer.openPop ; 
-			ui.popLayer.openPop = location.hash.replace("#pop=","").split(",");
-			if ( ui.popLayer.openPop == "" ) { ui.popLayer.openPop = []	}
-			var h_now = ui.popLayer.openPop ; 			
+			var _this = this;
+			var h_prev = _this.openPop ; 
+			_this.openPop = location.hash.replace("#pop=","").split(",");
+			if ( _this.openPop == "" ) { _this.openPop = []	}
+			var h_now = _this.openPop ;		
 			// console.log( h_prev , h_now );
 			if( h_prev > h_now ){
 				result = h_prev.filter(function (a) {
  					return h_now.indexOf(a) === -1;
 				});
 				console.log("뒤로옴" , result[0] ,h_prev , h_now  );
-				ui.popLayer.close(result[0]);
+				_this.close(result[0],true);
 			}else{
 				// console.log("앞으로");
 			}
@@ -943,35 +944,48 @@ var ui = {
 			if( $("#" + id).length ) {
 
 				if (_this.opt.hash) {
-					ui.popLayer.openPop.push(id);
-					window.history.pushState({}, 'pop', '#pop='+ui.popLayer.openPop );
+
+					if ( $(".popLayer:visible").length <= 0 &&  location.href.split("#")[1] != undefined && location.href.split("#pop=")[1] != undefined ) {  //
+						_this.openPop = [];
+						window.history.pushState({}, 'pop', '   #' );
+					}
+
+					_this.openPop.push(id);
+					window.history.pushState({}, 'pop', '#pop='+_this.openPop );
 				}
 
 				ui.lock.using(true);
+
 				$("#" + id).attr("tabindex","0").fadeIn(200,function(){
 					if (_this.callbacks[id].open)  _this.callbacks[id].open();
 				}).focus();
-				this.resize(id);
-				this.lyScroll(id);
 
-				$(document).on("click focusin",  "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
-					var $this = $(this);
+				_this.resize(id);
+				_this.lyScroll(id);
+
+				$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
+					var els = $(this);
 					window.setTimeout(function(){
-						var myTop = $this.position().top - 50 ;
-						var myMax =  Math.abs( ui.popLayer.scroll[id].maxScrollY );
+						var myTop = els.position().top - 50 ;
+						var myMax = Math.abs( _this.scroll[id].maxScrollY );
 						console.log(myTop , myMax);
 						if ( myTop >= myMax ) {
 							myTop = myMax ;
-						}					
-						ui.popLayer.scroll[id].scrollTo(0,-myTop);
+						}				
+						_this.scroll[id].scrollTo(0,-myTop);
 					},600);
 				});
 
 			}
 
 		},
-		close: function(id) {
+		close: function(id,set) {
 			_this = this;
+
+			console.log(_this.opt.hash , set);	
+			if (_this.opt.hash && set != true && $("#"+id+":visible").length  ) {  // 해쉬 
+				window.history.back();
+			}
 			$("#"+id).fadeOut(100,function(){
 				if( !$(".popLayer:visible").length ) ui.lock.using(false);
 				try { _this.callbacks[id].close(); } catch (error) { }
