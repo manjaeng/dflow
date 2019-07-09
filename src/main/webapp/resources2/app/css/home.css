@@ -143,3 +143,148 @@
 .secMn.hash .hashList>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
 .secMn.hash .hashList>li .item .num:before{}
 .secMn.hash .hashList>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
+
+
+
+
+
+
+.contain.int .intro{position:fixed;left:0px;right:0px;/* top: 0px; *//* bottom: 0px; */height: 100%;}
+.contain.int .intro .msg{transition: all 1s; opacity:0; position: absolute;left:50%;top: 15%;margin-left: -75px;width:150px;height: 30px;background: url(../images/common/intro_txt.png) no-repeat;background-size: 100% auto;font-size: 0px;z-index: 300;}
+.contain.int .intro .logo{transition: all 1.5s;opacity:0;position: absolute;left:50%;bottom: 9%;margin-left: -35vw;width: 70vw;height: 30vw;background: url(../images/common/intro_logo.png) no-repeat;background-size: 100% auto;font-size: 0px;z-index: 400;}
+.contain.int .intro .box{height: 100%;transition: all 1.4s;/* transition-delay: 0.8s; */}
+.contain.int .intro .box.bx1{background-color:#ffffff;position: absolute;width:100%;z-index:200;left: 0%;}
+.contain.int .intro .box.bx2{background-color:#94f2c7;position: absolute;width:100%;z-index:200;left: 0%;/* display:none; */}
+.contain.int .intro .box .line{height:2px;background-color: #dddddd;display:block;position: absolute;width:100%;transition: all 0.9s;/* transition-delay: 0.8s; */}
+.contain.int .intro .box.bx1 .line{background-color: #ff414d;margin-top: -4.5vh; left:0%;}
+.contain.int .intro .box.bx2 .line{background-color: #000000;margin-top: 0.5vh; left:0%;}
+
+.contain.int .intro .box .line.L1{top: calc(100% * 1/10);}
+.contain.int .intro .box .line.L2{top: calc(100% * 2/10);}
+.contain.int .intro .box .line.L3{top: calc(100% * 3/10);}
+.contain.int .intro .box .line.L4{top: calc(100% * 4/10);}
+.contain.int .intro .box .line.L5{top: calc(100% * 5/10);}
+.contain.int .intro .box .line.L6{top: calc(100% * 6/10);}
+.contain.int .intro .box .line.L7{top: calc(100% * 7/10);}
+.contain.int .intro .box .line.L8{top: calc(100% * 8/10);}
+.contain.int .intro .box .line.L9{top: calc(100% * 9/10);}
+.contain.int .intro .box .line.L10{top: calc(100% * 10 / 10);}
+
+
+
+
+
+
+.contain.int .intro .box.bx1{}
+.contain.int .intro .box.bx1 .L1{left: -100%;transition-delay: 0.4s;}
+.contain.int .intro .box.bx1 .L2{}
+.contain.int .intro .box.bx1 .L3{}
+.contain.int .intro .box.bx1 .L4{}
+.contain.int .intro .box.bx1 .L5{    left: 100%;}
+.contain.int .intro .box.bx1 .L6{}
+.contain.int .intro .box.bx1 .L7{}
+.contain.int .intro .box.bx1 .L8{}
+.contain.int .intro .box.bx1 .L9{}
+.contain.int .intro .box.bx1 .L10{}
+
+.contain.int .intro.on .bx1{left: 0%;}
+.contain.int .intro.on .bx1 .L1{left: -49%;}
+.contain.int .intro.on .bx1 .L2{left: -80%;}
+.contain.int .intro.on .bx1 .L3{left: -90%;}
+.contain.int .intro.on .bx1 .L4{left: -40%;transition-delay: 0.3s;}
+.contain.int .intro.on .bx1 .L5{left: -50%;transition-delay: 0.3s;}
+.contain.int .intro.on .bx1 .L6{left: -110%;}
+.contain.int .intro.on .bx1 .L7{left: -70%;}
+.contain.int .intro.on .bx1 .L8{left: 80%;}
+.contain.int .intro.on .bx1 .L9{left: -100%;}
+.contain.int .intro.on .bx1 .L10{left: -70%;}
+
+
+.contain.int .intro .box.bx2{}
+.contain.int .intro .box.bx2 .L1{}
+.contain.int .intro .box.bx2 .L2{}
+.contain.int .intro .box.bx2 .L3{}
+.contain.int .intro .box.bx2 .L4{}
+.contain.int .intro .box.bx2 .L5{}
+.contain.int .intro .box.bx2 .L6{}
+.contain.int .intro .box.bx2 .L7{}
+.contain.int .intro .box.bx2 .L8{}
+.contain.int .intro .box.bx2 .L9{}
+.contain.int .intro .box.bx2 .L10{}
+
+
+.contain.int .intro.on .bx2{left: 70%;}
+.contain.int .intro.on .bx2 .L1{left: 21%;}
+.contain.int .intro.on .bx2 .L2{left: 70%;}
+.contain.int .intro.on .bx2 .L3{left: 0%;}
+.contain.int .intro.on .bx2 .L4{left: 15%;}
+.contain.int .intro.on .bx2 .L5{left: 20%;transition-delay: 0.2s;transition-duration: 1.2s;}
+.contain.int .intro.on .bx2 .L6{left: 0%;}
+.contain.int .intro.on .bx2 .L7{left: 20%;}
+.contain.int .intro.on .bx2 .L8{left: 80%;}
+.contain.int .intro.on .bx2 .L9{left: 40%;}
+.contain.int .intro.on .bx2 .L10{ left:10%;}
+
+
+.contain.int .intro.on .msg{ opacity:1; transition-delay: 0.7s;}
+.contain.int .intro.on .logo{opacity:1;transition-delay: 0.5s;}
+
+
+
+
+
+.popMysize{}
+.popMysize>.pbd>.pbt{ height:56px;}
+.popMysize>.pbd>.pbt .bts .btn{ background:#70f5c4; border-color: #70f5c4; font-family:"BlairMd"; color: #000000; font-weight: normal;}
+.popMysize .sec.myinfo{}
+.popMysize .sec.myinfo .form{ margin: 0 10px; padding-top: 30px; background: url(../images/common/dot_line.png) repeat-x; background-size: 6px auto;}
+.popMysize .sec.myinfo .form .msg{ font-size: 18px;  text-align: center;}
+.popMysize .sec.myinfo .form .list{ margin: 40px auto; width:200px;}
+.popMysize .sec.myinfo .form .list>li{display:flex; align-items: center; margin-top: 10px;}
+.popMysize .sec.myinfo .form .list>li .dt{width:80px; font-size: 16px; color: #999999;}
+.popMysize .sec.myinfo .form .list>li .dd{ width:100%; display:flex; justify-content: space-between;}
+.popMysize .sec.myinfo .form .list>li .dd .select{border: #cccccc solid 1px; border-width: 1px 0px; font-family:"BlairMd"; font-size: 13px; padding-left: 0px;}
+
+
+.popMysize .sec .hdt{font-family:"BlairMd";font-size: 21px;min-height: 160px;text-align: center;padding-top: 60px;}
+
+.popMysize .steps{height:36px;}
+.popMysize .steps ul.st{display:flex;border-top: #000000 solid 1px;align-items: center;/* height:36px; */position:fixed;left:0;right:0px;bottom: 56px;}
+.popMysize .steps ul.st>li{width:100%;/* height:36px; */text-align: right;font-family:"BlairMd";font-size: 21px;color: #000000;border-left: #000000 solid 1px;padding-right: 12px;background:#000000;color: #acacac;}
+.popMysize .steps ul.st>li:first-child{ border-left-width: 0px;}
+.popMysize .steps.st1{}
+.popMysize .steps.st1 ul.st>li:nth-child(1){color: #ffffff;}
+.popMysize .steps.st1 ul.st>li:nth-child(1) ~ li{ background-color: #ffffff; color: #000000;}
+
+.popMysize .steps.st2{}
+.popMysize .steps.st2 ul.st>li:nth-child(2) {color: #ffffff;}
+.popMysize .steps.st2 ul.st>li:nth-child(2) ~ li{ background-color: #ffffff; color: #000000;}
+
+
+.popMysize .steps.st3{}
+.popMysize .steps.st3 ul.st>li:nth-child(3) {color: #ffffff;}
+
+
+.popMysize>.pbd>.pbt .bts .btn.btnLater{ background-color: #e4e4e4; border-color: #e4e4e4;}
+
+
+.popMysize .sec.style ul.list{border-bottom: #000000 solid 1px;}
+.popMysize .sec.style ul.list>li{border-top: #000000 solid 1px;  text-align: center;}
+.popMysize .sec.style ul.list>li label{font-family:"BlairMd";text-transform: uppercase;display:block;padding: 6px 0;font-size: 13px;}
+.popMysize .sec.style ul.list>li label input{ position:absolute; left:0;}
+.popMysize .sec.style ul.list>li label input + span{}
+.popMysize .sec.style ul.list>li label input:checked + span{ color:#66dfb2;}
+
+.popMysize .sec.photo{}
+.popMysize .sec.photo .pics{position: relative; height: 300px;}
+.popMysize .sec.photo .pics ul.list{display:flex;position:absolute;left:50%;margin-left: -90px;}
+.popMysize .sec.photo .pics ul.list>li{border: #000000 solid 2px; width:188px; height:251px; margin-left: 20px;}
+.popMysize .sec.photo .pics ul.list>li:first-child{margin-left: 0px;}
+.popMysize .sec.photo .pics ul.list>li .btnAdd{display:block; height:100%; background: url(../images/common/intro_pic.png) no-repeat center; background-size: 74px auto; font-size: 0px;}
+ 
+.popMysize .sec.coms{}
+.popMysize .sec.coms .box{text-align: center;margin: 0 10px;padding: 63px 0 30px 0;background: url(../images/common/dot_line.png) repeat-x;background-size: 6px auto;}
+.popMysize .sec.coms .msgs{font-size: 18px;color: #000000;}
+.popMysize .sec.coms .msgs em{color: #66dfb2;}
+.popMysize .sec.coms .total{color: #666666;margin-top: 40px;}
+.popMysize .sec.coms .total em{color: #000000; font-weight: bold;}

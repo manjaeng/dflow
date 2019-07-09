@@ -47,10 +47,6 @@
 				<h3><a href="javascript:;">공통</a></h3>
 				<ul>
 					<li>
-						<h4>홈</h4> <em>ing</em>
-						<mark>/resources2/app/html/common/home.jsp</mark>
-					</li>
-					<li>
 						<h4>필터</h4> <em>ing</em>
 						<mark>/resources2/app/html/common/filter.jsp</mark>
 					</li>
@@ -62,6 +58,23 @@
 						<h4>팝업윈도우</h4> <em>ing</em>
 						<mark>/resources2/app/html/guide/popWin.jsp</mark>
 					</li> -->
+				</ul>
+			</li>
+			<li>
+				<h3><a href="javascript:;">홈</a></h3>
+				<ul>
+					<li>
+						<h4>홈</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/home.jsp</mark>
+					</li>
+					<li>
+						<h4>인트로</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/intro.jsp</mark>
+					</li>
+					<li>
+						<h4>정보입력</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/myinfo_step1.jsp</mark>
+					</li>
 				</ul>
 			</li>
 			<li>

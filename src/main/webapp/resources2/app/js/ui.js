@@ -125,11 +125,11 @@ var ui = {
 							// console.log("scroll 스톱");
 							// console.log(scrStopEvent);
 
-							/* clearTimeout(scrStopEvent);
+							clearTimeout(scrStopEvent);
 							scrStopEvent = window.setTimeout(function(){
 								ui.ly.botNav.show();
 								clearTimeout(scrStopEvent);
-							},800); */
+							},200);
 						});
 
 					}else {
