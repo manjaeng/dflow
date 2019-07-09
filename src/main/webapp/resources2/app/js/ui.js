@@ -664,6 +664,7 @@ var ui = {
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
+				zoom: true,
 				lazy: true,
 				loop: true
             },
@@ -692,6 +693,7 @@ var ui = {
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
+				zoom:true,
 				lazy: true,
 				loop: true
             },
@@ -760,29 +762,29 @@ var ui = {
 			ybt:"확인"
 		}, params);
 
-		if( !$(".popAlert").length ){
+		if( $(".popAlert").length ) return ;
 
-			var lyAlert =
-			'<article class="popAlert" tabindex="0">'+
-				'<div class="pbd">'+
-					'<div class="pct">'+opt.msg+'</div>'+
-					'<div class="pbt">'+						
-						'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
-					'</div>'+
-					// '<button type="button" class="btnClose">닫기</button>'+
+		var lyAlert =
+		'<article class="popAlert" tabindex="0">'+
+			'<div class="pbd">'+
+				'<div class="pct">'+opt.msg+'</div>'+
+				'<div class="pbt">'+						
+					'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
 				'</div>'+
-			'</article>';
+				// '<button type="button" class="btnClose">닫기</button>'+
+			'</div>'+
+		'</article>';
 
-			$("body").append(lyAlert);
-			ui.lock.using(true);
+		$("body").append(lyAlert);
+		ui.lock.using(true);
 
 
-			$(".popAlert").find(".btnConfirm").on("click",function(){
-				window.setTimeout(opt.ycb);
-			});
-			$(".popAlert").find(".btnClose , .btnConfirm").on("click",alertClose);
+		$(".popAlert").find(".btnConfirm").on("click",function(){
+			window.setTimeout(opt.ycb);
+		});
+		$(".popAlert").find(".btnClose , .btnConfirm").on("click",alertClose);
 
-		}
+
 
 		function alertClose(){
 			$(".popAlert").remove();
@@ -801,32 +803,32 @@ var ui = {
 			nbt:"취소"
 		}, params);
 
-		if( !$(".popConfirm").length ){
+		if( $(".popConfirm").length ) return ;
 
-			var lyConfirm =
-			'<article class="popConfirm" tabindex="0">'+
-				'<div class="pbd">'+
-					'<div class="pct">'+opt.msg+'</div>'+
-					'<div class="pbt">'+						
-						'<button type="button" class="btn type sm f btnCancel">'+ opt.nbt +'</button>'+
-						'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
-					'</div>'+
-					// '<button type="button" class="btnClose">닫기</button>'+
+		var lyConfirm =
+		'<article class="popConfirm" tabindex="0">'+
+			'<div class="pbd">'+
+				'<div class="pct">'+opt.msg+'</div>'+
+				'<div class="pbt">'+						
+					'<button type="button" class="btn type sm f btnCancel">'+ opt.nbt +'</button>'+
+					'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
 				'</div>'+
-			'</article>';
-			$("body").append(lyConfirm);
-			ui.lock.using(true);
-			$(".popConfirm:visible").focus();
-			$(".popConfirm").find(".btnConfirm").on("click",function(){
-				window.setTimeout(opt.ycb);
-			});
+				// '<button type="button" class="btnClose">닫기</button>'+
+			'</div>'+
+		'</article>';
+		$("body").append(lyConfirm);
+		ui.lock.using(true);
+		$(".popConfirm:visible").focus();
+		$(".popConfirm").find(".btnConfirm").on("click",function(){
+			window.setTimeout(opt.ycb);
+		});
 
-			$(".popConfirm").find(".btnCancel").on("click",function(){
-				window.setTimeout(opt.ncb);
-			});
+		$(".popConfirm").find(".btnCancel").on("click",function(){
+			window.setTimeout(opt.ncb);
+		});
 
-			$(".popConfirm").find(".btnConfirm, .btnClose , .btnCancel").on("click",confirmClose);
-		}
+		$(".popConfirm").find(".btnConfirm, .btnClose , .btnCancel").on("click",confirmClose);
+		
 
 		function confirmClose(){
 			$(".popConfirm").remove();
@@ -844,33 +846,29 @@ var ui = {
 			bot:20,
 		}, params);
 
-		var toastStat = false ;
-		if ( !$(".popToast:visible").length && toastStat == false ) {
+		if ( $(".popToast:visible").length ) return ;
 
-			var lyToast =
-				'<article class="popToast ' + opt.cls + '">' +
-					'<div class="pbd">' +
-						'<div class="pct">' + opt.msg + '</div>' +
-					'</div>' +
-				'</article>';
+		var lyToast =
+			'<article class="popToast ' + opt.cls + '">' +
+				'<div class="pbd">' +
+					'<div class="pct">' + opt.msg + '</div>' +
+				'</div>' +
+			'</article>';
 
-			$("body").append(lyToast);
+		$("body").append(lyToast);
 
-			window.setTimeout(function() {
-				$(".popToast").addClass("on").css({"padding-bottom" : opt.bot});
-			},100);
+		window.setTimeout(function() {
+			$(".popToast").addClass("on").css({"padding-bottom" : opt.bot});
+		},100);
 
-			this.times = window.setTimeout(function() {
-				$(".popToast").removeClass("on").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",function(){
-					// console.log("fsd");
-					$(".popToast").remove();
-					// toastStat = true ;
-				});
-				// $(".popToast").fadeOut(400, function() {
-					
-				// });
-			}, opt.sec);
-		}
+		this.times = window.setTimeout(function() {
+			$(".popToast").removeClass("on").on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",function(){
+				// console.log("fsd");
+				$(".popToast").remove();
+			});
+		}, opt.sec);
+
+
 	},
 	popLayer: { // 레이어팝업
 		init: function() {
@@ -929,6 +927,8 @@ var ui = {
 			// console.log(id,params);
 			_this = this;
 
+			if ( $("#" + id).length  <= 0  ) return ;   // id 호출팝업이 없으면 리턴
+
 			_this.opt = $.extend({
 				ocb: null ,
 				ccb: null,
@@ -941,42 +941,42 @@ var ui = {
 			// if( _this.opt.ocb )	_this.callbacks[id].open  = _this.opt.ocb ;
 			// if( _this.opt.ccb )	_this.callbacks[id].close = _this.opt.ccb ;
 
-			if( $("#" + id).length ) {
+			
 
-				if (_this.opt.hash) {
+			if (_this.opt.hash) {
 
-					if ( $(".popLayer:visible").length <= 0 &&  location.href.split("#")[1] != undefined && location.href.split("#pop=")[1] != undefined ) {  //
-						_this.openPop = [];
-						window.history.pushState({}, 'pop', '   #' );
-					}
-
-					_this.openPop.push(id);
-					window.history.pushState({}, 'pop', '#pop='+_this.openPop );
+				if ( $(".popLayer:visible").length <= 0 &&  location.href.split("#")[1] != undefined && location.href.split("#pop=")[1] != undefined ) {  //
+					_this.openPop = [];
+					window.history.pushState({}, 'pop', '   #' );
 				}
 
-				ui.lock.using(true);
-
-				$("#" + id).attr("tabindex","0").fadeIn(200,function(){
-					if (_this.callbacks[id].open)  _this.callbacks[id].open();
-				}).focus();
-
-				_this.resize(id);
-				_this.lyScroll(id);
-
-				$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
-					var els = $(this);
-					window.setTimeout(function(){
-						var myTop = els.position().top - 50 ;
-						var myMax = Math.abs( _this.scroll[id].maxScrollY );
-						console.log(myTop , myMax);
-						if ( myTop >= myMax ) {
-							myTop = myMax ;
-						}				
-						_this.scroll[id].scrollTo(0,-myTop);
-					},600);
-				});
-
+				_this.openPop.push(id);
+				window.history.pushState({}, 'pop', '#pop='+_this.openPop );
 			}
+
+			ui.lock.using(true);
+
+			$("#" + id).attr("tabindex","0").fadeIn(200,function(){
+				if (_this.callbacks[id].open)  _this.callbacks[id].open();
+			}).focus();
+
+			_this.resize(id);
+			_this.lyScroll(id);
+
+			$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
+				var els = $(this);
+				window.setTimeout(function(){
+					var myTop = els.position().top - 50 ;
+					var myMax = Math.abs( _this.scroll[id].maxScrollY );
+					console.log(myTop , myMax);
+					if ( myTop >= myMax ) {
+						myTop = myMax ;
+					}
+					_this.scroll[id].scrollTo(0,-myTop);
+				},600);
+			});
+
+
 
 		},
 		close: function(id,set) {

@@ -44,7 +44,7 @@ article, aside, details, figcaption, figure, dialog,
 footer, header, hgroup, menu, main, nav, section{display:block;}
 html,body{}
 body{word-wrap:break-word;word-break:keep-all;color:#333333;line-height:1.6;-webkit-text-size-adjust:none;}
-html *{max-height:1000000px;} /* Android tablet bug fix */
+/* html *{max-height:1000000px;} Android tablet bug fix */
 h1, h2, h3, h4, h5, h6{font-size:100%;font-weight:normal;}
 a{color:#333333; text-decoration: none;}
 a,button,input{-webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);}
