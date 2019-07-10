@@ -55,7 +55,7 @@
 
 /* 마이페이지 타이틀 */
 .prfeHd{height: 56px;}
-.prfeHd>.in{height: 56px;/* border-bottom: #c2c2c2 solid 1px; */position:fixed;left:0px;top:0px;right:0px;background-color:rgba(255,255,255,0.9);z-index:500;display: flex;justify-content: left;padding: 0px 92px 0px 54px;}
+.prfeHd>.in{height: 56px;/* border-bottom: #c2c2c2 solid 1px; */position:fixed;left:0px;top:0px;right:0px;background-color: rgba(255,255,255,1.9);z-index:500;display: flex;justify-content: left;padding: 0px 92px 0px 54px;}
 .prfeHd .tit{margin:auto 0px;font-size: 17px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;font-family: "BlairMd","NotoSansCJKkr-Md";color: #101010;}
 .prfeHd .bts{position:absolute;left: 5px;top: 5px;}
 .prfeHd .bts .hisback{width:44px;height:44px;display:block;background:url(../images/common/hisback.png) no-repeat;background-size:100% auto;font-size:0px;}
