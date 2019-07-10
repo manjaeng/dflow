@@ -72,9 +72,13 @@
 
 		addItemFnc();
 
+		var testRefresh = function(){
+			console.log("댕겨서 새로고침");
+		}
 
 		$(document).ready(function(){
 			ui.nav.act("look");  // 하단 메뉴 활성화
+			ui.refresh.init(testRefresh);  //  pulldown 새로고침
 		});
 
 

@@ -3,6 +3,8 @@
 <script src="/resources2/app/js/swiper.js"></script>
 <script src="/resources2/app/js/masonry.pkgd.js"></script>
 <!-- <script src="/resources2/app/js/imagesloaded.pkgd.min.js"></script> -->
+<script src="/resources2/app/js/pullToRefresh.js"></script>
+
 
 
 

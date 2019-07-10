@@ -8,21 +8,21 @@
 	
 	
 	<!-- 컨텐츠 시작 -->
-	
-	<div id="contain" class="contain my prf">
-		<div class="prfeHd">
-			<div class="in">
-				<div class="bts">
-					<a href="javascript:history.back();" class="hisback">뒤로</a>
-				</div>
-				<h1 class="tit">패피루키</h1>
-				<div class="set">
-					<a class="bt alim on" href="javascript:;">알림</a>
-					<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
-					<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
-				</div>
+	<div class="prfeHd">
+		<div class="in">
+			<div class="bts">
+				<a href="javascript:history.back();" class="hisback">뒤로</a>
+			</div>
+			<h1 class="tit">패피루키</h1>
+			<div class="set">
+				<a class="bt alim on" href="javascript:;">알림</a>
+				<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
+				<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
 			</div>
 		</div>
+	</div>	
+	<div id="contain" class="contain my prf">
+
 		<main id="contents" class="contents">
 
 			<section class="uiPrfeSet a">
@@ -167,10 +167,14 @@
 		}
 	}
 
+	var testRefresh = function(){
+		console.log("댕겨서 새로고침");
+	}
 
 	$(document).ready(function(){
 		prfTabFnc('look');  // 최초 탭 활성화
 		ui.nav.act("mypg");  // 하단 메뉴 활성화
+		ui.refresh.init(testRefresh);  //  pulldown 새로고침
 	});
 	</script>
 	

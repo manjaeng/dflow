@@ -11,6 +11,7 @@
 	<!-- 컨텐츠 시작 -->
 	
 	<div id="contain" class="contain mn">
+
 		<main id="contents" class="contents">
 			
 			<section class="secMn tops">
@@ -318,11 +319,20 @@
 	</div>
 
 	<script>
+	var testRefresh = function(){
+		console.log("댕겨서 새로고침");
+	}
+
 	$(document).ready(function(){
 		ui.nav.act("home");  // 하단 메뉴 활성화
+		ui.refresh.init(testRefresh);  //  pulldown 새로고침
 	});
-	</script>
+
 	
+	</script>
+	<script>
+
+    </script>
 	<!--// 컨텐츠 끝 -->
 	
 	<%@ include file="../_inc/menubar.jsp" %>
