@@ -1,5 +1,9 @@
 ﻿
+<!-- 필터 -->
+<%@ include file="../common/popFilter.jsp" %>
 
+<!-- 사이즈 -->
+<%@ include file="../common/popSize.jsp" %>
 
 
 <!--  추가 메뉴 popOthers -->
@@ -74,14 +78,15 @@ function popAccus(){
 				
 				<p>내용</p>
 				<p>내용</p>
-				
-				<div class="uiSlider" id="popMatchSlider" data-amount="85">
-					<em class="bar"></em>
-					<div class="ui-slider-handle"><span class="match-handle"></span></div>
-					<div class="nums">
-						<span class="num min">0</span>
-						<span class="ds">~</span>
-						<span class="num max">100<i>%</i></span>
+				<div class="uiSlider">
+					<div class="mat" id="popMatchSlider" data-amount="85">
+						<em class="bar"></em>
+						<div class="ui-slider-handle"><span class="match-handle"></span></div>
+						<div class="nums">
+							<span class="num min">0</span>
+							<span class="ds">~</span>
+							<span class="num max">100<i>%</i></span>
+						</div>
 					</div>
 				</div>
 				<p>내용</p>

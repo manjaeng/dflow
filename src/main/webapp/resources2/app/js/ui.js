@@ -33,7 +33,7 @@ var ui = {
 	},
 	filter: {
 		init:function(){
-			$("#filtMatchSlider").length && this.match();
+			// $("#filtMatchSlider").length && this.match();
 		},
 		match:function(){
 			var $slider = $("#filtMatchSlider");
@@ -56,7 +56,57 @@ var ui = {
 				$(this).attr("data-amount",ui.value);
 				// console.log(ui.value);
 			} );
-			console.log("매칭 오픈");
+		}
+	},
+	size: {
+		init:function(){
+			$("#sizeHeightSlider").length && this.match();
+		},
+		height:function(){
+			var $slider = $("#sizeHeightSlider");
+			var bar = $slider.find("em.bar");
+			var handle = $slider.find(".match-handle");
+			$slider.slider({
+				value: $slider.attr("data-amount") ,
+				min: 0,
+				max: 200,
+				step: 1,
+				create: function(event, ui) {
+					handle.text( $(this).slider( "value" ) + "cm");
+					bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				}
+			});
+
+			$slider.on("slidechange slide", function( event, ui ) {
+				handle.text( ui.value + "cm");
+				bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				$(this).attr("data-amount",ui.value);
+				// console.log(ui.value);
+			} );
+
+		},
+		fit:function(){
+			var $slider = $("#sizeFittSlider");
+			var bar = $slider.find("em.bar");
+			var handle = $slider.find(".match-handle");
+			$slider.slider({
+				value: $slider.attr("data-amount") ,
+				min: 0,
+				max: 100,
+				step: 1,
+				create: function(event, ui) {
+					handle.text( $(this).slider( "value" ) + "%");
+					bar.css("width", $(this).slider( "value" ) + "%");
+				}
+			});
+
+			$slider.on("slidechange slide", function( event, ui ) {
+				handle.text( ui.value + "%");
+				bar.css("width", $(this).slider( "value" ) + "%");
+				$(this).attr("data-amount",ui.value);
+				// console.log(ui.value);
+			} );
+
 		}
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기  ui.param.***
@@ -129,7 +179,7 @@ var ui = {
 							scrStopEvent = window.setTimeout(function(){
 								ui.ly.botNav.show();
 								clearTimeout(scrStopEvent);
-							},200);
+							},800);
 						});
 
 					}else {
@@ -915,7 +965,7 @@ var ui = {
 				result = h_prev.filter(function (a) {
  					return h_now.indexOf(a) === -1;
 				});
-				console.log("뒤로옴" , result[0] ,h_prev , h_now  );
+				// console.log("뒤로옴" , result[0] ,h_prev , h_now  );
 				_this.close(result[0],true);
 			}else{
 				// console.log("앞으로");
@@ -932,7 +982,7 @@ var ui = {
 			_this.opt = $.extend({
 				ocb: null ,
 				ccb: null,
-				hash: true, // true  //  뒤로가기 버튼으로 팝업닫기 옵션
+				hash: false, // true  //  뒤로가기 버튼으로 팝업닫기 옵션
 			}, params); 
 
 			_this.callbacks[id] = {} ;
@@ -982,7 +1032,7 @@ var ui = {
 		close: function(id,set) {
 			_this = this;
 
-			console.log(_this.opt.hash , set);	
+			// console.log(_this.opt.hash , set);	
 			if (_this.opt.hash && set != true && $("#"+id+":visible").length  ) {  // 해쉬 
 				window.history.back();
 			}

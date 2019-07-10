@@ -39,12 +39,12 @@
 			<a href="javascript:;" class="btn" disabled="disabled">버튼</a>
 			<button type="button" class="btn" disabled="disabled">버튼</button>
 			<p class="gap"></p>
-			<a href="javascript:;" class="btn type a">버튼</a>
-			<a href="javascript:;" class="btn type b">버튼</a>
-			<a href="javascript:;" class="btn type c">버튼</a>
-			<a href="javascript:;" class="btn type d">버튼</a>
-			<a href="javascript:;" class="btn type e">버튼</a>
-			<a href="javascript:;" class="btn type f">버튼</a>
+			<a href="javascript:;" class="btn a">버튼</a>
+			<a href="javascript:;" class="btn b">버튼</a>
+			<a href="javascript:;" class="btn c">버튼</a>
+			<a href="javascript:;" class="btn d">버튼</a>
+			<a href="javascript:;" class="btn e">버튼</a>
+			<a href="javascript:;" class="btn f">버튼</a>
 
 			<p class="gap"></p>
 			<div class="btnSet">
@@ -57,8 +57,8 @@
 			</div>
 			<p class="gap"></p>
 			<div class="btnSet fit">
-				<a href="javascript:;" class="btn type a">버튼</a>
-				<a href="javascript:;" class="btn type d">버튼</a>
+				<a href="javascript:;" class="btn a">버튼</a>
+				<a href="javascript:;" class="btn d">버튼</a>
 			</div>
 
 			<div class="codeBox">
