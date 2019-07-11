@@ -36,6 +36,7 @@ var ui = {
 		init:function(){
 			// $("#filtMatchSlider").length && this.match();
 			// popFilter();
+			// popSize();
 		},
 		match:function(){
 			var $slider = $("#filtMatchSlider");
@@ -70,7 +71,7 @@ var ui = {
 		height:function(){
 			var $slider = $("#sizeHeightSlider");
 			var bar = $slider.find("em.bar");
-			var handle = $slider.find(".match-handle");
+			var handle = $slider.find(".range_amount");
 			$slider.slider({
 				value: $slider.attr("data-amount") ,
 				min: 0,
@@ -93,7 +94,7 @@ var ui = {
 		fit:function(){
 			var $slider = $("#sizeFittSlider");
 			var bar = $slider.find("em.bar");
-			var handle = $slider.find(".match-handle");
+			var handle = $slider.find(".range_amount");
 			$slider.slider({
 				value: $slider.attr("data-amount") ,
 				min: 0,

@@ -2,10 +2,10 @@
 
 <article class="popLayer a popSize" id="popSize">
 	<div class="pbd">
+		<button type="button" class="btnPopClose">닫기</button>
 		<div class="phd">
-			<div class="in">
-				<h1 class="tit">사이즈관리</h1>
-				<button type="button" class="btnPopClose">닫기</button>
+			<div class="hdt">
+				<h1 class="title">MY SIZE</h1>
 			</div>
 		</div>
 		<div class="pct">
@@ -17,10 +17,10 @@
 							<div class="uiSlider">
 								<div class="height" id="sizeHeightSlider" data-amount="168">
 									<em class="bar"></em>
-									<div class="ui-slider-handle"><span class="match-handle"></span></div>
+									<div class="ui-slider-handle"></div>
+									<div class="range_amount"></div>
 									<div class="nums">
 										<span class="num min">1M</span>
-										<span class="ds">~</span>
 										<span class="num max">2M<i></i></span>
 									</div>
 								</div>
@@ -31,7 +31,7 @@
 						<div class="ht">AGE</div>
 						<div class="ct">
 							<select class="select">
-								<option>AGE 20~ AGE 25</option>
+								<option>28</option>
 							</select>
 						</div>
 					</li>
@@ -41,10 +41,11 @@
 							<div class="uiSlider">
 								<div class="fit" id="sizeFittSlider" data-amount="50">
 									<em class="bar"></em>
-									<div class="ui-slider-handle"><span class="match-handle"></span></div>
+									<div class="ui-slider-handle"></div>
+									<!-- <div class="range_amount"></div> -->
 									<div class="nums">
 										<span class="num min">Tight</span>
-										<span class="ds">~</span>
+										<span class="num mid">FIT</span>
 										<span class="num max">Oversized<i></i></span>
 									</div>
 								</div>
@@ -52,13 +53,13 @@
 						</div>
 					</li>
 					<li class="bra">
-						<div class="ht">BRA SIZE</div>
+						<div class="ht">BRA</div>
 						<div class="ct">
 							b
 						</div>
 					</li>
 					<li class="bot">
-						<div class="ht">BOTTOM SIZE</div>
+						<div class="ht">BOTTOM</div>
 						<div class="ct">
 							b
 						</div>
@@ -69,8 +70,7 @@
 		<div class="pbt">
 			<div class="in">
 				<div class="bts">
-					<a class="btn xl e btnCancel" href="javascript:;">취소</a>
-					<a class="btn xl d btnCom" href="javascript:;">완료</a>
+					<a class="btn xl d btnSave" href="javascript:;">SAVE</a>
 				</div>
 			</div>
 		</div>
