@@ -10,7 +10,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 
-	<article class="popLayer type b popSample2" id="popSample2">
+	<article class="popLayer b popSample2" id="popSample2">
 		<div class="pbd">
 			<button type="button" class="btnPopClose">닫기</button>
 			<div class="phd">

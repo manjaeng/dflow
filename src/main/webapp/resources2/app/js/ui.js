@@ -1,4 +1,4 @@
-﻿//*******************************************//
+//*******************************************//
 // 김기현 : kimkee@naver.com    
 // date : 2019-06-12 ~
 //*******************************************//
@@ -1019,22 +1019,19 @@ var ui = {
 			_this.opt = $.extend({
 				ocb: null ,
 				ccb: null,
+				zIndex: 1000,
 				hash: false, // true  //  뒤로가기 버튼으로 팝업닫기 옵션
 			}, params); 
 
 			_this.callbacks[id] = {} ;
 			_this.callbacks[id].open  = _this.opt.ocb ? _this.opt.ocb : null ;
-			_this.callbacks[id].close = _this.opt.ccb ? _this.opt.ccb : null ;
-			// if( _this.opt.ocb )	_this.callbacks[id].open  = _this.opt.ocb ;
-			// if( _this.opt.ccb )	_this.callbacks[id].close = _this.opt.ccb ;
-
-			
+			_this.callbacks[id].close = _this.opt.ccb ? _this.opt.ccb : null ;		
 
 			if (_this.opt.hash) {
 
 				if ( $(".popLayer:visible").length <= 0 &&  location.href.split("#")[1] != undefined && location.href.split("#pop=")[1] != undefined ) {  //
 					_this.openPop = [];
-					window.history.pushState({}, 'pop', '   #' );
+					window.history.pushState({}, 'pop', '#' );
 				}
 
 				_this.openPop.push(id);
@@ -1043,22 +1040,25 @@ var ui = {
 
 			ui.lock.using(true);
 
-			$("#" + id).attr("tabindex","0").fadeIn(200,function(){
-				if (_this.callbacks[id].open)  _this.callbacks[id].open();
-			}).focus();
+			$("#" + id).css({ zIndex: _this.opt.zindex });
+			$("#" + id).fadeIn(100,function(){
+				if(_this.callbacks[id].open)  _this.callbacks[id].open();			
+				$(this).addClass("on");
 
-			_this.resize(id);
-			_this.lyScroll(id);
+			}).attr("tabindex","0").focus();
+			
+			window.setTimeout(function(){
+				_this.resize(id);
+				_this.lyScroll(id);
+			});
 
 			$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
 				var els = $(this);
 				window.setTimeout(function(){
 					var myTop = els.position().top - 50 ;
 					var myMax = Math.abs( _this.scroll[id].maxScrollY );
-					console.log(myTop , myMax);
-					if ( myTop >= myMax ) {
-						myTop = myMax ;
-					}
+					// console.log(myTop , myMax , _this.scroll[id].y);
+					if ( myTop >= myMax ) { myTop = myMax ; }
 					_this.scroll[id].scrollTo(0,-myTop);
 				},600);
 			});
@@ -1070,10 +1070,11 @@ var ui = {
 			_this = this;
 
 			// console.log(_this.opt.hash , set);	
-			if (_this.opt.hash && set != true && $("#"+id+":visible").length  ) {  // 해쉬 
+			if( _this.opt.hash && set != true && $("#"+id+":visible").length  ) {  // 해쉬 
 				window.history.back();
 			}
-			$("#"+id).fadeOut(100,function(){
+
+			$("#"+id).removeClass("on").fadeOut(150,function(){
 				if( !$(".popLayer:visible").length ) ui.lock.using(false);
 				try { _this.callbacks[id].close(); } catch (error) { }
 			});
@@ -1088,6 +1089,7 @@ var ui = {
 			}
 			$(".popLayer.a:visible>.pbd>.pct").css({"height": pctnH });
 			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH -70 });
+			$(".popLayer.c:visible>.pbd>.pct").css({"max-height": pctnH -30 });
 		},
 		scroll:{},
 		lyScroll: function(id) {

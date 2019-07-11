@@ -7,7 +7,7 @@
 
 
 <!--  추가 메뉴 popOthers -->
-<article class="popLayer type b popOthers" id="popOthers">
+<article class="popLayer c popOthers" id="popOthers">
 	<div class="pbd">
 		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
@@ -15,7 +15,7 @@
 				<ul class="list">
 					<li><a href="javascript:;" class="bt">스타일 만족도</a></li>
 					<li><a href="javascript:;" class="bt">저장하기</a></li>
-					<li><a href="javascript:;" class="bt">공유하기</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popShare();">공유하기</a></li>
 					<li><a href="javascript:;" class="bt">링크복사</a></li>
 					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
 					<li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li>
@@ -28,7 +28,7 @@
 
 
 <!-- 신고 하기  -->
-<article class="popLayer type b popAccus" id="popAccus">
+<article class="popLayer c popAccus" id="popAccus">
 	<div class="pbd">
 		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
@@ -50,6 +50,7 @@
 <script>
 function popAccus(){
 	ui.popLayer.open('popAccus',{
+		zindex : 1500,
 		ocb:function(){
 			console.log("신고하기팝업 열림");
 			// ui.popLayer.close('popPrfOthers');
@@ -65,7 +66,7 @@ function popAccus(){
 
 
 <!-- 매칭율 -->
-<article class="popLayer type b popMatching" id="popMatching">
+<article class="popLayer c popMatching" id="popMatching">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -148,7 +149,7 @@ $(document).ready(function(){
 
 
 <!-- 선호스타일 -->
-<article class="popLayer type b popMyStyle" id="popMyStyle">
+<article class="popLayer c popMyStyle" id="popMyStyle">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -187,7 +188,7 @@ function popMyStyle(){
 
 
 <!-- 프로필 기타 팝업 -->
-<article class="popLayer type b popPrfOthers" id="popPrfOthers">
+<article class="popLayer c popPrfOthers" id="popPrfOthers">
 	<div class="pbd">
 		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
@@ -217,7 +218,7 @@ function popPrfOthers(){
 
 
 <!-- 공유하기 팝업 -->
-<article class="popLayer type b popShare" id="popShare">
+<article class="popLayer c popShare" id="popShare">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -254,7 +255,7 @@ function popShare(){
 
 
 <!-- 프로필사진변경 -->
-<article class="popLayer type b popPrfPicMod" id="popPrfPicMod">
+<article class="popLayer b popPrfPicMod" id="popPrfPicMod">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -289,7 +290,7 @@ function popPrfPicMod(){
 
 
 <!-- 팝레이어 샘플1 -->
-<article class="popLayer type a popSample1" id="popSample1">
+<article class="popLayer a popSample1" id="popSample1">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -301,6 +302,7 @@ function popPrfPicMod(){
 			<main class="poptents">
 				<a class="btn" href="javascript:ui.popLayer.open('popSample2');">팝레이어2</a>
 				<p>sdfsdfsfsd</p>
+				<input type="text" class="input">
 				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text" class="input">
@@ -323,7 +325,7 @@ function popPrfPicMod(){
 </article>
 
 <!-- 팝레이어 샘플2 -->
-<article class="popLayer type b popSample2" id="popSample2">
+<article class="popLayer b popSample2" id="popSample2">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -346,7 +348,7 @@ function popPrfPicMod(){
 </article>
 
 <!-- 팝레이어 샘플3 -->
-<article class="popLayer type a popSample3" id="popSample3">
+<article class="popLayer a popSample3" id="popSample3">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
@@ -360,6 +362,34 @@ function popPrfPicMod(){
 				<a class="btn" href="javascript:popMatching.using();">매칭</a>
 				<a class="btn" href="/resources2/app/html/look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>
+		</div>
+	</div>
+</article>
+
+
+<!-- 팝레이어 샘플4 아래에서 올라오는 팝업 type c -->
+<article class="popLayer c popSample4" id="popSample4">
+	<div class="pbd">
+		<div class="phd">
+			<div class="in">
+				<h1 class="tit">타이틀</h1>
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
+		</div>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li class="twitter"><a href="javascript:;" class="bt">트위터</a></li>
+					<li class="katalk"><a href="javascript:;" class="bt">카카오톡</a></li>
+					<li class="facebook"><a href="javascript:;" class="bt">페이스북</a></li>
+					<li class="kastory"><a href="javascript:;" class="bt">카카오스토리</a></li>
+				</ul>
+			</main>
+		</div>
+		<div class="pbt">
+			<div class="bts">
+				<a href="javascript:;" class="btn a btnPopClose">취소</a>
+			</div>
 		</div>
 	</div>
 </article>

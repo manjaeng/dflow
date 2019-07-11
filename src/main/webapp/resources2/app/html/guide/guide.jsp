@@ -41,6 +41,7 @@
 			<p class="gap"></p>
 			<a href="javascript:;" class="btn a">버튼</a>
 			<a href="javascript:;" class="btn b">버튼</a>
+			<a href="javascript:;" class="btn b fill">버튼</a>
 			<a href="javascript:;" class="btn c">버튼</a>
 			<a href="javascript:;" class="btn d">버튼</a>
 			<a href="javascript:;" class="btn e">버튼</a>
@@ -81,6 +82,7 @@
 						<a class="btn" href="javascript:samplePop1();">팝레이어1</a>
 						<a class="btn" href="javascript:samplePop2();">팝레이어2</a>
 						<a class="btn" href="javascript:samplePop3();">팝레이어3</a>
+						<a class="btn" href="javascript:samplePop4();">팝레이어4</a>
 					</div>
 					<pre class="brush: js">
 						ui.popLayer.open('popSample1'); // 팝레이어열기 
@@ -123,6 +125,14 @@
 						ui.popLayer.open('popSample3',{
 							ccb:function(){
 								console.log("popSample3 닫힘");
+							}
+						});
+					}
+					samplePop4 = function(){
+						// 레이어팝업 열기 콜백
+						ui.popLayer.open('popSample4',{
+							ccb:function(){
+								// console.log("popSample4 닫힘");
 							}
 						});
 					}
@@ -561,11 +571,13 @@
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
 
-	<nav class="floatNav">
-		<button type="button" class="bt refresh">Refresh</button>
-		<button type="button" class="bt top">TOP</button>
-	</nav>
-	
+	<script>
+		$(document).ready(function(){
+			ui.refresh.init(function(){
+				location.reload();
+			});
+		});
+	</script>
 	<!--// 컨텐츠 끝 -->
 
 	<%@ include file="../_inc/menubar.jsp" %>

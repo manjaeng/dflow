@@ -1,6 +1,7 @@
 ﻿
 
 <nav id="floatNav" class="floatNav">
+	<!-- <button type="button" class="bt refresh">Refresh</button> -->
 	<button type="button" class="bt top">TOP</button>
 </nav>
 

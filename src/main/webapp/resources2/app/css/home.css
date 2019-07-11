@@ -6,7 +6,7 @@
 .secMn>.hdt p{font-family:"BlairMd";font-size: 24px;text-transform: uppercase;line-height: 110%;}
 
 /* 사이즈선택 */
-.secMn.tops>.hdt{padding-top: 10px;}
+.secMn.tops>.hdt{padding-top: 15px;}
 .secMn.tops>.bts{padding: 15px 16px 20px 16px;margin-top: 0px;}
 .secMn.tops>.bts .btSize{display:block;border: #dddddd solid 1px;text-align: center;padding: 8px 10px;}
 .secMn.tops>.bts .btSize span{font-size: 12px;line-height: 140%;display:block;}
