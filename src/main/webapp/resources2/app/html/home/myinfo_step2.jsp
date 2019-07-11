@@ -13,21 +13,25 @@
 	<article class="popPage popMysize" id="popMysize">
 		<div class="pbd">
 			<a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a>
-			<a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a>
+			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
 			<div class="pct">
 				<main class="poptents">
-
-					<section class="sec photo">
-						<div class="hdt"><em>UPLOAD YOUR <br> STYLE PHOTOS </em> </div>
-
-						<div class="pics">
-							<ul class="list">
-								<li><a class="btnAdd" href="javascript:;">선택</a></li>
-								<li></li>
-							</ul>
-						</div>
+					
+					<section class="sec style">
+						<div class="hdt"><em>CHOOSE YOUR <br> FAVORITE STYLE </em> </div>
+						<ul class="list">
+							<li><label><input type="checkbox"><span class="tit">Casual</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Girly</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Business</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Tomboy</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Chic</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Bohemian</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Sexy</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Punk</span></label></li>
+							<li><label><input type="checkbox"><span class="tit">Sporty</span></label></li>
+						</ul>
 					</section>
-
+					
 					<section class="steps st2">
 						<ul class="st">
 							<li>1</li>
@@ -41,7 +45,7 @@
 			<div class="pbt">
 				<div class="in">
 					<div class="bts">
-						<a href="./myinfo_step3.jsp" class="btn type xl a btnNext">NEXT</a>
+						<a href="./myinfo_step3.jsp" class="btn type xl a btnDone">DONE</a>
 					</div>
 				</div>
 			</div>

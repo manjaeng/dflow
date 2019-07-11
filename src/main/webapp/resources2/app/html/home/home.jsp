@@ -66,10 +66,10 @@
 
 			<section class="secMn match">
 				<div class="hdt"><p>Maybe it's right <br> for you</p></div>
-				<div class="mats">
+				<!-- <div class="mats">
 					<a href="javascript:;" onclick="popMatching.using();" class="dd"><em class="tt">매칭율</em><i class="nm" id="match_amount">85%</i></a>
 					<a href="javascript:;" onclick="popMyStyle();" class="dd"><em class="tt">선호스타일</em><i class="nm" id="mystyle_chk">ON</i></a>
-				</div>
+				</div> -->
 				<ul class="matchList" id="matchList">
 					<li>
 						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/1" alt=""></a></span><div class="num"><em class="n">7</em></div></div>

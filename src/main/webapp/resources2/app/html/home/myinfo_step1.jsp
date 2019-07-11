@@ -13,7 +13,7 @@
 	<article class="popPage popMysize" id="popMysize">
 		<div class="pbd">
 			<!-- <a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a> -->
-			<a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a>
+			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
 			<div class="pct">
 				<main class="poptents">
 
@@ -42,6 +42,9 @@
 									</div>
 								</li>
 							</ul>
+							<div class="account">
+								<a href="javascript:;">Do you HAVE AN ACCOUNT?</a>
+							</div>
 						</div>
 
 
@@ -60,7 +63,7 @@
 			<div class="pbt">
 				<div class="in">
 					<div class="bts">
-						<a href="./myinfo_step2.jsp" class="btn type xl a btnStart">START</a>
+						<a href="./myinfo_step2.jsp" class="btn type xl a btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>

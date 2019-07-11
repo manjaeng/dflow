@@ -313,17 +313,17 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .header .menu .bt.size{ background-image: url(../images/common/top_menu_size.png)}
 .header .menu .bt.filter{ background-image: url(../images/common/top_menu_filter.png)}
 
-.menubar{height: 50px;position:relative; transition: all 0.4s;}
+.menubar{height: 48px;position:relative;transition: all 0.4s;}
 .menubar.hide{}
 .menubar.hide>.inner{bottom: -60px;}
-.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;/* padding: 0 10px; */height: 50px;}
+.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;padding: 0 10px;height: 48px;}
 .menubar .menu{display:flex; justify-content:  space-between; align-content: center; align-items: center;}
 .menubar .menu>li{width:100%;display:flex;align-items: center;align-content: center;}
 .menubar .menu>li>a{font-family:"BlairMd";color: #a3a3a3;font-size: 0px;height: 50px;display:flex;align-items: center;align-content: center;justify-content: center;width: 100%;text-align: center;}
 .menubar .menu>li>a em{font-family:"NotoSansCJKkr-Md"; font-size: 0px; line-height: 10px;display: inline-block;margin: 0 4px 0px 4px;}
-.menubar .menu>li>a:before{background: no-repeat;background-size: 100% auto;content:"";display:block;width: 70px;height: 40px;}
+.menubar .menu>li>a:before{background: no-repeat;background-size: 100% auto;content:"";display:block;width: 70px;height: 40px; opacity:0.5;}
 .menubar .menu>li.active>a{color: #000000;}
-.menubar .menu>li.active>a::before{ background-position-y: -60px;}
+.menubar .menu>li.active>a::before{ background-position-y: -60px; opacity:1;}
 .menubar .menu>li.home>a:before{ background-image: url(../images/common/nav_1.png)}
 .menubar .menu>li.adds>a:before{ background-image: url(../images/common/nav_2.png)}
 .menubar .menu>li.look>a:before{ background-image: url(../images/common/nav_3.png)}

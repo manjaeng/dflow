@@ -13,23 +13,20 @@
 	<article class="popPage popMysize" id="popMysize">
 		<div class="pbd">
 			<a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a>
-			<a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a>
+			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
 			<div class="pct">
 				<main class="poptents">
 
-					<section class="sec style">
-						<div class="hdt"><em>CHOOSE YOUR <br> FAVORITE STYLE </em> </div>
-						<ul class="list">
-							<li><label><input type="checkbox"><span class="tit">Casual</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Girly</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Business</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Tomboy</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Chic</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Bohemian</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Sexy</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Punk</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Sporty</span></label></li>
-						</ul>
+					<section class="sec photo">
+						<div class="hdt"><em>UPLOAD YOUR <br> STYLE PHOTOS </em> </div>
+
+						<div class="pics swiper-container" id="slideIntroPic">
+							<ul class="list swiper-wrapper slide">
+								<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
+								<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del">삭제</a></div></li>
+								<li class="swiper-slide"><div class="img"></div></li>
+							</ul>
+						</div>
 					</section>
 
 					<section class="steps st3">
@@ -45,7 +42,7 @@
 			<div class="pbt">
 				<div class="in">
 					<div class="bts">
-						<a href="./myinfo_step4.jsp" class="btn type xl a btnDone">DONE</a>
+						<a href="./myinfo_step4.jsp" class="btn type xl a btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>

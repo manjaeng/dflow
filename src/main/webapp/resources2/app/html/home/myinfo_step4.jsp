@@ -13,7 +13,7 @@
 	<article class="popPage popMysize" id="popMysize">
 		<div class="pbd">
 			<!-- <a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a> -->
-			<a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a>
+			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
 			<div class="pct">
 				<main class="poptents">
 

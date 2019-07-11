@@ -696,10 +696,30 @@ var ui = {
         init:function(){
         	$(this.sample1.els +" ul.slide" ).length && this.sample1.using();
         	$(this.sample2.els +" ul.slide" ).length && this.sample2.using();
+        	$(this.intPic.els +" ul.slide" ).length && this.intPic.using();
         	$(this.lookPic.els +" ul.slide" ).length && this.lookPic.using();
         	$(this.mnPic.els +" ul.slide" ).length && this.mnPic.using();
         	$(this.newBie.els +" ul.slide" ).length && this.newBie.using();
         	$(this.newUp.els +" ul.slide" ).length && this.newUp.using();
+        },
+		intPic:{  //  
+            els: "#slideIntroPic.swiper-container",
+            opt: {
+                slidesPerView: 'auto',
+                freeMode: true,
+				centeredSlides: true,
+                observer: true,
+                observeParents: true,
+                spaceBetween:20,
+                watchOverflow:true,
+                loop: false
+            },
+            using: function() {
+                if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+                    this.opt.loop = false;
+                }
+                this.slide = new Swiper(this.els, this.opt);
+			}
         },
 		newBie:{  //  
             els: ".slideNewbie.swiper-container",
@@ -737,6 +757,7 @@ var ui = {
                 this.slide = new Swiper(this.els, this.opt);
 			}
         },
+
 		mnPic:{  //  
             els: ".slideMnPic .swiper-container:not(.swiper-container-horizontal)",
             opt: {
