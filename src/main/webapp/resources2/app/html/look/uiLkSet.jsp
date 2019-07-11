@@ -12,8 +12,8 @@
 		</div>						
 	</div>
 	<div class="match">
-		<div class="box">MATCH?</div>
-		<div class="box">STYLE</div>
+		<div class="box mat"><a class="bt" href="javascript:;" data-match="75"><i class="bar"></i><em class="amt"></em> <span class="txt">MATCH?</span></a></div>
+		<div class="box sty"><a class="bt" href="javascript:;"><span class="txt">STYLE</span></a></div>
 	</div>
 	<div class="info">
 		<div class="user">
@@ -25,12 +25,14 @@
 			<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 		</div>
 		<div class="desc"><a href="javascript:;">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a></div>
+		<div class="time">2일전</div>
 	</div>
 	<div class="data">
 		<ul class="list">
+			<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
 			<li class="like"><a href="javascript:;" class="bt"><span>120</span></a></li>
 			<li class="reply"><a href="javascript:;" class="bt"><span>77</span></a></li>
-			<li class="scrap"><a href="javascript:;" class="bt">찜</a></li>
+			<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>
 		</ul>
 	</div>
 	<div class="tags">

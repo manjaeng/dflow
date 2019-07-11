@@ -429,13 +429,18 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 
 
 /* 플로팅 탑버튼 */
-.floatNav{position:fixed;right: 10px;bottom: 0;z-index: 200;transition:all 0.4s;}
-.floatNav.active{bottom: 60px;}
-.floatNav .bt{font-size: 0px;width: 40px;height: 40px;display:block;background: no-repeat rgba(255, 255, 255, 0.7);border: solid 1px rgba(0,0,0,0.2);transform: translateY(200px);transition: all 0.4s;background-size: 100% auto;margin-top: 10px;}
+.floatNav{position:fixed;right: 22px;bottom: 0;z-index: 200;transition:all 0.4s;}
+.floatNav .bt{font-size: 0px;width:33px;height: 40px;display:block;background: no-repeat rgba(0, 0, 0, 1) center;transform: translateY(200px);transition: all 0.4s;background-size: 20px auto;margin-top: 10px;border-radius: 100%;}
 .floatNav .bt.refresh{background-image: url(../images/common/ico_load.png); transition-delay: 0.0s;}
 .floatNav .bt.top{background-image: url(../images/common/btn_top.png); transition-delay: 0.1s;}
+.floatNav .bt.sch{background-image: url(../images/common/nav_btn_sch.png);transition-delay: 0.1s;transform: translateY(-75px);}
+
+
+.floatNav.active{/* bottom: 70px; */}
 .floatNav.active .refresh{ transform: translateY(0px);}
 .floatNav.active .top{ transform: translateY(0px); }
+.floatNav.active .sch{}
+.floatNav.hide .sch{}
 .floatNav.hide{transform: translateY(50px);}
 
 

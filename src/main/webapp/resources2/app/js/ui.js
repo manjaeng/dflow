@@ -7,6 +7,7 @@ var ui = {
 	init:function(){
 		this.cm.init();
 		this.ly.init();
+		this.look.init();
 		this.form.init();
 		this.accd.init();
 		this.tab.init();
@@ -306,6 +307,28 @@ var ui = {
 			var navH = $(".wrap>.nav").outerHeight();
 			$contain.css("min-height", winH - headH - footH - navH);
 			*/
+		}
+	},
+	look:{
+		init:function(){
+			this.match();
+		},
+		match:function(){
+			$(document).on("click",".uiLkSet>.match .box.mat .bt",function(){
+				// $(this).addClass("com");
+				$(this).find(".bar").css({ "width" : "0%" });
+				var pct = $(this).attr("data-match");
+				$(this).find(".bar").animate({
+					width : pct+"%",
+					width: "70%",
+				},1000,"easeOutBounce");
+				console.log(pct);
+				$(this).find(".amt").text(pct+"%");
+				$(this).find(".txt").text("MATCH");
+			});
+			// .on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",".uiLkSet>.match .box .bt",function(){
+			// 	$(this).removeClass("com");
+			// });
 		}
 	},
 	form:{  //  폼요소
