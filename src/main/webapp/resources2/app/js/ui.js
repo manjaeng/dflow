@@ -35,25 +35,29 @@ var ui = {
 	filter: {
 		init:function(){
 			// $("#filtMatchSlider").length && this.match();
+			// popFilter();
 		},
 		match:function(){
 			var $slider = $("#filtMatchSlider");
 			var bar = $slider.find("em.bar");
-			var handle = $slider.find(".match-handle");
+			var handle = $slider.find(".range_amount");
 			$slider.slider({
 				value: $slider.attr("data-amount") ,
+				range: true,
 				min: 0,
 				max: 100,
+				values: [ 65, 100 ],
 				step: 1,
 				create: function(event, ui) {
-					handle.text( $(this).slider( "value" ) + "%");
-					bar.css("width", $(this).slider( "value" ) + "%");
+					handle.html(  $(this).slider( "values",0 ) + "<i>%</i> - " + $(this).slider( "values",1 ) + "<i>%</i>" );
+					// bar.css("width", $(this).slider( "value" ) + "%");
 				}
 			});
 
 			$slider.on("slidechange slide", function( event, ui ) {
-				handle.text( ui.value + "%");
-				bar.css("width", $(this).slider( "value" ) + "%");
+				// handle.text( ui.value + "%");
+				handle.html(  ui.values[ 0 ] + "<i>%</i> - " + ui.values[ 1 ] + "<i>%</i>" );
+				// bar.css("width", $(this).slider( "value" ) + "%");
 				$(this).attr("data-amount",ui.value);
 				// console.log(ui.value);
 			} );
