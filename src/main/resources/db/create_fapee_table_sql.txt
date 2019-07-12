@@ -55,6 +55,11 @@ CREATE TABLE FP_UserFilter (
 CREATE INDEX idx_userIdKey_FP_UserFilter ON FP_UserFilter(userIdKey);
 CREATE INDEX idx_deviceId_FP_UserFilter ON FP_UserFilter(deviceId);
 
+CREATE TABLE FP_Style (
+	idKey BIGINT NOT NULL AUTO_INCREMENT,
+	style VARCHAR(100) NULL
+);
+
 CREATE TABLE FP_UserSize (
   
 );
