@@ -38,8 +38,7 @@
 .uiMnSet>.info .user .mem .nm{font-size: 20px;font-family: "NotoSansCJKkr-Md";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
 .uiMnSet>.info .user .mem .dt{font-size: 15px;color: #a3a3a3;text-transform: uppercase;}
 .uiMnSet>.info .user .mem .dt .k{/* color: #66dfb2; */}
-.uiMnSet>.info .user .mem .dt .n{
-}
+.uiMnSet>.info .user .mem .dt .n{}
 .uiMnSet>.info .user .mem .dt .n::before{content: ",";/* width:1px; */height:14px;/* background:#e5e5e5; *//* display: inline-block; *//* vertical-align: middle; */margin: 0 3px 0 0;}
 .uiMnSet>.info .user .bts{position:absolute;right: -10px;top: 4px;}
 .uiMnSet>.info .user .bts .bt{}
@@ -89,6 +88,7 @@
 
 
 .secMn.newb{padding-bottom: 20px;}
+.secMn.newb>.hdt{padding-top: 30px;}
 .secMn.newb .slideNewbie{margin-top: 30px;margin-bottom: 50px;padding: 10px 10px;}
 .secMn.newb .slideNewbie .slide{}
 .secMn.newb .slideNewbie .slide>li{width: 30%;padding: 0 8px;}

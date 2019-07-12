@@ -14,7 +14,7 @@
 					<li class="match">
 						<div class="ht">MATCH</div>
 						<div class="ct">
-							<div class="uiSlider">
+							<div class="uiSlider range">
 								<div class="match" id="filtMatchSlider" data-amount-min="65"  data-amount-max="100" >
 									<div class="ui-slider-handle"></div>
 									<div class="range_amount"></div>

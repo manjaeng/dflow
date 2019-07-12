@@ -136,13 +136,13 @@ select::-ms-expand {display:none;}
 .uiSlider .ui-slider>.in{margin: 50px 0px 30px 0px;position:relative;}
 .uiSlider .ui-slider .ui-slider-handle{width: 16px;height: 24px;top: -6px;border-radius: 100%;/* border: 3px solid #ff424d; */background:url(../images/common/slider_range_handle.png) no-repeat center;background-size: 24px auto;outline: none;border: none;}
 .uiSlider .ui-slider .ui-slider-handle span{position:absolute;top: -30px;/* width: 50px; */color: #333333;text-align: center;/* margin-left: -11px; */border:solid 1px #999999;border-radius: 3px;background: #ffffff;padding: 0 3px;transform: translateX(-50%);left: 50%;font-size: 12px;}
-.uiSlider .ui-slider .ui-slider-range{background: url(../images/common/slider_range_sel.png) repeat-x 0px 0px firebrick;background-size: 64px auto;height: 11px;margin-top: 0px;background-position: unset;}
+.uiSlider .ui-slider .ui-slider-range{background: url(../images/common/slider_range_sel.png) repeat-x 0px 0px;background-size: 64px auto;height: 11px;margin-top: 0px;background-position: unset;}
 .uiSlider .ui-slider .bar{/* height:4px; *//* background: #ff424d; *//* display:block; */}
 .uiSlider .ui-slider .range_amount{padding-top: 21px;text-align: center;display: block;font-family:"BlairMd";color: #fd5555;font-size: 20px;}
+.uiSlider .ui-slider .range_amount i{font-size: 15px;margin-left: 3px;}
 .uiSlider .ui-slider .nums{font-family:"BlairMd";font-size: 10px;color: #ff424d;text-transform: uppercase;}
 .uiSlider .ui-slider .nums .num{position:absolute;top: -21px;}
 .uiSlider .ui-slider .nums .ds{/* display:none; */}
-
 .uiSlider .ui-slider .nums .num.min{left: 0px;}
 .uiSlider .ui-slider .nums .num.mid{left:50%; transform:translateX(-50%)}
 .uiSlider .ui-slider .nums .num.max{right: 0px;}
@@ -319,7 +319,7 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .menubar{height: 48px;position:relative;transition: all 0.4s;}
 .menubar.hide{}
 .menubar.hide>.inner{bottom: -60px;}
-.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;padding: 0 10px;height: 48px;}
+.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;padding: 0 16px;height: 48px;}
 .menubar .menu{display:flex; justify-content:  space-between; align-content: center; align-items: center;}
 .menubar .menu>li{width:100%;display:flex;align-items: center;align-content: center;}
 .menubar .menu>li>a{font-family:"BlairMd";color: #a3a3a3;font-size: 0px;height: 50px;display:flex;align-items: center;align-content: center;justify-content: center;width: 100%;text-align: center;}

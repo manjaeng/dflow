@@ -13,56 +13,24 @@
 			<div class="in">
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
-					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-				<h1 class="tit"><a href="javascript:;"  onclick="addItemFnc();">SEARCH</a> </h1>
+				<h1 class="tit">SEARCH</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
 			
 			<section class="secHashWord">
-				<!-- <ul class="list">
-					<li><span class="hash"><em class="tt">#캐쥬얼스타일</em> <button class="del" type="button">삭제</button></span></li>
-					<li><span class="hash"><em class="tt">#대한민국</em> <button class="del" type="button">삭제</button></span></li>
-				</ul> -->
 				<div class="sch">
 					<input type="search" class="input key" placeholder="검색..." value="TREND">					
 				</div>
 			</section>
 			<div class="tabsSch">
 				<ul class="uiTab type a sch">
-					<li class="active"><a href="javascript:;">LOOK</a></li>
-					<li><a href="javascript:;">ACCOUNT</a></li>
+					<li class="look"><a href="javascript:;" onclick="schResultTabFnc('look')">LOOK</a></li>
+					<li class="acct"><a href="javascript:;" onclick="schResultTabFnc('acct')">ACCOUNT</a></li>
 				</ul>
 			</div>
-			<section class="secResult">
-				<!-- <div class="rsOpts">
-					<div class="sort">
-						<select class="select">
-							<option>최신순</option>
-							<option>최신순</option>
-							<option>최신순</option>
-							<option>최신순</option>
-						</select>
-					</div>
-					<div class="filt"><a href="/resources2/app/html/common/filter.jsp" class="btnFilter">필터</a></div>
-				</div> -->				
-
-
-				<div class="tots"><span class="dt">RESULT</span><span class="num">52,623</span> </div>
-				<div class="uiItemList resultList">
-					<ul class="list" id="dp_list">
-
-
-
-					</ul>
-
-					<div class="uiLoadMore">
-						<em></em>
-						<button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
-					</div>
-				</div>
-			</section>
+			<section class="secResult" id="searchResult"></section>
 
 		</main>
 	</div>
@@ -73,24 +41,56 @@
 	</div>
 
 	<script>
+	var schResultTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
+		var pageUrl={
+			look:"./searchResult_look.jsp",
+			acct:"./searchResult_acct.jsp",
+		};
+		$("#searchResult").attr("data-tab", opt);
+		$.ajax({
+			type: "post",
+			url: pageUrl[opt],
+			dataType: "html",
+			success: function(html) {			
+				$(".tabsSch>.uiTab>li."+opt).addClass("active").siblings("li").removeClass("active");
+				$("#searchResult").html(html);
+				look_grid_set();
+				// schResultTabFnc(opt);
+				$("#searchResult").removeClass("look , acct").addClass(opt);
+				appendStat = true ;
+				page = 1 ;
+				console.log( "현재탭 =" , opt );
+			}
+		});	
+	}
 
 	var page = 0 ;
 	var appendStat = true ;
-	var addItemFnc = function(){
+	var addItemFnc = function(opt){
 		$(".uiLoadMore").addClass("active");
+		var pageUrl={
+			look:"./searchResult_look_more.jsp",
+			acct:"./searchResult_acct_more.jsp",
+		};
 		page ++ ;
 		$.ajax({
 			type: "post",
-			url: "./searchResult_more.jsp",
+			url: pageUrl[opt],
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$items = $(html)
-					$filter_grid.append( $items ).masonry( 'appended', $items );
-					$filter_grid.masonry('layout');
-					$('#dp_list').addClass("load");
-					console.log(page);
-					appendStat = true;
+					
+					if (opt == 'look') { // LOOK 일때 append
+						$items = $(html);
+						$look_grid.append( $items ).masonry( 'appended', $items );
+						$look_grid.masonry('layout');
+					}
+					
+					if (opt == 'acct') { // Account 일때 append
+						$(".secResult .tabCtn."+opt+" .list").append(html);
+					}
+					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
+					appendStat = true ;
 					if (page >= 3) {
 						console.log("끝");
 						$(".uiLoadMore").addClass("hide");
@@ -98,6 +98,7 @@
 						page = 0 ;
 					}
 					$(".uiLoadMore").removeClass("active");
+					
 				},500);
 			},
 			error:function(error){
@@ -109,59 +110,39 @@
 		});	
 	};
 
-	$(document).ready(function(){
-
-		// https://masonry.desandro.com/
-		$filter_grid = $('#dp_list').masonry({
+	var look_grid_set = function(){  //  그리트 플러그인 셋팅
+		$look_grid = $('#dp_list').masonry({
 			itemSelector: '#dp_list .box',
 			percentPosition: true,
 			gutter:0,
 			transitionDuration: 700
 		});
-		// $filter_grid.imagesLoaded().progress( function() {
-		// 	$filter_grid.masonry('layout');
-		// }); 
+
+		$look_grid.on( 'click', '.del', function(event) {
+			$look_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );		
+			window.setTimeout(function(){
+				$look_grid.masonry('layout');
+			},750);
+		});
+	}
+
+
+
+	$(document).ready(function(){
 
 		$(window).on("scroll", function() {
-
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 			// console.log(docH,scr);
+			var tabAct = $("#searchResult").attr("data-tab");
 			if (docH <= scr  && appendStat == true) {
 				console.log("바닥sss");
-				addItemFnc();
+				addItemFnc(tabAct);
 				appendStat = false;
 			}
 		});
 
-		addItemFnc();
-
-		// $(document).on("click",".uiItemList>.list>li .item .bts .bt.del",function(e){
-		// 	$(this).closest(".box").fadeOut(500,function(){
-		// 		$(this).remove();
-		// 		// $('#dp_list').masonry('destroy')
-		// 		$('#dp_list').masonry('layout');
-		// 		window.setTimeout(function(){
-		// 		},210);
-		// 	});
-
-		// });
-	
-
-		$filter_grid.on( 'click', '.del', function(event) {
-			// remove clicked element
-			// console.log( $(event.currentTarget).closest(".box") );
-
-			$filter_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );
-			// $filter_grid.masonry('layout');
-			
-			window.setTimeout(function(){
-				$filter_grid.masonry('layout');
-			},750);
-			// layout remaining item elements
-			
-		});
-
+		schResultTabFnc('look'); 
 
 	});
 

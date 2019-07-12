@@ -50,14 +50,14 @@ var ui = {
 				values: [ $slider.attr("data-amount-min")  , $slider.attr("data-amount-max") ],
 				step: 1,
 				create: function(event, ui) {
-					handle.html(  $(this).slider( "values",0 ) + "<i>%</i> - " + $(this).slider( "values",1 ) + "<i>%</i>" );
+					handle.html(  $(this).slider( "values",0 ) + " - " + $(this).slider( "values",1 ) + "<i>%</i>" );
 					// bar.css("width", $(this).slider( "value" ) + "%");
 				}
 			});
 
 			$slider.on("slidechange slide", function( event, ui ) {
 				// handle.text( ui.value + "%");
-				handle.html(  ui.values[0] + "<i>%</i> - " + ui.values[1] + "<i>%</i>" );
+				handle.html(  ui.values[0] + " - " + ui.values[1] + "<i>%</i>" );
 				// bar.css("width", $(this).slider( "value" ) + "%");
 				$(this).attr("data-amount-min",ui.values[0] );
 				$(this).attr("data-amount-max",ui.values[1] );
@@ -77,17 +77,17 @@ var ui = {
 			var handle = $slider.find(".range_amount");
 			$slider.slider({
 				value: $slider.attr("data-amount") ,
-				min: 0,
+				min: 100,
 				max: 200,
 				step: 1,
 				create: function(event, ui) {
-					handle.text( $(this).slider( "value" ) + "cm");
+					handle.html( $(this).slider( "value" ) + "<i>cm</i>");
 					bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
 				}
 			});
 
 			$slider.on("slidechange slide", function( event, ui ) {
-				handle.text( ui.value + "cm");
+				handle.html( ui.value + "<i>cm</i>");
 				bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
 				$(this).attr("data-amount",ui.value);
 				// console.log(ui.value);
