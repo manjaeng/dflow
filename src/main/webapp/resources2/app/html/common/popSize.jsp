@@ -55,13 +55,37 @@
 					<li class="bra">
 						<div class="ht">BRA</div>
 						<div class="ct">
-							b
+							<ul class="list cup">
+								<li><label><input type="checkbox"><span class="tit">A</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">B</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">C</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">D</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">E</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">F</span></label></li>
+							</ul>
+							<ul class="list siz">
+								<li><label><input type="checkbox"><span class="tit">60</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">65</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">70</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">75</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">80</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">85</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">90</span></label></li>
+							</ul>
 						</div>
 					</li>
 					<li class="bot">
 						<div class="ht">BOTTOM</div>
 						<div class="ct">
-							b
+							<ul class="list siz">
+								<li><label><input type="checkbox"><span class="tit">26</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">28</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">30</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">32</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">34</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">36</span></label></li>
+								<li><label><input type="checkbox"><span class="tit">38</span></label></li>
+							</ul>
 						</div>
 					</li>
 				</ul>
@@ -70,7 +94,7 @@
 		<div class="pbt">
 			<div class="in">
 				<div class="bts">
-					<a class="btn xl d btnSave" href="javascript:;">SAVE</a>
+					<a class="btn xl d btnSave" href="javascript:;" onclick="ui.popLayer.close('popSize');">SAVE</a>
 				</div>
 			</div>
 		</div>

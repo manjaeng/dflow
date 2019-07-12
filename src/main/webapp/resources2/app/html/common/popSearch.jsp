@@ -1,25 +1,21 @@
 ﻿
 
-<article class="popLayer a popFilter" id="popFilter">
+<article class="popLayer a popSearch" id="popSearch">
 	<div class="pbd">
 		<button type="button" class="btnPopClose">닫기</button>
 		<div class="phd">
 			<div class="hdt">
-				<h1 class="title">FILTER</h1>
+				<h1 class="title">SEARCH</h1>
 			</div>
 		</div>
 		<div class="pct">
 			<main class="poptents">
 				<ul class="filters">
-					<li class="match">
-						<div class="ht">MATCH</div>
+					<li class="keyword">
 						<div class="ct">
-							<div class="uiSlider">
-								<div class="match" id="filtMatchSlider" data-amount="85">
-									<div class="ui-slider-handle"></div>
-									<div class="range_amount"></div>
-								</div>
-							</div>
+							<form action="/resources2/app/html/common/searchResult.jsp">
+							<input type="search" class="input key" placeholder="검색...">
+							</form>
 						</div>
 					</li>
 					<li class="style">
@@ -56,46 +52,21 @@
 							</ul>
 						</div>
 					</li>
-					<!-- <li class="keyword">
-						<div class="ct">
-							<input type="search" class="input key" placeholder="검색어 입력">
-						</div>
-					</li>
-					<li class="gender">
-						<div class="ht">성별</div>
-						<div class="ct">
-							<label class="radio"><input type="radio" name="filter_gender"><span>여자</span></label>
-							<label class="radio"><input type="radio" name="filter_gender"><span>남자</span></label>
-						</div>
-					</li>
-					<li class="country">
-						<div class="ht">국가</div>
-						<div class="ct">
-							<select class="select">
-								<option>Korea</option>
-								<option>Korea</option>
-							</select>
-						</div>
-					</li> -->
 				</ul>
 			</main>
-		</div>
-		<div class="pbt">
-			<div class="in">
-				<div class="bts">
-					<a class="btn xl d btnSave" href="javascript:;" onclick="ui.popLayer.close('popFilter');">SAVE</a>
-				</div>
-			</div>
 		</div>
 	</div>
 </article>
 <script>
-var popFilter = function(){
-	ui.popLayer.open('popFilter',{
+var popSearch = function(){
+	ui.popLayer.open('popSearch',{
 		ocb: function(){
 			ui.filter.match();	
 		}
 	});
 	
 };
+$(document).ready(function(){
+	// popSearch();
+});
 </script>

@@ -3,7 +3,7 @@
 <nav id="floatNav" class="floatNav">
 	<!-- <button type="button" class="bt refresh">Refresh</button> -->
 	<!-- <button type="button" class="bt top">TOP</button> -->
-	<button type="button" class="bt sch">검색</button>
+	<button type="button" class="bt sch" onclick="popSearch();">검색</button>
 </nav>
 
 <nav id="menubar" class="menubar">

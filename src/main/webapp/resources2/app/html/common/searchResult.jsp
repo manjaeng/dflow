@@ -8,29 +8,35 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain filter result">
+	<div id="contain" class="contain search result">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
-					<a href="javascript:history.back();" class="bt close">닫기</a>
+					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-				<h1 class="tit"><a href="javascript:;"  onclick="addItemFnc();">FILTER RESULT</a> </h1>
+				<h1 class="tit"><a href="javascript:;"  onclick="addItemFnc();">SEARCH</a> </h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
 			
 			<section class="secHashWord">
-				<ul class="list">
+				<!-- <ul class="list">
 					<li><span class="hash"><em class="tt">#캐쥬얼스타일</em> <button class="del" type="button">삭제</button></span></li>
 					<li><span class="hash"><em class="tt">#대한민국</em> <button class="del" type="button">삭제</button></span></li>
-					<!-- <li><span class="hash"><em class="tt">#GGondae_st.</em> <button class="del" type="button">삭제</button></span></li>
-					<li><span class="hash"><em class="tt">#노땅st.</em> <button class="del" type="button">삭제</button></span></li> -->
-				</ul>
+				</ul> -->
+				<div class="sch">
+					<input type="search" class="input key" placeholder="검색..." value="TREND">					
+				</div>
 			</section>
-
+			<div class="tabsSch">
+				<ul class="uiTab type a sch">
+					<li class="active"><a href="javascript:;">LOOK</a></li>
+					<li><a href="javascript:;">ACCOUNT</a></li>
+				</ul>
+			</div>
 			<section class="secResult">
-				<div class="rsOpts">
+				<!-- <div class="rsOpts">
 					<div class="sort">
 						<select class="select">
 							<option>최신순</option>
@@ -40,7 +46,9 @@
 						</select>
 					</div>
 					<div class="filt"><a href="/resources2/app/html/common/filter.jsp" class="btnFilter">필터</a></div>
-				</div>
+				</div> -->				
+
+
 				<div class="tots"><span class="dt">RESULT</span><span class="num">52,623</span> </div>
 				<div class="uiItemList resultList">
 					<ul class="list" id="dp_list">
@@ -73,7 +81,7 @@
 		page ++ ;
 		$.ajax({
 			type: "post",
-			url: "./filterResult_more.jsp",
+			url: "./searchResult_more.jsp",
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){

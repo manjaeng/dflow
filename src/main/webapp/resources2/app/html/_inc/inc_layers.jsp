@@ -5,6 +5,9 @@
 <!-- 사이즈 -->
 <%@ include file="../common/popSize.jsp" %>
 
+<!-- 검색 -->
+<%@ include file="../common/popSearch.jsp" %>
+
 
 <!--  추가 메뉴 popOthers -->
 <article class="popLayer c popOthers" id="popOthers">

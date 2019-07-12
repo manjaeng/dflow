@@ -1104,7 +1104,7 @@ var ui = {
 			$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
 				var els = $(this);
 				window.setTimeout(function(){
-					var myTop = els.position().top - 50 ;
+					var myTop = els.position().top - $(".popLayer .phd").outerHeight() ;
 					var myMax = Math.abs( _this.scroll[id].maxScrollY );
 					// console.log(myTop , myMax , _this.scroll[id].y);
 					if ( myTop >= myMax ) { myTop = myMax ; }
