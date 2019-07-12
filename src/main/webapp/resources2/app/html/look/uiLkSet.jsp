@@ -17,8 +17,8 @@
 	</div>
 	<div class="info">
 		<div class="user">
-			<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
-			<a href="javascript:;" class="mem">
+			<a href="../mypage/profile.jsp" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+			<a href="../mypage/profile.jsp" class="mem">
 				<div class="nm">패피루키</div>
 				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 			</a>
@@ -30,8 +30,8 @@
 	<div class="data">
 		<ul class="list">
 			<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
-			<li class="like"><a href="/resources2/app/html/common/cool.jsp" class="bt"><span>120</span></a></li>
-			<li class="reply"><a href="/resources2/app/html/common/comments.jsp" class="bt"><span>77</span></a></li>
+			<li class="like"><a href="../common/cool.jsp" class="bt"><span>120</span></a></li>
+			<li class="reply"><a href="../common/comments.jsp" class="bt"><span>77</span></a></li>
 			<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>
 		</ul>
 	</div>

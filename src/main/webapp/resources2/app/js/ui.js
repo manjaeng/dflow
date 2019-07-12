@@ -34,7 +34,7 @@ var ui = {
 	},
 	filter: {
 		init:function(){
-			// $("#filtMatchSlider").length && this.match();
+			$("#filtMatchSlider").length && this.match();
 			// popFilter();
 			// popSize();
 		},
@@ -43,11 +43,11 @@ var ui = {
 			var bar = $slider.find("em.bar");
 			var handle = $slider.find(".range_amount");
 			$slider.slider({
-				value: $slider.attr("data-amount") ,
+				// value: $slider.attr("data-amount") ,
 				range: true,
 				min: 0,
 				max: 100,
-				values: [ 65, 100 ],
+				values: [ $slider.attr("data-amount-min")  , $slider.attr("data-amount-max") ],
 				step: 1,
 				create: function(event, ui) {
 					handle.html(  $(this).slider( "values",0 ) + "<i>%</i> - " + $(this).slider( "values",1 ) + "<i>%</i>" );
@@ -57,16 +57,19 @@ var ui = {
 
 			$slider.on("slidechange slide", function( event, ui ) {
 				// handle.text( ui.value + "%");
-				handle.html(  ui.values[ 0 ] + "<i>%</i> - " + ui.values[ 1 ] + "<i>%</i>" );
+				handle.html(  ui.values[0] + "<i>%</i> - " + ui.values[1] + "<i>%</i>" );
 				// bar.css("width", $(this).slider( "value" ) + "%");
-				$(this).attr("data-amount",ui.value);
+				$(this).attr("data-amount-min",ui.values[0] );
+				$(this).attr("data-amount-max",ui.values[1] );
 				// console.log(ui.value);
 			} );
 		}
 	},
 	size: {
 		init:function(){
-			$("#sizeHeightSlider").length && this.match();
+			this.height();
+			this.fit();
+			this.slide.using();
 		},
 		height:function(){
 			var $slider = $("#sizeHeightSlider");
@@ -113,7 +116,26 @@ var ui = {
 				// console.log(ui.value);
 			} );
 
-		}
+		},
+		slide:{  //  
+            els: ".slideSize.swiper-container",
+            opt: {
+                slidesPerView: 'auto',
+                freeMode: true,
+				// centeredSlides: true,
+                observer: true,
+                observeParents: true,
+                // spaceBetween:20,
+                watchOverflow:true,
+                loop: false
+            },
+            using: function() {
+                if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+                    this.opt.loop = false;
+                }
+                this.slide = new Swiper(this.els, this.opt);
+			}
+        },
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기  ui.param.***
 		if (a == "") return {};

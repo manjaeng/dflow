@@ -13,8 +13,8 @@
 	</div>
 	<div class="info">
 		<div class="user">
-			<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
-			<a href="javascript:;" class="mem">
+			<a href="../mypage/profile.jsp" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+			<a href="../mypage/profile.jsp" class="mem">
 				<div class="nm">패피루키</div>
 				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 			</a>

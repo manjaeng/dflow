@@ -55,37 +55,43 @@
 					<li class="bra">
 						<div class="ht">BRA</div>
 						<div class="ct">
-							<ul class="list cup">
-								<li><label><input type="checkbox"><span class="tit">A</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">B</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">C</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">D</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">E</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">F</span></label></li>
-							</ul>
-							<ul class="list siz">
-								<li><label><input type="checkbox"><span class="tit">60</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">65</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">70</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">75</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">80</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">85</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">90</span></label></li>
-							</ul>
+							<div class="slideSize cup swiper-container">
+								<ul class="list cup swiper-wrapper slide">
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">A</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">B</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">C</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">D</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">E</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">F</span></label></li>
+								</ul>
+							</div>
+							<div class="slideSize siz swiper-container">
+								<ul class="list siz swiper-wrapper slide">
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">60</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">65</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">70</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">75</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">80</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">85</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">90</span></label></li>
+								</ul>
+							</div>
 						</div>
 					</li>
 					<li class="bot">
 						<div class="ht">BOTTOM</div>
 						<div class="ct">
-							<ul class="list siz">
-								<li><label><input type="checkbox"><span class="tit">26</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">28</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">30</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">32</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">34</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">36</span></label></li>
-								<li><label><input type="checkbox"><span class="tit">38</span></label></li>
-							</ul>
+							<div class="slideSize bot swiper-container">
+								<ul class="list bot swiper-wrapper slide">
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">26</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">28</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">30</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">32</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">34</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">36</span></label></li>
+									<li class="swiper-slide"><label><input type="checkbox"><span class="tit">38</span></label></li>
+								</ul>
+							</div>
 						</div>
 					</li>
 				</ul>
@@ -104,8 +110,7 @@
 var popSize = function(){
 	ui.popLayer.open('popSize',{
 		ocb: function(){
-			ui.size.height();
-			ui.size.fit();
+			ui.size.init();
 		}
 	});
 	

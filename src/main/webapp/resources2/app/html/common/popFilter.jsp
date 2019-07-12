@@ -15,7 +15,7 @@
 						<div class="ht">MATCH</div>
 						<div class="ct">
 							<div class="uiSlider">
-								<div class="match" id="filtMatchSlider" data-amount="85">
+								<div class="match" id="filtMatchSlider" data-amount-min="65"  data-amount-max="100" >
 									<div class="ui-slider-handle"></div>
 									<div class="range_amount"></div>
 								</div>
@@ -93,7 +93,7 @@
 var popFilter = function(){
 	ui.popLayer.open('popFilter',{
 		ocb: function(){
-			ui.filter.match();	
+			ui.filter.init();	
 		}
 	});
 	
