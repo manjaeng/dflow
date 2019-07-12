@@ -39,7 +39,7 @@
 				<div class="in">
 					<div class="bts">
 						<a href="../home/home.jsp" class="btn type xl a btnLater">LATER</a>
-						<a href="../home/home.jsp" class="btn type xl a btnStart">START</a>
+						<a href="../member/joinPre.jsp" class="btn type xl a btnStart">START</a>
 					</div>
 				</div>
 			</div>

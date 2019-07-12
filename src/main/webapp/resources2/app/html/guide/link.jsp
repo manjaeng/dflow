@@ -50,6 +50,14 @@
 						<h4>검색결과</h4> <em>ing</em>
 						<mark>/resources2/app/html/common/searchResult.jsp</mark>
 					</li>
+					<li>
+						<h4>쿨</h4> <em>ing</em>
+						<mark>/resources2/app/html/common/cool.jsp</mark>
+					</li>
+					<li>
+						<h4>댓글</h4> <em>ing</em>
+						<mark>/resources2/app/html/common/comments.jsp</mark>
+					</li>
 					<!-- <li>
 						<h4>팝업윈도우</h4> <em>ing</em>
 						<mark>/resources2/app/html/guide/popWin.jsp</mark>

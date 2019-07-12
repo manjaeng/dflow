@@ -67,6 +67,7 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration{display: none; }
 input[type=number]{-moz-appearance:textfield;}
 
+input::-webkit-input-placeholder{ color: #999999;}
 
 /*  jquery-ui 커스텀 */
 .uiDatePickWrap{position:fixed;left:0px;right:0px;bottom:0px;top:0px;z-index: 1100;background-color:rgba(0,0,0,0.6);padding:10px;text-align: center;}

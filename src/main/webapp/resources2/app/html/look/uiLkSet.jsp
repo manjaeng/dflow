@@ -30,8 +30,8 @@
 	<div class="data">
 		<ul class="list">
 			<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
-			<li class="like"><a href="javascript:;" class="bt"><span>120</span></a></li>
-			<li class="reply"><a href="javascript:;" class="bt"><span>77</span></a></li>
+			<li class="like"><a href="/resources2/app/html/common/cool.jsp" class="bt"><span>120</span></a></li>
+			<li class="reply"><a href="/resources2/app/html/common/comments.jsp" class="bt"><span>77</span></a></li>
 			<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>
 		</ul>
 	</div>
