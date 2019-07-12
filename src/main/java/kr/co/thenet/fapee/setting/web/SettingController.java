@@ -13,19 +13,15 @@ public class SettingController {
 	@Resource
 	private SettingService settingService;
 	
-	@GetMapping()
+	@GetMapping("/setting/hashtag.do")
 	public String hashTagList() throws Exception {
-		
-		
 		
 		return "";
 	}
 	
-	@GetMapping()
+	@GetMapping("/setting/style.do")
 	public String styleList() throws Exception {
 
-		
-		
 		return "";
 	}
 }
