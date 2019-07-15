@@ -17,7 +17,7 @@
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">User List</h3>
+			<h3 class="page-title">Look List</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- TABLE HOVER -->
