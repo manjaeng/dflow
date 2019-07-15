@@ -9,81 +9,59 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-
-	<article class="popPage popSetting" id="popSetting">
-		<div class="pbd">
-			<div class="phd">
-				<div class="in">
-					<h1 class="tit">설정</h1>
-					<button type="button" class="btnPopClose" onclick="history.back();">뒤로</button>
+	<div id="contain" class="contain setting">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
+					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-			</div>
-			<div class="pct">
-				<main class="poptents">
-					<section class="secMySets">
-						<ul class="list">
-							<li>
-								<a href="javascript:;">회원정보</a>
-								<ul>
-									<li><a href="/resources2/app/html/mypage/profile_set.jsp">프로필 관리</a></li>
-									<li><a href="javascript:;">비밀번호 변경</a></li>
-									<li><a href="javascript:;">이메일 변경</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">서비스 정보</a>
-								<ul>
-									<li><a href="javascript:;">사이즈 관리</a></li>
-									<li><a href="javascript:;">선호 스타일 관리</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">기타 설정</a>
-								<ul>
-									<li><a href="javascript:;">SNS 연결</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">모델 설정</a>
-								<ul>
-									<li><a href="javascript:;">모델 사이즈 관리</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">고객지원</a>
-								<ul>
-									<li><a href="javascript:;">1:1 문의</a></li>
-									<li><a href="javascript:;">공지사항</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">이용가이드</a>
-								<ul>
-									<li><a href="javascript:;">이용약관</a></li>
-									<li><a href="javascript:;">개인정보취급방침</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">서비스정보</a>
-								<ul>
-									<li><a href="javascript:;">선호스타일관리</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">업데이트</a>
-								<ul>
-									<li><a href="javascript:;">앱버전정보 <em class="ver">0.1</em></a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="javascript:;">로그아웃</a>
-							</li>
-						</ul>
-					</section>
-				</main>
+				<h1 class="tit">SETTING</h1>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
+			<section class="secMySets">
+				<ul class="list">
+					<li>
+						<a href="javascript:;">개정관리</a>
+						<ul>
+							<li><a href="javascript:;">비밀번호 변경</a></li>
+							<li><a href="javascript:;">이메일 변경</a></li>
+							<li><a href="javascript:;">COOL한 게시물</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">알림설정</a>
+					<li>
+						<a href="javascript:;">고객지원</a>
+						<ul>
+							<li><a href="javascript:;">1:1 문의</a></li>
+							<li><a href="javascript:;">공지사항</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">이용가이드</a>
+						<ul>
+							<li><a href="javascript:;">이용약관</a></li>
+							<li><a href="javascript:;">개인정보취급방침</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">업데이트</a>
+						<ul>
+							<li><a href="javascript:;">앱버전정보 <em class="ver">0.1</em></a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="javascript:;">전문가 계정 신청</a>
+					</li>
+					<li>
+						<a href="javascript:;">로그아웃</a>
+					</li>
+				</ul>
+			</section>
+		</main>
+	</div>
 
 
 	<div class="popLayerArea">

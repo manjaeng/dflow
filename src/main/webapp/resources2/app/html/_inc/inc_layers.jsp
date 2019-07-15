@@ -197,9 +197,8 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt" onclick="popShare();">공유하기</a></li>
-					<li><a href="javascript:;" class="bt">링크복사</a></li>
-					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
+					<li><a href="javascript:;" class="bt">PROFILE SETTING</a></li>
+					<li><a href="javascript:;" class="bt">MODEL SETTING</a></li>
 				</ul>	
 			</main>
 		</div>

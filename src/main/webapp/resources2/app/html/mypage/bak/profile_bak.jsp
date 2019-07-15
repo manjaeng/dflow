@@ -15,8 +15,9 @@
 			</div>
 			<!-- <h1 class="tit">패피루키</h1> -->
 			<div class="set">
-				<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
-				<a class="bt conf" href="../mypage/setting.jsp">설정</a>
+				<a class="bt alim on" href="javascript:;">알림</a>
+				<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
+				<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
 			</div>
 		</div>
 	</div>	
@@ -72,8 +73,16 @@
 			</section>
 
 			<section class="prInfoList">
+				<!-- <div class="tabs">
+					<ul class="menu">
+						<li class="look"><a href="javascript:;" onclick="prfTabFnc('look')">LOOK</a></li>
+						<li class="foll"><a href="javascript:;" onclick="prfTabFnc('foll')">FOLLOW</a></li>
+						<li class="cool"><a href="javascript:;" onclick="prfTabFnc('cool')">COOL</a></li>
+					</ul>
+				</div> -->
 				<div class="prInfoCont" id="prInfoCont">
 				</div>
+
 			</section>
 
 		</main>
@@ -88,8 +97,9 @@
 	<script>
 	var prfTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
 		var pageUrl={
-			thum:"./profile_look_thum.jsp",
-			list:"./profile_look_list.jsp",
+			look:"./profile_tab_look.jsp",
+			foll:"./profile_tab_foll.jsp",
+			cool:"./profile_tab_cool.jsp",
 		};
 		$("#prInfoCont").attr("data-tab", opt);
 		$.ajax({
@@ -97,16 +107,13 @@
 			url: pageUrl[opt],
 			dataType: "html",
 			success: function(html) {			
-				// $(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
-				
+				$(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
 				$("#prInfoCont").html(html);
-				addItemFnc(opt);
-				$(".floatNav .bt.prf").removeClass("thum , list").addClass(opt);
-				$("#prInfoCont").removeClass("thum , list").addClass(opt);
+				// addItemFnc(opt);
+				$("#prInfoCont").removeClass("look , foll , cool").addClass(opt);
 				appendStat = true ;
 				page = 1 ;
-				console.log( "타입 =" , opt );
-				ui.slides.lookPic.using();
+				console.log( "현재탭 =" , opt );
 			}
 		});	
 	}
@@ -119,8 +126,9 @@
 		page ++ ;
 		$(".uiLoadMore").addClass("active");
 		var pageUrl={
-			thum:"./profile_look_thum_li.jsp",
-			list:"./profile_look_list_li.jsp",
+			look:"./profile_tab_look_li.jsp",
+			foll:"./profile_tab_foll_li.jsp",
+			cool:"./profile_tab_cool_li.jsp",
 		};
 		$.ajax({
 			type: "post",
@@ -128,7 +136,7 @@
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$(".prInfoCont .tabCtn."+opt+">ul.list").append(html);
+					$(".prInfoCont .tabCtn."+opt+" .list").append(html);
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
 					if (page >= 3) {
@@ -138,7 +146,7 @@
 						page = 0 ;
 					}
 					$(".uiLoadMore").removeClass("active");
-					ui.slides.lookPic.using();
+					
 				},500);
 			},
 			error:function(error){
@@ -161,21 +169,26 @@
 		}
 	});
 
-	var togThumbMode = function(){
-		if( $(".floatNav .bt").hasClass("list") ){
-			prfTabFnc('thum');
-		}else{
-			prfTabFnc('list');
+
+	var coolEditFnc = function(opt){  //  cool 탭에서  편집 버튼 눌렀을때 
+		if (opt==true) {
+			$("#btnset_modi").show();
+			$("#btnset_edit").hide();
+			$(".prInfoCont .tabCtn .itemList").addClass("check");
 		}
-		$(window).scrollTop(0);
-	};
+		if (opt==false){
+			$("#btnset_modi").hide();
+			$("#btnset_edit").show();
+			$(".prInfoCont .tabCtn .itemList").removeClass("check");
+		}
+	}
 
 	var testRefresh = function(){
 		console.log("댕겨서 새로고침");
 	}
 
 	$(document).ready(function(){
-		prfTabFnc('thum');  // 최초 탭 활성화
+		prfTabFnc('look');  // 최초 탭 활성화
 		ui.nav.act("mypg");  // 하단 메뉴 활성화
 		ui.refresh.init(testRefresh);  //  pulldown 새로고침
 	});
