@@ -32,29 +32,44 @@
 									<tr>
 										<th>idKey</th>
 										<th>userId</th>
-										<th>userName</th>
-										<th>userType</th>
-										<th>loginIp</th>
-										<th>loginTotalCount</th>
-										<th>lastLoginDate</th>
+										<th>contents</th>
+										<th>nickname</th>
+										<th>cool</th>
+										<th>comment</th>
 										<th>status</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="item" items="${userList}">
-										<tr>
-											<td><c:out value="${item.idKey}" /></td>
-											<td><c:out value="${item.userId}" /></td>
-											<td><c:out value="${item.userName}" /></td>
-											<td><c:out value="${item.userType}" /></td>
-											<td><c:out value="${item.loginIp}" /></td>
-											<td><c:out value="${item.loginTotalCount}" /></td>
-											<td><fmt:formatDate value="${item.lastLoginDate}"
-													type="date" pattern="yyyy-MM-dd" /></td>
-											<td><input type="checkbox" checked data-toggle="toggle"
-												data-size="sm"></td>
-										</tr>
-									</c:forEach>
+									<tr>
+										<td>1</td>
+										<td>test1</td>
+										<td>임시 컨텐츠1</td>
+										<td>관리자</td>
+										<td>0</td>
+										<td>0</td>
+										<td><input type="checkbox" checked data-toggle="toggle"
+											data-size="sm"></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td>test2</td>
+										<td>임시 컨텐츠2</td>
+										<td>패피루키</td>
+										<td>0</td>
+										<td>0</td>
+										<td><input type="checkbox" checked data-toggle="toggle"
+											data-size="sm"></td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td>test3</td>
+										<td>임시 컨텐츠3</td>
+										<td>패피루키</td>
+										<td>0</td>
+										<td>0</td>
+										<td><input type="checkbox" data-toggle="toggle"
+											data-size="sm"></td>
+									</tr>
 								</tbody>
 							</table>
 						</div>
