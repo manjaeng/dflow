@@ -137,7 +137,8 @@
 .prInfoCont .tabCtn ul.menu>li.active>a{color: #101010;}
 .prInfoCont .tabCtn ul.menu>li.active>a::before{ background:#101010;}
 .prInfoCont .tabCtn.list{}
-.prInfoCont .tabCtn.thum .list{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; *//* padding: 1px; *//* background: #000000; */}
+.prInfoCont .tabCtn.thum .list.load{padding: 1px; background: #000000;}
+.prInfoCont .tabCtn.thum .list{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; */}
 .prInfoCont .tabCtn.thum .list>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden;margin-right: 0px;}
 .prInfoCont .tabCtn.thum .list>li .item{position: relative;overflow: hidden;background:#000;padding: 1px;}
 .prInfoCont .tabCtn.thum .list>li .item .img{display:block;position:relative;padding-bottom: calc( 100% * 4 / 3  );}
@@ -347,3 +348,37 @@
 .contain.mdl.reg .sec.size .filters>li.bot .list>li label{display:block; position:relative;}
 .contain.mdl.reg .sec.size .filters>li.bot .list>li label input{position:absolute;left:0;top: 0;}
 .contain.mdl.reg .sec.size .filters>li.bot .list>li label .tit{font-family:"BlairMd";color:#ff424d;font-size: 20px;height: 32px;}
+
+
+.contain.cools {}
+.contain.cools .coolList .list{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; *//* padding: 1px; *//* background: #000000; */}
+.contain.cools .coolList .list>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden;margin-right: 0px;}
+.contain.cools .coolList .list>li .item{position: relative;overflow: hidden;background:#000;padding: 1px;}
+.contain.cools .coolList .list>li .item .img{display:block;position:relative;padding-bottom: calc( 100% * 4 / 3  );}
+.contain.cools .coolList .list>li .item .img>.lk{display: block;position: absolute;height: 100%;left: 0;top: 0;width: 100%;overflow: hidden;}
+.contain.cools .coolList .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;}
+.contain.cools .coolList .list>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
+.contain.cools .coolList .list>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
+.contain.cools .coolList .list>li .item .bts .bt.del{}
+.contain.cools .coolList .list>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
+.contain.cools .coolList .list>li .item .num:before{}
+.contain.cools .coolList .list>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
+.contain.cools .coolList .list>li .item .checkbox{position:absolute;right: 0px;top: 0px;z-index: 100;}
+.contain.cools .tabCtn .uiLoadMore{padding:0 8px;}
+
+
+.contain.set.alim{}
+.contain.set.alim .sec.alim{padding-top: 40px;}
+.contain.set.alim .sec.alim .list{}
+.contain.set.alim .sec.alim .list>li{border-top: #000000 solid 1px;padding: 8px 65px 8px 25px;position:relative;}
+.contain.set.alim .sec.alim .list>li:last-child{border-bottom: #000000 solid 1px;}
+.contain.set.alim .sec.alim .list>li .tit{font-size: 13px;}
+.contain.set.alim .sec.alim .list>li .uiChk{position:absolute;right: 20px;top: 8px;}
+
+
+.contain.notice{}
+.contain.notice .sec.notice{ padding-top: 40px;}
+.contain.notice .sec.notice .list{ }
+.contain.notice .sec.notice .list>li .hBox{/* display:flex; *//* justify-content: space-between; *//* align-items: center; */}
+.contain.notice .sec.notice .list>li .tit{width: 100%;}
+.contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 47px;width: 71px;text-align: right;top: 12px;}

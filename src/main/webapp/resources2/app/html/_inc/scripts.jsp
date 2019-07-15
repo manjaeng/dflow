@@ -1,7 +1,7 @@
 ﻿
 <script src="/resources2/app/js/iscroll.js"></script>
 <script src="/resources2/app/js/swiper.js"></script>
-<script src="/resources2/app/js/masonry.pkgd.js"></script>
+<!-- <script src="/resources2/app/js/masonry.pkgd.js"></script> -->
 <script src="/resources2/app/js/pullToRefresh.js"></script>
 <script src="/resources2/app/js/ui.js?v=<%=version%>"></script>
 

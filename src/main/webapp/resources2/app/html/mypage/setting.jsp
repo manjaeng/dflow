@@ -27,16 +27,16 @@
 						<ul>
 							<li><a href="javascript:;">비밀번호 변경</a></li>
 							<li><a href="javascript:;">이메일 변경</a></li>
-							<li><a href="javascript:;">COOL한 게시물</a></li>
+							<li><a href="../mypage/cools.jsp">COOL한 게시물</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:;">알림설정</a>
+						<a href="../mypage/setting_alim.jsp">알림설정</a>
 					<li>
 						<a href="javascript:;">고객지원</a>
 						<ul>
-							<li><a href="javascript:;">1:1 문의</a></li>
-							<li><a href="javascript:;">공지사항</a></li>
+							<li><a href="../mypage/qna.jsp">1:1 문의</a></li>
+							<li><a href="../mypage/notice.jsp">공지사항</a></li>
 						</ul>
 					</li>
 					<li>

@@ -70,7 +70,7 @@
 					</li>
 				</ul>
 				<div class="memDis">
-					<a href="javascript:;">회원탈퇴</a>
+					<a href="../member/mem_dis.jsp">회원탈퇴</a>
 				</div>
 			</section>
 

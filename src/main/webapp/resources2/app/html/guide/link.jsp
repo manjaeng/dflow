@@ -96,6 +96,10 @@
 						<h4>가입</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/join.jsp</mark>
 					</li>
+					<li>
+						<h4>탈퇴</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/mem_dis.jsp</mark>
+					</li>
 				</ul>
 			</li>
 			<li>

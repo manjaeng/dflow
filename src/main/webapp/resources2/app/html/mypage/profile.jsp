@@ -130,7 +130,7 @@
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$(".prInfoCont .tabCtn."+opt+">ul.list").append(html);
+					$(".prInfoCont .tabCtn."+opt+">ul.list").append(html).addClass("load");
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
 					if (page >= 3) {
