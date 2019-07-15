@@ -24,7 +24,7 @@
 
 		<main id="contents" class="contents">
 
-			<section class="uiPrfeSet a">
+			<section class="uiPrfeSet">
 				<div class="user">
 					<div class="photo">
 						<div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div>
@@ -36,9 +36,11 @@
 							<div class="uiDropDown sel" data-ui="val">
 								<div class="list">
 									<ul>
-										<li class="active"><button type="button" value="1">Model A</button></li>
-										<li><button type="button" value="2">Model B</button></li>
-										<li><button type="button" value="2">Model C</button></li>
+										<li class="active"><button type="button" value="1">All</button></li>
+										<li><button type="button" value="2">Nick Name</button></li>
+										<li><button type="button" value="3">Model A</button></li>
+										<li><button type="button" value="4">Model B</button></li>
+										<li><button type="button" value="5">Model C</button></li>
 									</ul>
 								</div>
 							</div>

@@ -123,6 +123,10 @@
 						<mark>/resources2/app/html/mypage/profile.jsp</mark>
 					</li>
 					<li>
+						<h4>프로필설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/profile_set.jsp</mark>
+					</li>
+					<li>
 						<h4>알림</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/alim.jsp</mark>
 					</li>

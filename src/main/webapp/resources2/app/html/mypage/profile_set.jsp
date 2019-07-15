@@ -14,12 +14,7 @@
 			<div class="bts">
 				<a href="javascript:history.back();" class="hisback">뒤로</a>
 			</div>
-			<h1 class="tit">프로필 관리</h1>
-			<div class="set">
-				<a class="bt alim on" href="javascript:;">알림</a>
-				<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
-				<!-- <a class="bt more" href="javascript:;">더보기</a> -->
-			</div>
+			<h1 class="tit">Profile</h1>
 		</div>
 	</div>
 	<div id="contain" class="contain my prf set">
@@ -38,11 +33,11 @@
 				<ul class="list">
 					<li class="nick">
 						<span class="dt">닉네임</span>
-						<span class="dd"><input class="input bdn" type="text" value="패피루키"></span>
+						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON"></span>
 					</li>
 					<li class="id">
 						<span class="dt">아이디</span>
-						<span class="dd"><input class="input bdn" type="text" value="bluemoon"></span>
+						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON1234"></span>
 					</li>
 					<li class="intro">
 						<span class="dt">소개</span>
@@ -51,10 +46,10 @@
 							<span class="num"><em>20</em><i>/</i><em>200</em></span>
 						</span>
 					</li>
-					<li class="site">
+					<!-- <li class="site">
 						<span class="dt">홈페이지</span>
 						<span class="dd"><input class="input bdn" type="url" value="www.bluemoon22.com"></span>
-					</li>
+					</li> -->
 					<li class="gender">
 						<span class="dt">성별</span>
 						<span class="dd">
@@ -82,7 +77,8 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="javascript:;" class="btn type a xl btnSave">저장</a>
+						<a href="javascript:;" class="btn type e xl">Cancel</a>
+						<a href="javascript:;" class="btn type b fill xl">Done</a>
 					</div>
 				</div>
 			</section>

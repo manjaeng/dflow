@@ -14,7 +14,7 @@
 					<li class="hgt">
 						<div class="ht">HEIGHT</div>
 						<div class="ct">
-							<div class="uiSlider">
+							<div class="uiSlider hgt">
 								<div class="height" id="sizeHeightSlider" data-amount="168">
 									<em class="bar"></em>
 									<div class="ui-slider-handle"></div>
@@ -38,7 +38,7 @@
 					<li class="fit">
 						<div class="ht">Fit</div>
 						<div class="ct">
-							<div class="uiSlider">
+							<div class="uiSlider fit">
 								<div class="fit" id="sizeFittSlider" data-amount="50">
 									<em class="bar"></em>
 									<div class="ui-slider-handle"></div>

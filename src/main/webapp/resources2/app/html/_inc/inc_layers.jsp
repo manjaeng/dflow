@@ -198,7 +198,7 @@ function popMyStyle(){
 			<main class="poptents">
 				<ul class="list">
 					<li><a href="/resources2/app/html/mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
-					<li><a href="javascript:;" class="bt">MODEL SETTING</a></li>
+					<li><a href="/resources2/app/html/mypage/model_set.jsp" class="bt">MODEL SETTING</a></li>
 				</ul>	
 			</main>
 		</div>
@@ -257,19 +257,14 @@ function popShare(){
 
 
 <!-- 프로필사진변경 -->
-<article class="popLayer b popPrfPicMod" id="popPrfPicMod">
+<article class="popLayer c popPrfPicMod" id="popPrfPicMod">
 	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">프로필사진변경</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
+		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">프로필 사진변경</a></li>
-					<li><a href="javascript:;" class="bt">프로필 사진삭제</a></li>
+					<li><a href="javascript:;" class="bt">CHANAGE PHOTO</a></li>
+					<li><a href="javascript:;" class="bt">DELETE PHOTO</a></li>
 				</ul>
 			</main>
 		</div>
