@@ -26,11 +26,7 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							<p>Objectively network visionary methodologies via
-								best-of-breed users. Phosfluorescently initiate go forward
-								leadership skills before an expanded array of infomediaries.
-								Monotonectally incubate web-enabled communities rather than
-								process-centric.</p>
+							<p>해시태그 카운트 변경</p>
 						</div>
 					</div>
 					<!-- END PANEL DEFAULT -->
@@ -42,11 +38,7 @@
 							<h3 class="panel-title">Style</h3>
 						</div>
 						<div class="panel-body">
-							<p>Objectively network visionary methodologies via
-								best-of-breed users. Phosfluorescently initiate go forward
-								leadership skills before an expanded array of infomediaries.
-								Monotonectally incubate web-enabled communities rather than
-								process-centric.</p>
+							<p>스타일 추가 및 수정</p>
 						</div>
 					</div>
 					<!-- END PANEL NO CONTROLS -->
