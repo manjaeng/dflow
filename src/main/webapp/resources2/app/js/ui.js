@@ -343,14 +343,17 @@ var ui = {
 			this.match();
 		},
 		match:function(){
-			$(document).on("click",".uiLkSet>.match .box.mat .bt",function(){
-				// $(this).addClass("com");
+			$(document).on("click",".uiLkSet>.match .box.mat .bt:not(.disabled)",function(){
+				$(this).addClass("disabled");
 				$(this).find(".bar").css({ "width" : "0%" });
 				var pct = $(this).attr("data-match");
 				$(this).find(".bar").animate({
 					width : pct+"%",
 					width: "70%",
-				},1000,"easeOutBounce");
+				},1000,"easeOutBounce",function(){
+					console.log("dfdsfdsfsd",this);
+					$(this).closest(".bt").removeClass("disabled");
+				});
 				console.log(pct);
 				$(this).find(".amt").text(pct+"%");
 				$(this).find(".txt").text("MATCH");
