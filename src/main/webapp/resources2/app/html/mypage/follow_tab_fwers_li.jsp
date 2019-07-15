@@ -61,7 +61,7 @@
 		<div class="name">패피플러스</div>
 		<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
 	</div>
-</li>			
+</li>				
 <li>
 	<div class="item">
 		<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/5" alt=""></a></span>
@@ -83,11 +83,3 @@
 		<div class="foll"><label class="checkbox"><input type="checkbox" checked="checked"><span></span></label></div>
 	</div>
 </li>
-<li>
-	<div class="item">
-		<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/8" alt=""></a></span>
-		<div class="name">패피플러스</div>
-		<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
-	</div>
-</li>
-				

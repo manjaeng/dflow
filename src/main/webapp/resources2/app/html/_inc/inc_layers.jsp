@@ -197,7 +197,7 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">PROFILE SETTING</a></li>
+					<li><a href="/resources2/app/html/mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
 					<li><a href="javascript:;" class="bt">MODEL SETTING</a></li>
 				</ul>	
 			</main>

@@ -51,8 +51,8 @@
 							<span class="nt">Women</span>
 						</div>
 						<div class="amount">
-							<a href="javascript:;" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
-							<a href="javascript:;" class="fw fwing"><i>Following</i><em>51</em></a>
+							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
+							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em>51</em></a>
 						</div>
 						<div class="bts">
 							<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
