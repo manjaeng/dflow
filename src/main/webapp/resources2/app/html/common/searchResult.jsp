@@ -54,8 +54,8 @@
 			success: function(html) {			
 				$(".tabsSch>.uiTab>li."+opt).addClass("active").siblings("li").removeClass("active");
 				$("#searchResult").html(html);
-				look_grid_set();
-				// schResultTabFnc(opt);
+				// look_grid_set();
+				addItemFnc(opt);
 				$("#searchResult").removeClass("look , acct").addClass(opt);
 				appendStat = true ;
 				page = 1 ;
@@ -80,15 +80,16 @@
 			success: function(html) {
 				window.setTimeout(function(){
 					
-					if (opt == 'look') { // LOOK 일때 append
-						$items = $(html);
-						$look_grid.append( $items ).masonry( 'appended', $items );
-						$look_grid.masonry('layout');
-					}
-					
-					if (opt == 'acct') { // Account 일때 append
-						$(".secResult .tabCtn."+opt+" .list").append(html);
-					}
+					// if (opt == 'look') { // LOOK 일때 append
+					// 	$items = $(html);
+					// 	$look_grid.append( $items ).masonry( 'appended', $items );
+					// 	$look_grid.masonry('layout');
+					// }
+					// if (opt == 'acct') { // Account 일때 append
+					// 	$(".secResult .tabCtn."+opt+" .list").append(html);
+					// }
+
+					$(".secResult .tabCtn."+opt+" .list").append(html);
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
 					if (page >= 3) {
@@ -110,7 +111,7 @@
 		});	
 	};
 
-	var look_grid_set = function(){  //  그리트 플러그인 셋팅
+	var look_grid_set = function(){  //  그리드 플러그인 셋팅
 		$look_grid = $('#dp_list').masonry({
 			itemSelector: '#dp_list .box',
 			percentPosition: true,

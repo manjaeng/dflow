@@ -140,11 +140,12 @@
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns{}
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns .bt.rp{color: #999999; display: inline-block;padding:5px 0;}
 
+.contain.comment .sec.comt ul.list>li ul{ margin-left: 40px;}
 .contain.comment .sec.comt ul.list>li ul li{margin-top: 0px;}
-.contain.comment .sec.comt ul.list>li ul li .comts .pic{ width:28px; left:10px;}
-.contain.comment .sec.comt ul.list>li ul li .comts .ment .name{font-size: 10px;}
-.contain.comment .sec.comt ul.list>li ul li .comts .ment .text{font-size: 10px;}
-.contain.comment .sec.comt ul.list>li ul li .comts .ment .info .time{ padding: 0;}
+.contain.comment .sec.comt ul.list>li ul li .comts .pic{/* width:28px; *//* left:10px; */}
+.contain.comment .sec.comt ul.list>li ul li .comts .ment .name{/* font-size: 10px; */}
+.contain.comment .sec.comt ul.list>li ul li .comts .ment .text{/* font-size: 10px; */}
+.contain.comment .sec.comt ul.list>li ul li .comts .ment .info .time{/* padding: 0; */}
 
 
 .contain.comment .sec.write{height:56px;}
