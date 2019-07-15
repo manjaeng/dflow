@@ -26,7 +26,7 @@
 							</div>
 						</div>
 						<div class="panel-body">
-							<p>해시태그 카운트 변경</p>
+							<p>해시태그 개수 변경</p>
 						</div>
 					</div>
 					<!-- END PANEL DEFAULT -->
@@ -38,7 +38,7 @@
 							<h3 class="panel-title">Style</h3>
 						</div>
 						<div class="panel-body">
-							<p>스타일 추가 및 수정</p>
+							<p>스타일 추가 및 변경</p>
 						</div>
 					</div>
 					<!-- END PANEL NO CONTROLS -->
