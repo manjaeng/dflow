@@ -7,33 +7,34 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	
-	<article class="popPage popJoinPre" id="popJoinPre">
-		<div class="pbd">
-			<button type="button" class="btnPopClose" onclick="history.back();">뒤로</button>
-			<div class="pct">
-				<main class="poptents">
-					<div class="box">
-						<div class="hdt">JOIN <em>FAPEE</em></div>
-						<div class="bts">
-							<a href="./login.jsp" class="btn xl type a btnLogin">LOGIN</a>
-							<a href="./join.jsp" class="btn xl type b btnJoin">SIGN UP</a>
-						</div>
-					</div>
-					<div class="joinSet">
-						
-						<div class="hdt">Sign in with</div>
-						<ul class="list">
-							<li class="instar"><a href="javascript:;" class="bt">Instargram</a></li>
-							<li class="kakao"><a href="javascript:;" class="bt">Kakaotalk</a></li>
-							<li class="facebook"><a href="javascript:;" class="bt">Facebook</a></li>
-						</ul>
-					
-					</div>
-				</main>
+	<div id="contain" class="contain popJoinPre">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
+				</div>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
+			<div class="box">
+				<div class="hdt">JOIN <em>FAPEE</em></div>
+				<div class="bts">
+					<a href="./login.jsp" class="bt btnLogin">LOGIN</a>
+					<a href="./join.jsp" class="bt btnJoin">SIGN UP</a>
+				</div>
+			</div>
+			<div class="joinSet">
+				
+				<div class="hdt">Sign in with</div>
+				<ul class="list">
+					<li class="instar"><a href="javascript:;" class="bt"><span>Instargram</span></a></li>
+					<li class="kakao"><a href="javascript:;" class="bt"><span>Kakaotalk</span></a></li>
+					<li class="facebook"><a href="javascript:;" class="bt"><span>Facebook</span></a></li>
+				</ul>
+			
+			</div>
+		</main>
+	</div>
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

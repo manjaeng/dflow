@@ -17,11 +17,11 @@
 			<main class="poptents">
 				<ul class="list">
 					<li><a href="javascript:;" class="bt">스타일 만족도</a></li>
-					<li><a href="javascript:;" class="bt">저장하기</a></li>
+					<!-- <li><a href="javascript:;" class="bt">저장하기</a></li> -->
 					<li><a href="javascript:;" class="bt" onclick="popShare();">공유하기</a></li>
-					<li><a href="javascript:;" class="bt">링크복사</a></li>
+					<!-- <li><a href="javascript:;" class="bt">링크복사</a></li> -->
 					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
-					<li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li>
+					<!-- <li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li> -->
 				</ul>
 			</main>
 		</div>
@@ -199,6 +199,8 @@ function popMyStyle(){
 				<ul class="list">
 					<li><a href="/resources2/app/html/mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
 					<li><a href="/resources2/app/html/mypage/model_set.jsp" class="bt">MODEL SETTING</a></li>
+					<li><a href="javascript:;" class="bt">SHARE</a></li>
+					<li><a href="javascript:;" class="bt">COPY LINK</a></li>
 				</ul>	
 			</main>
 		</div>
@@ -207,6 +209,67 @@ function popMyStyle(){
 <script>
 function popPrfOthers(){
 	ui.popLayer.open('popPrfOthers',{
+		ocb:function(){
+			console.log("프로필 기타팝업 열림");
+		},
+		ccb:function(){
+			console.log("프로필 기타팝업 닫힘");
+		}
+	});
+};
+</script>
+
+
+
+
+<!-- 룩등록 팝업 -->
+<article class="popLayer c popLookReg" id="popLookReg">
+	<div class="pbd">
+		<button type="button" class="btnPopClose">닫기</button>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li>
+						<span href="javascript:;" class="bt">MY PROFILE</span>
+						<ol class="mds">
+							<li>
+								<a href="javascript:;" class="box">
+									<span class="name">다영</span>
+									<span class="info">160cm, KOREA</span>
+								</a>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<span href="javascript:;" class="bt">MODEL PROFILE</span>
+						<ol class="mds">
+							<li>
+								<a href="../look/look_upload.jsp" class="box">
+									<span class="name">은영</span>
+									<span class="info">160cm, KOREA</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="box">
+									<span class="name">LUCKY</span>
+									<span class="info">153cm, JAPAN</span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:;" class="box">
+									<span class="none">등록된 모델이 없습니다.</span>
+								</a>
+							</li>
+						</ol>
+					</li>
+				</ul>	
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popLookReg(){
+	ui.popLayer.open('popLookReg',{
 		ocb:function(){
 			console.log("프로필 기타팝업 열림");
 		},

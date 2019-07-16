@@ -2,26 +2,30 @@
 /* 로긴,가입 */
 .popJoinPre{}
 .popJoinPre .poptents{}
-.popJoinPre .box{padding: 69px 16px 170px 16px;min-height: calc(100vh - 169px);text-align: center;}
-.popJoinPre .box .hdt{font-size: 24px;color: #000000;}
-.popJoinPre .box .hdt em{ font-weight: bold;}
-.popJoinPre .box .bts{margin-top: 30px;}
-.popJoinPre .box .bts .btn{ width:100%; margin-top: 16px}
-.popJoinPre .joinSet{min-height: 160px;text-align: center;width: 100%;padding: 28px 0;position: fixed;bottom: 0;}
-.popJoinPre .joinSet .hdt{font-size: 14px;}
-.popJoinPre .joinSet .list{display:flex;justify-content: space-between;width: 230px;margin: auto;padding-top: 23px;}
-.popJoinPre .joinSet .list>li{}
-.popJoinPre .joinSet .list>li .bt{width:56px;height:56px; background:no-repeat; background-size: 100% auto; display:block;  font-size: 0px;}
-.popJoinPre .joinSet .list>li.instar .bt{background-image:url(../images/common/ico_instargram.png);}
-.popJoinPre .joinSet .list>li.kakao .bt{background-image:url(../images/common/ico_kakaotalk.png);}
-.popJoinPre .joinSet .list>li.facebook .bt{background-image:url(../images/common/ico_facebook.png);}
+.popJoinPre .box{padding: 69px 16px 30px 16px;/* min-height: calc(100vh - 169px); */text-align: center;}
+.popJoinPre .box .hdt{font-size: 24px;color: #000000; font-family:"BlairMd";}
+.popJoinPre .box .hdt em{ /* font-weight: bold; */}
+.popJoinPre .box .bts{margin-top: 30px;font-family: "BlairMd";border-top: #000000 solid 1px;}
+.popJoinPre .box .bts .bt{ width:100%;  display:block; border-bottom: #000000 solid 1px; padding:8px 0px;}
+.popJoinPre .joinSet{min-height: 160px;text-align: center;width: 100%;padding: 28px 20px;/* position: fixed; *//* bottom: 0; */}
+.popJoinPre .joinSet .hdt{font-size: 10px;font-family: "BlairMd";text-transform: uppercase;text-align: left;}
+.popJoinPre .joinSet .list{/* width: 230px; */margin: auto;margin-top: 15px;border-top: #000000 solid 1px;}
+.popJoinPre .joinSet .list>li{font-family: "BlairMd";text-transform: uppercase;font-size: 10px;border-bottom: #000000 solid 1px;}
+.popJoinPre .joinSet .list>li .bt{    display: block;}
+.popJoinPre .joinSet .list>li .bt span{    display: inline-block;    min-width: 97px;}
+.popJoinPre .joinSet .list>li .bt::before{ content:"";width:20px;height:20px; background:no-repeat; background-size: 100% auto; display:inline-block;  font-size: 0px; vertical-align: middle;}
+.popJoinPre .joinSet .list>li.instar .bt::before{background-image:url(../images/common/ico_instargram.png);}
+.popJoinPre .joinSet .list>li.kakao .bt::before{background-image:url(../images/common/ico_kakaotalk.png);}
+.popJoinPre .joinSet .list>li.facebook .bt::before{background-image:url(../images/common/ico_facebook.png);}
+
+
 
 /* 로그인 */
 .popLogin{}
 .popLogin .poptents{}
 .popLogin .loginForm{padding: 69px 16px 20px 16px;}
-.popLogin .loginForm .hdt{font-size: 24px;text-align: center;color: #000000;}
-.popLogin .loginForm .hdt em{ font-weight: bold;}
+.popLogin .loginForm .hdt{font-size: 24px;text-align: center;color: #000000; font-family:"BlairMd";}
+.popLogin .loginForm .hdt em{/* font-weight: bold; */}
 .popLogin .loginForm .form{margin-top: -5px;}
 .popLogin .loginForm .form .uiIptPlc{}
 .popLogin .loginForm .form .uiIptPlc .plc{}
@@ -33,15 +37,15 @@
 .popLogin .loginForm .info .save{}
 .popLogin .loginForm .info .save label{}
 .popLogin .loginForm .info .txt{}
-.popLogin .loginForm .info .txt .link{display: block;padding: 4px 0;}
+.popLogin .loginForm .info .txt .link{display: block;padding: 4px 0; font-family:"BlairMd"; text-decoration: underline; font-size: 11px; color: #333333;}
 
 
 /* 가입 */
 .popJoin{}
 .popJoin .poptents{}
 .popJoin .joinForm{padding: 69px 16px 20px 16px;}
-.popJoin .joinForm .hdt{font-size: 24px;text-align: center;color: #000000;}
-.popJoin .joinForm .hdt em{ font-weight: bold;}
+.popJoin .joinForm .hdt{font-size: 24px;text-align: center;color: #000000; font-family:"BlairMd";}
+.popJoin .joinForm .hdt em{/* font-weight: bold; */}
 .popJoin .joinForm .form{margin-top: -5px;}
 .popJoin .joinForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
 .popJoin .joinForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
@@ -51,6 +55,10 @@
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
 .popJoin .joinForm .form .btns{margin-top: 20px;}
 .popJoin .joinForm .form .btns .btn{width:100%;}
+
+.popJoin .joinForm .form .agree{ position:relative; margin-top: 15px;}
+.popJoin .joinForm .form .agree .txt{font-size: 11px;}
+.popJoin .joinForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
 
 
 /* 마이페이지 타이틀 */
@@ -91,19 +99,19 @@
 .uiPrfeSet .user .infos .summ .nt{color: #000000;opacity: 0.5;}
 .uiPrfeSet .user .infos .summ .nt:before{ content:","; display: inline-block; vertical-align: middle; margin: 0 5px 0 0 ; height:14px;}
 .uiPrfeSet .user .infos .summ .nt:first-child::before{ display:none;}
-.uiPrfeSet .user .infos .amount{display:flex;margin-top: 12px;justify-content: center;}
-.uiPrfeSet .user .infos .amount .fw{margin: 0 10px;font-family:"BlairMd";text-transform: uppercase;font-size: 10px;border-bottom: #000000 solid 1px;display: inline-block;padding: 2px 4px;}
+.uiPrfeSet .user .infos .amount{display:flex;margin-top: 4px;justify-content: center;}
+.uiPrfeSet .user .infos .amount .fw{margin: 0 10px;font-family:"BlairMd";text-transform: uppercase;font-size: 10px;border-bottom: #000000 solid 1px;display: inline-block;padding: 1px 4px;}
 .uiPrfeSet .user .infos .amount .fwers{}
 .uiPrfeSet .user .infos .amount .fwing{}
 .uiPrfeSet .user .infos .amount .fw em{line-height: 14px;margin-left: 10px;}
 .uiPrfeSet .user .infos .amount .fw i{line-height: 14px;}
-.uiPrfeSet .user .infos .bts {position:absolute;right: 0px;top: 70px;}
+.uiPrfeSet .user .infos .bts {position:absolute;right: 7px;top: 75px;}
 .uiPrfeSet .user .infos .bts .bt.more{width:44px;height:44px;background:url(../images/common/ico_my_more.png) no-repeat;background-size:100% auto;font-size:0px;float: left;}
 .uiPrfeSet .user .infos .foll{margin-top: 3px;margin-bottom: -9px;}
 .uiPrfeSet .user .infos .foll label span{}
 .uiPrfeSet .user .infos .foll label span::after{ content:"Follow";}
 .uiPrfeSet .user .infos .foll label input:checked  + span::after{ content:"Following";}
-.uiPrfeSet .desc{padding: 0px 16px 20px 16px;}
+.uiPrfeSet .desc{padding: 15px 16px 20px 16px;}
 .uiPrfeSet .desc .ment{font-size: 13px;color: #101010;position:relative;margin-bottom: 0px;}
 .uiPrfeSet .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;/* background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px; */background-size:32px auto;/* content:""; */}
 .uiPrfeSet .desc .url {font-size: 11px;margin-top: 0px;font-family:"BlairMd";text-transform: uppercase;}
@@ -137,6 +145,8 @@
 .prInfoCont .tabCtn ul.menu>li.active>a{color: #101010;}
 .prInfoCont .tabCtn ul.menu>li.active>a::before{ background:#101010;}
 .prInfoCont .tabCtn.list{}
+.prInfoCont .tabCtn.list .list>li{margin-top: 40px;}
+.prInfoCont .tabCtn.list .list>li:first-child{margin-top: 0px;}
 .prInfoCont .tabCtn.thum .list.load{padding: 1px; background: #000000;}
 .prInfoCont .tabCtn.thum .list{display: block;position: relative;overflow: hidden;/* border-top: 1px solid #000000; */}
 .prInfoCont .tabCtn.thum .list>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden;margin-right: 0px;}
@@ -382,3 +392,13 @@
 .contain.notice .sec.notice .list>li .hBox{/* display:flex; *//* justify-content: space-between; *//* align-items: center; */}
 .contain.notice .sec.notice .list>li .tit{width: 100%;}
 .contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 47px;width: 71px;text-align: right;top: 12px;}
+
+
+.contain.memdis{}
+.contain.memdis .tops{color: #999999;text-align: center;padding: 50px 0 25px 0;}
+.contain.memdis .list{border-top: #000000 solid 1px;}
+.contain.memdis .list>li{border-bottom: #000000 solid 1px;padding: 4px 15px;}
+.contain.memdis .guds{padding:20px 16px; font-size: 13px;}
+.contain.memdis .guds .p{}
+.contain.memdis .guds .t{font-size: 11px; color: #999999; padding:10px 0px;}
+.contain.memdis .agree{padding:5px 16px 5px 16px; font-size: 13px; border: solid #cccccc; border-width: 1px 0px; margin-bottom: 40px;}

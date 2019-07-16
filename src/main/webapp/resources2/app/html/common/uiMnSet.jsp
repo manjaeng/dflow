@@ -2,11 +2,16 @@
 	<div class="slideMnPic" id="slideMnPic">
 		<div class="swiper-container">
 			<ul class="swiper-wrapper slide">
-				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/1" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/720/2" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/3" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/4" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/5" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_1.jpg" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_2.jpg" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_3.jpg" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_4.jpg" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_5.jpg" alt="사진"></span></a></li>
+				<!-- <li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_1.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_2.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_3.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_4.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_5.jpg" alt="사진"></span></li> -->
 			</ul>
 			<div class="pagination"></div>
 		</div>						
@@ -23,9 +28,9 @@
 	</div>
 	<div class="tags">
 		<ul class="list">
-			<li><a href="javascrript:;" class="hash"><em class="tt">#캐쥬얼스타일</em> </a></li>
-			<li><a href="javascrript:;" class="hash"><em class="tt">#대한민국</em> </a></li>
-			<li><a href="javascrript:;" class="hash"><em class="tt">#GGondae_st.</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#캐쥬얼스타일</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#대한민국</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#GGondae_st.</em> </a></li>
 		</ul>
 	</div>
 </div>

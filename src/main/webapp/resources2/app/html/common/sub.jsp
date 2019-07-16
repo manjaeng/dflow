@@ -19,14 +19,7 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
-			내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>내용 <br>
+			
 		</main>
 	</div>
 

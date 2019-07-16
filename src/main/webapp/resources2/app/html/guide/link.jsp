@@ -51,6 +51,10 @@
 						<mark>/resources2/app/html/common/searchResult.jsp</mark>
 					</li>
 					<li>
+						<h4>검색결과_태그</h4> <em>ing</em>
+						<mark>/resources2/app/html/common/searchTag.jsp</mark>
+					</li>
+					<li>
 						<h4>쿨</h4> <em>ing</em>
 						<mark>/resources2/app/html/common/cool.jsp</mark>
 					</li>
@@ -93,8 +97,12 @@
 						<mark>/resources2/app/html/member/login.jsp</mark>
 					</li>
 					<li>
-						<h4>가입</h4> <em>ing</em>
+						<h4>가입,id</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/join.jsp</mark>
+					</li>
+					<li>
+						<h4>가입,pw</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/join_pw.jsp</mark>
 					</li>
 					<li>
 						<h4>탈퇴</h4> <em>ing</em>
@@ -110,8 +118,12 @@
 						<mark>/resources2/app/html/look/look.jsp</mark>
 					</li>
 					<li>
-						<h4>상세</h4> <em>ing</em>
-						<mark>/resources2/app/html/look/view.jsp</mark>
+						<h4>등록</h4> <em>ing</em>
+						<mark>/resources2/app/html/look/look_upload.jsp</mark>
+					</li>
+					<li>
+						<h4>등록2</h4> <em>ing</em>
+						<mark>/resources2/app/html/look/look_cate.jsp</mark>
 					</li>
 				</ul>
 			</li>
@@ -119,12 +131,20 @@
 				<h3><a href="javascript:;">마이페이지</a></h3>
 				<ul>
 					<li>
+						<h4>프로필</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/profile.jsp</mark>
+					</li>
+					<li>
 						<h4>설정</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/setting.jsp</mark>
 					</li>
 					<li>
-						<h4>프로필</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/profile.jsp</mark>
+						<h4>쿨</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/cools.jsp</mark>
+					</li>
+					<li>
+						<h4>팔로워</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/follow.jsp</mark>
 					</li>
 					<li>
 						<h4>프로필설정</h4> <em>ing</em>
@@ -135,8 +155,8 @@
 						<mark>/resources2/app/html/mypage/alim.jsp</mark>
 					</li>
 					<li>
-						<h4>팔로워</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/follow.jsp</mark>
+						<h4>공지</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/notice.jsp</mark>
 					</li>
 				</ul>
 			</li>

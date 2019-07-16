@@ -1,5 +1,5 @@
 ﻿				<div class="tabCtn acct">
-					<div class="tots"><span class="dt">RESULT</span><span class="num">623</span> </div>
+					<!-- <div class="tots"><span class="dt">RESULT</span><span class="num">623</span> </div> -->
 					<div class="acctList">
 						<ul class="list" id="acct_list">
 							

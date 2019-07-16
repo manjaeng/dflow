@@ -2,11 +2,16 @@
 	<div class="slideLookPic" id="slideLookPic">
 		<div class="swiper-container">
 			<ul class="swiper-wrapper slide">
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/1" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_1.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_2.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_3.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_4.jpg" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_5.jpg" alt="사진"></span></li>
+<!-- 				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/1" alt="사진"></span></li>
 				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/720/2" alt="사진"></span></li>
 				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/3" alt="사진"></span></li>
 				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/4" alt="사진"></span></li>
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/5" alt="사진"></span></li>
+				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/5" alt="사진"></span></li> -->
 			</ul>
 			<div class="pagination"></div>
 		</div>						

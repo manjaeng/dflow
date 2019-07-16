@@ -27,11 +27,13 @@
 			<section class="secMn post">
 				<ul class="postList" id="postList">
 					<li><%@ include file="../common/uiMnSet.jsp" %></li>
+					<li><%@ include file="../common/uiMnSet.jsp" %></li>
+					<li><%@ include file="../common/uiMnSet.jsp" %></li>
 				</ul>
-				<div class="uiListMore">
+				<!-- <div class="uiListMore">
 					<em></em>
 					<a class="btMore" href="javascript:;" onclick="addItemFnc_post(this)"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
-				</div>
+				</div> -->
 			</section>
 			<script>
 				var page_post = 0 ;
@@ -250,7 +252,7 @@
 			<section class="secMn hash">
 				<div class="pgtd">
 					<div class="tit">#저녁모임</div>
-					<div class="bts"><a class="link" href="javascript:;">전체보기</a></div>
+					<div class="bts"><a class="link" href="/resources2/app/html/common/searchTag.jsp">전체보기</a></div>
 				</div>
 				<ul class="hashList" id="hashList">
 					<li>

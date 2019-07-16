@@ -7,42 +7,46 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	
-	<article class="popPage popLogin" id="popLogin">
-		<div class="pbd">
-			<button type="button" class="btnPopClose" onclick="history.back();">뒤로</button>
-			<div class="pct">
-				<main class="poptents">
-					<div class="loginForm">
-						<div class="hdt"><em>LOGIN</em></div>
-						<div class="form">
-							<div class="uiIptPlc id">
-								<input type="text" class="input valid"  id="input_sample1" value="">
-								<span class="plc">아이디</span>
-							</div>
-							<div class="uiIptPlc pw">
-								<input type="password" class="input valid" id="input_sample2">
-								<span class="plc">비밀번호</span>
-							</div>
-							<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
-							<div class="btns">
-								<a href="javascript:;" class="btn xl type a btnLogin" id="btnLogin">LOGIN</a>
-							</div>
-						</div>
-						<div class="info">
-							<div class="save">
-								<label class="checkbox"><input type="checkbox" checked="checked"><span>자동 로그인</span></label>
-							</div>
-							<div class="txt">
-								<a href="javascript:;" class="link">비밀번호를 잊으셨나요?</a>
-							</div>
-						</div>
-					</div>
-					
-				</main>
+	<div id="contain" class="contain popLogin">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
+				</div>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
+			<div class="loginForm">
+				<div class="hdt"><em>LOGIN</em></div>
+				<div class="form">
+					<div class="uiIptPlc id">
+						<input type="text" class="input valid"  id="input_sample1" value="">
+						<span class="plc">ID/EMAIL</span>
+					</div>
+					<div class="uiIptPlc pw">
+						<input type="password" class="input valid" id="input_sample2">
+						<span class="plc">PASSWORD</span>
+					</div>
+					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
+				</div>
+				<div class="info">
+					<div class="save">
+						<label class="checkbox"><input type="checkbox" checked="checked"><span>자동 로그인</span></label>
+					</div>
+					<div class="txt">
+						<a href="javascript:;" class="link">FORGOT ID/PASSWORD?</a>
+					</div>
+				</div>
+			</div>
+			<div class="botFixed">
+				<div class="in">
+					<div class="btnSet fit">
+						<a href="javascript:;" class="btn xl b fill btnLogin" id="btnLogin">LOGIN</a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

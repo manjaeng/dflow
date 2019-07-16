@@ -14,25 +14,22 @@
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 				</div>
-				<h1 class="tit">SEARCH</h1>
+				<h1 class="tit">#저녁모임</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
 			
-			<div class="sec formSch">
+			<!-- <section class="secHashWord">
 				<div class="sch">
-					<input type="search" class="input key" placeholder="검색..." value="TREND">
-					<a href="javascript:;" class="bt sch">SEARCH</a>
-					<a href="javascript:;" class="bt cancel">CANCEL</a>					
+					<input type="search" class="input key" placeholder="검색..." value="TREND">					
 				</div>
-			</div>
-
+			</section>
 			<div class="tabsSch">
 				<ul class="uiTab type a sch">
 					<li class="look"><a href="javascript:;" onclick="schResultTabFnc('look')">LOOK</a></li>
 					<li class="acct"><a href="javascript:;" onclick="schResultTabFnc('acct')">ACCOUNT</a></li>
 				</ul>
-			</div>
+			</div> -->
 			<section class="secResult" id="searchResult"></section>
 
 		</main>
@@ -92,7 +89,7 @@
 					// 	$(".secResult .tabCtn."+opt+" .list").append(html);
 					// }
 
-					$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
+					$(".secResult .tabCtn."+opt+" .list").append(html);
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
 					if (page >= 3) {

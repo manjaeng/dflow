@@ -4,6 +4,29 @@
 		var tit = window.location.pathname.split("/");
 		// console.log( tit , tit.length);
 		document.title = "/" + tit[tit.length - 2] + "/" + tit[tit.length - 1];
+
+		var imgs = 
+		".uiMnSet .slide .pic img , "+
+		".uiLkSet .slide .pic img, "+
+		".secMn.hash .hashList>li .item .img img , "+
+		".secMn.match .matchList>li .item .img img  " ;
+
+		$(imgs).each(function(index){
+			var r = parseInt( Math.random() * 6  ) + 1;
+			
+			$(this).attr("src","/resources2/app/images/_temp/look_img_"+r+".jpg");
+
+
+		});
+
+		$(document).on("click",".uiLkSet>.data .list>li.scrap .bt",function(e){
+			if( $(this).hasClass("on") ){
+				$(this).removeClass("on");
+			}else{
+				$(this).addClass("on");
+			}
+		});
+
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기
 		if (a == "") return {};

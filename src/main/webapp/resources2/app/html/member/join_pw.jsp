@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain popJoin id">
+	<div id="contain" class="contain popJoin pw">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -19,27 +19,27 @@
 			<div class="joinForm">
 				<div class="hdt"><em>SIGN UP</em></div>
 				<div class="form">
-					<!-- <div class="memcate">
-						<label class="radio"><input type="radio" name="memcate1" checked="checked"><span>일반회원</span></label>
-						<label class="radio"><input type="radio" name="memcate1"><span>전문가</span></label>
-					</div> -->
-					<div class="uiIptPlc email">
-						<input type="text" class="input valid"  id="input_sample1" value="">
-						<span class="plc">E-MAIL</span>
+					<div class="uiIptPlc pw">
+						<input type="password" class="input valid"  id="input_sample1" value="">
+						<span class="plc">PASSWORD</span>
 					</div>
-					<div class="msgs">이메일은 비밀번호 찾기 및 로그인시 필요합니다.</div>
-
+					<div class="msgs">비밀번호는 6자 이상의 영문, 숫자 조합으로 입력해주세요. </div>
+					<div class="agree">
+						<div class="txt">본인이 만 14세 이상인 것과 서비스 이용약관, <br> 개인정보 보호정책에 동의하십니까? </div>
+						<label class="checkbox"><input type="checkbox"><span></span></label>
+					</div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./join_pw.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="javascript:;" class="btn xl b fill btnDone">Done</a>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

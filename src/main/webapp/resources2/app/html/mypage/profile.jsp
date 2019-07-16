@@ -37,7 +37,7 @@
 								<div class="list">
 									<ul>
 										<li class="active"><button type="button" value="1">All</button></li>
-										<li><button type="button" value="2">Nick Name</button></li>
+										<li><button type="button" value="2">Bluemoon</button></li>
 										<li><button type="button" value="3">Model A</button></li>
 										<li><button type="button" value="4">Model B</button></li>
 										<li><button type="button" value="5">Model C</button></li>

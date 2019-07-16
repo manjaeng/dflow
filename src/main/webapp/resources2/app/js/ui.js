@@ -1,7 +1,8 @@
-//*******************************************//
-// 김기현 : kimkee@naver.com    
-// date : 2019-06-12 ~
-//*******************************************//
+////////////////////////////////////////
+// Author : 김기현 Kim KeeHyum
+// E-mail : kimkee@naver.com    
+// Date   : 2019-06-12 ~
+////////////////////////////////////////
 
 var ui = {
 	init:function(){
@@ -350,8 +351,8 @@ var ui = {
 				$(this).find(".bar").animate({
 					width : pct+"%",
 					width: "70%",
-				},1000,"easeOutBounce",function(){
-					console.log("dfdsfdsfsd",this);
+				},1000,"easeOutCubic",function(){ // "easeOutBounce"
+					// console.log("dfdsfdsfsd",this);
 					$(this).closest(".bt").removeClass("disabled");
 				});
 				console.log(pct);
@@ -758,14 +759,14 @@ var ui = {
         	$(this.newUp.els +" ul.slide" ).length && this.newUp.using();
         },
 		intPic:{  //  
-            els: "#slideIntroPic.swiper-container",
+            els: "#slideUploadPic.swiper-container",
             opt: {
                 slidesPerView: 'auto',
                 freeMode: true,
 				centeredSlides: true,
                 observer: true,
                 observeParents: true,
-                spaceBetween:20,
+                spaceBetween:0,
                 watchOverflow:true,
                 loop: false
             },
@@ -856,7 +857,7 @@ var ui = {
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
-				zoom:true,
+				zoom: true,
 				lazy: true,
 				loop: true
             },

@@ -23,7 +23,7 @@
 			<section class="secMySets">
 				<ul class="list">
 					<li>
-						<a href="javascript:;">개정관리</a>
+						<a href="javascript:;">계정관리</a>
 						<ul>
 							<li><a href="javascript:;">비밀번호 변경</a></li>
 							<li><a href="javascript:;">이메일 변경</a></li>
