@@ -37,9 +37,9 @@
 	</div>
 	<div class="tags">
 		<ul class="list">
-			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#캐쥬얼스타일</em> </a></li>
-			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#대한민국</em> </a></li>
-			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#GGondae_st.</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
+			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>
 		</ul>
 	</div>
 </div>

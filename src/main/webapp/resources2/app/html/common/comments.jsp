@@ -63,7 +63,7 @@
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$("#comment_list").append(html);
+					$("#comment_list").append(html).addClass("load");
 					console.log("페이징 = " + page);
 					appendStat = true ;
 					if (page >= 3) {

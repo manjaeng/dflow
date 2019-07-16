@@ -42,7 +42,7 @@
 				success: function(html) {
 					window.setTimeout(function(){
 						page ++ ;
-						$("#lookList").append(html);
+						$("#lookList").append(html).addClass("load");
 						console.log("페이징 = " + page);
 						appendStat = true ;
 						if (page >= 3) {

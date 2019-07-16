@@ -54,7 +54,7 @@
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$("#cool_list").append(html);
+					$("#cool_list").append(html).addClass("load");
 					console.log("페이징 = " + page);
 					appendStat = true ;
 					if (page >= 3) {

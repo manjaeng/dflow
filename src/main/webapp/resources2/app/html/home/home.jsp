@@ -49,7 +49,7 @@
 						success: function(html) {
 							window.setTimeout(function(){
 								page_post ++ ;
-								$("#postList").append(html);
+								$("#postList").append(html).addClass("load");
 								console.log("페이징 = " + page_post);
 								appendStat_post = true ;
 								if (page_post >= 3) {
@@ -108,7 +108,7 @@
 						success: function(html) {
 							window.setTimeout(function(){
 								page_match ++ ;
-								$("#matchList").append(html);
+								$("#matchList").append(html).addClass("load");
 								console.log("페이징 = " + page_match);
 								appendStat_match = true ;
 								if (page_match >= 3) {

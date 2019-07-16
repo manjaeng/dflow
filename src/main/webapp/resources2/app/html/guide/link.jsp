@@ -139,6 +139,10 @@
 						<mark>/resources2/app/html/mypage/setting.jsp</mark>
 					</li>
 					<li>
+						<h4>알림설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/setting_alim.jsp</mark>
+					</li>
+					<li>
 						<h4>쿨</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/cools.jsp</mark>
 					</li>

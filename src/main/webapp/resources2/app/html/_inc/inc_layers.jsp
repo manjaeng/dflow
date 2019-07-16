@@ -285,12 +285,7 @@ function popLookReg(){
 <!-- 공유하기 팝업 -->
 <article class="popLayer c popShare" id="popShare">
 	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">공유하기</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
+		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">

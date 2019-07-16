@@ -77,8 +77,8 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="javascript:;" class="btn type e xl">Cancel</a>
-						<a href="javascript:;" class="btn type b fill xl">Done</a>
+						<a href="./profile.jsp" class="btn type e xl">Cancel</a>
+						<a href="./profile.jsp" class="btn type b fill xl">Done</a>
 					</div>
 				</div>
 			</section>

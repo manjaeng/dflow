@@ -360,7 +360,7 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .menubar{height: 48px;position:relative;transition: all 0.4s;}
 .menubar.hide{}
 .menubar.hide>.inner{bottom: -60px;}
-.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: #ddd solid 1px;padding: 0 16px;height: 48px;}
+.menubar>.inner{position:fixed;background: rgba(255,255,255,0.9);transition: all 0.4s;z-index:300;bottom: 0px;left:0px;right: 0px;border-top: rgba(0,0,0,0.2) solid 1px;padding: 0 16px;height: 48px;}
 .menubar .menu{display:flex; justify-content:  space-between; align-content: center; align-items: center;}
 .menubar .menu>li{width:100%;display:flex;align-items: center;align-content: center;}
 .menubar .menu>li>a{font-family:"BlairMd";color: #a3a3a3;font-size: 0px;height: 50px;display:flex;align-items: center;align-content: center;justify-content: center;width: 100%;text-align: center;}
@@ -540,7 +540,7 @@ body.my .floatNav .bt.prf{display:block;}
 
 .uiItemList{padding: 0px;margin-right: 0px;overflow: hidden;}
 .uiItemList>.list.load{background: #000000;}
-.uiItemList>.list{display: block;overflow:hidden;margin-right: -2px;/* height: 900px; */position: relative;padding: 2px;}
+.uiItemList>.list{display: block;overflow:hidden;margin-right: -2px;position: relative;padding: 2px 2px 0px 2px;}
 .uiItemList>.list>li{width: calc(33.3333% - 2px);margin-bottom: 2px;float:left;overflow: hidden;/* position: absolute; *//* top: 900px; *//* transition: all 0.5s; */margin-right: 2px;}
 .uiItemList>.list>li .item{position: relative;overflow: hidden;}
 .uiItemList>.list>li .item .img{display:block;position:relative;padding-bottom: calc(4% / 3 * 100);}
@@ -555,8 +555,9 @@ body.my .floatNav .bt.prf{display:block;}
 .uiItemList>.list>li:nth-child(10n+2){}
 .uiItemList>.list>li:nth-child(10n+3){}
 .uiItemList>.list>li:nth-child(10n+4){}
-.uiItemList>.list>li:nth-child(10n+5){width: calc(66.6666% - 2px);float: right;}
-.uiItemList>.list>li.n5{width: calc(66.6666% - 2px);}
+.uiItemList>.list>li:nth-child(10n+5){width: calc(33.3333% * 2 - 2px);float: right;}
+.uiItemList>.list>li:nth-child(10n+5) .item .img{padding-bottom: calc(4% / 3 * 99.8);}
+
 .uiItemList>.list>li:nth-child(10n+6){}
 .uiItemList>.list>li:nth-child(10n+7){width: calc(100.0% - 2px);clear: both;}
 .uiItemList>.list>li.n7{width: calc(100.0% - 2px);clear: both;}
@@ -956,7 +957,7 @@ body.my .floatNav .bt.prf{display:block;}
 .popSearch .recent .list>li{border-top: #000000 solid 1px;}
 .popSearch .recent .list>li:last-child{border-bottom: #000000 solid 1px;}
 .popSearch .recent .list>li .box{font-family:"BlairMd"; position:relative;}
-.popSearch .recent .list>li .box .kwd{font-size: 13px;display:block;height: 37px;padding: 5px 0px 5px 16px;overflow:hidden;/* white-space:nowrap; */margin: 2px 120px 2px 0px;line-height: 210%;}
+.popSearch .recent .list>li .box .kwd{font-size: 13px;display:block;height: 37px;padding: 5px 0px 5px 16px;overflow:hidden;margin: 2px 110px 2px 0px;line-height: 210%;}
 .popSearch .recent .list>li .box .date{font-size: 11px;color: #999999;position:absolute;right:40px;top: 11px;}
 .popSearch .recent .list>li .box .del{position:absolute;right: 3px;top: 3px;width:32px;height:32px;background:url(../images/common/recent_kwd_del.png) no-repeat;background-size: 100% auto;font-size: 0px;}
 .popSearch .recent .list>li.nodata .msg{ text-align: center; padding:50px 0px;}

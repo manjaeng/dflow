@@ -86,10 +86,10 @@
 					// 	$look_grid.masonry('layout');
 					// }
 					// if (opt == 'acct') { // Account 일때 append
-					// 	$(".secResult .tabCtn."+opt+" .list").append(html);
+					// 	$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
 					// }
 
-					$(".secResult .tabCtn."+opt+" .list").append(html);
+					$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;
 					if (page >= 3) {

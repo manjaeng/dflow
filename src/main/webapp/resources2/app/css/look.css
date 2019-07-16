@@ -17,11 +17,11 @@
 .contain.search .sec.formSch .sch .key{background: url(../images/common/icoFormSch.png) no-repeat 0px center;padding-left: 30px;background-size: auto 24px;border-bottom: #ff444f solid 1px;font-size: 13px;font-family:"BlairMd","NotoSansCJKkr";}
 .contain.search .sec.formSch .sch .key:focus{border-bottom: #ff444f solid 1px !important; padding-bottom: 5px;}
 .contain.search .sec.formSch .sch .bt.sch{display:none;}
-.contain.search .sec.formSch .sch .bt.cancel{position:absolute;right: -9px;top: 6px;font-family:"BlairMd";display:block;padding:5px 10px;font-size: 12px;}
+.contain.search .sec.formSch .sch .bt.cancel{position:absolute;right: 0px;top: 6px;font-family:"BlairMd";display:block;padding: 5px 0px;font-size: 12px;}
 
 .contain.result .tabSch{}
 
-.contain.search .secResult{margin: 0 0px;padding: 20px 0px 15px 0px;}
+.contain.search .secResult{margin: 0 0px;padding: 20px 0px 0px 0px;}
 .contain.search .secResult .rsOpts{display:flex;justify-content: space-between;margin-bottom: 0px;padding: 0 0px;}
 .contain.search .secResult .rsOpts .sort{}
 .contain.search .secResult .rsOpts .sort .select{display: inline-block;width:auto;border: none;height:36px;padding-left: 0px;font-size: 13px;}
@@ -39,7 +39,7 @@
 
 
 
-.contain.search .secResult .acctList{padding-top: 5px;margin: 0  -6px;}
+.contain.search .secResult .acctList{padding-top: 5px;/* margin: 0  -6px; */}
 .contain.search .secResult .acctList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;/* justify-content: space-between; */padding: 0 0px 0px 0px;}
 .contain.search .secResult .acctList .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;padding: 0px 10px;}
 .contain.search .secResult .acctList .list>li .item{position: relative;margin: auto;padding: 0 0px;}
@@ -151,7 +151,7 @@
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns{}
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns .bt.rp{color: #999999; display: inline-block;padding:5px 0;}
 
-.contain.comment .sec.comt ul.list>li ul{ margin-left: 40px;}
+.contain.comment .sec.comt ul.list>li ul{margin-left: 40px;}
 .contain.comment .sec.comt ul.list>li ul li{margin-top: 0px;}
 .contain.comment .sec.comt ul.list>li ul li .comts .pic{/* width:28px; *//* left:10px; */}
 .contain.comment .sec.comt ul.list>li ul li .comts .ment .name{/* font-size: 10px; */}

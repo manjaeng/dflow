@@ -169,7 +169,7 @@
 		}else{
 			prfTabFnc('list');
 		}
-		$(window).scrollTop(0);
+		// $(window).scrollTop(0);
 	};
 
 	var testRefresh = function(){
