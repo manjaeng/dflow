@@ -25,7 +25,7 @@
 			<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 		</div>
 		<div class="desc"><a href="javascript:;">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a></div>
-		<div class="time">2일전</div>
+		<!-- <div class="time">2일전</div> -->
 	</div>
 	<div class="data">
 		<ul class="list">

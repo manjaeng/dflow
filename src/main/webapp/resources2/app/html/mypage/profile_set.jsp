@@ -31,13 +31,13 @@
 
 			<section class="prfeForm">
 				<ul class="list">
-					<li class="nick">
-						<span class="dt">닉네임</span>
-						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON"></span>
-					</li>
 					<li class="id">
 						<span class="dt">아이디</span>
 						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON1234"></span>
+					</li>
+					<li class="nick">
+						<span class="dt">닉네임</span>
+						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON"></span>
 					</li>
 					<li class="intro">
 						<span class="dt">소개</span>

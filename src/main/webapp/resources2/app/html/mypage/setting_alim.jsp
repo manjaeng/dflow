@@ -9,7 +9,7 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain set alim">
+	<div id="contain" class="contain setalim">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">

@@ -108,6 +108,14 @@
 						<h4>탈퇴</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/mem_dis.jsp</mark>
 					</li>
+					<li>
+						<h4>서비스이용약관</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/policy1.jsp</mark>
+					</li>
+					<li>
+						<h4>개인정보취급방침</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/policy2.jsp</mark>
+					</li>
 				</ul>
 			</li>
 			<li>
@@ -161,6 +169,14 @@
 					<li>
 						<h4>공지</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/notice.jsp</mark>
+					</li>
+					<li>
+						<h4>1:1문의</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/qna.jsp</mark>
+					</li>
+					<li>
+						<h4>앱버전</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/version.jsp</mark>
 					</li>
 				</ul>
 			</li>

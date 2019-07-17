@@ -9,47 +9,24 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain qna">
+	<div id="contain" class="contain pwmod">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 				</div>
-				<h1 class="tit">1:1문의</h1>
+				<h1 class="tit">비밀번호 변경</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
 			
-			<div class="sec forms">
-				<ul class="form">
-					<li class="cate">
-						<div class="dt">
-							<select class="select">
-								<option>회원정보 문의</option>
-								<option>회원제도 문의</option>
-								<option>시스템 문의</option>
-								<option>기타 문의</option>
-							</select>
-						</div>
-					</li>
-					<li class="subj">
-						<div class="dt">
-							<input type="text" class="input" placeholder="TITLE">
-						</div>
-					</li>
-					<li class="memo">
-						<div class="dt">
-							<textarea class="textarea" placeholder="CONTENTS"></textarea>
-						</div>
-					</li>
-				</ul>
-			</div>
-			
+			<div class="sec pwmod"></div>
 			
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../mypage/model_reg2.jsp" class="btn type b fill xl">Complete</a>
+						<a href="javascript:;" class="btn type a fill xl">취소</a>
+						<a href="javascript:;" class="btn type b fill xl">완료</a>
 					</div>
 				</div>
 			</section>

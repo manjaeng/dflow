@@ -20,43 +20,43 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			<section class="secMySets">
+			<section class="sec mysets">
 				<ul class="list">
 					<li>
-						<a href="javascript:;">계정관리</a>
+						<span class="bt">계정관리</span>
 						<ul>
-							<li><a href="javascript:;">비밀번호 변경</a></li>
-							<li><a href="javascript:;">이메일 변경</a></li>
-							<li><a href="../mypage/cools.jsp">COOL한 게시물</a></li>
+							<li><a class="bt" href="../mypage/pw_mod.jsp">비밀번호 변경</a></li>
+							<li><a class="bt" href="../mypage/email_certi.jsp">이메일 인증</a></li>
+							<li><a class="bt" href="../mypage/cools.jsp">COOL한 게시물</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="../mypage/setting_alim.jsp">알림설정</a>
+						<a class="bt" href="../mypage/setting_alim.jsp">알림설정</a>
 					<li>
-						<a href="javascript:;">고객지원</a>
+						<span class="bt">고객지원</span>
 						<ul>
-							<li><a href="../mypage/qna.jsp">1:1 문의</a></li>
-							<li><a href="../mypage/notice.jsp">공지사항</a></li>
+							<li><a class="bt" href="../mypage/qna.jsp">1:1 문의</a></li>
+							<li><a class="bt" href="../mypage/notice.jsp">공지사항</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:;">이용가이드</a>
+						<span class="bt">이용가이드</span>
 						<ul>
-							<li><a href="javascript:;">이용약관</a></li>
-							<li><a href="javascript:;">개인정보취급방침</a></li>
+							<li><a class="bt" href="../member/policy1.jsp">이용약관</a></li>
+							<li><a class="bt" href="../member/policy2.jsp">개인정보취급방침</a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:;">업데이트</a>
+						<span class="bt">업데이트</span>
 						<ul>
-							<li><a href="javascript:;">앱버전정보 <em class="ver">0.1</em></a></li>
+							<li><a class="bt" href="../mypage/version.jsp">앱버전정보 <em class="ver">1.0.2</em></a></li>
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:;">전문가 계정 신청</a>
+						<a class="bt" href="javascript:;">전문가 계정 신청</a>
 					</li>
 					<li>
-						<a href="javascript:;">로그아웃</a>
+						<a class="bt" href="javascript:;">로그아웃</a>
 					</li>
 				</ul>
 			</section>

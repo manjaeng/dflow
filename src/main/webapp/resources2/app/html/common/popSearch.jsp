@@ -32,28 +32,28 @@
 					<ul class="list">
 						<li>
 							<div class="box">
-								<a href="javascript:;" class="kwd">TOMBOY</a>
+								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
 								<span class="date">2019.07.01</span>
 								<a href="javascript:;" class="del">삭제</a>
 							</div>
 						</li>
 						<li>
 							<div class="box">
-								<a href="javascript:;" class="kwd">TOMBOY</a>
+								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
 								<span class="date">2019.07.01</span>
 								<a href="javascript:;" class="del">삭제</a>
 							</div>
 						</li>
 						<li>
 							<div class="box">
-								<a href="javascript:;" class="kwd">TOMBOY</a>
+								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
 								<span class="date">2019.07.01</span>
 								<a href="javascript:;" class="del">삭제</a>
 							</div>
 						</li>
 						<li>
 							<div class="box">
-								<a href="javascript:;" class="kwd">TOMBOY</a>
+								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
 								<span class="date">2019.07.01</span>
 								<a href="javascript:;" class="del">삭제</a>
 							</div>

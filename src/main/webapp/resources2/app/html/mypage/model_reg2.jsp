@@ -119,7 +119,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="javascript:;" class="btn type d fill xl">Save</a>
+						<a href="./profile.jsp" class="btn type d fill xl">Save</a>
 					</div>
 				</div>
 			</section>

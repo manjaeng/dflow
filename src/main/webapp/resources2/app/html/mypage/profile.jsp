@@ -33,7 +33,7 @@
 					<div class="infos">
 						<div class="name">Bluemoon</div>
 						<div class="models">
-							<div class="uiDropDown sel" data-ui="val">
+							<div class="uiDropDown noWidth sel" data-ui="val">
 								<div class="list">
 									<ul>
 										<li class="active"><button type="button" value="1">All</button></li>
@@ -49,8 +49,8 @@
 						<div class="summ">
 							<span class="nt">163cm</span>
 							<span class="nt">Korea</span>
-							<span class="nt">45kg</span>
-							<span class="nt">Women</span>
+							<!-- <span class="nt">45kg</span>
+							<span class="nt">Women</span> -->
 						</div>
 						<div class="amount">
 							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
@@ -169,7 +169,7 @@
 		}else{
 			prfTabFnc('list');
 		}
-		// $(window).scrollTop(0);
+		$(window).scrollTop(0);
 	};
 
 	var testRefresh = function(){

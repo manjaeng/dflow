@@ -16,9 +16,10 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">스타일 만족도</a></li>
+					<!-- <li><a href="javascript:;" class="bt">스타일 만족도</a></li> -->
 					<!-- <li><a href="javascript:;" class="bt">저장하기</a></li> -->
-					<li><a href="javascript:;" class="bt" onclick="popShare();">공유하기</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popShare();">룩 공유하기</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popShare();">프로필 공유하기</a></li>
 					<!-- <li><a href="javascript:;" class="bt">링크복사</a></li> -->
 					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
 					<!-- <li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li> -->
@@ -53,7 +54,7 @@
 <script>
 function popAccus(){
 	ui.popLayer.open('popAccus',{
-		zindex : 1500,
+		zIndex : 1500,
 		ocb:function(){
 			console.log("신고하기팝업 열림");
 			// ui.popLayer.close('popPrfOthers');
@@ -197,8 +198,8 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="/resources2/app/html/mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
-					<li><a href="/resources2/app/html/mypage/model_set.jsp" class="bt">MODEL SETTING</a></li>
+					<li><a href="../mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
+					<li><a href="../mypage/model_set.jsp" class="bt">MODEL SETTING</a></li>
 					<li><a href="javascript:;" class="bt">SHARE</a></li>
 					<li><a href="javascript:;" class="bt">COPY LINK</a></li>
 				</ul>	

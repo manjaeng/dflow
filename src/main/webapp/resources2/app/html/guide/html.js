@@ -2,6 +2,7 @@
 	init: function () {
 		this.menu.init();
 		var tit = window.location.pathname.split("/");
+		var look_stat = "/" + tit[tit.length - 2] + "/" + tit[tit.length - 1];
 		// console.log( tit , tit.length);
 		document.title = "/" + tit[tit.length - 2] + "/" + tit[tit.length - 1];
 
@@ -13,10 +14,7 @@
 
 		$(imgs).each(function(index){
 			var r = parseInt( Math.random() * 6  ) + 1;
-			
 			$(this).attr("src","/resources2/app/images/_temp/look_img_"+r+".jpg");
-
-
 		});
 
 		$(document).on("click",".uiLkSet>.data .list>li.scrap .bt",function(e){
@@ -27,6 +25,18 @@
 			}
 		});
 
+		if ( look_stat == "/look/look.jsp") {
+			// console.log(look_stat);
+			// $(".menubar .menu>li.look").addClass("on");
+			$(".menubar .menu>li.look>a").on("click", function(){
+				if( $(this).closest("li").hasClass("on") ){
+					$(this).closest("li").removeClass("on");
+				}else{
+					$(this).closest("li").addClass("on");
+				}
+				return false;
+			});
+		}
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기
 		if (a == "") return {};

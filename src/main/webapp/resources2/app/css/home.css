@@ -40,7 +40,7 @@
 .uiMnSet>.info .user .mem .dt .k{/* color: #66dfb2; */}
 .uiMnSet>.info .user .mem .dt .n{}
 .uiMnSet>.info .user .mem .dt .n::before{content: ",";/* width:1px; */height:14px;/* background:#e5e5e5; *//* display: inline-block; *//* vertical-align: middle; */margin: 0 3px 0 0;}
-.uiMnSet>.info .user .bts{position:absolute;right: -10px;top: 4px;}
+.uiMnSet>.info .user .bts{position:absolute;right: -10px;top: 2px;}
 .uiMnSet>.info .user .bts .bt{}
 .uiMnSet>.info .user .bts .bt.more{width:40px; height:40px; background: url(../images/common/ico_look_more.png) no-repeat; background-size: 100% auto; font-size: 0px; display: block;}
 .uiMnSet>.info .desc{margin-top: 15px;}
