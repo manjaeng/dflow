@@ -18,7 +18,11 @@ public class ExcelTest {
 	public void excelImport() throws IOException {
 
 		File file = new ClassPathResource("excel/test1.xlsx").getFile();
+		
+		log.info("excelToMap");
+		log.info(ExcelUtils.excelToMap(file.getAbsolutePath())+"\n");
 
+		log.info("excelToMapList");
 		List<Map<String,Object>> list = ExcelUtils.excelToMapList(file.getAbsolutePath());
 		
 		for (Map<String, Object> map : list) {

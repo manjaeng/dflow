@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import kr.co.thenet.fapee.common.model.FP_Login;
-import kr.co.thenet.fapee.common.util.ResponseUtil;
+import kr.co.thenet.fapee.common.util.ResponseUtils;
 import kr.co.thenet.fapee.user.service.UserService;
 
 @RestController
@@ -27,9 +27,9 @@ public class UserAppController {
 		login = userService.selectUserServiceLogin(login, req);
 
 		if (login.getHttpStatus().equals(HttpStatus.OK)) {
-			return ResponseUtil.getResponse(login);
+			return ResponseUtils.getResponse(login);
 		} else {
-			return ResponseUtil.getResponse(login.getHttpStatus());
+			return ResponseUtils.getResponse(login.getHttpStatus());
 		}
 
 	}
