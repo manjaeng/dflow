@@ -9,48 +9,48 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-
-	<article class="popPage popMysize" id="popMysize">
-		<div class="pbd">
-			<a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a>
-			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
-			<div class="pct">
-				<main class="poptents">
-					
-					<section class="sec style">
-						<div class="hdt"><em>CHOOSE YOUR <br> FAVORITE STYLE </em> </div>
-						<ul class="list">
-							<li><label><input type="checkbox"><span class="tit">Casual</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Girly</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Business</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Tomboy</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Chic</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Bohemian</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Sexy</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Punk</span></label></li>
-							<li><label><input type="checkbox"><span class="tit">Sporty</span></label></li>
-						</ul>
-					</section>
-					
-					<section class="steps st2">
-						<ul class="st">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
-					</section>
-
-				</main>
-			</div>
-			<div class="pbt">
-				<div class="in">
-					<div class="bts">
-						<a href="./myinfo_step3.jsp" class="btn type xl a btnDone">DONE</a>
-					</div>
+	<div id="contain" class="contain myinfo step2">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 				</div>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
+			<section class="sec style">
+				<div class="hdt"><em>CHOOSE YOUR <br> FAVORITE STYLE </em> </div>
+				<ul class="list">
+					<li><label><input type="checkbox"><span class="tit">Casual</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Girly</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Business</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Tomboy</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Chic</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Bohemian</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Sexy</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Punk</span></label></li>
+					<li><label><input type="checkbox"><span class="tit">Sporty</span></label></li>
+				</ul>
+			</section>
+			
+			<section class="steps st2">
+				<ul class="st">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</section>
+
+			<div class="botFixed">
+				<div class="in">
+					<div class="btnSet fit">
+						<a href="./myinfo_step3.jsp" class="btn xl b fill btnDone">DONE</a>
+					</div>
+				</div>
+			</div>
+
+		</main>
+	</div>
 
 
 	<div class="popLayerArea">

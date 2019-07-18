@@ -72,7 +72,7 @@
 						appendStat = false ;
 					}
 					$(".uiLoadMore").removeClass("active");
-					
+					comtActFnc();
 				},500);
 			},
 			error:function(error){
@@ -108,10 +108,23 @@
 
 	});
 
-
+	var comtActFnc = function(){
+		// $("#comment_list>li , #comment_list>li>ul.list.r2>li ").listSwipe({
+		// 	itemSelector: '>.comts',
+		// 	leftAction: false,
+		// 	itemActionWidth: 100,
+		// 	snapThreshold: 0.8
+		// });
+	}
 
 	</script>
 	
+
+	<script>
+	
+
+
+	</script>
 	<!--// 컨텐츠 끝 -->
 	
 

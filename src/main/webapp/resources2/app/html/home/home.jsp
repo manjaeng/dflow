@@ -26,9 +26,9 @@
 
 			<section class="secMn post">
 				<ul class="postList" id="postList">
-					<li><%@ include file="../common/uiMnSet.jsp" %></li>
-					<li><%@ include file="../common/uiMnSet.jsp" %></li>
-					<li><%@ include file="../common/uiMnSet.jsp" %></li>
+					<li><%@ include file="../home/uiMnSet.jsp" %></li>
+					<li><%@ include file="../home/uiMnSet.jsp" %></li>
+					<li><%@ include file="../home/uiMnSet.jsp" %></li>
 				</ul>
 				<!-- <div class="uiListMore">
 					<em></em>

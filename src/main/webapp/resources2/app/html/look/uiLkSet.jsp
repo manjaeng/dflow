@@ -28,7 +28,7 @@
 		<!-- <div class="time">2일전</div> -->
 	</div>
 	<div class="data">
-		<ul class="list">
+		<ul class="dl">
 			<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
 			<li class="like"><a href="../common/cool.jsp" class="bt"><span>120</span></a></li>
 			<li class="reply"><a href="../common/comments.jsp" class="bt"><span>77</span></a></li>
@@ -36,7 +36,7 @@
 		</ul>
 	</div>
 	<div class="tags">
-		<ul class="list">
+		<ul class="tg">
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>

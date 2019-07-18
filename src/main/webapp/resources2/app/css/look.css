@@ -87,26 +87,26 @@
 .uiLkSet>.info .desc a{display:block;}
 .uiLkSet>.info .time{color: #999999;font-size: 10px;margin-top: 4px;}
 .uiLkSet>.data{padding: 5px 15px 2px 15px;}
-.uiLkSet>.data .list{overflow:hidden;}
-.uiLkSet>.data .list>li{float:left;margin-right: 3px;}
-.uiLkSet>.data .list>li .bt{display:block;position:relative;padding-left: 30px;height: 28px;}
-.uiLkSet>.data .list>li .bt:before{width: 28px;height: 28px;display:block;background: no-repeat;background-size: 28px auto;content:"";position:absolute;left:0px;top: -2px;}
-.uiLkSet>.data .list>li .bt span{line-height: 20px;display: inline-block;vertical-align: middle;/* margin-top: 6px; */font-family:"BlairMd";font-size: 13px;}
-.uiLkSet>.data .list>li.cool .bt span{font-size: 0px;}
-.uiLkSet>.data .list>li.cool .bt:before{ background-image: url(../images/common/ico_look_like.png); }
-.uiLkSet>.data .list>li.like .bt{padding-left: 0px;}
-.uiLkSet>.data .list>li.like .bt:before{display:none;}
-.uiLkSet>.data .list>li.reply .bt:before{ background-image: url(../images/common/ico_look_reply.png);}
-.uiLkSet>.data .list>li.scrap{float:right;margin-right: -7px;}
-.uiLkSet>.data .list>li.scrap .bt{font-size: 0px;padding: 0;width: 28px;}
-.uiLkSet>.data .list>li.scrap .bt:before{ background-image: url(../images/common/ico_look_scrap.png); font-size: 0px;}
-.uiLkSet>.data .list>li.scrap .bt.on:before{ background-position-y: -30px;}
+.uiLkSet>.data .dl{overflow:hidden;}
+.uiLkSet>.data .dl>li{float:left;margin-right: 3px;}
+.uiLkSet>.data .dl>li .bt{display:block;position:relative;padding-left: 30px;height: 28px;}
+.uiLkSet>.data .dl>li .bt:before{width: 28px;height: 28px;display:block;background: no-repeat;background-size: 28px auto;content:"";position:absolute;left:0px;top: -2px;}
+.uiLkSet>.data .dl>li .bt span{line-height: 20px;display: inline-block;vertical-align: middle;/* margin-top: 6px; */font-family:"BlairMd";font-size: 13px;}
+.uiLkSet>.data .dl>li.cool .bt span{font-size: 0px;}
+.uiLkSet>.data .dl>li.cool .bt:before{ background-image: url(../images/common/ico_look_like.png); }
+.uiLkSet>.data .dl>li.like .bt{padding-left: 0px;}
+.uiLkSet>.data .dl>li.like .bt:before{display:none;}
+.uiLkSet>.data .dl>li.reply .bt:before{ background-image: url(../images/common/ico_look_reply.png);}
+.uiLkSet>.data .dl>li.scrap{float:right;margin-right: -7px;}
+.uiLkSet>.data .dl>li.scrap .bt{font-size: 0px;padding: 0;width: 28px;}
+.uiLkSet>.data .dl>li.scrap .bt:before{ background-image: url(../images/common/ico_look_scrap.png); font-size: 0px;}
+.uiLkSet>.data .dl>li.scrap .bt.on:before{ background-position-y: -30px;}
 .uiLkSet>.tags{border-bottom: #c2c2c2 solid 1px;border-top: #c2c2c2 solid 1px;overflow-x: auto;padding: 0 5px;}
-.uiLkSet>.tags .list{/* display:flex; *//* padding: 3px 3px; *//* flex-wrap: wrap; *//* justify-content: center; */white-space: nowrap;text-align: center;}
-.uiLkSet>.tags .list>li{margin: 2px 2px;display: inline-block;}
-.uiLkSet>.tags .list>li .hash{position:relative;padding: 3px 7px 3px 7px;/* border: #ddd solid 1px; */display: block;border-radius: 4px;}
-.uiLkSet>.tags .list>li .hash .tt{font-size: 11px;display: inline-block;vertical-align: 1px;}
-.uiLkSet>.tags .list>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
+.uiLkSet>.tags .tg{/* display:flex; *//* padding: 3px 3px; *//* flex-wrap: wrap; *//* justify-content: center; */white-space: nowrap;text-align: center;}
+.uiLkSet>.tags .tg>li{margin: 2px 2px;display: inline-block;}
+.uiLkSet>.tags .tg>li .hash{position:relative;padding: 3px 7px 3px 7px;/* border: #ddd solid 1px; */display: block;border-radius: 4px;}
+.uiLkSet>.tags .tg>li .hash .tt{font-size: 11px;display: inline-block;vertical-align: 1px;}
+.uiLkSet>.tags .tg>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
 
 
 .secLk.look{}
@@ -200,7 +200,7 @@
 .contain.lkreg.upload{}
 .contain.lkreg .sec.photo{}
 .contain.lkreg .sec.photo .pics{position: relative;}
-.contain.lkreg .sec.photo .pics ul.list{display:flex;transform: translateX( calc(100vw - 76vw) );}
+.contain.lkreg .sec.photo .pics ul.list{display:flex;transform: translateX( calc(50% - 104px) );}
 .contain.lkreg .sec.photo .pics ul.list>li{border: #000000 solid 2px;width:188px;position: relative;margin: 0px 10px;}
 .contain.lkreg .sec.photo .pics ul.list>li:first-child{}
 .contain.lkreg .sec.photo .pics ul.list>li .img{display:block;padding-bottom: calc(4% / 3 * 100 );position: relative;}

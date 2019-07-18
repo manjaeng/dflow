@@ -63,3 +63,22 @@
 		<div class="num"><em class="n">7</em></div>
 	</div>
 </li>
+<li class="box">
+	<div class="item">
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/8556" alt=""></a></span>
+		<!-- <div class="bts"><a href="javascript:;" class="bt del">삭제</a></div> -->
+	</div>
+</li>
+<li class="box">
+	<div class="item">
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/9556" alt=""></a></span>
+		<!-- <div class="bts"><a href="javascript:;" class="bt del">삭제</a></div> -->
+	</div>
+</li>
+<li class="box">
+	<div class="item">
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/10556" alt=""></a></span>
+		<!-- <div class="bts"><a href="javascript:;" class="bt del">삭제</a></div> -->
+		<div class="num"><em class="n">7</em></div>
+	</div>
+</li>

@@ -9,43 +9,41 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-
-	<article class="popPage popMysize" id="popMysize">
-		<div class="pbd">
-			<!-- <a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a> -->
-			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
-			<div class="pct">
-				<main class="poptents">
-
-					<section class="sec coms">
-						<div class="hdt"><em>LOOKING FOR <br> YOUR STYLE </em> </div>
-						<div class="box">
-							<div class="msgs">
-								사이즈를 등록하여 <br>
-								당신의 핏을 찾아보세요. <br>
-								<em>30초면 충분합니다.</em>							
-							</div>
-							<div class="total">
-								현재 <em>2,429명</em>의 <br>
-								사이즈가 등록되어 있습니다.
-							</div>
-						</div>
-
-					</section>
-
-				</main>
-			</div>
-			<div class="pbt">
-				<div class="in">
-					<div class="bts">
-						<a href="../home/home.jsp" class="btn type xl a btnLater">LATER</a>
-						<a href="../member/joinPre.jsp" class="btn type xl a btnStart">START</a>
-					</div>
+	<div id="contain" class="contain myinfo step4">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<!-- <a href="javascript:history.back();" class="bt hisback">뒤로</a> -->
 				</div>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
 
+			<section class="sec coms">
+				<div class="hdt"><em>LOOKING FOR <br> YOUR STYLE </em> </div>
+				<div class="box">
+					<div class="msgs">
+						사이즈를 등록하여 <br>
+						당신의 핏을 찾아보세요. <br>
+						<em>30초면 충분합니다.</em>							
+					</div>
+					<div class="total">
+						현재 <em>2,429명</em>의 <br>
+						사이즈가 등록되어 있습니다.
+					</div>
+				</div>
+
+			</section>			
+			<div class="botFixed">
+				<div class="in">
+					<div class="btnSet fit">
+						<a href="../home/home.jsp" class="btn xl e btnLater">LATER</a>
+						<a href="../member/joinPre.jsp" class="btn xl b fill btnStart">START</a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
 
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

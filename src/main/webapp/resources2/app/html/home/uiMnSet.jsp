@@ -7,11 +7,6 @@
 				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_3.jpg" alt="사진"></span></a></li>
 				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_4.jpg" alt="사진"></span></a></li>
 				<li class="swiper-slide"><a href="javascript:;"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_5.jpg" alt="사진"></span></a></li>
-				<!-- <li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_1.jpg" alt="사진"></span></li>
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_2.jpg" alt="사진"></span></li>
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_3.jpg" alt="사진"></span></li>
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_4.jpg" alt="사진"></span></li>
-				<li class="swiper-slide"><span class="pic swiper-zoom-container"><img src="/resources2/app/images/_temp/look_img_5.jpg" alt="사진"></span></li> -->
 			</ul>
 			<div class="pagination"></div>
 		</div>						
@@ -27,7 +22,7 @@
 		</div>
 	</div>
 	<div class="tags">
-		<ul class="list">
+		<ul class="tg">
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
 			<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>

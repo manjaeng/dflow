@@ -9,46 +9,45 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-
-	<article class="popPage popMysize" id="popMysize">
-		<div class="pbd">
-			<a href="javascript:;" class="btnHisback" onclick="history.back();">뒤로</a>
-			<!-- <a href="javascript:;" class="btnPopClose" onclick="history.back();">뒤로</a> -->
-			<div class="pct">
-				<main class="poptents">
-
-					<section class="sec photo">
-						<div class="hdt"><em>UPLOAD YOUR <br> STYLE PHOTOS </em> </div>
-
-						<div class="pics swiper-container" id="slideUploadPic">
-							<ul class="list swiper-wrapper slide">
-								<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
-								<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del">삭제</a></div></li>
-								<li class="swiper-slide"><div class="img"></div></li>
-							</ul>
-						</div>
-					</section>
-
-					<section class="steps st3">
-						<ul class="st">
-							<li>1</li>
-							<li>2</li>
-							<li>3</li>
-						</ul>
-					</section>
-
-				</main>
-			</div>
-			<div class="pbt">
-				<div class="in">
-					<div class="bts">
-						<a href="./myinfo_step4.jsp" class="btn type xl a btnNext">NEXT</a>
-					</div>
+	<div id="contain" class="contain myinfo step3">
+		<div class="pageHd">
+			<div class="in">
+				<div class="bts">
+					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 				</div>
 			</div>
 		</div>
-	</article>
+		<main id="contents" class="contents">
 
+			<section class="sec photo">
+				<div class="hdt"><em>UPLOAD YOUR <br> STYLE PHOTOS </em> </div>
+
+				<div class="pics swiper-container" id="slideUploadPic">
+					<ul class="list swiper-wrapper slide">
+						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
+						<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del">삭제</a></div></li>
+						<li class="swiper-slide"><div class="img"></div></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="steps st3">
+				<ul class="st">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</section>
+			
+			<div class="botFixed">
+				<div class="in">
+					<div class="btnSet fit">
+						<a href="./myinfo_step4.jsp" class="btn xl b fill btnNext">NEXT</a>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
 
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

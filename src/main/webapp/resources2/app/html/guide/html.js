@@ -37,6 +37,19 @@
 				return false;
 			});
 		}
+
+
+		var prof_link = 
+			".contain.follow .sec.follow .tabCtn .list>li .item .img>.lk , "+
+			".contain.alim .tabCtn .list>li .box .pic , "+
+			".contain.alim .tabCtn .list>li .box .msgs .text a " ;
+		$(document).on("click", prof_link ,function(e){
+			window.location.href = "/resources2/app/html/mypage/profile.jsp";
+		});
+
+
+
+
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기
 		if (a == "") return {};
