@@ -350,7 +350,7 @@ function popPrfPicMod(){
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
-				<h1 class="tit">타이틀</h1>
+				<h1 class="tit">타이틀 타입 a</h1>
 				<button type="button" class="btnPopClose">닫기</button>
 			</div>
 		</div>
@@ -385,7 +385,7 @@ function popPrfPicMod(){
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
-				<h1 class="tit">타이틀</h1>
+				<h1 class="tit">타이틀 타입 b</h1>
 				<button type="button" class="btnPopClose">닫기</button>
 			</div>
 		</div>
@@ -404,11 +404,11 @@ function popPrfPicMod(){
 </article>
 
 <!-- 팝레이어 샘플3 -->
-<article class="popLayer a popSample3" id="popSample3">
+<article class="popLayer b popSample3" id="popSample3">
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
-				<h1 class="tit">타이틀</h1>
+				<h1 class="tit">타이틀 타입 b</h1>
 				<button type="button" class="btnPopClose">닫기</button>
 			</div>
 		</div>
@@ -426,26 +426,16 @@ function popPrfPicMod(){
 <!-- 팝레이어 샘플4 아래에서 올라오는 팝업 type c -->
 <article class="popLayer c popSample4" id="popSample4">
 	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">타이틀</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
+		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="twitter"><a href="javascript:;" class="bt">트위터</a></li>
+					<li class="twitter"><a href="javascript:;" class="bt">타입 c</a></li>
 					<li class="katalk"><a href="javascript:;" class="bt">카카오톡</a></li>
 					<li class="facebook"><a href="javascript:;" class="bt">페이스북</a></li>
 					<li class="kastory"><a href="javascript:;" class="bt">카카오스토리</a></li>
 				</ul>
 			</main>
-		</div>
-		<div class="pbt">
-			<div class="bts">
-				<a href="javascript:;" class="btn a btnPopClose">취소</a>
-			</div>
 		</div>
 	</div>
 </article>

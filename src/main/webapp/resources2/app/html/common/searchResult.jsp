@@ -21,7 +21,7 @@
 			
 			<div class="sec formSch">
 				<div class="sch">
-					<input type="search" class="input key" placeholder="해시태그 또는 ID를 검색하세요" value="TREND">
+					<input type="search" class="input key" placeholder="해시태그 또는 ID를 검색하세요" value="TOMBOY">
 					<a href="javascript:;" class="bt sch">SEARCH</a>
 					<a href="javascript:;" class="bt cancel">CANCEL</a>					
 				</div>

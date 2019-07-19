@@ -100,8 +100,8 @@
 .secMn.newb .slideNewbie .slide>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"BlairMd","NotoSansCJKkr";}
 .secMn.newb .slideNewbie .slide>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
 .secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span::before{transform: scale(0.8);vertical-align: -11px;margin-right: -4px;}
-.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span:after{content:"Follow";font-family:"BlairMd";font-size: 10px;}
-.secMn.newb .slideNewbie .slide>li .item .foll .checkbox input:checked + span:after{ content:"Following";}
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";font-size: 10px;}
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
 
 
 

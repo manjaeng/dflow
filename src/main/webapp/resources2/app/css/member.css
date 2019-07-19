@@ -242,7 +242,7 @@
 .contain.follow .sec.follow{}
 .contain.follow .sec.follow .tabCtn{padding-top: 25px;}
 .contain.follow .sec.follow .tabCtn .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;/* justify-content: space-between; */padding: 0 0px 0px 0px;}
-.contain.follow .sec.follow .tabCtn .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;padding: 0px 10px;}
+.contain.follow .sec.follow .tabCtn .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;/* padding: 0px 10px; */}
 .contain.follow .sec.follow .tabCtn .list>li .item{position: relative;margin: auto;padding: 0 0px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img{display:block;position:relative;/* padding-bottom: 100%; */margin: auto;/* max-width: 80px; *//* max-height: 80px; */width: 70px;height: 80px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img>.lk{display: block;position: relative;/* height: 100%; *//* left: 0; *//* top: 0; */width: 100%;overflow: hidden;/* border-radius: 100%; */padding-bottom: 113%;}
@@ -250,8 +250,8 @@
 .contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"NotoSansCJKkr-Md";}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{transform: scale(0.8); margin-left: 0px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span:after{content:"Follow";font-family:"BlairMd";font-size: 11px;margin-left: -3px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span:after{ content:"Following";}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";/* font-size: 11px; */margin-left: -3px;}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
 .contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top: -15px;}
 
 
