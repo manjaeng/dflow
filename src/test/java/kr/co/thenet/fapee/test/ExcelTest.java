@@ -2,8 +2,6 @@ package kr.co.thenet.fapee.test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
@@ -18,15 +16,14 @@ public class ExcelTest {
 	public void excelImport() throws IOException {
 
 		File file = new ClassPathResource("excel/test1.xlsx").getFile();
-		
+
 		log.info("excelToMap");
-		log.info(ExcelUtils.excelToMap(file.getAbsolutePath())+"\n");
+		log.info(ExcelUtils.excelToMap(file.getAbsolutePath()) + "\n");
 
 		log.info("excelToMapList");
-		List<Map<String,Object>> list = ExcelUtils.excelToMapList(file.getAbsolutePath());
-		
-		for (Map<String, Object> map : list) {
+		ExcelUtils.excelToMapList(file.getAbsolutePath()).forEach(map -> {
 			log.info(map);
-		}
+		});
+
 	}
 }

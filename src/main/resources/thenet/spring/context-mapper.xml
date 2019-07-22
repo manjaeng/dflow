@@ -16,4 +16,5 @@
 		<property name="basePackage" value="kr.co.thenet.fapee.**.service.impl" />
 	</bean>
 	
+	<mybatis-spring:scan base-package="size.test.mapper" />
 </beans>
