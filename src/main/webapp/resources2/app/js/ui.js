@@ -345,12 +345,11 @@ var ui = {
 		},
 		match:function(){
 			$(document).on("click",".uiLkSet>.match .box.mat .bt:not(.disabled)",function(){
+				var pct = $(this).attr("data-match");
 				$(this).addClass("disabled");
 				$(this).find(".bar").css({ "width" : "0%" });
-				var pct = $(this).attr("data-match");
 				$(this).find(".bar").animate({
 					width : pct+"%",
-					width: "70%",
 				},1000,"easeOutCubic",function(){ // "easeOutBounce"
 					// console.log("dfdsfdsfsd",this);
 					$(this).closest(".bt").removeClass("disabled");

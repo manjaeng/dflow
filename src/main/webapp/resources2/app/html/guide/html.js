@@ -17,7 +17,7 @@
 			$(this).attr("src","/resources2/app/images/_temp/look_img_"+r+".jpg");
 		});
 
-		$(document).on("click",".uiLkSet>.data .list>li.scrap .bt",function(e){
+		$(document).on("click",".uiLkSet>.data ul.dl>li.scrap .bt",function(e){
 			if( $(this).hasClass("on") ){
 				$(this).removeClass("on");
 			}else{

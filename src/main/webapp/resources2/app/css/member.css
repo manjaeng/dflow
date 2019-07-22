@@ -163,6 +163,10 @@
 .prInfoCont .tabCtn.thum>ul.list>li .item .checkbox{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .prInfoCont .tabCtn .uiLoadMore{padding:0 8px;}
 
+.prInfoCont .tabCtn .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 220px );}
+.prInfoCont .tabCtn .list.load + .uiLoadMore{margin-top: 0px;}
+
+
 .prInfoCont .tabCtn .memList{padding-top: 10px;}
 .prInfoCont .tabCtn .memList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;/* justify-content: space-between; */padding: 0 0px 0px 0px;}
 .prInfoCont .tabCtn .memList .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;padding: 0px 10px;}
@@ -207,7 +211,7 @@
 .contain.my.prf .prfeForm .list>li .dd{position:relative;display: block;border-bottom: #cccccc solid 1px;width: 100%;}
 .contain.my.prf .prfeForm .list>li .dd{}
 .contain.my.prf .prfeForm .list>li .dd .input{/* padding-top: 5px; */font-family:"BlairMd";height: 36px;}
-.contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;}
+.contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;padding-left: 0px;}
 .contain.my.prf .prfeForm .list>li .dd .num{position:absolute;right: 0px;top: 36px;font-size: 12px;color: #999999;}
 .contain.my.prf .prfeForm .list>li .dd label + label{ margin-left: 30px;}
 .contain.my.prf .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;padding-left: 0px;min-width:150px; font-family:"BlairMd"; text-transform: uppercase;}
@@ -234,7 +238,8 @@
 .contain.alim .tabCtn .list>li .box .thum{width: 35px;position:absolute;display:block;right:0px;top: 0px;height: 45px;}
 .contain.alim .tabCtn .list>li .box .thum .img{position:absolute;display: block;padding-bottom: calc(4% / 3 * 100);width: 100%;}
 .contain.alim .tabCtn .list>li .box .thum .img img{object-fit: cover; position:absolute;left:0px;top: 0px;height: 100%;width: 100%;}
-
+.contain.alim .tabCtn .list + .uiLoadMore{ margin-top:calc(50vh - 100px );}
+.contain.alim .tabCtn .list.load + .uiLoadMore{margin-top:0px;}
 
 
 
@@ -247,13 +252,14 @@
 .contain.follow .sec.follow .tabCtn .list>li .item .img{display:block;position:relative;/* padding-bottom: 100%; */margin: auto;/* max-width: 80px; *//* max-height: 80px; */width: 70px;height: 80px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img>.lk{display: block;position: relative;/* height: 100%; *//* left: 0; *//* top: 0; */width: 100%;overflow: hidden;/* border-radius: 100%; */padding-bottom: 113%;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
-.contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"NotoSansCJKkr-Md";}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
+.contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family: "BlairMd","NotoSansCJKkr";}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll{text-align: center;white-space: nowrap;margin-top: -3px;}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox{margin-left: -10px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{transform: scale(0.8); margin-left: 0px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";/* font-size: 11px; */margin-left: -3px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
-.contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top: -15px;}
-
+.contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 100px );}
+.contain.follow .sec.follow .tabCtn .list.load + .uiLoadMore{margin-top: -15px;}
 
 
 
@@ -316,7 +322,7 @@
 .contain.mdl.reg .sec.size{position:relative;z-index: 0;}
 .contain.mdl.reg .sec.size .filters{}
 .contain.mdl.reg .sec.size .filters>li .ht{font-size: 13px;margin-bottom: 20px;color: #000000;font-family:"BlairMd";color: #fd6060;text-transform: uppercase;}
-.contain.mdl.reg .sec.size .filters{padding: 20px 16px 40px 16px;position: relative;z-index: 10;}
+.contain.mdl.reg .sec.size .filters{padding: 20px 16px 40px 16px;position: relative;z-index: 10;overflow: hidden;}
 .contain.mdl.reg .sec.size .filters>li{margin-top: 30px;}
 .contain.mdl.reg .sec.size .filters>li:first-child{margin-top: 0px;}
 .contain.mdl.reg .sec.size .filters>li .ht{/* font-size: 16px; *//* margin-bottom:10px; *//* color: #000000; */}
@@ -377,6 +383,8 @@
 .contain.cools .coolList .list>li .item .num:before{}
 .contain.cools .coolList .list>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
 .contain.cools .coolList .list>li .item .checkbox{position:absolute;right: 0px;top: 0px;z-index: 100;}
+.contain.cools .coolList .list + .uiLoadMore{ margin-top:calc(50vh - 90px );}
+.contain.cools .coolList .list.load + .uiLoadMore{margin-top:0px;}
 .contain.cools .tabCtn .uiLoadMore{padding:0 8px;}
 
 
@@ -395,6 +403,10 @@
 .contain.notice .sec.notice .list>li .hBox{/* display:flex; *//* justify-content: space-between; *//* align-items: center; */}
 .contain.notice .sec.notice .list>li .tit{width: 100%;}
 .contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 47px;width: 71px;text-align: right;top: 12px;}
+.contain.notice .sec.notice .list + .uiLoadMore{ margin-top:calc(50vh - 110px );}
+.contain.notice .sec.notice .list.load + .uiLoadMore{margin-top:0px;}
+
+
 
 
 .contain.memdis{}
@@ -415,7 +427,7 @@
 .contain.qna .sec.forms ul.form>li .dt input,
 .contain.qna .sec.forms ul.form>li .dt textarea{border: none;}
 .contain.qna .sec.forms ul.form>li.cate .dt{}
-.contain.qna .sec.forms ul.form>li .dt .textarea{ height:150px;}
+.contain.qna .sec.forms ul.form>li .dt .textarea{height:150px;padding: 9px 0px 9px 0px;}
 
 
 
