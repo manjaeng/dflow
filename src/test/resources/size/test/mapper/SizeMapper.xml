@@ -22,6 +22,33 @@
 		SELECT * 
 		FROM (
 				SELECT	*,
+<!-- 						IF (ABS(height - #{height}) <= 1, 
+								FORMAT((100 - ABS(heightGrade - #{heightGrade}) * 4) * 0.25
+								,2), 
+								FORMAT((100 - ABS(heightGrade - #{heightGrade}) * 4) * 0.25 * 0.88
+								,2)
+							) AS '매칭height', -->
+						FORMAT((100 - ABS(heightGrade - #{heightGrade}) * 4) * 0.25,2) AS '매칭height',
+						FORMAT((100 - ABS(ageGrade - #{ageGrade}) * 5) * 0.15,2) AS '매칭age',
+						FORMAT((100 - ABS(fitGrade - #{fitGrade}) * 12.5) * 0.25,2) AS '매칭fit',
+						FORMAT((100 - ABS(braTopGrade - #{braTopGrade}) * 12.5) * 0.05,2) AS '매칭braTop',
+						FORMAT((100 - ABS(braBottomGrade - #{braBottomGrade}) * 25.0) * 0.05,2) AS '매칭braBottom',
+						FORMAT((100 - ABS(waistGrade - #{waistGrade}) * 6.25) * 0.25,2) AS '매칭waist',
+				
+						ABS (
+								FORMAT (
+<!-- 									IF (ABS(height - #{height}) <= 1, 
+										(100 - ABS(heightGrade - 10) * 4) * 0.25, 
+										(100 - ABS(heightGrade - 10) * 4) * 0.25 * 0.88) +  -->
+									(100 - ABS(heightGrade - 10) * 4) * 0.25 +
+									(100 - ABS(ageGrade - 4) * 5) * 0.15 +
+									(100 - ABS(fitGrade - 4) * 12.5) * 0.25 +
+									(100 - ABS(braTopGrade - 2) * 12.5) * 0.05 +
+									(100 - ABS(braBottomGrade - 1) * 25.0) * 0.05 +
+									(100 - ABS(waistGrade - 7) * 6.25) * 0.25
+									,2
+										)
+							 ) AS 'total'
 						FORMAT((100 - ABS(heightGrade - #{heightGrade}) * 10) * 0.25,2) AS '매칭height',
 						FORMAT((100 - ABS(ageGrade - #{ageGrade}) * 10) * 0.15,2) AS '매칭age',
 						FORMAT((100 - ABS(fitGrade - #{fitGrade}) * 14.3) * 0.25,2) AS '매칭fit',
@@ -42,46 +69,74 @@
 							 ) AS 'total'
 								
 				FROM (
-						<![CDATA[
 						SELECT *, 
 								(
+						<![CDATA[
 									CASE
-										WHEN height <= 150 THEN 1
-										WHEN height <= 153 THEN 2
-										WHEN height <= 156 THEN 3
-										WHEN height <= 159 THEN 4
-										WHEN height <= 162 THEN 5
-										WHEN height <= 165 THEN 6
-										WHEN height <= 168 THEN 7
-										WHEN height <= 171 THEN 8
-										WHEN height <= 174 THEN 9
-										ELSE 10
+										WHEN height <= 144 THEN 1
+										WHEN height <= 147 THEN 2
+										WHEN height <= 150 THEN 3
+										WHEN height <= 152 THEN 4
+										WHEN height  = 153 THEN 5
+										WHEN height  = 154 THEN 6
+										WHEN height  = 155 THEN 7
+										WHEN height  = 156 THEN 8
+										WHEN height  = 157 THEN 9
+										WHEN height  = 158 THEN 10
+										WHEN height  = 159 THEN 11
+										WHEN height  = 160 THEN 12
+										WHEN height  = 161 THEN 13
+										WHEN height  = 162 THEN 14
+										WHEN height  = 163 THEN 15
+										WHEN height  = 164 THEN 16
+										WHEN height  = 165 THEN 17
+										WHEN height  = 166 THEN 18
+										WHEN height  = 167 THEN 19
+										WHEN height  = 168 THEN 20
+										WHEN height  = 169 THEN 21
+										WHEN height  = 170 THEN 22
+										WHEN height <= 172 THEN 23
+										WHEN height <= 175 THEN 24
+										ELSE 25 
 									END 	
 								) AS heightGrade,
 								(
 									CASE
 										WHEN age <= 19 THEN 1
-										WHEN age <= 24 THEN 2
-										WHEN age <= 29 THEN 3
-										WHEN age <= 34 THEN 4
-										WHEN age <= 39 THEN 5
-										WHEN age <= 44 THEN 6
-										WHEN age <= 49 THEN 7
-										WHEN age <= 54 THEN 8
-										WHEN age <= 59 THEN 9
-										ELSE 10
+										WHEN age <= 21 THEN 2
+										WHEN age <= 23 THEN 3
+										WHEN age <= 25 THEN 4
+										WHEN age <= 27 THEN 5
+										WHEN age <= 29 THEN 6
+										WHEN age <= 31 THEN 7
+										WHEN age <= 33 THEN 8
+										WHEN age <= 35 THEN 9
+										WHEN age <= 37 THEN 10
+										WHEN age <= 39 THEN 11
+										WHEN age <= 41 THEN 12
+										WHEN age <= 43 THEN 13
+										WHEN age <= 45 THEN 14
+										WHEN age <= 47 THEN 15
+										WHEN age <= 49 THEN 16
+										WHEN age <= 52 THEN 17
+										WHEN age <= 55 THEN 18
+										WHEN age <= 59 THEN 19
+										ELSE 20
 									END 
 								) AS ageGrade,
 								(
 									CASE
-										WHEN fit = 'Tight' 		 	THEN 1
-										WHEN fit = 'More Fitted' 	THEN 2
-										WHEN fit = 'Fitted'			THEN 3
-										WHEN fit = 'More Straight' THEN 4
-										WHEN fit = 'Straight' 		THEN 5
-										WHEN fit = 'Loose' 			THEN 6
-										WHEN fit = 'Oversized' 		THEN 7
-									END 
+										WHEN fit = 'Mini Size' 		 	THEN 1
+										WHEN fit = 'Very Tight' 		THEN 2
+										WHEN fit = 'Tight'				THEN 3
+										WHEN fit = 'Slightly Tight' 	THEN 4
+										WHEN fit = 'Average' 			THEN 5
+										WHEN fit = 'Slightly Loose' 	THEN 6
+										WHEN fit = 'Loose'				THEN 7
+										WHEN fit = 'Very Loose' 		THEN 8
+										WHEN fit = 'Oversized' 			THEN 9
+										WHEN fit = 'Big Size' 			THEN 10
+									END  
 								) AS fitGrade,
 								(
 									CASE
@@ -105,17 +160,23 @@
 								) AS braBottomGrade,
 								(
 									CASE
-										WHEN waist <= 22 THEN 1
-										WHEN waist <= 24 THEN 2
-										WHEN waist <= 26 THEN 3
-										WHEN waist <= 28 THEN 4
-										WHEN waist <= 30 THEN 5
-										WHEN waist <= 32 THEN 6
-										WHEN waist <= 34 THEN 7
-										WHEN waist <= 36 THEN 8
-										WHEN waist <= 38 THEN 9
-										ELSE 10
-									END 
+										WHEN waist <= 20 THEN 1
+										WHEN waist <= 22 THEN 2
+										WHEN waist <= 23 THEN 3
+										WHEN waist  = 24 THEN 4
+										WHEN waist  = 25 THEN 5
+										WHEN waist  = 26 THEN 6
+										WHEN waist  = 27 THEN 7
+										WHEN waist  = 28 THEN 8
+										WHEN waist  = 29 THEN 9
+										WHEN waist  = 30 THEN 10
+										WHEN waist  = 31 THEN 11
+										WHEN waist  = 32 THEN 12
+										WHEN waist  = 33 THEN 13
+										WHEN waist <= 35 THEN 14
+										WHEN waist <= 38 THEN 15
+										ELSE 16
+									END  
 								) AS waistGrade
 						FROM size_test
 						]]>

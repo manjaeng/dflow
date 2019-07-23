@@ -22,12 +22,13 @@ public class SizeTest {
 	@Resource
 	private SizeMapper sizeMapper;
 
-	// @Test
+	@Test
 	public void insert() throws Exception {
 
 		List<EgovMap> list = new ArrayList<>();
 		String[] braTop = { "A", "B", "C", "D", "E", "F", "G", "H" };
-		String[] fit = { "Tight", "More Fitted", "Fitted", "More Straight", "Straight", "Loose", "Oversized" };
+/*		String[] fit = { "Tight", "More Fitted", "Fitted", "More Straight", "Straight", "Loose", "Oversized" };*/
+		String[] fit = { "Mini Size", "Very Tight", "Tight", "Slightly Tight", "Average", "Slightly Loose", "Loose", "Oversized", "Big Size"};
 		int[] braBottom = { 75, 80, 85, 90 };
 
 		for (int i = 0; i < 5000; i++) {
@@ -48,7 +49,7 @@ public class SizeTest {
 		sizeMapper.insertSizeData(list);
 	}
 
-	@Test
+	//@Test
 	public void select() throws Exception {
 
 		EgovMap egovMap = new EgovMap();
