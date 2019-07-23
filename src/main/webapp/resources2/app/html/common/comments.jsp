@@ -15,7 +15,7 @@
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-				<h1 class="tit"><a href="javascript:;">COMMENTS</a> </h1>
+				<h1 class="tit">COMMENTS</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
@@ -113,18 +113,14 @@
 		// 	itemSelector: '>.comts',
 		// 	leftAction: false,
 		// 	itemActionWidth: 100,
-		// 	snapThreshold: 0.8
+		// 	snapThreshold: 0.1
 		// });
 	}
 
 	</script>
 	
 
-	<script>
-	
 
-
-	</script>
 	<!--// 컨텐츠 끝 -->
 	
 

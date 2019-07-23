@@ -33,5 +33,5 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <script src="/resources2/app/js/jquery-3.4.1.js"></script>
 <script src="/resources2/app/js/jquery-ui.js"></script>
 <script src="/resources2/app/js/jquery.ui.touch-punch.js"></script>
-<script src="/resources2/app/js/jquery-listswipe.js"></script>
+
 
