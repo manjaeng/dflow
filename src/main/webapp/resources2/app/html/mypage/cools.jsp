@@ -15,7 +15,7 @@
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-				<h1 class="tit"><a href="javascript:;">COOL한 게시물</a> </h1>
+				<h1 class="tit">COOL한 게시물</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">

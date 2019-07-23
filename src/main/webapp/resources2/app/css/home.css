@@ -120,7 +120,7 @@
 
 .secMn.newb .slideNewup .slide .item .user{position:relative;padding: 15px 0px 15px 16px;}
 .secMn.newb .slideNewup .slide .item .user .pic{position:absolute;left: 16px;top: 17px;display: block;}
-.secMn.newb .slideNewup .slide .item .user .pic img{width: 36px;height: 42px;border-radius: 100%;}
+.secMn.newb .slideNewup .slide .item .user .pic img{width: 36px;height: 42px;border-radius: 100%;object-fit: cover;}
 .secMn.newb .slideNewup .slide .item .user .mem{min-height: 40px;margin: 6px 0px 0 41px;/* text-align: center; */display: block;}
 .secMn.newb .slideNewup .slide .item .user .mem .nm{font-size: 16px;font-family: "BlairMd","NotoSansCJKkr";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
 .secMn.newb .slideNewup .slide .item .user .mem .dt{font-size: 10px;color: #a3a3a3;text-transform: uppercase;font-family:"BlairMd";}
