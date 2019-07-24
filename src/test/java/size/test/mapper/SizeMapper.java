@@ -12,4 +12,6 @@ public interface SizeMapper {
 	void insertSizeData(List<EgovMap> list) throws Exception;
 	
 	List<EgovMap> selectSizeData(EgovMap egovMap) throws Exception;
+	
+	List<EgovMap> selectSizeDataOrignal(EgovMap egovMap) throws Exception;
 }

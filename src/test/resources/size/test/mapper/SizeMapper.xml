@@ -185,5 +185,112 @@
 		WHERE total BETWEEN #{start} AND #{end}
 		ORDER BY total DESC;
 	</select>
+	
+	<select id="selectSizeDataOrignal" parameterType="egovMap" resultType="egovMap">
+		SELECT * 
+		FROM (
+				SELECT	*,
+						FORMAT((100 - ABS(heightGrade - #{heightGrade}) * 10) * 0.25,2) AS '매칭height',
+						FORMAT((100 - ABS(ageGrade - #{ageGrade}) * 10) * 0.15,2) AS '매칭age',
+						FORMAT((100 - ABS(fitGrade - #{fitGrade}) * 14.3) * 0.25,2) AS '매칭fit',
+						FORMAT((100 - ABS(braTopGrade - #{braTopGrade}) * 12.5) * 0.05,2) AS '매칭braTop',
+						FORMAT((100 - ABS(braBottomGrade - #{braBottomGrade}) * 25.0) * 0.05,2) AS '매칭braBottom',
+						FORMAT((100 - ABS(waistGrade - #{waistGrade}) * 10) * 0.25,2) AS '매칭waist',
+				
+						ABS (
+								FORMAT (
+									(100 - ABS(heightGrade - #{heightGrade}) * 10) * 0.25 + 
+									(100 - ABS(ageGrade - #{ageGrade}) * 10) * 0.15 +
+									(100 - ABS(fitGrade - #{fitGrade}) * 14.3) * 0.25 +
+									(100 - ABS(braTopGrade - #{braTopGrade}) * 12.5) * 0.05 +
+									(100 - ABS(braBottomGrade - #{braBottomGrade}) * 25.0) * 0.05 +
+									(100 - ABS(waistGrade - #{waistGrade}) * 10) * 0.25
+									,2
+										)
+							 ) AS 'total'
+								
+				FROM (
+						<![CDATA[
+						SELECT *, 
+								(
+									CASE
+										WHEN height <= 150 THEN 1
+										WHEN height <= 153 THEN 2
+										WHEN height <= 156 THEN 3
+										WHEN height <= 159 THEN 4
+										WHEN height <= 162 THEN 5
+										WHEN height <= 165 THEN 6
+										WHEN height <= 168 THEN 7
+										WHEN height <= 171 THEN 8
+										WHEN height <= 174 THEN 9
+										ELSE 10
+									END 	
+								) AS heightGrade,
+								(
+									CASE
+										WHEN age <= 19 THEN 1
+										WHEN age <= 24 THEN 2
+										WHEN age <= 29 THEN 3
+										WHEN age <= 34 THEN 4
+										WHEN age <= 39 THEN 5
+										WHEN age <= 44 THEN 6
+										WHEN age <= 49 THEN 7
+										WHEN age <= 54 THEN 8
+										WHEN age <= 59 THEN 9
+										ELSE 10
+									END 
+								) AS ageGrade,
+								(
+									CASE
+										WHEN fit = 'Tight' 		 	THEN 1
+										WHEN fit = 'More Fitted' 	THEN 2
+										WHEN fit = 'Fitted'			THEN 3
+										WHEN fit = 'More Straight' THEN 4
+										WHEN fit = 'Straight' 		THEN 5
+										WHEN fit = 'Loose' 			THEN 6
+										WHEN fit = 'Oversized' 		THEN 7
+									END 
+								) AS fitGrade,
+								(
+									CASE
+										WHEN braTop = 'A' THEN 1
+										WHEN braTop = 'B' THEN 2
+										WHEN braTop = 'C' THEN 3
+										WHEN braTop = 'D' THEN 4
+										WHEN braTop = 'E' THEN 5
+										WHEN braTop = 'F' THEN 6
+										WHEN braTop = 'G' THEN 7
+										WHEN braTop = 'H' THEN 8
+									END 
+								) AS braTopGrade,
+								(
+									CASE
+										WHEN braBottom = 75 THEN 1
+										WHEN braBottom = 80 THEN 2
+										WHEN braBottom = 85 THEN 3
+										WHEN braBottom = 90 THEN 4
+									END 
+								) AS braBottomGrade,
+								(
+									CASE
+										WHEN waist <= 22 THEN 1
+										WHEN waist <= 24 THEN 2
+										WHEN waist <= 26 THEN 3
+										WHEN waist <= 28 THEN 4
+										WHEN waist <= 30 THEN 5
+										WHEN waist <= 32 THEN 6
+										WHEN waist <= 34 THEN 7
+										WHEN waist <= 36 THEN 8
+										WHEN waist <= 38 THEN 9
+										ELSE 10
+									END 
+								) AS waistGrade
+						FROM size_test
+						]]>
+					) AS tbl1
+				) AS tbl2
+		WHERE total BETWEEN #{start} AND #{end}
+		ORDER BY total DESC;
+	</select>
 
 </mapper>
