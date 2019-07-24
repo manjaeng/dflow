@@ -18,7 +18,7 @@
 @font-face {
 	font-family: "NotoSansCJKkr-Bd";
 	font-style: 900;
-	src: url('../fonts/NotoSansCJKkr-Bold.eot');
+	src: url('../fonts/NotoSansCJKkr-Bold.eot'); 
 	src: url('../fonts/NotoSansCJKkr-Bold.eot') format('embedded-opentype'),
 	url('../fonts/NotoSansCJKkr-Bold.woff') format('woff'),
 	url('../fonts/NotoSansCJKkr-Bold.otf') format('truetype');
@@ -227,6 +227,7 @@ input[type=number]{-moz-appearance:textfield;}
 	.linkHtml .cont>ul>li{ float:none; width:100%; padding:0px; }
 }
 @media screen and ( max-width:360px)  {
+	.linkHtml{display:block;}
 }
 #debug{position:fixed;left: 4px;top: 0px;z-index: 1000000;font-size: 11px;}
 .contain.ui .device{border:#ddd solid 1px;border-radius:4px;padding:10px;font-size: 11px;font-family: Consolas;}

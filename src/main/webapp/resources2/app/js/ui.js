@@ -18,7 +18,6 @@ var ui = {
 		this.listLoad.init();
 		this.filter.init();
 		this.dropDown.init();
-		
 	},
 	cm:{ // 공통
 		init:function(){

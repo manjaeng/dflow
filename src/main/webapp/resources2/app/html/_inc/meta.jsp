@@ -19,7 +19,6 @@ String nn = Integer.toString( now.getMinutes() ) ;
 String ss = Integer.toString( now.getSeconds() ) ;
 String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 %>
-<!-- <link href="/resources2/app/css/style.min.css" rel="stylesheet"> -->
 
 <!-- CSS Import -->
 <link href="/resources2/app/css/jquery-ui.css?v=<%=version%>" rel="stylesheet">
@@ -29,6 +28,9 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <link href="/resources2/app/css/member.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/look.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/home.css?v=<%=version%>" rel="stylesheet">
+<!-- <link href="/resources2/app/css/style.min.css?v=<%=version%>" rel="stylesheet"> -->
+
+
 <!-- Jqurey Core -->
 <script src="/resources2/app/js/jquery-3.4.1.js"></script>
 <script src="/resources2/app/js/jquery-ui.js"></script>
