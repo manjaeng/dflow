@@ -3,7 +3,9 @@
 // E-mail : kimkee@naver.com    
 // Date   : 2019-06-12 ~
 ////////////////////////////////////////
+function getSafeArea() {
 
+}
 var ui = {
 	init:function(){
 		this.cm.init();
@@ -18,6 +20,7 @@ var ui = {
 		this.listLoad.init();
 		this.filter.init();
 		this.dropDown.init();
+		this.getSafe.init();
 	},
 	cm:{ // 공통
 		init:function(){
@@ -33,6 +36,20 @@ var ui = {
 			}
 		}
 		return result ;
+	},
+	getSafe:{
+		init:function(){
+			var _this = this;
+			var computed, div = document.createElement('div');
+			div.style.padding = 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)';
+			document.body.appendChild(div);
+			computed = getComputedStyle(div);
+			_this.top= parseInt(computed.paddingTop) || 0;
+			_this.right= parseInt(computed.paddingRight) || 0;
+			_this.bottom= parseInt(computed.paddingBottom) || 0;
+			_this.left= parseInt(computed.paddingLeft) || 0;
+			document.body.removeChild(div);
+		}
 	},
 	filter: {
 		init:function(){
@@ -1155,13 +1172,9 @@ var ui = {
 			});
 		},
 		resize:function(id){
-			var pctnH =  $(".popLayer:visible").outerHeight() ;
-			if ( $(".popLayer:visible>.pbd>.phd").length ){
-				pctnH = pctnH - $(".popLayer:visible>.pbd>.phd").outerHeight()
-			}
-			if ( $(".popLayer:visible>.pbd>.pbt").length ){
-				pctnH = pctnH - $(".popLayer:visible>.pbd>.pbt").outerHeight()
-			}
+			var pctnH =  $(".popLayer:visible").outerHeight() ;		
+			pctnH = pctnH - ( $(".popLayer:visible>.pbd>.phd").outerHeight() || 0 ) - (  $(".popLayer:visible>.pbd>.pbt").outerHeight() || 0 );
+			
 			$(".popLayer.a:visible>.pbd>.pct").css({"height": pctnH });
 			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH -70 });
 			$(".popLayer.c:visible>.pbd>.pct").css({"max-height": pctnH -30 });

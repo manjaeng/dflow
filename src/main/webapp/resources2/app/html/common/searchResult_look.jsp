@@ -12,7 +12,7 @@
 			
 		</ul>
 		<div class="uiLoadMore">
-			<em></em> <button type="button" class="btnLoad" onclick="addItemFnc('post')" id="btnListMore">불러오기</button>
+			<em></em> <button type="button" class="btnLoad" onclick="addItemFnc('look')" id="btnListMore">불러오기</button>
 		</div>
 	</div>
 </div>

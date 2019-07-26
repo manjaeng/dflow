@@ -8,7 +8,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain search result">
+	<div id="contain" class="contain search result tag">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -19,17 +19,6 @@
 		</div>
 		<main id="contents" class="contents">
 			
-			<!-- <section class="secHashWord">
-				<div class="sch">
-					<input type="search" class="input key" placeholder="검색..." value="TREND">					
-				</div>
-			</section>
-			<div class="tabsSch">
-				<ul class="uiTab type a sch">
-					<li class="look"><a href="javascript:;" onclick="schResultTabFnc('look')">LOOK</a></li>
-					<li class="acct"><a href="javascript:;" onclick="schResultTabFnc('acct')">ACCOUNT</a></li>
-				</ul>
-			</div> -->
 			<section class="secResult" id="searchResult"></section>
 
 		</main>

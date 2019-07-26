@@ -26,6 +26,7 @@
 				<div id="userAgent"></div>
 				<div id="cssStatus"></div>
 				<div id="browserStatus"></div>
+				<div id="iosSafe"></div>
 			</div>
 
 			<p class="gap"></p>
@@ -595,12 +596,15 @@ function showInfo() {
 	$('#cssStatus').html(html.className);
 	$('#browserStatus').html('Client Size : ' + html.clientWidth + 'x' + html.clientHeight + ', Orientation : ' + window.orientation);
 }
-$(function() {
+
+$(document).ready(function(){
 	$('#userAgent').html(navigator.userAgent);
-	$(document.body).bind('orientationchange', showInfo);
-	$(window).bind('orientationchange', showInfo);
-	$(window).bind('resize', showInfo);
+	$('#iosSafe').html( "iosSafeArea "+JSON.stringify( ui.getSafe ) );
+	$(document.body).on('orientationchange', showInfo);
+	$(window).on('orientationchange', showInfo);
+	$(window).on('load resize', showInfo);
 });
+
 </script>
 
 <%@ include file="../_inc/bottom.jsp" %>

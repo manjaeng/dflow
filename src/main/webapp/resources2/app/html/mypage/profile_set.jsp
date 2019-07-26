@@ -9,7 +9,7 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div class="prfeHd">
+	<div class="pageHd">
 		<div class="in">
 			<div class="bts">
 				<a href="javascript:history.back();" class="hisback">뒤로</a>

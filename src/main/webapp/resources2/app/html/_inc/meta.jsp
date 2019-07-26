@@ -1,9 +1,9 @@
 ﻿<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title></title>
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#ffffff">
 <link href="/resources2/app/images/common/favicon.ico" rel="shrtcut icon">
 <link href="/resources2/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
 
