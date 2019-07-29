@@ -95,49 +95,46 @@
 							},
 							ccb:function(){
 								console.log("popSample1 닫힘");
-							}						
+							}
 						});</pre>
 				</div>	
 			</section>
 			<script>
-				$(document).ready(function(){
-
-					samplePop1 = function(){
-						// 레이어팝업 열기 콜백
-						ui.popLayer.open('popSample1',{
-							ocb:function(){
-								console.log("popSample1 열림");
-							},
-							ccb:function(){
-								console.log("popSample1 닫힘");
-							}
-						});
-					}
-					samplePop2 = function(){
-						// 레이어팝업 열기 콜백
-						ui.popLayer.open('popSample2',{
-							ocb:function(){
-								console.log("popSample2 열림");
-							}
-						});
-					}
-					samplePop3 = function(){
-						// 레이어팝업 열기 콜백
-						ui.popLayer.open('popSample3',{
-							ccb:function(){
-								console.log("popSample3 닫힘");
-							}
-						});
-					}
-					samplePop4 = function(){
-						// 레이어팝업 열기 콜백
-						ui.popLayer.open('popSample4',{
-							ccb:function(){
-								// console.log("popSample4 닫힘");
-							}
-						});
+			var samplePop1 = function(){
+				// 레이어팝업 열기 콜백
+				ui.popLayer.open('popSample1',{
+					ocb:function(){
+						console.log("popSample1 열림");
+					},
+					ccb:function(){
+						console.log("popSample1 닫힘");
 					}
 				});
+			}
+			var samplePop2 = function(){
+				// 레이어팝업 열기 콜백
+				ui.popLayer.open('popSample2',{
+					ocb:function(){
+						console.log("popSample2 열림");
+					}
+				});
+			}
+			var samplePop3 = function(){
+				// 레이어팝업 열기 콜백
+				ui.popLayer.open('popSample3',{
+					ccb:function(){
+						console.log("popSample3 닫힘");
+					}
+				});
+			}
+			var samplePop4 = function(){
+				// 레이어팝업 열기 콜백
+				ui.popLayer.open('popSample4',{
+					ccb:function(){
+						// console.log("popSample4 닫힘");
+					}
+				});
+			}
 			</script>
 
 			<section class="codeBox">
@@ -152,7 +149,7 @@
 						ycb:function(){
 							console.log('알럿확인결과');
 						},
-						ybt:'확인'	
+						ybt:'확인'
 					});	
 
 					ui.confirm({ // 컨펌 창 띄우기
@@ -165,7 +162,7 @@
 							console.log('컨펌취소결과');
 						},
 						ybt:'로그인하기',
-						nbt:'닫기'	
+						nbt:'닫기'
 					});</pre>
 				</div>	
 			</section>
@@ -196,7 +193,7 @@
 						console.log('컨펌취소결과');
 					},
 					ybt:'로그인하기',
-					nbt:'닫기'	
+					nbt:'닫기'
 				});
 			}
 			var alert_sample = function(){
@@ -205,7 +202,7 @@
 					ycb:function(){
 						console.log('알럿확인결과');
 					},
-					ybt:'확인'	
+					ybt:'확인'
 				});
 			}
 			var toast_sample1 = function(){
@@ -227,9 +224,9 @@
 
 			<p class="gap"></p>
 			
-			<input type="text" class="input" placeholder="텍스트">								<p class="gap"></p>
+			<input type="text" class="input" placeholder="텍스트">						<p class="gap"></p>
 			
-			<input type="text" class="input valid" placeholder="텍스트">					<p class="gap"></p>
+			<input type="text" class="input valid" placeholder="텍스트">				<p class="gap"></p>
 			
 			<input type="text" class="input valid ok" placeholder="텍스트 ok">			<p class="gap"></p>
 			
@@ -237,20 +234,20 @@
 			
 			<input type="password" class="input valid" placeholder="비밀번호">			<p class="gap"></p>
 			
-			<input type="text" class="input" readonly="readonly" value="readonly">				<p class="gap"></p>
+			<input type="text" class="input" readonly="readonly" value="readonly">		<p class="gap"></p>
 			
-			<input type="text" class="input" disabled="disabled" value="disabled">				<p class="gap"></p>
+			<input type="text" class="input" disabled="disabled" value="disabled">		<p class="gap"></p>
 			
-			<textarea class="textarea" placeholder="내용"></textarea>				<p class="gap"></p>
+			<textarea class="textarea" placeholder="내용"></textarea>					<p class="gap"></p>
 			
 			<select class="select">
 				<option>선택</option>
 			</select>
-																					<p class="gap"></p>
+																						<p class="gap"></p>
 			<select class="select" disabled="disabled">
 				<option>선택</option>
 			</select>
-																					<p class="gap"></p>
+																						<p class="gap"></p>
 			<div class="uiSchIpt">
 				<input type="search" class="input" placeholder="검색어를 입력하세요">
 				<button type="button" class="sch"></button>
@@ -490,8 +487,8 @@
 			<script>
 			$(document).ready(function(){
 				// http://idangero.us/swiper/api/
-				// ui.slides.sample1.slide.on('slideChange', function () {
-				// 	console.log('cmRecom slideChange');
+				// ui.slides.sample1.slide.on('slideChangeTransitionEnd', function () {
+				// 	console.log('sample1 slideChangeTransitionEnd'); 
 				// });
 			});
 			</script>

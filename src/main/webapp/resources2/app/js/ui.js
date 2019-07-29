@@ -3,9 +3,6 @@
 // E-mail : kimkee@naver.com    
 // Date   : 2019-06-12 ~
 ////////////////////////////////////////
-function getSafeArea() {
-
-}
 var ui = {
 	init:function(){
 		this.cm.init();
@@ -284,7 +281,7 @@ var ui = {
 					var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 					// console.log(docH,scr);
 					if(docH <= scr + 0 ){				
-// 						console.log("바닥");						
+						// console.log("바닥");						
 						ui.ly.botNav.show();
 						// return false;
 					}else{
@@ -852,8 +849,8 @@ var ui = {
 				$(this.els).each(function(i){
 					if (  $(this).find(".swiper-slide").length  >= 2  ) {
                         var _this = $(this);
-						ui.slides.lookPic.slide[i] = new Swiper( _this , ui.slides.lookPic.opt );
-						// console.log(ui.slides.lookPic.slide[i]);
+						ui.slides.mnPic.slide[i] = new Swiper( _this , ui.slides.mnPic.opt );
+						// console.log(ui.slides.mnPic.slide[i]);
                     } 
 				});
 			}
@@ -1176,8 +1173,8 @@ var ui = {
 			pctnH = pctnH - ( $(".popLayer:visible>.pbd>.phd").outerHeight() || 0 ) - (  $(".popLayer:visible>.pbd>.pbt").outerHeight() || 0 );
 			
 			$(".popLayer.a:visible>.pbd>.pct").css({"height": pctnH });
-			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH -70 });
-			$(".popLayer.c:visible>.pbd>.pct").css({"max-height": pctnH -30 });
+			$(".popLayer.b:visible>.pbd>.pct").css({"max-height": pctnH - 70 });
+			$(".popLayer.c:visible>.pbd>.pct").css({"max-height": pctnH - 30 });
 		},
 		scroll:{},
 		lyScroll: function(id) {

@@ -51,6 +51,7 @@
 .contain.search .secResult .acctList .list>li .item .info .id{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .contain.search .secResult .acctList .list>li .item .name{}
 .contain.search .secResult .acctList .list>li .item .foll{text-align: left;white-space: nowrap; width: 246px;}
+.contain.search .secResult .acctList .list>li .item .foll .checkbox>span{font-size:10px;}
 .contain.search .secResult .acctList .list>li .item .foll .checkbox>span::before{transform: scale(0.7);margin-left: 0px;}
 .contain.search .secResult .acctList .list>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";margin-left: -3px;}
 .contain.search .secResult .acctList .list>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
@@ -268,7 +269,7 @@
 
 .contain.lkreg.cate .filters>li.hash{}
 .contain.lkreg.cate .filters>li.hash .ipt{position:relative;padding: 0px 0px 20px 0px;}
-.contain.lkreg.cate .filters>li.hash .ipt .input{    border-bottom-color: #ff4b57;}
+.contain.lkreg.cate .filters>li.hash .ipt .input{border-bottom-color: #ff4b57;padding: 5px 60px 5px 0px;}
 .contain.lkreg.cate .filters>li.hash .ipt .bt.save{position:absolute;right: -9px;top: 6px;font-family:"BlairMd";display:block;padding:5px 10px;}
 .contain.lkreg.cate .filters>li.hash .tags{margin: 0 -16px;padding: 2px 0px;text-align: center;border: #c2c2c2 solid;border-width: 1px 0px;overflow-x: auto;}
 .contain.lkreg.cate .filters>li.hash .tags .tg{position:relative;padding: 3px 7px 3px 7px;display: block; display:inline-block; vertical-align: middle;}

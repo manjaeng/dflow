@@ -74,7 +74,7 @@ input.valid.no{background-position-y: -70px;/* border-bottom-color: #daa096 !imp
 .checkbox>input:checked + span::before{background-position-y: -30px;}
 .checkbox>input:disabled + span::before{background-position-y: -60px;}
 .checkbox>input:checked:disabled + span::before{background-position-y: -90px;}
-.checkbox>span{display:inline-block;vertical-align:middle;/* font-size: 10px; *//* color: #8a8a8a; */text-transform: uppercase;}
+.checkbox>span{display:inline-block;vertical-align:middle;text-transform: uppercase;}
 
 
 .radio{position:relative;display:inline-block;vertical-align:middle;font-size: 14px;}
