@@ -846,11 +846,13 @@ var ui = {
             },
 			slide:[],
             using: function() {
+				var _this = this;
 				$(this.els).each(function(i){
-					if (  $(this).find(".swiper-slide").length  >= 2  ) {
-                        var _this = $(this);
-						ui.slides.mnPic.slide[i] = new Swiper( _this , ui.slides.mnPic.opt );
-						// console.log(ui.slides.mnPic.slide[i]);
+                	var $this = $(this);
+					var idx = $this.closest("li").index();
+					if( $this.find(".swiper-slide").length  >= 2  ) {
+						_this.slide[idx] = new Swiper( $this , _this.opt );
+						// console.log( _this.slide[i]);
                     } 
 				});
 			}
@@ -875,12 +877,14 @@ var ui = {
             },
 			slide:[],
             using: function() {
+				var _this = this;
 				$(this.els).each(function(i){
-					if (  $(this).find(".swiper-slide").length  >= 2  ) {
-                        var _this = $(this);
-						ui.slides.lookPic.slide[i] = new Swiper( _this , ui.slides.lookPic.opt );
-						// console.log(ui.slides.lookPic.slide[i]);
-                    } 
+                	var $this = $(this);
+					var idx = $this.closest("li").index();
+					if( $this.find(".swiper-slide").length  >= 2  ) {
+						_this.slide[idx] = new Swiper( $this , _this.opt );
+						// console.log(_this.slide[i]);
+                    }
 				});
 			}
         },
@@ -923,7 +927,7 @@ var ui = {
                 loop: false
             },
             using: function() {
-                if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+                if( $(this.els).find(".swiper-slide").length <= 1 ) {
                     this.opt.loop = false;
                 }
                 this.slide = new Swiper(this.els, this.opt);

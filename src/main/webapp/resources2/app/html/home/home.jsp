@@ -191,7 +191,7 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
 									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -206,7 +206,7 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
 									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -221,7 +221,7 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""></a>
+									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
 									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -236,7 +236,7 @@
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><img src="//placeimg.com/80/94" alt=""a>
+									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
 									<a href="javascript:;" class="mem">
 										<div class="nm">패피루키</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
