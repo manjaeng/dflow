@@ -16,7 +16,7 @@
 			<!-- <h1 class="tit">패피루키</h1> -->
 			<div class="set">
 				<a class="bt alim on" href="javascript:;">알림</a>
-				<a class="bt conf" href="/resources2/app/html/mypage/setting.jsp">설정</a>
+				<a class="bt conf" href="../mypage/setting.jsp">설정</a>
 				<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
 			</div>
 		</div>

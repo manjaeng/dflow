@@ -416,7 +416,7 @@ function popPrfPicMod(){
 			<main class="poptents">
 				<img src="http://placeimg.com/640/640/any/5" alt="">
 				<a class="btn" href="javascript:popMatching.using();">매칭</a>
-				<a class="btn" href="/resources2/app/html/look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
+				<a class="btn" href="../look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>
 		</div>
 	</div>

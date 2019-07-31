@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 .contain.result{}
@@ -119,13 +119,13 @@
 .uiLkSet>.tags .tg>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
 
 
-.secLk.look{}
-.secLk.look .lookList{}
-.secLk.look .lookList>li{margin-top: 30px;}
-.secLk.look .lookList>li:first-child{margin-top: 0px;}
+.contain.look .secLk.look{}
+.contain.look .secLk.look .lookList{}
+.contain.look .secLk.look .lookList>li{margin-top: 30px;}
+.contain.look .secLk.look .lookList>li:first-child{margin-top: 0px;}
 
-.secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
-.secLk.look ul.load + .uiLoadMore{margin-top:0px;}
+.contain.look .secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
+.contain.look .secLk.look ul.load + .uiLoadMore{margin-top:0px;}
 
 
 .contain.cool{}

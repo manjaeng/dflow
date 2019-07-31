@@ -251,6 +251,7 @@
 .contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family: "BlairMd","NotoSansCJKkr";}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll{text-align: center;white-space: nowrap;margin-top: -3px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox{margin-left: -10px;}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span{font-size:10px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{transform: scale(0.8); margin-left: 0px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";margin-left: -3px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span:after{content: "Follow";}

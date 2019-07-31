@@ -10,10 +10,10 @@
 <nav id="menubar" class="menubar">
 	<div class="inner">
 		<ul class="menu">
-			<li class="home"><a href="/resources2/app/html/home/home.jsp">HOME</a></li>
+			<li class="home"><a href="../home/home.jsp">HOME</a></li>
 			<li class="adds"><a href="javascript:;" onclick="popLookReg();">[<em>+</em>]</a></li>
-			<li class="look"><a href="/resources2/app/html/look/look.jsp">LOOK</a></li>
-			<li class="mypg"><a href="/resources2/app/html/mypage/profile.jsp">MY</a></li>
+			<li class="look"><a href="../look/look.jsp">LOOK</a></li>
+			<li class="mypg"><a href="../mypage/profile.jsp">MY</a></li>
 		</ul>
 	</div>
 </nav>

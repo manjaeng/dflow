@@ -252,7 +252,7 @@
 			<section class="secMn hash">
 				<div class="pgtd">
 					<div class="tit">#저녁모임</div>
-					<div class="bts"><a class="link" href="/resources2/app/html/common/searchTag.jsp">전체보기</a></div>
+					<div class="bts"><a class="link" href="../common/searchTag.jsp">전체보기</a></div>
 				</div>
 				<ul class="hashList" id="hashList">
 					<li>

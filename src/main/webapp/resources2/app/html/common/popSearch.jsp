@@ -21,9 +21,9 @@
 
 				<div class="tags">
 					<ul class="tg">
-						<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
-						<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
-						<li><a href="/resources2/app/html/common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>
+						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
+						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
+						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>
 					</ul>
 				</div>
 
@@ -82,7 +82,7 @@ $(document).ready(function(){
 
 	$(document).on("keyup","#input_kwd",function (e) {
 		if( e.keyCode == 13 ) {
-			window.location.href = '/resources2/app/html/common/searchResult.jsp';
+			window.location.href = '../common/searchResult.jsp';
 		}
 	});
 	$(document).on("click","#btSchCancel",function (e) {
