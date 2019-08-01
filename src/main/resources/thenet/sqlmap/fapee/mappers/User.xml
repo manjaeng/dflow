@@ -19,9 +19,9 @@
 		      , snsId
 		      , status
 		  FROM FP_User
-		 WHERE idKey <![CDATA[ > ]]> 0
+		 WHERE 1 = 1
 		<if test="_parameter != null">
-		   AND userId = #{_parameter}
+		   AND email = #{_parameter}
 		</if>
 	</select>
 	
@@ -44,5 +44,33 @@
 		SELECT *
 		  FROM FP_User
 	</select>
+	
+	<select id="selectUserServiceCount" resultType="int" parameterType="FP_User">
+		SELECT count(*)
+		  FROM FP_User
+		 WHERE userId = #{userId} OR email = #{email}
+	</select>
+	
+	<insert id="insertUserServiceInfo" parameterType="FP_User">
+		INSERT into FP_User(
+			  idKey
+			, userId
+			, password
+			, userType
+			, email
+			, loginTotalCount
+			, loginFailCount
+			, joinDate
+		) VALUES (
+			  #{idKey}
+			, #{userId}
+			, #{password}
+			, 2
+			, #{email}
+			, 0
+			, 0
+			, now()
+		)
+	</insert>
 	
 </mapper>

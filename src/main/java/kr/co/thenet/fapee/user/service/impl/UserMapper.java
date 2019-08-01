@@ -16,5 +16,8 @@ public interface UserMapper {
 	void updateUserServiceInfo(FP_User user) throws Exception;
 
 	List<FP_User> selectUserServiceList() throws Exception;
-
+	
+	int selectUserServiceCount(FP_User user) throws Exception;
+	
+	int insertUserServiceInfo(FP_User user) throws Exception;
 }

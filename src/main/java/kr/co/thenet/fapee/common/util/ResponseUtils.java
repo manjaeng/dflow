@@ -10,7 +10,7 @@ public class ResponseUtils {
 	}
 	
 	public static ResponseEntity<?> getResponse(HttpStatus status) {
-		return ResponseUtils.getResponse(null,status);
+		return ResponseUtils.getResponse("",status);
 	}
 	
 	public static ResponseEntity<?> getResponse(Object entity, HttpStatus status) {

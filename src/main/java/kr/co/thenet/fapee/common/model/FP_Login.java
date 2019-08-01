@@ -12,6 +12,7 @@ import lombok.ToString;
 public class FP_Login {
 	private Long userIdKey;
 	private String userId;
+	private String email;
 	private String password;
 	private String authToken;
 	private String deviceType;

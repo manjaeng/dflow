@@ -54,21 +54,21 @@
 	
 	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT into FP_Notice(
-								  userIdKey
-								, createDate
-								, title
-								, content
-								, viewCount
-								, startDate
-								, endDate
+			  userIdKey
+			, createDate
+			, title
+			, content
+			, viewCount
+			, startDate
+			, endDate
 		) VALUES (
-								  #{userIdKey}
-								, now()
-								, #{title}
-								, #{content}
-								, 0
-								, #{startDate}
-								, #{endDate}
+			  #{userIdKey}
+			, now()
+			, #{title}
+			, #{content}
+			, 0
+			, #{startDate}
+			, #{endDate}
 		)
 	</insert>
 
