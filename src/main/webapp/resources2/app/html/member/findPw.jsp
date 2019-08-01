@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain popJoin id">
+	<div id="contain" class="contain findPw">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -16,30 +16,26 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			<div class="joinForm">
-				<div class="hdt"><em>SIGN UP</em></div>
+			<div class="findForm">
+				<div class="hdt"><em>비밀번호찾기</em></div>
 				<div class="form">
-					<!-- <div class="memcate">
-						<label class="radio"><input type="radio" name="memcate1" checked="checked"><span>일반회원</span></label>
-						<label class="radio"><input type="radio" name="memcate1"><span>전문가</span></label>
-					</div> -->
-					<div class="uiIptPlc email">
-						<input type="text" class="input valid"  id="input_sample1" value="">
-						<span class="plc">E-MAIL</span>
+					<div class="email">
+						<span class="plc">이메일 입력</span>
+						<input type="email" class="input"  id="input_sample1" value="">
 					</div>
-					<div class="msgs">이메일은 비밀번호 찾기 및 로그인시 필요합니다.</div>
-
+					<div class="msgs">가입시 입력한 에메일 주소를 입력하시면 비밀번호를 재설정할 수 있는 링크를 보내드립니다.</div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./joinPw.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="./certiEmail.jsp" class="btn xl b fill btnSend">이메일받기</a>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->

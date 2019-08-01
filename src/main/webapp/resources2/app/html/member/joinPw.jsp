@@ -20,7 +20,7 @@
 				<div class="hdt"><em>SIGN UP</em></div>
 				<div class="form">
 					<div class="uiIptPlc pw">
-						<input type="password" class="input valid"  id="input_sample1" value="">
+						<input type="password" class="input"  id="input_sample1" value="">
 						<span class="plc">PASSWORD</span>
 					</div>
 					<div class="msgs">비밀번호는 6자 이상의 영문, 숫자 조합으로 입력해주세요. </div>

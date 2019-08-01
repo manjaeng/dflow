@@ -949,9 +949,10 @@ var ui = {
 		var lyAlert =
 		'<article class="popAlert" tabindex="0">'+
 			'<div class="pbd">'+
+				'<div class="phd">알림</div>'+
 				'<div class="pct">'+opt.msg+'</div>'+
 				'<div class="pbt">'+						
-					'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
+					'<button type="button" class="btn lg a btnConfirm">'+ opt.ybt +'</button>'+
 				'</div>'+
 				// '<button type="button" class="btnClose">닫기</button>'+
 			'</div>'+
@@ -992,8 +993,8 @@ var ui = {
 			'<div class="pbd">'+
 				'<div class="pct">'+opt.msg+'</div>'+
 				'<div class="pbt">'+						
-					'<button type="button" class="btn type sm f btnCancel">'+ opt.nbt +'</button>'+
-					'<button type="button" class="btn type sm a btnConfirm">'+ opt.ybt +'</button>'+
+					'<button type="button" class="btn sm f btnCancel">'+ opt.nbt +'</button>'+
+					'<button type="button" class="btn sm a btnConfirm">'+ opt.ybt +'</button>'+
 				'</div>'+
 				// '<button type="button" class="btnClose">닫기</button>'+
 			'</div>'+

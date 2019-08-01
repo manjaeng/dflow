@@ -97,16 +97,32 @@
 						<mark>/resources2/app/html/member/login.jsp</mark>
 					</li>
 					<li>
+						<h4>비번찾기</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/findPw.jsp</mark>
+					</li>
+					<li>
+						<h4>이메일인증</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/certiEmail.jsp</mark>
+					</li>
+					<li>
+						<h4>비번재설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/findPwRst.jsp</mark>
+					</li>
+					<li>
+						<h4>비번변경완료</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/findPwCom.jsp</mark>
+					</li>
+					<li>
 						<h4>가입,id</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/join.jsp</mark>
 					</li>
 					<li>
 						<h4>가입,pw</h4> <em>ing</em>
-						<mark>/resources2/app/html/member/join_pw.jsp</mark>
+						<mark>/resources2/app/html/member/joinPw.jsp</mark>
 					</li>
 					<li>
 						<h4>탈퇴</h4> <em>ing</em>
-						<mark>/resources2/app/html/member/mem_dis.jsp</mark>
+						<mark>/resources2/app/html/member/memDis.jsp</mark>
 					</li>
 					<li>
 						<h4>서비스이용약관</h4> <em>ing</em>

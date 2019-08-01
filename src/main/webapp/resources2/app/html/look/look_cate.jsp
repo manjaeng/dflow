@@ -58,18 +58,22 @@
 						</div>
 					</li>
 					<li class="hash">
-						<div class="ipt">
-							<input type="text" class="input" placeholder="해시태그 또는 ID를 검색하세요"> <a href="javascript:;" class="bt save">SAVE</a>
-						</div>
-						<div class="tags">
-							<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
-							<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
-							<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
+						<div class="ht">TAG</div>
+						<div class="ct">
+							<div class="ipt">
+								<input type="text" class="input" placeholder="#@"> <a href="javascript:;" class="bt save">SAVE</a>
+							</div>
+							<div class="tags">
+								<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
+								<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
+								<span class="tg"><i>#유니크 스타일</i> <a href="javascript:;" class="del">삭제</a></span>
+							</div>
 						</div>
 					</li>
 					<li class="text">
-						<div class="ht">상세내용</div>
+						<div class="ht">DETAIL</div>
 						<div class="ct">
+							<div class="num">MAX 500</div>
 							<textarea class="textarea"></textarea>
 						</div>
 					</li>

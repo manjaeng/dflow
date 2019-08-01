@@ -1,18 +1,18 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 /* 로긴,가입 */
 .popJoinPre{}
 .popJoinPre .poptents{}
-.popJoinPre .box{padding: 0px 16px 30px 16px; text-align: center;}
+.popJoinPre .box{padding: 0px 0px 30px 0px;text-align: center;}
 .popJoinPre .box .hdt{font-size: 24px;color: #000000; font-family:"BlairMd";}
 .popJoinPre .box .hdt em{ }
 .popJoinPre .box .bts{margin-top: 40px;font-family: "BlairMd";border-top: #000000 solid 1px;}
-.popJoinPre .box .bts .bt{ width:100%;  display:block; border-bottom: #000000 solid 1px; padding:8px 0px;}
-.popJoinPre .joinSet{min-height: 160px;text-align: center;width: 100%;padding: 28px 20px; }
-.popJoinPre .joinSet .hdt{font-size: 10px;font-family: "BlairMd";text-transform: uppercase;text-align: left;}
-.popJoinPre .joinSet .list{ margin: auto;margin-top: 15px;border-top: #000000 solid 1px;}
-.popJoinPre .joinSet .list>li{font-family: "BlairMd";text-transform: uppercase;font-size: 10px;border-bottom: #000000 solid 1px;}
-.popJoinPre .joinSet .list>li .bt{    display: block;}
-.popJoinPre .joinSet .list>li .bt span{    display: inline-block;    min-width: 97px;}
+.popJoinPre .box .bts .bt{width:100%;display:block;border-bottom: #000000 solid 1px;padding: 7px 0px;font-size: 16px;}
+.popJoinPre .joinSet{min-height: 160px;text-align: center;width: 100%;padding: 24px 0px;}
+.popJoinPre .joinSet .hdt{font-size: 10px;font-family: "BlairMd";text-transform: uppercase;text-align: left;padding: 0 16px;}
+.popJoinPre .joinSet .list{margin: auto;margin-top: 13px;border-top: #000000 solid 1px;}
+.popJoinPre .joinSet .list>li{font-family: "BlairMd";text-transform: uppercase;font-size: 9px;border-bottom: #000000 solid 1px;}
+.popJoinPre .joinSet .list>li .bt{display: block;padding: 2px 0px;}
+.popJoinPre .joinSet .list>li .bt span{display: inline-block;min-width: 97px;}
 .popJoinPre .joinSet .list>li .bt::before{ content:"";width:20px;height:20px; background:no-repeat; background-size: 100% auto; display:inline-block;  font-size: 0px; vertical-align: middle;}
 .popJoinPre .joinSet .list>li.instar .bt::before{background-image:url(../images/common/ico_instargram.png);}
 .popJoinPre .joinSet .list>li.kakao .bt::before{background-image:url(../images/common/ico_kakaotalk.png);}
@@ -61,6 +61,61 @@
 .popJoin .joinForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
 
 
+/* 비밀번호찾기 */
+.contain.findPw{}
+.contain.findPw .poptents{}
+.contain.findPw .findForm{padding: 0px 16px 20px 16px;}
+.contain.findPw .findForm .hdt{font-size: 24px;text-align: center;color: #000000;font-family:"BlairMd";margin-bottom: 23px;}
+.contain.findPw .findForm .hdt em{}
+.contain.findPw .findForm .form{margin-top: -5px;}
+.contain.findPw .findForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
+.contain.findPw .findForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
+.contain.findPw .findForm .form .uiIptPlc{}
+.contain.findPw .findForm .form .uiIptPlc .plc{}
+.contain.findPw .findForm .form .uiIptPlc .input{}
+.contain.findPw .findForm .form .msgs{margin-top: 8px;font-size: 12px;/* color: #999999; */}
+.contain.findPw .findForm .form .btns{margin-top: 20px;}
+.contain.findPw .findForm .form .btns .btn{width:100%;}
+
+.contain.findPw .findForm .form .agree{ position:relative; margin-top: 15px;}
+.contain.findPw .findForm .form .agree .txt{font-size: 11px;}
+.contain.findPw .findForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
+
+/* 비밀번호찾 재설정 */
+.contain.findPw.rst .poptents{}
+.contain.findPw.rst .findForm .form{margin-top: 42px;}
+.contain.findPw.rst .findForm .form .pw{margin-bottom:10px;}
+.contain.findPw.rst .findForm .form .pw .input{ font-size: 12px;;}
+.contain.findPw.rst .findForm .form .pw.now{margin-bottom: 38px;}
+.contain.findPw.rst .findForm .form .pw.new{}
+.contain.findPw.rst .findForm .form .pw.com{}
+
+
+/* 비밀번호찾기 완료 */
+.contain.findPw .poptents{}
+.contain.findPw .findForm .coms{text-align: center;padding-top: calc( 50vh - 216px );}
+.contain.findPw .findForm .coms::before{width:90px;height:90px;background:url(../images/common/pwFindComIco1.png) no-repeat;background-size: 100% auto;content:"";display: block;margin: 0px auto 27px auto;}
+.contain.findPw .findForm .coms .txt{font-size: 16px;}
+
+
+/* 이메일인증 완료 */
+.contain.certiEmail{}
+.contain.certiEmail {}
+.contain.certiEmail .hdt{font-size: 24px;text-align: center;color: #000000;font-family:"BlairMd";margin-bottom: 23px;}
+.contain.certiEmail .sec.certi{margin: 0px 16px ;}
+.contain.certiEmail .sec.certi .infos{text-align: center;}
+.contain.certiEmail .sec.certi .infos .email{font-size: 15px;color: #fd5555;}
+.contain.certiEmail .sec.certi .infos .bts{margin-top: 25px;}
+.contain.certiEmail .sec.certi .infos .bts .btnSend{height:33px;padding: 0 15px;}
+.contain.certiEmail .sec.certi .guds{font-size: 12px; margin-top: 30px;}
+.contain.certiEmail .sec.certi .form{margin-top: 30px; position:relative;}
+.contain.certiEmail .sec.certi .form .code{padding-right: 102px;}
+.contain.certiEmail .sec.certi .form .time{position:absolute;top: 8px;right: 74px;color: #fd5555;font-size: 12px;}
+.contain.certiEmail .sec.certi .form .btnCode{position:absolute; top: 0px; right: 00px; min-width:60px;}
+
+
+
+
 /* 마이페이지 타이틀 */
 .prfeHd{}
 .prfeHd>.in{}
@@ -70,13 +125,13 @@
 
 
 /* 프로필 박스 */
-.uiPrfeSet{}
+.uiPrfeSet{margin-top: 0px;}
 .uiPrfeSet .user{padding: 0px 15px 0px 15px;}
 .uiPrfeSet .user .photo{position:relative;width: 62px;margin: auto;}
 .uiPrfeSet .user .photo .pic{position:relative;padding-bottom: calc(4% / 3.5 * 100);display:block; }
 .uiPrfeSet .user .photo .pic img{width: 100%;height: 100%;border-radius: 100%;position:absolute;left:0;top: 0px;width:100%;object-fit: cover;}
-.uiPrfeSet .user .photo .bts{position:absolute;right: -4px;bottom: -3px;}
-.uiPrfeSet .user .photo .bts .bt{width: 24px;height: 24px;display:block;border: #e5e5e5 solid 1px;border-radius: 100%;font-size: 0px;background: #ffffff no-repeat;background-size: 100% auto;}
+.uiPrfeSet .user .photo .bts{position:absolute;right: -7px;bottom: -7px;}
+.uiPrfeSet .user .photo .bts .bt{width: 26px;height: 26px;display:block;/* border: #e5e5e5 solid 1px; *//* border-radius: 100%; */font-size: 0px;/* background: #ffffff no-repeat; */background-size: 100% auto;}
 .uiPrfeSet .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
 .uiPrfeSet .user .infos{margin: 20px auto;text-align: center;}
 .uiPrfeSet .user .infos .name{font-size: 16px;line-height: 100%; font-family:"BlairMd","NotoSansCJKkr-Md";margin-top: 4px; text-transform: uppercase;}
@@ -86,16 +141,16 @@
 .uiPrfeSet .user .infos .models .sel>.bt{text-align:center;padding-right: 20px;}
 .uiPrfeSet .user .infos .models .sel .list{top: 32px;transform: translateX(-50%);left: 50%;}
 
-.uiPrfeSet .user .infos .summ{font-size: 11px;margin-top: 5px;font-family:"BlairMd","NotoSansCJKkr";text-transform: uppercase;display: flex;justify-content: center;}
+.uiPrfeSet .user .infos .summ{font-size: 11px;margin-top: 2px;font-family:"BlairMd","NotoSansCJKkr";text-transform: uppercase;display: flex;justify-content: center;}
 .uiPrfeSet .user .infos .summ .cm{ }
 .uiPrfeSet .user .infos .summ .nt{color: #000000;opacity: 0.5;}
 .uiPrfeSet .user .infos .summ .nt:before{ content:","; display: inline-block; vertical-align: middle; margin: 0 5px 0 0 ; height:14px;}
 .uiPrfeSet .user .infos .summ .nt:first-child::before{ display:none;}
-.uiPrfeSet .user .infos .amount{display:flex;margin-top: 4px;justify-content: center;}
+.uiPrfeSet .user .infos .amount{display:flex;margin-top: 12px;justify-content: center;}
 .uiPrfeSet .user .infos .amount .fw{margin: 0 10px;font-family:"BlairMd";text-transform: uppercase;font-size: 10px;border-bottom: #000000 solid 1px;display: inline-block;padding: 1px 4px;}
 .uiPrfeSet .user .infos .amount .fwers{}
 .uiPrfeSet .user .infos .amount .fwing{}
-.uiPrfeSet .user .infos .amount .fw em{line-height: 14px;margin-left: 10px;}
+.uiPrfeSet .user .infos .amount .fw em{line-height: 14px;margin-left: 14px;}
 .uiPrfeSet .user .infos .amount .fw i{line-height: 14px;}
 .uiPrfeSet .user .infos .bts {position:absolute;right: 7px;top: 75px;}
 .uiPrfeSet .user .infos .bts .bt.more{width:44px;height:44px;background:url(../images/common/ico_my_more.png) no-repeat;background-size:100% auto;font-size:0px;float: left;}
@@ -103,13 +158,25 @@
 .uiPrfeSet .user .infos .foll label span{}
 .uiPrfeSet .user .infos .foll label span::after{ content:"Follow";}
 .uiPrfeSet .user .infos .foll label input:checked  + span::after{ content:"Following";}
-.uiPrfeSet .desc{padding: 15px 16px 20px 16px;}
-.uiPrfeSet .desc .ment{font-size: 13px;color: #101010;position:relative;margin-bottom: 0px;}
+.uiPrfeSet .desc{padding: 0px 16px 30px 16px;}
+.uiPrfeSet .desc .name{font-weight:bold;font-size: 13px;}
+.uiPrfeSet .desc .ment{font-size: 13px;color: #101010;position:relative;margin-bottom: 0px;margin-top: 2px;}
 .uiPrfeSet .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;/* background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px; */background-size:32px auto;/* content:""; */}
 .uiPrfeSet .desc .url {font-size: 11px;margin-top: 0px;font-family:"BlairMd";text-transform: uppercase;}
 .uiPrfeSet .desc .url a{display: inline-block;padding: 3px 0px;}
 .uiPrfeSet .desc .tag{margin:0px -2px;display:flex;margin-top: 14px;}
-.uiPrfeSet .desc .tag .hash{font-size: 12px;color: #101010;border: #66dfb2 solid 1px;border-radius: 20px;padding: 0 13px 0 11px;margin:0 2px;}
+.uiPrfeSet .desc .tag .hash{font-size: 12px;color: #101010;border: #70f5c4 solid 1px;border-radius: 20px;padding: 0 13px 0 11px;margin:0 2px;}
+
+
+.contain.prf .prfNav{}
+.contain.prf .prfNav .bts{display:flex;}
+.contain.prf .prfNav .bts .bt{border: #cccccc solid 1px;border-width: 1px 1px 1px 0px;background: no-repeat center;height:37px;display:flex;width:100%;align-items: center;justify-content: center;font-size: 0px;}
+.contain.prf .prfNav .bts .bt.edit{display:none;background-image:url(../images/common/ico_my_edit.png); background-size: 40px auto;}
+.contain.prf .prfNav .bts .bt.fwer{font-size: inherit; background: #70f5c4;border-width: 0px 0px 0px 0px;}
+.contain.prf .prfNav .bts .bt.more{width:120px; background-image:url(../images/common/ico_my_more.png); background-size: 40px auto;}
+
+.contain.prf .prfNav.me .bts .bt.edit{display:flex;}
+.contain.prf .prfNav.me .bts .bt.fwer{display:none;}
 
 .prInfoList{}
 .prInfoList .tabs{}
@@ -149,7 +216,7 @@
 .prInfoCont .tabCtn.thum>ul.list>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .prInfoCont .tabCtn.thum>ul.list>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .prInfoCont .tabCtn.thum>ul.list>li .item .bts .bt.del{}
-.prInfoCont .tabCtn.thum>ul.list>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
+.prInfoCont .tabCtn.thum>ul.list>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
 .prInfoCont .tabCtn.thum>ul.list>li .item .num:before{}
 .prInfoCont .tabCtn.thum>ul.list>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
 .prInfoCont .tabCtn.thum>ul.list>li .item .checkbox{position:absolute;right: 0px;top: 0px;z-index: 100;}
@@ -194,7 +261,7 @@
 .contain.setting .sec.mysets .list>li>ul>li>.bt .ver{color: #aaa;position:absolute;right: 0px;}
 
 
-.uiPrfeSet.b{padding-top: 20px;}
+.uiPrfeSet.b{padding-top: 40px;}
 .contain.my.prf{}
 .contain.my.prf .prfeForm{padding: 36px 16px 16px 16px;}
 .contain.my.prf .prfeForm .list{}
@@ -206,7 +273,7 @@
 .contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;padding-left: 0px;}
 .contain.my.prf .prfeForm .list>li .dd .num{position:absolute;right: 0px;top: 36px;font-size: 12px;color: #999999;}
 .contain.my.prf .prfeForm .list>li .dd label + label{ margin-left: 30px;}
-.contain.my.prf .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;padding-left: 0px;min-width:150px; font-family:"BlairMd"; text-transform: uppercase;}
+.contain.my.prf .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;/* padding-left: 0px; */min-width:150px;font-family:"BlairMd";text-transform: uppercase;}
 .contain.my.prf .prfeForm .list>li.gender .dd{padding: 6px 0;}
 .contain.my.prf .prfeForm .memDis{margin-top: 50px;}
 .contain.my.prf .prfeForm .memDis a{display: inline-block;padding:10px 0px; text-decoration: underline;text-align: right;color: #999999;position: fixed;right: 16px;bottom: 70px;}
@@ -241,7 +308,7 @@
 .contain.follow{}
 .contain.follow .tabs{}
 .contain.follow .sec.follow{}
-.contain.follow .sec.follow .tabCtn{padding-top: 25px;}
+.contain.follow .sec.follow .tabCtn{padding-top: 30px;}
 .contain.follow .sec.follow .tabCtn .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap; padding: 0 0px 0px 0px;}
 .contain.follow .sec.follow .tabCtn .list>li{width: calc(33.3333% - 0px);margin-bottom: 20px;margin-right: 0px;max-width: 140px;}
 .contain.follow .sec.follow .tabCtn .list>li .item{position: relative;margin: auto;padding: 0 0px;}
@@ -250,11 +317,10 @@
 .contain.follow .sec.follow .tabCtn .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
 .contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family: "BlairMd","NotoSansCJKkr";}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll{text-align: center;white-space: nowrap;margin-top: -3px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox{margin-left: -10px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span{font-size:10px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{transform: scale(0.8); margin-left: 0px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";margin-left: -3px;}
-.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox{}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span{width:50px;height:20px;background: url(../images/common/ico_my_follow.png) no-repeat;background-size: 100% auto;font-size: 0px;}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{display:none;}
+.contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span{ background-position-y: -30px;}
 .contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 100px );}
 .contain.follow .sec.follow .tabCtn .list.load + .uiLoadMore{margin-top: -15px;}
 
@@ -273,7 +339,7 @@
 .contain.mdl.set .sec.mdls ul.list>li .box .pic .bt{font-size: 0px; position:absolute;left:0px; top: 0px; object-fit: cover; border-radius: 100%; border:#cccccc solid 1px; width:100%; height:100%; background: url(../images/common/mdl_plus.png) no-repeat center; background-size: 22px auto;}
 .contain.mdl.set .sec.mdls ul.list>li .box .name{ font-family:"BlairMd","NotoSansCJKkr"; margin-top: 5px; min-height: 22px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts{}
-.contain.mdl.set .sec.mdls ul.list>li .box .bts .bt{ color: #66dfb2; font-size: 10px; font-family:"BlairMd"; border-bottom: #66dfb2 solid 1px; display:inline-block;padding: 1px 2px;}
+.contain.mdl.set .sec.mdls ul.list>li .box .bts .bt{ color: #70f5c4; font-size: 10px; font-family:"BlairMd"; border-bottom: #70f5c4 solid 1px; display:inline-block;padding: 1px 2px;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt.del{color: #8a8a8a; border-color: #8a8a8a;}
 .contain.mdl.set .msgs{text-align: center;padding: 80px 0 30px 0px;font-size: 12px;color: #999999;}
 
@@ -330,10 +396,10 @@
 .contain.mdl.reg .sec.size .filters>li.age .select{background-image: none;width: auto;font-family:"BlairMd";color:#ff424d;padding: 0 100px;font-size: 20px;height: 32px;}
 .contain.mdl.reg .sec.size .filters>li.gender{ border-bottom: #cccccc solid 1px;}
 .contain.mdl.reg .sec.size .filters>li.gender label + label{ margin-left: 20px;}
-.contain.mdl.reg .sec.size .filters>li.gender .ht{ font-size: 12px; color: #66dfb2; margin-bottom: 2px;}
+.contain.mdl.reg .sec.size .filters>li.gender .ht{ font-size: 12px; color: #70f5c4; margin-bottom: 2px;}
 .contain.mdl.reg .sec.size .filters>li.gender .ct{}
 .contain.mdl.reg .sec.size .filters>li.country{border-bottom: #cccccc solid 1px;margin-top: 10px;}
-.contain.mdl.reg .sec.size .filters>li.country .ht{ font-size: 12px; color: #66dfb2; margin-bottom: 2px;}
+.contain.mdl.reg .sec.size .filters>li.country .ht{ font-size: 12px; color: #70f5c4; margin-bottom: 2px;}
 .contain.mdl.reg .sec.size .filters>li.country .select{width: 150px;padding-left: 0;height: 30px;font-size: 13px;margin-bottom: 3px;}
 
 .contain.mdl.reg .sec.size .filters>li.bra{}

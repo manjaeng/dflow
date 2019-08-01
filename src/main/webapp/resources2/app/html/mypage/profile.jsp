@@ -32,7 +32,7 @@
 					</div>
 					<div class="infos">
 						<div class="name">Bluemoon</div>
-						<div class="models">
+						<!-- <div class="models">
 							<div class="uiDropDown noWidth sel" data-ui="val">
 								<div class="list">
 									<ul>
@@ -45,26 +45,27 @@
 								</div>
 							</div>
 
-						</div>
+						</div> -->
 						<div class="summ">
 							<span class="nt">163cm</span>
 							<span class="nt">Korea</span>
-							<!-- <span class="nt">45kg</span>
-							<span class="nt">Women</span> -->
+							<!-- <span class="nt">45kg</span> -->
+							<span class="nt">Women</span>
 						</div>
 						<div class="amount">
 							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
 							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em>51</em></a>
 						</div>
-						<div class="bts">
+						<!-- <div class="bts">
 							<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
-						</div>
+						</div> -->
 						<!-- <div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div> -->
 					</div>
 				</div>
 				<div class="desc">
+					<div class="name">푸른달 블루문</div>
 					<div class="ment">
-						푸른달 블루문 _하늘색과 트렌치 코트를 좋아합니다. 
+						하늘색과 트렌치 코트를 좋아합니다. 
 					</div>
 					<div class="url"><a href="javascript:;">www.beautyitem.com</a></div>
 					<!-- <div class="tag">
@@ -72,7 +73,13 @@
 					</div> -->
 				</div>
 			</section>
-
+			<section class="prfNav me"> <!-- if .me 클래스 내 프로필 -->
+				<div class="bts">
+					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
+					<a href="javascript:;" class="bt fwer">FOLLOW</a>
+					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">MODEL</a>
+				</div>
+			</section>
 			<section class="prInfoList">
 				<div class="prInfoCont" id="prInfoCont">
 				</div>

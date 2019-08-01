@@ -224,7 +224,7 @@ function popPrfOthers(){
 
 
 <!-- 룩등록 팝업 -->
-<article class="popLayer c popLookReg" id="popLookReg">
+<article class="popLayer a popLookReg" id="popLookReg">
 	<div class="pbd">
 		<button type="button" class="btnPopClose">닫기</button>
 		<div class="pct">
@@ -235,7 +235,8 @@ function popPrfOthers(){
 						<ol class="mds">
 							<li>
 								<a href="javascript:;" class="box">
-									<span class="name">다영</span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
+									<span class="name">JENNY</span>
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
@@ -245,13 +246,20 @@ function popPrfOthers(){
 						<span href="javascript:;" class="bt">MODEL PROFILE</span>
 						<ol class="mds">
 							<li>
+<<<<<<< HEAD
 								<a href="/resources2/app/html/look/look_upload.jsp" class="box">
 									<span class="name">은영</span>
+=======
+								<a href="../look/look_upload.jsp" class="box">
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
+									<span class="name">JENNY</span>
+>>>>>>> 마이페잊수정
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;" class="box">
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
 									<span class="name">LUCKY</span>
 									<span class="info">153cm, JAPAN</span>
 								</a>
@@ -270,14 +278,25 @@ function popPrfOthers(){
 </article>
 <script>
 function popLookReg(){
-	ui.popLayer.open('popLookReg',{
-		ocb:function(){
-			console.log("프로필 기타팝업 열림");
-		},
-		ccb:function(){
-			console.log("프로필 기타팝업 닫힘");
-		}
+
+
+	ui.confirm({ // 컨펌 창 띄우기
+		msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+			'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+		ycb:popLookReg_open
 	});
+
+	function popLookReg_open(){
+		ui.popLayer.open('popLookReg',{
+			ocb:function(){
+				console.log("프로필 기타팝업 열림");
+			},
+			ccb:function(){
+				console.log("프로필 기타팝업 닫힘");
+			}
+		});
+	}
+	
 };
 </script>
 

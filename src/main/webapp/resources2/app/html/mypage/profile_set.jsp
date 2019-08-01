@@ -31,19 +31,19 @@
 
 			<section class="prfeForm">
 				<ul class="list">
-					<li class="id">
-						<span class="dt">아이디</span>
-						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON1234"></span>
-					</li>
 					<li class="nick">
 						<span class="dt">닉네임</span>
 						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON"></span>
+					</li>
+					<li class="id">
+						<span class="dt">아이디</span>
+						<span class="dd"><input class="input bdn" type="text" value="BLUEMOON1234" disabled></span>
 					</li>
 					<li class="intro">
 						<span class="dt">소개</span>
 						<span class="dd">
 							<textarea class="textarea bdn">편안하고 깔끔하게 출근할 때 입기 좋은 옷을 좋아 해요</textarea>
-							<span class="num"><em>20</em><i>/</i><em>200</em></span>
+							<!-- <span class="num"><em>20</em><i>/</i><em>200</em></span> -->
 						</span>
 					</li>
 					<!-- <li class="site">
@@ -70,7 +70,7 @@
 					</li>
 				</ul>
 				<div class="memDis">
-					<a href="../member/mem_dis.jsp">회원탈퇴</a>
+					<a href="../member/memDis.jsp">회원탈퇴</a>
 				</div>
 			</section>
 

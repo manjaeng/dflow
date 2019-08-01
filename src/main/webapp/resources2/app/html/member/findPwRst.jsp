@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain popJoin id">
+	<div id="contain" class="contain findPw rst">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -16,30 +16,31 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			<div class="joinForm">
-				<div class="hdt"><em>SIGN UP</em></div>
+			<div class="findForm">
+				<div class="hdt"><em>비밀번호재설정</em></div>
 				<div class="form">
-					<!-- <div class="memcate">
-						<label class="radio"><input type="radio" name="memcate1" checked="checked"><span>일반회원</span></label>
-						<label class="radio"><input type="radio" name="memcate1"><span>전문가</span></label>
-					</div> -->
-					<div class="uiIptPlc email">
-						<input type="text" class="input valid"  id="input_sample1" value="">
-						<span class="plc">E-MAIL</span>
+					<div class="pw now">
+						<input type="password" class="input" placeholder="현재비밀번호 입력">
 					</div>
-					<div class="msgs">이메일은 비밀번호 찾기 및 로그인시 필요합니다.</div>
-
+					<div class="pw new">
+						<input type="password" class="input" placeholder="변경비밀번호 입력">
+					</div>
+					<div class="pw com">
+						<input type="password" class="input" placeholder="비밀번호 확인">
+					</div>
+					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./joinPw.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="javascript:;" class="btn xl b fill btnDone">DONE</a>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->
