@@ -37,7 +37,7 @@
 				<div class="box">
 					<div class="pic"><div class="img"><img src="//placeimg.com/72/96/1" alt="사진"></div></div>
 					<div class="write">
-						<input type="text" class="ment" placeholder="댓글달기" id="input_reply">
+						<textarea class="ment"placeholder="댓글달기" id="input_reply"></textarea>
 						<a href="javascript:;" class="send">SEND</a>
 					</div>
 				</div>
@@ -85,14 +85,9 @@
 	};
 
 
-	var testFncRply = function(){
-		$("#input_reply").focus().val("@JENNY ");
-	}
-
 	$(document).ready(function(){
 
 		$(window).on("scroll", function() {
-
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $(".contain.comment .sec.write").outerHeight() + 30;
 			// console.log(docH,scr);
@@ -105,8 +100,22 @@
 
 		addItemFnc();
 
+		inputReplyHt();
 
 	});
+
+
+	var testFncRply = function(){
+		$("#input_reply").focus().val("@JENNY ");
+	}
+
+	
+	var inputReplyHt = function(){  //  입력칸 높이 조절
+		$(window , "#input_reply").on("keyup input",function(){
+			autosize( $('#input_reply') );
+			$(".contain.comment .sec.write").css( {"height" : $(".contain.comment .sec.write>.box").outerHeight() })
+		});
+	}
 
 	var comtActFnc = function(){
 		// $("#comment_list>li , #comment_list>li>ul.list.r2>li ").listSwipe({
@@ -116,6 +125,7 @@
 		// 	snapThreshold: 0.1
 		// });
 	}
+
 
 	</script>
 	

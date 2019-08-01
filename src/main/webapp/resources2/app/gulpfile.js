@@ -31,6 +31,7 @@ const js_mc = [
 	"js/masonry.pkgd.js",
 	"js/pullToRefresh.js",
 	"js/jquery-listswipe.js",
+	"js/autosize.js",
 	"js/ui.js"
 ];
 
@@ -45,7 +46,7 @@ function styles() {
 			append: "?v="+css_ver
 		}))
 		// .pipe(cssmin())
-		.pipe(concatCss("style.min.css"))
+		.pipe(concatCss("_style.min.css"))
 		.pipe(cssmin({debug: true}, function(details) {
 			console.log(details.name + ' : ' + details.stats.originalSize +' > '+ details.stats.minifiedSize);
 		}))
@@ -57,7 +58,7 @@ function styles() {
 
 function scripts(){
 	return gulp.src(js_mc)
-		.pipe(concat('bundle.js'))
+		.pipe(concat('_bundle.js'))
 		.pipe(minify({
 			ext:{
 				src:'.js',

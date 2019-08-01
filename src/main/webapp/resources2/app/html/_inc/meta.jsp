@@ -28,7 +28,7 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <link href="/resources2/app/css/member.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/look.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/home.css?v=<%=version%>" rel="stylesheet">
-<!-- <link href="/resources2/app/css/style.min.css?v=<%=version%>" rel="stylesheet"> -->
+<!-- <link href="/resources2/app/css/_style.min.css?v=<%=version%>" rel="stylesheet"> -->
 
 
 <!-- Jqurey Core -->

@@ -850,10 +850,11 @@ var ui = {
 				$(this.els).each(function(i){
                 	var $this = $(this);
 					var idx = $this.closest("li").index();
-					if( $this.find(".swiper-slide").length  >= 2  ) {
+					if( $this.find(".swiper-slide").length == 1 ) _this.opt.loop = false ;
+					if( $this.find(".swiper-slide").length >= 1 ) {
 						_this.slide[idx] = new Swiper( $this , _this.opt );
-						// console.log( _this.slide[i]);
-                    } 
+						// console.log(_this.slide[i]);
+                    }
 				});
 			}
         },
@@ -881,7 +882,8 @@ var ui = {
 				$(this.els).each(function(i){
                 	var $this = $(this);
 					var idx = $this.closest("li").index();
-					if( $this.find(".swiper-slide").length  >= 2  ) {
+					if( $this.find(".swiper-slide").length == 1 ) _this.opt.loop = false ;
+					if( $this.find(".swiper-slide").length >= 1 ) {
 						_this.slide[idx] = new Swiper( $this , _this.opt );
 						// console.log(_this.slide[i]);
                     }
