@@ -3,6 +3,7 @@
 <script src="/resources2/app/js/swiper.js"></script>
 <script src="/resources2/app/js/pullToRefresh.js"></script>
 <script src="/resources2/app/js/jquery-listswipe.js"></script>
+<script src="/resources2/app/js/autosize.js"></script>
 <script src="/resources2/app/js/ui.js?v=<%=version%>"></script>
 
 

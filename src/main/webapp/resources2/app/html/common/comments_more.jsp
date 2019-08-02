@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		
-		<ul class="list r2"> <!-- 대댓글 -->
+		<ul class="list"> <!-- 대댓글 -->
 			<li>
 				<div class="comts">
 					<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/72/96/2" alt="사진"></span></a>

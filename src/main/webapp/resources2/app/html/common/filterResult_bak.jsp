@@ -45,7 +45,7 @@
 							<option>최신순</option>
 						</select>
 					</div>
-					<div class="filt"><a href="/resources2/app/html/common/filter.jsp" class="btnFilter">필터</a></div>
+					<div class="filt"><a href="../common/filter.jsp" class="btnFilter">필터</a></div>
 				</div> -->				
 
 

@@ -15,7 +15,7 @@
 			
 			<article class="intro" id="intro">
 				<div class="msg">FIND YOUR FIT</div>
-				<a href="/resources2/app/html/home/home.jsp" class="logo">FAPEE</a>
+				<a href="../home/home.jsp" class="logo">FAPEE</a>
 				<div class="box bx1">
 					<span class="line L1"></span>
 					<span class="line L2"></span>

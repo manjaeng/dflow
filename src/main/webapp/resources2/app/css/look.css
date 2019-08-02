@@ -119,13 +119,13 @@
 .uiLkSet>.tags .tg>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
 
 
-.secLk.look{}
-.secLk.look .lookList{}
-.secLk.look .lookList>li{margin-top: 30px;}
-.secLk.look .lookList>li:first-child{margin-top: 0px;}
+.contain.look .secLk.look{}
+.contain.look .secLk.look .lookList{}
+.contain.look .secLk.look .lookList>li{margin-top: 30px;}
+.contain.look .secLk.look .lookList>li:first-child{margin-top: 0px;}
 
-.secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
-.secLk.look ul.load + .uiLoadMore{margin-top:0px;}
+.contain.look .secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
+.contain.look .secLk.look ul.load + .uiLoadMore{margin-top:0px;}
 
 
 .contain.cool{}
@@ -174,16 +174,16 @@
 
 
 
-.contain.comment .sec.write{height:56px;}
-.contain.comment .sec.write .box{position:fixed;height:56px;border-top: #c2c2c2 solid 1px;bottom: 0px;left: 0px;right: 0px;background: #ffffff;padding: 0 0 0 16px;}
+.contain.comment .sec.write{min-height: 56px;}
+.contain.comment .sec.write .box{position: fixed;min-height: 56px;border-top: #c2c2c2 solid 1px;bottom: 0px;left: 0px;right: 0px;background: #ffffff;padding: 0 0 0 16px;}
 .contain.comment .sec.write .box .pic{}
-.contain.comment .sec.write .box .pic{width: 36px;position:absolute;display:block;left:16px;top: 6px;height: 45px;}
-.contain.comment .sec.write .box .pic .img{position:absolute;display: block;padding-bottom: calc(4% / 3.5 * 100);width: 100%;}
+.contain.comment .sec.write .box .pic{width: 36px;position:absolute;display:block;left:16px;bottom: 8px;/* height: 45px; */}
+.contain.comment .sec.write .box .pic .img{position: relative;display: block;padding-bottom: calc(4% / 3.5 * 100);width: 100%;}
 .contain.comment .sec.write .box .pic .img img{object-fit: cover;border-radius: 100%;position:absolute;left:0px;top: 0px;height: 100%;width: 100%;}
-.contain.comment .sec.write .box .write{margin: 0px 0 0px 52px;position:relative;padding: 11px 0 0 0;}
-.contain.comment .sec.write .box .write::before{content:"";width:1px;height:22px;background:#aaaaaa;position:absolute;left:0px;top: 15px;}
-.contain.comment .sec.write .box .write .ment{border: none;padding:0 10px;font-size: 13px;height: 30px;width: 100%;outline: none;}
-.contain.comment .sec.write .box .write .send{width:90px;height:55px;position:absolute;right: 0px;top: 0px;color: #70f5c4;display:flex;align-items: center;justify-content: center;font-family:"BlairMd";font-size: 13px;}
+.contain.comment .sec.write .box .write{margin: 0px 0 0px 52px;position:relative;padding: 11px 0 14px 0;}
+.contain.comment .sec.write .box .write::before{content:"";width:1px;/* height:22px; */background: #dddddd;position:absolute;left:0px;bottom: 14px;top: 14px;}
+.contain.comment .sec.write .box .write .ment{border: none;padding: 4px 80px 4px 10px;font-size: 13px;height: 30px;width: 100%;outline: none;resize: none;line-height: 170%;max-height: 200px;}
+.contain.comment .sec.write .box .write .send{width:90px;height:55px;position:absolute;right: 0px;bottom: 0px;color: #70f5c4;display:flex;align-items: center;justify-content: center;font-family:"BlairMd";font-size: 13px;}
 
 
 

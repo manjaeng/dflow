@@ -3,9 +3,9 @@ package kr.co.thenet.fapee.user.service.impl;
 import java.util.Date;
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,7 @@ import kr.co.thenet.fapee.user.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Resource
+	@Autowired
 	private UserMapper userMapper;
 
 	@Override
@@ -28,10 +28,10 @@ public class UserServiceImpl implements UserService {
 
 		login.setHttpStatus(HttpStatus.BAD_REQUEST);
 
-		if (login.getUserId() != null && login.getUserId().length() != 0 && login.getPassword() != null
-				&& login.getPassword().length() != 0) {
+		if (login.getEmail() != null && login.getEmail().length() != 0 &&
+			login.getPassword() != null && login.getPassword().length() != 0) {
 			
-			FP_User user = userMapper.selectUserServiceInfo(login.getUserId());
+			FP_User user = userMapper.selectUserServiceInfo(login.getEmail());
 
 			if (user == null) {
 				login.setHttpStatus(HttpStatus.NOT_FOUND);
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 				
 				if(user.getPassword() != null) {
 					
-					if (!user.getPassword().equals(CommonFunc.getHashedPassword(login.getPassword(), login.getUserId()))) {
+					if (!user.getPassword().equals(CommonFunc.getHashedPassword(login.getPassword(), login.getEmail()))) {
 					
 						userMapper.updateUserServiceFailCount(user.getIdKey());
 						login.setHttpStatus(HttpStatus.NOT_ACCEPTABLE);
@@ -127,4 +127,23 @@ public class UserServiceImpl implements UserService {
 		return userMapper.selectUserServiceList();
 	}
 
+	@Override
+	public HttpStatus insertUserServiceJoin(FP_User user) throws Exception {
+		
+		if (user.getUserId() == null || user.getUserId().length() == 0 ||
+			user.getEmail() == null || user.getEmail().length() == 0 ||
+			user.getPassword() == null || user.getPassword().length() == 0) {
+			return HttpStatus.BAD_REQUEST;
+		}
+		
+		if (userMapper.selectUserServiceCount(user) > 0) {
+			return HttpStatus.CONFLICT;
+		}
+		
+		user.setPassword(CommonFunc.getHashedPassword(user.getPassword(), user.getEmail()));
+		
+		userMapper.insertUserServiceInfo(user);
+		return HttpStatus.OK;
+		
+	}
 }

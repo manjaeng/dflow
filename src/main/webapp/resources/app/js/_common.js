@@ -8,7 +8,6 @@ fp.util.jsonAjax = function(obj) {
 		url : obj.url,
 		data : JSON.stringify(obj.data),
 		contentType : 'application/json; charset=utf-8',
-		dataType : 'json',
 		success : function(data) {
 			obj.success(data);
 		},

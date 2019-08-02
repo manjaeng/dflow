@@ -12,10 +12,12 @@
 		".secMn.hash .hashList>li .item .img img , "+
 		".secMn.match .matchList>li .item .img img  " ;
 
-		$(imgs).each(function(index){
-			var r = parseInt( Math.random() * 6  ) + 1;
-			$(this).attr("src","/resources2/app/images/_temp/look_img_"+r+".jpg");
-		});
+		// $(imgs).each(function(index){
+		// 	var r = parseInt( Math.random() * 6  ) + 1;
+		// 	$(this).attr("src","/resources2/app/images/_temp/look_img_"+r+".jpg");
+		// });
+
+
 
 		$(document).on("click",".uiLkSet>.data ul.dl>li.scrap .bt",function(e){
 			if( $(this).hasClass("on") ){
@@ -193,7 +195,7 @@
 		},
 		keyBack: function () {
 			console.log("뒤로");
-			window.history.back();
+			// window.history.back();
 		},
 		togMenu: function () {
 			if ($(".tempLink").length) {
