@@ -13,7 +13,7 @@
 				
 				<div class="sec formSch">
 					<div class="sch">
-						<input type="search" class="input key" id="input_kwd" placeholder="해시태그 또는 ID를 검색하세요" value="">
+						<input type="search" class="input key" id="input_kwd" placeholder="#@" value="">
 						<a href="javascript:;" class="bt sch">SEARCH</a>			
 						<a href="javascript:;" class="bt cancel" id="btSchCancel">CANCEL</a>					
 					</div>

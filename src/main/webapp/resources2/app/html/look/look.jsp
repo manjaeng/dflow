@@ -51,6 +51,7 @@
 							appendStat = false ;
 						}
 						ui.slides.lookPic.using();
+						ui.look.elip.using();
 						$(".uiLoadMore").removeClass("active");
 						
 					},500);

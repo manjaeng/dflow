@@ -23,7 +23,7 @@
 						</div>
 					</li>
 					<li class="style">
-						<div class="ht">STYLE</div>
+						<!-- <div class="ht">STYLE</div> -->
 						<div class="ct">
 							<ul class="list">
 								<li>

@@ -355,6 +355,7 @@ var ui = {
 	look:{
 		init:function(){
 			this.match();
+			this.elip.init();
 		},
 		match:function(){
 			$(document).on("click",".uiLkSet>.match .box.mat .bt:not(.disabled)",function(){
@@ -371,9 +372,23 @@ var ui = {
 				$(this).find(".amt").text(pct+"%");
 				$(this).find(".txt").text("MATCH");
 			});
-			// .on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd",".uiLkSet>.match .box .bt",function(){
-			// 	$(this).removeClass("com");
-			// });
+		},
+		elip:{
+			init:function(){
+				$(document).on("click",".uiLkSet>.info .desc a.more",function(e){
+					$(this).closest(".desc").removeClass("elips");
+				});
+				this.using();
+			},
+			using:function(){
+				$(".uiLkSet>.info .desc a.txt").each(function(){
+					if( $(this).height() > 40 ){
+						$(this).closest(".desc").addClass("elips");
+					}else{
+						$(this).closest(".desc").removeClass("elips");
+					}
+				});
+			}
 		}
 	},
 	form:{  //  폼요소

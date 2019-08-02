@@ -28,7 +28,7 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <link href="/resources2/app/css/member.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/look.css?v=<%=version%>" rel="stylesheet">
 <link href="/resources2/app/css/home.css?v=<%=version%>" rel="stylesheet">
-<!-- <link href="/resources2/app/css/_style.min.css?v=<%=version%>" rel="stylesheet"> -->
+<!-- <link href="/resources2/app/css/style.min.css?v=<%=version%>" rel="stylesheet"> -->
 
 
 <!-- Jqurey Core -->
@@ -36,7 +36,4 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <script src="/resources2/app/js/jquery-ui.js"></script>
 <script src="/resources2/app/js/jquery.ui.touch-punch.js"></script>
 
-<!--  Import by jjbae -->
-<script src="/resources/app/js/jquery.pjax.js"></script>
-<script src="/resources2/app/js/android.js"></script>
-<script src="/resources2/app/js/_native.js"></script>
+

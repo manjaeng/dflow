@@ -19,12 +19,15 @@
 		<div class="user">
 			<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
 			<a href="../mypage/profile.jsp" class="mem">
-				<div class="nm">패피루키</div>
+				<div class="nm">JENNY</div>
 				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 			</a>
 			<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 		</div>
-		<div class="desc"><a href="javascript:;">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a></div>
+		<div class="desc">
+			<a href="javascript:;" class="txt">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장 디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장 디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a>
+			<a href="javascript:;" class="more">더보기</a>
+		</div>
 		<!-- <div class="time">2일전</div> -->
 	</div>
 	<div class="data">
