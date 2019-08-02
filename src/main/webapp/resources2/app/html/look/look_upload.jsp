@@ -26,7 +26,7 @@
 
 				<div class="pics swiper-container" id="slideUploadPic">
 					<ul class="list swiper-wrapper slide">
-						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
+						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:showPhotoForPickupThree(null);">선택</a></div></li>
 						<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del">삭제</a></div></li>
 						<li class="swiper-slide"><div class="img"></div></li>
 						<li class="swiper-slide"><div class="img"></div></li>

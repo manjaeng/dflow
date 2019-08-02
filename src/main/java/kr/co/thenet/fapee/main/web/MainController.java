@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.main.service.MainService;
-import lombok.extern.log4j.Log4j;
+//import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 
-@Log4j
+@Slf4j
 @Controller
 public class MainController {
 
@@ -36,7 +37,7 @@ public class MainController {
 				log.info(c.getName() + " : " + c.getValue());
 			}
 		}
-
+		
 		List<HashMap<String, Object>> mainList = mainService.selectMainServiceUserList();
 
 		model.addAttribute("mainList", mainList);

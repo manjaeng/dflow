@@ -36,4 +36,7 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 <script src="/resources2/app/js/jquery-ui.js"></script>
 <script src="/resources2/app/js/jquery.ui.touch-punch.js"></script>
 
-
+<!--  Import by jjbae -->
+<script src="/resources/app/js/jquery.pjax.js"></script>
+<script src="/resources2/app/js/android.js"></script>
+<script src="/resources2/app/js/_native.js"></script>
