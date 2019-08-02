@@ -67,28 +67,27 @@
 .secMn.match .matchList>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .secMn.match .matchList>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .secMn.match .matchList>li .item .bts .bt.del{}
-.secMn.match .matchList>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
-.secMn.match .matchList>li .item .num:before{}
-.secMn.match .matchList>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
+.secMn.match .matchList>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
+.secMn.match .matchList>li .item .num .n{font-size: 0px;}
 .secMn.match .matchList>li:nth-child(5n){width:100%;}
 
 
-.secMn.newb{padding-bottom: 20px;}
+.secMn.newb{padding-bottom: 35px;}
 .secMn.newb>.hdt{padding-top: 30px;}
 .secMn.newb .slideNewbie{margin-top: 30px;margin-bottom: 50px;padding: 10px 10px;}
 .secMn.newb .slideNewbie .slide{}
 .secMn.newb .slideNewbie .slide>li{width: 30%;padding: 0 8px;}
 .secMn.newb .slideNewbie .slide>li .item{position: relative;margin: auto;padding: 0 0px;}
-.secMn.newb .slideNewbie .slide>li .item::before{width:24px;height:24px; background:#fd5555; content:"N"; color: #ffffff; position:absolute; right: 0px; top: 0px; z-index:10;  border-radius: 100px; text-align: center; font-family:"BlairMd"; font-size: 11px; display:flex; justify-content: center; align-items: center;	}
+.secMn.newb .slideNewbie .slide>li .item::before{width: 25px;height: 16px;background: url(../images/common/ico_new.png); background-size: 100% auto; content: "";position:absolute;right: 0px;top: 0px;z-index:10;}
 .secMn.newb .slideNewbie .slide>li .item .img{display:block;position:relative;margin: auto;/* width: 90px; *//* height: 90px; */}
 .secMn.newb .slideNewbie .slide>li .item .img>.lk{display: block;position: relative;width: 100%;overflow: hidden;padding-bottom: 100%;}
 .secMn.newb .slideNewbie .slide>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
 .secMn.newb .slideNewbie .slide>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"BlairMd","NotoSansCJKkr";}
 .secMn.newb .slideNewbie .slide>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
-.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span::before{transform: scale(0.8);vertical-align: -11px;margin-right: -4px;}
-.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span:after{content: "Following";font-family:"BlairMd";font-size: 10px;}
-.secMn.newb .slideNewbie .slide>li .item .foll .checkbox input:checked + span:after{content: "Follow";}
-
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox{}
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span{width:50px;height:20px;background: url(../images/common/ico_my_follow.png) no-repeat;background-size: 100% auto;font-size: 0px;}
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span::before{display:none;}
+.secMn.newb .slideNewbie .slide>li .item .foll .checkbox input:checked + span{ background-position-y: -30px;}
 
 
 .secMn.newb .slideNewup{}
@@ -118,7 +117,7 @@
 
 .secMn.hash{}
 .secMn.hash .pgtd{display:flex;justify-content: space-between;padding: 7px 16px;align-items: center;}
-.secMn.hash .pgtd .tit{font-size: 15px;font-family: "BlairMd","NotoSansCJKkr";}
+.secMn.hash .pgtd .tit{font-size: 17px;font-family: "BlairMd","NotoSansCJKkr";}
 .secMn.hash .pgtd .bts{}
 .secMn.hash .pgtd .bts .link{color: #999999;text-decoration: underline;font-size: 12px;display: block;padding: 5px 0;}
 .secMn.hash .hashList{}
@@ -131,9 +130,8 @@
 .secMn.hash .hashList>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .secMn.hash .hashList>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .secMn.hash .hashList>li .item .bts .bt.del{}
-.secMn.hash .hashList>li .item .num{width: 28px;height: 28px;position:absolute;right: 5px;bottom: 6px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 0.54;}
-.secMn.hash .hashList>li .item .num:before{}
-.secMn.hash .hashList>li .item .num .n{font-size: 14px;z-index:10;position: absolute;left: 4px;color: #fff;top: 2px;text-align: center;width: 17px;}
+.secMn.hash .hashList>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
+.secMn.hash .hashList>li .item .num .n{font-size: 0px;}
 
 
 .contain.mn{}
@@ -234,27 +232,27 @@
 .contain.myinfo .sec.myinfo .form .list>li{display:flex; align-items: center; margin-top: 10px;}
 .contain.myinfo .sec.myinfo .form .list>li .dt{width:80px; font-size: 16px; color: #999999;}
 .contain.myinfo .sec.myinfo .form .list>li .dd{ width:100%; display:flex; justify-content: space-between;}
-.contain.myinfo .sec.myinfo .form .list>li .dd .select{border: #cccccc solid 1px; border-width: 1px 0px; font-family:"BlairMd"; font-size: 13px; padding-left: 0px;}
+.contain.myinfo .sec.myinfo .form .list>li .dd .select{border: #cccccc solid 1px;border-width: 1px 0px;font-family:"BlairMd";font-size: 13px;}
 .contain.myinfo .sec.myinfo .form .account{ font-family:"BlairMd"; text-transform: uppercase; text-align: center;}
 .contain.myinfo .sec.myinfo .form .account a{padding: 5px 0px;display:block;font-size: 12px;text-decoration: underline;}
 
 .contain.myinfo .sec .hdt{font-family:"BlairMd";font-size: 21px;min-height: 100px;text-align: center;padding-top: 5px;}
 
 .contain.myinfo .steps{height:36px;}
-.contain.myinfo .steps ul.st{display:flex;border-top: #000000 solid 1px;align-items: center;/* height:36px; */position:fixed;left:0;right:0px;bottom: 56px;}
-.contain.myinfo .steps ul.st>li{width:100%;/* height:36px; */text-align: right;font-family:"BlairMd";font-size: 21px;color: #000000;border-left: #000000 solid 1px;padding-right: 12px;background:#000000;color: #acacac;}
+.contain.myinfo .steps ul.st{display:flex;border-top: #000000 solid 1px;align-items: center;/* height:36px; */position:fixed;left:0;right:0px;bottom: 60px;}
+.contain.myinfo .steps ul.st>li{width:100%;/* height:36px; */text-align: right;font-family:"BlairMd";font-size: 21px;color: #000000;border-left: #000000 solid 1px;padding-right: 12px;background: #ffffff;}
 .contain.myinfo .steps ul.st>li:first-child{ border-left-width: 0px;}
 .contain.myinfo .steps.st1{}
-.contain.myinfo .steps.st1 ul.st>li:nth-child(1){color: #ffffff;}
+.contain.myinfo .steps.st1 ul.st>li:nth-child(1){color: #ffffff;background: #000000;}
 .contain.myinfo .steps.st1 ul.st>li:nth-child(1) ~ li{ background-color: #ffffff; color: #000000;}
 
 .contain.myinfo .steps.st2{}
-.contain.myinfo .steps.st2 ul.st>li:nth-child(2) {color: #ffffff;}
-.contain.myinfo .steps.st2 ul.st>li:nth-child(2) ~ li{ background-color: #ffffff; color: #000000;}
+.contain.myinfo .steps.st2 ul.st>li:nth-child(2) {color: #ffffff;background: #000000;}
+.contain.myinfo .steps.st2 ul.st>li:nth-child(2) ~ li{}
 
 
 .contain.myinfo .steps.st3{}
-.contain.myinfo .steps.st3 ul.st>li:nth-child(3) {color: #ffffff;}
+.contain.myinfo .steps.st3 ul.st>li:nth-child(3) {color: #ffffff;background: #000000;}
 
 
 .contain.myinfo>.pbd>.pbt .bts .btn.btnLater{ background-color: #e4e4e4; border-color: #e4e4e4;}

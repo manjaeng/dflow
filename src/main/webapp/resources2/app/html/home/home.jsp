@@ -91,7 +91,7 @@
 				</ul>
 				<div class="uiListMore">
 					<em></em>
-					<a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
+					<a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em></a>
 				</div>
 			</section>
 			<script>

@@ -67,7 +67,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../mypage/model_reg2.jsp" class="btn type b fill xl">Done</a>
+						<a href="../mypage/model_reg2.jsp" class="btn type b fill xl">NEXT</a>
 					</div>
 				</div>
 			</section>

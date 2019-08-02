@@ -29,7 +29,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./certiEmail.jsp" class="btn xl b fill btnSend">이메일받기</a>
+						<a href="../mypage/certiEmail.jsp" class="btn xl b fill btnSend">이메일받기</a>
 					</div>
 				</div>
 			</div>

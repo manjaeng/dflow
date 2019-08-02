@@ -246,14 +246,9 @@ function popPrfOthers(){
 						<span href="javascript:;" class="bt">MODEL PROFILE</span>
 						<ol class="mds">
 							<li>
-<<<<<<< HEAD
-								<a href="/resources2/app/html/look/look_upload.jsp" class="box">
-									<span class="name">은영</span>
-=======
 								<a href="../look/look_upload.jsp" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
 									<span class="name">JENNY</span>
->>>>>>> 마이페잊수정
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>

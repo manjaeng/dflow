@@ -80,8 +80,20 @@
 						<mark>/resources2/app/html/home/intro.jsp</mark>
 					</li>
 					<li>
-						<h4>정보입력</h4> <em>ing</em>
+						<h4>정보입력1</h4> <em>ing</em>
 						<mark>/resources2/app/html/home/myinfo_step1.jsp</mark>
+					</li>
+					<li>
+						<h4>정보입력2</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/myinfo_step2.jsp</mark>
+					</li>
+					<li>
+						<h4>정보입력3</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/myinfo_step3.jsp</mark>
+					</li>
+					<li>
+						<h4>정보입력4</h4> <em>ing</em>
+						<mark>/resources2/app/html/home/myinfo_step4.jsp</mark>
 					</li>
 				</ul>
 			</li>
@@ -99,10 +111,6 @@
 					<li>
 						<h4>비번찾기</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/findPw.jsp</mark>
-					</li>
-					<li>
-						<h4>이메일인증</h4> <em>ing</em>
-						<mark>/resources2/app/html/member/certiEmail.jsp</mark>
 					</li>
 					<li>
 						<h4>비번재설정</h4> <em>ing</em>
@@ -160,11 +168,15 @@
 					</li>
 					<li>
 						<h4>설정</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/setting.jsp</mark>
+						<mark>/resources2/app/html/setting/setting.jsp</mark>
 					</li>
 					<li>
 						<h4>알림설정</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/setting_alim.jsp</mark>
+						<mark>/resources2/app/html/setting/setting_alim.jsp</mark>
+					</li>
+					<li>
+						<h4>이메일인증</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/certiEmail.jsp</mark>
 					</li>
 					<li>
 						<h4>쿨</h4> <em>ing</em>
@@ -179,20 +191,36 @@
 						<mark>/resources2/app/html/mypage/profile_set.jsp</mark>
 					</li>
 					<li>
+						<h4>모델등록1</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/model_reg1.jsp</mark>
+					</li>
+					<li>
+						<h4>모델등록2</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/model_reg2.jsp</mark>
+					</li>
+					<li>
+						<h4>모델셋팅</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/model_set.jsp</mark>
+					</li>
+					<li>
+						<h4>모델수정</h4> <em>ing</em>
+						<mark>/resources2/app/html/mypage/model_edit.jsp</mark>
+					</li>
+					<li>
 						<h4>알림</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/alim.jsp</mark>
 					</li>
 					<li>
 						<h4>공지</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/notice.jsp</mark>
+						<mark>/resources2/app/html/setting/notice.jsp</mark>
 					</li>
 					<li>
 						<h4>1:1문의</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/qna.jsp</mark>
+						<mark>/resources2/app/html/setting/qna.jsp</mark>
 					</li>
 					<li>
 						<h4>앱버전</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/version.jsp</mark>
+						<mark>/resources2/app/html/setting/version.jsp</mark>
 					</li>
 				</ul>
 			</li>

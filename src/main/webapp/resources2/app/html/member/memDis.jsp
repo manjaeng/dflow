@@ -47,7 +47,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<button type="button" class="btn type b fill xl" disabled="disabled" id="btn_check_agree" onclick="memdis_com();">Done</button>
+						<button type="button" class="btn type b fill xl" disabled="disabled" id="btn_check_agree" onclick="memdis_com();">회원탈퇴</button>
 					</div>
 				</div>
 			</section>

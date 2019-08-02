@@ -16,7 +16,7 @@
 			<!-- <h1 class="tit">패피루키</h1> -->
 			<div class="set">
 				<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
-				<a class="bt conf" href="../mypage/setting.jsp">설정</a>
+				<a class="bt conf" href="../setting/setting.jsp">설정</a>
 			</div>
 		</div>
 	</div>	
