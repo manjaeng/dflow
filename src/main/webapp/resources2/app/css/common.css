@@ -512,7 +512,18 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 body.look .floatNav .bt.sch{display:block;}
 body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 
-
+.loadingBar{position:fixed;left:0;right:0;top:0;bottom:0;z-index: 2000;background-color: rgba(255, 255, 255, 1);display: block;/* justify-content: center; *//* align-items: center; *//* flex-wrap: wrap; *//* line-height: 100%; */text-align: center;}
+.loadingBar>.in{display: inline-block;vertical-align: middle;/* line-height: 160%; */}
+.loadingBar::after{display: inline-block;vertical-align: middle;content:"";height: 100%;}
+.loadingBar>.in>.msg{display:block;width: 100%;position: relative;/* margin-top: 50vh; */text-align: center;font-size: 18px;}
+.loadingBar>.in>em{width: 161px;height: 18px;padding:0px;overflow:hidden;display:block;box-sizing:border-box;text-align: center;margin: 20px 0;position: relative;}
+.loadingBar>.in>em:before{content:"";display:inline-block;background: url(../images/common/loadingPageBar.png) no-repeat;width: 100%;height: 18px;background-size: 161px auto;position:absolute;left: 0px;}
+.loadingBar>.in>em:after{ content:"";display:inline-block;background: url(../images/common/loadingPage.png) no-repeat;width: 161px;height: 18px;background-size:100% auto;}
+.loadingBar>.in>em:before{	animation:loadingBar 0.8s infinite steps(100);}
+@keyframes loadingBar {
+	from { width: 10%; }
+	to   { width: 100%; }
+}
 
 
 /* 페이지 로딩 */

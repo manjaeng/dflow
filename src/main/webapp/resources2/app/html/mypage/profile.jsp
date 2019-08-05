@@ -73,13 +73,22 @@
 					</div> -->
 				</div>
 			</section>
-			<section class="prfNav me"> <!-- if .me 클래스 내 프로필 -->
+
+			<section class="prfNav">
 				<div class="bts">
 					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
+					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">MODEL</a>
+				</div>
+				<div class="bts">
 					<a href="javascript:;" class="bt fwer">FOLLOW</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">MODEL</a>
 				</div>
+				<div class="bts">
+					<a href="javascript:;" class="bt fwing">ING</a>
+					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">MODEL</a>
+				</div>
 			</section>
+
 			<section class="prInfoList">
 				<div class="prInfoCont" id="prInfoCont">
 				</div>

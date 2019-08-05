@@ -593,14 +593,23 @@ var ui = {
 		}
 	},
 	loading: { // 로딩중..
-		show: function () {
-			var els = '<div class="loadingPage"><em></em></div>';
+		show: function (msg) {
+			var els = '<div class="loadingBar"><div class="in"><span class="msg">'+msg+'</span><em></em></div></div>';
 			$("body").prepend(els);
 		},
 		hide: function () {
-			$(".loadingPage").remove();
+			$(".loadingBar").remove();
 		}
 	},
+	// loading: { // 로딩중..
+	// 	show: function () {
+	// 		var els = '<div class="loadingPage"><em></em></div>';
+	// 		$("body").prepend(els);
+	// 	},
+	// 	hide: function () {
+	// 		$(".loadingPage").remove();
+	// 	}
+	// },
 	accd: { // 아코디언 UI
 		init: function() {
 			$(window).on("load", this.using);

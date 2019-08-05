@@ -316,11 +316,12 @@
 			<section class="codeBox">
 				<div class="code">
 					<div class="bts">
-						<a class="btn" href="javascript:ui.loading.show();">로딩열기</a>
+						<a class="btn" href="javascript:ui.loading.show('사이즈 등록 화면으로 <br> 이동합니다.');">로딩열기</a>
 						<a class="btn loadingClose" href="javascript:ui.loading.hide();">로딩닫기</a>
 					</div>
 					<pre class="brush: js">
 						ui.loading.show(); // 로딩열기
+						ui.loading.show('사이즈 등록 화면으로 <br> 이동합니다.'); // 로딩열기
 						ui.loading.hide(); // 로딩닫기 </pre>
 				</div>
 			</section>

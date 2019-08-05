@@ -38,7 +38,7 @@
 				<div class="in">
 					<div class="btnSet fit">
 						<a href="../home/home.jsp" class="btn xl e btnLater">LATER</a>
-						<a href="../member/joinPre.jsp" class="btn xl b fill btnStart">START</a>
+						<a href="javascript:ui.loading.show('사이즈 등록 화면으로 <br> 이동합니다.');" class="btn xl b fill btnStart">START</a>
 					</div>
 				</div>
 			</div>
