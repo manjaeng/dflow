@@ -27,20 +27,24 @@
 						당신에게 맞는 핏을 찾아드립니다.
 					</div>
 					<ul class="list">
-						<li>
+						<li class="gender">
 							<div class="dt">성별</div>
 							<div class="dd">
 								<label class="radio"><input type="radio" name="gender" checked><span>여자</span></label>
 								<label class="radio"><input type="radio" name="gender"><span>남자</span></label>
 							</div>
 						</li>
-						<li>
+						<li class="nation">
 							<div class="dt">국가</div>
 							<div class="dd">
-								<select class="select">
-									<option>KOREA</option>
-									<option>KOREA</option>
-								</select>
+								<div class="sel">
+									<select class="select">
+										<option>KOREA</option>
+										<option>CHINA</option>
+										<option>JAPAN</option>
+										<option>TAIWAN</option>
+									</select>
+								</div>
 							</div>
 						</li>
 					</ul>

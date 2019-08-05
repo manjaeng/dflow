@@ -57,7 +57,8 @@
 .popJoin .joinForm .form .btns .btn{width:100%;}
 
 .popJoin .joinForm .form .agree{ position:relative; margin-top: 15px;}
-.popJoin .joinForm .form .agree .txt{font-size: 11px;}
+.popJoin .joinForm .form .agree .txt{font-size: 12px;}
+.popJoin .joinForm .form .agree .txt a{text-decoration:underline;display: inline-block;vertical-align: middle;padding: 1px 0px;}
 .popJoin .joinForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
 
 

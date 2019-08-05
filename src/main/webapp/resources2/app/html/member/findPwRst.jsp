@@ -19,9 +19,9 @@
 			<div class="findForm">
 				<div class="hdt"><em>비밀번호재설정</em></div>
 				<div class="form">
-					<div class="pw now">
+					<!-- <div class="pw now">
 						<input type="password" class="input" placeholder="현재비밀번호 입력">
-					</div>
+					</div> -->
 					<div class="pw new">
 						<input type="password" class="input" placeholder="변경비밀번호 입력">
 					</div>
