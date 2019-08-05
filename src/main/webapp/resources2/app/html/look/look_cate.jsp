@@ -28,31 +28,31 @@
 						<div class="ct">
 							<ul class="list">
 								<li>
-									<label><input type="checkbox"><span class="tit">Casual</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Casual</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Girly</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Girly</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Tomboy</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Tomboy</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Business</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Business</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Chic</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Chic</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Bohemian</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Bohemian</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Sexy</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Sexy</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Punk</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Punk</span></label>
 								</li>
 								<li>
-									<label><input type="checkbox"><span class="tit">Sporty</span></label>
+									<label><input type="radio" name="style_cate"><span class="tit">Sporty</span></label>
 								</li>
 							</ul>
 						</div>
@@ -73,7 +73,7 @@
 					<li class="text">
 						<div class="ht">DETAIL</div>
 						<div class="ct">
-							<div class="num">MAX 500</div>
+							<div class="num on">MAX 500</div>
 							<textarea class="textarea"></textarea>
 						</div>
 					</li>
@@ -90,7 +90,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<button type="button" class="btn type b fill xl">DONE</button>
+						<a href="../look/look.jsp" class="btn type b fill xl">DONE</a>
 					</div>
 				</div>
 			</section>

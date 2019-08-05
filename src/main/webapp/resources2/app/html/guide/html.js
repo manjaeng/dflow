@@ -19,7 +19,7 @@
 
 
 
-		$(document).on("click",".uiLkSet>.data ul.dl>li.scrap .bt",function(e){
+		$(document).on("click",".uiLkSet>.data ul.dl>li .bt",function(e){
 			if( $(this).hasClass("on") ){
 				$(this).removeClass("on");
 			}else{

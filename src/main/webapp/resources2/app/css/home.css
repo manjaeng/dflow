@@ -32,7 +32,7 @@
 .uiMnSet>.info .user .pic{position:absolute;left:0px;top: 0px;display: block;width: 40px;}
 .uiMnSet>.info .user .pic .img{padding-bottom: calc( 4% / 3.5 * 100);display: block;position: relative;width: 100%;}
 .uiMnSet>.info .user .pic .img img{width:40px;border-radius: 100%;display: block;position: absolute;left: 0px;object-fit: cover;height: 100%;}.uiMnSet>.info .user .mem{min-height: 50px;margin: 0 45px 0 55px;text-align: center;display: block;padding: 4px 0 0 0;}
-.uiMnSet>.info .user .mem .nm{font-size: 20px;font-family: "NotoSansCJKkr-Md";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.uiMnSet>.info .user .mem .nm{font-size: 20px;font-family: "BlairMd","NotoSansCJKkr";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
 .uiMnSet>.info .user .mem .dt{font-size: 11px;color: #a3a3a3;font-family:"BlairMd";text-transform: uppercase;}
 .uiMnSet>.info .user .mem .dt .k{/* color: #70f5c4; */}
 .uiMnSet>.info .user .mem .dt .n{}
@@ -82,7 +82,7 @@
 .secMn.newb .slideNewbie .slide>li .item .img{display:block;position:relative;margin: auto;/* width: 90px; *//* height: 90px; */}
 .secMn.newb .slideNewbie .slide>li .item .img>.lk{display: block;position: relative;width: 100%;overflow: hidden;padding-bottom: 100%;}
 .secMn.newb .slideNewbie .slide>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
-.secMn.newb .slideNewbie .slide>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px; font-family:"BlairMd","NotoSansCJKkr";}
+.secMn.newb .slideNewbie .slide>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family:"BlairMd","NotoSansCJKkr";font-size: 12px;}
 .secMn.newb .slideNewbie .slide>li .item .foll{    text-align: center;    white-space: nowrap;    margin-top: -3px;}
 .secMn.newb .slideNewbie .slide>li .item .foll .checkbox{}
 .secMn.newb .slideNewbie .slide>li .item .foll .checkbox>span{width:50px;height:20px;background: url(../images/common/ico_my_follow.png) no-repeat;background-size: 100% auto;font-size: 0px;}
@@ -109,7 +109,7 @@
 .secMn.newb .slideNewup .slide .item .user .pic .img{padding-bottom: calc( 4% / 3.5 * 100);display: block;position: relative;width: 100%;}
 .secMn.newb .slideNewup .slide .item .user .pic .img img{width:36px;border-radius: 100%;display: block;position: absolute;left: 0px;object-fit: cover;height: 100%;}
 .secMn.newb .slideNewup .slide .item .user .mem{min-height: 40px;margin: 6px 0px 0 41px;/* text-align: center; */display: block;}
-.secMn.newb .slideNewup .slide .item .user .mem .nm{font-size: 16px;font-family: "BlairMd","NotoSansCJKkr";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
+.secMn.newb .slideNewup .slide .item .user .mem .nm{font-size: 14px;font-family: "BlairMd","NotoSansCJKkr";line-height: 1.1em;color: #101010;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;}
 .secMn.newb .slideNewup .slide .item .user .mem .dt{font-size: 10px;color: #a3a3a3;text-transform: uppercase;font-family:"BlairMd";}
 .secMn.newb .slideNewup .slide .item .user .mem .dt .k{/* color: #70f5c4; */}
 .secMn.newb .slideNewup .slide .item .user .mem .dt .n{}
@@ -135,7 +135,8 @@
 
 
 .contain.mn{}
-
+.secLk.look.mn{}
+.secLk.look.mn .lookList{ padding-bottom: 20px;}
 
 
 .contain.int .intro{position:fixed;left:0px;right:0px;/* top: 0px; *//* bottom: 0px; */height: 100%;}

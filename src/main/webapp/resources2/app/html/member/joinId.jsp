@@ -27,6 +27,7 @@
 						<input type="text" class="input valid"  id="input_sample1" value="">
 						<span class="plc">ID</span>
 					</div>
+					<div class="msg_error show" id="msg_sample1">사용 중인 아이디입니다.</div>
 					<div class="msgs">
 						아이디는 내 프로필의 고유 주소가 되며 변경이 불가합니다. <br> 아이디는 영문 및  숫자로만 입력 가능합니다. 
 					</div>

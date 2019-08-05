@@ -29,7 +29,9 @@
 .popLogin .loginForm .form{margin-top: -5px;}
 .popLogin .loginForm .form .uiIptPlc{}
 .popLogin .loginForm .form .uiIptPlc .plc{}
-.popLogin .loginForm .form .uiIptPlc .input{}
+.popLogin .loginForm .form .uiIptPlc .input{
+    font-family: "Arial";
+}
 .popLogin .loginForm .form .msg_error{margin-top: 4px;}
 .popLogin .loginForm .form .btns{margin-top: 12px;}
 .popLogin .loginForm .form .btns .btn{width:100%;}
@@ -51,7 +53,9 @@
 .popJoin .joinForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
 .popJoin .joinForm .form .uiIptPlc{}
 .popJoin .joinForm .form .uiIptPlc .plc{}
-.popJoin .joinForm .form .uiIptPlc .input{}
+.popJoin .joinForm .form .uiIptPlc .input{
+    font-family: "Arial";
+}
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
 .popJoin .joinForm .form .btns{margin-top: 20px;}
 .popJoin .joinForm .form .btns .btn{width:100%;}
@@ -97,6 +101,22 @@
 .contain.findPw .findForm .coms{text-align: center;padding-top: calc( 50vh - 216px );}
 .contain.findPw .findForm .coms::before{width:90px;height:90px;background:url(../images/common/pwFindComIco1.png) no-repeat;background-size: 100% auto;content:"";display: block;margin: 0px auto 27px auto;}
 .contain.findPw .findForm .coms .txt{font-size: 16px;}
+
+
+/* 이메일인증 완료 */
+.contain.findPwCerti{}
+.contain.findPwCerti {}
+.contain.findPwCerti .hdt{font-size: 24px;text-align: center;color: #000000;font-family:"BlairMd";margin-bottom: 23px;}
+.contain.findPwCerti .sec.certi{margin: 0px 16px ;}
+.contain.findPwCerti .sec.certi .infos{text-align: center;}
+.contain.findPwCerti .sec.certi .infos .email{font-size: 15px;color: #fd5555;}
+.contain.findPwCerti .sec.certi .infos .bts{margin-top: 25px;}
+.contain.findPwCerti .sec.certi .infos .bts .btnSend{height:33px;padding: 0 15px;}
+.contain.findPwCerti .sec.certi .guds{font-size: 12px; margin-top: 30px;}
+.contain.findPwCerti .sec.certi .form{margin-top: 30px; position:relative;}
+.contain.findPwCerti .sec.certi .form .code{padding-right: 32px;}
+.contain.findPwCerti .sec.certi .form .time{position:absolute;top: 10px;right: 2px;color: #fd5555;font-size: 12px;}
+.contain.findPwCerti .sec.certi .form .btnCode{position:absolute; top: 0px; right: 00px; min-width:60px;}
 
 
 /* 이메일인증 완료 */
@@ -315,7 +335,7 @@
 .contain.follow .sec.follow .tabCtn .list>li .item .img{display:block;position:relative;margin: auto;width: 70px;height: 80px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img>.lk{display: block;position: relative;width: 100%;overflow: hidden;padding-bottom: calc(4% / 3.5 * 100);}
 .contain.follow .sec.follow .tabCtn .list>li .item .img img{object-fit: cover;max-width:inherit;position:absolute;left: 0;top: 0;width:100%;height:100%;border-radius: 100%;}
-.contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family: "BlairMd","NotoSansCJKkr";}
+.contain.follow .sec.follow .tabCtn .list>li .item .name{text-align: center;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;margin-top: 8px;font-family: "BlairMd","NotoSansCJKkr";font-size: 12px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll{text-align: center;white-space: nowrap;margin-top: -3px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox{}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span{width:50px;height:20px;background: url(../images/common/ico_my_follow.png) no-repeat;background-size: 100% auto;font-size: 0px;}

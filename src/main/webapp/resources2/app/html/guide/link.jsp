@@ -113,6 +113,10 @@
 						<mark>/resources2/app/html/member/findPw.jsp</mark>
 					</li>
 					<li>
+						<h4>메일인증</h4> <em>ing</em>
+						<mark>/resources2/app/html/member/findPwCerti.jsp</mark>
+					</li>
+					<li>
 						<h4>비번재설정</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/findPwRst.jsp</mark>
 					</li>

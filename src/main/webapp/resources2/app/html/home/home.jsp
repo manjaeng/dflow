@@ -17,7 +17,7 @@
 			<section class="secMn tops">
 				<div class="hdt"><p>Clothes <br>That fit You</p></div>
 				<div class="bts">
-					<a href="javascript:;" class="btSize">
+					<a href="javascript:popSize();" class="btSize">
 						<span>사이즈를 등록하시면 <br>최적의 핏을 찾을 수 있습니다. </span>
 					</a>
 				</div>
@@ -74,19 +74,19 @@
 				</div> -->
 				<ul class="matchList" id="matchList">
 					<li>
-						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/1" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
+						<div class="item"><span class="img"><a href="./home_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/2" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="./home_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/3" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="./home_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/4" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="./home_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="javascript:;"><img src="//placeimg.com/360/480/any/5" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
+						<div class="item"><span class="img"><a href="./home_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
 					</li>
 				</ul>
 				<div class="uiListMore">
@@ -133,50 +133,50 @@
 					<ul class="swiper-wrapper slide">
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/1" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/1" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/2" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/2" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox" checked="checked"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/2" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/2" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/3" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/3" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox" checked="checked"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox" checked="checked"><span></span></label></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
-								<div class="name">패피플러스</div>
+								<span class="img"><a class="lk" href="../mypage/profile.jsp"><img src="//placeimg.com/360/360/any/4" alt=""></a></span>
+								<div class="name">JENNY</div>
 								<div class="foll"><label class="checkbox"><input type="checkbox" checked="checked"><span></span></label></div>
 							</div>
 						</li>
@@ -187,13 +187,13 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
+									<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
-									<a href="javascript:;" class="mem">
-										<div class="nm">패피루키</div>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="mem">
+										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 									</a>
 								</div>
@@ -202,13 +202,13 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
+									<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
-									<a href="javascript:;" class="mem">
-										<div class="nm">패피루키</div>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="mem">
+										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 									</a>
 								</div>
@@ -217,13 +217,13 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
+									<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
-									<a href="javascript:;" class="mem">
-										<div class="nm">패피루키</div>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="mem">
+										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 									</a>
 								</div>
@@ -232,13 +232,13 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
+									<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
 									<div class="num"><em class="n">7</em></div>
 								</div>
 								<div class="user">
-									<a href="javascript:;" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
-									<a href="javascript:;" class="mem">
-										<div class="nm">패피루키</div>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="mem">
+										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 									</a>
 								</div>
@@ -257,55 +257,55 @@
 				<ul class="hashList" id="hashList">
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/5" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/6" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/6" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/7" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/7" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/8" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/8" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="javascript:;"><img src="//placeimg.com/360/480/any/9" alt=""></a></span>
+							<span class="img"><a class="lk" href="./home_view.jsp"><img src="//placeimg.com/360/480/any/9" alt=""></a></span>
 							<div class="num"><em class="n">7</em></div>
 						</div>
 					</li>

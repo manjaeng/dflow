@@ -44,6 +44,8 @@ input.input:not([type=radio]):not([type=radio]):not([readonly]):not([disabled]):
 .input.bdn,
 .textarea.bdn{border:none;color: #101010;}
 
+input.input.no{color: #ff0000; border-bottom-color:#ff0000;}
+
 select[disabled],
 textarea[disabled],textarea[readonly],
 input[readonly],
@@ -64,7 +66,7 @@ input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
 input[type=number] { -moz-appearance:textfield;}
 
-input.valid{background: url(../images/common/validation.png) no-repeat right -2px top 9px;background-size: 24px auto;padding-right: 30px;}
+input.valid{/* background: url(../images/common/validation.png) no-repeat right -2px top 9px; */background-size: 24px auto;padding-right: 30px;}
 input.valid.ok{background-position-y: -30px;}
 input.valid.no{background-position-y: -70px;/* border-bottom-color: #daa096 !important; */}
 
@@ -466,7 +468,7 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 .paging .link a.active{font-weight:bold;color:#0052bb;/* text-decoration:underline; */}
 
 .msg_error{padding: 5px 0px; display:none; font-size: 12px;}
-.msg_error.show{ display:block; }
+.msg_error.show{display:block;color: #ff0000;}
 
 .uiListMore{ position: relative;}
 .uiListMore .btnMore{width: 100%;height:43px;text-align:center;display:flex;justify-content:center;align-items:center;background: #ffffff;}

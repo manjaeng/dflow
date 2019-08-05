@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain popJoin id">
+	<div id="contain" class="contain findPwCerti">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -16,31 +16,31 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			<div class="joinForm">
-				<div class="hdt"><em>SIGN UP</em></div>
+			<div class="hdt"><em>비밀번호 찾기</em></div>
+			<div class="sec certi">
+				<div class="infos">
+					<div class="email">abcd1234@naver.com</div>
+					<!-- <div class="bts"><a href="javascript:;" class="btn sm c btnSend">SEND</a></div> -->
+				</div>
+				<div class="guds">
+					등록하신 이메일로 발송된 인증 코드를 확인하시고, “인증확인”을 진행해 주세요. <br>
+					메일이 도착하지 않았다면, 스팸함을 확인해 주세요.   
+				</div>
 				<div class="form">
-					<!-- <div class="memcate">
-						<label class="radio"><input type="radio" name="memcate1" checked="checked"><span>일반회원</span></label>
-						<label class="radio"><input type="radio" name="memcate1"><span>전문가</span></label>
-					</div> -->
-					<div class="uiIptPlc email">
-						<input type="text" class="input valid"  id="input_sample1" value="">
-						<span class="plc">E-MAIL</span>
-					</div>
-					<div class="msg_error" id="msg_sample1">가입 완료된. 이메일입니다</div>
-					<div class="msgs">이메일은 비밀번호 찾기 및 로그인시 필요합니다.</div>
-
+					<input type="text" class="input code" placeholder="코드를 입력해주세요">
+					<span class="time">2:59</span>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./joinId.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="./findPwRst.jsp" class="btn xl b fill btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->
