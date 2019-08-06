@@ -47,6 +47,10 @@
 				<h3><a href="javascript:;">공통</a></h3>
 				<ul>
 					<li>
+						<h4>검색</h4> <em>ing</em>
+						<mark>/resources2/app/html/common/search.jsp</mark>
+					</li>
+					<li>
 						<h4>검색결과</h4> <em>ing</em>
 						<mark>/resources2/app/html/common/searchResult.jsp</mark>
 					</li>

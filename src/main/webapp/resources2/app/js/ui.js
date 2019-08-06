@@ -1057,7 +1057,7 @@ var ui = {
 			msg:"토스트메시지",
 			cls:"",
 			sec:1500,
-			bot:20,
+			bot:0,
 		}, params);
 
 		if ( $(".popToast:visible").length ) return ;

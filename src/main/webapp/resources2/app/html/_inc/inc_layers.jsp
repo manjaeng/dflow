@@ -16,13 +16,12 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<!-- <li><a href="javascript:;" class="bt">스타일 만족도</a></li> -->
-					<!-- <li><a href="javascript:;" class="bt">저장하기</a></li> -->
-					<li><a href="javascript:;" class="bt" onclick="popShare();">룩 공유하기</a></li>
-					<li><a href="javascript:;" class="bt" onclick="popShare();">프로필 공유하기</a></li>
-					<!-- <li><a href="javascript:;" class="bt">링크복사</a></li> -->
-					<li><a href="javascript:;" class="bt" onclick="popAccus();">신고하기</a></li>
-					<!-- <li><a href="javascript:;" class="bt" onclick="ui.alert({'msg':'<p>신고가 취소 되었습니다.</p>'})">신고취소하기</a></li> -->
+					<li><a href="javascript:;" class="bt">LOOK EDIT</a></li>
+					<li class="st"><a href="javascript:;" class="bt">LOOK DELETE</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
+					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY LINK</a></li>
+					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY PROFILE LINK</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popShare(); ui.popLayer.close('popOthers');">SHARE</a></li>
 				</ul>
 			</main>
 		</div>
@@ -38,15 +37,9 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">저작권침해 우려됨</a></li>
-					<li><a href="javascript:;" class="bt">다른스타일과 중복됨</a></li>
-					<li><a href="javascript:;" class="bt">혐오스러움</a></li>
-					<li><a href="javascript:;" class="bt">외설적임</a></li>
-					<li><a href="javascript:;" class="bt">패션과 무관함</a></li>
-					<li><a href="javascript:;" class="bt">지나친 광고성게시물</a></li>
-					<li><a href="javascript:;" class="bt">사기피해 우려가 있음</a></li>
+					<li class="st"><a href="javascript:;" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s Spam</a></li>
+					<li class="st"><a href="javascript:;" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s appropriate</a></li>
 				</ul>
-				
 			</main>
 		</div>
 	</div>
@@ -198,10 +191,9 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="../mypage/profile_set.jsp" class="bt">PROFILE SETTING</a></li>
-					<li><a href="../mypage/model_set.jsp" class="bt">MODEL SETTING</a></li>
-					<li><a href="javascript:;" class="bt">SHARE</a></li>
-					<li><a href="javascript:;" class="bt">COPY LINK</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
+					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
+					<li><a href="javascript:;" onclick="popShare(); ui.popLayer.close('popPrfOthers');" class="bt">SHARE</a></li>
 				</ul>	
 			</main>
 		</div>

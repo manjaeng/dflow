@@ -207,8 +207,7 @@
 			}
 			var toast_sample1 = function(){
 				ui.toast({   // 토스트 창띄우기
-					msg:'<p>토스트메시지입니다.</p>',
-					cls:'type a',
+					msg:'<p>Link copied to clipboard</p>',
 					sec:1500
 				});
 			}
@@ -234,6 +233,21 @@
 			
 			<input type="password" class="input valid" placeholder="비밀번호">			<p class="gap"></p>
 			
+			<div class="uiIptPlc id">
+				<input type="email" class="input ok">
+				<span class="plc">ID/EMAIL</span>
+			</div>
+
+			<div class="uiIptPlc pw">
+				<input type="password" class="input">
+				<span class="plc">PASSWORD</span>
+			</div>
+
+			<div class="uiIptPlc pw">
+				<input type="password" class="input no">
+				<span class="plc">PASSWORD</span>
+			</div>
+
 			<input type="text" class="input" readonly="readonly" value="readonly">		<p class="gap"></p>
 			
 			<input type="text" class="input" disabled="disabled" value="disabled">		<p class="gap"></p>

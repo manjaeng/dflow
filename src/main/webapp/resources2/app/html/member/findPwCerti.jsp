@@ -23,7 +23,7 @@
 					<!-- <div class="bts"><a href="javascript:;" class="btn sm c btnSend">SEND</a></div> -->
 				</div>
 				<div class="guds">
-					등록하신 이메일로 발송된 인증 코드를 확인하시고, “인증확인”을 진행해 주세요. <br>
+					등록하신 이메일로 발송된 인증 코드를 확인하시고,<br> “인증확인”을 진행해 주세요. <br>
 					메일이 도착하지 않았다면, 스팸함을 확인해 주세요.   
 				</div>
 				<div class="form">

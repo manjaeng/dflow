@@ -53,19 +53,21 @@
 					<li class="gender">
 						<span class="dt">성별</span>
 						<span class="dd">
-							<label class="radio"><input type="radio" name="gender1" checked="checked"><span>여자</span></label>
-							<label class="radio"><input type="radio" name="gender1"><span>남자</span></label>
+							<label class="radio"><input type="radio" name="gender1" checked="checked" disabled><span>여자</span></label>
+							<label class="radio"><input type="radio" name="gender1" disabled><span>남자</span></label>
 						</span>
 					</li>
 					<li class="nation">
 						<span class="dt">국가</span>
 						<span class="dd">
-							<select class="select nt">
-								<option>Korea</option>
-								<option>Korea</option>
-								<option>Korea</option>
-								<option>Korea</option>
-							</select>
+							<div class="sel">
+								<select class="select nt">
+									<option>KOREA</option>
+									<option>CHINA</option>
+									<option>JAPAN</option>
+									<option>INDIA</option>
+								</select>
+							</div>
 						</span>
 					</li>
 				</ul>
@@ -77,7 +79,6 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./profile.jsp" class="btn type e xl">Cancel</a>
 						<a href="./profile.jsp" class="btn type b fill xl">Done</a>
 					</div>
 				</div>

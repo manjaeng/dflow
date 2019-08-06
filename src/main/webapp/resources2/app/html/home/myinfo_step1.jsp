@@ -42,26 +42,6 @@
 										<option>KOREA</option>
 										<option>CHINA</option>
 										<option>JAPAN</option>
-										<option>TAIWAN</option>
-										<option>INDONESIA</option>
-										<option>HONGKONG</option>
-										<option>SINGAPORE</option>
-										<option>MALAYSIA</option>
-										<option>THAILAND</option>
-										<option>PHILIPPINES</option>
-										<option>VIETNAM</option>
-										<option>INDIA</option>
-										<option>KOREA</option>
-										<option>CHINA</option>
-										<option>JAPAN</option>
-										<option>TAIWAN</option>
-										<option>INDONESIA</option>
-										<option>HONGKONG</option>
-										<option>SINGAPORE</option>
-										<option>MALAYSIA</option>
-										<option>THAILAND</option>
-										<option>PHILIPPINES</option>
-										<option>VIETNAM</option>
 										<option>INDIA</option>
 									</select>
 								</div>

@@ -191,11 +191,12 @@
 
 .contain.prf .prfNav{}
 .contain.prf .prfNav .bts{display:flex;}
-.contain.prf .prfNav .bts .bt{border: #cccccc solid 1px;border-width: 1px 1px 1px 0px;background: no-repeat center;height:37px;display:flex;width:100%;align-items: center;justify-content: center;font-size: 0px;}
-.contain.prf .prfNav .bts .bt.edit{display:flex;background-image:url(../images/common/ico_my_edit.png); background-size: 40px auto;}
-.contain.prf .prfNav .bts .bt.fwer{font-size: inherit; background: #70f5c4;border-width: 0px 0px 0px 0px;}
-.contain.prf .prfNav .bts .bt.fwing{font-size: inherit;background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;}
-.contain.prf .prfNav .bts .bt.more{width:120px; background-image:url(../images/common/ico_my_more.png); background-size: 40px auto;}
+.contain.prf .prfNav .bts .bt{border: #cccccc solid 1px;border-width: 1px 1px 1px 0px;background: no-repeat center;height:37px;display:flex;width:100%;align-items: center;justify-content: center;font-family:"BlairMd";text-transform: uppercase;font-size: 11px;}
+.contain.prf .prfNav .bts .bt.model{display:flex;background-image:url(../images/common/ico_my_edit.png); background-size: 40px auto; font-size: 0px;}
+.contain.prf .prfNav .bts .bt.edit{display:flex;}
+.contain.prf .prfNav .bts .bt.fwer{/* font-size: inherit; */background: #70f5c4;border-width: 0px 0px 0px 0px;}
+.contain.prf .prfNav .bts .bt.fwing{background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;}
+.contain.prf .prfNav .bts .bt.more{width: 120px;background:url(../images/common/ico_my_more.png) no-repeat center;background-size: 40px auto;font-size: 0px;}
 
 
 .prInfoList{}
@@ -293,10 +294,14 @@
 .contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;padding-left: 0px;}
 .contain.my.prf .prfeForm .list>li .dd .num{position:absolute;right: 0px;top: 36px;font-size: 12px;color: #999999;}
 .contain.my.prf .prfeForm .list>li .dd label + label{ margin-left: 30px;}
-.contain.my.prf .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;/* padding-left: 0px; */min-width:150px;font-family:"BlairMd";text-transform: uppercase;}
-.contain.my.prf .prfeForm .list>li.gender .dd{padding: 6px 0;}
-.contain.my.prf .prfeForm .memDis{margin-top: 50px;}
-.contain.my.prf .prfeForm .memDis a{display: inline-block;padding:10px 0px; text-decoration: underline;text-align: right;color: #999999;position: fixed;right: 16px;bottom: 70px;}
+.contain.my.prf .prfeForm .list>li.gender{margin-top: 20px;}
+.contain.my.prf .prfeForm .list>li.gender .dd{padding: 6px 0; border-bottom-width:0px}
+.contain.my.prf .prfeForm .list>li.nation .dd{ border-bottom-width:0px}
+.contain.my.prf .prfeForm .list>li.nation .dd .sel{border: #cccccc solid 1px;border-width: 1px 0px;padding: 0 20px;width: auto;text-align: center;display: inline-block;margin-top: 5px;}
+.contain.my.prf .prfeForm .list>li.nation .dd .sel{}
+.contain.my.prf .prfeForm .list>li.nation .dd .sel .select{font-family:"BlairMd";font-size: 13px;width: auto;height: 30px;padding-right: 10px;/* min-width: auto; */display: inline-block;}
+.contain.my.prf .prfeForm .memDis{margin-top: 10px;text-align: right;}
+.contain.my.prf .prfeForm .memDis a{display: inline-block;padding:10px 0px;text-decoration: underline;/* text-align: right; */color: #999999;/* position: fixed; *//* right: 16px; *//* bottom: 70px; */}
 .contain.my.prf .botFixed{}
 .contain.my.prf .botFixed .btn{color: #000; font-weight: normal;}
 
@@ -526,7 +531,7 @@
 .contain.ver .sec.vinfo{text-align: center;padding: 87px 0px 20px;}
 .contain.ver .sec.vinfo  .logo{margin: 0px auto 28px;width:160px;height: 70px;background: url(../images/common/intro_logo.png) no-repeat;background-size: 100% auto;font-size: 0px;z-index: 400;}
 .contain.ver .sec.vinfo .msg{font-size: 17px;}
-.contain.ver .sec.vinfo .vers{margin-top: 35px;}
+.contain.ver .sec.vinfo .vers{margin-top: 55px;}
 .contain.ver .sec.vinfo .vers .ver{margin-top:20px;}
 .contain.ver .sec.vinfo .vers .ver .tt{font-size: 12px;color: #999999;}
 .contain.ver .sec.vinfo .vers .ver .vv{font-size: 23px; font-family:"BlairMd";}

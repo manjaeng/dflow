@@ -23,7 +23,7 @@
 			<div class="tabs">
 				<ul class="uiTab menu a">
 					<li class="me"><a href="javascript:;" onclick="alimTabFnc('me');">ME</a></li>
-					<li class="fol"><a href="javascript:;" onclick="alimTabFnc('fol');">Following</a></li>
+					<li class="fol"><a href="javascript:;" onclick="alimTabFnc('fol');">NOTICE</a></li>
 				</ul>
 			</div>
 			<section class="sec notifi" id="alimTabCont">

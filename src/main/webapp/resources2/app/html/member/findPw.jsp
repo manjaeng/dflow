@@ -17,7 +17,7 @@
 		</div>
 		<main id="contents" class="contents">
 			<div class="findForm">
-				<div class="hdt"><em>비밀번호찾기</em></div>
+				<div class="hdt"><em>비밀번호 찾기</em></div>
 				<div class="form">
 					<div class="email">
 						<span class="plc">이메일 입력</span>
@@ -29,7 +29,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../mypage/certiEmail.jsp" class="btn xl b fill btnSend">이메일받기</a>
+						<a href="../member/findPwCerti.jsp" class="btn xl b fill btnSend">이메일받기</a>
 					</div>
 				</div>
 			</div>

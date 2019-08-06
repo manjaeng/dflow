@@ -22,7 +22,6 @@
 			
 			<div class="sec vinfo">
 				<div class="logo">FAPEE</div>
-				<div class="msg">최신버전으로 업데이트해주세요. <!-- 현재버전이 최신 버전입니다. --> </div>
 				<div class="vers">
 					<div class="ver now">
 						<div class="tt">현재버전</div>
