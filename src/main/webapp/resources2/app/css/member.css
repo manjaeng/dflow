@@ -30,7 +30,7 @@
 .popLogin .loginForm .form .uiIptPlc{}
 .popLogin .loginForm .form .uiIptPlc .plc{}
 .popLogin .loginForm .form .uiIptPlc .input{
-    font-family: "Arial";
+    /* font-family: "Arial"; */
 }
 .popLogin .loginForm .form .msg_error{margin-top: 4px;}
 .popLogin .loginForm .form .btns{margin-top: 12px;}
@@ -70,7 +70,7 @@
 .contain.findPw{}
 .contain.findPw .poptents{}
 .contain.findPw .findForm{padding: 0px 16px 20px 16px;}
-.contain.findPw .findForm .hdt{font-size: 24px;text-align: center;color: #000000;font-family:"BlairMd";margin-bottom: 23px;}
+.contain.findPw .findForm .hdt{font-size: 24px;text-align: center;color: #000000;font-family: "BlairMd","NotoSansCJKkr";margin-bottom: 23px;}
 .contain.findPw .findForm .hdt em{}
 .contain.findPw .findForm .form{margin-top: -5px;}
 .contain.findPw .findForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
@@ -122,7 +122,7 @@
 /* 이메일인증 완료 */
 .contain.certiEmail{}
 .contain.certiEmail {}
-.contain.certiEmail .hdt{font-size: 24px;text-align: center;color: #000000;font-family:"BlairMd";margin-bottom: 23px;}
+.contain.certiEmail .hdt{font-size: 24px;text-align: center;color: #000000;font-family: "BlairMd","NotoSansCJKkr";margin-bottom: 23px;}
 .contain.certiEmail .sec.certi{margin: 0px 16px ;}
 .contain.certiEmail .sec.certi .infos{text-align: center;}
 .contain.certiEmail .sec.certi .infos .email{font-size: 15px;color: #fd5555;}
@@ -191,12 +191,18 @@
 
 .contain.prf .prfNav{}
 .contain.prf .prfNav .bts{display:flex;}
-.contain.prf .prfNav .bts .bt{border: #cccccc solid 1px;border-width: 1px 1px 1px 0px;background: no-repeat center;height:37px;display:flex;width:100%;align-items: center;justify-content: center;font-family:"BlairMd";text-transform: uppercase;font-size: 11px;}
-.contain.prf .prfNav .bts .bt.model{display:flex;background-image:url(../images/common/ico_my_edit.png);background-size: 40px auto;font-size: 0px;/* width: 120px; */}
-.contain.prf .prfNav .bts .bt.edit{display:flex;}
-.contain.prf .prfNav .bts .bt.fwer{/* font-size: inherit; */background: #70f5c4;border-width: 0px 0px 0px 0px;}
-.contain.prf .prfNav .bts .bt.fwing{background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;}
-.contain.prf .prfNav .bts .bt.more{width: 120px;background:url(../images/common/ico_my_more.png) no-repeat center;background-size: 40px auto;font-size: 0px;}
+.contain.prf .prfNav .bts .bt{border: #cccccc solid 1px;border-width: 1px 1px 1px 0px;background: no-repeat center;height:37px;display:flex;/* width:100%; */align-items: center;justify-content: center;font-family:"BlairMd";text-transform: uppercase;font-size: 11px;}
+.contain.prf .prfNav .bts .bt.model{display:flex;background-image:url(../images/common/ico_my_edit.png);background-size: 40px auto;font-size: 0px;}
+.contain.prf .prfNav .bts .bt.edit{width:75%;display:flex;}
+.contain.prf .prfNav .bts .bt.fwer{width:75%;background: #70f5c4;border-width: 0px 0px 0px 0px;}
+.contain.prf .prfNav .bts .bt.fwing{width:75%;background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;}
+.contain.prf .prfNav .bts .bt.more{background:url(../images/common/ico_my_more.png) no-repeat center;background-size: 40px auto;font-size: 0px;flex-grow: 6;}
+
+.contain.prf .prfNav .bts.mdl .bt.edit{width:50%;}
+.contain.prf .prfNav .bts.mdl .bt.model{width: 25%;}
+.contain.prf .prfNav .bts.mdl .bt.fwer{width:50%;}
+.contain.prf .prfNav .bts.mdl .bt.fwing{width:50%;}
+.contain.prf .prfNav .bts.mdl .bt.more{}
 
 
 .prInfoList{}

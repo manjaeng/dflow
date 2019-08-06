@@ -29,14 +29,14 @@
 
 		if ( look_stat == "/look/look.jsp") {
 			// console.log(look_stat);
-			// $(".menubar .menu>li.look").addClass("on");
+			$(".menubar .menu>li.look").addClass("on");
 			$(".menubar .menu>li.look>a").on("click", function(){
-				// if( $(this).closest("li").hasClass("on") ){
-				// 	$(this).closest("li").removeClass("on");
-				// }else{
-				// 	$(this).closest("li").addClass("on");
-				// }
-				// return false;
+				if( $(this).closest("li").hasClass("on") ){
+					$(this).closest("li").removeClass("on");
+				}else{
+					$(this).closest("li").addClass("on");
+				}
+				return false;
 			});
 		}
 

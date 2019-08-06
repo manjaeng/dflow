@@ -21,25 +21,27 @@
 		</div>
 		<main id="contents" class="contents">
 			<section class="sec alim">
+
+
+
 				<ul class="list">
 					<li>
 						<ul>
-							<li><span class="tit">누가 날 팔로우할 때</span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
-							<li><span class="tit">패피의 중요한 소식이 있을 때</span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
-							<li><span class="tit">내 스타일을 누가 즐겨찾기했을 때 </span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
+							<li><span class="tit">내가 올린 LOOK에 대한 댓글 </span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
+							<li><span class="tit">내가 남긴 댓글에 대한 댓글</span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
+							<li><span class="tit">내가 COOL 누른 게시물의 댓글 </span> <div class="uiChk"><input type="checkbox" checked="checked"><em></em></div> </li>
 						</ul>
 					</li>
 					<li>
 						<ul>
-							<li><span class="tit">친구가 댓글을 남길 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
-							<li><span class="tit">즐겨찾기한 친구가 신규 룩을 업로드 했을 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
-							<li><span class="tit">팔로잉한 친구가 신규 룩을 업로드 했을 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
+							<li><span class="tit">타인이 나를 팔로우 할 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
+							<li><span class="tit">타인이 나의 LOOK에 COOL을 누를 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
 						</ul>
 					</li>
 					<li>
 						<ul>
-							<li><span class="tit">공지사항이 업로드 됐을 때</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
-							<li><span class="tit">이벤트 공지</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
+							<li><span class="tit">앱 공지사항</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
+							<li><span class="tit">앱 내 이벤트 알림</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
 						</ul>
 					</li>
 				</ul>

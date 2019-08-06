@@ -227,7 +227,7 @@ function popPrfOthers(){
 						<ol class="mds">
 							<li>
 								<a href="javascript:;" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/1" alt=""></div></span>
 									<span class="name">JENNY</span>
 									<span class="info">160cm, KOREA</span>
 								</a>
@@ -239,14 +239,14 @@ function popPrfOthers(){
 						<ol class="mds">
 							<li>
 								<a href="../look/look_upload.jsp" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/2" alt=""></div></span>
 									<span class="name">JENNY</span>
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/3" alt=""></div></span>
 									<span class="name">LUCKY</span>
 									<span class="info">153cm, JAPAN</span>
 								</a>
@@ -306,7 +306,7 @@ function popLookReg_open(){
 </article>
 <script>
 function popShare(){
-	
+
 	// ui.popLayer.open('popShare',{
 	// 	ocb:function(){
 	// 		// ui.popLayer.close('popPrfOthers');

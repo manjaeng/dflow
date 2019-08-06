@@ -175,10 +175,6 @@
 						<mark>/resources2/app/html/mypage/certiEmail.jsp</mark>
 					</li>
 					<li>
-						<h4>쿨</h4> <em>ing</em>
-						<mark>/resources2/app/html/mypage/cools.jsp</mark>
-					</li>
-					<li>
 						<h4>팔로워</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/follow.jsp</mark>
 					</li>
@@ -218,6 +214,14 @@
 					<li>
 						<h4>비밀번호 변경</h4> <em>ing</em>
 						<mark>/resources2/app/html/setting/pwMod.jsp</mark>
+					</li>
+					<li>
+						<h4>이메일 인증</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/certiEmail.jsp</mark>
+					</li>
+					<li>
+						<h4>쿨</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/cools.jsp</mark>
 					</li>
 					<li>
 						<h4>알림설정</h4> <em>ing</em>
