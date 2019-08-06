@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.co.thenet.fapee.user.service.impl.UserMapper">
 	
-	<select id="selectUserServiceInfo" resultType="FP_User" parameterType="string">
+	<select id="selectUserServiceInfo" resultType="FP_User" parameterType="egovMap">
 		SELECT  idKey
 		      , userId
 		      , password
@@ -20,9 +20,14 @@
 		      , status
 		  FROM FP_User
 		 WHERE 1 = 1
-		<if test="_parameter != null">
-		   AND email = #{_parameter}
-		</if>
+		 <if test='type != null'>
+		 	<if test='type == "id"'>
+		 		AND userId = #{value}
+		 	</if>
+		 	 <if test='type == "email"'>
+		 		AND email = #{value}
+		 	</if>
+		 </if>
 	</select>
 	
 	<update id="updateUserServiceFailCount">

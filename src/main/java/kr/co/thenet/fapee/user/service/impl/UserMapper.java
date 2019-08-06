@@ -5,11 +5,12 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.co.thenet.fapee.common.model.FP_User;
+import kr.co.thenet.fapee.common.util.EgovMap;
 
 @Mapper
 public interface UserMapper {
 	
-	FP_User selectUserServiceInfo(String userId) throws Exception;
+	FP_User selectUserServiceInfo(EgovMap egovMap) throws Exception;
 	
 	void updateUserServiceFailCount(Long idKey) throws Exception;
 	

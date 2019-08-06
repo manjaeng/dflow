@@ -31,7 +31,11 @@ public class UserServiceImpl implements UserService {
 		if (login.getEmail() != null && login.getEmail().length() != 0 &&
 			login.getPassword() != null && login.getPassword().length() != 0) {
 			
-			FP_User user = userMapper.selectUserServiceInfo(login.getEmail());
+			EgovMap map = new EgovMap();
+			map.put("type","email");
+			map.put("value",login.getEmail());
+			
+			FP_User user = userMapper.selectUserServiceInfo(map);
 
 			if (user == null) {
 				login.setHttpStatus(HttpStatus.NOT_FOUND);
@@ -82,8 +86,12 @@ public class UserServiceImpl implements UserService {
 			egovMap.put("text", "ID,PW Null");
 			return egovMap;
 		}
-			
-		FP_User user = userMapper.selectUserServiceInfo(login.getUserId());
+		
+		EgovMap map = new EgovMap();
+		map.put("type","id");
+		map.put("value",login.getUserId());
+		
+		FP_User user = userMapper.selectUserServiceInfo(map);
 
 		if (user == null) {
 			egovMap.put("status", "f");
