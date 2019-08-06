@@ -158,6 +158,10 @@
 						<mark>/resources2/app/html/look/look.jsp</mark>
 					</li>
 					<li>
+						<h4>상세</h4> <em>ing</em>
+						<mark>/resources2/app/html/look/look_view.jsp</mark>
+					</li>
+					<li>
 						<h4>등록</h4> <em>ing</em>
 						<mark>/resources2/app/html/look/look_upload.jsp</mark>
 					</li>

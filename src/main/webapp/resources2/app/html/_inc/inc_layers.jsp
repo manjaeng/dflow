@@ -295,10 +295,10 @@ function popLookReg_open(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="twitter"><a href="javascript:;" class="bt">트위터</a></li>
-					<li class="katalk"><a href="javascript:;" class="bt">카카오톡</a></li>
-					<li class="facebook"><a href="javascript:;" class="bt">페이스북</a></li>
-					<li class="kastory"><a href="javascript:;" class="bt">카카오스토리</a></li>
+					<li class="twitter"><a href="javascript:;" class="bt">TWITTER</a></li>
+					<li class="katalk"><a href="javascript:;" class="bt">KAKAOTALK</a></li>
+					<li class="facebook"><a href="javascript:;" class="bt">FACEBOOK</a></li>
+					<li class="kastory"><a href="javascript:;" class="bt">KAKAOSTORY</a></li>
 				</ul>	
 			</main>
 		</div>

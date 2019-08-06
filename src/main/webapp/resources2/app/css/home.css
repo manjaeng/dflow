@@ -223,7 +223,7 @@
 
 
 
-.contain.myinfo{}
+.contain.myinfo{padding-bottom:20px;}
 .contain.myinfo>.pbd>.pbt{ height:56px;}
 .contain.myinfo>.pbd>.pbt .bts .btn{ background:#70f5c4; border-color: #70f5c4; font-family:"BlairMd"; color: #000000; font-weight: normal;}
 .contain.myinfo .sec.myinfo{}
@@ -289,8 +289,3 @@
 .contain.myinfo .sec.coms .total{color: #666666;margin-top: 40px;font-size: 16px;}
 .contain.myinfo .sec.coms .total em{color: #000000; font-weight: bold;}
 
-
-
-body.mn.veiw{}
-body.mn.veiw .header .bts .hisback{display:block;}
-.contain.mn.veiw{}

@@ -10,10 +10,10 @@
 	
 	<!-- 컨텐츠 시작 -->
 	
-	<div id="contain" class="contain mn veiw">
+	<div id="contain" class="contain look view">
 		<main id="contents" class="contents">
-			<section class="secLk look mn">
-				<ul class="lookList">
+			<section class="secLk look">
+				<ul class="lookList" id="lookList">
 					<li><%@ include file="../look/uiLkSet.jsp" %></li>
 				</ul>
 			</section>
@@ -25,18 +25,14 @@
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
 
+
 	<script>
-
-
 	$(document).ready(function(){
-		ui.nav.act("home");  // 하단 메뉴 활성화
+		// ui.nav.act("look");  // 하단 메뉴 활성화
 	});
-
-	
 	</script>
-	<script>
+	
 
-    </script>
 	<!--// 컨텐츠 끝 -->
 	
 	<%@ include file="../_inc/menubar.jsp" %>

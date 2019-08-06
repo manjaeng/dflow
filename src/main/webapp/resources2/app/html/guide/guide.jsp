@@ -171,7 +171,6 @@
 				<div class="code">
 					<div class="bts">
 						<a class="btn" href="javascript:toast_sample1();">토스트1</a>
-						<a class="btn" href="javascript:toast_sample2();">토스트2</a>
 					</div>
 					<pre class="brush: js">
 						ui.toast({  // 토스트 창띄우기
@@ -208,15 +207,6 @@
 			var toast_sample1 = function(){
 				ui.toast({   // 토스트 창띄우기
 					msg:'<p>Link copied to clipboard</p>',
-					sec:1500
-				});
-			}
-			var toast_sample2 = function(){
-				ui.toast({   // 토스트 창띄우기
-					msg:'<p>토222스트메시지입니다.</p>',
-					cls:'type b',
-					sec:1500,
-					bot:50
 				});
 			}
 			</script>

@@ -123,13 +123,13 @@
 .uiLkSet>.tags .tg>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
 
 
-.contain.look .secLk.look{}
-.contain.look .secLk.look .lookList{}
-.contain.look .secLk.look .lookList>li{margin-top: 35px;}
-.contain.look .secLk.look .lookList>li:first-child{margin-top: 0px;}
+.contain.look.list .secLk.look{}
+.contain.look.list .secLk.look .lookList{}
+.contain.look.list .secLk.look .lookList>li{margin-top: 35px;}
+.contain.look.list .secLk.look .lookList>li:first-child{margin-top: 0px;}
 
-.contain.look .secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
-.contain.look .secLk.look ul.load + .uiLoadMore{margin-top:0px;}
+.contain.look.list .secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
+.contain.look.list .secLk.look ul.load + .uiLoadMore{margin-top:0px;}
 
 
 .contain.cool{}
@@ -291,3 +291,16 @@
 .contain.lkreg.cate .filters>li.text .ct .num{position:absolute;right: 16px;top: -32px;font-family:"BlairMd";color: #cccccc;font-size: 11px;}
 .contain.lkreg.cate .filters>li.text .ct .num.over{color: #70f5c4;}
 .contain.lkreg.cate .filters>li.text .ct .textarea{border: none;padding: 0px;}
+
+
+
+
+
+
+
+/* 상세 보기 */
+
+
+body.look.view{}
+body.look.view .header .bts .hisback{display:block;}
+.contain.look.view .lookList{ padding-bottom: 20px;}

@@ -32,7 +32,7 @@
 				</div>
 			</section>
 
-			<button type="button" onclick="testPicAdd()">추가</button>
+			<!-- <button type="button" onclick="testPicAdd()">추가</button> -->
 
 			<section class="steps st1">
 				<ul class="st">
@@ -66,7 +66,7 @@
 		$("#slideUploadPic .list").append( picHtml );
 	}
 	var testPicDel = function(els){
-		$(els).closest(".swiper-slide").remove();
+		$(els).closest(".swiper-slide").find("img , .bts").remove();
 	}
 
 	$(document).ready(function(){
