@@ -94,7 +94,7 @@
 .contain.findPw.rst .findForm .form .pw.now{margin-bottom: 38px;}
 .contain.findPw.rst .findForm .form .pw.new{}
 .contain.findPw.rst .findForm .form .pw.com{}
-
+.contain.findPw.rst .findForm .msgs{ font-size: 12px; margin-top: 10px;}
 
 /* 비밀번호찾기 완료 */
 .contain.findPw .poptents{}
@@ -304,6 +304,24 @@
 .contain.my.prf .prfeForm .memDis a{display: inline-block;padding:10px 0px;text-decoration: underline;/* text-align: right; */color: #999999;/* position: fixed; *//* right: 16px; *//* bottom: 70px; */}
 .contain.my.prf .botFixed{}
 .contain.my.prf .botFixed .btn{color: #000; font-weight: normal;}
+
+
+/* 프로필 Look 리스트 */
+.contain.my.list .secLk.look{}
+.contain.my.list .secLk.look .lookList{}
+.contain.my.list .secLk.look .lookList>li{margin-top: 35px;}
+.contain.my.list .secLk.look .lookList>li:first-child{margin-top: 0px;}
+.contain.my.list .secLk.look .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 106px );}
+.contain.my.list .secLk.look ul.load + .uiLoadMore{margin-top:0px;}
+body.my.list .header .bts .hisback{display:block;}
+
+
+
+
+
+
+
+
 
 .contain.alim{}
 .contain.alim .tabs{}
@@ -536,3 +554,17 @@
 .contain.ver .sec.vinfo .vers .ver .tt{font-size: 12px;color: #999999;}
 .contain.ver .sec.vinfo .vers .ver .vv{font-size: 23px; font-family:"BlairMd";}
 .contain.ver .sec.vinfo .vers .ver.now .vv{ color: #999999;}
+
+
+
+
+/* 비밀번호찾 재설정 */
+.contain.pwmod .poptents{}
+.contain.pwmod .findForm{padding:0px 16px 20px 16px;}
+.contain.pwmod .findForm .form{margin-top: 42px;}
+.contain.pwmod .findForm .form .pw{margin-bottom:10px;}
+.contain.pwmod .findForm .form .pw .input{ font-size: 12px;;}
+.contain.pwmod .findForm .form .pw.now{margin-bottom: 38px;}
+.contain.pwmod .findForm .form .pw.new{}
+.contain.pwmod .findForm .form .pw.com{}
+.contain.pwmod .findForm .msgs{ font-size: 12px; margin-top: 10px;}

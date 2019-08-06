@@ -80,7 +80,7 @@
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
 				</div>
-				<div class="bts">
+				<!-- <div class="bts">
 					<a href="javascript:;" class="bt fwer">FOLLOW</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
@@ -89,9 +89,9 @@
 					<a href="javascript:;" class="bt fwing">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>
+				</div> -->
 
-				<div class="bts">
+				<!-- <div class="bts">
 					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
 				</div>
@@ -102,7 +102,7 @@
 				<div class="bts">
 					<a href="javascript:;" class="bt fwing">ING</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>
+				</div> -->
 			</section>
 
 			<section class="prInfoList">

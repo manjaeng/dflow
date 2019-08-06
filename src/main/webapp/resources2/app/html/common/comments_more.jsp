@@ -32,7 +32,7 @@
 						<a href="../mypage/profile.jsp" class="name">MINSUNG KIM</a>
 						<div class="text">미니스커트내용을 입력해 주세요.</div>
 						<div class="info">
-							<div class="time">1시간</div>
+							<div class="time">1시간 전</div>
 						</div>
 					</div>
 				</div>

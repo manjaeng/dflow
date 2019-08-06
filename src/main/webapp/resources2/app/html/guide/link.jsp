@@ -140,14 +140,6 @@
 						<h4>탈퇴</h4> <em>ing</em>
 						<mark>/resources2/app/html/member/memDis.jsp</mark>
 					</li>
-					<li>
-						<h4>서비스이용약관</h4> <em>ing</em>
-						<mark>/resources2/app/html/member/policy1.jsp</mark>
-					</li>
-					<li>
-						<h4>개인정보취급방침</h4> <em>ing</em>
-						<mark>/resources2/app/html/member/policy2.jsp</mark>
-					</li>
 				</ul>
 			</li>
 			<li>
@@ -177,14 +169,6 @@
 					<li>
 						<h4>프로필</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/profile.jsp</mark>
-					</li>
-					<li>
-						<h4>설정</h4> <em>ing</em>
-						<mark>/resources2/app/html/setting/setting.jsp</mark>
-					</li>
-					<li>
-						<h4>알림설정</h4> <em>ing</em>
-						<mark>/resources2/app/html/setting/setting_alim.jsp</mark>
 					</li>
 					<li>
 						<h4>이메일인증</h4> <em>ing</em>
@@ -222,6 +206,23 @@
 						<h4>알림</h4> <em>ing</em>
 						<mark>/resources2/app/html/mypage/alim.jsp</mark>
 					</li>
+				</ul>
+			</li>
+			<li>
+				<h3><a href="javascript:;">셋팅</a></h3>
+				<ul>
+					<li>
+						<h4>설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/setting.jsp</mark>
+					</li>
+					<li>
+						<h4>비밀번호 변경</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/pwMod.jsp</mark>
+					</li>
+					<li>
+						<h4>알림설정</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/setting_alim.jsp</mark>
+					</li>
 					<li>
 						<h4>공지</h4> <em>ing</em>
 						<mark>/resources2/app/html/setting/notice.jsp</mark>
@@ -229,6 +230,14 @@
 					<li>
 						<h4>1:1문의</h4> <em>ing</em>
 						<mark>/resources2/app/html/setting/qna.jsp</mark>
+					</li>
+					<li>
+						<h4>서비스이용약관</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/policy1.jsp</mark>
+					</li>
+					<li>
+						<h4>개인정보취급방침</h4> <em>ing</em>
+						<mark>/resources2/app/html/setting/policy2.jsp</mark>
 					</li>
 					<li>
 						<h4>앱버전</h4> <em>ing</em>

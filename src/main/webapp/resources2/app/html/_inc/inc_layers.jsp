@@ -306,15 +306,16 @@ function popLookReg_open(){
 </article>
 <script>
 function popShare(){
-	ui.popLayer.open('popShare',{
-		ocb:function(){
-			// ui.popLayer.close('popPrfOthers');
-			console.log("공유하기 열림");
-		},
-		ccb:function(){
-			console.log("공유하기 닫힘");
-		}
-	});
+	
+	// ui.popLayer.open('popShare',{
+	// 	ocb:function(){
+	// 		// ui.popLayer.close('popPrfOthers');
+	// 		console.log("공유하기 열림");
+	// 	},
+	// 	ccb:function(){
+	// 		console.log("공유하기 닫힘");
+	// 	}
+	// });
 };
 </script>
 
@@ -435,10 +436,11 @@ function popPrfPicMod(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="twitter"><a href="javascript:;" class="bt">타입 c</a></li>
-					<li class="katalk"><a href="javascript:;" class="bt">카카오톡</a></li>
-					<li class="facebook"><a href="javascript:;" class="bt">페이스북</a></li>
-					<li class="kastory"><a href="javascript:;" class="bt">카카오스토리</a></li>
+					<li class="twitter"><a href="javascript:;" class="bt">TYPE c</a></li>
+					<li class="twitter"><a href="javascript:;" class="bt">TWITTER</a></li>
+					<li class="katalk"><a href="javascript:;" class="bt">KAKAOTALK</a></li>
+					<li class="facebook"><a href="javascript:;" class="bt">FACEBOOK</a></li>
+					<li class="kastory"><a href="javascript:;" class="bt">KAKAOSTORY</a></li>
 				</ul>
 			</main>
 		</div>

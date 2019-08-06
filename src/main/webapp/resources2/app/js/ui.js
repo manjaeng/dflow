@@ -381,7 +381,7 @@ var ui = {
 				this.using();
 			},
 			using:function(){
-				$(".contain.look.list .uiLkSet>.info .desc a.txt").each(function(){
+				$(".contain.list .uiLkSet>.info .desc a.txt").each(function(){
 					if( $(this).height() > 40 ){
 						$(this).closest(".desc").addClass("elips");
 					}else{
@@ -595,7 +595,7 @@ var ui = {
 	loading: { // 로딩중..
 		show: function (params) {
 			
-			console.log(params  , typeof params == "string");
+			// console.log(params  , typeof params == "string");
 			if ( typeof params == "string" ) { var txt =  params } else { var txt = '' }
 			var opt = $.extend({
 				msg:txt,

@@ -25,9 +25,9 @@
 					<li>
 						<span class="bt">계정관리</span>
 						<ul>
-							<li><a class="bt" href="../mypage/pw_mod.jsp">비밀번호 변경</a></li>
-							<li><a class="bt" href="../mypage/certiEmail.jsp">이메일 인증</a></li>
-							<li><a class="bt" href="../mypage/cools.jsp">COOL한 게시물</a></li>
+							<li><a class="bt" href="../setting/pwMod.jsp">비밀번호 변경</a></li>
+							<li><a class="bt" href="../setting/certiEmail.jsp">이메일 인증</a></li>
+							<li><a class="bt" href="../setting/cools.jsp">COOL한 게시물</a></li>
 						</ul>
 					</li>
 					<li>
@@ -42,8 +42,8 @@
 					<li>
 						<span class="bt">이용가이드</span>
 						<ul>
-							<li><a class="bt" href="../member/policy1.jsp">이용약관</a></li>
-							<li><a class="bt" href="../member/policy2.jsp">개인정보취급방침</a></li>
+							<li><a class="bt" href="../setting/policy1.jsp">이용약관</a></li>
+							<li><a class="bt" href="../setting/policy2.jsp">개인정보취급방침</a></li>
 						</ul>
 					</li>
 					<li>

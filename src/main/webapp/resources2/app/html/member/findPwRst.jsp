@@ -29,6 +29,7 @@
 						<input type="password" class="input" placeholder="비밀번호 확인">
 					</div>
 					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
+					<div class="msgs">* 영문숫자조합 6자 이상 조합으로 가능합니다. </div>
 				</div>
 			</div>
 			<div class="botFixed">
