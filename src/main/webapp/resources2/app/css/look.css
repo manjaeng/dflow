@@ -65,7 +65,7 @@
 
 .uiLkSet{}
 .uiLkSet>.slideLookPic{border: #000000 solid 2px;background: #000000;}
-.uiLkSet>.slideLookPic .pagination{width:auto;left: auto;padding: 7px 13px 7px 13px;font-family:"BlairMd";font-size: 11px;bottom: 20px;background: rgba(0,0,0,1.7);/* border-radius: 5px; */right: 18px;color: #ffffff;}
+.uiLkSet>.slideLookPic .pagination{width:auto;left: auto;padding: 7px 15px 7px 15px;font-family:"BlairMd";font-size: 11px;bottom: 20px;background: rgba(0,0,0,1.7);/* border-radius: 5px; */right: 18px;color: #ffffff;}
 .uiLkSet>.slideLookPic .slide{}
 .uiLkSet>.slideLookPic .slide .pic{display:block;padding-bottom: calc(4% / 3 * 100 );position:relative;}
 .uiLkSet>.slideLookPic .slide .pic img{object-fit: cover;position: absolute;left: 0;width: 100%;height: 100%;}
@@ -110,6 +110,7 @@
 .uiLkSet>.data .dl>li.cool .bt.on:before{ background-position-y: -30px;}
 .uiLkSet>.data .dl>li.like .bt{padding-left: 0px;}
 .uiLkSet>.data .dl>li.like .bt:before{display:none;}
+.uiLkSet>.data .dl>li.reply{margin-left: 5px;}
 .uiLkSet>.data .dl>li.reply .bt:before{ background-image: url(../images/common/ico_look_reply.png);}
 .uiLkSet>.data .dl>li.scrap{float:right;margin-right: -7px;}
 .uiLkSet>.data .dl>li.scrap .bt{font-size: 0px;padding: 0;width: 40px;margin-top: -2px;}

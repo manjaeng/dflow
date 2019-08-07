@@ -380,10 +380,6 @@
 					<div class="hBox"> 아코디언 UI Accd <button type="button" class="btnTog">버튼</button></div>
 					<div class="cBox">내용 내용 내용 <br> 내용</div>
 				</li>
-				<li class="except">
-					<div class="hBox"> 아코디언 UI Accd 제외 <button type="button" class="btnTog">버튼</button></div>
-					<div class="cBox">내용 내용 내용 <br> 내용</div>
-				</li>
 			</ul>
 			<p class="gap"></p>
 			<!-- 토글형 -->
@@ -394,10 +390,6 @@
 				</li>
 				<li>
 					<div class="hBox"> 아코디언 UI Tog <a class="btnTog" href="javascript:;">버튼</a></div>
-					<div class="cBox">내용 내용 내용 <br> 내용</div>
-				</li>
-				<li class="except">
-					<div class="hBox"> 아코디언 UI Tog 제외 <div class="btnTog" href="javascript:;">버튼</div></div>
 					<div class="cBox">내용 내용 내용 <br> 내용</div>
 				</li>
 			</ul>

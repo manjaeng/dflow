@@ -56,7 +56,6 @@ var ui = {
 		},
 		match:function(){
 			var $slider = $("#filtMatchSlider");
-			var bar = $slider.find("em.bar");
 			var handle = $slider.find(".range_amount");
 			$slider.slider({
 				// value: $slider.attr("data-amount") ,

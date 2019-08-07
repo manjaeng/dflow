@@ -74,26 +74,26 @@
 				</div> -->
 				<ul class="matchList" id="matchList">
 					<li>
-						<div class="item"><span class="img"><a href="./look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
+						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"><em class="n">7</em></span></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="./look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="./look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="./look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="./look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""></a></span><div class="num"><em class="n">7</em></div></div>
+						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""><span class="num"><em class="n">7</em></span></a></span></div>
 					</li>
 				</ul>
 				<div class="uiListMore">
-					<em></em>
-					<a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em></a>
+					<em></em><a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em></a>
 				</div>
 			</section>
+
 			<script>
 				var page_match = 0 ;
 				var appendStat_match = true ;
@@ -187,8 +187,7 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
-									<div class="num"><em class="n">7</em></div>
+									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"><em class="n">7</em></span></a></span>
 								</div>
 								<div class="user">
 									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
@@ -202,8 +201,7 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
-									<div class="num"><em class="n">7</em></div>
+									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""><span class="num"><em class="n">7</em></span></a></span>
 								</div>
 								<div class="user">
 									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
@@ -217,8 +215,7 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
-									<div class="num"><em class="n">7</em></div>
+									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""><span class="num"><em class="n">7</em></span></a></span>
 								</div>
 								<div class="user">
 									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
@@ -232,8 +229,7 @@
 						<li class="swiper-slide">
 							<div class="item">
 								<div class="thumb">
-									<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
-									<div class="num"><em class="n">7</em></div>
+									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""><span class="num"><em class="n">7</em></span></a></span>
 								</div>
 								<div class="user">
 									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
@@ -257,56 +253,47 @@
 				<ul class="hashList" id="hashList">
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/6" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/6" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/7" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/7" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/8" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/8" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 					<li>
 						<div class="item">
-							<span class="img"><a class="lk" href="./look_view.jsp"><img src="//placeimg.com/360/480/any/9" alt=""></a></span>
-							<div class="num"><em class="n">7</em></div>
+							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/9" alt=""><span class="num"><em class="n">7</em></span></a></span>
 						</div>
 					</li>
 				</ul>
@@ -329,12 +316,8 @@
 		ui.nav.act("home");  // 하단 메뉴 활성화
 		ui.refresh.init(testRefresh);  //  pulldown 새로고침
 	});
-
-	
 	</script>
-	<script>
 
-    </script>
 	<!--// 컨텐츠 끝 -->
 	
 	<%@ include file="../_inc/menubar.jsp" %>

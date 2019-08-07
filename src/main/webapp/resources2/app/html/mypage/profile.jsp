@@ -28,11 +28,11 @@
 				<div class="user">
 					<div class="photo">
 						<div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div>
-						<!-- <div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div> -->
+						<!-- 삭제 <div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div> -->
 					</div>
 					<div class="infos">
 						<div class="name">Bluemoon</div>
-						<!-- <div class="models">
+						<!-- 삭제 <div class="models">
 							<div class="uiDropDown noWidth sel" data-ui="val">
 								<div class="list">
 									<ul>
@@ -44,7 +44,6 @@
 									</ul>
 								</div>
 							</div>
-
 						</div> -->
 						<div class="summ">
 							<span class="nt">163cm</span>
@@ -68,41 +67,36 @@
 						하늘색과 트렌치 코트를 좋아합니다. 
 					</div>
 					<div class="url"><a href="javascript:;">www.beautyitem.com</a></div>
-					<!-- <div class="tag">
-						<a href="javascript:;" class="hash">#Casual</a> <a href="javascript:;" class="hash">#Elegant</a> <a href="javascript:;" class="hash">#Vintage</a> 
-					</div> -->
 				</div>
 			</section>
 
 			<section class="prfNav">
-				<!-- <div class="bts mdl">
+				
+				<!-- 모델 있으면 mdl -->
+				<!-- <div class="bts mdl"> 
 					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
 				</div>
+				
 				<div class="bts mdl">
-					<a href="javascript:;" class="bt fwer">FOLLOW</a>
+					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
+					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>
-				<div class="bts mdl">
-					<a href="javascript:;" class="bt fwing">ING</a>
-					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
+				</div> -->
+				
+				<!-- 팔로잉 중이면 ing -->
+				<!-- <div class="bts ing">
+					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
+					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
+				</div>  -->
+				<div class="bts">
+					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
+					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
 				</div>
 
-				<div class="bts">
-					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div> -->
-				<div class="bts">
-					<a href="javascript:;" class="bt fwer">FOLLOW</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>
-				<!-- <div class="bts">
-					<a href="javascript:;" class="bt fwing">ING</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div> -->
 			</section>
 
 			<section class="prInfoList">
@@ -123,7 +117,7 @@
 	var prfTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
 		var pageUrl={
 			thum:"./profile_look_thum.jsp",
-			list:"./profile_look_list.jsp",
+			list:"./profile_look_list_bak.jsp",
 		};
 		$("#prInfoCont").attr("data-tab", opt);
 		$.ajax({
@@ -203,6 +197,15 @@
 		}
 		$(window).scrollTop(0);
 	};
+
+	var testTogleFw = function(els){
+		if( $(els).closest(".bts").hasClass("ing") ){
+			$(els).closest(".bts").removeClass('ing');
+		}else{
+			$(els).closest(".bts").addClass('ing');
+		}
+	};
+
 
 	var testRefresh = function(){
 		console.log("댕겨서 새로고침");

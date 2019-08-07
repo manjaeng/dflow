@@ -61,7 +61,7 @@
 						$(".uiLoadMore").addClass("hide");
 						appendStat = false ;
 					}
-					ui.accd.init();
+					ui.accd.set();
 					$(".uiLoadMore").removeClass("active");
 					
 				},500);
@@ -72,26 +72,23 @@
 				$(".uiLoadMore").removeClass("active").addClass("error");
 				
 			}
-		});	
+		});
 	};
 
+	$(window).on("scroll", function() {
+
+		var docH = $(document).height();
+		var scr = $(window).scrollTop() + $(window).height() + 30;
+		// console.log(docH,scr);
+		if (docH <= scr  && appendStat == true) {
+			console.log("바닥sss");
+			addItemFnc();
+			appendStat = false;
+		}
+	});
+
 	$(document).ready(function(){
-
-		$(window).on("scroll", function() {
-
-			var docH = $(document).height();
-			var scr = $(window).scrollTop() + $(window).height() + 30;
-			// console.log(docH,scr);
-			if (docH <= scr  && appendStat == true) {
-				console.log("바닥sss");
-				addItemFnc();
-				appendStat = false;
-			}
-		});
-
 		addItemFnc();
-
-
 	});
 
 

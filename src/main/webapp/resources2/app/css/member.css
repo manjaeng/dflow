@@ -195,7 +195,7 @@
 .contain.prf .prfNav .bts .bt.model{display:flex;background-image:url(../images/common/ico_my_edit.png);background-size: 40px auto;font-size: 0px;}
 .contain.prf .prfNav .bts .bt.edit{width:75%;display:flex;}
 .contain.prf .prfNav .bts .bt.fwer{width:75%;background: #70f5c4;border-width: 0px 0px 0px 0px;}
-.contain.prf .prfNav .bts .bt.fwing{width:75%;background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;}
+.contain.prf .prfNav .bts .bt.fwing{width:75%;background: #ffffff;border-width: 1px 1px 1px 0px;color:#000;display: none;}
 .contain.prf .prfNav .bts .bt.more{background:url(../images/common/ico_my_more.png) no-repeat center;background-size: 40px auto;font-size: 0px;flex-grow: 6;}
 
 .contain.prf .prfNav .bts.mdl .bt.edit{width:50%;}
@@ -203,6 +203,10 @@
 .contain.prf .prfNav .bts.mdl .bt.fwer{width:50%;}
 .contain.prf .prfNav .bts.mdl .bt.fwing{width:50%;}
 .contain.prf .prfNav .bts.mdl .bt.more{}
+
+.contain.prf .prfNav .bts.ing .bt.fwer{display:none;}
+.contain.prf .prfNav .bts.ing .bt.fwing{display:flex;}
+
 
 
 .prInfoList{}

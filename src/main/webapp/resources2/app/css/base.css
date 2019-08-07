@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+@charset "utf-8";
 @font-face {
 	font-family: "NotoSansCJKkr";
 	font-style: 400;
@@ -252,4 +252,5 @@ input[type=number]{-moz-appearance:textfield;}
 .contain.ui p.gap{ height:10px; overflow:hidden; }
 .contain.ui h4{ font-size:13px; font-weight:bold; margin:5px 0 5px 0;}
 
+.contain.ui .uiItemList{margin:0px -10px -10px}
 
