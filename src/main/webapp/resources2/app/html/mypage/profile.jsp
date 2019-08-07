@@ -13,7 +13,6 @@
 			<div class="bts">
 				<a href="javascript:history.back();" class="hisback">뒤로</a>
 			</div>
-			<!-- <h1 class="tit">패피루키</h1> -->
 			<div class="set">
 				<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
 				<a class="bt conf" href="../setting/setting.jsp">설정</a>
@@ -28,23 +27,9 @@
 				<div class="user">
 					<div class="photo">
 						<div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div>
-						<!-- 삭제 <div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div> -->
 					</div>
 					<div class="infos">
 						<div class="name">Bluemoon</div>
-						<!-- 삭제 <div class="models">
-							<div class="uiDropDown noWidth sel" data-ui="val">
-								<div class="list">
-									<ul>
-										<li class="active"><button type="button" value="1">All</button></li>
-										<li><button type="button" value="2">Bluemoon</button></li>
-										<li><button type="button" value="3">Model A</button></li>
-										<li><button type="button" value="4">Model B</button></li>
-										<li><button type="button" value="5">Model C</button></li>
-									</ul>
-								</div>
-							</div>
-						</div> -->
 						<div class="summ">
 							<span class="nt">163cm</span>
 							<span class="nt">Korea</span>
@@ -55,10 +40,6 @@
 							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
 							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em>51</em></a>
 						</div>
-						<!-- <div class="bts">
-							<a class="bt more" href="javascript:;" onclick="popPrfOthers();">더보기</a>
-						</div> -->
-						<!-- <div class="foll"><label class="checkbox"><input type="checkbox"><span></span></label></div> -->
 					</div>
 				</div>
 				<div class="desc">
@@ -72,36 +53,24 @@
 
 			<section class="prfNav">
 				
-				<!-- 모델 있으면 mdl -->
-				<!-- <div class="bts mdl"> 
+				<!-- 내프로필이면.my  ||  모델 있으면.mdl ||  팔로우중이면 .ing  -->
+				<div class="bts my mdl">
 					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
-					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>
-				
-				<div class="bts mdl">
 					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
 					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div> -->
-				
-				<!-- 팔로잉 중이면 ing -->
-				<!-- <div class="bts ing">
-					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
-				</div>  -->
-				<div class="bts">
-					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
-					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
 				</div>
-
+				
 			</section>
 
-			<section class="prInfoList">
-				<div class="prInfoCont" id="prInfoCont">
+			<section class="prfList">
+				
+				<ul class="list" id="look_list"></ul>
+				<div class="uiLoadMore">
+					<em></em><button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
 				</div>
+				
 			</section>
 
 		</main>
@@ -114,50 +83,21 @@
 
 
 	<script>
-	var prfTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
-		var pageUrl={
-			thum:"./profile_look_thum.jsp",
-			list:"./profile_look_list_bak.jsp",
-		};
-		$("#prInfoCont").attr("data-tab", opt);
-		$.ajax({
-			type: "post",
-			url: pageUrl[opt],
-			dataType: "html",
-			success: function(html) {			
-				// $(".prInfoList>.tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
-				
-				$("#prInfoCont").html(html);
-				addItemFnc(opt);
-				$(".floatNav .bt.prf").removeClass("thum , list").addClass(opt);
-				$("#prInfoCont").removeClass("thum , list").addClass(opt);
-				appendStat = true ;
-				page = 1 ;
-				console.log( "타입 =" , opt );
-				ui.slides.lookPic.using();
-			}
-		});	
-	}
-
 
 	var page = 0 ;
 	var appendStat = true ;
-	var addItemFnc = function(opt){  //  탭 내용 아래 추가 하기
+	var addItemFnc = function(){  //  탭 내용 아래 추가 하기
 		appendStat = false ;
 		page ++ ;
 		$(".uiLoadMore").addClass("active");
-		var pageUrl={
-			thum:"./profile_look_thum_li.jsp",
-			list:"./profile_look_list_li.jsp",
-		};
 		$.ajax({
 			type: "post",
-			url: pageUrl[opt],
+			url: "./profile_look_thum_li.jsp",
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					$(".prInfoCont .tabCtn."+opt+">ul.list").append(html).addClass("load");
-					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
+					$("#look_list").append(html).addClass("load");
+					console.log("페이징 = " + page );
 					appendStat = true ;
 					if (page >= 3) {
 						console.log("끝");
@@ -181,22 +121,12 @@
 		var docH = $(document).height();
 		var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 		// console.log(docH,scr);
-		var tabAct = $("#prInfoCont").attr("data-tab");
 		if (docH <= scr  && appendStat == true) {
-			console.log("바닥입니다.",tabAct);
-			addItemFnc(tabAct);
+			console.log("바닥입니다.");
+			addItemFnc();
 			appendStat = false;
 		}
 	});
-
-	var togThumbMode = function(){
-		if( $(".floatNav .bt").hasClass("list") ){
-			prfTabFnc('thum');
-		}else{
-			prfTabFnc('list');
-		}
-		$(window).scrollTop(0);
-	};
 
 	var testTogleFw = function(els){
 		if( $(els).closest(".bts").hasClass("ing") ){
@@ -206,13 +136,12 @@
 		}
 	};
 
-
 	var testRefresh = function(){
 		console.log("댕겨서 새로고침");
 	}
 
 	$(document).ready(function(){
-		prfTabFnc('thum');  // 최초 탭 활성화
+		addItemFnc();
 		ui.nav.act("mypg");  // 하단 메뉴 활성화
 		ui.refresh.init(testRefresh);  //  pulldown 새로고침
 	});

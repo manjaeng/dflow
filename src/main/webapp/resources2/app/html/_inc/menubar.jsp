@@ -13,7 +13,7 @@
 			<li class="home"><a href="../home/home.jsp">HOME</a></li>
 			<li class="adds"><a href="javascript:;" onclick="popLookReg();">[<em>+</em>]</a></li>
 			<li class="look"><a href="../look/look.jsp" id="btnLookAct">LOOK</a></li>
-			<li class="mypg"><a href="../mypage/profile.jsp">MY</a></li>
+			<li class="mypg"><a href="../mypage/profile.jsp?my=false&mdl=trye">MY</a></li>
 		</ul>
 	</div>
 </nav>

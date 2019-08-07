@@ -49,7 +49,12 @@
 			window.location.href = "/resources2/app/html/mypage/profile.jsp";
 		});
 
-
+		if ( ui.param.my == "false") {
+			$(".contain.prf .prfNav .bts").removeClass("my");
+		}
+		if ( ui.param.mdl == "false") {
+			$(".contain.prf .prfNav .bts").removeClass("mdl");
+		}
 
 
 	},
