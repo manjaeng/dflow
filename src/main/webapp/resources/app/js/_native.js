@@ -1,6 +1,6 @@
-fp.native = {};
-fp.native.android = {};
-fp.native.ios = {};
+//fp.native = {};
+//fp.native.android = {};
+//fp.native.ios = {};
 
 
 function copyToClipboard(shareUrl) {
