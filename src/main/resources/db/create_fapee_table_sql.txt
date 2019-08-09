@@ -1,6 +1,5 @@
 DROP DATABASE fapee;
 CREATE DATABASE fapee;
-ALTER DATABASE fapee CHARACTER SET = utf8;
 USE fapee;
 
 CREATE TABLE FP_User (
@@ -25,9 +24,6 @@ CREATE TABLE FP_User (
 CREATE INDEX idx_userId_FP_User ON FP_User(userId);
 CREATE INDEX idx_userType_FP_User ON FP_User(userType);
 
-INSERT INTO `fp_user` (`idKey`, `userId`, `password`, `userType`, `userName`, `mobileNumber`, `email`, `loginTotalCount`, `loginFailCount`, `lastLoginDate`,`joinDate` , `loginIp`, `snsType`, `snsId`, `status`) VALUES
-	(1, 'admin', 'a27bd1680f0b780f5ac60932a3afc316a31791491a865113acaafc3ee4589241', '1', '어드민', '01022222222', '1', 4, 0, '2019-06-17 17:41:05','2019-06-17 17:41:05' ,'127.0.0.1', NULL, NULL, NULL);
-
 CREATE TABLE FP_Notice (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   userIdKey BIGINT NULL,
@@ -48,22 +44,19 @@ CREATE TABLE FP_UserFilter (
   userIdKey BIGINT NULL,
   gender CHAR(1) NULL,
   country VARCHAR(20) NULL,
-  filterImages VARCHAR(200) NULL,
-  favoriteStyle VARCHAR(500),
   PRIMARY KEY (idKey)
 );
 CREATE INDEX idx_userIdKey_FP_UserFilter ON FP_UserFilter(userIdKey);
 CREATE INDEX idx_deviceId_FP_UserFilter ON FP_UserFilter(deviceId);
 
-CREATE TABLE FP_Style (
-	idKey BIGINT NOT NULL AUTO_INCREMENT,
-	style VARCHAR(100) NULL
+CREATE TABLE FP_ChooseStyle (
+  userFilterIdKey BIGINT NOT NULL,
+  favoriteStyleIdKey BIGINT NOT NULL 
 );
 
-CREATE TABLE FP_UserSize (
-  
-);
-
-CREATE TABLE FP_Look (
-  
+CREATE TABLE FP_FavoriteStyle (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  seq INT NOT NULL,
+  style VARCHAR(20) NOT NULL,
+  PRIMARY KEY (idKey)
 );
