@@ -4,8 +4,8 @@
 <title></title>
 <meta name="format-detection" content="telephone=no">
 <meta name="theme-color" content="#ffffff">
-<link href="/resources2/app/images/common/favicon.ico" rel="shrtcut icon">
-<link href="/resources2/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
+<link href="/resources/app/images/common/favicon.ico" rel="shrtcut icon">
+<link href="/resources/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
 
 <!-- 개발에서 아래코드 삭제 -->
 <%@ page import="java.util.*" %>
@@ -21,19 +21,19 @@ String version =  yy  +"."+ mm +"."+ dd +"."+ hh +"."+ nn +"."+ ss ;
 %>
 
 <!-- CSS Import -->
-<link href="/resources2/app/css/jquery-ui.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/swiper.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/base.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/common.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/member.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/look.css?v=<%=version%>" rel="stylesheet">
-<link href="/resources2/app/css/home.css?v=<%=version%>" rel="stylesheet">
-<!-- <link href="/resources2/app/css/style.min.css?v=<%=version%>" rel="stylesheet"> -->
+<link href="/resources/app/css/jquery-ui.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/swiper.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/base.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/common.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/member.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/look.css?v=<%=version%>" rel="stylesheet">
+<link href="/resources/app/css/home.css?v=<%=version%>" rel="stylesheet">
+<!-- <link href="/resources/app/css/style.min.css?v=<%=version%>" rel="stylesheet"> -->
 
 
 <!-- Jqurey Core -->
-<script src="/resources2/app/js/jquery-3.4.1.js"></script>
-<script src="/resources2/app/js/jquery-ui.js"></script>
-<script src="/resources2/app/js/jquery.ui.touch-punch.js"></script>
+<script src="/resources/app/js/jquery-3.4.1.js"></script>
+<script src="/resources/app/js/jquery-ui.js"></script>
+<script src="/resources/app/js/jquery.ui.touch-punch.js"></script>
 
 
