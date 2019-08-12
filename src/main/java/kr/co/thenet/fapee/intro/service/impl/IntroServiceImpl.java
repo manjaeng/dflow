@@ -1,7 +1,8 @@
 package kr.co.thenet.fapee.intro.service.impl;
 
-import javax.annotation.Resource;
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
@@ -11,13 +12,13 @@ import kr.co.thenet.fapee.intro.service.IntroService;
 
 @Service
 public class IntroServiceImpl implements IntroService {
-	
-	@Resource
-	private IntroMapper introMapper;
 
+	@Autowired
+	private IntroMapper introMapper;
+	
 	@Override
-	public EgovMap selectIntroServiceInfo(int idKey) throws Exception {
-		return (EgovMap)introMapper.selectIntroServiceInfo(idKey);
+	public List<EgovMap> selectIntroFavoriteStyleList() throws Exception {
+		return introMapper.selectIntroFavoriteStyleList();
 	}
 
 }

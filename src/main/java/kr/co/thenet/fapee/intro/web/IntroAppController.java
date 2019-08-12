@@ -1,9 +1,9 @@
 package kr.co.thenet.fapee.intro.web;
 
-import javax.annotation.Resource;
+import java.util.List;
 
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,16 +14,11 @@ import kr.co.thenet.fapee.intro.service.IntroService;
 @RequestMapping("/rest/{version}/intro")
 public class IntroAppController {
 
-	@Resource
+	@Autowired
 	private IntroService introService;
 	
-	@GetMapping("/intro.do")
-	private String selectIntroServiceInfo(ModelMap model) throws Exception {
-		
-		int idKey = 1;
-		
-		EgovMap intro = introService.selectIntroServiceInfo(idKey);
-		model.addAttribute("intro", intro);
-		return "intro/intro";
+	@PostMapping("/favoriteStyle")
+	public List<EgovMap> favriteStyle() throws Exception {
+		return introService.selectIntroFavoriteStyleList();
 	}
 }

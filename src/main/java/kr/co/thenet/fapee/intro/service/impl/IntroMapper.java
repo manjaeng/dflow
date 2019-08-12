@@ -1,5 +1,7 @@
 package kr.co.thenet.fapee.intro.service.impl;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
@@ -7,5 +9,5 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 @Mapper
 public interface IntroMapper {
 	
-	EgovMap selectIntroServiceInfo(int idKey) throws Exception;
+	List<EgovMap> selectIntroFavoriteStyleList() throws Exception;
 }
