@@ -502,9 +502,9 @@ table.listA tbody tr:first-child td{ border-top-width:0; }
 
 
 /* 플로팅 탑버튼 */
-.floatNav{position:fixed;right: 20px;bottom: 0;z-index: 200;transition:all 0.4s;}
-.floatNav .bt{font-size: 0px;width: 31px;height: 45px;display: none;transform: translateY(200px);transition: all 0.4s;/* margin-top: 10px; *//* border-radius: 100%; */background-color:#000000;padding: 0;}
-.floatNav .bt::before{content:"";width: 22px;height: 22px;background-size: 22px auto;display: block;margin: auto;position: absolute;left: 5px;top: 12px;}
+.floatNav{position:fixed;right: 16px;bottom: 0;z-index: 200;transition:all 0.4s;}
+.floatNav .bt{font-size: 0px;width: 39px;height: 39px;display: none;transform: translateY(200px);transition: all 0.4s;/* margin-top: 10px; */border-radius: 100%;background-color: #b5b5b6;padding: 0;}
+.floatNav .bt::before{content:"";width: 20px;height: 20px;background-size: 20px auto;display: block;margin: auto;position: absolute;left: 10px;top: 10px;}
 .floatNav .bt.refresh::before{background-image: url(../images/common/ico_load.png); transition-delay: 0.0s; display:block;}
 .floatNav .bt.top{ transition-delay: 0.1s;}
 .floatNav .bt.top::before{background-image: url(../images/common/btn_top.png);}
@@ -589,7 +589,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .uiItemList>.list>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .uiItemList>.list>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .uiItemList>.list>li .item .bts .bt.del{}
-.uiItemList>.list>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
+.uiItemList>.list>li .item .num{width: 18px;height: 22px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
 .uiItemList>.list>li .item .num .n{font-size:0px;}
 .uiItemList>.list>li:nth-child(13n+1){clear: left;width: calc(66.6666% - 2px);float: left;}
 .uiItemList>.list>li:nth-child(13n+1) .item .img{padding-bottom: calc(4% / 3 * 99.8);}

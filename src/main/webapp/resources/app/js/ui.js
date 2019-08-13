@@ -865,7 +865,9 @@ var ui = {
 				watchOverflow:true,
 				pagination: {
 					// type:'fraction',
-					el: '.pagination'
+					el: '.pagination',
+					dynamicBullets:true,
+					//dynamicMainBullets:1
 				},
                 autoHeight:true,
 				autoplay:false,
@@ -899,7 +901,7 @@ var ui = {
 					// type:'fraction',
 					el: '.pagination',
 					dynamicBullets:true,
-					dynamicMainBullets:1
+					//dynamicMainBullets:1
 				},
                 autoHeight:true,
 				autoplay:false,

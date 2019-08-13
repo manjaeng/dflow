@@ -22,7 +22,7 @@
 
 .uiMnSet{}
 .uiMnSet>.slideMnPic{background:#70f5c4;padding: 0px 13px;}
-.uiMnSet>.slideMnPic .pagination{/* width:auto; */left: auto;padding: 7px 15px 7px 15px;font-family:"BlairMd";font-size: 11px;/* bottom: 20px; *//* background: rgba(0,0,0,1.7); *//* border-radius: 5px; *//* right: 34px; */color: #ffffff;}
+.uiMnSet>.slideMnPic .pagination{/* width:auto; *//* left: auto; */padding: 7px 15px 7px 15px;font-family:"BlairMd";font-size: 11px;/* bottom: 20px; *//* background: rgba(0,0,0,1.7); *//* border-radius: 5px; *//* right: 34px; */color: #ffffff;}
 .uiMnSet>.slideMnPic .slide{/* height:auto !important; */}
 .uiMnSet>.slideMnPic .slide>li{}
 .uiMnSet>.slideMnPic .slide .pic{display:block;padding-bottom: calc(4% / 3 * 100 );position:relative;}
@@ -67,7 +67,7 @@
 .secMn.match .matchList>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .secMn.match .matchList>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .secMn.match .matchList>li .item .bts .bt.del{}
-.secMn.match .matchList>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
+.secMn.match .matchList>li .item .num{width: 18px;height: 22px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
 .secMn.match .matchList>li .item .num .n{font-size: 0px;}
 .secMn.match .matchList>li:nth-child(5n){width:100%;}
 
@@ -130,7 +130,7 @@
 .secMn.hash .hashList>li .item .bts{position:absolute;right: 0px;top: 0px;z-index: 100;}
 .secMn.hash .hashList>li .item .bts .bt{width: 30px;height: 30px;background: url(../images/common/delete.png ) no-repeat center center;background-size: 10px auto;font-size: 0px;display:block;border-radius: 3px;}
 .secMn.hash .hashList>li .item .bts .bt.del{}
-.secMn.hash .hashList>li .item .num{width: 28px;height: 32px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
+.secMn.hash .hashList>li .item .num{width: 18px;height: 22px;position:absolute;right: 7px;bottom: 9px;z-index: 100;background: url(../images/common/ico_pic_num.png) no-repeat;background-size: 100% auto;opacity: 1;}
 .secMn.hash .hashList>li .item .num .n{font-size: 0px;}
 
 
