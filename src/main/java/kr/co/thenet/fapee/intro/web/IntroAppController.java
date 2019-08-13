@@ -3,7 +3,7 @@ package kr.co.thenet.fapee.intro.web;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,8 +17,16 @@ public class IntroAppController {
 	@Autowired
 	private IntroService introService;
 	
-	@PostMapping("/favoriteStyle")
-	public List<EgovMap> favriteStyle() throws Exception {
+	@GetMapping("/favoriteStyle")
+	public List<EgovMap> favoriteStyle() throws Exception {
 		return introService.selectIntroFavoriteStyleList();
+	}
+	
+	@GetMapping("/sizeCount")
+	public EgovMap sizeCount() throws Exception {
+		
+		EgovMap egovMap = new EgovMap();
+		
+		return introService.selectIntroSizeCount(egovMap);
 	}
 }

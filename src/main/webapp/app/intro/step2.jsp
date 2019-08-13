@@ -43,36 +43,10 @@
 		</main>
 	</div>
 
-
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<%@ include file="../common/inc_layers.jsp" %>
-	</div>
-
 	<script>
 	
-	var moveFunc = function() {
-		fp.data.intro.favoriteStyle = [];
-		
-		if($('.style input[type=checkbox]:checked').length == 0) {
-			alert('한개이상 선택');
-			return false;
-		}
-		
-		$('.style input[type=checkbox]:checked').each(function(i,e) {
-			fp.data.intro.favoriteStyle.push($(this).val());
-		});
-		
-		$.pjax({
-			url : './step3.jsp',
-			fragment : '#wrap',
-			container : '#wrap'
-		});
-		
-	}
-	
 	$.ajax({
-		type : 'post',
+		type : 'get',
 		url : '/rest/v1/intro/favoriteStyle',
 		success : function(data) {
 			$('.style .list').empty();
@@ -85,7 +59,8 @@
 				
 				$('.style .list').append(tmp);
 			});
-			
+		},
+		complete : function() {
 			$('.style input[type=checkbox]').click(function(e) {
 				if($('.style input[type=checkbox]:checked').length > 4) {
 					e.preventDefault();
@@ -95,6 +70,29 @@
 		}
 	});
 	
+	$(function() {
+		$('.fit a').click(function() {
+			
+			fp.data.intro.favoriteStyle = [];
+			
+			if($('.style input[type=checkbox]:checked').length == 0) {
+				alert('한개이상 선택');
+				return false;
+			}
+			
+			$('.style input[type=checkbox]:checked').each(function(i,e) {
+				fp.data.intro.favoriteStyle.push($(this).val());
+			});
+			
+			$.pjax({
+				url : './step3.jsp',
+				fragment : '#wrap',
+				container : '#wrap'
+			});
+			
+			return false;
+		});
+	});
 	
 	</script>
 	

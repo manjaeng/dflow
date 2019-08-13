@@ -8,4 +8,6 @@ public interface IntroService {
 
 	List<EgovMap> selectIntroFavoriteStyleList() throws Exception;
 
+	EgovMap selectIntroSizeCount(EgovMap egovMap) throws Exception;
+
 }

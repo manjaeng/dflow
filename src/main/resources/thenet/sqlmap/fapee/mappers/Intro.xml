@@ -9,6 +9,11 @@
 			  , style
 		  FROM FP_FavoriteStyle
 		 ORDER BY seq
-	</select>	
+	</select>
+	
+	<select id="selectIntroSizeCount" resultType="egovMap" parameterType="egovMap">
+		SELECT  count(*) as count
+		  FROM FP_UserFilter
+	</select>
 	
 </mapper>

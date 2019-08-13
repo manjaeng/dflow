@@ -25,7 +25,6 @@
 					<div class="msgs">
 						사이즈를 등록하여 <br>
 						당신의 핏을 찾아보세요. <br>
-						<em>30초면 충분합니다.</em>							
 					</div>
 					<div class="total">
 						현재 <em>2,429명</em>의 <br>
@@ -45,30 +44,30 @@
 		</main>
 	</div>
 
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<%@ include file="../common/inc_layers.jsp" %>
-	</div>
-
 	<script>
 	
-	var moveFunc = function() {
-		
-		$.pjax({
-			url : '/',
-			fragment : '#wrap',
-			container : '#wrap'
-		});
-	}
+	$.ajax({
+		type : 'get',
+		url : '/rest/v1/intro/sizeCount',
+		success : function(data) {
+			$('.total em').html(data.count+'명');
+		}
+	});
 	
-	$(document).ready(function(){
+	
+	$(function() {
+		$('.fit a').click(function() {
+		
+			alert('return false');
+			
+			return false;
+		});
 		
 	});
+	
 	</script>
 	
 	<!--// 컨텐츠 끝 -->
-	
-
 	
 </div>
 

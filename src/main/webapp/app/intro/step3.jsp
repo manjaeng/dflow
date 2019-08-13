@@ -52,11 +52,6 @@
 		</main>
 	</div>
 
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<%@ include file="../common/inc_layers.jsp" %>
-	</div>
-
 	<script>
 	var testPicAdd = function(){
 		var picHtml = '<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>';
@@ -67,10 +62,6 @@
 	}
 
 	</script>
-	
-	<!--// 컨텐츠 끝 -->
-	
-
 	
 </div>
 

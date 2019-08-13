@@ -67,7 +67,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./step2.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a  href="./step2.jsp" class="btn xl b fill btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>
@@ -75,35 +75,32 @@
 		</main>
 	</div>
 
-
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<%@ include file="../common/inc_layers.jsp" %>
-	</div>
 	<script>
-	var moveFunc = function() {
-		
-		var deviceId = '1a2a3a4a5a6a';
-		
-		fp.data.intro = {
-			deviceId : deviceId,
-			gender : $('input[name="gender"]:checked').val(),
-			nation : $('.nation .select').val().toLowerCase()
-		};
-		
-		$.pjax({
-			url : './step2.jsp',
-			fragment : '#wrap',
-			container : '#wrap'
+	
+	$(function() {
+		$('.fit a').click(function() {
+			var deviceId = '1a2a3a4a5a6a';
+			
+			fp.data.intro = {
+				deviceId : deviceId,
+				gender : $('input[name="gender"]:checked').val(),
+				nation : $('.nation .select').val().toLowerCase()
+			};
+			
+			$.pjax({
+				url : './step2.jsp',
+				fragment : '#wrap',
+				container : '#wrap'
+			});
+			
+			return false;
 		});
-	}
+		
+	});
 	
 	</script>
-	
 	<!--// 컨텐츠 끝 -->
-	
 </div>
-
 
 <%@ include file="../common/bottom.jsp" %>
 <%@ include file="../common/scripts.jsp" %>

@@ -21,4 +21,9 @@ public class IntroServiceImpl implements IntroService {
 		return introMapper.selectIntroFavoriteStyleList();
 	}
 
+	@Override
+	public EgovMap selectIntroSizeCount(EgovMap egovMap) throws Exception {
+		return introMapper.selectIntroSizeCount(egovMap);
+	}
+
 }
