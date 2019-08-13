@@ -17,9 +17,9 @@ public class IntroAppController {
 	@Autowired
 	private IntroService introService;
 	
-	@GetMapping("/favoriteStyle")
-	public List<EgovMap> favoriteStyle() throws Exception {
-		return introService.selectIntroFavoriteStyleList();
+	@GetMapping("/styleList")
+	public List<EgovMap> styleList() throws Exception {
+		return introService.selectIntroStyleList();
 	}
 	
 	@GetMapping("/sizeCount")

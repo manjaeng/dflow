@@ -9,7 +9,7 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 @Mapper
 public interface IntroMapper {
 	
-	List<EgovMap> selectIntroFavoriteStyleList() throws Exception;
+	List<EgovMap> selectIntroStyleList() throws Exception;
 
 	EgovMap selectIntroSizeCount(EgovMap egovMap) throws Exception;
 }

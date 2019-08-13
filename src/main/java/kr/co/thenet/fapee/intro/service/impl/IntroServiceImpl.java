@@ -17,8 +17,8 @@ public class IntroServiceImpl implements IntroService {
 	private IntroMapper introMapper;
 	
 	@Override
-	public List<EgovMap> selectIntroFavoriteStyleList() throws Exception {
-		return introMapper.selectIntroFavoriteStyleList();
+	public List<EgovMap> selectIntroStyleList() throws Exception {
+		return introMapper.selectIntroStyleList();
 	}
 
 	@Override

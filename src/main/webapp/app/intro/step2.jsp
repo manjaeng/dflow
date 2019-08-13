@@ -47,7 +47,7 @@
 	
 	$.ajax({
 		type : 'get',
-		url : '/rest/v1/intro/favoriteStyle',
+		url : '/rest/v1/intro/styleList',
 		success : function(data) {
 			$('.style .list').empty();
 			
@@ -73,7 +73,7 @@
 	$(function() {
 		$('.fit a').click(function() {
 			
-			fp.data.intro.favoriteStyle = [];
+			fp.data.intro.style = [];
 			
 			if($('.style input[type=checkbox]:checked').length == 0) {
 				alert('한개이상 선택');
@@ -81,7 +81,7 @@
 			}
 			
 			$('.style input[type=checkbox]:checked').each(function(i,e) {
-				fp.data.intro.favoriteStyle.push($(this).val());
+				fp.data.intro.style.push($(this).val());
 			});
 			
 			$.pjax({

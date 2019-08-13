@@ -3,17 +3,17 @@
 
 <mapper namespace="kr.co.thenet.fapee.intro.service.impl.IntroMapper">
 
-	<select id="selectIntroFavoriteStyleList" resultType="egovMap">
+	<select id="selectIntroStyleList" resultType="egovMap">
 		SELECT  idkey
 			  , seq
 			  , style
-		  FROM FP_FavoriteStyle
+		  FROM fp_style
 		 ORDER BY seq
 	</select>
 	
 	<select id="selectIntroSizeCount" resultType="egovMap" parameterType="egovMap">
-		SELECT  count(*) as count
-		  FROM FP_UserFilter
+		SELECT count(*) as count
+		  FROM fp_user_filter
 	</select>
 	
 </mapper>
