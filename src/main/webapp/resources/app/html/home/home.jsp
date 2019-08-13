@@ -16,13 +16,15 @@
 			
 			<section class="secMn tops">
 				<div class="hdt"><p>Clothes <br>That fit You</p></div>
+				<!--
 				<div class="bts">
 					<a href="javascript:popSize();" class="btSize">
 						<span>사이즈를 등록하시면 <br>최적의 핏을 찾을 수 있습니다. </span>
 					</a>
 				</div>
+				-->
 			</section>
-
+ 			
 
 			<section class="secMn post">
 				<ul class="postList" id="postList">
@@ -124,6 +126,7 @@
 				};
 			</script>
 
+			<!-- 삭제 
 			<section class="secMn newb">
 				<div class="hdt">
 					<h3>Welcome to Fapee</h3>
@@ -243,6 +246,7 @@
 					</ul>
 				</div>
 			</section>
+			-->
 
 
 			<section class="secMn hash">

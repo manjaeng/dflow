@@ -26,8 +26,8 @@
 						<span class="bt">계정관리</span>
 						<ul>
 							<li><a class="bt" href="../setting/pwMod.jsp">비밀번호 변경</a></li>
-							<li><a class="bt" href="../setting/certiEmail.jsp">이메일 인증</a></li>
-							<li><a class="bt" href="../setting/cools.jsp">COOL한 게시물</a></li>
+							<!-- <li><a class="bt" href="../setting/certiEmail.jsp">이메일 인증</a></li> -->
+							<!-- <li><a class="bt" href="../setting/cools.jsp">COOL한 게시물</a></li> -->
 						</ul>
 					</li>
 					<li>

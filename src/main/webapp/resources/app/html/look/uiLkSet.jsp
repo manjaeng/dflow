@@ -7,6 +7,9 @@
 				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/3" alt="사진"></span></a></li>
 				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/4" alt="사진"></span></a></li>
 				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/5" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/6" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/7" alt="사진"></span></a></li>
+				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/8" alt="사진"></span></a></li>
 			</ul>
 			<div class="pagination"></div>
 		</div>						

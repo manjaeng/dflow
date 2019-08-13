@@ -864,7 +864,7 @@ var ui = {
 				observeParents: true,
 				watchOverflow:true,
 				pagination: {
-					type:'fraction',
+					// type:'fraction',
 					el: '.pagination'
 				},
                 autoHeight:true,
@@ -896,15 +896,17 @@ var ui = {
 				observeParents: true,
 				watchOverflow:true,
 				pagination: {
-					type:'fraction',
-					el: '.pagination'
+					// type:'fraction',
+					el: '.pagination',
+					dynamicBullets:true,
+					dynamicMainBullets:1
 				},
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
 				zoom: true,
 				lazy: true,
-				loop: true
+				loop: false
             },
 			slide:[],
             using: function() {
@@ -917,7 +919,7 @@ var ui = {
 						_this.slide[idx] = new Swiper( $this , _this.opt );
 						// console.log(_this.slide[i]);
                     }
-				});
+				});				
 			}
         },
 		sample1:{  //  샘플1

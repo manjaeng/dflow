@@ -25,7 +25,7 @@
 					<div class="msgs">
 						사이즈를 등록하여 <br>
 						당신의 핏을 찾아보세요. <br>
-						<em>30초면 충분합니다.</em>							
+						<!-- <em>30초면 충분합니다.</em>	 -->						
 					</div>
 					<div class="total">
 						현재 <em>2,429명</em>의 <br>
@@ -38,7 +38,7 @@
 				<div class="in">
 					<div class="btnSet fit">
 						<a href="../home/home.jsp" class="btn xl e btnLater">LATER</a>
-						<a href="javascript:ui.loading.show('사이즈 등록 화면으로 <br> 이동합니다.');" class="btn xl b fill btnStart">START</a>
+						<a href="javascript:ui.loading.show();" class="btn xl b fill btnStart">START</a>
 					</div>
 				</div>
 			</div>

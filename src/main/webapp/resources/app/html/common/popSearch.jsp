@@ -80,16 +80,16 @@ var popSearch = function(){
 $(document).ready(function(){
 	// popSearch();
 
-	$(document).on("keyup","#input_kwd",function (e) {
-		if( e.keyCode == 13 ) {
-			window.location.href = '../common/searchResult.jsp';
-		}
-	});
-	$(document).on("click","#btSchCancel",function (e) {
+	// $(document).on("keyup","#input_kwd",function (e) {
+	// 	if( e.keyCode == 13 ) {
+	// 		window.location.href = '../common/searchResult.jsp';
+	// 	}
+	// });
+	// $(document).on("click","#btSchCancel",function (e) {
 
-		$("#input_kwd").val("")
+	// 	$("#input_kwd").val("")
 
-	});
+	// });
 
 
 

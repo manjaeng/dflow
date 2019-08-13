@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Swiper 4.5.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * http://www.idangero.us/swiper/
@@ -326,6 +326,7 @@ button.swiper-pagination-bullet {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   white-space: nowrap;
+  width: auto !important;
 }
 .swiper-container-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet {
   -webkit-transition: 200ms left, 200ms -webkit-transform;

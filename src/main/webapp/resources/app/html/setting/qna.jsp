@@ -22,7 +22,7 @@
 			
 			<div class="sec forms">
 				<ul class="form">
-					<li class="cate">
+					<!-- <li class="cate">
 						<div class="dt">
 							<select class="select">
 								<option>회원정보 문의</option>
@@ -31,7 +31,7 @@
 								<option>기타 문의</option>
 							</select>
 						</div>
-					</li>
+					</li> -->
 					<li class="subj">
 						<div class="dt">
 							<input type="text" class="input" placeholder="TITLE">

@@ -45,7 +45,7 @@ input.input:not([type=radio]):not([type=radio]):not([readonly]):not([disabled]):
 .textarea.bdn{border:none;color: #101010;}
 
 input.input.no{/* color: #ff414d; */border-bottom-color: #ff414d;}
-input[type="password"]{ color: #e0e0e0; }
+input[type="password"]{/* color: #e0e0e0; */}
 
 input[disabled] + span{ color: #aaaaaa; }
 
@@ -108,7 +108,7 @@ select::-ms-expand {display:none;}
 
 /* placeholder */
 .uiIptPlc{position:relative;padding-top: 20px;}
-.uiIptPlc .plc{position:absolute;top: 29px;font-size: 15px;transition: all 0.2s;color: #999;font-family:"BlairMd";text-transform: uppercase;}
+.uiIptPlc .plc{position:absolute;top: 29px;font-size: 15px;transition: all 0.2s;color: #999;font-family: "BlairMd","NotoSansCJKkr";text-transform: uppercase;}
 .uiIptPlc .input{    /* border: none; */}
 .uiIptPlc .input:focus{border-bottom-color: #70f5c4;border-bottom-width: 2px;}
 .uiIptPlc .input:focus + .plc{color: #70f5c4;top: 8px;font-size: 12px;}
@@ -360,7 +360,7 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .header .logo{position:absolute;left: 0px;top: 0px;}
 .header .logo a{display:block;font-family:"BlairMd";font-size: 0;height: 56px;line-height: 56px;padding: 0 0px;width: 87px;background: url(../images/common/logo.png?) no-repeat;background-size: 100% auto;}
 .header .menu{position:absolute;right: 16px;top: calc(13px + env(safe-area-inset-top) );display:flex;}
-.header .menu .bt{width:36px;height:36px;display:block;margin-left: 9px;font-size: 0px;background: no-repeat;background-size: 100% auto;}
+.header .menu .bt{width:36px;height:36px;display:block;margin-left: -1px;font-size: 0px;background: no-repeat;background-size: 100% auto;}
 .header .menu .bt.size{ background-image: url(../images/common/top_menu_size.png)}
 .header .menu .bt.filter{ background-image: url(../images/common/top_menu_filter.png)}
 .header .bts{position:absolute;left:0px;right: 0px;top: calc(10px + env(safe-area-inset-top) );}
@@ -401,10 +401,10 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .pageHd .bts .hisback{position:absolute;left: 10px; top: 0px; width:44px;height:44px;display:block;background:url(../images/common/hisback.png) no-repeat;background-size:100% auto;font-size:0px;}
 .pageHd .bts .close{position:absolute;right: 5px; top: 0px; width:44px;height:44px;display:block;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;font-size:0px;}
 .pageHd .tit{margin: 0 50px;font-size: 18px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;font-family: "BlairMd","NotoSansCJKkr";text-align: center;display: block;width: 100%;text-transform: uppercase;}
-.pageHd .set{position:absolute;right: 10px;top: calc(9px + env(safe-area-inset-top) );overflow:hidden;}
-.pageHd .set .bt{width:44px;height:44px;background: no-repeat;background-size:100% auto;font-size:0px;float: left;}
+.pageHd .set{position:absolute;right: 15px;top: calc(15px + env(safe-area-inset-top) );overflow:hidden;}
+.pageHd .set .bt{width: 32px;height: 32px;background: no-repeat;background-size:100% auto;font-size:0px;float: left;}
 .pageHd .set .bt.alim{background-image: url(../images/common/ico_my_alim.png); position:relative; }
-.pageHd .set .bt.alim.on{ background-position-y: -50px;}
+.pageHd .set .bt.alim.on{background-position-y: -50px;}
 .pageHd .set .bt.alim.on:after{/* width:6px;height:6px;background:#ff0000;content:"";position:absolute;right: 7px;top: 13px;border-radius: 100%; */}
 .pageHd .set .bt.conf{background-image: url(../images/common/ico_my_set.png) }
 .pageHd .set .bt.more{background-image: url(../images/common/ico_my_more.png) }
@@ -647,7 +647,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .popToast{position:fixed;left:0px;right:0px;transform: translateY(150%);bottom:0px;transition: all 0.4s;opacity: 0;text-align:center;overflow-y:auto;z-index:1500;outline:none;}
 .popToast.on{opacity: 1;transform: translateY(0);}
 .popToast>.pbd{color:#ffffff;padding: 0px 0px;}
-.popToast>.pbd>.pct{padding: 14px 18px 14px 17px;background-color:#000000;font-size: 12px;line-height: 19px;text-align:center;border-radius: 0px;display: block;}
+.popToast>.pbd>.pct{padding: 14px 18px 14px 17px;background-color: #70f5c4;font-size: 12px;line-height: 19px;text-align:center;border-radius: 0px;display: block;color: #000000;}
 .popToast.type.a>.pbd>.pct{background-color:#468d42;}
 .popToast.type.b>.pbd>.pct{background-color:#b88c33;}
 .popToast.type.c>.pbd>.pct{background-color:#af5c4b;}
@@ -829,9 +829,14 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .swiper-container .navigation .nav.next{right:10px;background-position:right 0px}
 .swiper-container .navigation .nav.swiper-button-disabled{background-position-y:-70px}
 .swiper-container .pagination{position:absolute;right:0px;left:0px;bottom: 10px;text-align:center;z-index:100;}
-.swiper-container .pagination .swiper-pagination-bullet{width:10px;height:10px;background:none !important;opacity:1;padding: 2px;margin: 0 2px;}
-.swiper-container .pagination .swiper-pagination-bullet:after{content:"";width: 6px;height: 6px;margin: auto;display:block;border-radius:10px;border:#000000 solid 1px;background-color:#000000;box-sizing:border-box;opacity:0.2;}
-.swiper-container .pagination .swiper-pagination-bullet-active:after{opacity:1}
+.swiper-container .pagination .swiper-pagination-bullet{width:10px;height:10px;background:none !important;opacity:1;padding: 2px;margin: 0 2px;left: auto !important;}
+.swiper-container .pagination .swiper-pagination-bullet:after{content:"";width: 6px;height: 6px;margin: auto;display:block;border-radius: 10px;/* border:#000000 solid 1px; */background-color: rgba(150,150,150,1.5);box-sizing:border-box;opacity:1;}
+.swiper-container .pagination .swiper-pagination-bullet-active:after{opacity:1;background-color: #70f5c4;background-color: #000;}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{transform: scale(0.7);}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{transform: scale(0.5);}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{transform: scale(0.7);}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next{transform: scale(0.5);}
+
 /* 샘플1 */
 .slideSample1{position:relative;/* background-color:#f8f8f8; */}
 .slideSample1 .hdt{}

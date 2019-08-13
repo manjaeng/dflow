@@ -21,9 +21,9 @@
 			
 			<div class="sec formSch">
 				<div class="sch">
-					<input type="search" class="input key" placeholder="#@" value="TOMBOY">
+					<input type="search" class="input key" id="input_kwd" placeholder="#@" value="TOMBOY">
 					<a href="javascript:;" class="bt sch">SEARCH</a>
-					<a href="javascript:;" class="bt cancel">CANCEL</a>					
+					<a href="javascript:;" class="bt cancel" id="btSchCancel">CANCEL</a>					
 				</div>
 			</div>
 
@@ -150,7 +150,18 @@
 
 	});
 
+	$(document).ready(function(){
+		ui.nav.act("look");  // 하단 메뉴 활성화
+	});
 
+	$(document).on("keyup","#input_kwd",function (e) {
+		if( e.keyCode == 13 ) {
+			window.location.href = '../common/searchResult.jsp';
+		}
+	});
+	$(document).on("click","#btSchCancel",function (e) {
+		$("#input_kwd").val("")
+	});
 
 	</script>
 	

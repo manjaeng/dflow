@@ -224,7 +224,7 @@
 .contain.setting .sec.mysets .list>li>ul{border-top: #000000 solid 1px;padding: 10px 30px 10px 31px;}
 .contain.setting .sec.mysets .list>li>ul>li{ position:relative;}
 .contain.setting .sec.mysets .list>li>ul>li>.bt{color: #666666;font-size: 13px;display:block;padding: 5px 0;position: relative;}
-.contain.setting .sec.mysets .list>li>ul>li>.bt .ver{color: #aaa;position:absolute;right: 0px;}
+.contain.setting .sec.mysets .list>li>ul>li>.bt .ver{color: #aaa;position:absolute;right: 0px;font-family: "BlairMd","NotoSansCJKkr";font-size: 11px;top: 6px;}
 
 
 .uiPrfeSet.b{padding-top: 40px;}
@@ -507,9 +507,11 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.pwmod .poptents{}
 .contain.pwmod .findForm{padding:0px 16px 20px 16px;}
 .contain.pwmod .findForm .form{margin-top: 42px;}
-.contain.pwmod .findForm .form .pw{margin-bottom:10px;}
-.contain.pwmod .findForm .form .pw .input{ font-size: 12px;;}
-.contain.pwmod .findForm .form .pw.now{margin-bottom: 38px;}
+.contain.pwmod .findForm .form .pw{margin-bottom: 0px;}
+.contain.pwmod .findForm .form .pw .input{/* font-size: 12px; */}
+.contain.pwmod .findForm .form .uiIptPlc .plc{font-size: 13px;}
+.contain.pwmod .findForm .form .uiIptPlc .input:focus + .plc{font-size: 11px;}
+.contain.pwmod .findForm .form .pw.now{margin-bottom: 28px;}
 .contain.pwmod .findForm .form .pw.new{}
 .contain.pwmod .findForm .form .pw.com{}
 .contain.pwmod .findForm .msgs{ font-size: 12px; margin-top: 10px;}

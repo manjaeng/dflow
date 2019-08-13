@@ -82,6 +82,19 @@
 	$(document).ready(function(){
 		ui.nav.act("look");  // 하단 메뉴 활성화
 	});
+
+	$(document).on("keyup","#input_kwd",function (e) {
+		if( e.keyCode == 13 ) {
+			window.location.href = '../common/searchResult.jsp';
+		}
+	});
+	$(document).on("click pageshow","#btSchCancel",function (e) {
+		$("#input_kwd").val("");
+	});
+	$(window).on("pageshow", function(e){ 
+		console.log("sfdd");
+		$("#input_kwd").val("");
+	});
 	</script>
 	
 	<!--// 컨텐츠 끝 -->

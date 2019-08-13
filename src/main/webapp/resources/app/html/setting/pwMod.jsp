@@ -23,14 +23,17 @@
 			<div class="findForm">
 				
 				<div class="form">
-					<div class="pw now">
-						<input type="password" class="input" placeholder="현재비밀번호 입력">
+					<div class="uiIptPlc pw now">
+						<input type="password" class="input">
+						<span class="plc">현재비밀번호 입력</span>
 					</div>
-					<div class="pw new">
-						<input type="password" class="input" placeholder="변경비밀번호 입력">
+					<div class="uiIptPlc pw new">
+						<input type="password" class="input">
+						<span class="plc">변경비밀번호 입력</span>
 					</div>
-					<div class="pw com">
-						<input type="password" class="input" placeholder="비밀번호 확인">
+					<div class="uiIptPlc pw com">
+						<input type="password" class="input">
+						<span class="plc">비밀번호 확인</span>
 					</div>
 					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
 					<div class="msgs">* 영문숫자조합 6자 이상 조합으로 가능합니다. </div>

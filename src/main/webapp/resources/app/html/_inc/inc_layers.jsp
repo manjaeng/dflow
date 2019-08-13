@@ -16,12 +16,12 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">LOOK EDIT</a></li>
-					<li class="st"><a href="javascript:;" class="bt">LOOK DELETE</a></li>
-					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
+					<li><a href="javascript:;" class="bt">EDIT</a></li>
+					<li class="st"><a href="javascript:;" class="bt">DELETE</a></li>
 					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY LINK</a></li>
 					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY PROFILE LINK</a></li>
 					<li><a href="javascript:;" class="bt" onclick="popShare(); ui.popLayer.close('popOthers');">SHARE</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
 				</ul>
 			</main>
 		</div>
@@ -191,9 +191,9 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
 					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
 					<li><a href="javascript:;" onclick="popShare(); ui.popLayer.close('popPrfOthers');" class="bt">SHARE</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
 				</ul>	
 			</main>
 		</div>
