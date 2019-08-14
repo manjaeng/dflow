@@ -705,7 +705,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .popLayer.c .phd>.in{ position:relative;}
 .popLayer.c .phd .tit{ font-size: 18px;}
 .popLayer.c .phd button.close{ background-image: url(../images/common/popLayerClose.png)}
-.popLayer.c .pct{/* max-height: 240px; */min-height: 70px;}
+.popLayer.c .pct{/* max-height: 240px; *//* min-height: 70px; */}
 .popLayer.c .pct .poptents{}
 .popLayer.c .pbt{ min-height: auto;}
 .popLayer.c .pbt .bots{/* position:fixed; *//* width: auto; *//* right: 0; */}

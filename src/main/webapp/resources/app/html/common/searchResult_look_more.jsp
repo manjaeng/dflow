@@ -25,7 +25,7 @@
 </li>
 <li class="box">
 	<div class="item">
-		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/6556" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/6556" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li class="box">
@@ -45,7 +45,7 @@
 </li>
 <li class="box">
 	<div class="item">
-		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/10556" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/10556" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li class="box">
@@ -60,6 +60,6 @@
 </li>
 <li class="box">
 	<div class="item">
-		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/13556" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/720/960/any/13556" alt=""><span class="num"></span></a></span>
 	</div>
 </li>

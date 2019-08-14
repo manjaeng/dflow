@@ -26,7 +26,7 @@
 </li>
 <li>
 	<div class="item">
-		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/6" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/6" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li>
@@ -46,21 +46,21 @@
 </li>
 <li>
 	<div class="item">
-		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/10" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/10" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li>
 	<div class="item">
-		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/11" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/11" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li>
 	<div class="item">
-		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/12" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/12" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
 <li>
 	<s class="item">
-		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/13" alt=""><span class="num"><em class="n">7</em></span></a></span>
+		<span class="img"><a href="javascript:;"><img src="//placeimg.com/640/640/any/13" alt=""><span class="num"></span></a></span>
 	</div>
 </li>
