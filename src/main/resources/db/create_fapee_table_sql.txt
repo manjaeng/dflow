@@ -38,7 +38,7 @@ CREATE TABLE FP_Notice (
 CREATE INDEX idx_startDate_FP_Notice ON FP_Notice(startDate);
 CREATE INDEX idx_endDate_FP_Notice ON FP_Notice(endDate);
 
-CREATE TABLE FP_UserFilter (
+CREATE TABLE FP_User_Filter (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   deviceId VARCHAR(100) NULL,
   userIdKey BIGINT NULL,
@@ -46,17 +46,55 @@ CREATE TABLE FP_UserFilter (
   country VARCHAR(20) NULL,
   PRIMARY KEY (idKey)
 );
-CREATE INDEX idx_userIdKey_FP_UserFilter ON FP_UserFilter(userIdKey);
-CREATE INDEX idx_deviceId_FP_UserFilter ON FP_UserFilter(deviceId);
+CREATE INDEX idx_userIdKey_FP_UserFilter ON FP_User_Filter(userIdKey);
+CREATE INDEX idx_deviceId_FP_UserFilter ON FP_User_Filter(deviceId);
 
-CREATE TABLE FP_ChooseStyle (
+CREATE TABLE FP_Style_Choose (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  styleIdKey BIGINT NOT NULL,
   userFilterIdKey BIGINT NOT NULL,
-  favoriteStyleIdKey BIGINT NOT NULL 
+  PRIMARY KEY (idKey) 
 );
 
-CREATE TABLE FP_FavoriteStyle (
+CREATE TABLE FP_Style (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   seq INT NOT NULL,
   style VARCHAR(20) NOT NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_QnA (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NULL,
+  title VARCHAR(200) NULL,
+  content VARCHAR(500) NULL,
+  createDate DATETIME NULL,
+  answer text NULL,
+  answerDate DATETIME NULL,
+  status TINYINT(1) DEFAULT 0,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Look (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NULL,
+  styleIdKey BIGINT NULL,
+  content text NULL,
+  createDate DATETIME NULL,
+  status TINYINT(1) DEFAULT 0,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Look_Tag (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  lookIdKey BIGINT NOT NULL,
+  tagName VARCHAR(50) NOT NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Look_Image (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  lookIdKey BIGINT NOT NULL,
+  imageUrl VARCHAR(255) NOT NULL,
   PRIMARY KEY (idKey)
 );
