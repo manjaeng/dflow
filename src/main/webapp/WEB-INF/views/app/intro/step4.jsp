@@ -1,11 +1,6 @@
-﻿<!doctype html>
-<html lang="ko">
-<head>
-	
-<%@ include file="../common/meta.jsp" %>
-
-</head>
-<body class="body">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
@@ -27,7 +22,7 @@
 						당신의 핏을 찾아보세요. <br>
 					</div>
 					<div class="total">
-						현재 <em>2,429명</em>의 <br>
+						현재 <em><c:out value="${sizeCount.count}"/>명</em>의 <br>
 						사이즈가 등록되어 있습니다.
 					</div>
 				</div>
@@ -43,17 +38,13 @@
 			</div>
 		</main>
 	</div>
+	
+	<!-- 레이어팝업 자리 -->
+	<div class="popLayerArea">
+		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
+	</div>
 
 	<script>
-	
-	$.ajax({
-		type : 'get',
-		url : '/rest/v1/intro/sizeCount',
-		success : function(data) {
-			$('.total em').html(data.count+'명');
-		}
-	});
-	
 	
 	$(function() {
 		$('.fit a').click(function() {
@@ -70,9 +61,3 @@
 	<!--// 컨텐츠 끝 -->
 	
 </div>
-
-
-<%@ include file="../common/bottom.jsp" %>
-<%@ include file="../common/scripts.jsp" %>
-</body>
-</html>

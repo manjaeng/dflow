@@ -1,4 +1,4 @@
-package kr.co.thenet.fapee.main.web;
+package kr.co.thenet.fapee.home.web;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,19 +12,19 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.thenet.fapee.common.util.CommonUtils;
-import kr.co.thenet.fapee.main.service.MainService;
+import kr.co.thenet.fapee.home.service.HomeService;
 //import lombok.extern.log4j.Log4j;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-public class MainController {
+public class HomeController {
 
 	@Resource
-	private MainService mainService;
+	private HomeService homeService;
 
-	@RequestMapping("/main.do")
-	public String initMain(ModelMap model, HttpServletRequest req) throws Exception {
+	@RequestMapping("/home.do")
+	public String initHome(ModelMap model, HttpServletRequest req) throws Exception {
 
 		log.info(CommonUtils.getRemoteIP(req));
 
@@ -38,11 +38,11 @@ public class MainController {
 			}
 		}
 		
-		List<HashMap<String, Object>> mainList = mainService.selectMainServiceUserList();
+		List<HashMap<String, Object>> homeList = homeService.selectHomeUserList();
 
-		model.addAttribute("mainList", mainList);
+		model.addAttribute("homeList", homeList);
 
-		return "main/main";
+		return "home/home";
 	}
 
 }

@@ -20,31 +20,31 @@ public class NoticeController {
 	@Resource
 	private NoticeService noticeService;
 	
-	@GetMapping("/notice/list.do")
+	@GetMapping("/admin/notice/list.do")
 	public String noticeList(ModelMap model) throws Exception{
 		
 		List<FP_Notice> noticeList = noticeService.selectNoticeServiceAllList();
 		
 		model.addAttribute("noticeList", noticeList);
 		
-		return "notice/list.tiles";
+		return "notice/list.admin";
 	}
 	
-	@GetMapping("/notice/add.do")
+	@GetMapping("/admin/notice/add.do")
 	public String noticeAdd(ModelMap model) throws Exception { 
-		return "notice/add.tiles"; 
+		return "notice/add.admin"; 
 		
 	}
 	
-	@PostMapping("/notice/add.do")
+	@PostMapping("/admin/notice/add.do")
 	public String noticeAdd(FP_Notice notice, HttpServletRequest req) throws Exception {
 		
 		noticeService.insertNoticeServiceInfo(notice);
 		
-		return "redirect:/notice/list.do";
+		return "redirect:/admin/notice/list.do";
 	}
 	
-	@GetMapping(value = "/notice/modify.do")
+	@GetMapping(value = "/admin/notice/modify.do")
 	public String noticeDetail(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
 
 		FP_Notice noticeInfo = noticeService.selectNoticeServiceInfo(num);
@@ -52,7 +52,7 @@ public class NoticeController {
 
 		model.addAttribute("noticeInfo", noticeInfo);
 
-		return "notice/modify.tiles";
+		return "notice/modify.admin";
 	}
 	
 	@PostMapping("/notice/modify.do")
@@ -60,10 +60,10 @@ public class NoticeController {
 		
 		noticeService.updateNoticeServiceInfo(notice);
 		
-		return "redirect:/notice/list.do";
+		return "redirect:/admin/notice/list.do";
 	}
 	
-	@GetMapping("/notice/delete.do")
+	@GetMapping("/admin/notice/delete.do")
     public String noticeDelete(@RequestParam int idKey) throws Exception{
         
         noticeService.deleteNoticeServiceInfo(idKey);

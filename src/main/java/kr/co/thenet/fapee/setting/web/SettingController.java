@@ -13,10 +13,10 @@ public class SettingController {
 	@Resource
 	private SettingService settingService;
 	
-	@GetMapping("/setting/set.do")
+	@GetMapping("/admin/setting/set.do")
 	public String hashtag() throws Exception {
 		
-		return "setting/set.tiles";
+		return "setting/set.admin";
 	}
 	
 }

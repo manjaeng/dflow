@@ -1,11 +1,6 @@
-﻿<!doctype html>
-<html lang="ko">
-<head>
-	
-<%@ include file="../common/meta.jsp" %>
-
-</head>
-<body class="body">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
@@ -21,6 +16,14 @@
 			<section class="sec style">
 				<div class="hdt"><em>CHOOSE YOUR <br> FAVORITE STYLE </em> </div>
 				<ul class="list">
+					<c:forEach var="item" items="${styleList}">
+						<li>
+							<label>
+								<input type="checkbox" value='<c:out value="${item.idkey}"/>'>
+								<span class="tit"><c:out value="${item.style}"/></span>
+							</label>
+						</li>
+					</c:forEach>
 				</ul>
 			</section>
 			
@@ -42,35 +45,23 @@
 
 		</main>
 	</div>
+	
+	<!-- 레이어팝업 자리 -->
+	<div class="popLayerArea">
+		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
+	</div>
 
 	<script>
 	
-	$.ajax({
-		type : 'get',
-		url : '/rest/v1/intro/styleList',
-		success : function(data) {
-			$('.style .list').empty();
-			
-			$.each(data,function(i,e) {
-				
-				var tmp  = '<li><label><input type="checkbox" value='+e.idkey+'><span class="tit">';
-				    tmp += e.style
-				    tmp += '</span></label></li>'
-				
-				$('.style .list').append(tmp);
-			});
-		},
-		complete : function() {
-			$('.style input[type=checkbox]').click(function(e) {
-				if($('.style input[type=checkbox]:checked').length > 4) {
-					e.preventDefault();
-					alert('최대 4개 가능');
-				}
-			});
-		}
-	});
-	
 	$(function() {
+		
+		$('.style input[type=checkbox]').click(function(e) {
+			if($('.style input[type=checkbox]:checked').length > 4) {
+				e.preventDefault();
+				alert('최대 4개 가능');
+			}
+		});
+		
 		$('.fit a').click(function() {
 			
 			fp.data.intro.style = [];
@@ -85,7 +76,7 @@
 			});
 			
 			$.pjax({
-				url : './step3.jsp',
+				url : './step3.do',
 				fragment : '#wrap',
 				container : '#wrap'
 			});
@@ -99,9 +90,3 @@
 	<!--// 컨텐츠 끝 -->
 	
 </div>
-
-
-<%@ include file="../common/bottom.jsp" %>
-<%@ include file="../common/scripts.jsp" %>
-</body>
-</html>

@@ -6,21 +6,21 @@
 		var $subPages = $('#subPages');
 
 		switch (location.pathname) {
-		case '/user/list.do':
+		case '/admin/user/list.do':
 			$('.user').addClass('active');
 			break;
-		case '/notice/list.do':
-		case '/notice/modify.do':
-		case '/notice/add.do':
+		case '/admin/notice/list.do':
+		case '/admin/notice/modify.do':
+		case '/admin/notice/add.do':
 			$('.notice').addClass('active');
 			break;
-		case '/look/list.do':
+		case '/admin/look/list.do':
 			$('.look').addClass('active');
 			break;
-		case '/setting/set.do':
+		case '/admin/setting/set.do':
 			$('.setting').addClass('active');
 			break;
-		case '/setting/hashtag.do':
+		case '/admin/setting/hashtag.do':
 			$subPages.prev().addClass('active');
 			$subPages.addClass('in');
 			$('#subPages li a').eq(0).addClass('active');
@@ -37,16 +37,16 @@
 				<!-- <li><a href="/main.do" class=""><i class="lnr lnr-home"></i>
 						<span>Home</span></a></li> -->
 
-				<li><a href="/user/list.do" class="user"><i
+				<li><a href="/admin/user/list.do" class="user"><i
 						class="lnr lnr-user"></i> <span>User</span></a></li>
 
-				<li><a href="/notice/list.do" class="notice"><i
+				<li><a href="/admin/notice/list.do" class="notice"><i
 						class="lnr lnr-alarm"></i> <span>Notice</span></a></li>
 
-				<li><a href="/look/list.do" class="look"><i
+				<li><a href="/admin/look/list.do" class="look"><i
 						class="lnr lnr-shirt"></i> <span>Look</span></a></li>
 						
-				<li><a href="/setting/set.do" class="setting"><i
+				<li><a href="/admin/setting/set.do" class="setting"><i
 						class="lnr lnr-cog"></i> <span>Setting</span></a></li>
 
 				<li><a href="#subPages" data-toggle="collapse"

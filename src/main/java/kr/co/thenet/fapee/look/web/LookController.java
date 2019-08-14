@@ -13,9 +13,15 @@ public class LookController {
 	@Resource
 	private LookService lookService;
 	
-	@GetMapping("/look/list.do")
+	@GetMapping("/app/look/look.do")
+	public String look() throws Exception {
+		
+		return "look/look.app";
+	}
+	
+	@GetMapping("/admin/look/list.do")
 	public String lookList() throws Exception {
 		
-		return "look/list.tiles";
+		return "look/list.admin";
 	}
 }

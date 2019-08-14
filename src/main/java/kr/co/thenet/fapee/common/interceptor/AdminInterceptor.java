@@ -8,7 +8,6 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import lombok.extern.slf4j.Slf4j;
 
-
 @Slf4j
 public class AdminInterceptor extends HandlerInterceptorAdapter {
 
@@ -16,7 +15,7 @@ public class AdminInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
-		log.debug(" AdminLoginInfo \t:  " + request.getSession().getAttribute("loginInfo"));
+		log.info(" AdminLoginInfo \t:  " + request.getSession().getAttribute("loginInfo"));
 		
 		return true;
 	}

@@ -1,11 +1,6 @@
-﻿<!doctype html>
-<html lang="ko">
-<head>
-	
-<%@ include file="../common/meta.jsp" %>
-
-</head>
-<body class="body">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
@@ -45,11 +40,16 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./step4.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="./step4.do" class="btn xl b fill btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>
 		</main>
+	</div>
+	
+	<!-- 레이어팝업 자리 -->
+	<div class="popLayerArea">
+		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 
 	<script>
@@ -64,9 +64,3 @@
 	</script>
 	
 </div>
-
-
-<%@ include file="../common/bottom.jsp" %>
-<%@ include file="../common/scripts.jsp" %>
-</body>
-</html>

@@ -15,7 +15,7 @@ $(function() {
 		
 		$.ajax({
 			type : 'post',
-			url : '/login.do',
+			url : '/admin/login.do',
 			data : JSON.stringify({
 				userId : $("input[name=userId]").val(),
 				password : $("input[name=password]").val(),
@@ -29,7 +29,7 @@ $(function() {
 				if(data.status === 'f') {
 					alert(data.text);
 				} else if (data.status === 't'){
-					location.href='/user/list.do';
+					location.href='/admin/user/list.do';
 					alert('success');
 				}
 			},

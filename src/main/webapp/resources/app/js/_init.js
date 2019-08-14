@@ -1,10 +1,10 @@
 if ($.support.pjax) {
 	$(document).on('click', 'a', function(e) {
 		
-		e.preventDefault();
 		var url = $(this).attr('href');
 
-		if (url.includes('.jsp')) {
+		if (url.includes('.do')) {
+			e.preventDefault();
 			
 			$.pjax({
 				url : url,
