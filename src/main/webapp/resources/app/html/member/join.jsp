@@ -35,7 +35,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./joinId.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="../home/home.jsp" class="btn xl b fill btnDone">Done</a>
 					</div>
 				</div>
 			</div>

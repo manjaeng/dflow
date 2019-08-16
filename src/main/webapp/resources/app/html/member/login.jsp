@@ -21,7 +21,7 @@
 				<div class="form">
 					<div class="uiIptPlc id">
 						<input type="email" class="input"  id="input_sample1" value="">
-						<span class="plc">ID/EMAIL</span>
+						<span class="plc">ID/mobile PHONE</span>
 					</div>
 					<div class="uiIptPlc pw">
 						<input type="password" class="input" id="input_sample2">

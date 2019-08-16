@@ -20,15 +20,26 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
+			
+			<div class="sec formSch">
+				<div class="sch">
+					<input type="search" class="input key" id="input_kwd" placeholder="" value="">
+					<a href="javascript:;" class="bt sch">SEARCH</a>			
+					<a href="javascript:;" class="bt cancel" id="btSchCancel">CANCEL</a>					
+				</div>
+			</div>
+
 			<div class="tabs">
 				<ul class="uiTab menu a">
 					<li class="fwers"><a href="javascript:;" onclick="followTabFnc('fwers');">Follower <i>(308)</i></a></li>
 					<li class="fwing"><a href="javascript:;" onclick="followTabFnc('fwing');">Following <i>(27)</i></a></li>
 				</ul>
 			</div>
+			
 			<section class="sec follow" id="followTabCont">
 				
 			</section>
+
 		</main>
 	</div>
 

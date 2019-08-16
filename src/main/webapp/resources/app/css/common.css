@@ -830,8 +830,8 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .swiper-container .navigation .nav.swiper-button-disabled{background-position-y:-70px}
 .swiper-container .pagination{position:absolute;right:0px;left:0px;bottom: 10px;text-align:center;z-index:100;}
 .swiper-container .pagination .swiper-pagination-bullet{width:10px;height:10px;background:none !important;opacity:1;padding: 2px;margin: 0 2px;left: auto !important;}
-.swiper-container .pagination .swiper-pagination-bullet:after{content:"";width: 6px;height: 6px;margin: auto;display:block;border-radius: 10px;/* border:#000000 solid 1px; */background-color: rgba(150,150,150,1.5);box-sizing:border-box;opacity:1;}
-.swiper-container .pagination .swiper-pagination-bullet-active:after{opacity:1;background-color: #70f5c4;background-color: #000;}
+.swiper-container .pagination .swiper-pagination-bullet:after{content:"";width: 6px;height: 6px;margin: auto;display:block;/* border-radius: 10px; *//* border:#000000 solid 1px; */background-color: rgba(150,150,150,1.5);box-sizing:border-box;opacity:1;}
+.swiper-container .pagination .swiper-pagination-bullet-active:after{opacity:1;background-color: #70f5c4;/* background-color: #000; */}
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev{transform: scale(0.7);}
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev{transform: scale(0.5);}
 .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next{transform: scale(0.7);}

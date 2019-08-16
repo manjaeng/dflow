@@ -293,7 +293,20 @@ body.my.list .header .bts .hisback{display:block;}
 
 
 
+
+
+
 .contain.follow{}
+.contain.follow .sec.formSch{padding:0px 0 20px}
+.contain.follow .sec.formSch .sch{margin: 0 16px;position:relative;}
+.contain.follow .sec.formSch .sch::before{color: #ff424d;font-family:"BlairMd";font-size: 20px;position:absolute;left:45px;top: 6px;}
+.contain.follow .sec.formSch .sch .key{background: url(../images/common/icoFormSch.png) no-repeat 0px center;padding: 5px 80px 5px 30px;background-size: auto 24px;font-size: 18px;font-family:"BlairMd","NotoSansCJKkr";}
+.contain.follow .sec.formSch .sch .key:focus{padding-bottom: 5px;}
+.contain.follow .sec.formSch .sch .bt.sch{display:none;}
+.contain.follow .sec.formSch .sch .bt.cancel{position:absolute;right: 1px;top: 13px;width: 25px;height: 16px;background:url(../images/common/recent_kwd_del.png) no-repeat;background-size: 100% auto;font-size: 0px;}
+
+
+
 .contain.follow .tabs{}
 .contain.follow .sec.follow{}
 .contain.follow .sec.follow .tabCtn{padding-top: 33px;}
