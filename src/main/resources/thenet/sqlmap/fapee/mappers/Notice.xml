@@ -5,43 +5,43 @@
 	
 	<select id="selectNoticeServiceAllList" resultType="FP_Notice">
 		SELECT idKey
-					, userIdKey 
-					, createDate
-					, title
-					, content
-					, viewCount
-					, startDate
-					, endDate
+			  ,userIdKey 
+			  ,createDate
+			  ,title
+			  ,content
+			  ,viewCount
+			  ,startDate
+			  ,endDate
 		FROM FP_Notice
 		ORDER BY createDate ASC
 	</select>
 	
-	<select id="selectNoticeServiceList" resultType="FP_Notice" parameterType="int">
+	<select id="selectNoticeServiceList" resultType="egovMap" parameterType="egovMap">
 		SELECT idKey
-					, userIdKey 
-					, createDate
-					, title
-					, content
-					, viewCount
-					, startDate
-					, endDate
+			  ,userIdKey 
+			  ,DATE_FORMAT(createDate,'%Y.%m.%d') createDate
+			  ,title
+			  ,content
+			  ,viewCount
+			  ,startDate
+			  ,endDate
 		FROM FP_Notice
 		WHERE idKey <![CDATA[>]]> 0
 		ORDER BY idKey DESC
-		<if test="_parameter != null">
-		LIMIT #{_parameter}, 10
+		<if test="pageStart != null and pageSize != null">
+		LIMIT #{pageStart}, #{pageSize}
 		</if>
 	</select>
 
 	<select id="selectNoticeServiceInfo" parameterType="int" resultType="FP_Notice">
-		SELECT idKey,
-			   userIdKey,
-			   createDate,
-			   title,
-			   content,
-			   viewCount,
-			   startDate,
-			   endDate
+		SELECT idKey
+			  ,userIdKey
+			  ,createDate
+			  ,title
+			  ,content
+			  ,viewCount
+			  ,startDate
+			  ,endDate
 		  FROM FP_Notice
 		 WHERE idKey = #{idKey}
 	</select>

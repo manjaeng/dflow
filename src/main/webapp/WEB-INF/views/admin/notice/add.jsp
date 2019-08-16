@@ -18,6 +18,10 @@
          language: "UTF-8"
 
      });
+     
+     $('form').submit(function() {
+    	 $('form textarea').val( $('form textarea').val().replace(/(?:\r\n|\r|\n)/g, '<br>'));
+     });
 
  });
 
@@ -27,7 +31,7 @@
 		<div class="container-fluid">
 			<h3 class="page-title">Notice Add</h3>
 			<div class="row">
-				<form action="/notice/add.do" method="post"
+				<form action="/admin/notice/add.do" method="post"
 					enctype="multipart/form-data">
 					<div class="col-md-6">
 						<div class="panel">
@@ -76,7 +80,7 @@
 							<div class="panel-body fileWrap">
 
 						        <div class="bootstrap-filestyle input-group date">
-						            <input type="text" id="userfile1" class="form-control" name="startDate" style="height:36px;" placeholder="시작일">
+						            <input type="text" id="userfile1" class="form-control" name="startDate" style="height:36px;" placeholder="시작일" required>
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default "> 
 												<span class="glyphicon glyphicon-calendar"></span>
@@ -87,7 +91,7 @@
 						     
 						     <div class="panel-body fileWrap">
 						       <div class="bootstrap-filestyle input-group date">
-						            <input type="text" id="userfile1" class="form-control" name="endDate" style="height:36px;" placeholder="종료일">
+						            <input type="text" id="userfile1" class="form-control" name="endDate" style="height:36px;" placeholder="종료일" required>
 						            	<span class="group-span-filestyle input-group-addon" style="padding:0;">
 						            		<label for="calendarInput1" class="btn btn-default"> 
 												<span class="glyphicon glyphicon-calendar"></span>

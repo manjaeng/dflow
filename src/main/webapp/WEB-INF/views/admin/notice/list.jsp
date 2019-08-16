@@ -11,7 +11,7 @@
 		
 	});
 	function gogo(idKey) {
-		location.href = '/notice/modify.do?num='+idKey
+		location.href = '/admin/notice/modify.do?num='+idKey;
 	}
 </script>
 <div class="main">
@@ -64,7 +64,11 @@
 									</c:forEach>
 								</tbody>
 							</table>
-							<a href="/notice/add.do">작성</a>
+							<div class="form-group text-center" style="margin-bottom: 0">
+								<button type="button" onclick="location.href='/admin/notice/add.do'" 
+								class="btn btn-primary">공지추가</button>
+		
+							</div>
 						</div>
 					</div>
 					<!-- END TABLE HOVER -->

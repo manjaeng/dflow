@@ -23,7 +23,7 @@
      
      $('.btn-danger').click(function() {
          if (confirm('삭제하시겠습니까?')) {
-             location.href = '/notice/delete.do?idKey=' + '${noticeInfo.idKey}';
+             location.href = '/admin/notice/delete.do?idKey=' + '${noticeInfo.idKey}';
          }
      });
 
@@ -35,7 +35,7 @@
 		<div class="container-fluid">
 			<h3 class="page-title">Notice Modify</h3>
 			<div class="row">
-				<form action="/notice/modify.do" method="post"
+				<form action="/admin/notice/modify.do" method="post"
 					enctype="multipart/form-data">
 					<div class="col-md-6">
 						<div class="panel">

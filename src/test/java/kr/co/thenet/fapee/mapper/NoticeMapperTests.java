@@ -24,7 +24,7 @@ public class NoticeMapperTests {
 	@Test
 	public void insertNoticeServiceInfo() throws Exception {
 		
-		for (int i = 1; i <= 30; i++) {
+		for (int i = 1; i <= 52; i++) {
 			FP_Notice notice = new FP_Notice();
 
 			notice.setUserIdKey(0);
@@ -32,7 +32,6 @@ public class NoticeMapperTests {
 			notice.setContent("내용" + i);
 			notice.setStartDate(new Date());
 			notice.setEndDate(new Date());
-
 			
 			noticeMapper.insertNoticeServiceInfo(notice);
 		}

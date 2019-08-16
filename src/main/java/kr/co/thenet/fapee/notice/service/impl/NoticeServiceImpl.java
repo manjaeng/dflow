@@ -2,17 +2,17 @@ package kr.co.thenet.fapee.notice.service.impl;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.co.thenet.fapee.common.model.FP_Notice;
+import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 
 @Service
 public class NoticeServiceImpl implements NoticeService{
 	
-	@Resource
+	@Autowired
 	private NoticeMapper noticeMapper;
 	
 	@Override
@@ -21,8 +21,8 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public List<FP_Notice> selectNoticeServiceList(int pageStart) throws Exception {
-		return noticeMapper.selectNoticeServiceList(pageStart);
+	public List<EgovMap> selectNoticeServiceList(EgovMap egovMap) throws Exception {
+		return noticeMapper.selectNoticeServiceList(egovMap);
 	}
 
 	@Override
