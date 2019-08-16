@@ -142,7 +142,7 @@
 .uiPrfeSet .user .photo .bts{position:absolute;right: -7px;bottom: -7px;}
 .uiPrfeSet .user .photo .bts .bt{width: 26px;height: 26px;display:block;font-size: 0px;background-size: 100% auto;}
 .uiPrfeSet .user .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
-.uiPrfeSet .user .infos{margin: 20px auto;text-align: center;}
+.uiPrfeSet .user .infos{margin: 20px auto 25px auto;text-align: center;}
 .uiPrfeSet .user .infos .name{font-size: 16px;line-height: 100%; font-family:"BlairMd","NotoSansCJKkr-Md";margin-top: 4px; text-transform: uppercase;}
 .uiPrfeSet .user .infos .models{}
 .uiPrfeSet .user .infos .models .sel{font-size: 11px;}
