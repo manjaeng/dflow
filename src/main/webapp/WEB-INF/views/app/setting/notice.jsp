@@ -31,7 +31,7 @@
 
 	<script>
 
-	var page = 0 ;
+	var page = -1 ;
 	var appendStat = true ;
 	var addItemFnc = function(){
 		$(".uiLoadMore").addClass("active");

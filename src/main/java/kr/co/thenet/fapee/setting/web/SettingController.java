@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 import kr.co.thenet.fapee.setting.service.SettingService;
@@ -49,8 +50,8 @@ public class SettingController {
 	public List<EgovMap> notice(@RequestParam int pageStart) throws Exception {
 		
 		EgovMap egovMap = new EgovMap();
-		egovMap.put("pageStart", (pageStart - 1) * 16);
-		egovMap.put("pageSize", 16);
+		egovMap.put("pageStart", pageStart * Constants.APP_NOTICE_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_NOTICE_PAGE_SIZE);
 		
 		return noticeService.selectNoticeServiceList(egovMap);
 	}
