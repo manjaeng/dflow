@@ -7,22 +7,18 @@ CREATE TABLE FP_User (
   userId VARCHAR(30) NOT NULL,
   password VARCHAR(1024) NULL,
   userType CHAR(1) NOT NULL,
-  userName VARCHAR(200) NULL,
-  mobileNumber VARCHAR(20) NULL,
+  mobile INT NULL,
   email VARCHAR(100) NULL,
-  loginTotalCount BIGINT NULL,
-  loginFailCount INT NULL,
   lastLoginDate DATETIME NULL,
   joinDate DATETIME NULL,
-  loginIp VARCHAR(50) NULL,
   snsType VARCHAR(20) NULL,
-  snsId VARCHAR(1024) NULL,
+  snsId BIGINT NULL,
   deviceId VARCHAR(100) NULL,
   status CHAR(1) NULL,
   PRIMARY KEY (idKey)
 );
 CREATE INDEX idx_userId_FP_User ON FP_User(userId);
-CREATE INDEX idx_userType_FP_User ON FP_User(userType);
+CREATE INDEX idx_mobile_FP_User ON FP_User(mobile);
 
 CREATE TABLE FP_Notice (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
@@ -97,4 +93,18 @@ CREATE TABLE FP_Look_Image (
   lookIdKey BIGINT NOT NULL,
   imageUrl VARCHAR(255) NOT NULL,
   PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Policy (
+  idKey INT NOT NULL AUTO_INCREMENT,
+  kind CHAR(1) NOT NULL,
+  content text NULL,
+  createDate DATETIME NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Follow (
+  userIdKey BIGINT NOT NULL,
+  followUserIdKey BIGINT NOT NULL,
+  PRIMARY KEY (userIdKey, followUserIdKey)
 );

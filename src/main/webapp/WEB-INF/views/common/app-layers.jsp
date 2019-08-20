@@ -239,7 +239,7 @@ function popPrfOthers(){
 						<span href="javascript:;" class="bt">MODEL PROFILE</span>
 						<ol class="mds">
 							<li>
-								<a href="../look/look_upload.jsp" class="box">
+								<a href="/app/look/look_upload.do" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/2" alt=""></div></span>
 									<span class="name">JENNY</span>
 									<span class="info">160cm, KOREA</span>
