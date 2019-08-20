@@ -50,11 +50,11 @@
 		});
 
 		try {
-			if ( ui.param.my && ui.param.my == "false") {
-				$(".contain.prf .prfNav .bts").removeClass("my");
+			if ( ui.param.my && ui.param.my == "true") {
+				$(".contain.prf .prfNav .bts").addClass("my");
 			}
-			if ( ui.param.mdl && ui.param.mdl == "false") {
-				$(".contain.prf .prfNav .bts").removeClass("mdl");
+			if ( ui.param.mdl && ui.param.mdl == "true") {
+				$(".contain.prf .prfNav .bts").addClass("mdl");
 			}
 		} catch (error) { }			
 

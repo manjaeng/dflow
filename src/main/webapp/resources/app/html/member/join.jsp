@@ -7,7 +7,7 @@
 <div class="wrap" id="wrap">
 		
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain popJoin id">
+	<div id="contain" class="contain popJoin email">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -27,7 +27,7 @@
 						<input type="text" class="input valid"  id="input_sample1" value="">
 						<span class="plc">E-MAIL</span>
 					</div>
-					<div class="msg_error" id="msg_sample1">가입 완료된. 이메일입니다</div>
+					<div class="msg_error show" id="msg_sample1">가입 완료된. 이메일입니다</div>
 					<div class="msgs">이메일은 비밀번호 찾기 및 로그인시 필요합니다.</div>
 
 				</div>

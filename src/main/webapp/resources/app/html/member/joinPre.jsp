@@ -20,7 +20,7 @@
 				<div class="hdt">JOIN <em>FAPEE</em></div>
 				<div class="bts">
 					<a href="./login.jsp" class="bt btnLogin">LOGIN</a>
-					<a href="./joinId.jsp" class="bt btnJoin">SIGN UP</a>
+					<a href="./joinMo.jsp" class="bt btnJoin">SIGN UP</a>
 				</div>
 			</div>
 			<div class="joinSet">

@@ -15,7 +15,7 @@
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 				</div>
-				<h1 class="tit">1:1문의</h1>
+				<h1 class="tit">1 : 1 문의</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
@@ -33,13 +33,15 @@
 						</div>
 					</li> -->
 					<li class="subj">
-						<div class="dt">
-							<input type="text" class="input" placeholder="TITLE">
+						<div class="dt">TITLE</div>
+						<div class="dd">
+							<input type="text" class="input">
 						</div>
 					</li>
 					<li class="memo">
-						<div class="dt">
-							<textarea class="textarea" placeholder="CONTENTS"></textarea>
+						<div class="dt">CONTENTS</div>
+						<div class="dd">
+							<textarea class="textarea"></textarea>
 						</div>
 					</li>
 				</ul>

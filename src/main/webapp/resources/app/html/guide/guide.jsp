@@ -245,7 +245,12 @@
 			<textarea class="textarea" placeholder="내용"></textarea>					<p class="gap"></p>
 			
 			<select class="select">
-				<option>선택</option>
+				<option>선택1</option>
+				<option>선택2</option>
+				<option>선택3</option>
+				<option>선택4</option>
+				<option>선택5</option>
+				<option>선택6</option>
 			</select>
 																						<p class="gap"></p>
 			<select class="select" disabled="disabled">

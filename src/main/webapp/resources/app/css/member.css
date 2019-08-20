@@ -54,14 +54,23 @@
 .popJoin .joinForm .form .uiIptPlc{}
 .popJoin .joinForm .form .uiIptPlc .plc{}
 .popJoin .joinForm .form .uiIptPlc .input{}
+.popJoin .joinForm .form .uiIptPlc .time{position:absolute;top: 31px;right: 2px;color: #fd5555;font-size: 12px;}
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
 .popJoin .joinForm .form .btns{margin-top: 20px;}
 .popJoin .joinForm .form .btns .btn{width:100%;}
-
-.popJoin .joinForm .form .agree{ position:relative; margin-top: 15px;}
+.popJoin .joinForm .form .agree{position:relative;margin-top: 25px;}
 .popJoin .joinForm .form .agree .txt{font-size: 12px;}
 .popJoin .joinForm .form .agree .txt a{text-decoration:underline;display: inline-block;vertical-align: middle;padding: 1px 0px;}
-.popJoin .joinForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
+.popJoin .joinForm .form .agree label.checkbox{position:absolute;right: 0px;top: 2px;}
+.popJoin.mo .joinForm .form .uiIptPlc.phone{}
+.popJoin.mo .joinForm .form .uiIptPlc.phone input{width: calc(100% - 91px);}
+.popJoin.mo .joinForm .form .uiIptPlc.phone .btnSend{position:absolute; right: 0px; bottom: 0px; width: 83px;}
+.popJoin.mo .joinForm .form .msgcode{/* padding: 5px 0px; */font-size: 12px;margin-top: 8px;}
+.popJoin.mo .joinForm .form .findpws{ display: block;padding: 4px 0; font-family:"BlairMd"; text-decoration: underline; font-size: 11px; color: #333333;}
+
+
+
+
 
 
 /* 비밀번호찾기 */
@@ -188,8 +197,8 @@
 
 .contain.prf .prfNav .bts.mdl .bt.edit{width:50%;}
 .contain.prf .prfNav .bts.mdl .bt.model{width: 25%; display:flex;}
-.contain.prf .prfNav .bts.mdl .bt.fwer{width:50%;}
-.contain.prf .prfNav .bts.mdl .bt.fwing{width:50%;}
+.contain.prf .prfNav .bts.mdl .bt.fwer{width:50%;display: none;}
+.contain.prf .prfNav .bts.mdl .bt.fwing{width:50%;display: none;}
 .contain.prf .prfNav .bts.mdl .bt.more{}
 
 .contain.prf .prfNav .bts.ing .bt.fwer{display:none;}
@@ -468,6 +477,26 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.setalim .sec.alim .list>li>ul{}
 .contain.setalim .sec.alim .list>li>ul>li{ position:relative;padding: 8px 65px 8px 25px;}
 
+
+
+.contain.account{}
+.contain.account .sec.acc{padding-top: 30px;}
+.contain.account .sec.acc .list{}
+.contain.account .sec.acc .list>li{border-top: #000000 solid 1px;position:relative;padding: 8px 65px 8px 25px;}
+.contain.account .sec.acc .list>li:last-child{border-bottom: #000000 solid 1px;}
+.contain.account .sec.acc .list>li .tit{font-size: 13px; font-family:"BlairMd";}
+.contain.account .sec.acc .list>li .uiChk{position:absolute;right: 20px;top: 8px;}
+.contain.account .sec.acc .list>li .tit::before{margin-right: 8px; content:"";width:20px;height:20px; background:no-repeat; background-size: 100% auto; display:inline-block;  font-size: 0px; vertical-align: middle;}
+.contain.account .sec.acc .list>li.instar .tit::before{background-image:url(../images/common/ico_instargram.png);}
+.contain.account .sec.acc .list>li.kakao .tit::before{background-image:url(../images/common/ico_kakaotalk.png);}
+.contain.account .sec.acc .list>li.facebook .tit::before{background-image:url(../images/common/ico_facebook.png);}
+
+
+
+
+
+
+
 .contain.notice{}
 .contain.notice .sec.notice{padding-top: 30px;}
 .contain.notice .sec.notice .list{ }
@@ -493,13 +522,14 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.qna{}
 .contain.qna .sec.forms{margin:0px 16px; }
 .contain.qna .sec.forms ul.form{}
-.contain.qna .sec.forms ul.form>li{margin-top: 20px;}
-.contain.qna .sec.forms ul.form>li .dt{border-bottom: #000000 solid 1px;}
+.contain.qna .sec.forms ul.form>li{margin-top: 40px;}
+.contain.qna .sec.forms ul.form>li:first-child{}
+.contain.qna .sec.forms ul.form>li .dt{font-family:"BlairMd";}
 .contain.qna .sec.forms ul.form>li .dt .select{ width:auto;}
 .contain.qna .sec.forms ul.form>li .dt input,
 .contain.qna .sec.forms ul.form>li .dt textarea{border: none;}
-.contain.qna .sec.forms ul.form>li.cate .dt{}
-.contain.qna .sec.forms ul.form>li .dt .textarea{height:150px;padding: 9px 0px 9px 0px;}
+.contain.qna .sec.forms ul.form>li.memo .dd{margin: 10px -16px 0;}
+.contain.qna .sec.forms ul.form>li .dd .textarea{height:150px;padding: 9px 20px 9px 20px; border-color: #000000; border-width: 1px 0px;}
 
 
 

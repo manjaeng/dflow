@@ -21,7 +21,7 @@ var ui = {
 	},
 	cm:{ // 공통
 		init:function(){
-
+			// $("select").selectmenu();
 		}
 	},
 	isUA:function(t){

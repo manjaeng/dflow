@@ -55,12 +55,12 @@
 			<section class="prfNav">
 				
 				<!-- 내프로필이면.my  ||  모델 있으면.mdl ||  팔로우중이면 .ing  -->
-				<div class="bts my mdl">
+				<div class="bts">
 					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
 					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
 					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a>
+					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a> 
 				</div>
 				
 			</section>
