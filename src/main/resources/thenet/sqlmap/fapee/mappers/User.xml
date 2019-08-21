@@ -78,4 +78,27 @@
 		)
 	</insert>
 	
+	<select id="selectUserInfo" resultType="FP_User" parameterType="egovMap">
+		SELECT idKey
+		      ,userId
+		      ,password
+		      ,userType
+		      ,mobile
+		      ,email
+		      ,lastLoginDate
+		      ,joinDate
+		      ,snsType
+		      ,snsId
+		      ,deviceId
+		      ,status
+		  FROM FP_User
+		 WHERE 1 = 1
+	 	<if test='idKey != null'>
+	 		AND idKey = #{idKey}
+	 	</if>
+	 	<if test='mobile != null'>
+	 		AND mobile = #{mobile}
+	 	</if>
+	</select>
+	
 </mapper>

@@ -19,4 +19,7 @@ public interface UserService {
 	List<FP_User> selectUserServiceList() throws Exception;
 
 	HttpStatus insertUserServiceJoin(FP_User user) throws Exception;
+
+	FP_User selectUserInfo(EgovMap egovMap) throws Exception;
+	
 }

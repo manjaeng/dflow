@@ -21,4 +21,7 @@ public interface UserMapper {
 	int selectUserServiceCount(FP_User user) throws Exception;
 	
 	int insertUserServiceInfo(FP_User user) throws Exception;
+
+	FP_User selectUserInfo(EgovMap egovMap) throws Exception;
+	
 }

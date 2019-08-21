@@ -5,13 +5,16 @@ if ($.support.pjax) {
 
 		if (url.includes('.do')) {
 			e.preventDefault();
-			
-			$.pjax({
-				url : url,
-				fragment : '#wrap',
-				container : '#wrap'
-			});
+			pjax(url);
 		}
 	});
+	
+	function pjax(url) {
+		$.pjax({
+			url : url,
+			fragment : '#wrap',
+			container : '#wrap'
+		});
+	};
 }
 

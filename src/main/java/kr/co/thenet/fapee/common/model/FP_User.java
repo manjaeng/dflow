@@ -15,14 +15,12 @@ public class FP_User {
 	private String password;
 	private String userType;
 	private String userName;
-	private String mobileNumber;
+	private int mobile;
 	private String email;
-	private long loginTotalCount;
-	private int loginFailCount;
 	private Date lastLoginDate;
 	private Date joinDate;
-	private String loginIp;
 	private String snsType;
-	private String snsId;
+	private int snsId;
+	private String deviceId;
 	private String status;
 }

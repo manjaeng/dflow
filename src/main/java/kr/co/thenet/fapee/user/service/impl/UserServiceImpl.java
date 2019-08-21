@@ -11,9 +11,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.thenet.fapee.common.model.FP_Login;
 import kr.co.thenet.fapee.common.model.FP_User;
-import kr.co.thenet.fapee.common.util.AuthToken;
 import kr.co.thenet.fapee.common.util.CommonFunc;
-import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.user.service.UserService;
 
@@ -49,18 +47,18 @@ public class UserServiceImpl implements UserService {
 						login.setHttpStatus(HttpStatus.NOT_ACCEPTABLE);
 						
 					} else {
-						long tenYearTime = (new Date()).getTime() + (1000 * 60 * 60 * 24 * 365);
-						long loginTotalCount = user.getLoginTotalCount() + 1;
+						//long tenYearTime = (new Date()).getTime() + (1000 * 60 * 60 * 24 * 365);
+						//long loginTotalCount = user.getLoginTotalCount() + 1;
 						
-						login.setAuthToken(AuthToken.getToken(user.getIdKey(), tenYearTime, user.getUserType(), loginTotalCount));
+						//login.setAuthToken(AuthToken.getToken(user.getIdKey(), tenYearTime, user.getUserType(), loginTotalCount));
 						login.setUserIdKey(user.getIdKey());
 						login.setUserName(user.getUserName());
 						login.setUserType(user.getUserType());
 						
-						user.setLoginFailCount(0);
+						//user.setLoginFailCount(0);
 						user.setLastLoginDate(new Date());
-						user.setLoginTotalCount(loginTotalCount);
-						user.setLoginIp(CommonUtils.getRemoteIP(req));
+						//user.setLoginTotalCount(loginTotalCount);
+						//user.setLoginIp(CommonUtils.getRemoteIP(req));
 						
 						userMapper.updateUserServiceInfo(user);
 						login.setHttpStatus(HttpStatus.OK);
@@ -115,10 +113,10 @@ public class UserServiceImpl implements UserService {
 			return egovMap;
 		}
 			
-		user.setLoginFailCount(0);
+		//user.setLoginFailCount(0);
 		user.setLastLoginDate(new Date());
-		user.setLoginTotalCount(user.getLoginTotalCount() + 1);
-		user.setLoginIp(CommonUtils.getRemoteIP(req));
+		//user.setLoginTotalCount(user.getLoginTotalCount() + 1);
+		//user.setLoginIp(CommonUtils.getRemoteIP(req));
 		
 		user.setPassword("");
 		req.getSession().setAttribute("loginInfo", user);
@@ -154,4 +152,10 @@ public class UserServiceImpl implements UserService {
 		return HttpStatus.OK;
 		
 	}
+
+	@Override
+	public FP_User selectUserInfo(EgovMap egovMap) throws Exception {
+		return userMapper.selectUserInfo(egovMap);
+	}
+
 }

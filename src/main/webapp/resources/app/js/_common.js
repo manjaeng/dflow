@@ -11,9 +11,9 @@ fp.util.jsonAjax = function(obj) {
 		success : function(data) {
 			obj.success(data);
 		},
-		error : function(xhr,status,error) {
-			if(obj.error) {
-				obj.error(xhr,status,error);
+		error : function(xhr,status, error) {
+			if (obj.error) {
+				obj.error(xhr, status, error);
 			}
 		}
 	});
@@ -56,15 +56,72 @@ fp.util.isAndroid = function() {
 }
 
 fp.util.getTime = function() {
-	
+
 	function checkTime(i) {
-        return (i < 10) ? "0" + i : i;
-    }
-	
-	var today = new Date(),
-    h = checkTime(today.getHours()),
-    m = checkTime(today.getMinutes()),
-    s = checkTime(today.getSeconds());
-	
+		return (i < 10) ? "0" + i : i;
+	}
+
+	var today = new Date(), h = checkTime(today.getHours()), m = checkTime(today
+			.getMinutes()), s = checkTime(today.getSeconds());
+
 	return h + ":" + m + ":" + s;
+}
+
+fp.util.getTimer = function(d, selector) {
+
+	var duration = d;
+	var timer, minutes, seconds, interval, endFlag;
+
+	return {
+		init : function() {
+			endFlag = false;
+			clearInterval(interval);
+			timer = duration;
+		},
+		start : function() {
+
+			this.init();
+			
+			interval = setInterval(function() {
+				minutes = parseInt(timer / 60 % 60, 10);
+				seconds = parseInt(timer % 60, 10);
+
+				minutes = minutes < 10 ? "0" + minutes : minutes;
+				seconds = seconds < 10 ? "0" + seconds : seconds;
+
+				$(selector).text(minutes + ":" + seconds);
+				$(selector).show();
+
+				if (--timer < 0) {
+					endFlag = true;
+					timer = 0;
+					clearInterval(interval);
+				}
+			}, 1000);
+		},
+		isEnd : function() {
+			return endFlag;
+		},
+		isStart : function() {
+			if('undefined' === typeof interval) {
+				return false;
+			} else {
+				return true;
+			}
+		},
+		destroy : function() {
+			clearInterval(interval);
+			$(selector).hide();
+		}
+	}
+}
+
+fp.util.checkRegEx = function(type,val1) {
+	var regEx;
+	
+	if(type == 'mobile') {
+		regEx = /(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
+	}
+	
+	return regEx.test(val1);
 }
