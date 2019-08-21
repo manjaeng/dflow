@@ -18,18 +18,27 @@
 		<main id="contents" class="contents">
 			<div class="findForm">
 				<div class="hdt"><em>비밀번호 찾기</em></div>
+				<div class="msg">가입 시 인증한 전화 번호를 입력하시면 <br> 본인 확인 코드를 보내드립니다. </div>
 				<div class="form">
-					<div class="email">
-						<span class="plc">이메일 입력</span>
-						<input type="email" class="input"  id="input_sample1" value="">
+					<div class="uiIptPlc phone">
+						<input type="number" class="input" value="">
+						<span class="plc">Mobile Phone</span>
+						<a href="javascript:;" class="btn c sm btnSend">SEND</a>
 					</div>
-					<div class="msgs">가입시 입력한 에메일 주소를 입력하시면 비밀번호를 재설정할 수 있는 링크를 보내드립니다.</div>
+					
+					<div class="uiIptPlc certi">
+						<input type="number" class="input" value="">
+						<span class="plc">Verification number </span>
+						<span class="time">2:59</span>
+					</div>
+					<div class="msgcode">해당 번호로 코드를 전송하였습니다.</div>
+					<div class="msg_error show" id="msg_sample1">인증 코드를 다시 확인하세요. </div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../member/findPwCerti.jsp" class="btn xl b fill btnSend">이메일받기</a>
+						<a href="./findPwRst.jsp" class="btn xl b fill">NEXT</a>
 					</div>
 				</div>
 			</div>

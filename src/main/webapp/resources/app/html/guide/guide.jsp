@@ -3,8 +3,8 @@
 <head>
 <%@ include file="../_inc/meta.jsp" %>
 
-<link href="/resources/app/html/guide/shCore.css" rel="stylesheet">
-<script src="/resources/app/html/guide/shCore.js"></script>
+<link href="../../html/guide/shCore.css" rel="stylesheet">
+<script src="../../html/guide/shCore.js"></script>
 
 </head>
 <body class="body">

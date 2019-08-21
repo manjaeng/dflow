@@ -135,7 +135,7 @@
 
 .contain.cool{}
 .contain.cool .coolList{padding-top: 16px;}
-.contain.cool .coolList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;padding: 0 10px 0px 10px;}
+.contain.cool .coolList .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;padding: 0 15px 0px 15px;}
 .contain.cool .coolList .list>li{width: calc(33.3333% - 0px);margin-bottom: 35px;margin-right: 0px;max-width: 140px;padding: 0px 0px;}
 .contain.cool .coolList .list>li .item{position: relative;margin: auto;padding: 0 0px;}
 .contain.cool .coolList .list>li .item .img{display:block;position:relative;margin: auto;width: 70px;}

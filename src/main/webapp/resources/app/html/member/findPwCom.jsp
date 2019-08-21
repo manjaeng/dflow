@@ -25,7 +25,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../home/home.jsp" class="btn xl b fill btnHome">HOME</a>
+						<a href="./login.jsp" class="btn xl b fill">LOGIN</a>
 					</div>
 				</div>
 			</div>

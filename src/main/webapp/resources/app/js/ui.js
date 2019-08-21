@@ -1027,8 +1027,8 @@ var ui = {
 			'<div class="pbd">'+
 				'<div class="pct">'+opt.msg+'</div>'+
 				'<div class="pbt">'+						
-					'<button type="button" class="btn sm f btnCancel">'+ opt.nbt +'</button>'+
-					'<button type="button" class="btn sm a btnConfirm">'+ opt.ybt +'</button>'+
+					'<button type="button" class="btn lg f btnCancel">'+ opt.nbt +'</button>'+
+					'<button type="button" class="btn lg a btnConfirm">'+ opt.ybt +'</button>'+
 				'</div>'+
 				// '<button type="button" class="btnClose">닫기</button>'+
 			'</div>'+

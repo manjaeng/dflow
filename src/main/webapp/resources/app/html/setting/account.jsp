@@ -16,7 +16,7 @@
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
 					<!-- <a href="javascript:history.back();" class="bt close">닫기</a> -->
 				</div>
-				<h1 class="tit">연동계정</h1>
+				<h1 class="tit">연결된 계정</h1>
 			</div>
 		</div>
 		<main id="contents" class="contents">
@@ -24,8 +24,8 @@
 			<section class="sec acc">
 				<ul class="list">
 					<li class="instar"><span class="tit">INSTARGRAM</span> <div class="uiChk"><input type="checkbox" checked><em></em></div> </li>
-					<li class="kakao"><span class="tit">KAKAOTALK</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
 					<li class="facebook"><span class="tit">FACEBOOK</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
+					<li class="kakao"><span class="tit">KAKAOTALK</span> <div class="uiChk"><input type="checkbox"><em></em></div> </li>
 				</ul>
 			</section>
 

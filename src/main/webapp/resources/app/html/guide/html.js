@@ -14,7 +14,7 @@
 
 		// $(imgs).each(function(index){
 		// 	var r = parseInt( Math.random() * 6  ) + 1;
-		// 	$(this).attr("src","/resources/app/images/_temp/look_img_"+r+".jpg");
+		// 	$(this).attr("src","../../images/_temp/look_img_"+r+".jpg");
 		// });
 
 
@@ -46,7 +46,7 @@
 			".contain.alim .tabCtn .list>li .box .pic , "+
 			".contain.alim .tabCtn .list>li .box .msgs .text a " ;
 		$(document).on("click", prof_link ,function(e){
-			window.location.href = "/resources/app/html/mypage/profile.jsp";
+			window.location.href = "../../html/mypage/profile.jsp";
 		});
 
 		try {
@@ -166,7 +166,7 @@
 				var link = $(this).find(">mark").text();
 				if (link) {
 					$(this).find(">mark").wrapInner('<a href="' + link + '"></a>');
-					var lk = link.replace("/resources/app/", "./");
+					var lk = link.replace("../../", "./");
 					$(this).find("mark>a").text(lk);
 				} else {
 					$(this).wrapInner('<a href="javascript:;"></a>');
@@ -214,7 +214,7 @@
 					'</article>';
 				$("body").append(list);
 
-				$(".tempLink>.pan").load("/resources/app/html/guide/link.jsp .linkHtml", function () {
+				$(".tempLink>.pan").load("../../html/guide/link.jsp .linkHtml", function () {
 					uiHtml.menu.linkStat();
 				});
 

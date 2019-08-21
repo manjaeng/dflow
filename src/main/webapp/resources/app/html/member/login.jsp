@@ -38,6 +38,15 @@
 					</div>
 				</div>
 			</div>
+			<div class="gudJoin">
+				<div class="in">
+					<div class="line"></div>
+					<div class="msg">
+						<span class="txt">Don’t have an account?</span>
+						<a href="./joinMo.jsp" class="link">SIGN UP</a>
+					</div>
+				</div>
+			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">

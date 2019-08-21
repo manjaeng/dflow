@@ -29,9 +29,7 @@
 .popLogin .loginForm .form{margin-top: -5px;}
 .popLogin .loginForm .form .uiIptPlc{}
 .popLogin .loginForm .form .uiIptPlc .plc{}
-.popLogin .loginForm .form .uiIptPlc .input{
-    /* font-family: "Arial"; */
-}
+.popLogin .loginForm .form .uiIptPlc .input{}
 .popLogin .loginForm .form .msg_error{margin-top: 4px;}
 .popLogin .loginForm .form .btns{margin-top: 12px;}
 .popLogin .loginForm .form .btns .btn{width:100%;}
@@ -40,6 +38,15 @@
 .popLogin .loginForm .info .save label{}
 .popLogin .loginForm .info .txt{}
 .popLogin .loginForm .info .txt .link{display: block;padding: 4px 0; font-family:"BlairMd"; text-decoration: underline; font-size: 11px; color: #333333;}
+
+.popLogin .gudJoin{font-family:"BlairMd";text-align: center;height: 54px;}
+.popLogin .gudJoin>.in{height: 54px;position:fixed;bottom: 60px;left:0;right: 0px;}
+.popLogin .gudJoin .line{font-size: 12px; position:relative;}
+.popLogin .gudJoin .line:before{content:"OR";background-color: #ffffff;position:relative;z-index: 10;padding: 0 5px;}
+.popLogin .gudJoin .line:after{content:"";background: #000000;position:absolute;left:16px;right: 16px;height:1px;top: 9px;} 
+.popLogin .gudJoin .msg{font-size: 11px;padding: 2px 0px;}
+.popLogin .gudJoin .msg .txt{}
+.popLogin .gudJoin .msg .link{text-decoration: underline;color: #70f5c4;display: inline-block;vertical-align: middle;padding: 3px 0;margin-left: 4px;}
 
 
 /* 가입 */
@@ -52,7 +59,9 @@
 .popJoin .joinForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
 .popJoin .joinForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
 .popJoin .joinForm .form .uiIptPlc{}
-.popJoin .joinForm .form .uiIptPlc .plc{}
+.popJoin .joinForm .form .uiIptPlc .plc{
+    text-transform: inherit;
+}
 .popJoin .joinForm .form .uiIptPlc .input{}
 .popJoin .joinForm .form .uiIptPlc .time{position:absolute;top: 31px;right: 2px;color: #fd5555;font-size: 12px;}
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
@@ -79,16 +88,24 @@
 .contain.findPw .findForm{padding: 0px 16px 20px 16px;}
 .contain.findPw .findForm .hdt{font-size: 24px;text-align: center;color: #000000;font-family: "BlairMd","NotoSansCJKkr";margin-bottom: 23px;}
 .contain.findPw .findForm .hdt em{}
+.contain.findPw .findForm .msg{ font-size: 12px;}
 .contain.findPw .findForm .form{margin-top: -5px;}
 .contain.findPw .findForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
 .contain.findPw .findForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
-.contain.findPw .findForm .form .uiIptPlc{}
-.contain.findPw .findForm .form .uiIptPlc .plc{}
+.contain.findPw .findForm .form .uiIptPlc{    margin-top: 10px;}
+.contain.findPw .findForm .form .uiIptPlc .plc{
+    text-transform: inherit;
+}
 .contain.findPw .findForm .form .uiIptPlc .input{}
 .contain.findPw .findForm .form .msgs{margin-top: 8px;font-size: 12px;}
 .contain.findPw .findForm .form .btns{margin-top: 20px;}
 .contain.findPw .findForm .form .btns .btn{width:100%;}
-
+.contain.findPw .findForm .form .uiIptPlc.phone{}
+.contain.findPw .findForm .form .uiIptPlc.phone input{width: calc(100% - 91px);}
+.contain.findPw .findForm .form .uiIptPlc.phone .btnSend{position:absolute; right: 0px; bottom: 0px; width: 83px;}
+.contain.findPw .findForm .form .uiIptPlc .time{position:absolute;top: 31px;right: 2px;color: #fd5555;font-size: 12px;}
+.contain.findPw .findForm .form .msgcode{font-size: 12px;margin-top: 8px;}
+.contain.findPw .findForm .form .findpws{ display: block;padding: 4px 0; font-family:"BlairMd"; text-decoration: underline; font-size: 11px; color: #333333;}
 .contain.findPw .findForm .form .agree{ position:relative; margin-top: 15px;}
 .contain.findPw .findForm .form .agree .txt{font-size: 11px;}
 .contain.findPw .findForm .form .agree label.checkbox{position:absolute; right: 0px; top: -4px;}
@@ -101,6 +118,8 @@
 .contain.findPw.rst .findForm .form .pw.now{margin-bottom: 38px;}
 .contain.findPw.rst .findForm .form .pw.new{}
 .contain.findPw.rst .findForm .form .pw.com{}
+.contain.findPw.rst .findForm .form .uiIptPlc .plc{font-size:13px;}
+.contain.findPw.rst .findForm .form .uiIptPlc .input:focus + .plc{font-size:12px;}
 .contain.findPw.rst .findForm .msgs{ font-size: 12px; margin-top: 10px;}
 
 /* 비밀번호찾기 완료 */
@@ -319,7 +338,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.follow .tabs{}
 .contain.follow .sec.follow{}
 .contain.follow .sec.follow .tabCtn{padding-top: 33px;}
-.contain.follow .sec.follow .tabCtn .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;padding: 0 10px 0px 10px;}
+.contain.follow .sec.follow .tabCtn .list{display: flex;margin-right: -0px;position: relative;overflow: hidden;flex-wrap: wrap;padding: 0 15px 0px 15px;}
 .contain.follow .sec.follow .tabCtn .list>li{width: calc(33.3333% - 0px);margin-bottom: 35px;margin-right: 0px;max-width: 140px;}
 .contain.follow .sec.follow .tabCtn .list>li .item{position: relative;margin: auto;padding: 0 0px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .img{display:block;position:relative;margin: auto;width: 70px;height: 80px;}
@@ -339,14 +358,14 @@ body.my.list .header .bts .hisback{display:block;}
 /* 모델설정 */
 .contain.mdl.set{}
 .contain.mdl.set .guds{font-size: 15px;text-align: center;padding: 40px 0px 30px 0px;}
-.contain.mdl.set .sec.mdls{padding: 30px 10px 20px  20px;}
+.contain.mdl.set .sec.mdls{padding: 40px 10px 20px  20px;}
 .contain.mdl.set .sec.mdls ul.list{display:flex;justify-content:space-between;}
 .contain.mdl.set .sec.mdls ul.list>li{ width:100px;}
 .contain.mdl.set .sec.mdls ul.list>li .box{text-align: center;text-transform: uppercase;}
-.contain.mdl.set .sec.mdls ul.list>li .box .pic{width:68px;position:relative;margin: auto;height: 80px;}
-.contain.mdl.set .sec.mdls ul.list>li .box .pic .img{padding-bottom: calc(4% / 3 * 100);}
-.contain.mdl.set .sec.mdls ul.list>li .box .pic .img img{position:absolute;left:0px; top: 0px; object-fit: cover; border-radius: 100%;}
-.contain.mdl.set .sec.mdls ul.list>li .box .pic .bt{font-size: 0px;position:absolute;left:0px;top: 0px;object-fit: cover;border-radius: 100%;border:#cccccc solid 1px;width:100%;height:100%;background-size: 22px auto;}
+.contain.mdl.set .sec.mdls ul.list>li .box .pic{width:68px;position:relative;margin: auto;/* height: 76px; */}
+.contain.mdl.set .sec.mdls ul.list>li .box .pic .img{padding-bottom: calc(4% / 3.5 * 100);display: block;}
+.contain.mdl.set .sec.mdls ul.list>li .box .pic  img{position:absolute;left: 0px;top: 0px;object-fit: cover;border-radius: 100%;}
+.contain.mdl.set .sec.mdls ul.list>li .box .pic .bt{font-size: 0px;/* position:absolute; *//* left:0px; *//* top: 0px; */object-fit: cover;border-radius: 100%;width:100%;/* height:100%; *//* background-size: 22px auto; */padding-bottom: calc( 4% / 3.5 * 100 );display: block;/* overflow: hidden; *//* border-radius: 100%; */box-shadow: 0px 0px 1px rgba(0,0,0,0.8);}
 .contain.mdl.set .sec.mdls ul.list>li .box .name{ font-family:"BlairMd","NotoSansCJKkr"; margin-top: 5px; min-height: 22px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts{text-align: center;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt{width: 26px;height: 26px;display:inline-block;font-size: 0px;background: no-repeat center;background-size: 100% auto;overflow: hidden;vertical-align: middle;}
@@ -356,7 +375,7 @@ body.my.list .header .bts .hisback{display:block;}
 
 
 
-.contain.mdl.set .msgs{text-align: center;padding: 50px 0 30px 0px;font-size: 12px;color: #999999;}
+.contain.mdl.set .msgs{text-align: center;padding: 60px 0 30px 0px;font-size: 12px;color: #999999;}
 
 
 .contain.mdl.reg .steps{height:36px;}
@@ -480,13 +499,13 @@ body.my.list .header .bts .hisback{display:block;}
 
 
 .contain.account{}
-.contain.account .sec.acc{padding-top: 30px;}
+.contain.account .sec.acc{padding-top: 39px;}
 .contain.account .sec.acc .list{}
-.contain.account .sec.acc .list>li{border-top: #000000 solid 1px;position:relative;padding: 8px 65px 8px 25px;}
+.contain.account .sec.acc .list>li{border-top: #000000 solid 1px;position:relative;padding: 1px 65px 1px 17px;}
 .contain.account .sec.acc .list>li:last-child{border-bottom: #000000 solid 1px;}
-.contain.account .sec.acc .list>li .tit{font-size: 13px; font-family:"BlairMd";}
-.contain.account .sec.acc .list>li .uiChk{position:absolute;right: 20px;top: 8px;}
-.contain.account .sec.acc .list>li .tit::before{margin-right: 8px; content:"";width:20px;height:20px; background:no-repeat; background-size: 100% auto; display:inline-block;  font-size: 0px; vertical-align: middle;}
+.contain.account .sec.acc .list>li .tit{font-size: 10px;font-family:"BlairMd";}
+.contain.account .sec.acc .list>li .uiChk{position:absolute;right: 20px;top: 3px;}
+.contain.account .sec.acc .list>li .tit::before{margin-right: 5px;content:"";width:20px;height:20px;background:no-repeat;background-size: 100% auto;display:inline-block;font-size: 0px;vertical-align: middle;}
 .contain.account .sec.acc .list>li.instar .tit::before{background-image:url(../images/common/ico_instargram.png);}
 .contain.account .sec.acc .list>li.kakao .tit::before{background-image:url(../images/common/ico_kakaotalk.png);}
 .contain.account .sec.acc .list>li.facebook .tit::before{background-image:url(../images/common/ico_facebook.png);}

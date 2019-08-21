@@ -28,7 +28,7 @@
 				<ul class="list">
 					<li>
 						<div class="box">
-							<div class="pic"><a href="../mypage/model_edit.jsp" class="img"><img src="https://placeimg.com/140/160/123" alt=""></a></div>
+							<div class="pic"><a href="../mypage/model_edit.jsp" class="bt"><img src="https://placeimg.com/140/160/123" alt=""></a></div>
 							<div class="name">Jenny</div>
 							<div class="bts">
 								<a href="javascript:;" class="bt del">Delete</a>
@@ -65,7 +65,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../mypage/model_reg1.jsp" class="btn type b fill xl">Done</a>
+						<a href="./model_reg1.jsp" class="btn type b fill xl">Done</a>
 					</div>
 				</div>
 			</section>

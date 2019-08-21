@@ -36,7 +36,7 @@
 					<li>
 						<span class="bt">고객지원</span>
 						<ul>
-							<li><a class="bt" href="../setting/qna.jsp">1:1 문의</a></li>
+							<li><a class="bt" href="../setting/qna.jsp">1 : 1 문의</a></li>
 							<li><a class="bt" href="../setting/notice.jsp">공지사항</a></li>
 						</ul>
 					</li>
@@ -57,7 +57,7 @@
 						<a class="bt" href="javascript:;">셀러 계정 신청</a>
 					</li>
 					<li>
-						<a class="bt" href="javascript:;">로그아웃</a>
+						<a class="bt" href="javascript:;" onclick="sampleLogoutAct();">로그아웃</a>
 					</li>
 				</ul>
 			</section>
@@ -71,6 +71,19 @@
 	</div>
 
 	<script>
+	var sampleLogoutAct = function(){
+		ui.confirm({ // 컨펌 창 띄우기
+			msg:'<p>로그아웃을 하시겠습니까?</p>',
+			ycb:function(){
+				// console.log('컨펌확인결과');
+			},
+			ncb:function(){
+				// console.log('컨펌취소결과');
+			},
+			// ybt:'로그인하기',
+			// nbt:'닫기'
+		});
+	}
 	$(document).ready(function(){
 		
 	});

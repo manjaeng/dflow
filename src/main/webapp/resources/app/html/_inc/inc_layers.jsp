@@ -346,7 +346,7 @@ function testUrlCopy() {
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">CHANAGE PHOTO</a></li>
+					<li><a href="javascript:;" class="bt">CHANGE PHOTO</a></li>
 					<li><a href="javascript:;" class="bt">DELETE PHOTO</a></li>
 				</ul>
 			</main>

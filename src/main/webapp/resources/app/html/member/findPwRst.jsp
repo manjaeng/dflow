@@ -17,25 +17,27 @@
 		</div>
 		<main id="contents" class="contents">
 			<div class="findForm">
-				<div class="hdt"><em>비밀번호재설정</em></div>
+				<div class="hdt"><em>비밀번호 찾기</em></div>
 				<div class="form">
 					<!-- <div class="pw now">
 						<input type="password" class="input" placeholder="현재비밀번호 입력">
 					</div> -->
-					<div class="pw new">
-						<input type="password" class="input" placeholder="변경비밀번호 입력">
+					<div class="uiIptPlc pw new">
+						<input type="password" class="input">
+						<span class="plc">비밀번호 입력</span>
 					</div>
-					<div class="pw com">
-						<input type="password" class="input" placeholder="비밀번호 확인">
+					<div class="uiIptPlc pw com">
+						<input type="password" class="input">
+						<span class="plc">비밀번호 확인</span>
 					</div>
-					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
+					<div class="msg_error show" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
 					<div class="msgs">* 영문숫자조합 6자 이상 조합으로 가능합니다. </div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../member/login.jsp" class="btn xl b fill btnDone">DONE</a>
+						<a href="./findPwCom.jsp" class="btn xl b fill btnDone">DONE</a>
 					</div>
 				</div>
 			</div>
