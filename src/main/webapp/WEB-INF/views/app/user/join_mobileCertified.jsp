@@ -70,7 +70,7 @@
 				if(!fp.util.checkRegEx('mobile',$phone)) {
 					timer.destroy();
 					$('#msg_exist').addClass('show');
-					$('#msg_exist').text('올바른 번호를 입력해주세요.');
+					$('#msg_exist').text('올바른 전화번호를 입력해주세요.');
 					$('.phone input').focus();
 					
 					return false;

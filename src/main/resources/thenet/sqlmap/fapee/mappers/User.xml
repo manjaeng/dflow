@@ -29,6 +29,9 @@
 	 	<if test='userId != null'>
 	 		AND userId = #{userId}
 	 	</if>
+	 	<if test='password != null'>
+	 		AND password = #{password}
+	 	</if>
 	 	<if test='mobile != null'>
 	 		AND mobile = #{mobile}
 	 	</if>

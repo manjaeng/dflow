@@ -130,4 +130,17 @@ public class UserController {
 		return "user/login.app";
 	}
 	
+	@PostMapping("app/user/login.do")
+	@ResponseBody
+	public String login(@RequestBody EgovMap loginMap) throws Exception {
+		
+		boolean isSuccess = userService.selectUserLogin(loginMap);
+		
+		if(isSuccess) {
+			return "t";
+		} else {
+			return "f";
+		}
+		
+	}
 }

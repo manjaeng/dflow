@@ -15,14 +15,14 @@
 				<div class="hdt"><em>LOGIN</em></div>
 				<div class="form">
 					<div class="uiIptPlc id">
-						<input type="email" class="input"  id="input_sample1" value="">
+						<input type="text" class="input"  id="input_sample1" value="">
 						<span class="plc">ID/mobile PHONE</span>
 					</div>
 					<div class="uiIptPlc pw">
 						<input type="password" class="input" id="input_sample2">
 						<span class="plc">PASSWORD</span>
 					</div>
-					<div class="msg_error" id="msg_sample1">비밀번호가 일치하지 않습니다.</div>
+					<div class="msg_error" id="msg_error">비밀번호가 일치하지 않습니다.</div>
 				</div>
 				<div class="info">
 					<div class="save">
@@ -38,7 +38,7 @@
 					<div class="line"></div>
 					<div class="msg">
 						<span class="txt">Don’t have an account?</span>
-						<a href="./joinMo.jsp" class="link">SIGN UP</a>
+						<a href="./join_mobileCertified.do" class="link">SIGN UP</a>
 					</div>
 				</div>
 			</div>
@@ -56,12 +56,63 @@
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 	
-	
 	<script>
-		$("#btnLogin").on("click",function(){
-			$("#input_sample1").addClass("ok");
-			$("#input_sample2").addClass("no");
-			$("#msg_sample1").addClass("show");
+		$(function() {
+			$("#btnLogin").click(function(){
+				
+				var $id = $.trim($('.id input').val());
+				var $pw = $.trim($('.pw input').val());
+				
+				if($id.length === 0) {
+					$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
+					$('#msg_error').addClass('show');
+					$('#msg_error').text('아이디 또는 전화번호를 입력해주세요.');
+					$('.id input').val('');
+					$('.id input').focus();
+					return false;
+				}
+				
+				if(!(fp.util.checkRegEx('id',$id) || fp.util.checkRegEx('mobile',$id))) {
+					$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
+					$('#msg_error').addClass('show');
+					$('#msg_error').text('아이디 형식을 다시 확인해주세요.');
+					$('.id input').focus();
+					return false;
+				}
+				
+				if($pw.length === 0) {
+					$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
+					$('#msg_error').addClass('show');
+					$('#msg_error').text('비밀번호를 입력해주세요.');
+					$('.pw input').val('');
+					$('.pw input').focus();
+					return false;
+				}
+				
+				fp.util.jsonAjax({
+					url : '/app/user/login.do',
+					data: {
+						userId : $id,
+						password : $pw,
+					},
+					success: function(data) {
+						
+						if(data === 't') {
+							$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
+							$('#msg_error').removeClass('show');
+							console.log('success');
+						} else if (data === 'f') {
+							$('#msg_error').addClass('show');
+							$('#msg_error').text('계정 정보를 확인해주세요.');
+							$("#input_sample1, #input_sample2").addClass("no");
+						}
+	
+					}
+				});
+				
+				return false;
+			});
+			
 		});
 	</script>
 	

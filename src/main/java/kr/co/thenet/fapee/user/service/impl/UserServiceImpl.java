@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import kr.co.thenet.fapee.common.model.FP_User;
 import kr.co.thenet.fapee.common.util.CommonFunc;
+import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.user.service.UserService;
 
@@ -35,4 +36,27 @@ public class UserServiceImpl implements UserService {
 		return userMapper.insertUserInfo(user);
 	}
 
+	@Override
+	public boolean selectUserLogin(EgovMap loginMap) throws Exception {
+		
+		EgovMap egovMap = new EgovMap();
+		egovMap.put("password", CommonFunc.getHashedPassword((String)loginMap.get("password")));
+		
+		String id = (String)loginMap.get("userId");
+		
+		if(CommonUtils.isNumeric(id)) {
+			egovMap.put("mobile", id);
+		} else {
+			egovMap.put("userId", id);
+		}
+		
+		FP_User user = userMapper.selectUserInfo(egovMap);
+		
+		if(user == null) {
+			return false;
+		} else {
+			return true;
+		}
+		
+	}
 }

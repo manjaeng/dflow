@@ -12,5 +12,7 @@ public interface UserService {
 	FP_User selectUserInfo(EgovMap egovMap) throws Exception;
 
 	int insertUserInfo(FP_User user) throws Exception;
+
+	boolean selectUserLogin(EgovMap loginMap) throws Exception;
 	
 }
