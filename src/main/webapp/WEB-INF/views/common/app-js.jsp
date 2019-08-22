@@ -11,3 +11,4 @@
 <script src="/resources/app/js/_check.js"></script>
 <script src="/resources/app/js/_native.js"></script>
 <script src="/resources/app/js/_init.js"></script>
+<script src="/resources/app/js/android.js"></script>

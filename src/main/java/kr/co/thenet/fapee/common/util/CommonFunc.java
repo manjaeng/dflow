@@ -33,9 +33,15 @@ import javax.imageio.ImageWriter;
 import javax.imageio.stream.ImageOutputStream;
 
 import org.imgscalr.Scalr;
+import org.springframework.util.StringUtils;
 
 
 public class CommonFunc {
+	public static String trim(String str) { return CommonFunc.trim(str, ""); }
+	public static String trim(String str, String defaultStr) {
+		return StringUtils.isEmpty(str) ? defaultStr : StringUtils.trimWhitespace(str);
+	}
+	
 	public static String getStringFromObject(Object obj) {
 		if (obj == null) {
 			return null;
