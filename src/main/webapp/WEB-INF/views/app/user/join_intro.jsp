@@ -37,8 +37,16 @@
 
 	<script>
 		$(function(){
-			$('.box .bts a:last').click(function() {
-				pjax('./join_mobileCertified.do');
+			$('.box .bts a').click(function() {
+				
+				var index = $(this).index();
+				
+				if(index == 0) {
+					pjax('./login.do');
+				} else if (index == 1) {
+					pjax('./join_mobileCertified.do');
+				}
+				
 				return false;
 			});
 		});

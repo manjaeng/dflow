@@ -40,7 +40,7 @@
 .popLogin .loginForm .info .txt .link{display: block;padding: 4px 0; font-family:"BlairMd"; text-decoration: underline; font-size: 11px; color: #333333;}
 
 .popLogin .gudJoin{font-family:"BlairMd";text-align: center;height: 54px;}
-.popLogin .gudJoin>.in{height: 54px;position:fixed;bottom: 60px;left:0;right: 0px;}
+.popLogin .gudJoin>.in{height: 54px;position:fixed;bottom: 60px;left:0;right: 0px;background: #ffffff;}
 .popLogin .gudJoin .line{font-size: 12px; position:relative;}
 .popLogin .gudJoin .line:before{content:"OR";background-color: #ffffff;position:relative;z-index: 10;padding: 0 5px;}
 .popLogin .gudJoin .line:after{content:"";background: #000000;position:absolute;left:16px;right: 16px;height:1px;top: 9px;} 

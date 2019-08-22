@@ -18,7 +18,15 @@
 		// });
 
 
-
+		$(window).on("load scroll",function(){
+			var winH = $(window).height();
+			var docH = $(document).height();
+			var scrT = $(window).scrollTop();
+			var pct =  scrT / ( docH - winH ) * 100 ;
+			// console.log( winH , docH , scrT ,  pct );
+			$("#barH").css({"width":pct+"%"});
+		});
+		
 		$(document).on("click",".uiLkSet>.data ul.dl>li .bt",function(e){
 			if( $(this).hasClass("on") ){
 				$(this).removeClass("on");

@@ -9,6 +9,13 @@ if ($.support.pjax) {
 		}
 	});
 	
+	$(document).on({
+		'pjax:success' : function() {
+			console.log('_init.js : pjax success',fp.util.getTime());
+			ui.init();
+		}
+	});
+	
 	function pjax(url) {
 		$.pjax({
 			url : url,

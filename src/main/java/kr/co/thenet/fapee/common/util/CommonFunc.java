@@ -209,6 +209,10 @@ public class CommonFunc {
 		}
 		return ret;
 	}
+	
+	public static String getHashedPassword(String password) {
+		return CommonFunc.getHashedPassword(password, "");
+	}
 
 	public static String getHashedPassword(String password, String userId) {
 		String sSalt = CommonFunc.sha256(userId.toLowerCase());

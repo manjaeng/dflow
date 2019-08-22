@@ -3,80 +3,10 @@
 
 <mapper namespace="kr.co.thenet.fapee.user.service.impl.UserMapper">
 	
-	<select id="selectUserServiceInfo" resultType="FP_User" parameterType="egovMap">
-		SELECT  idKey
-		      , userId
-		      , password
-		      , userType
-		      , userName
-		      , mobileNumber
-		      , email
-		      , loginTotalCount
-		      , loginFailCount
-		      , lastLoginDate
-		      , loginIp
-		      , snsType
-		      , snsId
-		      , status
-		  FROM FP_User
-		 WHERE 1 = 1
-		 <if test='type != null'>
-		 	<if test='type == "id"'>
-		 		AND userId = #{value}
-		 	</if>
-		 	 <if test='type == "email"'>
-		 		AND email = #{value}
-		 	</if>
-		 </if>
-	</select>
-	
-	<update id="updateUserServiceFailCount">
-		UPDATE FP_User
-		   SET loginFailCount=loginFailCount+1
-		 WHERE idKey=#{_parameter}
-	</update>
-	
-	<update id="updateUserServiceInfo" parameterType="FP_User">
-		UPDATE FP_User
-		   SET loginFailCount=0,
-		       lastLoginDate=#{lastLoginDate},
-		       loginTotalCount=#{loginTotalCount},
-		       loginIp=#{loginIp}
-		 WHERE idKey=#{idKey}
-	</update>
-	
-	<select id="selectUserServiceList" resultType="FP_User">
+	<select id="selectUserList" resultType="FP_User">
 		SELECT *
 		  FROM FP_User
 	</select>
-	
-	<select id="selectUserServiceCount" resultType="int" parameterType="FP_User">
-		SELECT count(*)
-		  FROM FP_User
-		 WHERE userId = #{userId} OR email = #{email}
-	</select>
-	
-	<insert id="insertUserServiceInfo" parameterType="FP_User">
-		INSERT into FP_User(
-			  idKey
-			, userId
-			, password
-			, userType
-			, email
-			, loginTotalCount
-			, loginFailCount
-			, joinDate
-		) VALUES (
-			  #{idKey}
-			, #{userId}
-			, #{password}
-			, 2
-			, #{email}
-			, 0
-			, 0
-			, now()
-		)
-	</insert>
 	
 	<select id="selectUserInfo" resultType="FP_User" parameterType="egovMap">
 		SELECT idKey
@@ -96,9 +26,37 @@
 	 	<if test='idKey != null'>
 	 		AND idKey = #{idKey}
 	 	</if>
+	 	<if test='userId != null'>
+	 		AND userId = #{userId}
+	 	</if>
+	 	<if test='password != null'>
+	 		AND password = #{password}
+	 	</if>
 	 	<if test='mobile != null'>
 	 		AND mobile = #{mobile}
 	 	</if>
 	</select>
+	
+	<insert id="insertUserInfo" parameterType="FP_User" useGeneratedKeys="true" keyProperty="idKey">
+		INSERT into FP_User(
+			 userId
+			,password
+			,userType
+			,mobile
+			,email
+			,joinDate
+			,deviceId
+			,status
+		) VALUES (
+			  #{userId}
+			, #{password}
+			, #{userType}
+			, #{mobile}
+			, #{email}
+			, now()
+			, #{deviceId}
+			, #{status}
+		)
+	</insert>
 	
 </mapper>

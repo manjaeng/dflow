@@ -15,7 +15,7 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		log.info(" Request URI \t:  " + request.getRequestURI());
+		log.info(" Request Info : (" + request.getMethod()+ ")\t" + request.getRequestURI());
 		
 		return true;
 	}
