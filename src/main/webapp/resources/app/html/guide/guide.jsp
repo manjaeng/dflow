@@ -29,6 +29,8 @@
 				<div id="iosSafe"></div>
 			</div>
 
+			<div id="barH"></div>
+
 			<p class="gap"></p>
 			
 			<p class="gap"></p>
