@@ -9,19 +9,11 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 
 @Mapper
 public interface UserMapper {
-	
-	FP_User selectUserServiceInfo(EgovMap egovMap) throws Exception;
-	
-	void updateUserServiceFailCount(Long idKey) throws Exception;
-	
-	void updateUserServiceInfo(FP_User user) throws Exception;
 
-	List<FP_User> selectUserServiceList() throws Exception;
+	List<FP_User> selectUserList() throws Exception;
 	
-	int selectUserServiceCount(FP_User user) throws Exception;
-	
-	int insertUserServiceInfo(FP_User user) throws Exception;
-
 	FP_User selectUserInfo(EgovMap egovMap) throws Exception;
+
+	int insertUserInfo(FP_User user) throws Exception;
 	
 }

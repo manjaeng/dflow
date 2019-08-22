@@ -1,4 +1,5 @@
 var fp = {};
+fp.test = false;
 fp.data = {};
 fp.util = {};
 
@@ -116,12 +117,18 @@ fp.util.getTimer = function(d, selector) {
 	}
 }
 
-fp.util.checkRegEx = function(type,val1) {
+fp.util.checkRegEx = function(type,value) {
 	var regEx;
 	
 	if(type == 'mobile') {
-		regEx = /(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
+		regEx = /^(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
+	} else if (type == 'id') {
+		regEx = /^[a-zA-Z0-9]{3,10}$/;
+	} else if (type == 'pw') {
+		regEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+	} else if (type == 'email') {
+		regEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
 	}
 	
-	return regEx.test(val1);
+	return regEx.test(value);
 }

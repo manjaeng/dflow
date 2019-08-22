@@ -15,7 +15,7 @@ public class FP_User {
 	private String password;
 	private String userType;
 	private String userName;
-	private int mobile;
+	private String mobile;
 	private String email;
 	private Date lastLoginDate;
 	private Date joinDate;

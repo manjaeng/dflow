@@ -28,7 +28,7 @@
 					<div class="msgcode" style="display:none;">해당 번호로 코드를 전송하였습니다.</div>
 					<div class="msg_error" id="msg_exist"></div>
 					<div class="findpws" style="display:none;">
-						<a href="./findPw.jsp" class="link">FORGOT ID/PASSWORD?</a>
+						<a href="./login.do" class="link">FORGOT ID/PASSWORD?</a>
 					</div>
 					
 					<div class="agree">
@@ -36,14 +36,14 @@
 							본인이 만 14세 이상인 것과 서비스 이용약관, <br> <a href="javascript:;">서비스이용약관, 개인정보보호정책</a>에 동의하십니까? </div>
 						<label class="checkbox"><input type="checkbox"><span></span></label>
 					</div>
-					<div class="msg_error show" id="msg_agree">약관에 동의해 주세요.</div>
+					<div class="msg_error" id="msg_agree">약관에 동의해 주세요.</div>
 
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./joinId.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a href="./join_id.do" class="btn xl b fill btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>
@@ -99,22 +99,54 @@
 				return false;
 			});
 			
+			$('.agree input[type=checkbox]').change(function() {
+				if($('.agree input[type=checkbox]').is(':checked')) {
+					$('#msg_agree').removeClass('show');
+					return false;
+				}
+			});
+			
 			$('.fit a').click(function() {
 				
-				var $verification = $('#verification').val();
+				//Skip
+				if(fp.test) {
+					fp.data.join = {
+						deviceId : 'emsdf1-saesd-vsdaf-esdfs',
+						mobile : '01012345678'
+					};
+						
+					pjax('./join_id.do');
+					return false;
+				}
+				
+				var $verification = $('.certi input').val();
+				
+				if($('.agree input[type=checkbox]').is(':checked') === false) {
+					$('#msg_exist').removeClass('show');
+					$('#msg_agree').addClass('show');
+					return false;
+				}
 				
 				if(timer.isStart() === false) {
-					console.log('인증코드 보내주세요');
+					$('#msg_exist').addClass('show');
+					$('#msg_exist').text('인증코드를 보내주세요.');
+					$('.findpws').hide();
+					$('.phone input').focus();
 					return false;
 				}
 				
 				if(timer.isEnd() === true) {
-					console.log('인증코드 다시 보내주세요');
+					$('.msgcode').hide();
+					$('#msg_exist').addClass('show');
+					$('#msg_exist').text('인증코드를 다시 보내주세요.');
 					return false;
 				}
 				
 				if($verification.length === 0) {
-					console.log('인증코드 입력해주세요');
+					$('.msgcode').hide();
+					$('#msg_exist').addClass('show');
+					$('#msg_exist').text('인증코드를 입력해 주세요.');
+					 $('.certi input').focus();
 					return false;
 				}
 				
@@ -128,10 +160,17 @@
 						if(data === 't') {
 							timer.destroy();
 							timer = null;
-							console.log('일치함');
+							
+							fp.data.join = {
+								deviceId : 'emsdf1-saesd-vsdaf-esdfs',
+								mobile : $('.phone input').val()
+							};
+							
 							pjax('./join_id.do');
 						} else if (data === 'f') {
-							console.log('일치안함');
+							$('.msgcode').hide();
+							$('#msg_exist').addClass('show');
+							$('#msg_exist').text('인증 코드를 다시 확인하세요.');
 						}
 						
 					}
