@@ -56,9 +56,9 @@ public class SettingController {
 		return noticeService.selectNoticeServiceList(egovMap);
 	}
 	
-	@GetMapping("/admin/setting/set.do")
-	public String hashtag() throws Exception {
-		return "setting/set.admin";
+	@GetMapping("/admin/setting/list.do")
+	public String list() throws Exception {
+		return "setting/list.admin";
 	}
 	
 }

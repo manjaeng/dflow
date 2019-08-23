@@ -17,7 +17,7 @@
 		case '/admin/look/list.do':
 			$('.look').addClass('active');
 			break;
-		case '/admin/setting/set.do':
+		case '/admin/setting/list.do':
 			$('.setting').addClass('active');
 			break;
 		case '/admin/setting/hashtag.do':
@@ -46,7 +46,7 @@
 				<li><a href="/admin/look/list.do" class="look"><i
 						class="lnr lnr-shirt"></i> <span>Look</span></a></li>
 						
-				<li><a href="/admin/setting/set.do" class="setting"><i
+				<li><a href="/admin/setting/list.do" class="setting"><i
 						class="lnr lnr-cog"></i> <span>Setting</span></a></li>
 
 				<li><a href="#subPages" data-toggle="collapse"

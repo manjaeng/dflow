@@ -32,10 +32,9 @@
 									<tr>
 										<th>idKey</th>
 										<th>userId</th>
+										<th>style</th>
 										<th>contents</th>
-										<th>nickname</th>
-										<th>cool</th>
-										<th>comment</th>
+										<th>createDate</th>
 										<th>status</th>
 									</tr>
 								</thead>
@@ -46,7 +45,6 @@
 										<td>임시 컨텐츠1</td>
 										<td>관리자</td>
 										<td>0</td>
-										<td>0</td>
 										<td><input type="checkbox" checked data-toggle="toggle"
 											data-size="sm"></td>
 									</tr>
@@ -55,7 +53,6 @@
 										<td>test2</td>
 										<td>임시 컨텐츠2</td>
 										<td>패피루키</td>
-										<td>0</td>
 										<td>0</td>
 										<td><input type="checkbox" checked data-toggle="toggle"
 											data-size="sm"></td>
@@ -66,12 +63,14 @@
 										<td>임시 컨텐츠3</td>
 										<td>패피루키</td>
 										<td>0</td>
-										<td>0</td>
 										<td><input type="checkbox" data-toggle="toggle"
 											data-size="sm"></td>
 									</tr>
 								</tbody>
 							</table>
+							<div class="form-group text-center" style="margin-bottom: 0">
+								<button type="button" onclick="location.href='/admin/look/add.do'" 
+								class="btn btn-primary">룩등록</button>
 						</div>
 					</div>
 					<!-- END TABLE HOVER -->
