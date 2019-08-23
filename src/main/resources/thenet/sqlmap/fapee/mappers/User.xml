@@ -5,7 +5,7 @@
 	
 	<select id="selectUserList" resultType="FP_User">
 		SELECT *
-		  FROM FP_User
+		  FROM fp_user
 	</select>
 	
 	<select id="selectUserInfo" resultType="FP_User" parameterType="egovMap">
@@ -21,7 +21,7 @@
 		      ,snsId
 		      ,deviceId
 		      ,status
-		  FROM FP_User
+		  FROM fp_user
 		 WHERE 1 = 1
 	 	<if test='idKey != null'>
 	 		AND idKey = #{idKey}
@@ -38,7 +38,7 @@
 	</select>
 	
 	<insert id="insertUserInfo" parameterType="FP_User" useGeneratedKeys="true" keyProperty="idKey">
-		INSERT into FP_User(
+		INSERT into fp_user(
 			 userId
 			,password
 			,userType
@@ -48,15 +48,38 @@
 			,deviceId
 			,status
 		) VALUES (
-			  #{userId}
-			, #{password}
-			, #{userType}
-			, #{mobile}
-			, #{email}
-			, now()
-			, #{deviceId}
-			, #{status}
+			 #{userId}
+			,#{password}
+			,#{userType}
+			,#{mobile}
+			,#{email}
+			,now()
+			,#{deviceId}
+			,#{status}
 		)
+	</insert>
+	
+	<insert id="insertUserFilterInfo" parameterType="egovMap" useGeneratedKeys="true" keyProperty="idKey">
+		INSERT into fp_user_filter(
+			 deviceId
+			,gender
+			,country
+		) VALUES (
+			 #{deviceId}
+			,#{gender}
+			,#{country}
+		)
+	</insert>
+	
+	<insert id="insertUserStyleList" parameterType="egovMap">
+		INSERT into fp_style_choose(
+			 styleIdKey
+			,userFilterIdKey
+		) VALUES 
+		<foreach collection="styleArray" item="item" index="i" separator=",">
+			(#{item},#{userFilterIdKey})
+       	</foreach>
+		
 	</insert>
 	
 </mapper>

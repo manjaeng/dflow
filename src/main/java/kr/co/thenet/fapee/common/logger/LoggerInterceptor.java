@@ -1,5 +1,8 @@
 package kr.co.thenet.fapee.common.logger;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,7 +18,9 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
-		log.info(" Request Info : (" + request.getMethod()+ ")\t" + request.getRequestURI());
+		SimpleDateFormat sf = new SimpleDateFormat("HH:mm:ss");
+		
+		log.info(" Request Info : (" + request.getMethod()+ ") - " + sf.format(new Date()) + " - " + request.getRequestURI());
 		
 		return true;
 	}

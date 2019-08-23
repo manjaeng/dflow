@@ -17,7 +17,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	
 	@Override
 	public List<FP_User> selectUserList() throws Exception {
 		return userMapper.selectUserList();
@@ -59,4 +58,30 @@ public class UserServiceImpl implements UserService {
 		}
 		
 	}
+	
+	@Override
+	public boolean insertUserFilterInfo(EgovMap introMap) throws Exception {
+		
+		int insertCount = userMapper.insertUserFilterInfo(introMap);
+		
+		if(insertCount == 1) {
+
+			String[] StyleArray = ((String)introMap.get("style")).split(",");
+			
+			EgovMap styleMap = new EgovMap();
+			styleMap.put("userFilterIdKey", introMap.get("idKey"));
+			styleMap.put("styleArray", StyleArray);
+			
+			int insertStyleCount = userMapper.insertUserStyleList(styleMap);
+			
+			if(insertStyleCount > 0) {
+				return true;
+			}
+		}
+			
+		return false;
+	
+	}
+	
+
 }

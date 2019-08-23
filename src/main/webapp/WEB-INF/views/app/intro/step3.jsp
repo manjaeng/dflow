@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
 	<div id="contain" class="contain myinfo step3">
 		<div class="pageHd">
 			<div class="in">
@@ -26,8 +24,6 @@
 					</ul>
 				</div>
 			</section>
-
-			<!-- <button type="button" onclick="testPicAdd()">추가</button> -->
 			
 			<section class="steps st3">
 				<ul class="st">
@@ -46,8 +42,6 @@
 			</div>
 		</main>
 	</div>
-	
-	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>

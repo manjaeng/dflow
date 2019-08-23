@@ -37,7 +37,20 @@
 
 	<script>
 		$(function(){
+			
+			
+			if(fp.data.intro === null) {
+				
+				history.pushState(null, null, location.href);
+			    window.onpopstate = function () {
+			        history.go(1);
+				};
+				
+				return false;
+			}
+			
 			$('.box .bts a').click(function() {
+				
 				
 				var index = $(this).index();
 				

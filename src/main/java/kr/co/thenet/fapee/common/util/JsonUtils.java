@@ -19,10 +19,10 @@ import com.google.gson.Gson;
  *   2015.05.12	HANQ		최초생성
  * 
  */
-public class JsonUtil {
+public class JsonUtils {
 
 	// 생성자
-    public JsonUtil() {
+    public JsonUtils() {
         // 생성자 Code
     }
 

@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
 	<div id="contain" class="contain myinfo step4">
 		<div class="pageHd">
 			<div class="in">
@@ -39,7 +37,6 @@
 		</main>
 	</div>
 	
-	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
@@ -48,8 +45,44 @@
 	
 	$(function() {
 		$('.fit a').click(function() {
-		
-			alert('return false');
+			
+			if(!fp.data.intro) {
+				console.log('데이터 없음');
+				pjax('/app/user/join_intro.do');
+				return false;
+			}
+			
+			var index = $(this).index();
+			ui.loading.show();
+			
+			fp.util.jsonAjax({
+				url : '/app/intro/intro_complte.do',
+				data : fp.data.intro,
+                success : function(data) {
+                	if(data === "t") {
+                		fp.data.intro = null;
+                		
+                		if(index == 0) {
+            				console.log('홈 이동');
+            			} else if (index == 1) {
+            				pjax('/app/user/join_intro.do');
+            			}
+                		
+                		setTimeout(function(){
+                			ui.loading.hide();
+                			
+                		},500);
+                	} else {
+                		console.log('실패');
+                		ui.loading.hide();
+                	}
+                },
+                error : function(x, s, e) {
+                	console.log('error');
+            		ui.loading.hide();
+                }
+			});
+			 
 			
 			return false;
 		});
@@ -57,7 +90,5 @@
 	});
 	
 	</script>
-	
-	<!--// 컨텐츠 끝 -->
 	
 </div>

@@ -6,15 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.intro.service.IntroService;
+import kr.co.thenet.fapee.user.service.UserService;
 
 @Controller
 public class IntroController {
 
 	@Autowired
 	private IntroService introService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping("/app/intro/step1.do")
 	public String step1() throws Exception {
@@ -44,4 +51,17 @@ public class IntroController {
 		return "intro/step4.app";
 	}
 	
+	@PostMapping("/app/intro/intro_complte.do")
+	@ResponseBody
+	public String introComplete(@RequestBody EgovMap introMap) throws Exception {
+		
+		boolean isSuccess = userService.insertUserFilterInfo(introMap);
+
+		if(isSuccess) {
+			return "t";
+		} else {
+			return "f";
+		}
+		
+	}
 }

@@ -90,6 +90,11 @@
 							$('.findpws').show();
 							timer.destroy();
 						} else if(data === 'send') {
+							fp.data.join = {
+								deviceId : 'emsdf1-saesd-vsdaf-esdfs',
+								mobile : $('.phone input').val()
+							};
+							
 							$('.msgcode').show();
 							timer.start();
 						}
@@ -160,12 +165,6 @@
 						if(data === 't') {
 							timer.destroy();
 							timer = null;
-							
-							fp.data.join = {
-								deviceId : 'emsdf1-saesd-vsdaf-esdfs',
-								mobile : $('.phone input').val()
-							};
-							
 							pjax('./join_id.do');
 						} else if (data === 'f') {
 							$('.msgcode').hide();

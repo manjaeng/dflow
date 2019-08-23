@@ -1,7 +1,6 @@
 package kr.co.thenet.fapee.user.web;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.thenet.fapee.common.model.FP_User;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
+import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.user.service.UserService;
 import lombok.extern.log4j.Log4j;
 
@@ -45,10 +45,9 @@ public class UserController {
 		
 		if(user == null) {
 			
-			HttpSession session = req.getSession();
 			String randomNum = CommonUtils.getRandomNum(6);
 			
-			session.setAttribute("verification", randomNum);
+			SessionUtils.setData(req, "verification", randomNum);
 			
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
@@ -64,20 +63,12 @@ public class UserController {
 	@ResponseBody
 	public String joinMobileCertified2(@RequestParam String verification, HttpServletRequest req) throws Exception {
 		
-		HttpSession session = req.getSession();
-		String sessionVerification = "";
-		
-		if(session.getAttribute("verification") != null) {
-			sessionVerification = (String)session.getAttribute("verification");
-			
-			if(sessionVerification.equals(verification)) {
-				session.removeAttribute("verification");
-				return "t";
-			}
+		if(!SessionUtils.isEmpty(req, "verification") && SessionUtils.getData(req, "verification").equals(verification)) {
+			SessionUtils.removeData(req, "verification");
+			return "t";
 		}
 		
 		return "f";
-		
 	}
 	
 	@GetMapping("/app/user/join_id.do")
@@ -114,7 +105,7 @@ public class UserController {
 	
 	@PostMapping("/app/user/join_complete.do")
 	@ResponseBody
-	public String joinComplete(@RequestBody FP_User user) throws Exception {
+	public String joinComplete(@RequestBody FP_User user, HttpServletRequest req) throws Exception {
 		
 		int insertCount = userService.insertUserInfo(user);
 		

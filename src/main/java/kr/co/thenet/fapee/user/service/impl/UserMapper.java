@@ -15,5 +15,9 @@ public interface UserMapper {
 	FP_User selectUserInfo(EgovMap egovMap) throws Exception;
 
 	int insertUserInfo(FP_User user) throws Exception;
+
+	int insertUserFilterInfo(EgovMap introMap) throws Exception;
+
+	int insertUserStyleList(EgovMap styleMap) throws Exception;
 	
 }

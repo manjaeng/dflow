@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
 	<div id="contain" class="contain myinfo step2">
 		<div class="pageHd">
 			<div class="in">
@@ -46,7 +44,6 @@
 		</main>
 	</div>
 	
-	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
@@ -64,7 +61,7 @@
 		
 		$('.fit a').click(function() {
 			
-			fp.data.intro.style = [];
+			fp.data.intro.style = '';
 			
 			if($('.style input[type=checkbox]:checked').length == 0) {
 				alert('한개이상 선택');
@@ -72,21 +69,15 @@
 			}
 			
 			$('.style input[type=checkbox]:checked').each(function(i,e) {
-				fp.data.intro.style.push($(this).val());
+				fp.data.intro.style += $(this).val() + ',';
 			});
 			
-			$.pjax({
-				url : './step3.do',
-				fragment : '#wrap',
-				container : '#wrap'
-			});
+			pjax('./step3.do');
 			
 			return false;
 		});
 	});
 	
 	</script>
-	
-	<!--// 컨텐츠 끝 -->
 	
 </div>

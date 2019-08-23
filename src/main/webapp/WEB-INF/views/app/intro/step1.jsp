@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
 	<div id="contain" class="contain myinfo step1">
 		<div class="pageHd">
 			<div class="in">
@@ -25,8 +23,8 @@
 						<li class="gender">
 							<div class="dt">성별</div>
 							<div class="dd">
-								<label class="radio"><input type="radio" name="gender" value="female" checked><span>여자</span></label>
-								<label class="radio"><input type="radio" name="gender" value="male"><span>남자</span></label>
+								<label class="radio"><input type="radio" name="gender" value="f" checked><span>여자</span></label>
+								<label class="radio"><input type="radio" name="gender" value="m"><span>남자</span></label>
 							</div>
 						</li>
 						<li class="nation">
@@ -44,7 +42,7 @@
 						</li>
 					</ul>
 					<div class="account">
-						<a href="../member/login.jsp">Do you HAVE AN ACCOUNT?</a>
+						<a href="/app/user/login.do">Do you HAVE AN ACCOUNT?</a>
 					</div>
 				</div>
 
@@ -62,7 +60,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a  href="./step2.jsp" class="btn xl b fill btnNext">NEXT</a>
+						<a  href="./step2.do" class="btn xl b fill btnNext">NEXT</a>
 					</div>
 				</div>
 			</div>
@@ -70,7 +68,6 @@
 		</main>
 	</div>
 	
-	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
@@ -79,19 +76,15 @@
 	
 	$(function() {
 		$('.fit a').click(function() {
-			var deviceId = '1a2a3a4a5a6a';
+			var deviceId = 'emsdf1-saesd-vsdaf-esdfs';
 			
 			fp.data.intro = {
 				deviceId : deviceId,
 				gender : $('input[name="gender"]:checked').val(),
-				nation : $('.nation .select').val().toLowerCase()
+				country : $('.nation .select').val().toLowerCase()
 			};
 			
-			$.pjax({
-				url : './step2.do',
-				fragment : '#wrap',
-				container : '#wrap'
-			});
+			pjax('./step2.do');
 			
 			return false;
 		});
@@ -99,5 +92,4 @@
 	});
 	
 	</script>
-	<!--// 컨텐츠 끝 -->
 </div>

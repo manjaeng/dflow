@@ -42,6 +42,12 @@
 			
 			$('.fit a').click(function() {
 				
+				if(!fp.data.join) {
+					console.log('데이터 없음');
+					pjax('/app/user/join_intro.do');
+					return false;
+				}
+				
 				//Skip
 				if(fp.test) {
 					fp.data.join.email = 'csh0034@gmail.com';
@@ -52,10 +58,13 @@
 							data : fp.data.join,
 			                success : function(data) {
 			                	if(data === "t") {
+			                		fp.data.join = null;
+			                		//pjax('/app/home.do');
+			                		console.log('홈으로 이동');
+			                		
 			                		setTimeout(function(){
 			                			ui.loading.hide();
-			                			console.log('홈으로 이동')
-			                		},1000);
+			                		},500);
 			                	}
 			                },
 			                error : function(x, s, e) {
@@ -65,7 +74,7 @@
 					
 					return false;
 				}
-								
+				
 				var $email = $('.email input').val();
 				
 				if($email.length === 0) {
@@ -91,8 +100,13 @@
 					data : fp.data.join,
 	                success : function(data) {
 	                	if(data === "t") {
-	                		ui.loading.hide();
-							console.log('홈으로 이동')
+	                		fp.data.join = null;
+	                		//pjax('/app/home.do');
+	                		console.log('홈으로 이동');
+	                		
+	                		setTimeout(function(){
+	                			ui.loading.hide();
+	                		},500);
 	                	}
 	                },
 	                error : function(x, s, e) {
