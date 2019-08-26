@@ -12,6 +12,7 @@ if ($.support.pjax) {
 	$(document).on({
 		'pjax:success' : function() {
 			console.log('_init.js : pjax success',fp.util.getTime());
+			$('body').attr('class','body');
 			ui.init();
 		}
 	});
