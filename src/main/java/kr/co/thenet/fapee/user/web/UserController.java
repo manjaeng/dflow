@@ -131,13 +131,18 @@ public class UserController {
 		if(user == null) {
 			return "f";
 		} else {
-			SessionVO sess = new SessionVO();
-			sess.setIdKey(user.getIdKey());
-			sess.setUserId(user.getUserId());
-			sess.setUserType(user.getUserType());
-			sess.setMobile(user.getMobile());
-			sess.setEmail(user.getEmail());
-			sess.setDeviceId(user.getDeviceId());
+			
+			userService.updateUserLastLoginInfo(user.getIdKey());
+			
+			SessionVO sessionVO = new SessionVO();
+			sessionVO.setIdKey(user.getIdKey());
+			sessionVO.setUserId(user.getUserId());
+			sessionVO.setUserType(user.getUserType());
+			sessionVO.setMobile(user.getMobile());
+			sessionVO.setEmail(user.getEmail());
+			sessionVO.setDeviceId(user.getDeviceId());
+			
+			SessionUtils.setSessionData(req, sessionVO);
 		}
 		
 		return "t";

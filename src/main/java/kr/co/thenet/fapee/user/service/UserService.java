@@ -16,5 +16,7 @@ public interface UserService {
 	UserVO selectUserLogin(EgovMap loginMap) throws Exception;
 	
 	boolean insertUserFilterInfo(EgovMap introMap) throws Exception;
+
+	int updateUserLastLoginInfo(long idKey) throws Exception;
 	
 }
