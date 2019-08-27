@@ -49,8 +49,14 @@ public class S3Utils {
 	}
 
 	public static void createFolder(String folderName) {
-		s3Client.putObject(BUCKET_NAME, folderName + "/", new ByteArrayInputStream(new byte[0]), new ObjectMetadata());
-	}
+        ObjectMetadata metadata = new ObjectMetadata();
+        metadata.setContentLength(0);
+        
+        PutObjectRequest putObjectRequest = new PutObjectRequest(BUCKET_NAME,
+               folderName + "/", new ByteArrayInputStream(new byte[0]) , metadata);
+        
+        s3Client.putObject(putObjectRequest);
+    }
 
 	public static void uploadFile(String fileName, String filePath) {
 
@@ -64,9 +70,10 @@ public class S3Utils {
 			s3Client.putObject(request);
 			
 		} catch (AmazonServiceException e) {
-			e.printStackTrace();
+			log.info("Message Error: " + e.getMessage());
+			log.info("Type Error: " + e.getErrorType());
 		} catch (SdkClientException e) {
-			e.printStackTrace();
+			log.info("Message Error: " + e.getMessage());
 		}
 	}
 	
@@ -80,9 +87,10 @@ public class S3Utils {
 			//s3Client.putObject(BUCKET_NAME, fileName, file);
 			
 		} catch (AmazonServiceException e) {
-			e.printStackTrace();
+			log.info("Message Error: " + e.getMessage());
+			log.info("Type Error: " + e.getErrorType());
 		} catch (SdkClientException e) {
-			e.printStackTrace();
+			log.info("Message Error: " + e.getMessage());
 		}
 
 	}

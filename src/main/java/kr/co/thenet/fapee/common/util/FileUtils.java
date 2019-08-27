@@ -8,7 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class FileUtils {
 
-	public static String uploadFiles(List<MultipartFile> files){
+	public static String uploadFiles(List<MultipartFile> files) throws IllegalStateException, IOException{
 		
 		String pathPrefix = "images/";
 		String result = "success";
@@ -28,11 +28,8 @@ public class FileUtils {
 			
 			String destinationFile = savePath + originFileName;
 			
-			try {
-				multipartFile.transferTo( new File(destinationFile) );
-			} catch (IllegalStateException | IOException e) {
-				result = "Exception";
-			}
+			multipartFile.transferTo( new File(destinationFile) );
+			
 		}
 		return result;
 	}

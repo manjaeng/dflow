@@ -14,10 +14,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
+import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.look.service.LookService;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Controller
 public class LookController {
 
@@ -59,11 +58,16 @@ public class LookController {
 	@PostMapping("/admin/look/add.do")
 	public String lookAdd(@RequestParam("pro-image") List<MultipartFile> multipartFiles, HttpServletRequest request, ModelMap model) throws Exception {
 		
-		//TODO: 업로드 성공, "ex) 디렉토리형식 업로드도 가능(/images/ab/ab/)"
-//		S3Utils.init();
-//		S3Utils.uploadFile("1.png", FileUtils.MultipartToFile(file));
+		String pathPrefix = "images/";
+		
+		S3Utils.init();
+		for(MultipartFile multipartFile : multipartFiles) {
+			String originFileName = System.currentTimeMillis() + "_" + multipartFile.getOriginalFilename();
+			String savePath = pathPrefix + FileUtils.getHashDir(originFileName);
+			String destinationFile = savePath + originFileName;
 
-		FileUtils.uploadFiles(multipartFiles);
+			S3Utils.uploadFile(destinationFile, FileUtils.MultipartToFile(multipartFile));
+		}
 		
 		return "look/add.admin";
 	}
