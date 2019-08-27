@@ -3,7 +3,7 @@
 
 <mapper namespace="kr.co.thenet.fapee.notice.service.impl.NoticeMapper">
 	
-	<select id="selectNoticeServiceAllList" resultType="FP_Notice">
+	<select id="selectNoticeServiceAllList" resultType="noticeVO">
 		SELECT idKey
 			  ,userIdKey 
 			  ,createDate
@@ -33,7 +33,7 @@
 		</if>
 	</select>
 
-	<select id="selectNoticeServiceInfo" parameterType="int" resultType="FP_Notice">
+	<select id="selectNoticeServiceInfo" parameterType="int" resultType="noticeVO">
 		SELECT idKey
 			  ,userIdKey
 			  ,createDate
@@ -52,7 +52,7 @@
 		 WHERE idKey = #{idKey}
 	</update>
 	
-	<insert id="insertNoticeServiceInfo" parameterType="FP_Notice" useGeneratedKeys="true" keyProperty="idKey">
+	<insert id="insertNoticeServiceInfo" parameterType="noticeVO" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT into FP_Notice(
 			  userIdKey
 			, createDate
@@ -77,7 +77,7 @@
         WHERE idKey = #{idKey}
     </delete>	
 	
-	<update id="updateNoticeServiceInfo" parameterType="FP_Notice">
+	<update id="updateNoticeServiceInfo" parameterType="noticeVO">
 		UPDATE FP_Notice
 		   SET   createDate = now()
 		   	   , title = #{title}

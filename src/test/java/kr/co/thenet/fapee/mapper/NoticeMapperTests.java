@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import kr.co.thenet.fapee.common.model.FP_Notice;
+import kr.co.thenet.fapee.common.model.NoticeVO;
 import kr.co.thenet.fapee.notice.service.impl.NoticeMapper;
 
 
@@ -25,7 +25,7 @@ public class NoticeMapperTests {
 	public void insertNoticeServiceInfo() throws Exception {
 		
 		for (int i = 1; i <= 52; i++) {
-			FP_Notice notice = new FP_Notice();
+			NoticeVO notice = new NoticeVO();
 
 			notice.setUserIdKey(0);
 			notice.setTitle("제목" + i);

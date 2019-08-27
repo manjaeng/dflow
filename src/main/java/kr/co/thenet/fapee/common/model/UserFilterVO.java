@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FP_UserFilter {
+public class UserFilterVO {
 	private long idKey;
 	private String deviceId;
 	private long userIdKey;

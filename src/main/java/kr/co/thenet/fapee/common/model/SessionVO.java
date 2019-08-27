@@ -9,12 +9,10 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FP_User {
+public class SessionVO {
 	private long idKey;
 	private String userId;
-	private String password;
 	private String userType;
-	private String userName;
 	private String mobile;
 	private String email;
 	private Date lastLoginDate;
@@ -22,5 +20,4 @@ public class FP_User {
 	private String snsType;
 	private int snsId;
 	private String deviceId;
-	private String status;
 }

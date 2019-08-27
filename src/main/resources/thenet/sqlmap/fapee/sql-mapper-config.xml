@@ -2,8 +2,9 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="egovMap"      type="kr.co.thenet.fapee.common.util.EgovMap" />
-		<typeAlias alias="FP_User"      type="kr.co.thenet.fapee.common.model.FP_User" />
-		<typeAlias alias="FP_Notice"      type="kr.co.thenet.fapee.common.model.FP_Notice" />
+		<typeAlias alias="egovMap"       type="kr.co.thenet.fapee.common.util.EgovMap" />
+		<typeAlias alias="userVO"        type="kr.co.thenet.fapee.common.model.UserVO" />
+		<typeAlias alias="noticeVO"      type="kr.co.thenet.fapee.common.model.NoticeVO" />
+		<typeAlias alias="sessionVO"      type="kr.co.thenet.fapee.common.model.SessionVO" />
 	</typeAliases>
 </configuration>

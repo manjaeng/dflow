@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.co.thenet.fapee.common.model.FP_User;
+import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonFunc;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
@@ -18,17 +18,17 @@ public class UserServiceImpl implements UserService {
 	private UserMapper userMapper;
 
 	@Override
-	public List<FP_User> selectUserList() throws Exception {
+	public List<UserVO> selectUserList() throws Exception {
 		return userMapper.selectUserList();
 	}
 
 	@Override
-	public FP_User selectUserInfo(EgovMap egovMap) throws Exception {
+	public UserVO selectUserInfo(EgovMap egovMap) throws Exception {
 		return userMapper.selectUserInfo(egovMap);
 	}
 
 	@Override
-	public int insertUserInfo(FP_User user) throws Exception {
+	public int insertUserInfo(UserVO user) throws Exception {
 		user.setPassword(CommonFunc.getHashedPassword(user.getPassword()));
 		user.setUserType("2");
 		user.setStatus("1");
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public boolean selectUserLogin(EgovMap loginMap) throws Exception {
+	public UserVO selectUserLogin(EgovMap loginMap) throws Exception {
 		
 		EgovMap egovMap = new EgovMap();
 		egovMap.put("password", CommonFunc.getHashedPassword((String)loginMap.get("password")));
@@ -49,14 +49,7 @@ public class UserServiceImpl implements UserService {
 			egovMap.put("userId", id);
 		}
 		
-		FP_User user = userMapper.selectUserInfo(egovMap);
-		
-		if(user == null) {
-			return false;
-		} else {
-			return true;
-		}
-		
+		return userMapper.selectUserInfo(egovMap);
 	}
 	
 	@Override

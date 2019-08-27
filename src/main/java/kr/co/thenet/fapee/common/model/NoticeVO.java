@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FP_Notice {
+public class NoticeVO {
 	private long idKey; 
 	private long userIdKey;
 	private Date createDate;

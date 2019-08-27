@@ -24,5 +24,12 @@ if ($.support.pjax) {
 			container : '#wrap'
 		});
 	};
+	
+	function pjaxReload() {
+		$.pjax.reload({
+			fragment : '#wrap',
+			container : '#wrap'
+		});
+	}
 }
 

@@ -9,7 +9,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class FP_Session {
+public class UserVO {
 	private long idKey;
 	private String userId;
 	private String password;

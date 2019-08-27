@@ -3,12 +3,12 @@
 
 <mapper namespace="kr.co.thenet.fapee.user.service.impl.UserMapper">
 	
-	<select id="selectUserList" resultType="FP_User">
+	<select id="selectUserList" resultType="userVO">
 		SELECT *
 		  FROM fp_user
 	</select>
 	
-	<select id="selectUserInfo" resultType="FP_User" parameterType="egovMap">
+	<select id="selectUserInfo" resultType="userVO" parameterType="egovMap">
 		SELECT idKey
 		      ,userId
 		      ,password
@@ -37,7 +37,7 @@
 	 	</if>
 	</select>
 	
-	<insert id="insertUserInfo" parameterType="FP_User" useGeneratedKeys="true" keyProperty="idKey">
+	<insert id="insertUserInfo" parameterType="userVO" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT into fp_user(
 			 userId
 			,password

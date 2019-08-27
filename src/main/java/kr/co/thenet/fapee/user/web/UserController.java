@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import kr.co.thenet.fapee.common.model.FP_User;
+import kr.co.thenet.fapee.common.model.SessionVO;
+import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
@@ -41,7 +42,7 @@ public class UserController {
 		EgovMap egovMap = new EgovMap();
 		egovMap.put("mobile", mobile);
 		
-		FP_User user = userService.selectUserInfo(egovMap);
+		UserVO user = userService.selectUserInfo(egovMap);
 		
 		if(user == null) {
 			
@@ -83,7 +84,7 @@ public class UserController {
 		EgovMap egovMap = new EgovMap();
 		egovMap.put("userId", userId);
 		
-		FP_User user = userService.selectUserInfo(egovMap);
+		UserVO user = userService.selectUserInfo(egovMap);
 		
 		if(user == null) {
 			return "ok";
@@ -105,11 +106,11 @@ public class UserController {
 	
 	@PostMapping("/app/user/join_complete.do")
 	@ResponseBody
-	public String joinComplete(@RequestBody FP_User user, HttpServletRequest req) throws Exception {
+	public String joinComplete(@RequestBody UserVO user, HttpServletRequest req) throws Exception {
 		
 		int insertCount = userService.insertUserInfo(user);
 		
-		if(insertCount == 1) {
+		if (insertCount == 1) {
 			return "t";
 		} else {
 			return "f";
@@ -123,15 +124,23 @@ public class UserController {
 	
 	@PostMapping("app/user/login.do")
 	@ResponseBody
-	public String login(@RequestBody EgovMap loginMap) throws Exception {
+	public String login(@RequestBody EgovMap loginMap, HttpServletRequest req) throws Exception {
 		
-		boolean isSuccess = userService.selectUserLogin(loginMap);
+		UserVO user = userService.selectUserLogin(loginMap);
 		
-		if(isSuccess) {
-			return "t";
-		} else {
+		if(user == null) {
 			return "f";
+		} else {
+			SessionVO sess = new SessionVO();
+			sess.setIdKey(user.getIdKey());
+			sess.setUserId(user.getUserId());
+			sess.setUserType(user.getUserType());
+			sess.setMobile(user.getMobile());
+			sess.setEmail(user.getEmail());
+			sess.setDeviceId(user.getDeviceId());
 		}
+		
+		return "t";
 		
 	}
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.co.thenet.fapee.common.model.FP_Notice;
+import kr.co.thenet.fapee.common.model.NoticeVO;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 
 @Controller
@@ -23,7 +23,7 @@ public class NoticeController {
 	@GetMapping("/admin/notice/list.do")
 	public String noticeList(ModelMap model) throws Exception{
 		
-		List<FP_Notice> noticeList = noticeService.selectNoticeServiceAllList();
+		List<NoticeVO> noticeList = noticeService.selectNoticeServiceAllList();
 		
 		model.addAttribute("noticeList", noticeList);
 		
@@ -37,7 +37,7 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/admin/notice/add.do")
-	public String noticeAdd(FP_Notice notice, HttpServletRequest req) throws Exception {
+	public String noticeAdd(NoticeVO notice, HttpServletRequest req) throws Exception {
 		
 		noticeService.insertNoticeServiceInfo(notice);
 		
@@ -47,7 +47,7 @@ public class NoticeController {
 	@GetMapping(value = "/admin/notice/modify.do")
 	public String noticeDetail(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
 
-		FP_Notice noticeInfo = noticeService.selectNoticeServiceInfo(num);
+		NoticeVO noticeInfo = noticeService.selectNoticeServiceInfo(num);
 		noticeService.updateNoticeServiceViewCountInfo(num);
 
 		model.addAttribute("noticeInfo", noticeInfo);
@@ -56,7 +56,7 @@ public class NoticeController {
 	}
 	
 	@PostMapping("/notice/modify.do")
-	public String noticeModify(FP_Notice notice, HttpServletRequest req) throws Exception {
+	public String noticeModify(NoticeVO notice, HttpServletRequest req) throws Exception {
 		
 		noticeService.updateNoticeServiceInfo(notice);
 		

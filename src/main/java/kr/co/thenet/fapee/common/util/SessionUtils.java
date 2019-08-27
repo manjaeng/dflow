@@ -3,7 +3,7 @@ package kr.co.thenet.fapee.common.util;
 
 import javax.servlet.http.HttpServletRequest;
 
-import kr.co.thenet.fapee.common.model.FP_Session;
+import kr.co.thenet.fapee.common.model.SessionVO;
 
 
 public class SessionUtils {
@@ -14,10 +14,10 @@ public class SessionUtils {
 	 *
 	 * @param request
 	 * @return
-	 * @see FP_Session
+	 * @see SessionVO
 	 */
-	public static FP_Session getSessionData(HttpServletRequest req) {
-		return (FP_Session) getData(req, SESSION_DATA_KEY);
+	public static SessionVO getSessionData(HttpServletRequest req) {
+		return (SessionVO) getData(req, SESSION_DATA_KEY);
 	}
 
 	/**
@@ -25,9 +25,9 @@ public class SessionUtils {
 	 *
 	 * @param request
 	 * @param sessionData
-	 * @see FP_Session
+	 * @see SessionVO
 	 */
-	public static void setSessionData(HttpServletRequest req, FP_Session sessionData) {
+	public static void setSessionData(HttpServletRequest req, SessionVO sessionData) {
 		setData(req, SESSION_DATA_KEY, sessionData);
 	}
 

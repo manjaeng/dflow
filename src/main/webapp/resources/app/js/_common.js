@@ -123,7 +123,7 @@ fp.util.checkRegEx = function(type,value) {
 	if(type == 'mobile') {
 		regEx = /^(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/;
 	} else if (type == 'id') {
-		regEx = /^[a-zA-Z0-9]{3,10}$/;
+		regEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{3,10}$/;
 	} else if (type == 'pw') {
 		regEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 	} else if (type == 'email') {

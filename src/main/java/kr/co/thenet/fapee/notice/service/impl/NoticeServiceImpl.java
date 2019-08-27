@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import kr.co.thenet.fapee.common.model.FP_Notice;
+import kr.co.thenet.fapee.common.model.NoticeVO;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 
@@ -16,7 +16,7 @@ public class NoticeServiceImpl implements NoticeService{
 	private NoticeMapper noticeMapper;
 	
 	@Override
-	public List<FP_Notice> selectNoticeServiceAllList() throws Exception {
+	public List<NoticeVO> selectNoticeServiceAllList() throws Exception {
 		return noticeMapper.selectNoticeServiceAllList();
 	}
 
@@ -26,13 +26,13 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public int insertNoticeServiceInfo(FP_Notice notice) throws Exception {
+	public int insertNoticeServiceInfo(NoticeVO notice) throws Exception {
 		return noticeMapper.insertNoticeServiceInfo(notice);
 		
 	}
 	
 	@Override
-	public FP_Notice selectNoticeServiceInfo(int num) throws Exception {
+	public NoticeVO selectNoticeServiceInfo(int num) throws Exception {
 		return noticeMapper.selectNoticeServiceInfo(num);
 	}
 
@@ -42,7 +42,7 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 
 	@Override
-	public int updateNoticeServiceInfo(FP_Notice notice) throws Exception {
+	public int updateNoticeServiceInfo(NoticeVO notice) throws Exception {
 		return noticeMapper.insertNoticeServiceInfo(notice);
 	}
 	
