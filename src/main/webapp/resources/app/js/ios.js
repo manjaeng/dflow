@@ -57,14 +57,18 @@ oHybridNative.pokeNative = function () {
 		return
 	}
 	
-	if (oHybridNative.execIframe && oHybridNative.execIframe.contentWindow) {
-		oHybridNative.execIframe.contentWindow.location = 'gap://ready'
-	} else {
-		oHybridNative.execIframe = document.createElement('iframe')
-		oHybridNative.execIframe.style.display = 'none'
-		oHybridNative.execIframe.src = 'gap://ready'
-		document.body.appendChild(oHybridNative.execIframe)
-	}
+	//For WKWebView
+	webkit.messageHandlers.gap.postMessage('gap://ready');
+	
+	//For UIWebView
+//	if (oHybridNative.execIframe && oHybridNative.execIframe.contentWindow) {
+//		oHybridNative.execIframe.contentWindow.location = 'gap://ready'
+//	} else {
+//		oHybridNative.execIframe = document.createElement('iframe')
+//		oHybridNative.execIframe.style.display = 'none'
+//		oHybridNative.execIframe.src = 'gap://ready'
+//		document.body.appendChild(oHybridNative.execIframe)
+//	}
 }
 
 oHybridNative.nativeFetchMessages = function() {
