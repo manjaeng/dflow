@@ -17,10 +17,10 @@
 
 				<div class="pics swiper-container" id="slideUploadPic">
 					<ul class="list swiper-wrapper slide">
-						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
-						<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>
+						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:showPhotoForPickupMulti('onPhotoSelected')">선택</a></div></li>
+						<!--li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>
 						<li class="swiper-slide"><div class="img"></div></li>
-						<li class="swiper-slide"><div class="img"></div></li>
+						<li class="swiper-slide"><div class="img"></div></li-->
 					</ul>
 				</div>
 			</section>
@@ -58,3 +58,25 @@
 	</script>
 	
 </div>
+
+<script>
+function onPhotoSelected(success, status, photos) {
+	if (success && photos) {
+		for (var ii=0; ii<photos.length; ii++) {
+			var picHtml = '<li class="swiper-slide">' + 
+							'<div class="img">' +
+								'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
+							'</div>' +
+							'<div class="bts">' +
+								'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>
+							'</div>' +
+						'</li>';
+			$("#slideUploadPic .list").append( picHtml );
+		}
+	}
+}
+
+var deletePicture = function(els){
+	$(els).closest(".swiper-slide").find("img , .bts").remove();
+}
+</script>
