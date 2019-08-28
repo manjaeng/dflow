@@ -1,4 +1,5 @@
 if ($.support.pjax) {
+	history.urlHistory = [];
 	$(document).on('click', 'a', function(e) {
 		
 		var url = $(this).attr('href');
@@ -18,6 +19,7 @@ if ($.support.pjax) {
 	});
 	
 	function pjax(url) {
+		history.urlHistory.push(url);
 		$.pjax({
 			url : url,
 			fragment : '#wrap',
