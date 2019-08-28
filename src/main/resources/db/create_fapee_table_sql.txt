@@ -106,5 +106,6 @@ CREATE TABLE FP_Policy (
 CREATE TABLE FP_Follow (
   userIdKey BIGINT NOT NULL,
   followUserIdKey BIGINT NOT NULL,
+  followDate DATETIME NULL,
   PRIMARY KEY (userIdKey, followUserIdKey)
 );
