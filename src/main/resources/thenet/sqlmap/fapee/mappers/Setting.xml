@@ -4,7 +4,6 @@
 <mapper namespace="kr.co.thenet.fapee.setting.service.impl.SettingMapper">
 
 	<insert id="insertSettingQnaInfo" parameterType="egovMap">
-	
 		INSERT into fp_qna(
 			  userIdKey
 			, title
@@ -16,7 +15,40 @@
 			, #{content}
 			, now()
 		)
-	
 	</insert>
+	<select id="selectQnaServiceAllList" resultType="egovMap">
+		SELECT q.idKey
+			, q.userIdKey
+			, u.userId
+			, q.title
+			, q.content
+			, q.createDate
+			, q.answerDate
+			, q.status
+		FROM fp_qna as q
+		LEFT JOIN fp_user as u ON q.userIdKey = u.idKey
+		ORDER BY q.idKey DESC 
+	</select>
+	<select id="selectQnaServiceInfo" parameterType="int" resultType="egovMap">
+		SELECT idKey
+			, userIdKey
+			, title
+			, content
+			, createDate
+			, answerDate
+			, answer
+			, status
+		FROM fp_qna
+		WHERE idKey = #{idKey}
+	</select>
+	
+	<update id="updateQnaServiceInfo" parameterType="egovMap">
+		UPDATE fp_qna
+			SET 
+			answerDate = now()
+			, answer = #{answerContent}
+			, status = 1
+		WHERE idKey = #{idKey}
+	</update>
 	
 </mapper>
