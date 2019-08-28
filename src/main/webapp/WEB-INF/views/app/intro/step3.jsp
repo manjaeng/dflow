@@ -67,7 +67,7 @@ var onPhotoSelected = function(success, status, photos) {
 								'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
 							'</div>' +
 							'<div class="bts">' +
-								'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>
+								'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>' +
 							'</div>' +
 						'</li>';
 			$("#slideUploadPic .list").append( picHtml );
