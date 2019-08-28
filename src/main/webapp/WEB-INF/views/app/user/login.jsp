@@ -100,7 +100,15 @@
 						if(data === 't') {
 							$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
 							$('#msg_error').removeClass('show');
-							console.log('success');
+							
+							if(fp.util.getParam('after') !== '') {
+								if(fp.util.getParam('after') === 'my') {
+									pjax('/app/my/profile.do');
+								}
+							} else {
+								
+							}
+							
 						} else if (data === 'f') {
 							$('#msg_error').addClass('show');
 							$('#msg_error').text('계정 정보를 확인해주세요.');

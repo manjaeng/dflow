@@ -1,4 +1,5 @@
-﻿
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <nav id="floatNav" class="floatNav">
 	<!-- <button type="button" class="bt refresh">Refresh</button> -->
 	<!-- <button type="button" class="bt top">TOP</button> -->
@@ -17,6 +18,20 @@
 	</div>
 </nav>
 
+<c:if test="${empty sessionScope.__sessiondata__}">
+	<script>
+		$('#menubar .mypg').click(function() {
+			ui.confirm({
+				msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+					'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+				ycb: function(){
+					pjax('/app/user/login.do?after=my');
+				}
+			});
+			return false;
+		});
+	</script>
+</c:if>
 
 <script>	
 // $(document).ready(function(){

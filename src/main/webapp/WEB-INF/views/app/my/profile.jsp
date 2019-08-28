@@ -128,7 +128,7 @@
 		}
 	
 		$(document).ready(function(){
-			addItemFnc();
+			//addItemFnc();
 			ui.nav.act("mypg");
 			ui.refresh.init(refresh);
 		});

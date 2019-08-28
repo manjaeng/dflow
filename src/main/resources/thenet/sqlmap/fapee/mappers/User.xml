@@ -82,4 +82,10 @@
 		
 	</insert>
 	
+	<update id="updateUserLastLoginInfo">
+		UPDATE fp_user
+		   SET lastLoginDate = now()
+		 WHERE idKey = #{_parameter}   
+	</update>
+	
 </mapper>

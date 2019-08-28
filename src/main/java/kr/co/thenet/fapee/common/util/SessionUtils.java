@@ -21,14 +21,14 @@ public class SessionUtils {
 	}
 
 	/**
-	 * SessionData 를 session 에 저장한다.
+	 * SessionVO 를 session 에 저장한다.
 	 *
 	 * @param request
 	 * @param sessionData
 	 * @see SessionVO
 	 */
-	public static void setSessionData(HttpServletRequest req, SessionVO sessionData) {
-		setData(req, SESSION_DATA_KEY, sessionData);
+	public static void setSessionData(HttpServletRequest req, SessionVO sessionVO) {
+		setData(req, SESSION_DATA_KEY, sessionVO);
 	}
 
 	/**

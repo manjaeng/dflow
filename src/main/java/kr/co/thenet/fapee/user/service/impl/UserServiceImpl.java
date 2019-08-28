@@ -75,6 +75,11 @@ public class UserServiceImpl implements UserService {
 		return false;
 	
 	}
+
+	@Override
+	public int updateUserLastLoginInfo(long idKey) throws Exception {
+		return userMapper.updateUserLastLoginInfo(idKey);
+	}
 	
 
 }

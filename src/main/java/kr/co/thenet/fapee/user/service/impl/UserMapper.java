@@ -19,5 +19,7 @@ public interface UserMapper {
 	int insertUserFilterInfo(EgovMap introMap) throws Exception;
 
 	int insertUserStyleList(EgovMap styleMap) throws Exception;
+
+	int updateUserLastLoginInfo(long idKey)throws Exception;
 	
 }
