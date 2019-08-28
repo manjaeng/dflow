@@ -60,7 +60,7 @@
 </div>
 
 <script>
-function onPhotoSelected(success, status, photos) {
+var onPhotoSelected = function(success, status, photos) {
 	if (success && photos) {
 		for (var ii=0; ii<photos.length; ii++) {
 			var picHtml = '<li class="swiper-slide">' + 
