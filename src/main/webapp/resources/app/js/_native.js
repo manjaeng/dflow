@@ -59,4 +59,6 @@ function setNativeData(key, value) {
 	oHybridNative.exec(undefined, undefined, "App", "setData", [key, value])
 }
 
-
+function showPhotoForPickupMulti(callbackfunc) {
+	oHybridNative.exec(callbackfunc, undefined, "Photo", "PickupMulti", [])
+}

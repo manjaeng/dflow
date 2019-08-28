@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -61,4 +62,35 @@ public class SettingController {
 		return "setting/list.admin";
 	}
 	
+	@GetMapping("/admin/qna/list.do")
+	public String qnaList(ModelMap model) throws Exception {
+		
+		List<EgovMap> qnaList = settingService.selectQnaServiceAllList();
+		
+		model.addAttribute("qnaList",qnaList);
+		
+		return "qna/list.admin";
+	}
+	@PostMapping("/admin/qna/answer.do")
+	public String qnaAnswer(@RequestParam(value="idKey", required=false, defaultValue="0") int idKey, 
+												@RequestParam(value="answerContent", required=false, defaultValue="") String answerContent ) throws Exception {
+		
+		EgovMap answerMap = new EgovMap();
+		answerMap.put("idKey", idKey);
+		answerMap.put("answerContent", answerContent);
+		
+		settingService.updateQnaServiceInfo(answerMap);
+		
+		return "redirect:/admin/qna/list.do";
+	}
+	
+	@GetMapping("/admin/qna/answer.do")
+	public String qnaAnswer(@RequestParam(value="num", required=false, defaultValue="0") int idKey, ModelMap model) throws Exception {
+		
+		EgovMap qnaAnswer = settingService.selectQnaServiceInfo(idKey);
+		
+		model.addAttribute("qnaAnswer", qnaAnswer);
+		
+		return "qna/answer.admin";
+	}
 }

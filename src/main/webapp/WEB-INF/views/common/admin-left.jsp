@@ -14,6 +14,10 @@
 		case '/admin/notice/add.do':
 			$('.notice').addClass('active');
 			break;
+		case '/admin/qna/list.do':
+		case '/admin/qna/answer.do':
+			$('.qna').addClass('active');
+			break;
 		case '/admin/look/list.do':
 			$('.look').addClass('active');
 			break;
@@ -42,6 +46,9 @@
 
 				<li><a href="/admin/notice/list.do" class="notice"><i
 						class="lnr lnr-alarm"></i> <span>Notice</span></a></li>
+				
+				<li><a href="/admin/qna/list.do" class="qna"><i 
+						class="lnr lnr-question-circle"></i><span>QnA</span></a></li>
 
 				<li><a href="/admin/look/list.do" class="look"><i
 						class="lnr lnr-shirt"></i> <span>Look</span></a></li>
