@@ -56,31 +56,30 @@
 	}
 
 	</script>
-	
-</div>
 
-<script>
-var onPhotoSelected = function(success, status, photos) {
-	if (success && photos) {
-		for (var ii=0; ii<photos.length; ii++) {
-			var picHtml = '<li class="swiper-slide">' + 
-							'<div class="img">' +
-								'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
-							'</div>' +
-							'<div class="bts">' +
-								'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>
-							'</div>' +
-						'</li>';
-			$("#slideUploadPic .list").append( picHtml );
+	<script>
+	var onPhotoSelected = function(success, status, photos) {
+		if (success && photos) {
+			for (var ii=0; ii<photos.length; ii++) {
+				var picHtml = '<li class="swiper-slide">' + 
+								'<div class="img">' +
+									'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
+								'</div>' +
+								'<div class="bts">' +
+									'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>
+								'</div>' +
+							'</li>';
+				$("#slideUploadPic .list").append( picHtml );
+			}
 		}
 	}
-}
-
-function openPhotoMulti() {
-	showPhotoForPickupMulti(onPhotoSelected)
-}
-
-var deletePicture = function(els){
-	$(els).closest(".swiper-slide").find("img , .bts").remove();
-}
-</script>
+	
+	function openPhotoMulti() {
+		showPhotoForPickupMulti(onPhotoSelected)
+	}
+	
+	var deletePicture = function(els){
+		$(els).closest(".swiper-slide").find("img , .bts").remove();
+	}
+	</script>	
+</div>
