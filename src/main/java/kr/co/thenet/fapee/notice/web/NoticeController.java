@@ -48,14 +48,14 @@ public class NoticeController {
 	public String noticeDetail(@RequestParam(defaultValue = "1", required = false) int num, ModelMap model) throws Exception {
 
 		NoticeVO noticeInfo = noticeService.selectNoticeServiceInfo(num);
-		noticeService.updateNoticeServiceViewCountInfo(num);
+		//noticeService.updateNoticeServiceViewCountInfo(num);
 
 		model.addAttribute("noticeInfo", noticeInfo);
 
 		return "notice/modify.admin";
 	}
 	
-	@PostMapping("/notice/modify.do")
+	@PostMapping("/admin/notice/modify.do")
 	public String noticeModify(NoticeVO notice, HttpServletRequest req) throws Exception {
 		
 		noticeService.updateNoticeServiceInfo(notice);
@@ -68,7 +68,7 @@ public class NoticeController {
         
         noticeService.deleteNoticeServiceInfo(idKey);
         
-        return "redirect:/notice/list.do";
+        return "redirect:/admin/notice/list.do";
     }
 	
 

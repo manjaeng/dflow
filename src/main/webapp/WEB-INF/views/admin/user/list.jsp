@@ -32,10 +32,8 @@
 									<tr>
 										<th>idKey</th>
 										<th>userId</th>
-										<th>userName</th>
+										<th>mobile</th>
 										<th>userType</th>
-										<th>loginIp</th>
-										<th>loginTotalCount</th>
 										<th>lastLoginDate</th>
 										<th>status</th>
 									</tr>
@@ -45,10 +43,8 @@
 										<tr>
 											<td><c:out value="${item.idKey}" /></td>
 											<td><c:out value="${item.userId}" /></td>
-											<td><c:out value="${item.userName}" /></td>
+											<td><c:out value="${item.mobile}" /></td>
 											<td><c:out value="${item.userType}" /></td>
-											<td><c:out value="${item.loginIp}" /></td>
-											<td><c:out value="${item.loginTotalCount}" /></td>
 											<td><fmt:formatDate value="${item.lastLoginDate}"
 													type="date" pattern="yyyy-MM-dd" /></td>
 											<td><input type="checkbox" checked data-toggle="toggle"

@@ -18,11 +18,6 @@
          language: "UTF-8"
 
      });
-     
-     $('form').submit(function() {
-    	 $('form textarea').val( $('form textarea').val().replace(/(?:\r\n|\r|\n)/g, '<br>'));
-     });
-
  });
 
  </script>

@@ -17,23 +17,33 @@
 		</ul>
 	</div>
 </nav>
-
-<c:if test="${empty sessionScope.__sessiondata__}">
-	<script>
-		$('#menubar .mypg').click(function() {
-			ui.confirm({
-				msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
-					'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
-				ycb: function(){
-					pjax('/app/user/login.do?after=my');
-				}
+<c:choose>
+	<c:when test="${empty sessionScope.__sessiondata__}">
+		<script>
+			$('#menubar .mypg').click(function() {
+				ui.confirm({
+					msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+						'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+					ycb: function(){
+						pjax('/app/user/login.do?after=my');
+					}
+				});
+				return false;
 			});
-			return false;
-		});
-	</script>
-</c:if>
+		</script>
+	</c:when>
+	<c:otherwise>
+		<c:if test="${isMyProfile}">
+			<script>
+				$('#menubar .mypg').click(function() {
+					return false;
+				});
+			</script>
+		</c:if>
+	</c:otherwise>
+</c:choose>
 
-<script>	
+<script>
 // $(document).ready(function(){
 	
 // 	var tapped = false;

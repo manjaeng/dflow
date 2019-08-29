@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
 	<div class="pageHd">
 		<div class="in">
@@ -17,35 +19,37 @@
 			<section class="uiPrfeSet">
 				<div class="user">
 					<div class="photo">
-						<div class="pic"><a href="./profile_set.jsp"><img src="/resources/app/images/common/profile_no.png" alt=""></a></div>
+						<div class="pic">
+							<a href="/app/my/profile_edit.do">
+								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
+							</a>
+						</div>
 					</div>
 					<div class="infos">
-						<div class="name">Bluemoon</div>
+						<div class="name"><c:out value="${profileInfo.userId}"/></div>
 						<div class="summ">
-							<span class="nt">163cm</span>
-							<span class="nt">Korea</span>
-							<!-- <span class="nt">45kg</span> -->
-							<span class="nt">Women</span>
+							<c:if test="${!empty profileInfo.height}">
+								<span class="nt"><c:out value="${profileInfo.height}"/>cm</span>
+							</c:if>
+							<span class="nt"><c:out value="${profileInfo.country}"/></span>
+							<span class="nt"><c:out value="${profileInfo.gender}"/></span>
 						</div>
 						<div class="amount">
-							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em>1.1K</em></a>
-							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em>51</em></a>
+							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em><c:out value="${profileInfo.followerCount}"/></em></a>
+							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em><c:out value="${profileInfo.followingCount}"/></em></a>
 						</div>
 					</div>
 				</div>
 				<div class="desc">
-					<div class="name">푸른달 블루문</div>
-					<div class="ment">
-						하늘색과 트렌치 코트를 좋아합니다. 
-					</div>
-					<div class="url"><a href="javascript:;">www.beautyitem.com</a></div>
+					<div class="name"><c:out value="${profileInfo.nickName}"/></div>
+					<div class="ment" style="white-space:pre;"><c:out value="${profileInfo.content}"/></div>
 				</div>
 			</section>
 
 			<section class="prfNav">
 				<!-- 내프로필이면.my  ||  모델 있으면.mdl ||  팔로우중이면 .ing  -->
-				<div class="bts my">
-					<a href="./profile_set.jsp" class="bt edit">Edit Profile</a>
+				<div class="bts <c:out value='${profileNavClass}'/>">
+					<a href="/app/my/profile_edit.do" class="bt edit">Edit Profile</a>
 					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
 					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>

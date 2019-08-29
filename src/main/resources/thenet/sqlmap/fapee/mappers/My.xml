@@ -2,5 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.co.thenet.fapee.my.service.impl.MyMapper">
+
+	<select id="selectMyProfileInfo" resultType="egovMap">
+		SELECT u.idKey
+			  ,u.userId
+			  ,u.userType
+			  ,u.status
+			  ,uf.gender
+			  ,uf.country
+			  ,fc.followerCount
+			  ,fc.followingCount
+			  ,up.nickName
+			  ,up.content
+			  ,up.imageUrl
+		 FROM fp_user u
+		 JOIN fp_user_filter uf on u.idKey = uf.userIdKey
+		 JOIN (
+		 		SELECT userIdKey, (SELECT COUNT(*) 
+		 						    FROM fp_follow 
+		 						   WHERE followUserIdKey = #{_parameter}) followerCount,
+		 						 (SELECT COUNT(*) 
+		 						    FROM fp_follow 
+		 						   WHERE userIdKey = #{_parameter}) followingCount
+		 		 FROM fp_follow
+	    		WHERE userIdKey = 1
+				GROUP BY userIdKey) fc on u.idKey = fc.userIdKey
+		 JOIN fp_user_profile up on u.idKey = up.userIdKey
+		WHERE u.idkey = #{_parameter}
+	</select>
+	
+	<update id="updateMyProfileInfo" parameterType="egovMap">
+		UPDATE fp_user_profile
+		   SET nickName = #{nickName}
+		      ,content = #{content}
+		 WHERE userIdKey = #{idKey}
+	</update>
 	
 </mapper>

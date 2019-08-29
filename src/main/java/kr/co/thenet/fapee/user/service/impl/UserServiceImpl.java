@@ -32,7 +32,12 @@ public class UserServiceImpl implements UserService {
 		user.setPassword(CommonFunc.getHashedPassword(user.getPassword()));
 		user.setUserType("2");
 		user.setStatus("1");
-		return userMapper.insertUserInfo(user);
+		
+		int insertcount = userMapper.insertUserInfo(user);
+		userMapper.updateUserFilterDeviceInfo(user);
+		userMapper.insertUserProfileInfo(user);
+		
+		return insertcount;
 	}
 
 	@Override
@@ -80,6 +85,6 @@ public class UserServiceImpl implements UserService {
 	public int updateUserLastLoginInfo(long idKey) throws Exception {
 		return userMapper.updateUserLastLoginInfo(idKey);
 	}
-	
+
 
 }

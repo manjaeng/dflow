@@ -17,19 +17,17 @@
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">LOOK EDIT</a></li>
-					<li class="st"><a href="javascript:;" class="bt">LOOK DELETE</a></li>
-					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
-					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY LINK</a></li>
-					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popOthers');">COPY PROFILE LINK</a></li>
+					<li><a href="javascript:;" class="bt">EDIT</a></li>
+					<li class="st"><a href="javascript:;" class="bt">DELETE</a></li>
+					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popOthers');">COPY LINK</a></li>
+					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popOthers');">COPY PROFILE LINK</a></li>
 					<li><a href="javascript:;" class="bt" onclick="popShare(); ui.popLayer.close('popOthers');">SHARE</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
 				</ul>
 			</main>
 		</div>
 	</div>
 </article>
-
-
 
 <!-- 신고 하기  -->
 <article class="popLayer c popAccus" id="popAccus">
@@ -192,9 +190,9 @@ function popMyStyle(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
-					<li><a href="javascript:;" class="bt" onclick="ui.toast({msg:'<p>Link copied to clipboard</p>'}); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
+					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
 					<li><a href="javascript:;" onclick="popShare(); ui.popLayer.close('popPrfOthers');" class="bt">SHARE</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
 				</ul>	
 			</main>
 		</div>
@@ -207,7 +205,7 @@ function popPrfOthers(){
 			console.log("프로필 기타팝업 열림");
 		},
 		ccb:function(){
-			console.log("프로필 기타팝업 닫힘");
+			console.log("11");
 		}
 	});
 };
@@ -239,7 +237,7 @@ function popPrfOthers(){
 						<span href="javascript:;" class="bt">MODEL PROFILE</span>
 						<ol class="mds">
 							<li>
-								<a href="/app/look/look_upload.do" class="box">
+								<a href="../look/look_upload.jsp" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/2" alt=""></div></span>
 									<span class="name">JENNY</span>
 									<span class="info">160cm, KOREA</span>
@@ -322,6 +320,24 @@ function popShare(){
 
 
 
+<script>
+function testUrlCopy() {
+	// 클립보드로 복사하는 기능을 생성
+	var aux = document.createElement("input"); // 글을 쓸 수 있는 란을 만든다.
+	aux.setAttribute("value", window.location.href); // 지정된 요소의 값을 할당 한다.
+	document.body.appendChild(aux); // bdy에 추가한다.
+	aux.select(); // 지정된 내용을 강조한다.
+	document.execCommand("copy"); // 텍스트를 카피 하는 변수를 생성
+	document.body.removeChild(aux); // body 로 부터 다시 반환 한다.
+	console.log(aux.value);
+
+	ui.toast({msg:'<p>Link copied to clipboard</p>'});
+}
+</script>
+
+
+
+
 <!-- 프로필사진변경 -->
 <article class="popLayer c popPrfPicMod" id="popPrfPicMod">
 	<div class="pbd">
@@ -329,7 +345,7 @@ function popShare(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li><a href="javascript:;" class="bt">CHANAGE PHOTO</a></li>
+					<li><a href="javascript:;" class="bt">CHANGE PHOTO</a></li>
 					<li><a href="javascript:;" class="bt">DELETE PHOTO</a></li>
 				</ul>
 			</main>

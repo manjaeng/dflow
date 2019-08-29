@@ -60,7 +60,8 @@
 			                	if(data === "t") {
 			                		fp.data.join = null;
 			                		//pjax('/app/home.do');
-			                		console.log('홈으로 이동');
+			                		pjax('/app/my/profile.do');
+			                		console.log('임시) 프로필로 이동');
 			                		
 			                		setTimeout(function(){
 			                			ui.loading.hide();
@@ -102,7 +103,8 @@
 	                	if(data === "t") {
 	                		fp.data.join = null;
 	                		//pjax('/app/home.do');
-	                		console.log('홈으로 이동');
+	                		pjax('/app/my/profile.do');
+	                		console.log('임시) 프로필로 이동')
 	                		
 	                		setTimeout(function(){
 	                			ui.loading.hide();

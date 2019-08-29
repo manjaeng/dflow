@@ -88,4 +88,25 @@
 		 WHERE idKey = #{_parameter}   
 	</update>
 	
+	<update id="updateUserFilterDeviceInfo" parameterType="userVO">
+		UPDATE fp_user_filter
+		   SET userIdKey = #{idKey}
+		 WHERE deviceId = #{deviceId}
+	</update>
+
+	<insert id="insertUserProfileInfo" parameterType="userVO">
+		INSERT into fp_user_profile(
+			userIdKey
+		   ,nickName
+		) VALUES (
+			#{idKey}
+		   ,#{userId}
+		)
+	</insert>
+	
+	<update id="updateUserFilterCountryInfo" parameterType="egovMap">
+		UPDATE fp_user_filter
+		   SET country = #{country}
+		 WHERE userIdKey = #{idKey}
+	</update>
 </mapper>

@@ -1,9 +1,12 @@
 package kr.co.thenet.fapee.user.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -111,6 +114,17 @@ public class UserController {
 		int insertCount = userService.insertUserInfo(user);
 		
 		if (insertCount == 1) {
+			
+			SessionVO sessionVO = new SessionVO();
+			sessionVO.setIdKey(user.getIdKey());
+			sessionVO.setUserId(user.getUserId());
+			sessionVO.setUserType(user.getUserType());
+			sessionVO.setMobile(user.getMobile());
+			sessionVO.setEmail(user.getEmail());
+			sessionVO.setDeviceId(user.getDeviceId());
+			
+			SessionUtils.setSessionData(req, sessionVO);
+			
 			return "t";
 		} else {
 			return "f";
@@ -148,4 +162,14 @@ public class UserController {
 		return "t";
 		
 	}
+	
+    @GetMapping("/admin/user/list.do")
+    public String userList(ModelMap model) throws Exception {
+
+        List<UserVO> userList = userService.selectUserList();
+
+        model.addAttribute("userList", userList);
+
+        return "user/list.admin";
+    }
 }
