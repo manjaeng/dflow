@@ -48,7 +48,7 @@
 					<div class="ment">
 						하늘색과 트렌치 코트를 좋아합니다. 
 					</div>
-					<div class="url"><a href="javascript:;">www.beautyitem.com</a></div>
+					<!-- <div class="url"><a href="javascript:;">www.beautyitem.com</a></div> -->
 				</div>
 			</section>
 

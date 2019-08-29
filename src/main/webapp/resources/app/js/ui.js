@@ -4,7 +4,7 @@
 // Date   : 2019-06-12 ~
 ////////////////////////////////////////
 var ui = {
-	init:function(){
+	init:function(){ // 초기 구동
 		this.cm.init();
 		this.ly.init();
 		this.look.init();
@@ -24,7 +24,7 @@ var ui = {
 			// $("select").selectmenu();
 		}
 	},
-	isUA:function(t){
+	isUA:function(t){ //  디바이스 구분
 		t = t.split(" ");
 		for (let i = 0; i < t.length; i++) {
 			result = navigator.userAgent.indexOf(t[i]) > -1 ? true : false ;
@@ -34,7 +34,7 @@ var ui = {
 		}
 		return result ;
 	},
-	getSafe:{
+	getSafe:{ // 아이폰X 여백값
 		init:function(){
 			var _this = this;
 			var computed, div = document.createElement('div');
@@ -48,7 +48,7 @@ var ui = {
 			document.body.removeChild(div);
 		}
 	},
-	filter: {
+	filter: { // 필터 팝업
 		init:function(){
 			$("#filtMatchSlider").length && this.match();
 			// popFilter();
@@ -80,7 +80,7 @@ var ui = {
 			} );
 		}
 	},
-	size: {
+	size: { // 마이사이즈 팝업
 		init:function(){
 			this.height();
 			this.fit();
@@ -351,7 +351,7 @@ var ui = {
 			*/
 		}
 	},
-	look:{
+	look:{ // 룩
 		init:function(){
 			this.match();
 			this.elip.init();
@@ -372,7 +372,7 @@ var ui = {
 				$(this).find(".txt").text("MATCH");
 			});
 		},
-		elip:{
+		elip:{ // 더보기 열기 ... 처리
 			init:function(){
 				$(document).on("click",".uiLkSet>.info .desc a.more",function(e){
 					$(this).closest(".desc").removeClass("elips");
@@ -593,7 +593,6 @@ var ui = {
 	},
 	loading: { // 로딩중..
 		show: function (params) {
-			
 			// console.log(params  , typeof params == "string");
 			if ( typeof params == "string" ) { var txt =  params } else { var txt = '' }
 			var opt = $.extend({
@@ -607,15 +606,6 @@ var ui = {
 			$(".loadingBar").remove();
 		}
 	},
-	// loading: { // 로딩중..
-	// 	show: function () {
-	// 		var els = '<div class="loadingPage"><em></em></div>';
-	// 		$("body").prepend(els);
-	// 	},
-	// 	hide: function () {
-	// 		$(".loadingPage").remove();
-	// 	}
-	// },
 	accd: { // 아코디언 UI
 		init: function() {
 			$(window).on("load", this.using);
@@ -1054,7 +1044,7 @@ var ui = {
 			}
 		}
 	},
-	toast: function(params) { // 토스트창 ui.toast();
+	toast: function(params) { // 토스트창 
 
 		var opt = $.extend({
 			msg:"토스트메시지",

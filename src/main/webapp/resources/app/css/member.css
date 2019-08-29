@@ -197,7 +197,7 @@
 .uiPrfeSet .user .infos .foll label input:checked  + span::after{ content:"Following";}
 .uiPrfeSet .desc{padding: 0px 16px 27px 16px;}
 .uiPrfeSet .desc .name{font-weight:bold;font-size: 13px;}
-.uiPrfeSet .desc .ment{font-size: 13px;color: #101010;position:relative;margin-bottom: 0px;margin-top: 2px;}
+.uiPrfeSet .desc .ment{font-size: 13px;color: #101010;position:relative;margin-bottom: 0px;margin-top: 2px;word-break: break-all;}
 .uiPrfeSet .desc .ment::before{position:absolute;left: -39px;top: -3px;width:32px;height:32px;/* background: url(../images/common/ico_my_desc.png) no-repeat -1px 0px; */background-size:32px auto;/* content:""; */}
 .uiPrfeSet .desc .url {font-size: 11px;margin-top: 0px;font-family:"BlairMd";text-transform: uppercase;}
 .uiPrfeSet .desc .url a{display: inline-block;padding: 3px 0px;}
@@ -264,7 +264,7 @@
 .contain.my.prf .prfeForm .list>li .dd{position:relative;display: block;border-bottom: #cccccc solid 1px;width: 100%;}
 .contain.my.prf .prfeForm .list>li .dd{}
 .contain.my.prf .prfeForm .list>li .dd .input{ font-family:"BlairMd";height: 36px;}
-.contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;padding-left: 0px;}
+.contain.my.prf .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;padding-left: 0px;font-size: 13px;}
 .contain.my.prf .prfeForm .list>li .dd .num{position:absolute;right: 0px;top: 36px;font-size: 12px;color: #999999;}
 .contain.my.prf .prfeForm .list>li .dd label + label{ margin-left: 30px;}
 .contain.my.prf .prfeForm .list>li.gender{margin-top: 20px;}
