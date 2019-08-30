@@ -1,5 +1,7 @@
 package kr.co.thenet.fapee.my.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonUtils;
+import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.my.service.MyService;
@@ -49,8 +52,6 @@ public class MyController {
 			if (!CommonUtils.isNumeric(id)) {
 				EgovMap egovMap = new EgovMap();
 				egovMap.put("userId", id);
-
-				new EgovMap().put("userId", id);
 
 				UserVO userVO = userService.selectUserInfo(egovMap);
 
@@ -131,7 +132,7 @@ public class MyController {
 
 	@PostMapping("/app/my/follow_edit.do")
 	@ResponseBody
-	public String FollowEdit(@RequestBody EgovMap followMap, HttpServletRequest req) throws Exception {
+	public String followEdit(@RequestBody EgovMap followMap, HttpServletRequest req) throws Exception {
 
 		String type = (String) followMap.get("type");
 		boolean isSuccess = false;
@@ -159,6 +160,38 @@ public class MyController {
 			return "f";
 		}
 	}
+	
+	@GetMapping("/app/my/follow.do")
+	public String follow(@RequestParam(required = true) String id, ModelMap model) throws Exception {
+		
+		EgovMap egovMap = new EgovMap();
+		egovMap.put("userId", id);
 
+		UserVO userVO = userService.selectUserInfo(egovMap);
+		EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
+		
+		model.addAttribute("profileInfo", profileInfo);
+		
+		return "my/follow.app";
+	}
+	
+	@GetMapping("/app/my/follow_div.do")
+	public String followDiv() throws Exception {
+		return "app/my/follow_div";
+	}
+	
+	@PostMapping("/app/my/followList.do")
+	@ResponseBody
+	public List<EgovMap> followList(@RequestBody EgovMap egovMap) throws Exception {
+		
+		int pageStart = (int)egovMap.get("pageStart");
+		
+		egovMap.put("pageStart", pageStart * Constants.APP_FOLLOW_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_FOLLOW_PAGE_SIZE);
+		
+		System.out.println(egovMap);
+		
+		return null;
+	}
 	
 }

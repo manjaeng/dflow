@@ -37,8 +37,8 @@
 							<span class="nt"><c:out value="${profileInfo.gender}"/></span>
 						</div>
 						<div class="amount">
-							<a href="./follow.jsp?tabs=fwers" class="fw fwers"><i>Follower</i><em><c:out value="${profileInfo.followerCount}"/></em></a>
-							<a href="./follow.jsp?tabs=fwing" class="fw fwing"><i>Following</i><em><c:out value="${profileInfo.followingCount}"/></em></a>
+							<a href="/app/my/follow.do?type=fwers&id=${profileInfo.userId}" class="fw fwers"><i>Follower</i><em><c:out value="${profileInfo.followerCount}"/></em></a>
+							<a href="/app/my/follow.do?type=fwing&id=${profileInfo.userId}" class="fw fwing"><i>Following</i><em><c:out value="${profileInfo.followingCount}"/></em></a>
 						</div>
 					</div>
 				</div>

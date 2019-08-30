@@ -25,7 +25,7 @@ public class LoggerInterceptor extends HandlerInterceptorAdapter {
 				+ request.getRequestURI());
 
 		if (request.getRequestURI().contains("/app/") && SessionUtils.getSessionData(request) != null) {
-			log.info(" Request URI  : " + SessionUtils.getSessionData(request));
+			log.info(" Session Data  : " + SessionUtils.getSessionData(request));
 		}
 		
 		return true;
