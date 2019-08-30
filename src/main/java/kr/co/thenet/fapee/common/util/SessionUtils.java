@@ -8,6 +8,22 @@ import kr.co.thenet.fapee.common.model.SessionVO;
 
 public class SessionUtils {
 	private static final String SESSION_DATA_KEY = "__sessiondata__";
+	
+	/**
+	 * SessionData 를 확인하여 로그인 여부를 체크
+	 *
+	 * @param request
+	 * @return
+	 * @see SessionVO
+	 */
+	
+	public static boolean isLogin(HttpServletRequest req) {
+		if (SessionUtils.getSessionData(req) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	/**
 	 * SessionData 를 가져온다.
@@ -16,6 +32,7 @@ public class SessionUtils {
 	 * @return
 	 * @see SessionVO
 	 */
+	
 	public static SessionVO getSessionData(HttpServletRequest req) {
 		return (SessionVO) getData(req, SESSION_DATA_KEY);
 	}

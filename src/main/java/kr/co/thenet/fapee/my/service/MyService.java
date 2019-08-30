@@ -6,4 +6,11 @@ public interface MyService {
 	EgovMap selectMyProfileInfo(long idKey) throws Exception;
 
 	boolean updateMyProfileInfo(EgovMap profileMap) throws Exception;
+
+	boolean selectMyFollowingCount(EgovMap egovMap) throws Exception;
+
+	boolean insertMyFollwInfo(EgovMap egovMap) throws Exception;
+
+	boolean deleteMyFollwInfo(EgovMap egovMap) throws Exception;
+
 }

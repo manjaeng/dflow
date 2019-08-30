@@ -128,6 +128,8 @@ fp.util.checkRegEx = function(type,value) {
 		regEx = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 	} else if (type == 'email') {
 		regEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+	} else if (type == 'number') {
+		regEx = /^[\d]*$/;
 	}
 	
 	return regEx.test(value);

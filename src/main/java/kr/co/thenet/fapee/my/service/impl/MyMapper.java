@@ -9,4 +9,10 @@ public interface MyMapper {
 	EgovMap selectMyProfileInfo(long idKey) throws Exception;
 
 	int updateMyProfileInfo(EgovMap profileMap) throws Exception;
+
+	int selectMyFollowingCount(EgovMap egovMap) throws Exception;
+	
+	int insertMyFollwInfo(EgovMap egovMap) throws Exception;
+
+	int deleteMyFollwInfo(EgovMap egovMap) throws Exception;
 }

@@ -8,10 +8,12 @@
 			<div class="bts">
 				<a href="javascript:history.back();" class="hisback">뒤로</a>
 			</div>
-			<div class="set">
-				<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
-				<a class="bt conf" href="../setting/setting.jsp">설정</a>
-			</div>
+			<c:if test="${isMyProfile}">
+				<div class="set">
+					<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
+					<a class="bt conf" href="/app/setting/setting.do">설정</a>
+				</div>
+			</c:if>
 		</div>
 	</div>	
 	<div id="contain" class="contain my prf">
@@ -50,8 +52,8 @@
 				<!-- 내프로필이면.my  ||  모델 있으면.mdl ||  팔로우중이면 .ing  -->
 				<div class="bts <c:out value='${profileNavClass}'/>">
 					<a href="/app/my/profile_edit.do" class="bt edit">Edit Profile</a>
-					<a href="javascript:;" class="bt fwer" onclick="testTogleFw(this)">FOLLOW</a>
-					<a href="javascript:;" class="bt fwing" onclick="testTogleFw(this)">ING</a>
+					<a href="javascript:;" class="bt fwer">FOLLOW</a>
+					<a href="javascript:;" class="bt fwing">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
 					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a> 
 				</div>
@@ -118,23 +120,77 @@
 			}
 		});
 	
-		var testTogleFw = function(els){
-			if( $(els).closest(".bts").hasClass("ing") ){
-				$(els).closest(".bts").removeClass('ing');
-			}else{
-				$(els).closest(".bts").addClass('ing');
-			}
-		};
-	
-		var refresh = function(){
-			pjaxReload();
-			console.log("댕겨서 새로고침");
-		}
-	
 		$(document).ready(function(){
+			
+			var isLogin = '${!empty sessionScope.__sessiondata__}';
+			
+			$('.prfNav .bts .fwer, .prfNav .bts .fwing').click(function() {
+				
+				var _this = $(this);
+				var type;
+				
+				if(isLogin == 'false') {
+					
+					ui.confirm({
+						msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+							'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+						ycb: function(){
+							pjax('/app/user/login.do?after=my&id=${param.id}');
+						}
+					});
+					return false;
+				}
+				
+				if(_this.parent().hasClass("ing")) {
+					type = 'delete';
+				} else {
+					type = 'insert';
+				}
+				
+				$.ajax({
+					type : 'post',
+					url : '/app/my/follow_edit.do',
+					data : JSON.stringify({
+						type : type,
+						userId : '${param.id}',
+					}),
+					contentType : 'application/json; charset=utf-8',
+					success : function(data) {
+						
+						var followerCount  = $('.amount .fwers em').text();
+						var followingCount = $('.amount .fwing em').text();
+						
+						if(data === 't') {
+							
+							if(_this.parent().hasClass("ing")) {
+								
+								if(/^[\d]*$/.test(followerCount)) {
+									followerCount = Number(followerCount) - 1;
+									$('.amount .fwers em').text(followerCount);
+								}
+								
+								_this.parent().removeClass('ing');
+							} else {
+								
+								if(/^[\d]*$/.test(followerCount)) {
+									followerCount = Number(followerCount) + 1;
+									$('.amount .fwers em').text(followerCount);
+								}
+								
+								_this.parent().addClass('ing');
+							}
+						}
+					}
+				});
+				
+			});
+			
 			//addItemFnc();
 			ui.nav.act("mypg");
-			ui.refresh.init(refresh);
+			ui.refresh.init(function(){
+				pjaxReload();
+				console.log("댕겨서 새로고침");
+			});
 		});
 	</script>
 	

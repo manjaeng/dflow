@@ -2,6 +2,8 @@ package kr.co.thenet.fapee.setting.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
+import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 import kr.co.thenet.fapee.setting.service.SettingService;
 
@@ -37,8 +41,16 @@ public class SettingController {
 	
 	@PostMapping("/app/setting/qna.do")
 	@ResponseBody
-	public String qna(@RequestBody EgovMap egovMap) throws Exception {
-		return settingService.insertSettingQnaInfo(egovMap);
+	public String qna(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+		
+		if (SessionUtils.isLogin(req)) {
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			egovMap.put("userIdKey", sessionVO.getIdKey());
+			return settingService.insertSettingQnaInfo(egovMap);
+		}
+		
+		return "f";
+		
 	}
 	
 	@GetMapping("/app/setting/notice.do")

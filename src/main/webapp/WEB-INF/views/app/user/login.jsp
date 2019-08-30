@@ -103,7 +103,11 @@
 							
 							if(fp.util.getParam('after') !== '') {
 								if(fp.util.getParam('after') === 'my') {
-									pjax('/app/my/profile.do');
+									if(fp.util.getParam('id') === '') {
+										pjax('/app/my/profile.do');
+									} else {
+										pjax('/app/my/profile.do?id=' + fp.util.getParam('id'));
+									}
 								}
 							} else {
 								

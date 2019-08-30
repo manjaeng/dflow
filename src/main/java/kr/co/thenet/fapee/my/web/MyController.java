@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.SessionVO;
+import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.my.service.MyService;
+import kr.co.thenet.fapee.user.service.UserService;
 
 @Controller
 public class MyController {
@@ -23,69 +25,140 @@ public class MyController {
 	@Autowired
 	private MyService myService;
 
+	@Autowired
+	private UserService userService;
+
 	@GetMapping("/app/my/profile.do")
 	public String profile(@RequestParam(required = false) String id, ModelMap model, HttpServletRequest req)
 			throws Exception {
 
 		if (id == null) {
-			if (SessionUtils.getSessionData(req) != null) {
-				
+			// 나의 프로필
+			if (SessionUtils.isLogin(req)) {
+
 				SessionVO sessionVO = SessionUtils.getSessionData(req);
-				
+
 				EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-				
+
 				model.addAttribute("isMyProfile", "true");
 				model.addAttribute("profileInfo", profileInfo);
-				model.addAttribute("profileNavClass","my");
+				model.addAttribute("profileNavClass", "my");
 			}
 		} else {
-			//EgovMap egovMap = new EgovMap();
-
+			// 타인 프로필
 			if (!CommonUtils.isNumeric(id)) {
+				EgovMap egovMap = new EgovMap();
+				egovMap.put("userId", id);
 
-			} 
+				new EgovMap().put("userId", id);
+
+				UserVO userVO = userService.selectUserInfo(egovMap);
+
+				if (userVO != null) {
+					EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
+
+					if (SessionUtils.isLogin(req)) {
+						
+						SessionVO sessionVO = SessionUtils.getSessionData(req);
+						
+						if(sessionVO.getUserId().equals(id)) {
+							model.addAttribute("isMyProfile", "true");
+							model.addAttribute("profileNavClass", "my");
+						} else {
+							EgovMap egovMap2 = new EgovMap();
+							egovMap2.put("userIdKey", sessionVO.getIdKey());
+							egovMap2.put("followUserIdKey", userVO.getIdKey());
+
+							boolean isFollowing = myService.selectMyFollowingCount(egovMap2);
+
+							if (isFollowing) {
+								model.addAttribute("profileNavClass", "ing");
+							}
+						}
+
+					}
+
+					model.addAttribute("profileInfo", profileInfo);
+
+				} else {
+					// 존재하지 않는 계정
+				}
+
+			}
 		}
 
 		return "my/profile.app";
 	}
-	
+
 	@GetMapping("/app/my/profile_edit.do")
 	public String profileEdit(HttpServletRequest req, ModelMap model) throws Exception {
-		
-		if (SessionUtils.getSessionData(req) != null) {
-			
+
+		if (SessionUtils.isLogin(req)) {
+
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			
+
 			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-			
+
 			model.addAttribute("profileInfo", profileInfo);
 		}
-		
+
 		return "my/profile_edit.app";
 	}
-	
+
 	@PostMapping("/app/my/profile_edit.do")
 	@ResponseBody
 	public String profileEdit(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
-		
-		if (SessionUtils.getSessionData(req) != null) {
-			
+
+		if (SessionUtils.isLogin(req)) {
+
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			
+
 			profileMap.put("idKey", sessionVO.getIdKey());
-			
+
 			boolean isSuccess = myService.updateMyProfileInfo(profileMap);
 
-			if(isSuccess) {
+			if (isSuccess) {
 				return "t";
 			} else {
 				return "f";
 			}
-			
+
 		}
-		
+
 		return "f";
-		
+
 	}
 
+	@PostMapping("/app/my/follow_edit.do")
+	@ResponseBody
+	public String FollowEdit(@RequestBody EgovMap followMap, HttpServletRequest req) throws Exception {
+
+		String type = (String) followMap.get("type");
+		boolean isSuccess = false;
+		
+		if (SessionUtils.isLogin(req)) {
+			
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			UserVO userVO = userService.selectUserInfo(followMap);
+			
+
+			EgovMap egovMap = new EgovMap();
+			egovMap.put("userIdKey", sessionVO.getIdKey());
+			egovMap.put("followUserIdKey", userVO.getIdKey());
+			
+			if ("insert".equals(type)) {
+				isSuccess = myService.insertMyFollwInfo(egovMap);
+			} else if ("delete".equals(type)) {
+				isSuccess = myService.deleteMyFollwInfo(egovMap);
+			}
+		}
+		
+		if (isSuccess) {
+			return "t";
+		} else {
+			return "f";
+		}
+	}
+
+	
 }

@@ -33,4 +33,41 @@ public class MyServiceImpl implements MyService {
 			return false;
 		}
 	}
+
+	@Override
+	public boolean selectMyFollowingCount(EgovMap egovMap) throws Exception {
+
+		int followCount = myMapper.selectMyFollowingCount(egovMap);
+
+		if (followCount == 0) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+
+	@Override
+	public boolean insertMyFollwInfo(EgovMap egovMap) throws Exception {
+		
+		int result = myMapper.insertMyFollwInfo(egovMap);
+		
+		if(result == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public boolean deleteMyFollwInfo(EgovMap egovMap) throws Exception {
+		
+		int result = myMapper.deleteMyFollwInfo(egovMap);
+		
+		if(result == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

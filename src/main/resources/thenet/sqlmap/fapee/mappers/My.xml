@@ -25,7 +25,7 @@
 		 						    FROM fp_follow 
 		 						   WHERE userIdKey = #{_parameter}) followingCount
 		 		 FROM fp_follow
-	    		WHERE userIdKey = 1
+	    		WHERE userIdKey = #{_parameter}
 				GROUP BY userIdKey) fc on u.idKey = fc.userIdKey
 		 JOIN fp_user_profile up on u.idKey = up.userIdKey
 		WHERE u.idkey = #{_parameter}
@@ -37,5 +37,28 @@
 		      ,content = #{content}
 		 WHERE userIdKey = #{idKey}
 	</update>
+	
+	<select id="selectMyFollowingCount" parameterType="egovMap" resultType="int">
+		SELECT count(*)
+  		  FROM fp_follow
+ 		 WHERE userIdKey = #{userIdKey} AND followUserIdKey = #{followUserIdKey}
+	</select>
+	
+	<insert id="insertMyFollwInfo" parameterType="egovMap">
+		INSERT into fp_follow(
+			 userIdKey
+			,followUserIdKey
+			,followDate
+		) VALUES (
+			 #{userIdKey}
+			,#{followUserIdKey}
+			,now()
+		)
+	</insert>
+	
+	<delete id="deleteMyFollwInfo" parameterType="egovMap">
+		DELETE FROM fp_follow
+         WHERE userIdKey = #{userIdKey} AND followUserIdKey = #{followUserIdKey}
+	</delete>
 	
 </mapper>
