@@ -1,4 +1,5 @@
-﻿<header id="header" class="header">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<header id="header" class="header">
 	<div class="inner">
 		<!-- <h1 class="logo"><a href="../home/home.jsp">FAPEE</a></h1> -->
 		<div class="bts">
