@@ -1,5 +1,7 @@
 package kr.co.thenet.fapee.my.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -69,5 +71,10 @@ public class MyServiceImpl implements MyService {
 		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public List<EgovMap> selectMyFollowList(EgovMap egovMap) throws Exception {
+		return myMapper.selectMyFollowList(egovMap);
 	}
 }

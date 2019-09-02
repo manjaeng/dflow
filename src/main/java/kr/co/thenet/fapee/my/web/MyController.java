@@ -182,16 +182,32 @@ public class MyController {
 	
 	@PostMapping("/app/my/followList.do")
 	@ResponseBody
-	public List<EgovMap> followList(@RequestBody EgovMap egovMap) throws Exception {
+	public List<EgovMap> followList(@RequestBody EgovMap egovMap,HttpServletRequest req) throws Exception {
 		
 		int pageStart = (int)egovMap.get("pageStart");
+		String type = (String) egovMap.get("type");
 		
 		egovMap.put("pageStart", pageStart * Constants.APP_FOLLOW_PAGE_SIZE);
 		egovMap.put("pageSize", Constants.APP_FOLLOW_PAGE_SIZE);
 		
-		System.out.println(egovMap);
+		if ("fwers".equals(type)) {
+			egovMap.put("type","fwers");
+		} else if ("fwing".equals(type)) {
+			egovMap.put("type","fwing");
+		}
 		
-		return null;
+		UserVO userVO = userService.selectUserInfo(egovMap);
+		egovMap.put("idKey", userVO.getIdKey());
+		
+		if (SessionUtils.isLogin(req)) {
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			egovMap.put("sessionIdKey", sessionVO.getIdKey());
+
+		}
+		
+		List<EgovMap> followList = myService.selectMyFollowList(egovMap);
+		
+		return followList;
 	}
 	
 }

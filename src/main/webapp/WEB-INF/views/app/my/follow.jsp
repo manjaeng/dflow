@@ -39,7 +39,10 @@
 	</div>
 
 	<script>
-	function followTabFnc(opt){  // 탭메뉴 클릭시 페이지 불러오기
+	var page;
+	var appendStat = true ;
+	function followTabFnc(opt){
+		page = -1 ;
 		if (!opt) { opt = "fwers" }
 		var pageUrl={
 			fwers : "/app/my/follow_div.do?type=fwers",
@@ -54,21 +57,19 @@
 			dataType: "html",
 			success: function(html) {			
 				$(".tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
-				
+
 				$("#followTabCont").html(html);
 				addItemFnc(opt);
 				
 				$("#followTabCont").removeClass("fwers , fwing").addClass(opt);
 				appendStat = true ;
-				page = 1 ;
+				
 				ui.slides.lookPic.using();
 			}
 		});	
 	}
 
-	var page = 0 ;
-	var appendStat = true ;
-	var addItemFnc = function(opt){
+	function addItemFnc(opt){
 		appendStat = false ;
 		page ++ ;
 		$(".uiLoadMore").addClass("active");
@@ -78,10 +79,18 @@
 			url: '/app/my/followList.do',
 			data : JSON.stringify({
 				'type' : opt,
-				'pageStart' : page
+				'pageStart' : page,
+				'userId' : '${param.id}'
 			}),
 			contentType : 'application/json; charset=utf-8',
 			success: function(data) {
+				
+				if (opt === 'fwers') {
+					$('.fwers a i').text('('+ data.length + ')');
+				} else if (opt ==='fwing') {
+					$('.fwing a i').text('('+ data.length + ')');
+				}
+				
 				window.setTimeout(function(){
 					
 					if (data.length == 0) {
@@ -90,18 +99,36 @@
 					} else {
 						
 						$.each(data,function(i,e) {
-						 	var tmp ='<li><div class="hBox">';
-							    tmp+= '<span class="tit">';
-							    tmp+= e.title;
-							   	tmp+= '</span>';
-							    tmp+= '<span class="date">';
-							    tmp+= e.createDate;
-							    tmp+= '</span>'; 
-							    tmp+= '<a href="javascript:;" class="btnTog">열기</a>'; 
-							    tmp+= '</div><div class="cBox">'; 
-							    tmp+= e.content; 
-							    tmp+= '</div></li>'; 
-						    
+							
+							var chk = '';
+							var sessionId = '${sessionScope.__sessiondata__.userId}';
+							
+							if(!e.imageUrl) {
+								e.imageUrl = '/resources/app/images/common/profile_no.png';
+							}
+							
+							if(e.isFollow) {
+								chk = (e.isFollow == '0') ? '' : 'checked';
+							}
+							
+						 	var tmp ='<li><div class="item">';
+							    tmp+= '<span class="img"><a class="lk" href="';
+							    tmp+= '/app/my/profile.do?id='+e.userId;
+							    tmp+= '"><img src="';
+							    tmp+= e.imageUrl;
+							    tmp+= '" alt="">';
+							   	tmp+= '</a></span>';
+							    tmp+= '<div class="name">';
+							    tmp+= e.userId;
+							    tmp+= '</div>';
+							    
+							    if(e.userId !== sessionId) {
+							    	tmp+= '<div class="foll"><label class="checkbox"><input type="checkbox"';
+									tmp+= chk;
+									tmp+= '><span></span></label></div>';
+							    }
+							    tmp+= '</div></li>';
+							    
 						    $("#followTabCont .tabCtn."+opt+">ul.list").append(tmp).addClass("load");
 						});
 						
@@ -131,7 +158,55 @@
 
 	
 	$(document).ready(function(){
-		followTabFnc('${param.type}');  
+		
+		followTabFnc('${param.type}');
+		
+		var isLogin = '${!empty sessionScope.__sessiondata__}';
+		
+		$('#followTabCont').on('change','.foll input',function(e) {
+			e.preventDefault();
+			
+			var _this = $(this);
+			var type;
+			
+			if(isLogin == 'false') {
+				
+				ui.confirm({
+					msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+						'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+					ycb: function(){
+						pjax('/app/user/login.do?after=my&id=${param.id}');
+					}
+				});
+				return false;
+			}
+			
+			if(_this.is(':checked')) {
+				type = 'insert';
+			} else {
+				type = 'delete';
+			}
+			
+			$.ajax({
+				type : 'post',
+				url : '/app/my/follow_edit.do',
+				data : JSON.stringify({
+					type : type,
+					userId : _this.parents('.item').find('.name').text(),
+				}),
+				contentType : 'application/json; charset=utf-8',
+				success : function(data) {
+					
+					var followerCount  = $('.amount .fwers em').text();
+					var followingCount = $('.amount .fwing em').text();
+					
+					if(data === 't') {
+						
+					}
+				}
+			}); 
+			 
+		});
 	});
 
 	</script>
