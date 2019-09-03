@@ -85,18 +85,42 @@
 		 		  					</when>
 		 		 				 </choose>
 		  LEFT JOIN fp_user_profile up ON u.idKey = up.userIdKey
-		 WHERE 1=1 <choose>
-		 		  	<when test='type == "fwers"'>
+		 WHERE 1=1 <if test="searchId != ''">
+		 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
+		 		   </if>
+		 		
+		 		   <choose>
+		 			<when test='type == "fwers"'>
 		 		  		AND f.followUserIdKey = #{idKey}
 		 		  	</when>
 		 		  	<when test='type == "fwing"'>
 		 		  		AND f.userIdKey = #{idKey}
 		 		  	</when>
-		 		  </choose> 
+		 		  </choose>
 		 ORDER BY f.followDate desc
 		 <if test="pageStart != null and pageSize != null">
 		 	LIMIT #{pageStart}, #{pageSize}
 		 </if>
+	</select>
+	
+	<select id="selectMyFollowCount" resultType="egovMap" parameterType="egovMap">
+		SELECT (SELECT COUNT(*) 
+		 		  FROM fp_follow f
+		 		  JOIN fp_user u ON f.userIdKey = u.idKey
+		 		 WHERE followUserIdKey = #{idKey}
+			 			<if test="searchId != ''">
+			 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
+			 		   </if> 
+		 		 
+		 	   ) followerCount
+		 	  ,(SELECT COUNT(*) 
+		 		  FROM fp_follow f
+		 		  JOIN fp_user u ON f.followUserIdKey = u.idKey
+		 		 WHERE userIdKey = #{idKey}
+			 			<if test="searchId != ''">
+			 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
+			 		   </if>  
+		 	   ) followingCount
 	</select>
 	
 </mapper>

@@ -19,4 +19,6 @@ public interface MyMapper {
 	int deleteMyFollwInfo(EgovMap egovMap) throws Exception;
 
 	List<EgovMap> selectMyFollowList(EgovMap egovMap) throws Exception;
+
+	EgovMap selectMyFollowCount(EgovMap egovMap) throws Exception;
 }

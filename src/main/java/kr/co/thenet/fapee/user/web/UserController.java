@@ -131,12 +131,12 @@ public class UserController {
 		}
 	}
 	
-	@GetMapping("app/user/login.do")
+	@GetMapping("/app/user/login.do")
 	public String login() throws Exception {
 		return "user/login.app";
 	}
 	
-	@PostMapping("app/user/login.do")
+	@PostMapping("/app/user/login.do")
 	@ResponseBody
 	public String login(@RequestBody EgovMap loginMap, HttpServletRequest req) throws Exception {
 		
@@ -161,6 +161,14 @@ public class UserController {
 		
 		return "t";
 		
+	}
+	
+	@GetMapping("/app/user/logout.do")
+	@ResponseBody
+	public void logout(HttpServletRequest req) throws Exception {
+		if (SessionUtils.isLogin(req)) {
+			SessionUtils.removeSession(req);
+		}
 	}
 	
     @GetMapping("/admin/user/list.do")

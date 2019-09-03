@@ -2,8 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
 	<div id="contain" class="contain setting">
 		<div class="pageHd">
 			<div class="in">
@@ -21,8 +19,6 @@
 						<span class="bt">계정관리</span>
 						<ul>
 							<li><a class="bt" href="../setting/pwMod.jsp">비밀번호 변경</a></li>
-							<!-- <li><a class="bt" href="../setting/certiEmail.jsp">이메일 인증</a></li> -->
-							<!-- <li><a class="bt" href="../setting/cools.jsp">COOL한 게시물</a></li> -->
 						</ul>
 					</li>
 					<li>
@@ -51,7 +47,7 @@
 						<a class="bt" href="javascript:;">셀러 계정 신청</a>
 					</li>
 					<li>
-						<a class="bt" href="javascript:;">로그아웃</a>
+						<a class="bt" id="logout" href="javascript:;">로그아웃</a>
 					</li>
 				</ul>
 			</section>
@@ -60,18 +56,22 @@
 
 
 	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 
 	<script>
-	$(document).ready(function(){
-		
-	});
+		$(function() {
+			$('#logout').click(function() {
+				$.ajax({
+					url : '/app/user/logout.do',
+					type: 'get',
+					success : function() {
+						pjax('/app/home/home.do');
+					}
+				});
+				return false;
+			});			
+		});
 	</script>
-	
-	<!--// 컨텐츠 끝 -->
-	
-
 	
 </div>

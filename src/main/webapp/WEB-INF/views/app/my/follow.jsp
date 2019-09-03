@@ -15,9 +15,11 @@
 		<main id="contents" class="contents">
 			<div class="sec formSch">
 				<div class="sch">
-					<input type="search" class="input key" id="input_kwd" placeholder="" value="">
-					<a href="javascript:;" class="bt sch">SEARCH</a>			
-					<a href="javascript:;" class="bt cancel" id="btSchCancel">CANCEL</a>					
+					<form id="searchForm">
+						<input type="search" class="input key" id="input_kwd" placeholder="" value="">
+						<a href="javascript:;" class="bt sch">SEARCH</a>			
+						<a href="javascript:$('#input_kwd').val('');" class="bt cancel" id="btSchCancel">CANCEL</a>
+					</form>
 				</div>
 			</div>
 
@@ -59,12 +61,12 @@
 				$(".tabs .menu>li."+opt).addClass("active").siblings("li").removeClass("active");
 
 				$("#followTabCont").html(html);
-				addItemFnc(opt);
-				
 				$("#followTabCont").removeClass("fwers , fwing").addClass(opt);
 				appendStat = true ;
 				
 				ui.slides.lookPic.using();
+				
+				addItemFnc(opt);
 			}
 		});	
 	}
@@ -80,25 +82,27 @@
 			data : JSON.stringify({
 				'type' : opt,
 				'pageStart' : page,
-				'userId' : '${param.id}'
+				'userId' : '${param.id}',
+				'searchId' : $('#input_kwd').val()
 			}),
 			contentType : 'application/json; charset=utf-8',
 			success: function(data) {
 				
-				if (opt === 'fwers') {
-					$('.fwers a i').text('('+ data.length + ')');
-				} else if (opt ==='fwing') {
-					$('.fwing a i').text('('+ data.length + ')');
-				}
+				$('.fwers a i').text('('+ data.followCountMap.followerCount + ')');
+				$('.fwing a i').text('('+ data.followCountMap.followingCount + ')');
 				
 				window.setTimeout(function(){
+
+					if (page == 0) {
+						$("#followTabCont .tabCtn."+opt+">ul.list").empty();
+					}
 					
-					if (data.length == 0) {
+					if (data.followList.length == 0) {
 						$(".uiLoadMore").addClass("hide");
 						appendStat = false ;
 					} else {
 						
-						$.each(data,function(i,e) {
+						$.each(data.followList,function(i,e) {
 							
 							var chk = '';
 							var sessionId = '${sessionScope.__sessiondata__.userId}';
@@ -163,7 +167,7 @@
 		
 		var isLogin = '${!empty sessionScope.__sessiondata__}';
 		
-		$('#followTabCont').on('change','.foll input',function(e) {
+		$('#followTabCont').on('click','.foll input',function(e) {
 			e.preventDefault();
 			
 			var _this = $(this);
@@ -197,15 +201,23 @@
 				contentType : 'application/json; charset=utf-8',
 				success : function(data) {
 					
-					var followerCount  = $('.amount .fwers em').text();
-					var followingCount = $('.amount .fwing em').text();
-					
 					if(data === 't') {
-						
+						var chk = _this.is(":checked");
+				        if(chk) _this.prop('checked', false);
+				        else  _this.prop('checked', true);
 					}
 				}
 			}); 
 			 
+		});
+		
+		$('.follow #searchForm').submit(function(e) {
+			
+			var tabAct = $("#followTabCont").attr("data-tab");
+			
+			followTabFnc(tabAct);
+			
+			return false;
 		});
 	});
 

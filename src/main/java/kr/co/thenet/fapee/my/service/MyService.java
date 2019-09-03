@@ -17,4 +17,6 @@ public interface MyService {
 
 	List<EgovMap> selectMyFollowList(EgovMap egovMap) throws Exception;
 
+	EgovMap selectMyFolloCount(EgovMap egovMap) throws Exception;
+
 }

@@ -182,7 +182,7 @@ public class MyController {
 	
 	@PostMapping("/app/my/followList.do")
 	@ResponseBody
-	public List<EgovMap> followList(@RequestBody EgovMap egovMap,HttpServletRequest req) throws Exception {
+	public EgovMap followList(@RequestBody EgovMap egovMap,HttpServletRequest req) throws Exception {
 		
 		int pageStart = (int)egovMap.get("pageStart");
 		String type = (String) egovMap.get("type");
@@ -202,12 +202,16 @@ public class MyController {
 		if (SessionUtils.isLogin(req)) {
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 			egovMap.put("sessionIdKey", sessionVO.getIdKey());
-
 		}
 		
+		EgovMap followCountMap = myService.selectMyFolloCount(egovMap);
 		List<EgovMap> followList = myService.selectMyFollowList(egovMap);
 		
-		return followList;
+		EgovMap resultMap = new EgovMap();
+		resultMap.put("followCountMap", followCountMap);
+		resultMap.put("followList", followList);
+		
+		return resultMap;
 	}
 	
 }
