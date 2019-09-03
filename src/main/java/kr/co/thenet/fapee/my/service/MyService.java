@@ -1,5 +1,7 @@
 package kr.co.thenet.fapee.my.service;
 
+import java.util.List;
+
 import kr.co.thenet.fapee.common.util.EgovMap;
 
 public interface MyService {
@@ -12,5 +14,7 @@ public interface MyService {
 	boolean insertMyFollwInfo(EgovMap egovMap) throws Exception;
 
 	boolean deleteMyFollwInfo(EgovMap egovMap) throws Exception;
+
+	List<EgovMap> selectMyFollowList(EgovMap egovMap) throws Exception;
 
 }

@@ -10,23 +10,17 @@
 			  ,u.status
 			  ,uf.gender
 			  ,uf.country
-			  ,fc.followerCount
-			  ,fc.followingCount
+			  ,(SELECT COUNT(*) 
+		 		  FROM fp_follow 
+		 		 WHERE followUserIdKey = #{_parameter}) followerCount
+		 	  ,(SELECT COUNT(*) 
+		 		  FROM fp_follow 
+		 		 WHERE userIdKey = #{_parameter}) followingCount
 			  ,up.nickName
 			  ,up.content
 			  ,up.imageUrl
 		 FROM fp_user u
 		 JOIN fp_user_filter uf on u.idKey = uf.userIdKey
-		 JOIN (
-		 		SELECT userIdKey, (SELECT COUNT(*) 
-		 						    FROM fp_follow 
-		 						   WHERE followUserIdKey = #{_parameter}) followerCount,
-		 						 (SELECT COUNT(*) 
-		 						    FROM fp_follow 
-		 						   WHERE userIdKey = #{_parameter}) followingCount
-		 		 FROM fp_follow
-	    		WHERE userIdKey = #{_parameter}
-				GROUP BY userIdKey) fc on u.idKey = fc.userIdKey
 		 JOIN fp_user_profile up on u.idKey = up.userIdKey
 		WHERE u.idkey = #{_parameter}
 	</select>
@@ -60,5 +54,49 @@
 		DELETE FROM fp_follow
          WHERE userIdKey = #{userIdKey} AND followUserIdKey = #{followUserIdKey}
 	</delete>
+	
+	<select id="selectMyFollowList" parameterType="egovMap" resultType="egovMap">
+		SELECT f.userIdKey
+			  ,f.followUserIdKey
+		      ,u.userId
+		      ,up.imageUrl
+		      <if test='sessionIdKey != null'>
+		      ,(
+				 SELECT count(*)
+		  		   FROM fp_follow
+		 		  WHERE userIdKey = #{sessionIdKey} 
+		 		  <choose>
+		 		  	<when test='type == "fwers"'>
+		 		  		AND followUserIdKey = u.idKey
+		 		  	</when>
+		 		  	<when test='type == "fwing"'>
+		 		  		AND followUserIdKey = f.followUserIdKey
+		 		  	</when>
+		 		  </choose>
+			   ) isFollow
+		      </if>
+		  FROM fp_follow f
+		  LEFT JOIN fp_user u ON <choose>
+		 		 				 	<when test='type == "fwers"'>
+		 		  						f.userIdKey = u.idKey
+		 		  					</when>
+		 		  					<when test='type == "fwing"'>
+		 		  						f.followUserIdKey = u.idKey
+		 		  					</when>
+		 		 				 </choose>
+		  LEFT JOIN fp_user_profile up ON u.idKey = up.userIdKey
+		 WHERE 1=1 <choose>
+		 		  	<when test='type == "fwers"'>
+		 		  		AND f.followUserIdKey = #{idKey}
+		 		  	</when>
+		 		  	<when test='type == "fwing"'>
+		 		  		AND f.userIdKey = #{idKey}
+		 		  	</when>
+		 		  </choose> 
+		 ORDER BY f.followDate desc
+		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+	</select>
 	
 </mapper>

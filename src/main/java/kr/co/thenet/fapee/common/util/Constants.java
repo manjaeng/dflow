@@ -7,4 +7,6 @@ public class Constants {
 	
 	// setting HashTag
 	public final static String HashTag = "hashtag";
+	// follow 리스트 사이즈
+	public final static int APP_FOLLOW_PAGE_SIZE = 12;
 }
