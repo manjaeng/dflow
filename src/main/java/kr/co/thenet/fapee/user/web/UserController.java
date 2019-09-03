@@ -172,4 +172,13 @@ public class UserController {
 
         return "user/list.admin";
     }
+    
+    @PostMapping("/admin/user/updateInfo.do")
+    @ResponseBody
+    public String userUpdate(@RequestBody EgovMap map, HttpServletRequest req) throws Exception {
+    	
+    	userService.updateUserInfo(map);
+    	
+    	return "user/list.admin";
+    }
 }

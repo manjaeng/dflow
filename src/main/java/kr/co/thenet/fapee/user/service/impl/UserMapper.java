@@ -28,4 +28,5 @@ public interface UserMapper {
 	
 	int updateUserFilterCountryInfo(EgovMap profileMap) throws Exception;
 
+	int updateUserInfo(EgovMap updateUserInfo) throws Exception;
 }

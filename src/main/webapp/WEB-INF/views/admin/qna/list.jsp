@@ -4,6 +4,11 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <script>
+	$(function() {
+		$('#dataTable').DataTable({
+			"order" : [ [ 0, "desc" ] ]
+		});
+	});
 	function modify(idKey) {
 		location.href= "/admin/qna/answer.do?num="+idKey;
 	}
@@ -19,7 +24,7 @@
 							<h3 class="panel-title"></h3>
 						</div>
 						<div class="panel-body">
-							<table class="table table-striped table-bordered"
+							<table id="dataTable" class="table table-striped table-bordered"
 								style="width: 100%">
 								<thead>
 									<tr>

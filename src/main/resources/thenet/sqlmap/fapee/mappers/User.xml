@@ -109,4 +109,11 @@
 		   SET country = #{country}
 		 WHERE userIdKey = #{idKey}
 	</update>
+	
+	<update id="updateUserInfo" parameterType="egovMap">
+		UPDATE fp_user
+			SET status = #{status}
+		WHERE idKey = #{idKey}
+	</update>
+	
 </mapper>

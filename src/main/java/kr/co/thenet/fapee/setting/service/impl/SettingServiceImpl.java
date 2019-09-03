@@ -33,5 +33,10 @@ public class SettingServiceImpl implements SettingService {
 	public void updateQnaServiceInfo(EgovMap answerMap) throws Exception {
 		settingMapper.updateQnaServiceInfo(answerMap);
 	}
+
+	@Override
+	public List<EgovMap> selectSettingInfo() throws Exception {
+		return settingMapper.selectSettingInfo();
+	}
 	
 }

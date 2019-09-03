@@ -10,7 +10,17 @@
 		});
 
 		$('input[type=checkbox]').change(function() {
-			console.log($(this).prop('checked'))
+			var userInfoEdit = {
+					status : $(this).prop('checked'),
+					idKey : $(this).val()
+			}
+			$.ajax({
+				type : "post",
+				url:"/admin/user/updateInfo.do",
+				data : JSON.stringify(userInfoEdit),
+				dataType: "json",
+				contentType : 'application/json; charset=utf-8'
+			});
 		});
 	});
 </script>
@@ -47,8 +57,17 @@
 											<td><c:out value="${item.userType}" /></td>
 											<td><fmt:formatDate value="${item.lastLoginDate}"
 													type="date" pattern="yyyy-MM-dd" /></td>
-											<td><input type="checkbox" checked data-toggle="toggle"
-												data-size="sm"></td>
+											<td>
+												<c:choose>
+													<c:when test="${item.status == 1}">
+														<input type="checkbox" checked data-toggle="toggle"
+															data-size="sm" value="${item.idKey}">
+													</c:when>
+													<c:otherwise>
+														<input type="checkbox" data-toggle="toggle" data-size="sm" value="${item.idKey}">
+													</c:otherwise>
+												</c:choose>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>

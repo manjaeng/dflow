@@ -51,4 +51,9 @@
 		WHERE idKey = #{idKey}
 	</update>
 	
+	<select id="selectSettingInfo" resultType="egovMap">
+		SELECT *
+			FROM fp_admin_setting 
+	</select>
+	
 </mapper>

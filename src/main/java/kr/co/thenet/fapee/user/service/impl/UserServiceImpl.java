@@ -86,5 +86,8 @@ public class UserServiceImpl implements UserService {
 		return userMapper.updateUserLastLoginInfo(idKey);
 	}
 
-
+	@Override
+	public int updateUserInfo(EgovMap userInfoMap) throws Exception {
+		return userMapper.updateUserInfo(userInfoMap);
+	}
 }

@@ -109,3 +109,18 @@ CREATE TABLE FP_Follow (
   followDate DATETIME NULL,
   PRIMARY KEY (userIdKey, followUserIdKey)
 );
+
+CREATE TABLE FP_Profile (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  userIdKey BIGINT NULL,
+  nickName VARCHAR(100) NULL,
+  content TEXT,
+  imageUrl VARCHAR(255) NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Admin_Setting (
+  code VARCHAR(20) NOT NULL,
+  data VARCHAR(20) NOT NULL,
+  createDate DATETIME NULL
+);

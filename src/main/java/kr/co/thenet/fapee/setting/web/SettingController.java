@@ -1,6 +1,7 @@
 package kr.co.thenet.fapee.setting.web;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -17,6 +18,7 @@ import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
+import kr.co.thenet.fapee.intro.service.IntroService;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 import kr.co.thenet.fapee.setting.service.SettingService;
 
@@ -28,6 +30,9 @@ public class SettingController {
 	
 	@Autowired
 	private NoticeService noticeService;
+	
+	@Autowired
+	private IntroService introService;
 	
 	@GetMapping("/app/setting/setting.do")
 	public String setting() throws Exception {
@@ -70,7 +75,20 @@ public class SettingController {
 	}
 	
 	@GetMapping("/admin/setting/list.do")
-	public String list() throws Exception {
+	public String settingList(ModelMap model) throws Exception {
+		
+		List<EgovMap> settingInfo = settingService.selectSettingInfo();
+		List<EgovMap> styleList = introService.selectIntroStyleList();
+		
+		model.addAttribute("styleList", styleList);
+		
+		for(int i = 0; i < settingInfo.size(); ++i) {
+			EgovMap record  = (EgovMap) settingInfo.get(i);
+			if(Constants.HashTag.equals(record.get("code"))) {
+				model.addAttribute("hashtag", record.get("data"));
+			}
+		}
+		
 		return "setting/list.admin";
 	}
 	
@@ -104,5 +122,11 @@ public class SettingController {
 		model.addAttribute("qnaAnswer", qnaAnswer);
 		
 		return "qna/answer.admin";
+	}
+	
+	@PostMapping("/admin/setting/style.do")
+	public String settingStyle(@RequestBody Map<String, Object> params, HttpServletRequest req) throws Exception {
+		
+		return "redirect:/admin/setting/list.do";
 	}
 }

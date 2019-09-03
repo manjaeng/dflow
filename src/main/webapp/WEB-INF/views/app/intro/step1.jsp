@@ -73,11 +73,11 @@
 	</div>
 
 	<script>
-	
 	$(function() {
 		$('.fit a').click(function() {
-			var deviceId = 'emsdf1-saesd-vsdaf-esdfs';
-			
+			if(typeof deviceId == "undefined" || deviceId == null) {
+				deviceId = 'emsdf1-saesd-vsdaf-esdfs';
+			}
 			fp.data.intro = {
 				deviceId : deviceId,
 				gender : $('input[name="gender"]:checked').val(),
