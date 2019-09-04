@@ -30,7 +30,7 @@
 							<label class="checkbox"><input type="checkbox" checked="checked"><span>자동 로그인</span></label>
 						</div>
 						<div class="txt">
-							<a href="./findPw.jsp" class="link">FORGOT ID/PASSWORD?</a>
+							<a href="./find_password.do" class="link">FORGOT ID/PASSWORD?</a>
 						</div>
 					</div>
 				</form>
@@ -112,7 +112,7 @@
 									}
 								}
 							} else {
-								
+								pjax('/app/home/home.do');
 							}
 							
 						} else if (data === 'f') {
@@ -127,6 +127,11 @@
 				return false;
 			});
 			
+			$('.pw input').keypress(function(e) {
+				if(e.keyCode == 13) {
+					$('#btnLogin').trigger('click');
+				}
+			});
 		});
 	</script>
 	

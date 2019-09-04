@@ -20,4 +20,6 @@ public interface UserService {
 	int updateUserLastLoginInfo(long idKey) throws Exception;
 	
 	int updateUserInfo(EgovMap userInfoMap) throws Exception;
+	
+	String updateUserLoginInfo(EgovMap egovMap) throws Exception;
 }

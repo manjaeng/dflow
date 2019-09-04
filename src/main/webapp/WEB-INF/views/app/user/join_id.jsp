@@ -49,17 +49,12 @@
 			
 			$('.fit a').click(function() {
 				
-				//Skip
-				if(fp.test) {
-					fp.data.join.userId = 'fapee';
-					pjax('./join_password.do');
-					
-					return false;
-				}
+				$(".id input").removeClass("no");
 				
 				var $id = $('.id input').val();
 				
 				if($id.length === 0) {
+					$(".id input").addClass("no");
 					$('#msg_existId').addClass('show');
 					$('#msg_existId').text('아이디를 입력해주세요.');
 					$('.id input').focus();
@@ -67,6 +62,7 @@
 				}
 				
 				if(!fp.util.checkRegEx('id',$id)) {
+					$(".id input").addClass("no");
 					$('#msg_existId').addClass('show');
 					$('#msg_existId').text('아이디 형식을 다시 확인해주세요.');
 					$('.id input').focus();
@@ -81,11 +77,14 @@
 					},
 					success: function(data) {
 						if(data === 'ok') {
+							$(".id input").removeClass("no");
 							fp.data.join.userId = $id;
 							pjax('./join_password.do');
 						} else if (data === 'exist') {
 							$('.msgcode').hide();
+							$('.id input').focus();
 							$('#msg_existId').addClass('show');
+							$(".id input").addClass("no");
 							$('#msg_existId').text('사용 중인 아이디입니다.');
 						}
 					}

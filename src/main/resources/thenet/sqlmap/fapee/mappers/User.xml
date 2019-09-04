@@ -43,7 +43,8 @@
 			,password
 			,userType
 			,mobile
-			,email
+			,email,
+			,lastLoginDate
 			,joinDate
 			,deviceId
 			,status
@@ -53,6 +54,7 @@
 			,#{userType}
 			,#{mobile}
 			,#{email}
+			,#{lastLoginDate}
 			,now()
 			,#{deviceId}
 			,#{status}
@@ -112,7 +114,10 @@
 	
 	<update id="updateUserInfo" parameterType="egovMap">
 		UPDATE fp_user
-			SET status = #{status}
+		<trim prefix="SET" prefixOverrides=",">
+			<if test="status != null">,status = #{status}</if>
+			<if test="password != null">,password = #{password}</if>
+		</trim>
 		WHERE idKey = #{idKey}
 	</update>
 	

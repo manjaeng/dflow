@@ -18,7 +18,7 @@
 						<input type="password" class="input"  id="input_sample1" value="">
 						<span class="plc">PASSWORD</span>
 					</div>
-					<div class="msg_error" id="msg_existPw">비밀번호 형식을 다시 확인해 주세요.</div>
+					<div class="msg_error" id="msg_existPw">6자이상 영문숫자조합으로 입력해주세요.</div>
 					<div class="msgs">비밀번호는 6자 이상의 영문, 숫자 조합으로 입력해주세요. </div>
 				</div>
 			</div>
@@ -41,14 +41,6 @@
 			
 			$('.fit a').click(function() {
 				
-				//Skip
-				if(fp.test) {
-					fp.data.join.password = 'fapee123';
-					pjax('./join_email.do');
-					
-					return false;
-				}
-				
 				var $pw = $('.pw input').val();
 				
 				if($pw.length === 0) {
@@ -60,7 +52,7 @@
 				
 				if(!fp.util.checkRegEx('pw',$pw)) {
 					$('#msg_existPw').addClass('show');
-					$('#msg_existPw').text('비밀번호 형식을 다시 확인해주세요.');
+					$('#msg_existPw').text('6자이상 영문숫자조합으로 입력해주세요.');
 					$('.pw input').focus();
 					return false;
 				}

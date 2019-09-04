@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.UserVO;
+import kr.co.thenet.fapee.common.util.CommonFunc;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
@@ -169,6 +170,78 @@ public class UserController {
 		if (SessionUtils.isLogin(req)) {
 			SessionUtils.removeSession(req);
 		}
+	}
+	
+	@GetMapping("/app/user/find_password.do")
+	public String findPasswrod() throws Exception {
+		return "user/find_password.app";
+	}
+	
+	@PostMapping("/app/user/find_password.do")
+	@ResponseBody
+	public String findPassword(@RequestParam String mobile, HttpServletRequest req) throws Exception {
+		
+		EgovMap egovMap = new EgovMap();
+		egovMap.put("mobile", mobile);
+		
+		UserVO user = userService.selectUserInfo(egovMap);
+		
+		if (user != null) {
+			
+			String randomNum = CommonUtils.getRandomNum(6);
+			
+			SessionUtils.setData(req, "verification_pw", randomNum);
+			SessionUtils.setData(req, "pw_idKey", user.getIdKey());
+			
+			log.info("moblile : " + mobile);
+			log.info("randomNum : " + randomNum);
+			
+			return "send";
+		} else {
+			return "notExist";
+		}
+	}
+	
+	@PostMapping("/app/user/find_password2.do")
+	@ResponseBody
+	public String findPassword2(@RequestParam String verification, HttpServletRequest req) throws Exception {
+		if(!SessionUtils.isEmpty(req, "verification_pw") && SessionUtils.getData(req, "verification_pw").equals(verification)) {
+			SessionUtils.removeData(req, "verification_pw");
+			return "t";
+		}
+		return "f";
+	}
+	
+	@GetMapping("/app/user/find_passwordReset.do")
+	public String findPasswordReset() throws Exception {
+		return "user/find_passwordReset.app";
+	}
+	
+	@PostMapping("/app/user/find_passwordReset.do")
+	@ResponseBody
+	public String findPasswordReset(@RequestParam String password, HttpServletRequest req) throws Exception {
+		if(!SessionUtils.isEmpty(req, "pw_idKey")) {
+			EgovMap map = new EgovMap();
+			map.put("idKey", SessionUtils.getData(req, "pw_idKey"));
+			map.put("password", CommonFunc.getHashedPassword(password));
+			
+			int updateCount = userService.updateUserInfo(map);
+			
+			if(updateCount == 1) {
+				SessionUtils.removeSession(req);
+				return "t";
+			} else {
+				return "f";
+			}
+			
+		} else {
+			return "f";
+		}
+	}
+	
+	@GetMapping("/app/user/find_passwordCom.do")
+	public String findPasswordCom() throws Exception {
+		return "user/find_passwordCom.app";
 	}
 	
     @GetMapping("/admin/user/list.do")

@@ -21,6 +21,7 @@ import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.intro.service.IntroService;
 import kr.co.thenet.fapee.notice.service.NoticeService;
 import kr.co.thenet.fapee.setting.service.SettingService;
+import kr.co.thenet.fapee.user.service.UserService;
 
 @Controller
 public class SettingController {
@@ -33,6 +34,9 @@ public class SettingController {
 	
 	@Autowired
 	private IntroService introService;
+	
+	@Autowired
+	private UserService userService;
 	
 	@GetMapping("/app/setting/setting.do")
 	public String setting() throws Exception {
@@ -72,6 +76,27 @@ public class SettingController {
 		egovMap.put("pageSize", Constants.APP_NOTICE_PAGE_SIZE);
 		
 		return noticeService.selectNoticeServiceList(egovMap);
+	}
+	
+	@GetMapping("/app/setting/password_change.do")
+	public String passwordChange() throws Exception {
+		return "setting/password_change.app";
+	}
+	
+	@PostMapping("/app/setting/password_change.do")
+	@ResponseBody
+	public String passwordChange(@RequestBody EgovMap map, HttpServletRequest req) throws Exception {
+		
+		if (SessionUtils.isLogin(req)) {
+			
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			map.put("idKey", sessionVO.getIdKey());
+			
+			return userService.updateUserLoginInfo(map);
+		} else {
+			return "noSession";
+		}
+		
 	}
 	
 	@GetMapping("/admin/setting/list.do")

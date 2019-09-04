@@ -18,7 +18,7 @@
 					<li>
 						<span class="bt">계정관리</span>
 						<ul>
-							<li><a class="bt" href="../setting/pwMod.jsp">비밀번호 변경</a></li>
+							<li><a class="bt" href="../setting/password_change.do">비밀번호 변경</a></li>
 						</ul>
 					</li>
 					<li>

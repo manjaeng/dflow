@@ -90,4 +90,22 @@ public class UserServiceImpl implements UserService {
 	public int updateUserInfo(EgovMap userInfoMap) throws Exception {
 		return userMapper.updateUserInfo(userInfoMap);
 	}
+
+	@Override
+	public String updateUserLoginInfo(EgovMap egovMap) throws Exception {
+		
+		String password = (String) egovMap.get("password");
+		egovMap.put("password", CommonFunc.getHashedPassword(password));
+		
+		UserVO userVO = userMapper.selectUserInfo(egovMap);
+		
+		if(userVO == null) {
+			return "mismatch";
+		} else {
+			String passwordNew = (String) egovMap.get("passwordNew");
+			egovMap.put("password", CommonFunc.getHashedPassword(passwordNew));
+			userMapper.updateUserInfo(egovMap);
+			return "success";
+		}
+	}
 }

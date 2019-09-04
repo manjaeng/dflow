@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
-	<div id="contain" class="contain popJoin mo">
+	<div id="contain" class="contain findPw">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -11,8 +11,9 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			<div class="joinForm">
-				<div class="hdt"><em>SIGN UP</em></div>
+			<div class="findForm">
+				<div class="hdt"><em>비밀번호 찾기</em></div>
+				<div class="msg">가입 시 인증한 전화 번호를 입력하시면 <br> 본인 확인 코드를 보내드립니다. </div>
 				<div class="form">
 					<div class="uiIptPlc phone">
 						<input type="number" class="input" value="">
@@ -26,40 +27,32 @@
 						<span class="time" style="display:none;">2:59</span>
 					</div>
 					<div class="msgcode" style="display:none;">해당 번호로 코드를 전송하였습니다.</div>
-					<div class="msg_error" id="msg_exist"></div>
-					<div class="findpws" style="display:none;">
-						<a href="./find_password.do" class="link">FORGOT ID/PASSWORD?</a>
-					</div>
-					
-					<div class="agree">
-						<div class="txt">
-							본인이 만 14세 이상인 것과 서비스 이용약관, <br> <a href="javascript:;">서비스이용약관, 개인정보보호정책</a>에 동의하십니까? </div>
-						<label class="checkbox"><input type="checkbox"><span></span></label>
-					</div>
-					<div class="msg_error" id="msg_agree">약관에 동의해 주세요.</div>
-
+					<div class="msg_error" id="msg_check">인증 코드를 다시 확인하세요. </div>
 				</div>
 			</div>
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./join_id.do" class="btn xl b fill btnNext">NEXT</a>
+						<a href="javascript:;" class="btn xl b fill">NEXT</a>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 	
+	
 	<script>
 		$(function() {
-			var timer = fp.util.getTimer(180,'.certi .time');
+			
+			var timer2 = fp.util.getTimer(180,'.certi .time');
 			
 			window.onpopstate = function () {
-				timer.destroy();
+				timer2.destroy();
 			};
 			
 			$('.phone a').click(function() {
@@ -67,16 +60,15 @@
 				$(".phone input, .certi input").removeClass("no");
 				
 				$('.msgcode').hide();
-				$('.findpws').hide();
-				$('#msg_exist').removeClass('show');
+				$('#msg_check').removeClass('show');
 				
 				var $phone = $('.phone input').val();
 				
 				if(!fp.util.checkRegEx('mobile',$phone)) {
 					$(".phone input").addClass("no");
-					timer.destroy();
-					$('#msg_exist').addClass('show');
-					$('#msg_exist').text('올바른 전화번호를 입력해주세요.');
+					timer2.destroy();
+					$('#msg_check').addClass('show');
+					$('#msg_check').text('올바른 전화번호를 입력해주세요.');
 					$('.phone input').focus();
 					
 					return false;
@@ -84,26 +76,20 @@
 				
 				$.ajax({
 					type : 'post',
-					url : '/app/user/join_mobileCertified.do',
+					url : '/app/user/find_password.do',
 					data : {
 						'mobile' : $phone
 					},
 					success: function(data) {
-						
-						if(data === 'exist') {
-							$(".phone input").addClass("no");
-							$('#msg_exist').addClass('show');
-							$('#msg_exist').text('이미 가입된 전화번호입니다.')
-							$('.findpws').show();
-							timer.destroy();
-						} else if(data === 'send') {
-							fp.data.join = {
-								deviceId : 'emsdf1-saesd-vsdaf-esdfs',
-								mobile : $('.phone input').val()
-							};
-							
+						if(data === 'send') {
 							$('.msgcode').show();
-							timer.start();
+							timer2.start();
+						} else if(data === 'notExist') {
+							$(".phone input").addClass("no");
+							$('#msg_check').addClass('show');
+							$('#msg_check').text('등록 되지 않은정보입니다.')
+							$('.phone input').focus();
+							timer2.destroy();
 						}
 					}
 				});
@@ -111,65 +97,52 @@
 				return false;
 			});
 			
-			$('.agree input[type=checkbox]').change(function() {
-				if($('.agree input[type=checkbox]').is(':checked')) {
-					$('#msg_agree').removeClass('show');
-					return false;
-				}
-			});
 			
 			$('.fit a').click(function() {
 				
 				$(".certi input").removeClass("no");
 				var $verification = $('.certi input').val();
 				
-				if($('.agree input[type=checkbox]').is(':checked') === false) {
-					$('#msg_exist').removeClass('show');
-					$('#msg_agree').addClass('show');
-					return false;
-				}
-				
-				if(timer.isStart() === false) {
-					$('#msg_exist').addClass('show');
-					$('#msg_exist').text('인증코드를 보내주세요.');
-					$('.findpws').hide();
+				if(timer2.isStart() === false) {
+					$('#msg_check').addClass('show');
+					$('#msg_check').text('인증코드를 보내주세요.');
 					$('.phone input').focus();
 					return false;
 				}
 				
-				if(timer.isEnd() === true) {
+				if(timer2.isEnd() === true) {
 					$('.msgcode').hide();
-					$('#msg_exist').addClass('show');
-					$('#msg_exist').text('인증코드를 다시 보내주세요.');
+					$('#msg_check').addClass('show');
+					$('#msg_check').text('인증코드를 다시 보내주세요.');
 					return false;
 				}
 				
 				if($verification.length === 0) {
 					$(".certi input").addClass("no");
 					$('.msgcode').hide();
-					$('#msg_exist').addClass('show');
-					$('#msg_exist').text('인증코드를 입력해 주세요.');
+					$('#msg_check').addClass('show');
+					$('#msg_check').text('인증코드를 입력해 주세요.');
 					 $('.certi input').focus();
 					return false;
 				}
 				
 				$.ajax({
 					type : 'post',
-					url : '/app/user/join_mobileCertified2.do',
+					url : '/app/user/find_password2.do',
 					data : {
 						'verification' : $verification
 					},
 					success: function(data) {
 						if(data === 't') {
 							$(".phone input, .certi input").removeClass("no");
-							timer.destroy();
-							timer = null;
-							pjax('./join_id.do');
+							timer2.destroy();
+							timer2 = null;
+							pjax('./find_passwordReset.do');
 						} else if (data === 'f') {
 							$(".certi input").addClass("no");
 							$('.msgcode').hide();
-							$('#msg_exist').addClass('show');
-							$('#msg_exist').text('인증 코드를 다시 확인하세요.');
+							$('#msg_check').addClass('show');
+							$('#msg_check').text('인증 코드를 다시 확인하세요.');
 						}
 						
 					}

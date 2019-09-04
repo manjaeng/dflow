@@ -48,34 +48,6 @@
 					return false;
 				}
 				
-				//Skip
-				if(fp.test) {
-					fp.data.join.email = 'csh0034@gmail.com';
-					ui.loading.show();
-					
-					 fp.util.jsonAjax({
-							url : '/app/user/join_complete.do',
-							data : fp.data.join,
-			                success : function(data) {
-			                	if(data === "t") {
-			                		fp.data.join = null;
-			                		//pjax('/app/home.do');
-			                		pjax('/app/my/profile.do');
-			                		console.log('임시) 프로필로 이동');
-			                		
-			                		setTimeout(function(){
-			                			ui.loading.hide();
-			                		},500);
-			                	}
-			                },
-			                error : function(x, s, e) {
-			                    console.log(x);
-			                }
-						});
-					
-					return false;
-				}
-				
 				var $email = $('.email input').val();
 				
 				if($email.length === 0) {
@@ -102,9 +74,7 @@
 	                success : function(data) {
 	                	if(data === "t") {
 	                		fp.data.join = null;
-	                		//pjax('/app/home.do');
-	                		pjax('/app/my/profile.do');
-	                		console.log('임시) 프로필로 이동')
+	                		pjax('/app/home/home.do');
 	                		
 	                		setTimeout(function(){
 	                			ui.loading.hide();
