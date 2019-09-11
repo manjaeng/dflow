@@ -21,15 +21,7 @@
 
 			<div class="pics swiper-container" id="slideUploadPic">
 				<ul class="list swiper-wrapper slide">
-					<li class="swiper-slide"><div class="img">
-							<a class="btnAdd" href="javascript:;">선택</a>
-						</div></li>
-					<li class="swiper-slide"><div class="img">
-							<img src="//placeimg.com/380/500/1" alt="">
-						</div>
-						<div class="bts">
-							<a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a>
-						</div></li>
+					<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:openPhotoMulti()">선택</a></div></li>
 				</ul>
 			</div>
 		</section>
@@ -68,21 +60,36 @@
 			$(els).closest(".swiper-slide").find("img , .bts").remove();
 		}
 
+		var _images = [];
+		var onPhotoSelected = function(success, status, photos) {
+			if (success && photos) {
+				for (var ii=0; ii<photos.length; ii++) {
+					_images.push(photos[ii]);
+					var picHtml = '<li class="swiper-slide">' + 
+									'<div class="img">' +
+										'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
+									'</div>' +
+									'<div class="bts">' +
+										'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>' +
+									'</div>' +
+								'</li>';
+					$("#slideUploadPic .list").append( picHtml );
+				}
+			}
+		}
+		
+		function openPhotoMulti() {
+			showPhotoForPickupMulti(onPhotoSelected)
+		}
+		
+		var deletePicture = function(els){
+			$(els).closest(".swiper-slide").remove();
+		}
+		
 		$(function() {
-			var _images;
-			$('.btnAdd').click(function() {
-				showPhotoForPickupThree(function(success, status, args) {
-					if(!success) { return false; }
-					_images = args.images;
-					$(".img img").attr('src', 'data:image/png;base64,' + args.thumbnails[0]);
-				});
-			});
-			
 			$('.fit a').click(function() {
-				var _idKey = "3";
 				
 				fp.data.look = {
-						idKey: _idKey,
 						images: _images
 				};
 				
