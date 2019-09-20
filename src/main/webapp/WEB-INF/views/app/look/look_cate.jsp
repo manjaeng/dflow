@@ -98,11 +98,12 @@
 			$('.contain.lkreg.cate .filters>li.hash .tags .tg i').each(function(i) {
 				tags.push($(this).text().replace("#",""));
 			});
-			
-			fp.util.jsonAjax({
+
+ 			fp.util.jsonAjax({
 				url: '/app/look/regist.do',
 				data : {
-					styleIdkey : $("input[name=style_cate]:checked").val(),
+					userIdKey : 1,
+					styleIdKey : $("input[name=style_cate]:checked").val(),
 					tags : tags,
 					content : $(".textarea").val(),
 					images : fp.data.look.images

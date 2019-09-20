@@ -12,7 +12,9 @@
 		$('input[type=checkbox]').change(function() {
 			console.log($(this).prop('checked'))
 		});
+		
 	});
+	
 </script>
 <div class="main">
 	<div class="main-content">
@@ -39,33 +41,26 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>test1</td>
-										<td>임시 컨텐츠1</td>
-										<td>관리자</td>
-										<td>0</td>
-										<td><input type="checkbox" checked data-toggle="toggle"
-											data-size="sm"></td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>test2</td>
-										<td>임시 컨텐츠2</td>
-										<td>패피루키</td>
-										<td>0</td>
-										<td><input type="checkbox" checked data-toggle="toggle"
-											data-size="sm"></td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>test3</td>
-										<td>임시 컨텐츠3</td>
-										<td>패피루키</td>
-										<td>0</td>
-										<td><input type="checkbox" data-toggle="toggle"
-											data-size="sm"></td>
-									</tr>
+									<c:forEach var="item" items="${lookList}">
+										<tr>
+											<td><c:out value="${item.idKey}" /></td>
+											<td><c:out value="${item.userId}"/></td>
+											<td><c:out value="${item.style}" /></td>
+											<td><c:out value="${item.content}" /></td>
+											<td><c:out value="${item.createdate}" /></td>
+											<td>
+												<c:choose>
+													<c:when test="${item.status == true}">
+														<input type="checkbox" checked data-toggle="toggle"
+															data-size="sm" value="${item.idKey}">
+													</c:when>
+													<c:otherwise>
+														<input type="checkbox" data-toggle="toggle" data-size="sm" value="${item.idKey}">
+													</c:otherwise>
+												</c:choose>
+											</td>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 							<div class="form-group text-center" style="margin-bottom: 0">

@@ -10,6 +10,18 @@
 		  FROM fp_style
 		 ORDER BY seq
 	</select>
+	<select id="selectLookAllList" resultType="egovMap">
+		SELECT l.idKey
+			, u.userId
+			, s.style
+			, l.content
+			, l.createdate
+			, l.status
+		FROM fp_look as l
+		LEFT JOIN fp_user as u ON l.userIdKey = u.idKey
+		LEFT JOIN fp_style as s ON l.styleIdKey = s.idKey
+		ORDER BY idKey
+	</select>
 	<insert id="insertLook" parameterType="LookVO" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT INTO fp_look (
 			userIdKey
