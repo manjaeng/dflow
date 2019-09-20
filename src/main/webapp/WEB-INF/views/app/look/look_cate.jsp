@@ -42,12 +42,6 @@
 							<a href="javascript:;" class="bt save">SAVE</a>
 						</div>
 						<div class="tags">
-							<!-- <span class="tg"> <i>#유니크 스타일어</i> <a href="javascript:;"
-								class="del">삭제</a></span> 
-							<span class="tg"> <i>#유니크 스타일</i> <a href="javascript:;"
-								class="del">삭제</a> </span>
-							<span class="tg"> <i>#유니크 스타일</i> <a href="javascript:;"
-								class="del">삭제</a></span> -->
 						</div>
 					</div>
 				</li>
@@ -72,7 +66,7 @@
 			<div class="in">
 				<div class="btnSet fit">
 					<!-- <a href="./look.do" class="btn type b fill xl">DONE</a> -->
-					<a href="javascript:;" class="btn type b fill xl">DONE</a>
+					<a href="#" class="btn type b fill xl" >DONE</a>
 				</div>
 			</div>
 		</section>
@@ -90,27 +84,40 @@
 
 	<script>
 	$(function() {
+		var tags = [];
 		$('.ipt a').click(function() {
 			$('<span class="tg"><i>#'+$('.input').val()+'</i><a href="javascript:;" class="del">삭제</a></span>').appendTo(".tags");
 			$('.input').val("");
 			return false;
 		});
-		
 		$('.tags').on("click", "a", function() {
 			$(this).parent().remove();
 			return false;
 		});
-		
-		$('.fit a').click(function() {
-			
-			$('.tg i').each(function(i) {
-				console.log($(this).text().replace("#",""));
+ 		$('.fit a').click(function() {
+			$('.contain.lkreg.cate .filters>li.hash .tags .tg i').each(function(i) {
+				tags.push($(this).text().replace("#",""));
 			});
-			console.log($("input[name=style_cate]:checked").val());
-			console.log($(".textarea").val());
+			
+			fp.util.jsonAjax({
+				url: '/app/look/regist.do',
+				data : {
+					styleIdkey : $("input[name=style_cate]:checked").val(),
+					tags : tags,
+					content : $(".textarea").val(),
+					images : fp.data.look.images
+				},
+				success: function(data) {
+					alert(data);
+				},
+				error : function(data) {
+					alert(data);
+				}
+			});
 			
 			return false; /*등록후 돌아오면 안되므로*/
 		});
+		
 	});
 	</script>
 

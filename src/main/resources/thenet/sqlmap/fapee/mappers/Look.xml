@@ -10,5 +10,46 @@
 		  FROM fp_style
 		 ORDER BY seq
 	</select>
+	<insert id="insertLook" parameterType="LookVO" useGeneratedKeys="true" keyProperty="idKey">
+		INSERT INTO fp_look (
+			userIdKey
+			,styleIdKey
+			,content
+			,createDate
+			,status
+		) VALUES (
+			#{userIdKey}
+			,#{styleIdKey}
+			,#{content}
+			,now()
+			,1
+		)
+	</insert>
+	
+	<insert id="insertLookImage" parameterType="LookVO">
+		INSERT INTO fp_look_image (
+			lookIdKey
+			,imageUrl
+		) VALUES
+		<foreach collection="images" item="image" separator=","> 
+		(
+			"${idKey}"
+			,"${image}"
+		)
+		</foreach>
+	</insert>
+	
+	<insert id="insertLookTags" parameterType="LookVO">
+		INSERT INTO fp_look_tag (
+			lookIdKey
+			,tagName
+		) VALUES
+		<foreach collection="tags" item="tag" separator=","> 
+		(
+			"${idKey}"
+			,"${tag}"
+		)
+		</foreach>
+	</insert>
 	
 </mapper>

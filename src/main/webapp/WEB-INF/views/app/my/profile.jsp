@@ -55,7 +55,8 @@
 					<a href="javascript:;" class="bt fwer">FOLLOW</a>
 					<a href="javascript:;" class="bt fwing">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
-					<a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a> 
+					<!-- <a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a> -->
+					<a href="javascript:;" class="bt more" onclick="popSystem();">More</a>
 				</div>
 				
 			</section>
@@ -75,7 +76,9 @@
 	</div>
 
 	<script>
-
+		function popSystem() {
+			openSystemSharePopup(null);
+		}
 		var page = 0 ;
 		var appendStat = true ;
 		var addItemFnc = function(){  //  탭 내용 아래 추가 하기

@@ -55,4 +55,16 @@ public class FileUtils {
 		
 		return sb.toString();
 	}
+	
+	public static String getFileExtension(String str) {
+		String resultExtension = "";
+		if(str.toLowerCase().indexOf("png") != -1) {
+			resultExtension = ".png";
+		} else if(str.toLowerCase().indexOf("jpg") != -1 || str.toLowerCase().indexOf("jpeg") != -1) {
+			resultExtension = ".jpg";
+		} else {
+			resultExtension = ".exception";
+		}
+		return resultExtension;
+	}
 }

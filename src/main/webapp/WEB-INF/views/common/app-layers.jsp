@@ -615,7 +615,6 @@ function popLookReg_open(){
 </article>
 <script>
 function popShare(){
-
 	// ui.popLayer.open('popShare',{
 	// 	ocb:function(){
 	// 		// ui.popLayer.close('popPrfOthers');
@@ -747,7 +746,7 @@ function popPrfPicMod(){
 		</div>
 		<div class="pct">
 			<main class="poptents">
-				<img src="http://placeimg.com/640/640/any/5" alt="">
+				<img src="https://placeimg.com/640/640/any/5" alt="">
 				<a class="btn" href="javascript:popMatching.using();">매칭</a>
 				<a class="btn" href="../look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>

@@ -1,5 +1,6 @@
 package kr.co.thenet.fapee.look.web;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,12 +10,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.thenet.fapee.common.model.LookVO;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
-import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.look.service.LookService;
 
 @Controller
@@ -45,30 +46,52 @@ public class LookController {
 	}
 	
 	@GetMapping("/admin/look/list.do")
-	public String lookList() throws Exception {
+	public String lookList(ModelMap model) throws Exception {
+		
+		List<EgovMap> lookList = lookService.selectLookAllList();
+		model.addAttribute("lookList", lookList);
 		
 		return "look/list.admin";
 	}
 	
 	@GetMapping("/admin/look/add.do")
-	public String lookAdd() throws Exception {
+	public String lookAdd(ModelMap model) throws Exception {
+		
+		List<EgovMap> lookStyleList = lookService.selectLookStyleList();
+		model.addAttribute("lookStyleList", lookStyleList);
+		
 		return "look/add.admin";
 	}
-	
-	@PostMapping("/admin/look/add.do")
-	public String lookAdd(@RequestParam("pro-image") List<MultipartFile> multipartFiles, HttpServletRequest request, ModelMap model) throws Exception {
+
+	@PostMapping("/app/look/regist.do")
+	@ResponseBody
+	public String lookRegist(@RequestBody LookVO look, HttpServletRequest req) throws Exception {
 		
 		String pathPrefix = "images/";
+		List<String> images = null;
 		
-		S3Utils.init();
-		for(MultipartFile multipartFile : multipartFiles) {
-			String originFileName = System.currentTimeMillis() + "_" + multipartFile.getOriginalFilename();
-			String savePath = pathPrefix + FileUtils.getHashDir(originFileName);
-			String destinationFile = savePath + originFileName;
+		if(0 != look.getImages().size()) {
+			images = new ArrayList<String>();
+		
+//			S3Utils.init();
+			for(int i = 0; i < look.getImages().size(); ++i ) { 
+				String specificName = System.currentTimeMillis() + "_" + look.getImages().get(i);
+				String savePath = pathPrefix + FileUtils.getHashDir(specificName);
 
-			S3Utils.uploadFile(destinationFile, FileUtils.MultipartToFile(multipartFile));
+				//.FIXME 사용자 ID 까지 포해서 FileName 생성
+				String imageFileName = System.currentTimeMillis() + "_" + "userId";
+				String fileExtension = FileUtils.getFileExtension(look.getImages().get(i));
+				String destinationFile = savePath + imageFileName.hashCode() + fileExtension;
+				
+				images.add(destinationFile);
+				//.FIXME S3 업로드 완료
+//				S3Utils.uploadFile(destinationFile, Base64.decode(look.getImages().get(i),Base64.NO_WRAP));
+			}
 		}
+		look.setImages(images);
 		
-		return "look/add.admin";
+		lookService.insertLook(look);
+		
+		return "";
 	}
 }

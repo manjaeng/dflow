@@ -2,6 +2,7 @@ package kr.co.thenet.fapee.common.util;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.InputStream;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -93,6 +94,18 @@ public class S3Utils {
 			log.info("Message Error: " + e.getMessage());
 		}
 
+	}
+	
+	public static void uploadFile(String fileName, byte [] bi) {
+		
+		InputStream fis = new ByteArrayInputStream(bi);
+		
+		ObjectMetadata metadata = new ObjectMetadata();
+		metadata.setContentLength(bi.length);
+		metadata.setContentType("image/png");
+		//metadata.setCacheControl("public, max-age=31536000");
+		
+		s3Client.putObject(BUCKET_NAME, fileName, fis, metadata);
 	}
 
 	public static void deleteFile(String filePath) {

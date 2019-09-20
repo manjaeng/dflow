@@ -18,9 +18,9 @@
 				<div class="pics swiper-container" id="slideUploadPic">
 					<ul class="list swiper-wrapper slide">
 						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:openPhotoMulti()">선택</a></div></li>
-						<!--li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>
+						<!-- <li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>
 						<li class="swiper-slide"><div class="img"></div></li>
-						<li class="swiper-slide"><div class="img"></div></li-->
+						<li class="swiper-slide"><div class="img"></div></li> -->
 					</ul>
 				</div>
 			</section>
@@ -52,7 +52,7 @@
 		$("#slideUploadPic .list").append( picHtml );
 	}
 	var testPicDel = function(els){
-		$(els).closest(".swiper-slide").find("img , .bts").remove();
+		$(els).closest(".swiper-slide").remove();
 	}
 
 	</script>
@@ -79,7 +79,7 @@
 	}
 	
 	var deletePicture = function(els){
-		$(els).closest(".swiper-slide").find("img , .bts").remove();
+		$(els).closest(".swiper-slide").remove();
 	}
 	</script>	
 </div>
