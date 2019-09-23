@@ -38,7 +38,7 @@ CREATE TABLE FP_User_Filter (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   deviceId VARCHAR(100) NULL,
   userIdKey BIGINT NULL,
-  gender CHAR(1) NULL,
+  gender VARCHAR(5) NULL,
   country VARCHAR(20) NULL,
   PRIMARY KEY (idKey)
 );
@@ -110,7 +110,7 @@ CREATE TABLE FP_Follow (
   PRIMARY KEY (userIdKey, followUserIdKey)
 );
 
-CREATE TABLE FP_Profile (
+CREATE TABLE FP_User_Profile (
   idKey BIGINT NOT NULL AUTO_INCREMENT,
   userIdKey BIGINT NULL,
   nickName VARCHAR(100) NULL,

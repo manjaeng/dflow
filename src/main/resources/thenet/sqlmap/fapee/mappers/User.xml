@@ -43,7 +43,7 @@
 			,password
 			,userType
 			,mobile
-			,email,
+			,email
 			,lastLoginDate
 			,joinDate
 			,deviceId
@@ -54,7 +54,7 @@
 			,#{userType}
 			,#{mobile}
 			,#{email}
-			,#{lastLoginDate}
+			,now()
 			,now()
 			,#{deviceId}
 			,#{status}
