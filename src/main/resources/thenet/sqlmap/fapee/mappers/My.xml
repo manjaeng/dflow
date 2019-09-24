@@ -29,6 +29,7 @@
 		UPDATE fp_user_profile
 		   SET nickName = #{nickName}
 		      ,content = #{content}
+		      ,imageUrl = #{imageUrl}
 		 WHERE userIdKey = #{idKey}
 	</update>
 	

@@ -18,6 +18,8 @@ import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
+import kr.co.thenet.fapee.common.util.FileUtils;
+import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.my.service.MyService;
 import kr.co.thenet.fapee.user.service.UserService;
@@ -110,12 +112,23 @@ public class MyController {
 	@ResponseBody
 	public String profileEdit(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
 
+		String pathPrefix = "pf_Images/";
+		String destinationFile = "";
+		
 		if (SessionUtils.isLogin(req)) {
 
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			String imageUrl = profileMap.get("image").toString();
 
 			profileMap.put("idKey", sessionVO.getIdKey());
-
+			
+			if(profileMap.get("image") != null) {
+				// S3Utils.init();
+				destinationFile = FileUtils.Base64ToDestinationFile("userId",imageUrl,pathPrefix);
+				profileMap.put("imageUrl", destinationFile);
+				
+				//S3Utils.uploadFile(destinationFile, Base64.decode(look.getImages().get(i),Base64.NO_WRAP));
+			}
 			boolean isSuccess = myService.updateMyProfileInfo(profileMap);
 
 			if (isSuccess) {

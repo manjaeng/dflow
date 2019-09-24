@@ -67,4 +67,16 @@ public class FileUtils {
 		}
 		return resultExtension;
 	}
+	
+	public static String Base64ToDestinationFile(String userId, String base64, String pathPrefix) {
+		String destinationFile = "";
+		String specificName = System.currentTimeMillis() + "_" + base64;
+		String savePath = pathPrefix + FileUtils.getHashDir(specificName);
+		
+		String fileName = System.currentTimeMillis() + "_" + userId;
+		String fileExtension = FileUtils.getFileExtension(base64);
+		destinationFile = savePath + fileName.hashCode() + fileExtension;
+
+		return destinationFile;
+	}
 }
