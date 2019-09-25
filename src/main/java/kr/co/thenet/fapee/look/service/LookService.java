@@ -12,4 +12,5 @@ public interface LookService {
 	boolean insertLook(LookVO look) throws Exception;
 	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 	
+	int updateLookInfo(EgovMap lookInfoMap) throws Exception;
 }

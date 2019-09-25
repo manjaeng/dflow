@@ -26,10 +26,16 @@ public class MyServiceImpl implements MyService {
 	@Override
 	public boolean updateMyProfileInfo(EgovMap profileMap) throws Exception {
 
-		int a = myMapper.updateMyProfileInfo(profileMap);
-		int b = userMapper.updateUserFilterCountryInfo(profileMap);
-
-		if (a + b == 2) {
+		int result = 0;
+		
+		if(profileMap.get("image") != null) {
+			result = myMapper.updateMyProfileInfo(profileMap);
+		} else {
+			result = myMapper.updateMyProfileInfo(profileMap);
+			result += userMapper.updateUserFilterCountryInfo(profileMap);
+		}
+		
+		if(result > 0) {
 			return true;
 		} else {
 			return false;

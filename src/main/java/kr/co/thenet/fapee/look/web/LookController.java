@@ -75,13 +75,9 @@ public class LookController {
 		
 //			S3Utils.init();
 			for(int i = 0; i < look.getImages().size(); ++i ) { 
-				String specificName = System.currentTimeMillis() + "_" + look.getImages().get(i);
-				String savePath = pathPrefix + FileUtils.getHashDir(specificName);
-
-				//.FIXME 사용자 ID 까지 포해서 FileName 생성
-				String imageFileName = System.currentTimeMillis() + "_" + "userId";
-				String fileExtension = FileUtils.getFileExtension(look.getImages().get(i));
-				String destinationFile = savePath + imageFileName.hashCode() + fileExtension;
+				
+				String imageUrl = look.getImages().get(i);
+                String destinationFile = FileUtils.Base64ToDestinationFile("userId", imageUrl, pathPrefix);
 				
 				images.add(destinationFile);
 				//.FIXME S3 업로드 완료
@@ -94,4 +90,13 @@ public class LookController {
 		
 		return "";
 	}
+	
+    @PostMapping("/admin/look/updateInfo.do")
+    @ResponseBody
+    public String lookUpdateInfo(@RequestBody EgovMap lookInfoMap) throws Exception {
+        
+        lookService.updateLookInfo(lookInfoMap);
+        
+        return "look/list.admin";
+    }
 }

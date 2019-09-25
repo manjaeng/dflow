@@ -25,11 +25,13 @@
 		WHERE u.idkey = #{_parameter}
 	</select>
 	
-	<update id="updateMyProfileInfo" parameterType="egovMap">
+	<update id="updateMyProfileInfo" parameterType="egovMap" >
 		UPDATE fp_user_profile
-		   SET nickName = #{nickName}
-		      ,content = #{content}
-		      ,imageUrl = #{imageUrl}
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="nickName != null">nickName=#{nickName},</if>
+			<if test="content != null">content=#{content},</if>
+			<if test="imageUrl != null">imageUrl = #{imageUrl},</if>
+		</trim>
 		 WHERE userIdKey = #{idKey}
 	</update>
 	

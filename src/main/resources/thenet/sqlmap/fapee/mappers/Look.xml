@@ -96,4 +96,12 @@
 		 </if>
 	</select>
 	
+	<update id="updateLookInfo" parameterType="EgovMap">
+        UPDATE fp_look
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="status != null">status=#{status} ,</if>
+        </trim>
+        WHERE idKey = #{idKey}
+    </update>
+	
 </mapper>
