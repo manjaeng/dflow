@@ -68,4 +68,9 @@ public class LookServiceImpl implements LookService{
 		return lookMapper.selectLookProfileList(egovMap);
 	}
 	
+    @Override
+    public int updateLookInfo(EgovMap lookInfoMap) throws Exception {
+        return lookMapper.updateLookInfo(lookInfoMap);
+    }
+	
 }
