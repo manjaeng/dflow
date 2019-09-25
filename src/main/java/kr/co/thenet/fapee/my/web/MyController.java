@@ -118,11 +118,12 @@ public class MyController {
 		if (SessionUtils.isLogin(req)) {
 
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			String imageUrl = profileMap.get("image").toString();
 
 			profileMap.put("idKey", sessionVO.getIdKey());
 			
 			if(profileMap.get("image") != null) {
+
+				String imageUrl = profileMap.get("image").toString();
 				// S3Utils.init();
 				destinationFile = FileUtils.Base64ToDestinationFile("userId",imageUrl,pathPrefix);
 				profileMap.put("imageUrl", destinationFile);

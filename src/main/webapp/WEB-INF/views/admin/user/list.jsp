@@ -54,7 +54,17 @@
 											<td><c:out value="${item.idKey}" /></td>
 											<td><c:out value="${item.userId}" /></td>
 											<td><c:out value="${item.mobile}" /></td>
-											<td><c:out value="${item.userType}" /></td>
+												<c:choose>
+													<c:when test="${item.userType == 2}">
+														<td>일반회원</td>
+													</c:when>
+													<c:when test="${item.userType == 3}">
+														<td>전문가회원</td>
+													</c:when>
+													<c:otherwise>
+														<td>셀러회원</td>
+													</c:otherwise>
+												</c:choose>
 											<td><fmt:formatDate value="${item.lastLoginDate}"
 													type="date" pattern="yyyy-MM-dd" /></td>
 											<td>

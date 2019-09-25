@@ -66,7 +66,7 @@
 			<div class="in">
 				<div class="btnSet fit">
 					<!-- <a href="./look.do" class="btn type b fill xl">DONE</a> -->
-					<a href="#" class="btn type b fill xl" >DONE</a>
+					<a href="javascript:;" class="btn type b fill xl" >DONE</a>
 				</div>
 			</div>
 		</section>
@@ -98,8 +98,7 @@
 			$('.contain.lkreg.cate .filters>li.hash .tags .tg i').each(function(i) {
 				tags.push($(this).text().replace("#",""));
 			});
-
- 			fp.util.jsonAjax({
+  			fp.util.jsonAjax({
 				url: '/app/look/regist.do',
 				data : {
 					userIdKey : 1,
