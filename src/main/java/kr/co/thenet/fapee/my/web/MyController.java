@@ -135,7 +135,7 @@ public class MyController {
 	
 	@GetMapping("/app/my/profile/look_detail_list.do")
 	public String profileLookDeatilList() throws Exception {
-		return "app/my/profile_look";
+		return "my/profile_look.app";
 	}
 	
 	@PostMapping("/app/my/profile/look_list.do")

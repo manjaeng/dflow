@@ -3,6 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <div class="wrap" id="wrap">
+	
+	<div class="pageHd">
+		<div class="in">
+			<div class="bts">
+				<a href="javascript:history.back();" class="hisback">뒤로</a>
+			</div>
+		</div>
+	</div>	
+
 	<div id="contain" class="contain my list">
 		<main id="contents" class="contents">
 			<section class="secLk look">
@@ -19,9 +28,7 @@
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 
-
 	<script>
-		
 		var page = -1 ;
 		appendStat = true ;
 		addItemFnc = function(){
@@ -47,21 +54,55 @@
 							
 							$.each(data, function(i, e) {
 								
-								var tmp = '<li><div class="item"><span class="img">';
-							        tmp+= '<a class="lk" href="/app/my/profile/look_detail_list.do?id=">';
-							        tmp+= '<img src=' + e.image[0] + ' alt="">';
-							    
-							    if(e.image.length > 1) {
-							    	tmp+= '<span class="num"></span>';
-							    }
-							    
-							    tmp+= '</a>';
-							    tmp+= '</span></div></li>';
-								
+								var tmp = '	<div class="uiLkSet">';
+									tmp+= '		<div class="slideLookPic" id="slideLookPic">';
+									tmp+= '			<div class="swiper-container">';
+									tmp+= '				<ul class="swiper-wrapper slide">';
+												$.each(e.image, function(i, ee) {
+													tmp+= '<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="'+ee+'" alt="사진"></span></a></li>';
+												});
+									tmp+= '				</ul>';				
+									tmp+= '				<div class="pagination"></div>';
+									tmp+= '			</div>';
+									tmp+= '		</div>';
+									tmp+= '		<div class="match">';
+									tmp+= '			<div class="box mat"><a class="bt" href="javascript:;" data-match="75"><i class="bar"></i><em class="amt"></em> <span class="txt">MATCH?</span></a></div>';
+									tmp+= '			<div class="box sty"><a class="bt" href="../common/searchTag.jsp"><span class="txt">STYLE</span></a></div>';
+									tmp+= '		</div>';
+									tmp+= '		<div class="info">';
+									tmp+= '			<div class="user">';
+									tmp+= '				<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>';
+									tmp+= '				<a href="../mypage/profile.jsp" class="mem">';
+									tmp+= '					<div class="nm">'+e.nickName+'</div>';
+									tmp+= '					<div class="dt"><em class="k">000cm</em><em class="n">'+e.country+'</em></div>';
+									tmp+= '				</a>';
+									tmp+= '				<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('+'popOther'+');">더보기</a></div>';
+									tmp+= '			</div>';
+									tmp+= '			<div class="desc">';
+									tmp+= '				<a href="javascript:;" class="txt">'+e.content+'</a>';
+									tmp+= '				<a href="javascript:;" class="more">더보기</a>';
+									tmp+= '			</div>';
+									tmp+= '		</div>';
+									tmp+= '		<div class="data">';
+									tmp+= '			<ul class="dl">';
+									tmp+= '				<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>';
+									tmp+= '				<li class="like"><a href="../common/cool.jsp" class="bt"><span>'+e.coolCount+'</span></a></li>';
+									tmp+= '				<li class="reply"><a href="../common/comments.jsp" class="bt"><span>'+e.commentCount+'</span></a></li>';
+									tmp+= '				<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>';
+									tmp+= '			</ul>';
+									tmp+= '		</div>';
+									tmp+= '		<div class="tags">';
+									tmp+= '			<ul class="tg">';
+											$.each(e.tag, function(i, ee) {
+												tmp+= '<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#'+ee+'</em> </a></li>';
+											});
+									tmp+= '			</ul>';
+									tmp+= '		</div>';
+									tmp+= '	</div>';
+									
 								$("#lookList").append(tmp).addClass("load");
 							});
 							
-							console.log("페이징 = " + page);
 							appendStat = true ;
 						}
 						
