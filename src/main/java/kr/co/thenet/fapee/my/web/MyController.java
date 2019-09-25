@@ -19,6 +19,7 @@ import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.SessionUtils;
+import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
 import kr.co.thenet.fapee.user.service.UserService;
 
@@ -30,6 +31,9 @@ public class MyController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private LookService lookService;
 
 	@GetMapping("/app/my/profile.do")
 	public String profile(@RequestParam(required = false) String id, ModelMap model, HttpServletRequest req)
@@ -89,6 +93,71 @@ public class MyController {
 		}
 
 		return "my/profile.app";
+	}
+	
+	@PostMapping("/app/my/profile/look_thum.do")
+	@ResponseBody
+	public List<EgovMap> profileLookThum(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+		
+		List<EgovMap> lookList = null;
+		
+		int pageStart = (int)egovMap.get("pageStart");
+		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
+		
+		
+		if ("".equals(egovMap.get("userId"))) {
+			if (SessionUtils.isLogin(req)) {
+				
+				SessionVO sessionVO = SessionUtils.getSessionData(req);
+				
+				egovMap.put("idKey", sessionVO.getIdKey());
+				
+				lookList = lookService.selectLookProfileList(egovMap);
+			}
+		} else {
+			
+			String userId = (String)egovMap.get("userId");
+			
+			if (!CommonUtils.isNumeric(userId)) {
+				UserVO userVO = userService.selectUserInfo(egovMap);
+				
+				egovMap.put("idKey", userVO.getIdKey());
+				
+				lookList = lookService.selectLookProfileList(egovMap);
+			}
+		}
+		
+		return lookList;
+	}
+	
+	@GetMapping("/app/my/profile/look_detail_list.do")
+	public String profileLookDeatilList() throws Exception {
+		return "app/my/profile_look";
+	}
+	
+	@PostMapping("/app/my/profile/look_list.do")
+	@ResponseBody
+	public List<EgovMap> profileLookList(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+		
+		List<EgovMap> lookList = null;
+		
+		int pageStart = (int)egovMap.get("pageStart");
+		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
+		
+			
+		String userId = (String)egovMap.get("userId");
+		
+		if (!CommonUtils.isNumeric(userId)) {
+			UserVO userVO = userService.selectUserInfo(egovMap);
+			
+			egovMap.put("idKey", userVO.getIdKey());
+			
+			lookList = lookService.selectLookProfileList(egovMap);
+		}
+	
+		return lookList;
 	}
 
 	@GetMapping("/app/my/profile_edit.do")

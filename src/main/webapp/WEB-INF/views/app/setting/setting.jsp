@@ -40,7 +40,7 @@
 					<li>
 						<span class="bt">업데이트</span>
 						<ul>
-							<li><a class="bt" href="../setting/version.jsp">앱버전정보 <em class="ver">1.0.2</em></a></li>
+							<li><a class="bt" href="../setting/app_version.do">앱버전정보 <em class="ver"><c:out value="${currentAppVersion}"/></em></a></li>
 						</ul>
 					</li>
 					<li>

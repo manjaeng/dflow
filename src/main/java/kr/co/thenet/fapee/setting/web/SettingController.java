@@ -39,7 +39,8 @@ public class SettingController {
 	private UserService userService;
 	
 	@GetMapping("/app/setting/setting.do")
-	public String setting() throws Exception {
+	public String setting(ModelMap model) throws Exception {
+		model.addAttribute("currentAppVersion", "1.0.2");
 		return "setting/setting.app";
 	}
 	
@@ -97,6 +98,12 @@ public class SettingController {
 			return "noSession";
 		}
 		
+	}
+	
+	@GetMapping("/app/setting/app_version.do")
+	public String appVersion(ModelMap model) throws Exception {
+		model.addAttribute("currentAppVersion", "1.0.2");
+		return "setting/app_version.app";
 	}
 	
 	@GetMapping("/admin/setting/list.do")

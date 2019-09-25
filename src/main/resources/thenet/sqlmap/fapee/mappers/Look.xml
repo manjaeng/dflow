@@ -64,4 +64,36 @@
 		</foreach>
 	</insert>
 	
+	<select id="selectLookProfileList" resultType="egovMap">
+		SELECT u.idKey
+			  ,u.userId
+			  ,l.idKey AS lookIdkey
+			  ,l.content
+			  ,s.style
+			  ,up.nickName
+			  ,up.imageUrl
+			  ,uf.gender
+			  ,uf.country
+			  ,1 AS coolCount
+			  ,1 AS commentCount
+			  ,(SELECT GROUP_CONCAT(imageUrl ORDER BY idKey SEPARATOR ',,,')
+				  FROM fp_look_image
+				  WHERE lookIdKey = l.idKey
+				  GROUP BY lookIdKey) AS image
+			  ,(SELECT GROUP_CONCAT(tagName ORDER BY idKey SEPARATOR ',,,')
+				  FROM fp_look_tag
+				  WHERE lookIdKey = l.idKey
+				  GROUP BY lookIdKey) AS tag
+		  FROM fp_user u
+		  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
+		  JOIN fp_user_profile up ON u.idKey = up.userIdKey
+		  JOIN fp_look l ON u.idKey = l.userIdKey 
+		  JOIN fp_style s ON l.styleIdKey = s.idKey
+		 WHERE u.idKey = #{idKey}
+		 ORDER BY l.createDate DESC
+		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+	</select>
+	
 </mapper>
