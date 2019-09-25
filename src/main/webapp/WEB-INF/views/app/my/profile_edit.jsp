@@ -85,6 +85,26 @@
 
 
 	<script>
+		var onPhotoSelected = function(success, status, photo) {
+			var imageData =  {
+					image : photo
+			}
+			if(success && photo) {
+				fp.util.jsonAjax({
+					url : '/app/my/profile_edit.do',
+					data : imageData,
+					success : function(data) {
+						alert("success");
+					},
+					error: function(data) {
+						alert("error");
+					}
+				});
+			}
+		}
+		function openPhotoMulti() {
+			showPhotoForPickupMulti(onPhotoSelected)
+		}
 		$(function() {
 			$('#profileEditBtn').click(function() {
 				
