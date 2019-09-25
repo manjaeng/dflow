@@ -15,4 +15,5 @@ public interface LookMapper {
 	boolean insertLook(LookVO look) throws Exception;
 	boolean insertLookImage(LookVO look) throws Exception;
 	boolean insertLookTags(LookVO look) throws Exception;
+	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 }

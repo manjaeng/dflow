@@ -79,34 +79,56 @@
 		function popSystem() {
 			openSystemSharePopup(null);
 		}
-		var page = 0 ;
+		var page = -1;
 		var appendStat = true ;
-		var addItemFnc = function(){  //  탭 내용 아래 추가 하기
+		var addItemFnc = function(){
 			appendStat = false ;
 			page ++ ;
 			$(".uiLoadMore").addClass("active");
 			$.ajax({
 				type: "post",
-				url: "./profile_look_thum_li.jsp",
-				dataType: "html",
-				success: function(html) {
+				url: "/app/my/profile/look_thum.do",
+				data : JSON.stringify({
+					'pageStart' : page,
+					'userId' : '${param.id}',
+				}),
+				contentType : 'application/json; charset=utf-8',
+				dataType: "json",
+				success: function(data) {
 					window.setTimeout(function(){
-						$("#look_list").append(html).addClass("load");
-						console.log("페이징 = " + page );
-						appendStat = true ;
-						if (page >= 3) {
-							console.log("끝");
+						
+						if (data.length === 0) {
 							$(".uiLoadMore").addClass("hide");
 							appendStat = false ;
-							page = 0 ;
+						} else {
+							var id = '${(param.id != null) ? param.id : sessionScope.__sessiondata__.userId}';
+							
+							$.each(data, function(i,e) {
+								
+								var tmp = '<li><div class="item"><span class="img">';
+								    tmp+= '<a class="lk" href="/app/my/profile/look_detail_list.do?id='+ id +'">';
+								    tmp+= '<img src=' + e.image[0] + ' alt="">';
+								    
+								    if(e.image.length > 1) {
+								    	tmp+= '<span class="num"></span>';
+								    }
+								    
+								    tmp+= '</a>';
+								    tmp+= '</span></div></li>';
+							
+								    $("#look_list").append(tmp).addClass("load");
+							});
+							
+							appendStat = true ;
 						}
+						
 						$(".uiLoadMore").removeClass("active");
 						ui.slides.lookPic.using();
+						
 					},500);
 				},
 				error:function(error){
 					page --;
-					console.log("페이징 = " + page);
 					$(".uiLoadMore").removeClass("active").addClass("error");
 				}
 			});	
@@ -188,11 +210,10 @@
 				
 			});
 			
-			//addItemFnc();
+			addItemFnc();
 			ui.nav.act("mypg");
 			ui.refresh.init(function(){
 				pjaxReload();
-				console.log("댕겨서 새로고침");
 			});
 		});
 	</script>

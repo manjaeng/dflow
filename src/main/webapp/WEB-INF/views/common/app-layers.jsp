@@ -134,7 +134,9 @@ var popFilter = function(){
 						<div class="ht">AGE</div>
 						<div class="ct">
 							<select class="select">
-								<option>28</option>
+								<c:forEach begin="15" end="60" var="i">
+									<option><c:out value="${i}"/></option>
+								</c:forEach>
 							</select>
 						</div>
 					</li>
@@ -166,6 +168,8 @@ var popFilter = function(){
 									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">D</span></label></li>
 									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">E</span></label></li>
 									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">F</span></label></li>
+									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">G</span></label></li>
+									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">H</span></label></li>
 								</ul>
 							</div>
 							<div class="slideSize siz swiper-container">
@@ -186,13 +190,14 @@ var popFilter = function(){
 						<div class="ct">
 							<div class="slideSize bot swiper-container">
 								<ul class="list bot swiper-wrapper slide">
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">26</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">28</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">30</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">32</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">34</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">36</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">38</span></label></li>
+
+									<c:forEach begin="20" end="39" var="i">
+										<li class="swiper-slide">
+											<label><input type="radio" name="size_bott">
+												<span class="tit"><c:out value="${i}"/></span>
+											</label>
+										</li>
+									</c:forEach>									
 								</ul>
 							</div>
 						</div>
@@ -674,101 +679,3 @@ function popPrfPicMod(){
 };
 </script>
 
-
-
-
-<!-- 팝레이어 샘플1 -->
-<article class="popLayer a popSample1" id="popSample1">
-	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">타이틀 타입 a</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				<a class="btn" href="javascript:ui.popLayer.open('popSample2');">팝레이어2</a>
-				<p>sdfsdfsfsd</p>
-				<input type="text" class="input">
-				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text" class="input">
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text" class="input">
-				<p>내용</p><p>내용</p>
-				<label class="checkbox"><input type="checkbox"><span></span></label>
-				<label class="radio"><input type="radio"><span></span></label>
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text" class="input">
-			</main>
-		</div>
-		<div class="pbt">
-			<div class="bts">
-				<a href="javascript:;" class="btn type e">버튼</a>
-				<a href="javascript:;" class="btn type a">버튼</a>
-			</div>
-		</div>
-	</div>
-</article>
-
-<!-- 팝레이어 샘플2 -->
-<article class="popLayer b popSample2" id="popSample2">
-	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">타이틀 타입 b</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<a class="btn" href="javascript:ui.popLayer.open('popSample3');">팝레이어2</a>
-				<p>sdfsdfsfsd</p>
-				<textarea class="textarea"></textarea>
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				
-			</main>
-		</div>
-	</div>
-</article>
-
-<!-- 팝레이어 샘플3 -->
-<article class="popLayer b popSample3" id="popSample3">
-	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">타이틀 타입 b</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				<img src="https://placeimg.com/640/640/any/5" alt="">
-				<a class="btn" href="javascript:popMatching.using();">매칭</a>
-				<a class="btn" href="../look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
-			</main>
-		</div>
-	</div>
-</article>
-
-
-<!-- 팝레이어 샘플4 아래에서 올라오는 팝업 type c -->
-<article class="popLayer c popSample4" id="popSample4">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li class="twitter"><a href="javascript:;" class="bt">TYPE c</a></li>
-					<li class="twitter"><a href="javascript:;" class="bt">TWITTER</a></li>
-					<li class="katalk"><a href="javascript:;" class="bt">KAKAOTALK</a></li>
-					<li class="facebook"><a href="javascript:;" class="bt">FACEBOOK</a></li>
-					<li class="kastory"><a href="javascript:;" class="bt">KAKAOSTORY</a></li>
-				</ul>
-			</main>
-		</div>
-	</div>
-</article>

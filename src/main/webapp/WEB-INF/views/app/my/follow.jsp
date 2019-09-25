@@ -137,10 +137,10 @@
 						});
 						
 						appendStat = true ;
-						
-						$(".uiLoadMore").removeClass("active");
-						ui.slides.lookPic.using();
 					}
+					
+					$(".uiLoadMore").removeClass("active");
+					ui.slides.lookPic.using();
 				},500);
 			},
 			error:function(error){
