@@ -23,7 +23,7 @@
 					<div class="photo">
 						<div class="pic">
 							<a href="/app/my/profile_edit.do">
-								<img src='https://s3thenet.s3.ap-northeast-2.amazonaws.com/<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
+								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : 'https://s3thenet.s3.ap-northeast-2.amazonaws.com/'+profileInfo.imageUrl}"/>' alt="">
 							</a>
 						</div>
 					</div>
@@ -145,7 +145,6 @@
 				var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 				
 				if (docH <= scr  && appendStat == true) {
-					console.log("바닥입니다.");
 					addItemFnc();
 					appendStat = false;
 				}
