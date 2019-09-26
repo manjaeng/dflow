@@ -97,6 +97,10 @@
 				success: function(data) {
 					window.setTimeout(function(){
 						
+						if (page == 0) {
+							$("#look_list").empty();
+						}
+						
 						if (data.length === 0) {
 							$(".uiLoadMore").addClass("hide");
 							appendStat = false ;
