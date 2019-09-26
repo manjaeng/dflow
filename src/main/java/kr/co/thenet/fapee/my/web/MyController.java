@@ -19,7 +19,6 @@ import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
-import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
@@ -133,7 +132,7 @@ public class MyController {
 		return lookList;
 	}
 	
-	@GetMapping("/app/my/profile/look_detail_list.do")
+	@GetMapping("/app/my/profile/look_list.do")
 	public String profileLookDeatilList() throws Exception {
 		return "my/profile_look.app";
 	}
@@ -160,6 +159,30 @@ public class MyController {
 		}
 	
 		return lookList;
+	}
+	
+	@GetMapping("/app/my/profile/look_comment.do")
+	public String profileLookComment(ModelMap model, HttpServletRequest req) throws Exception {
+		
+		if (SessionUtils.isLogin(req)) {
+			
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			
+			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+			
+			model.addAttribute("ajaxUrl","/app/my/profile/look_comment.do");
+			model.addAttribute("profileInfo", profileInfo);
+		}
+		
+		return "look/look_comment.app";
+	}
+	
+	@PostMapping("/app/my/profile/look_comment.do")
+	@ResponseBody
+	public String profileLookComment(@RequestBody EgovMap eogvMap) throws Exception {
+		
+		
+		return null;
 	}
 
 	@GetMapping("/app/my/profile_edit.do")

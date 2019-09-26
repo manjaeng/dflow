@@ -110,7 +110,7 @@
 							$.each(data, function(i,e) {
 								
 								var tmp = '<li><div class="item"><span class="img">';
-								    tmp+= '<a class="lk" href="/app/my/profile/look_detail_list.do?id='+ id +'">';
+								    tmp+= '<a class="lk" href="/app/my/profile/look_list.do?id='+ id +'">';
 								    tmp+= '<img src=' + e.image[0] + ' alt="">';
 								    
 								    if(e.image.length > 1) {
@@ -138,18 +138,18 @@
 			});	
 		};
 	
-		$(window).on("scroll", function() {
-			var docH = $(document).height();
-			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
-			
-			if (docH <= scr  && appendStat == true) {
-				console.log("바닥입니다.");
-				addItemFnc();
-				appendStat = false;
-			}
-		});
-	
 		$(document).ready(function(){
+			
+			$(window).on("scroll", function() {
+				var docH = $(document).height();
+				var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
+				
+				if (docH <= scr  && appendStat == true) {
+					console.log("바닥입니다.");
+					addItemFnc();
+					appendStat = false;
+				}
+			});
 			
 			var isLogin = '${!empty sessionScope.__sessiondata__}';
 			

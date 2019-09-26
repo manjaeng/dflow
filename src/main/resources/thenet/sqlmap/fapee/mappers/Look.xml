@@ -74,8 +74,12 @@
 			  ,up.imageUrl
 			  ,uf.gender
 			  ,uf.country
-			  ,1 AS coolCount
-			  ,1 AS commentCount
+			  ,(SELECT COUNT(*)
+		    	  FROM fp_look_comment
+				  WHERE lookIdKey = l.idKey AND status = 1) AS commentCount
+			  ,(SELECT COUNT(*)
+		   		  FROM fp_look_cool
+			 	 WHERE lookIdKey = l.idkey) AS coolCount
 			  ,(SELECT GROUP_CONCAT(imageUrl ORDER BY idKey SEPARATOR ',,,')
 				  FROM fp_look_image
 				  WHERE lookIdKey = l.idKey
@@ -89,7 +93,7 @@
 		  JOIN fp_user_profile up ON u.idKey = up.userIdKey
 		  JOIN fp_look l ON u.idKey = l.userIdKey 
 		  JOIN fp_style s ON l.styleIdKey = s.idKey
-		 WHERE u.idKey = #{idKey}
+		 WHERE u.idKey = #{idKey} AND l.status = 1
 		 ORDER BY l.createDate DESC
 		 <if test="pageStart != null and pageSize != null">
 		 	LIMIT #{pageStart}, #{pageSize}

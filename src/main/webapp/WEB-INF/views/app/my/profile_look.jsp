@@ -47,6 +47,10 @@
 				success: function(data) {
 					window.setTimeout(function(){
 						
+						if (page == 0) {
+							$("#lookList").empty();
+						}
+						
 						if (data.length === 0) {
 							$(".uiLoadMore").addClass("hide");
 							appendStat = false ;
@@ -54,7 +58,9 @@
 							
 							$.each(data, function(i, e) {
 								
-								var tmp = '	<div class="uiLkSet">';
+								var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : e.imageUrl;
+								
+								var tmp = '	<li><div class="uiLkSet">';
 									tmp+= '		<div class="slideLookPic" id="slideLookPic">';
 									tmp+= '			<div class="swiper-container">';
 									tmp+= '				<ul class="swiper-wrapper slide">';
@@ -71,12 +77,12 @@
 									tmp+= '		</div>';
 									tmp+= '		<div class="info">';
 									tmp+= '			<div class="user">';
-									tmp+= '				<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>';
-									tmp+= '				<a href="../mypage/profile.jsp" class="mem">';
+									tmp+= '				<a href="/app/my/profile.do?id='+e.userId+'" class="pic"><span class="img"><img src="'+ imageUrl +'" alt=""></span></a>';
+									tmp+= '				<a href="/app/my/profile.do?id='+e.userId+'" class="mem">';
 									tmp+= '					<div class="nm">'+e.nickName+'</div>';
 									tmp+= '					<div class="dt"><em class="k">000cm</em><em class="n">'+e.country+'</em></div>';
 									tmp+= '				</a>';
-									tmp+= '				<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('+'popOther'+');">더보기</a></div>';
+									tmp+= '				<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('+'\'popOthers\''+');">더보기</a></div>';
 									tmp+= '			</div>';
 									tmp+= '			<div class="desc">';
 									tmp+= '				<a href="javascript:;" class="txt">'+e.content+'</a>';
@@ -87,7 +93,7 @@
 									tmp+= '			<ul class="dl">';
 									tmp+= '				<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>';
 									tmp+= '				<li class="like"><a href="../common/cool.jsp" class="bt"><span>'+e.coolCount+'</span></a></li>';
-									tmp+= '				<li class="reply"><a href="../common/comments.jsp" class="bt"><span>'+e.commentCount+'</span></a></li>';
+									tmp+= '				<li class="reply"><a href="/app/my/profile/look_comment.do?key='+e.lookIdkey+'" class="bt"><span>'+e.commentCount+'</span></a></li>';
 									tmp+= '				<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>';
 									tmp+= '			</ul>';
 									tmp+= '		</div>';
@@ -98,7 +104,7 @@
 											});
 									tmp+= '			</ul>';
 									tmp+= '		</div>';
-									tmp+= '	</div>';
+									tmp+= '	</div></li>';
 									
 								$("#lookList").append(tmp).addClass("load");
 							});
@@ -131,6 +137,17 @@
 			ui.nav.act("mypg");
 			ui.refresh.init(function(){
 				pjaxReload();
+			});
+			
+			$('#lookList').on("click",".uiLkSet>.data ul.dl>li .bt",function(e){
+				
+				var type = $(this).parent().attr('class');
+				
+				if( $(this).hasClass("on") ){
+					$(this).removeClass("on");
+				}else{
+					$(this).addClass("on");
+				}
 			});
 		});
 
