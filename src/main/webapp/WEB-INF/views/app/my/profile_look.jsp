@@ -58,14 +58,14 @@
 							
 							$.each(data, function(i, e) {
 								
-								var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : e.imageUrl;
+								var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : 'https://s3thenet.s3.ap-northeast-2.amazonaws.com/'+e.imageUrl;
 								
 								var tmp = '	<li><div class="uiLkSet">';
 									tmp+= '		<div class="slideLookPic" id="slideLookPic">';
 									tmp+= '			<div class="swiper-container">';
 									tmp+= '				<ul class="swiper-wrapper slide">';
 												$.each(e.image, function(i, ee) {
-													tmp+= '<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="'+ee+'" alt="사진"></span></a></li>';
+													tmp+= '<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="https://s3thenet.s3.ap-northeast-2.amazonaws.com/'+ee+'" alt="사진"></span></a></li>';
 												});
 									tmp+= '				</ul>';				
 									tmp+= '				<div class="pagination"></div>';
