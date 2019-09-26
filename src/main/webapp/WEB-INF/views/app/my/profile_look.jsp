@@ -49,7 +49,7 @@
 								
 								var tmp = '<li><div class="item"><span class="img">';
 							        tmp+= '<a class="lk" href="/app/my/profile/look_detail_list.do?id=">';
-							        tmp+= '<img src=' + e.image[0] + ' alt="">';
+							        tmp+= '<img src=https://s3thenet.s3.ap-northeast-2.amazonaws.com/' + e.image[0] + ' alt="">';
 							    
 							    if(e.image.length > 1) {
 							    	tmp+= '<span class="num"></span>';
