@@ -84,6 +84,7 @@
 
 	<script>
 	$(function() {
+		var idKey = '${sessionScope.__sessiondata__.idKey}';
 		var tags = [];
 		$('.ipt a').click(function() {
 			$('<span class="tg"><i>#'+$('.input').val()+'</i><a href="javascript:;" class="del">삭제</a></span>').appendTo(".tags");
@@ -101,7 +102,7 @@
   			fp.util.jsonAjax({
 				url: '/app/look/regist.do',
 				data : {
-					userIdKey : 1,
+					userIdKey : idKey,
 					styleIdKey : $("input[name=style_cate]:checked").val(),
 					tags : tags,
 					content : $(".textarea").val(),

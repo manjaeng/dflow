@@ -23,7 +23,7 @@
 					<div class="photo">
 						<div class="pic">
 							<a href="/app/my/profile_edit.do">
-								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
+								<img src='https://s3thenet.s3.ap-northeast-2.amazonaws.com/<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
 							</a>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 				
 			</section>
 			<section class="prfList">
-				<ul class="list" id="look_list"></ul>
+				<ul class="list" id="look_list" style="background:#FFF"></ul>
 				<div class="uiLoadMore">
 					<em></em><button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
 				</div>
@@ -111,7 +111,7 @@
 								
 								var tmp = '<li><div class="item"><span class="img">';
 								    tmp+= '<a class="lk" href="/app/my/profile/look_list.do?id='+ id +'">';
-								    tmp+= '<img src=' + e.image[0] + ' alt="">';
+								    tmp+= '<img src=https://s3thenet.s3.ap-northeast-2.amazonaws.com/' + e.image[0] + ' alt="">'; 
 								    
 								    if(e.image.length > 1) {
 								    	tmp+= '<span class="num"></span>';

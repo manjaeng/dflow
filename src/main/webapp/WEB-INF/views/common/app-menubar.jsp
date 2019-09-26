@@ -11,7 +11,8 @@
 	<div class="inner">
 		<ul class="menu">
 			<li class="home"><a href="/app/home/home.do">HOME</a></li>
-			<li class="adds"><a href="javascript:;" onclick="popLookReg();">[<em>+</em>]</a></li>
+			<!-- <li class="adds"><a href="javascript:;" onclick="popLookReg();">[<em>+</em>]</a></li> -->
+			<li class="adds"><a href="/app/look/look_upload.do">[<em>+</em>]</a></li>
 			<li class="look"><a href="/app/look/look.do" id="btnLookAct">LOOK</a></li>
 			<li class="mypg"><a href="/app/my/profile.do">MY</a></li>
 		</ul>

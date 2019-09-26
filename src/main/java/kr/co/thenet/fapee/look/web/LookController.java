@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.LookVO;
+import kr.co.thenet.fapee.common.util.Base64;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
+import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.look.service.LookService;
 
 @Controller
@@ -73,7 +75,7 @@ public class LookController {
 		if(0 != look.getImages().size()) {
 			images = new ArrayList<String>();
 		
-//			S3Utils.init();
+			S3Utils.init();
 			for(int i = 0; i < look.getImages().size(); ++i ) { 
 				
 				String imageUrl = look.getImages().get(i);
@@ -81,7 +83,7 @@ public class LookController {
 				
 				images.add(destinationFile);
 				//.FIXME S3 업로드 완료
-//				S3Utils.uploadFile(destinationFile, Base64.decode(look.getImages().get(i),Base64.NO_WRAP));
+				S3Utils.uploadFile(destinationFile, Base64.decode(look.getImages().get(i),Base64.NO_WRAP));
 			}
 		}
 		look.setImages(images);

@@ -15,10 +15,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.UserVO;
+import kr.co.thenet.fapee.common.util.Base64;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
+import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
@@ -128,7 +130,6 @@ public class MyController {
 				lookList = lookService.selectLookProfileList(egovMap);
 			}
 		}
-		
 		return lookList;
 	}
 	
@@ -216,20 +217,26 @@ public class MyController {
 			if(profileMap.get("image") != null) {
 
 				String imageUrl = profileMap.get("image").toString();
-				// S3Utils.init();
+				S3Utils.init();
+				
 				destinationFile = FileUtils.Base64ToDestinationFile("userId",imageUrl,pathPrefix);
 				profileMap.put("imageUrl", destinationFile);
 				
-				//S3Utils.uploadFile(destinationFile, Base64.decode(look.getImages().get(i),Base64.NO_WRAP));
-			}
-			boolean isSuccess = myService.updateMyProfileInfo(profileMap);
-
-			if (isSuccess) {
-				return "t";
+				S3Utils.uploadFile(destinationFile, Base64.decode(imageUrl,Base64.NO_WRAP));
+				
+				myService.updateMyProfileInfo(profileMap);
+				
+				return destinationFile;
+				
 			} else {
-				return "f";
-			}
+				boolean isSuccess = myService.updateMyProfileInfo(profileMap);
 
+				if (isSuccess) {
+					return "t";
+				} else {
+					return "f";
+				}
+			}
 		}
 
 		return "f";
