@@ -67,7 +67,7 @@ CREATE TABLE FP_QnA (
   createDate DATETIME NULL,
   answer text NULL,
   answerDate DATETIME NULL,
-  status TINYINT(1) DEFAULT 0,
+  status TINYINT(1) DEFAULT 1,
   PRIMARY KEY (idKey)
 );
 
@@ -77,7 +77,7 @@ CREATE TABLE FP_Look (
   styleIdKey BIGINT NULL,
   content text NULL,
   createDate DATETIME NULL,
-  status TINYINT(1) DEFAULT 0,
+  status TINYINT(1) DEFAULT 1,
   PRIMARY KEY (idKey)
 );
 
@@ -116,6 +116,34 @@ CREATE TABLE FP_User_Profile (
   nickName VARCHAR(100) NULL,
   content TEXT,
   imageUrl VARCHAR(255) NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Look_Comment (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  lookIdKey BIGINT NOT NULL,
+  userIdKey BIGINT NOT NULL,
+  content TEXT NULL,
+  createDate DATETIME NULL,
+  parentIdKey BIGINT NULL,
+  status TINYINT(1) DEFAULT 1,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Look_Cool (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  lookIdKey BIGINT NOT NULL,
+  userIdKey BIGINT NOT NULL,
+  lastStatusDate DATETIME NULL,
+  PRIMARY KEY (idKey)
+);
+
+CREATE TABLE FP_Report (
+  idKey BIGINT NOT NULL AUTO_INCREMENT,
+  reportType TINYINT(1) NULL,
+  reportDate DATETIME NULL,
+  targetId BIGINT NULL,
+  detail TINYINT(1) NULL,
   PRIMARY KEY (idKey)
 );
 

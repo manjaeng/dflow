@@ -82,7 +82,7 @@
 									tmp+= '					<div class="nm">'+e.nickName+'</div>';
 									tmp+= '					<div class="dt"><em class="k">000cm</em><em class="n">'+e.country+'</em></div>';
 									tmp+= '				</a>';
-									tmp+= '				<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('+'\'popOthers\''+');">더보기</a></div>';
+									tmp+= '				<div class="bts"><a href="javascript:;" class="bt more" onclick="openPopup('+e.lookIdkey+')">더보기</a></div>';
 									tmp+= '			</div>';
 									tmp+= '			<div class="desc">';
 									tmp+= '				<a href="javascript:;" class="txt">'+e.content+'</a>';
@@ -150,6 +150,11 @@
 				}
 			});
 		});
+		
+		function openPopup(lookIdKey) {
+			fp.data.lookIdKey = lookIdKey;
+			ui.popLayer.open("popOthers");
+		}
 
 	</script>
 	

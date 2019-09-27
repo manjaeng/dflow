@@ -101,4 +101,12 @@ public class LookController {
         
         return "look/list.admin";
     }
+    
+    @GetMapping("/admin/look/modify.do")
+    public String lookDetail(int idKey, ModelMap model) throws Exception {
+    	
+    	EgovMap lookDetail = lookService.selectLookDetail(idKey);
+    	
+    	return "look/modify.admin";
+    }
 }

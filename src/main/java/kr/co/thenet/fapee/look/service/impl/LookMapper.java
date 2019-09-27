@@ -18,4 +18,6 @@ public interface LookMapper {
 	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 	
 	int updateLookInfo(EgovMap updateLookInfo) throws Exception;
+	
+	EgovMap selectLookDetail(int idKey) throws Exception;
 }

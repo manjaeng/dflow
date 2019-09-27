@@ -108,11 +108,11 @@
 					content : $(".textarea").val(),
 					images : fp.data.look.images
 				},
-				success: function(data) {
-					alert(data);
+				success: function() {
+					location.href ='/app/my/profile.do';
 				},
-				error : function(data) {
-					alert(data);
+				error : function() {
+					alert("error");
 				}
 			});
 			

@@ -10,10 +10,22 @@
 		});
 
 		$('input[type=checkbox]').change(function() {
-			console.log($(this).prop('checked'))
+			var lookListEdit = {
+					status : $(this).prop('checked'),
+					idKey : $(this).val()
+			}
+			$.ajax({
+				type : "post",
+				url:"/admin/look/updateInfo.do",
+				data : JSON.stringify(lookListEdit),
+				dataType : "json",
+				contentType : 'application/json; charset=utf-8'
+			});
 		});
-		
 	});
+	function showDetail(idKey) {
+		location.href = '/admin/look/modify.do?idKey='+idKey;
+	}
 	
 </script>
 <div class="main">
@@ -38,6 +50,7 @@
 										<th>contents</th>
 										<th>createDate</th>
 										<th>status</th>
+										<th>Detail</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -59,6 +72,7 @@
 													</c:otherwise>
 												</c:choose>
 											</td>
+											<td><button type="button" onclick="showDetail('<c:out value="${item.idKey}"/>');">상세보기</button></td>
 										</tr>
 									</c:forEach>
 								</tbody>

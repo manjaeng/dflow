@@ -13,4 +13,5 @@ public interface LookService {
 	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 	
 	int updateLookInfo(EgovMap lookInfoMap) throws Exception;
+	EgovMap selectLookDetail(int idKey) throws Exception;
 }

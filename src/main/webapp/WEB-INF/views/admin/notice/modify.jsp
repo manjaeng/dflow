@@ -33,7 +33,7 @@
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Notice Modify</h3>
+			<h3 class="page-title">공지사항 상세</h3>
 			<div class="row">
 				<form action="/admin/notice/modify.do" method="post"
 					enctype="multipart/form-data">

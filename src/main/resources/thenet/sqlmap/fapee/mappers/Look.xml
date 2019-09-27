@@ -108,4 +108,19 @@
         WHERE idKey = #{idKey}
     </update>
 	
+	<select id="selectLookDetail" resultType="egovMap">
+		SELECT 
+			u.userId,
+			l.content,
+			l.createDate,
+			s.style,
+			GROUP_CONCAT(DISTINCT imageUrl ORDER BY i.idKey SEPARATOR '%') AS images,
+			GROUP_CONCAT(DISTINCT tagName ORDER BY t.idKey SEPARATOR '%') AS tags
+			FROM fp_look AS l 
+			LEFT JOIN fp_look_image AS i ON l.idKey=i.lookIdKey
+			LEFT JOIN fp_user AS u ON l.userIdKey=u.idKey
+			LEFT JOIN fp_look_tag AS t ON l.idKey=t.lookIdKey
+			LEFT JOIN fp_style AS s ON l.styleIdKey=s.idKey
+		WHERE l.idKey= #{idKey}
+	</select>
 </mapper>

@@ -349,7 +349,7 @@ $(document).ready(function(){
 		<div class="pct">
 			<main class="poptents">
 				<ul class="list">
-					<li class="st"><a href="javascript:;" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s Spam</a></li>
+					<li class="st"><a href="javascript:spam();" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s Spam</a></li>
 					<li class="st"><a href="javascript:;" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s appropriate</a></li>
 				</ul>
 			</main>
@@ -357,6 +357,9 @@ $(document).ready(function(){
 	</div>
 </article>
 <script>
+function spam() {
+	console.log("spam === > "+ fp.data.lookIdKey);
+}
 function popAccus(){
 	ui.popLayer.open('popAccus',{
 		zIndex : 1500,
