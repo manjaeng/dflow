@@ -10,12 +10,22 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 @Mapper
 public interface LookMapper {
 	List<EgovMap> selectLookStyleList() throws Exception;
+	
 	List<EgovMap> selectLookAllList() throws Exception;
 	
 	boolean insertLook(LookVO look) throws Exception;
+	
 	boolean insertLookImage(LookVO look) throws Exception;
+	
 	boolean insertLookTags(LookVO look) throws Exception;
+	
 	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 	
 	int updateLookInfo(EgovMap updateLookInfo) throws Exception;
+	
+	List<EgovMap> selectLookCommentList(EgovMap egovMap) throws Exception;
+
+	int insertLookCommentInfo(EgovMap egovMap) throws Exception;
+
+	int updateLookCommentInfo(EgovMap egovMap) throws Exception;
 }
