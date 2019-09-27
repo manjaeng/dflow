@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,6 +38,11 @@ public class MyController {
 	
 	@Autowired
 	private LookService lookService;
+	
+	@ModelAttribute
+	public void addModelMap(ModelMap model) throws Exception {
+		model.addAttribute("s3Url",Constants.S3_URL);
+	}
 
 	@GetMapping("/app/my/profile.do")
 	public String profile(@RequestParam(required = false) String id, ModelMap model, HttpServletRequest req)
@@ -180,10 +186,37 @@ public class MyController {
 	
 	@PostMapping("/app/my/profile/look_comment.do")
 	@ResponseBody
-	public String profileLookComment(@RequestBody EgovMap eogvMap) throws Exception {
+	public List<EgovMap> profileLookComment(@RequestBody EgovMap egovMap) throws Exception {
 		
+		int pageStart = (int)egovMap.get("pageStart");
+		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
 		
-		return null;
+		List<EgovMap> lookList = lookService.selectLookCommentList(egovMap);
+		
+		return lookList;
+	}
+	
+	@PostMapping("/app/my/profile/add_look_comment.do")
+	@ResponseBody
+	public String profileAddLookComment(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+		
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			
+			egovMap.put("userIdKey", sessionVO.getIdKey());
+			
+			boolean isSuccess = lookService.insertLookCommentInfo(egovMap);
+			
+			if (isSuccess) {
+				return "t";
+			} else {
+				return "f";
+			}
+		}
+		
+		return "f";
 	}
 
 	@GetMapping("/app/my/profile_edit.do")

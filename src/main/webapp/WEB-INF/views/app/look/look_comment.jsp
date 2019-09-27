@@ -43,6 +43,7 @@
 
 	<script>
 
+		var comment_info;
 		var page = -1 ;
 		var appendStat = true ;
 		var addItemFnc = function(){
@@ -71,9 +72,34 @@
 						} else {
 							$.each(data, function(i, e) {
 								
-								var tmp = '';
-								    tmp+= '';
+								var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : '${s3Url}'+e.imageUrl;
 								
+								var tmp = '';
+								
+									if (e.idKey == e.parentIdKey) {
+										tmp+= '	<li>';
+									} else {
+										tmp+= '	<li style="margin-left: 40px;">';
+									}
+									
+								    tmp+= '		<div class="comts">';
+								    tmp+= '			<a href="/app/my/profile.do?id='+e.userId+'" class="pic"><span class="img"><img src="'+ imageUrl +'" alt=""></span></a>';
+								    tmp+= '			<div class="ment">';
+								    tmp+= '				<a href="/app/my/profile.do?id='+e.userId+'" class="name">'+e.nickName+'</a>';
+								    tmp+= '				<div class="text" style="white-space:pre;">'+e.content+'</div>';
+								    tmp+= '				<div class="info">';
+								    tmp+= '					<div class="time">'+e.createDate+'</div>';
+								    
+								    if (e.idKey == e.parentIdKey) {
+								    	 tmp+= '			<div class="btns"><a class="bt rp" href="javascript:;" onclick=commentreply("'+e.nickName+'","'+e.userId+'","'+e.idKey+'");>답글달기</a></div>';
+									}
+								    
+								    tmp+= '				</div>';
+								    tmp+= '			</div>';
+								    tmp+= '		</div>';
+							    	tmp+= '	</li>';
+										
+								    
 								$("#comment_list").append(tmp).addClass("load");
 							});
 							
@@ -93,6 +119,8 @@
 	
 	
 		$(document).ready(function(){
+			
+			var isLogin = '${!empty sessionScope.__sessiondata__}';
 	
 			$(window).on("scroll", function() {
 				var docH = $(document).height();
@@ -102,15 +130,75 @@
 					appendStat = false;
 				}
 			});
-	
+			
+			
+			$('#input_reply').focus(function() {
+				
+				if(isLogin == 'false') {
+					ui.confirm({
+						msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+							'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+						ycb: function(){
+							pjax('/app/user/login.do?after=comment&key=${param.key}');
+						}
+					});
+					
+					$(this).val('');
+					
+					return false;
+				}
+			});
+			
+			$('.comment .write .send').click(function() {
+
+				if ($.trim($('#input_reply').val()) == '') {
+					alert('댓글을 입력 해주세요');
+					return false;
+				} 
+				
+				if (comment_info == undefined && comment_info == null) {
+					comment_info = {};
+					comment_info.parentIdKey = '0';
+				}
+				
+				$.ajax({
+					type: "post",
+					url: "/app/my/profile/add_look_comment.do",
+					data : JSON.stringify({
+						'lookIdKey' : '${param.key}',
+						'content' : $.trim($('#input_reply').val()),
+						'parentIdKey' : comment_info.parentIdKey
+					}),
+					contentType : 'application/json; charset=utf-8',
+					success: function(data) {
+						
+						if (data === 't') {
+							comment_info = null;
+							pjaxReload();
+						} else if (data === 'f') {
+							
+						}
+					}
+					
+				});
+				
+				return false;
+			});
+			
 			addItemFnc();
 			inputReplyHt();
 	
 		});
-	
-		var testFncRply = function(){
-			$("#input_reply").focus().val("@JENNY ");
+		
+		function commentreply(nickName, userId, commentIdKey){
+			comment_info = {};
+			comment_info.nickName = nickName;
+			comment_info.userId = userId;
+			comment_info.parentIdKey = commentIdKey;
+			
+			$("#input_reply").val("@"+nickName+" ").focus()
 		}
+	
 		
 		var inputReplyHt = function(){  //  입력칸 높이 조절
 			$(window , "#input_reply").on("keyup input",function(){

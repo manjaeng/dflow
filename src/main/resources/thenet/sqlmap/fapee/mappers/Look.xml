@@ -107,6 +107,52 @@
         </trim>
         WHERE idKey = #{idKey}
     </update>
+    
+    <select id="selectLookCommentList" resultType="egovMap">
+		SELECT lc.idKey
+			  ,lc.lookIdKey
+			  ,lc.userIdKey
+			  ,lc.parentIdKey
+			  ,lc.content
+			  ,DATE_FORMAT(lc.createDate,'%Y.%m.%d %H:%i') AS createDate
+			  ,u.userId
+			  ,uf.nickName
+			  ,uf.imageUrl
+		  FROM fp_look_comment lc
+		  JOIN fp_user_profile uf ON lc.userIdKey = uf.userIdKey 
+		  JOIN fp_user u ON lc.userIdKey = u.idKey
+		 WHERE lc.lookIdKey = #{lookIdKey} AND lc.status = 1 AND u.status = 1
+		 ORDER BY parentIdKey, createDate
+		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+	</select>
+	
+	<insert id="insertLookCommentInfo" parameterType="egovMap" useGeneratedKeys="true" keyProperty="idKey">
+		INSERT INTO fp_look_comment (
+			 lookIdKey
+			,userIdKey
+			,content
+			,createDate
+			,parentIdKey
+			,status
+		) VALUES (
+			 #{lookIdKey}
+			,#{userIdKey}
+			,#{content}
+			,now()
+			,#{parentIdKey}
+			,1
+		)
+	</insert>
+	
+	<update id="updateLookCommentInfo" parameterType="EgovMap">
+        UPDATE fp_look_comment
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="idKey!= null">parentIdKey=#{idKey} ,</if>
+        </trim>
+        WHERE idKey = #{idKey}
+    </update>
 	
 	<select id="selectLookDetail" resultType="egovMap">
 		SELECT 

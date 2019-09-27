@@ -21,12 +21,10 @@ public class LookServiceImpl implements LookService{
 		return lookMapper.selectLookStyleList();
 	}
 
-	
 	@Override
 	public List<EgovMap> selectLookAllList() throws Exception {
 		return lookMapper.selectLookAllList();
 	}
-
 
 	@Override
 	public boolean insertLook(LookVO look) throws Exception {
@@ -81,6 +79,26 @@ public class LookServiceImpl implements LookService{
 		
 		
 		return lookMapper.selectLookDetail(idKey);
+	}
+	
+	public List<EgovMap> selectLookCommentList(EgovMap egovMap) throws Exception {
+		return lookMapper.selectLookCommentList(egovMap);
+	}
+
+	@Override
+	public boolean insertLookCommentInfo(EgovMap egovMap) throws Exception {
+		
+		int insertCount = lookMapper.insertLookCommentInfo(egovMap);
+		
+		int pranetIdKey = Integer.parseInt((String) egovMap.get("parentIdKey"));
+		
+		if (pranetIdKey == 0) {
+			int updateCount = lookMapper.updateLookCommentInfo(egovMap);
+			return (insertCount + updateCount == 2) ? true : false;
+		} else {
+			return (insertCount == 1 ) ? true : false;
+		}
+		
 	}
 	
 }

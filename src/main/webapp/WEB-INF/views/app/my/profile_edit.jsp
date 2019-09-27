@@ -19,7 +19,7 @@
 				<div class="user">
 					<div class="photo">
 						<div class="pic">
-							<img id="profile_img" src='https://s3thenet.s3.ap-northeast-2.amazonaws.com/<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
+							<img id="profile_img" src='${s3Url}<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
 						</div>
 						<div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div>
 					</div>
@@ -94,7 +94,7 @@
 					url : '/app/my/profile_edit.do',
 					data : imageData,
 					success : function(data) {
-						$("#profile_img").attr('src','https://s3thenet.s3.ap-northeast-2.amazonaws.com/'+data);
+						$("#profile_img").attr('src','${s3Url}'+data);
 						ui.popLayer.close('popPrfPicMod', true);
 					},
 					error: function(data) {
