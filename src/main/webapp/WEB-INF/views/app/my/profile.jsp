@@ -23,7 +23,7 @@
 					<div class="photo">
 						<div class="pic">
 							<a href="/app/my/profile_edit.do">
-								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : 'https://s3thenet.s3.ap-northeast-2.amazonaws.com/'+profileInfo.imageUrl}"/>' alt="">
+								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : '${s3Url}'+profileInfo.imageUrl}"/>' alt="">
 							</a>
 						</div>
 					</div>
@@ -111,7 +111,7 @@
 								
 								var tmp = '<li><div class="item"><span class="img">';
 								    tmp+= '<a class="lk" href="/app/my/profile/look_list.do?id='+ id +'">';
-								    tmp+= '<img src=https://s3thenet.s3.ap-northeast-2.amazonaws.com/' + e.image[0] + ' alt="">'; 
+								    tmp+= '<img src="${s3Url}' + e.image[0] + '" alt="">'; 
 								    
 								    if(e.image.length > 1) {
 								    	tmp+= '<span class="num"></span>';
