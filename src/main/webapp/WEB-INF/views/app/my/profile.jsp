@@ -23,7 +23,8 @@
 					<div class="photo">
 						<div class="pic">
 							<a href="/app/my/profile_edit.do">
-								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : '${s3Url}'+profileInfo.imageUrl}"/>' alt="">
+								<c:set var="imageUrl" value="${s3Url}${profileInfo.imageUrl}"/>
+								<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : imageUrl}"/>' alt="">
 							</a>
 						</div>
 					</div>

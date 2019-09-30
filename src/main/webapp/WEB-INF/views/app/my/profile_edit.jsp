@@ -19,7 +19,8 @@
 				<div class="user">
 					<div class="photo">
 						<div class="pic">
-							<img id="profile_img" src='${s3Url}<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>' alt="">
+							<c:set var="imageUrl" value="${s3Url}${profileInfo.imageUrl}"/>
+							<img id="profile_img" src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : imageUrl}"/>' alt="">
 						</div>
 						<div class="bts"><a href="javascript:;" class="bt mod" onclick="popPrfPicMod();">수정</a></div>
 					</div>

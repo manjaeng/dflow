@@ -107,9 +107,7 @@
 							var chk = '';
 							var sessionId = '${sessionScope.__sessiondata__.userId}';
 							
-							if(!e.imageUrl) {
-								e.imageUrl = '/resources/app/images/common/profile_no.png';
-							}
+							var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : '${s3Url}'+e.imageUrl;
 							
 							if(e.isFollow) {
 								chk = (e.isFollow == '0') ? '' : 'checked';
@@ -119,7 +117,7 @@
 							    tmp+= '<span class="img"><a class="lk" href="';
 							    tmp+= '/app/my/profile.do?id='+e.userId;
 							    tmp+= '"><img src="';
-							    tmp+= e.imageUrl;
+							    tmp+= imageUrl;
 							    tmp+= '" alt="">';
 							   	tmp+= '</a></span>';
 							    tmp+= '<div class="name">';
