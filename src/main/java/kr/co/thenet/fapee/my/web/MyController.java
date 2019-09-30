@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -162,10 +163,54 @@ public class MyController {
 			
 			egovMap.put("idKey", userVO.getIdKey());
 			
+			if (SessionUtils.isLogin(req)) {
+				SessionVO sessionVO = SessionUtils.getSessionData(req);
+				egovMap.put("sessionIdKey", sessionVO.getIdKey());
+			}
+			
 			lookList = lookService.selectLookProfileList(egovMap);
 		}
 	
 		return lookList;
+	}
+	
+	@PostMapping("/app/my/profile/look_{clickedBtn}_edit.do")
+	@ResponseBody
+	public String profileLookCoolAndScrapEdit(@RequestBody EgovMap egovMap, HttpServletRequest req, @PathVariable String clickedBtn) throws Exception {
+
+		String type = (String) egovMap.get("type");
+		boolean isSuccess = false;
+		
+		if (SessionUtils.isLogin(req)) {
+			
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			egovMap.put("userIdKey", sessionVO.getIdKey());
+			
+			
+			if ("cool".equals(clickedBtn)) {
+				
+				if ("insert".equals(type)) {
+					isSuccess = lookService.insertLookCoolInfo(egovMap);
+				} else if ("delete".equals(type)) {
+					isSuccess = lookService.deleteLookCoolInfo(egovMap);
+				}
+				
+			} else if ("scrap".equals(clickedBtn)) {
+				
+				if ("insert".equals(type)) {
+					isSuccess = lookService.insertLookScrapInfo(egovMap);
+				} else if ("delete".equals(type)) {
+					isSuccess = lookService.deleteLookScrapInfo(egovMap);
+				}
+				
+			}
+		}
+		
+		if (isSuccess) {
+			return "t";
+		} else {
+			return "f";
+		}
 	}
 	
 	@GetMapping("/app/my/profile/look_comment.do")
@@ -217,6 +262,29 @@ public class MyController {
 		}
 		
 		return "f";
+	}
+	
+	@GetMapping("/app/my/profile/look_cool.do")
+	public String profileLookCool(ModelMap model, HttpServletRequest req) throws Exception {
+		return "look/look_cool.app";
+	}
+	
+	@PostMapping("/app/my/profile/look_cool.do")
+	@ResponseBody
+	public List<EgovMap> profileLookCool(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception{
+		
+		int pageStart = (int)egovMap.get("pageStart");
+		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+		
+		if (SessionUtils.isLogin(req)) {
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			egovMap.put("sessionIdKey", sessionVO.getIdKey());
+		}
+		
+		List<EgovMap> cooList = lookService.selectLookCoolList(egovMap);
+		
+		return cooList;
 	}
 
 	@GetMapping("/app/my/profile_edit.do")
@@ -350,7 +418,7 @@ public class MyController {
 			egovMap.put("sessionIdKey", sessionVO.getIdKey());
 		}
 		
-		EgovMap followCountMap = myService.selectMyFolloCount(egovMap);
+		EgovMap followCountMap = myService.selectMyFollowCount(egovMap);
 		List<EgovMap> followList = myService.selectMyFollowList(egovMap);
 		
 		EgovMap resultMap = new EgovMap();

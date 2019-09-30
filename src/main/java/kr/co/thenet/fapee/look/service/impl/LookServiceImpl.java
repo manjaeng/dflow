@@ -100,5 +100,30 @@ public class LookServiceImpl implements LookService{
 		}
 		
 	}
+
+	@Override
+	public boolean insertLookCoolInfo(EgovMap egovMap) throws Exception {
+		return lookMapper.insertLookCoolInfo(egovMap) == 1 ? true : false;
+	}
+
+	@Override
+	public boolean deleteLookCoolInfo(EgovMap egovMap) throws Exception {
+		return lookMapper.deleteLookCoolInfo(egovMap) == 1 ? true : false;
+	}
+
+	@Override
+	public boolean insertLookScrapInfo(EgovMap egovMap) throws Exception {
+		return lookMapper.insertLookScrapInfo(egovMap) == 1 ? true : false;
+	}
+
+	@Override
+	public boolean deleteLookScrapInfo(EgovMap egovMap) throws Exception {
+		return lookMapper.deleteLookScrapInfo(egovMap) == 1 ? true : false;
+	}
+
+	@Override
+	public List<EgovMap> selectLookCoolList(EgovMap egovMap) throws Exception {
+		return lookMapper.selectLookCoolList(egovMap);
+	}
 	
 }

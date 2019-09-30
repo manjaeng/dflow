@@ -116,7 +116,14 @@
 									} else {
 										pjax('/app/my/profile/look_comment.do?key=' + fp.util.getParam('key'));
 									}
+								} else if(fp.util.getParam('after') === 'myLook') {
+									if(fp.util.getParam('id') === '') {
+										pjax('/app/my/profile/look_list.do');
+									} else {
+										pjax('/app/my/profile/look_list.do?id=' + fp.util.getParam('id'));
+									}
 								}
+								
 							} else {
 								pjax('/app/home/home.do');
 							}

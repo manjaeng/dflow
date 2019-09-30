@@ -25,7 +25,8 @@
 				<div class="box">
 					<div class="pic">
 						<div class="img">
-							<img src="<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : profileInfo.imageUrl}"/>" alt="">
+							<c:set var="imageUrl" value="${s3Url}${profileInfo.imageUrl}"/>
+							<img src='<c:out value="${empty profileInfo.imageUrl ? '/resources/app/images/common/profile_no.png' : imageUrl}"/>' alt="">
 						</div>
 					</div>
 					<div class="write">

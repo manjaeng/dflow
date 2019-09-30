@@ -58,6 +58,12 @@
 							
 							$.each(data, function(i, e) {
 								
+								var chk = '';
+								
+								if(e.isCool) {
+									chk = (e.isCool == '0') ? '' : 'on';
+								}
+								
 								var imageUrl = (e.imageUrl == '' || e.imageUrl == null) ? '/resources/app/images/common/profile_no.png' : '${s3Url}'+e.imageUrl;
 								
 								var tmp = '	<li><div class="uiLkSet">';
@@ -91,8 +97,8 @@
 									tmp+= '		</div>';
 									tmp+= '		<div class="data">';
 									tmp+= '			<ul class="dl">';
-									tmp+= '				<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>';
-									tmp+= '				<li class="like"><a href="../common/cool.jsp" class="bt"><span>'+e.coolCount+'</span></a></li>';
+									tmp+= '				<li class="cool"><a href="javascript:;" class="bt '+chk+'" data-key="'+e.lookIdkey+'"><span>쿨</span></a></li>';
+									tmp+= '				<li class="like"><a href="/app/my/profile/look_cool.do?key='+e.lookIdkey+'" class="bt"><span>'+e.coolCount+'</span></a></li>';
 									tmp+= '				<li class="reply"><a href="/app/my/profile/look_comment.do?key='+e.lookIdkey+'" class="bt"><span>'+e.commentCount+'</span></a></li>';
 									tmp+= '				<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>';
 									tmp+= '			</ul>';
@@ -134,6 +140,9 @@
 		addItemFnc();
 
 		$(document).ready(function(){
+			
+			var isLogin = '${!empty sessionScope.__sessiondata__}';
+			
 			ui.nav.act("mypg");
 			ui.refresh.init(function(){
 				pjaxReload();
@@ -141,14 +150,70 @@
 			
 			$('#lookList').on("click",".uiLkSet>.data ul.dl>li .bt",function(e){
 				
-				var type = $(this).parent().attr('class');
+				var _this = $(this);
+				var clickedBtn = _this.parent().attr('class');
+				var lookIdKey = _this.attr('data-key');
 				
-				if( $(this).hasClass("on") ){
-					$(this).removeClass("on");
-				}else{
-					$(this).addClass("on");
+				if (clickedBtn === 'cool' || clickedBtn === 'scrap') {
+					
+					if (isLogin == 'false') {
+						ui.confirm({
+							msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+								'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+							ycb: function(){
+								pjax('/app/user/login.do?after=myLook&id=${param.id}');
+							}
+						});
+						return false;
+					}
+					
+					if (_this.hasClass("on")) {
+						type = 'delete';
+					} else {
+						type = 'insert';
+					}
+					
+			 		$.ajax({
+						type : 'post',
+						url : '/app/my/profile/look_'+clickedBtn+'_edit.do',	//cool or scrap
+						data : JSON.stringify({
+							'type' : type,
+							'lookIdKey' :lookIdKey,
+						}),
+						contentType : 'application/json; charset=utf-8',
+						success : function(data) {
+							
+ 							var coolCount  = _this.parents('.data').find('.like span').text();
+							
+							if(data === 't') {
+								
+								if (_this.hasClass("on")){
+									
+									if(/^[\d]*$/.test(coolCount) && clickedBtn === 'cool') {
+										coolCount = Number(coolCount) - 1;
+										_this.parents('.data').find('.like span').text(coolCount);
+									}
+									
+									_this.removeClass("on");
+								} else{
+									
+									if(/^[\d]*$/.test(coolCount) && clickedBtn === 'cool') {
+										coolCount = Number(coolCount) + 1;
+										_this.parents('.data').find('.like span').text(coolCount);
+									}
+									
+									_this.addClass("on");
+								}
+							}
+							
+						}
+					});  
+					
+					return false;
 				}
+				
 			});
+			
 		});
 		
 		function openPopup(lookIdKey) {

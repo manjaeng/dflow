@@ -85,7 +85,7 @@ public class MyServiceImpl implements MyService {
 	}
 
 	@Override
-	public EgovMap selectMyFolloCount(EgovMap egovMap) throws Exception {
+	public EgovMap selectMyFollowCount(EgovMap egovMap) throws Exception {
 		return myMapper.selectMyFollowCount(egovMap);
 	}
 }

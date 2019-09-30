@@ -88,6 +88,13 @@
 				  FROM fp_look_tag
 				  WHERE lookIdKey = l.idKey
 				  GROUP BY lookIdKey) AS tag
+			  <if test='sessionIdKey != null'>
+		      ,(
+				 SELECT count(*)
+		  		   FROM fp_look_cool
+		 		  WHERE userIdKey = #{sessionIdKey} AND lookIdKey = l.idkey
+			   ) isCool
+		      </if>
 		  FROM fp_user u
 		  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
 		  JOIN fp_user_profile up ON u.idKey = up.userIdKey
@@ -169,4 +176,43 @@
 			LEFT JOIN fp_style AS s ON l.styleIdKey=s.idKey
 		WHERE l.idKey= #{idKey}
 	</select>
+	
+	<insert id="insertLookCoolInfo" parameterType="egovMap">
+		INSERT into fp_look_cool(
+			 lookIdKey
+			,userIdKey
+			,lastStatusDate
+		) VALUES (
+			 #{lookIdKey}
+			,#{userIdKey}
+			,now()
+		)
+	</insert>
+	
+	<delete id="deleteLookCoolInfo" parameterType="egovMap">
+		DELETE FROM fp_look_cool
+         WHERE lookIdKey = #{lookIdKey} AND userIdKey = #{userIdKey}
+	</delete>
+	
+	<select id="selectLookCoolList" parameterType="egovMap" resultType="egovMap">
+		SELECT lc.userIdKey
+			  ,up.imageUrl
+			  ,u.userId
+		      <if test='sessionIdKey != null'>
+		      ,(
+				 SELECT count(*)
+		  		   FROM fp_look_cool
+		 		  WHERE userIdKey = #{sessionIdKey} 
+			   ) isCool
+		      </if>
+		  FROM fp_look_cool lc
+		  JOIN fp_user u ON lc.userIdKey = u.idKey
+		  JOIN fp_user_profile up ON u.idKey = up.userIdKey
+		 WHERE u.status = 1 AND lc.lookIdKey = #{lookIdKey}
+		 ORDER BY lc.lastStatusDate desc
+		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+	</select>
+	
 </mapper>

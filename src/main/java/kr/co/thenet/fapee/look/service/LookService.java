@@ -16,10 +16,21 @@ public interface LookService {
 	List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception;
 	
 	int updateLookInfo(EgovMap lookInfoMap) throws Exception;
+	
 	EgovMap selectLookDetail(int idKey) throws Exception;
 	
 	List<EgovMap> selectLookCommentList(EgovMap egovMap) throws Exception;
 
 	boolean insertLookCommentInfo(EgovMap egovMap) throws Exception;
+
+	boolean insertLookCoolInfo(EgovMap egovMap) throws Exception;
+
+	boolean deleteLookCoolInfo(EgovMap egovMap) throws Exception;
+
+	boolean insertLookScrapInfo(EgovMap egovMap) throws Exception;
+
+	boolean deleteLookScrapInfo(EgovMap egovMap) throws Exception;
+
+	List<EgovMap> selectLookCoolList(EgovMap egovMap) throws Exception;
 
 }

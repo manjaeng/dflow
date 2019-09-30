@@ -29,4 +29,14 @@ public interface LookMapper {
 	int insertLookCommentInfo(EgovMap egovMap) throws Exception;
 
 	int updateLookCommentInfo(EgovMap egovMap) throws Exception;
+
+	int insertLookCoolInfo(EgovMap egovMap) throws Exception;
+
+	int deleteLookCoolInfo(EgovMap egovMap) throws Exception;
+
+	int insertLookScrapInfo(EgovMap egovMap) throws Exception;
+
+	int deleteLookScrapInfo(EgovMap egovMap) throws Exception;
+
+	List<EgovMap> selectLookCoolList(EgovMap egovMap) throws Exception;
 }
