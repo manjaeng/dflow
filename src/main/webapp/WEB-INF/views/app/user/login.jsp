@@ -103,24 +103,32 @@
 							$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
 							$('#msg_error').removeClass('show');
 							
-							if (fp.util.getParam('after') !== '') {
-								if(fp.util.getParam('after') === 'my') {
-									if(fp.util.getParam('id') === '') {
+							var after = fp.util.getParam('after');
+							
+							if (after !== '') {
+								if (after === 'my') {
+									if (fp.util.getParam('id') === '') {
 										pjax('/app/my/profile.do');
 									} else {
 										pjax('/app/my/profile.do?id=' + fp.util.getParam('id'));
 									}
-								} else if(fp.util.getParam('after') === 'comment') {
-									if(fp.util.getParam('key') === '') {
+								} else if(after === 'myComment') {
+									if( fp.util.getParam('key') === '') {
 										pjax('/app/my/profile/look_comment.do');
 									} else {
 										pjax('/app/my/profile/look_comment.do?key=' + fp.util.getParam('key'));
 									}
-								} else if(fp.util.getParam('after') === 'myLook') {
+								} else if(after === 'myLook') {
 									if(fp.util.getParam('id') === '') {
 										pjax('/app/my/profile/look_list.do');
 									} else {
 										pjax('/app/my/profile/look_list.do?id=' + fp.util.getParam('id'));
+									}
+								} else if(after === 'myCool') {
+									if( fp.util.getParam('key') === '') {
+										pjax('/app/my/profile/look_cool.do');
+									} else {
+										pjax('/app/my/profile/look_cool.do?key='+ fp.util.getParam('key'));
 									}
 								}
 								

@@ -108,6 +108,52 @@
 	};
 
 	$(document).ready(function(){
+		
+		var isLogin = '${!empty sessionScope.__sessiondata__}';
+		
+		$('#cool_list').on('click','.foll input',function(e) {
+			e.preventDefault();
+			
+			var _this = $(this);
+			var type;
+			
+			if(isLogin == 'false') {
+				
+				ui.confirm({
+					msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
+						'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
+					ycb: function(){
+						pjax('/app/user/login.do?after=myCool&key=${param.key}');
+					}
+				});
+				return false;
+			}
+			
+			if(_this.is(':checked')) {
+				type = 'insert';
+			} else {
+				type = 'delete';
+			}
+			
+			$.ajax({
+				type : 'post',
+				url : '/app/my/follow_edit.do',
+				data : JSON.stringify({
+					type : type,
+					userId : _this.parents('.item').find('.name').text(),
+				}),
+				contentType : 'application/json; charset=utf-8',
+				success : function(data) {
+					
+					if(data === 't') {
+						var chk = _this.is(":checked");
+				        if(chk) _this.prop('checked', false);
+				        else  _this.prop('checked', true);
+					}
+				}
+			}); 
+			 
+		});
 
 		$(window).on("scroll", function() {
 

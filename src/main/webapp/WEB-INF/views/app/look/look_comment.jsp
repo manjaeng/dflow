@@ -140,7 +140,7 @@
 						msg:'<h1>로그인이 필요한 서비스입니다.</h1>'+
 							'<p>로그인화면으로 <br>이동하시겠습니까?</p>',
 						ycb: function(){
-							pjax('/app/user/login.do?after=comment&key=${param.key}');
+							pjax('/app/user/login.do?after=myComment&key=${param.key}');
 						}
 					});
 					
