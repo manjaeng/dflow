@@ -42,7 +42,8 @@
 
 	<script>
 	var page;
-	var appendStat = true ;
+	var appendStat = false;
+	
 	function followTabFnc(opt){
 		page = -1 ;
 		if (!opt) { opt = "fwers" }

@@ -30,7 +30,7 @@
 
 	<script>
 		var page = -1 ;
-		var appendStat = true ;
+		var appendStat = false ;
 		var addItemFnc = function(){
 			appendStat = false ;
 			page ++ ;
@@ -128,7 +128,7 @@
 		};
 
 		$(window).on("scroll", function() {
-
+			
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 			if (docH <= scr  && appendStat == true) {
@@ -137,9 +137,10 @@
 			}
 		});
 
-		addItemFnc();
 
 		$(document).ready(function(){
+			
+			addItemFnc();
 			
 			var isLogin = '${!empty sessionScope.__sessiondata__}';
 			
