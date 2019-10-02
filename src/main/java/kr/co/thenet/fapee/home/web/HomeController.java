@@ -20,5 +20,10 @@ public class HomeController {
 
 		return "home/home.app";
 	}
+	
+	@GetMapping("/app/home/search_tag.do")
+	public String searchTag() throws Exception {
+		return "home/search_tag.app";
+	}
 
 }

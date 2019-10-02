@@ -30,8 +30,8 @@
 
 	<script>
 		var page = -1 ;
-		appendStat = true ;
-		addItemFnc = function(){
+		var appendStat = true ;
+		var addItemFnc = function(){
 			appendStat = false ;
 			page ++ ;
 			$(".uiLoadMore").addClass("active");
@@ -106,7 +106,7 @@
 									tmp+= '		<div class="tags">';
 									tmp+= '			<ul class="tg">';
 											$.each(e.tag, function(i, ee) {
-												tmp+= '<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#'+ee+'</em> </a></li>';
+												tmp+= '<li><a href="/app/home/search_tag.do?tag='+ee+'" class="hash"><em class="tt">#'+ee+'</em> </a></li>';
 											});
 									tmp+= '			</ul>';
 									tmp+= '		</div>';
