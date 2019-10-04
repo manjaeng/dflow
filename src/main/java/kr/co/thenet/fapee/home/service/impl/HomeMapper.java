@@ -5,8 +5,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.co.thenet.fapee.common.util.EgovMap;
+
 @Mapper
 public interface HomeMapper {
 	
 	public List<HashMap<String, Object>> selectHomeUserList() throws Exception;
+	
+	public boolean insertReport(EgovMap egovMap) throws Exception;
 }

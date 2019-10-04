@@ -7,4 +7,20 @@
 		select sysdate()
 	</select>
 	
+	<insert id="insertReport" parameterType="egovMap">
+		INSERT INTO fp_report(
+			reportType
+			,reportDate
+			,targetId
+			,detail
+			,userIdKey
+		) VALUES (
+			#{type}
+			,now()
+			,#{idKey}
+			,#{detail}
+			,#{userIdKey}
+		)
+	</insert>
+	
 </mapper>

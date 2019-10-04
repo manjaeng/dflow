@@ -56,8 +56,8 @@
 					<a href="javascript:;" class="bt fwer">FOLLOW</a>
 					<a href="javascript:;" class="bt fwing">ING</a>
 					<a href="javascript:;" class="bt model" onclick="popLookReg_open();">Model</a>
-					<!-- <a href="javascript:;" class="bt more" onclick="popPrfOthers();">More</a> -->
-					<a href="javascript:;" class="bt more" onclick="popSystem();">More</a>
+					<a href="javascript:;" class="bt more" onclick="openPopup('${profileInfo.idKey}');">More</a>
+					<!-- <a href="javascript:;" class="bt more" onclick="popSystem();">More</a> -->
 				</div>
 				
 			</section>
@@ -71,15 +71,49 @@
 
 		</main>
 	</div>
-
+<!-- 프로필 기타 팝업 -->
+<article class="popLayer c popPrfOthers" id="popPrfOthers">
+	<div class="pbd">
+		<button type="button" class="btnPopClose">닫기</button>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
+					<li><a href="javascript:;" onclick="popShare(); ui.popLayer.close('popPrfOthers');" class="bt">SHARE</a></li>
+					<c:if test="${!isMyProfile}">
+						<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
+					</c:if>
+				</ul>	
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popPrfOthers(){
+	ui.popLayer.open('popPrfOthers',{
+		ocb:function(){
+			console.log("프로필 기타팝업 열림");
+		},
+		ccb:function(){
+			console.log("11");
+		}
+	});
+};
+</script>
 	<div class="popLayerArea">
 		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 
 	<script>
-		function popSystem() {
+	/* function popSystem() {
 			openSystemSharePopup(null);
+		} */
+		function openPopup(targetIdKey) {
+			fp.data.targetIdKey = targetIdKey;
+			fp.data.reportType = "user";
+			ui.popLayer.open("popPrfOthers");
 		}
+		
 		var page = -1;
 		var appendStat = true ;
 		var addItemFnc = function(){

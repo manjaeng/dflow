@@ -128,7 +128,6 @@
 		};
 
 		$(window).on("scroll", function() {
-
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 			if (docH <= scr  && appendStat == true) {
@@ -140,7 +139,6 @@
 		addItemFnc();
 
 		$(document).ready(function(){
-			
 			var isLogin = '${!empty sessionScope.__sessiondata__}';
 			
 			ui.nav.act("mypg");
@@ -217,7 +215,8 @@
 		});
 		
 		function openPopup(lookIdKey) {
-			fp.data.lookIdKey = lookIdKey;
+			fp.data.targetIdKey = lookIdKey;
+			fp.data.reportType = "look";
 			ui.popLayer.open("popOthers");
 		}
 

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.home.service.HomeService;
 
 
@@ -19,6 +20,12 @@ public class HomeServiceImpl implements HomeService {
 	public List<HashMap<String, Object>> selectHomeUserList() throws Exception {
 		
 		return mainMapper.selectHomeUserList();
+	}
+
+	@Override
+	public boolean insertReport(EgovMap egovMap) throws Exception {
+
+		return mainMapper.insertReport(egovMap);
 	}
 
 }
