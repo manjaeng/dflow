@@ -30,7 +30,7 @@ public class HomeServiceImpl implements HomeService {
 	@Override
 	public boolean insertReport(EgovMap egovMap) throws Exception {
 
-		return mainMapper.insertReport(egovMap);
+		return homeMapper.insertReport(egovMap);
 	}
 
 }
