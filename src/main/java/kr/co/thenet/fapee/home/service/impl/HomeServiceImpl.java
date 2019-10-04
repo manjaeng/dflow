@@ -14,12 +14,17 @@ import kr.co.thenet.fapee.home.service.HomeService;
 public class HomeServiceImpl implements HomeService {
 	
 	@Autowired
-	private HomeMapper mainMapper;
+	private HomeMapper homeMapper;
 
 	@Override
 	public List<HashMap<String, Object>> selectHomeUserList() throws Exception {
 		
-		return mainMapper.selectHomeUserList();
+		return homeMapper.selectHomeUserList();
+	}
+
+	@Override
+	public List<EgovMap> selectHomeSearchList(EgovMap egovMap) throws Exception {
+		return homeMapper.selectHomeSearchList(egovMap);
 	}
 
 	@Override

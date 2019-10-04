@@ -10,4 +10,6 @@ public interface HomeService {
 	List<HashMap<String, Object>> selectHomeUserList() throws Exception;
 
 	boolean insertReport(EgovMap egovMap) throws Exception;
+	List<EgovMap> selectHomeSearchList(EgovMap egovMap)  throws Exception;
+
 }

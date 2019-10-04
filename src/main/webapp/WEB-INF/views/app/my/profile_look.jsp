@@ -30,7 +30,7 @@
 
 	<script>
 		var page = -1 ;
-		var appendStat = true ;
+		var appendStat = false ;
 		var addItemFnc = function(){
 			appendStat = false ;
 			page ++ ;
@@ -136,9 +136,11 @@
 			}
 		});
 
-		addItemFnc();
 
 		$(document).ready(function(){
+			
+			addItemFnc();
+			
 			var isLogin = '${!empty sessionScope.__sessiondata__}';
 			
 			ui.nav.act("mypg");

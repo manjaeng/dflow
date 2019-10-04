@@ -22,5 +22,30 @@
 			,#{userIdKey}
 		)
 	</insert>
+	<select id="selectHomeSearchList" parameterType="egovMap" resultType="egovMap">
+
+		<choose>
+			<when test='type == "look"'>
+				SELECT l.idKey
+						,(SELECT GROUP_CONCAT(imageUrl ORDER BY idKey SEPARATOR ',,,')
+								  FROM fp_look_image
+								  WHERE lookIdKey = l.idKey
+								  GROUP BY lookIdKey) AS image
+				
+				FROM fp_look l
+				JOIN fp_look_tag lt ON l.idKey = lt.lookIdKey
+				WHERE lt.tagName LIKE CONCAT('%', '','%')
+				ORDER BY l.createDate desc
+				
+ 		  	</when>
+			<when test='type == "acct"'>
+			</when>
+ 		</choose>
+ 		
+ 		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+
+	</select>
 	
 </mapper>

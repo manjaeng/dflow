@@ -13,4 +13,6 @@ public interface HomeMapper {
 	public List<HashMap<String, Object>> selectHomeUserList() throws Exception;
 	
 	public boolean insertReport(EgovMap egovMap) throws Exception;
+
+	public List<EgovMap> selectHomeSearchList(EgovMap egovMap) throws Exception;
 }
