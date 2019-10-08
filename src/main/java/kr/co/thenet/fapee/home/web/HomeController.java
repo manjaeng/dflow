@@ -10,6 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
@@ -67,7 +68,7 @@ public class HomeController {
 	@ResponseBody
 	public String insertReport(@RequestBody EgovMap egovMap) throws Exception {
 		
-		//.FIXME 신고 제한을 둬야 하는데.. 제한정의 필요함..
+		//.FIXME 신고 제한을 둬야 하는데.. 제한 정의 필요함..
 		if(egovMap.get("type").equals("look")) {
 			egovMap.put("type", ReportType.LOOK.getType());
 		} else {
@@ -75,5 +76,13 @@ public class HomeController {
 		}
 		homeService.insertReport(egovMap);
 		return "";
+	}
+	
+	@GetMapping("/admin/report/list.do")
+	public String reportList(@RequestParam(defaultValue = "0", required = false)  int reportType, ModelMap model) throws Exception {
+		
+		List<EgovMap> reportList = homeService.selectReportList(reportType);
+		model.addAttribute("reportList", reportList);
+		return "report/list.admin";
 	}
 }

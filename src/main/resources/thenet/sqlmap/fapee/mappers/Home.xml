@@ -48,4 +48,17 @@
 
 	</select>
 	
+	<select id="selectReportList" parameterType="int" resultType="egovMap">
+		SELECT r.idKey
+			,r.reportType
+			,r.reportDate
+			,r.targetId
+			,r.detail
+			,u.userId
+		FROM fp_report r
+		LEFT JOIN fp_user u ON u.idKey = r.userIdKey
+		WHERE r.reportType=#{reportType}
+		ORDER BY r.reportDate DESC
+	</select>
+	
 </mapper>

@@ -33,4 +33,12 @@ public class HomeServiceImpl implements HomeService {
 		return homeMapper.insertReport(egovMap);
 	}
 
+	@Override
+	public List<EgovMap> selectReportList(int reportType) throws Exception {
+		
+		List<EgovMap> reportList = homeMapper.selectReportList(reportType);
+		
+		return reportList;
+	}
+	
 }

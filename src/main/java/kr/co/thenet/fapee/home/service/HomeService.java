@@ -11,5 +11,5 @@ public interface HomeService {
 
 	boolean insertReport(EgovMap egovMap) throws Exception;
 	List<EgovMap> selectHomeSearchList(EgovMap egovMap)  throws Exception;
-
+	List<EgovMap> selectReportList(int reportType) throws Exception;
 }

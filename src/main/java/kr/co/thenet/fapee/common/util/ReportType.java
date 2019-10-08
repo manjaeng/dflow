@@ -1,7 +1,7 @@
 package kr.co.thenet.fapee.common.util;
 
 public enum ReportType {
-	LOOK(1), USER(2);
+	LOOK(0), USER(1);
 	
 	private final int type;
 	private ReportType(int type) { this.type = type; }
