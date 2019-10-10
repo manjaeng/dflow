@@ -255,6 +255,10 @@
 						<h4>앱버전</h4> <em>com</em>
 						<mark>../../html/setting/version.jsp</mark>
 					</li>
+					<li>
+						<h4>내 리워드 관리</h4> <em>ing</em>
+						<mark>../../html/setting/myreward.jsp</mark>
+					</li>
 				</ul>
 			</li>
 		</ul>
