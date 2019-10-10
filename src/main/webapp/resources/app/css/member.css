@@ -590,7 +590,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .pt_wrap .point_val{line-height: 40px}
 .contain.reward .uiTabPan .pt_wrap .point_inp{ display: inline-block; width: 100%; margin-right: -15px;}
 .contain.reward .uiTabPan .pt_wrap .point_inp input{font-family: "BlairMd";}
-.contain.reward .uiTabPan .pt_wrap .btn{float: right; position: absolute; bottom: 30px; right: 20px;}
+.contain.reward .uiTabPan .pt_wrap .btn{position: absolute; bottom: 30px; right: 20px;}
 .contain.reward .uiTabPan .info_txt{ padding: 0 20px 30px; font-size: 12px; color: #999; text-align: center;}
 .contain.reward .uiTabPan .info_txt .require{ display: inline-block; color: #000; border-bottom: 1px solid #000;  font-weight: 100;}
 .contain.reward .uiTabPan .add_info{padding: 30px 20px; border-top: 1px solid #000;}
