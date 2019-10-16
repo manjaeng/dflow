@@ -307,26 +307,42 @@
 
 .contain.lkreg.tag{}
 .contain.lkreg.tag{}
-.contain.lkreg.tag .tagset{margin: 10px 22px 0px;}
+.contain.lkreg.tag .tagset{margin: 10px 22px 0px;border: #000000 solid 2px;}
 .contain.lkreg.tag .btsTag{padding: 50px 22px 30px;text-align: center;}
 .contain.lkreg.tag .btsTag .btAddTag{font-family:"BlairMd";display: block;padding: 10px 5px;}
 .contain.lkreg.tag .btsTag .btAddTag::before{width: 14px;height: 14px;background: url(../images/common/ico_tag_sch.png) no-repeat center center;background-size: 100% auto;font-size: 0px;content:"";display: inline-block;vertical-align: middle;margin: 0 5px 0 0px;}
 
-.uiPhoto{}
-.uiPhoto .photo{border: #000000 solid 2px; position:relative;}
+.uiPhoto{position:relative;}
+.uiPhoto .photo{/* border: #000000 solid 2px; */position:relative;}
 .uiPhoto .photo .pic{vertical-align: middle;display:block;padding-bottom: calc(4% / 3 * 100 );position:relative;}
 .uiPhoto .photo .pic .img{object-fit: cover;position: absolute;left: 0;width: 100%;height: 100%;}
+.uiPhoto .btsTag{position:absolute; left: 19px; bottom: 20px;}
+.uiPhoto .btsTag .bt.tag{width:32px; height:31px; background: url(../images/common/btn_look_tag.png) no-repeat; background-size: 100% auto; display:inline-block; font-size: 0;}
+.uiPhoto.active .btsTag .bt.tag{background-position-y: -40px;}
+.uiPhoto.active .uiTag>.pop .pan{display:block;}
+.uiPhoto.active .uiTag>.pop::before{display:block;}
+
 
 .uiTag{position:absolute;left: 0%; top: 0%; margin: -8px 0 0  -8px;}
 .uiTag>.bt{width:16px; height:16px; border-radius: 100%; background:#70f5c4; font-size: 0px; position:absolute;left: 0; top: 0;}
-.uiTag>.pop{position:absolute;left: 0;top: 25px;transform: translateX(-50%);margin-left: 5px;}
-.uiTag>.pop .pan{background:#70f5c4;border-radius: 3px;padding: 15px 10px 7px 10px; width: 139px;}
-.uiTag>.pop .pan::before{transform: rotate(45deg);content:"";width:0px;height:0px;border: #70f5c4 solid 4px;position:absolute;left: 50%;top: -3px;}
+.uiTag>.pop{background:#70f5c4;border-radius: 3px;position:absolute;left: 0;bottom: 11px;transform: translateX(-50%);margin-left: 5px;}
+.uiTag>.pop .pan{padding: 10px 10px 7px 10px;width: 139px; display:none;}
+.uiTag>.pop::before{display:none; transform: rotate(45deg);content:"";width:0px;height:0px;border: #70f5c4 solid 4px;position:absolute;left: 50%;top: -3px;}
 .uiTag>.pop .pan .close{width: 14px;height: 14px;position:absolute; right: 0px; top: 2px; background: url(../images/common/uiTag_close.png) no-repeat center center;background-size: 100% auto;font-size: 0px;content:"";display: inline-block;vertical-align: middle;margin: 0 5px 0 0px;}
 .uiTag>.pop .pan .info{}
-.uiTag>.pop .pan .info .name{font-size: 10px; word-break: break-all; line-height: 120%;}
+.uiTag>.pop .pan .info .name{font-size: 10px;word-break: break-all;line-height: 120%;}
+.uiTag>.pop .pan .info .name::after{content:">";width:6px;height:6px;display: inline-block;background: url(../images/common/ico_tag_ar.png) no-repeat;background-size: 100% auto;font-size: 0;}
 .uiTag>.pop .pan .info .pric{font-size: 10px;  text-align: right; line-height: 120%;}
-.uiTag>.pop .pan .info .pric .w{}
+.uiTag>.pop .pan .info .pric .w::before{}
+
+.uiTag>.pop.left{}
+.uiTag>.pop.left{margin-left: 67px;}
+.uiTag>.pop.left::before{left: 7px;bottom: -4px;top: auto;}
+.uiTag>.pop.right::before{right: 7px;left:auto;bottom: -4px;top: auto;}
+.uiTag>.pop.top::before{bottom:auto;top: -4px;}
+.uiTag>.pop.right{margin-left: -50px;}
+.uiTag>.pop.top{bottom:auto;top: 28px;}
+.uiTag>.pop.bot{margin-top: 0px;}
 
 /* 상품검색펍업 */
 .popSchItem.c{padding-bottom: 0px;}

@@ -2,14 +2,82 @@
 	<div class="slideLookPic" id="slideLookPic">
 		<div class="swiper-container">
 			<ul class="swiper-wrapper slide">
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/1" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/720/2" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/3" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/4" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/5" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/6" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/7" alt="사진"></span></a></li>
-				<li class="swiper-slide"><a href="../look/look_view.jsp"><span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/8" alt="사진"></span></a></li>
+				<li class="swiper-slide">
+					<div class="uiPhoto">
+						<div class="photo">
+							<span class="pic"><img src="//placeimg.com/720/720/2" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+							<div class="uiTag" style="left: 10%; top: 10%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop left top">
+									<div class="pan">
+										<div class="info">
+											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
+											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="uiTag" style="left: 80%; top: 22%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop right top">
+									<div class="pan">
+										<div class="info">
+											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
+											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="uiTag" style="left: 15%; top: 80%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop left bot">
+									<div class="pan">
+										<div class="info">
+											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
+											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="uiTag" style="left: 92%; top: 90%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop right bot">
+									<div class="pan">
+										<div class="info">
+											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
+											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
+					</div>
+				</li>
+				<li class="swiper-slide">
+					<div class="uiPhoto">
+						<div class="photo">
+							<span class="pic"><img src="//placeimg.com/720/720/2" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+							<div class="uiTag" style="left: 30%; top: 30%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop left top">
+									<div class="pan">
+										<div class="info">
+											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
+											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
+					</div>
+				</li>
+				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/4" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
+				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/5" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
+				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/6" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
+				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/7" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
+				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/8" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
 			</ul>
 			<div class="pagination"></div>
 		</div>						

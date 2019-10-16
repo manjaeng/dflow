@@ -355,6 +355,7 @@ var ui = {
 		init:function(){
 			this.match();
 			this.elip.init();
+			this.tag.init();
 		},
 		match:function(){
 			$(document).on("click",".uiLkSet>.match .box.mat .bt:not(.disabled)",function(){
@@ -387,6 +388,22 @@ var ui = {
 						$(this).closest(".desc").removeClass("elips");
 					}
 				});
+			}
+		},
+		tag:{
+			init:function(){
+				$(document).on("click",".uiPhoto .btsTag .bt.tag",function(e){
+					console.log("564456");
+					var thisPhoto = $(this).closest(".uiPhoto");
+					if( thisPhoto.hasClass("active") ) {
+						thisPhoto.removeClass("active");
+					}else{
+						thisPhoto.addClass("active");
+					}
+				});
+			},
+			using:function(){
+
 			}
 		}
 	},
@@ -896,7 +913,7 @@ var ui = {
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
-				zoom: true,
+				// zoom: true,
 				lazy: true,
 				loop: false
             },

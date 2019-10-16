@@ -28,7 +28,7 @@
 						<div class="pic"><img class="img" src="//placeimg.com/720/960/1" alt="사진"></div>
 						<div class="uiTag" style="left: 30%; top: 30%;">
 							<button class="bt" type="button">태그</button>
-							<article class="pop">
+							<article class="pop left top">
 								<div class="pan">
 									<button class="close" type="button">닫기</button>
 									<div class="info">
