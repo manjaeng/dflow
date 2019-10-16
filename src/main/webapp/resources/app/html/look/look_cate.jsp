@@ -80,12 +80,12 @@
 				</ul>
 			</div>
 
-			<section class="steps st2">
+			<!-- <section class="steps st2">
 				<ul class="st">
 					<li>1</li>
 					<li>2</li>
 				</ul>
-			</section>
+			</section> -->
 
 			<section class="botFixed">
 				<div class="in">

@@ -223,31 +223,31 @@ function popPrfOthers(){
 			<main class="poptents">
 				<ul class="list">
 					<li>
-						<span href="javascript:;" class="bt">MY PROFILE</span>
+						<span href="javascript:;" class="bt">SELLER</span>
 						<ol class="mds">
 							<li>
 								<a href="javascript:;" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/1" alt=""></div></span>
-									<span class="name">JENNY</span>
+									<span class="name">JENNY <em class="ico seller">셀러</em></span>
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
 						</ol>
 					</li>
 					<li>
-						<span href="javascript:;" class="bt">MODEL PROFILE</span>
+						<span href="javascript:;" class="bt">MODEL</span>
 						<ol class="mds">
 							<li>
 								<a href="../look/look_upload.jsp" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/2" alt=""></div></span>
-									<span class="name">JENNY</span>
+									<span class="name">안영진</span>
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;" class="box">
 									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/3" alt=""></div></span>
-									<span class="name">LUCKY</span>
+									<span class="name">진안영</span>
 									<span class="info">153cm, JAPAN</span>
 								</a>
 							</li>
@@ -258,7 +258,10 @@ function popPrfOthers(){
 							</li>
 						</ol>
 					</li>
-				</ul>	
+				</ul>
+				<div class="botBtns">
+					<a href="javascript:;" class="bt mdlset">MODEL SETTING</a>
+				</div>
 			</main>
 		</div>
 	</div>

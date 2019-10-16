@@ -22,24 +22,40 @@
 		<main id="contents" class="contents">
 
 			<section class="sec photo">
-				<div class="hdt"><em>UPLOAD YOUR <br> LOOK PHOTOS </em> </div>
+				<div class="hdt"><em>UPLOAD YOUR <br> LOOKS </em> </div>
 
 				<div class="pics swiper-container" id="slideUploadPic">
 					<ul class="list swiper-wrapper slide">
-						<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:;">선택</a></div></li>
-						<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>
+						<li class="swiper-slide">
+							<div class="img"><a class="btnAdd" href="javascript:;">선택</a></div>
+							<div class="counts">
+								<div class="txt">uploaded count</div>
+								<div class="cnt">0/10</div>
+							</div>
+						</li>
+						<li class="swiper-slide">
+							<div class="img">
+								<a href="./look_tag.jsp"><img src="//placeimg.com/380/500/1" alt=""></a>
+								<div class="num">1/10</div>
+								<div class="tgs"></div>
+							</div>
+							<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>
+							<div class="msg">
+								<div class="txt">tap photo <br> to tag items</div>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</section>
 
-			<!-- <button type="button" onclick="testPicAdd()">추가</button> -->
+			<button type="button" onclick="testPicAdd()">추가</button>
 
-			<section class="steps st1">
+			<!-- <section class="steps st1">
 				<ul class="st">
 					<li>1</li>
 					<li>2</li>
 				</ul>
-			</section>
+			</section> -->
 
 			<section class="botFixed">
 				<div class="in">
@@ -62,11 +78,22 @@
 
 	<script>
 	var testPicAdd = function(){
-		var picHtml = '<li class="swiper-slide"><div class="img"><img src="//placeimg.com/380/500/1" alt=""></div><div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div></li>';
+		var picHtml = 
+			'<li class="swiper-slide">'+
+				'<div class="img">'+
+					'<a href="./look_tag.jsp"><img src="//placeimg.com/380/500/1" alt=""></a>'+
+					'<div class="num">1/10</div>'+
+					'<div class="tgs"></div>'+
+				'</div>'+
+				'<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>'+
+				'<div class="msg">'+
+					'<div class="txt">tap photo <br> to tag items</div>'+
+				'</div>'+
+			'</li>';
 		$("#slideUploadPic .list").append( picHtml );
 	}
 	var testPicDel = function(els){
-		$(els).closest(".swiper-slide").find("img , .bts").remove();
+		$(els).closest(".swiper-slide").remove();
 	}
 
 	$(document).ready(function(){

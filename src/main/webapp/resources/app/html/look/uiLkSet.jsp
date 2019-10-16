@@ -20,9 +20,12 @@
 	</div>
 	<div class="info">
 		<div class="user">
-			<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+			<a href="../mypage/profile.jsp" class="pic">
+				<span class="img"><img src="//placeimg.com/80/94" alt=""></span>
+				
+			</a>
 			<a href="../mypage/profile.jsp" class="mem">
-				<div class="nm">JENNY</div>
+				<div class="nm">JENNY  <em class="ico seller">셀러</em> </div>
 				<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 			</a>
 			<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
