@@ -227,7 +227,7 @@ function popPrfOthers(){
 						<ol class="mds">
 							<li>
 								<a href="javascript:;" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/1" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/60/70/1" alt=""></div></span>
 									<span class="name">JENNY <em class="ico seller">셀러</em></span>
 									<span class="info">160cm, KOREA</span>
 								</a>
@@ -239,14 +239,14 @@ function popPrfOthers(){
 						<ol class="mds">
 							<li>
 								<a href="../look/look_upload.jsp" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/2" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/60/70/2" alt=""></div></span>
 									<span class="name">안영진</span>
 									<span class="info">160cm, KOREA</span>
 								</a>
 							</li>
 							<li>
 								<a href="javascript:;" class="box">
-									<span class="pic"><div class="img"><img src="//placeimg.com/80/94/3" alt=""></div></span>
+									<span class="pic"><div class="img"><img src="//placeimg.com/60/70/3" alt=""></div></span>
 									<span class="name">진안영</span>
 									<span class="info">153cm, JAPAN</span>
 								</a>
@@ -321,6 +321,31 @@ function popShare(){
 	// });
 };
 </script>
+
+
+
+
+
+<!--  추가 메뉴 popRevMore -->
+<article class="popLayer c popRevMore" id="popRevMore">
+	<div class="pbd">
+		<button type="button" class="btnPopClose">닫기</button>
+		<div class="pct">
+			<main class="poptents">
+				<ul class="list">
+					<li><a href="javascript:;" class="bt">EDIT</a></li>
+					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popRevMore');">REPORT</a></li>
+					<li class="st"><a href="javascript:;" class="bt">DELETE</a></li>
+					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popRevMore');">COPY LINK</a></li>
+					<li><a href="javascript:;" class="bt" onclick="popShare(); ui.popLayer.close('popRevMore');">SHARE</a></li>
+				</ul>
+			</main>
+		</div>
+	</div>
+</article>
+
+
+
 
 
 

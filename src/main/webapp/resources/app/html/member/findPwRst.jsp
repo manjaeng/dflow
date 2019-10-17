@@ -17,7 +17,7 @@
 		</div>
 		<main id="contents" class="contents">
 			<div class="findForm">
-				<div class="hdt"><em>비밀번호 찾기</em></div>
+				<div class="hdt"><em>비밀번호 재설정</em></div>
 				<div class="form">
 					<!-- <div class="pw now">
 						<input type="password" class="input" placeholder="현재비밀번호 입력">

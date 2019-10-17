@@ -23,17 +23,17 @@
 		<main id="contents" class="contents">
 
 			<section class="sec tagset">
-				<div class="uiPhoto">
+				<div class="uiPhoto active">
 					<div class="photo">
 						<div class="pic"><img class="img" src="//placeimg.com/720/960/1" alt="사진"></div>
-						<div class="uiTag" style="left: 30%; top: 30%;">
+						<div class="uiTag" style="left: 10%; top: 20%;">
 							<button class="bt" type="button">태그</button>
 							<article class="pop left top">
 								<div class="pan">
 									<button class="close" type="button">닫기</button>
 									<div class="info">
 										<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-										<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+										<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 									</div>
 								</div>
 							</article>
@@ -75,7 +75,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>
@@ -84,7 +84,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>
@@ -93,7 +93,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>
@@ -102,7 +102,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>
@@ -111,7 +111,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>
@@ -120,7 +120,7 @@
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</a>
 								</li>

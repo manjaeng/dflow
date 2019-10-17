@@ -193,7 +193,7 @@
 									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"></span></a></span>
 								</div>
 								<div class="user">
-									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/60/70" alt=""></span></a>
 									<a href="../mypage/profile.jsp" class="mem">
 										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -207,7 +207,7 @@
 									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""><span class="num"></span></a></span>
 								</div>
 								<div class="user">
-									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/60/70" alt=""></span></a>
 									<a href="../mypage/profile.jsp" class="mem">
 										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -221,7 +221,7 @@
 									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""><span class="num"></span></a></span>
 								</div>
 								<div class="user">
-									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/60/70" alt=""></span></a>
 									<a href="../mypage/profile.jsp" class="mem">
 										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
@@ -235,7 +235,7 @@
 									<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""><span class="num"></span></a></span>
 								</div>
 								<div class="user">
-									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/80/94" alt=""></span></a>
+									<a href="../mypage/profile.jsp" class="pic"><span class="img"><img src="//placeimg.com/60/70" alt=""></span></a>
 									<a href="../mypage/profile.jsp" class="mem">
 										<div class="nm">JENNY</div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>

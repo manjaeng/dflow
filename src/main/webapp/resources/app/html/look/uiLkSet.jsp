@@ -5,47 +5,58 @@
 				<li class="swiper-slide">
 					<div class="uiPhoto">
 						<div class="photo">
-							<span class="pic"><img src="//placeimg.com/720/720/2" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
-							<div class="uiTag" style="left: 10%; top: 10%;">
+							<span class="pic"><img src="//placeimg.com/720/960/2" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+							<div class="uiTag" style="left: 50%; top: 45%;">
 								<button class="bt" type="button">태그</button>
-								<article class="pop left top">
+								<article class="pop" onclick="location.href='../look/look_goods.jsp';">
 									<div class="pan">
 										<div class="info">
-											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="uiTag" style="left: 10%; top: 10%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop left top" onclick="location.href='../look/look_goods.jsp';">
+									<div class="pan">
+										<div class="info">
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</div>
 								</article>
 							</div>
 							<div class="uiTag" style="left: 80%; top: 22%;">
 								<button class="bt" type="button">태그</button>
-								<article class="pop right top">
+								<article class="pop right top" onclick="location.href='../look/look_goods.jsp';">
 									<div class="pan">
 										<div class="info">
-											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</div>
 								</article>
 							</div>
 							<div class="uiTag" style="left: 15%; top: 80%;">
 								<button class="bt" type="button">태그</button>
-								<article class="pop left bot">
+								<article class="pop left bot" onclick="location.href='../look/look_goods.jsp';">
 									<div class="pan">
 										<div class="info">
-											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</div>
 								</article>
 							</div>
 							<div class="uiTag" style="left: 92%; top: 90%;">
 								<button class="bt" type="button">태그</button>
-								<article class="pop right bot">
+								<article class="pop right bot" onclick="location.href='../look/look_goods.jsp';">
 									<div class="pan">
 										<div class="info">
-											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</div>
 								</article>
@@ -57,14 +68,14 @@
 				<li class="swiper-slide">
 					<div class="uiPhoto">
 						<div class="photo">
-							<span class="pic"><img src="//placeimg.com/720/720/2" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+							<span class="pic"><img src="//placeimg.com/720/960/3" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
 							<div class="uiTag" style="left: 30%; top: 30%;">
 								<button class="bt" type="button">태그</button>
 								<article class="pop left top">
 									<div class="pan">
 										<div class="info">
-											<div class="name">롱코트롱코트롱코트롱코트롱코트롱코트롱코트</div>
-											<div class="pric"><em class="w">&#92;</em><span class="p">999,999,999</span></div>
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
 										</div>
 									</div>
 								</article>
@@ -73,11 +84,25 @@
 						<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
 					</div>
 				</li>
-				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/4" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
-				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/5" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
-				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/6" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
-				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/7" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
-				<li class="swiper-slide"><span class="pic"><img src="//placeimg.com/720/960/8" alt="사진" onclick="location.href='../look/look_view.jsp';"></span></li>
+				<li class="swiper-slide">
+					<div class="uiPhoto">
+						<div class="photo">
+							<span class="pic"><img src="//placeimg.com/720/960/4" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+							<div class="uiTag" style="left: 30%; top: 30%;">
+								<button class="bt" type="button">태그</button>
+								<article class="pop left top">
+									<div class="pan">
+										<div class="info">
+											<div class="name">호피무늬치마</div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
+										</div>
+									</div>
+								</article>
+							</div>
+						</div>
+						<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
+					</div>
+				</li>
 			</ul>
 			<div class="pagination"></div>
 		</div>						
@@ -89,7 +114,7 @@
 	<div class="info">
 		<div class="user">
 			<a href="../mypage/profile.jsp" class="pic">
-				<span class="img"><img src="//placeimg.com/80/94" alt=""></span>
+				<span class="img"><img src="//placeimg.com/60/70" alt=""></span>
 				
 			</a>
 			<a href="../mypage/profile.jsp" class="mem">

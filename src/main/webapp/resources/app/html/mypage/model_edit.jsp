@@ -9,7 +9,7 @@
 <div class="wrap" id="wrap">
 	
 	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain mdl reg r1">
+	<div id="contain" class="contain mdl reg edt">
 		<div class="pageHd">
 			<div class="in">
 				<div class="bts">
@@ -55,6 +55,7 @@
 						</span>
 					</li>
 				</ul>
+				<div class="msg">*모델명과 모델의 사이즈 정보는 변경이 불가입니다.</div>
 			</section>
 			
 			

@@ -158,6 +158,10 @@
 						<mark>../../html/look/look.jsp</mark>
 					</li>
 					<li>
+						<h4>상품</h4> <em>new</em>
+						<mark>../../html/look/look_goods.jsp</mark>
+					</li>
+					<li>
 						<h4>상세</h4> <em>com</em>
 						<mark>../../html/look/look_view.jsp</mark>
 					</li>
@@ -168,6 +172,14 @@
 					<li>
 						<h4>등록2</h4> <em>com</em>
 						<mark>../../html/look/look_cate.jsp</mark>
+					</li>
+					<li>
+						<h4>리뷰</h4> <em>new</em>
+						<mark>../../html/look/review.jsp</mark>
+					</li>
+					<li>
+						<h4>리뷰 상세</h4> <em>new</em>
+						<mark>../../html/look/review_view.jsp</mark>
 					</li>
 				</ul>
 			</li>
@@ -220,6 +232,14 @@
 						<mark>../../html/setting/pwMod.jsp</mark>
 					</li>
 					<li>
+						<h4>쇼핑 내역</h4> <em>ing</em>
+						<mark>../../html/setting/my_review.jsp</mark>
+					</li>
+					<li>
+						<h4>내 리워드 관리</h4> <em>ing</em>
+						<mark>../../html/setting/myreward.jsp</mark>
+					</li>
+					<li>
 						<h4>연결된 계정</h4> <em>com</em>
 						<mark>../../html/setting/account.jsp</mark>
 					</li>
@@ -254,10 +274,6 @@
 					<li>
 						<h4>앱버전</h4> <em>com</em>
 						<mark>../../html/setting/version.jsp</mark>
-					</li>
-					<li>
-						<h4>내 리워드 관리</h4> <em>ing</em>
-						<mark>../../html/setting/myreward.jsp</mark>
 					</li>
 				</ul>
 			</li>

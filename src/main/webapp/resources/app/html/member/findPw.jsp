@@ -17,7 +17,7 @@
 		</div>
 		<main id="contents" class="contents">
 			<div class="findForm">
-				<div class="hdt"><em>비밀번호 찾기</em></div>
+				<div class="hdt"><em>비밀번호 재설정</em></div>
 				<div class="msg">가입 시 인증한 전화 번호를 입력하시면 <br> 본인 확인 코드를 보내드립니다. </div>
 				<div class="form">
 					<div class="uiIptPlc phone">

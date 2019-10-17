@@ -37,7 +37,7 @@
 					</li>
 					<li>
 						<div class="box">
-							<div class="pic"><a href="javascript:;" class="bt">+</a></div>
+							<div class="pic"><a href="javascript:;" class="bt"><img src="../../images/common/profile_no.png" alt=""></a></div>
 							<div class="name"></div>
 							<div class="bts">
 								<a href="javascript:;" class="bt reg">Register</a>
@@ -46,7 +46,7 @@
 					</li>
 					<li>
 						<div class="box">
-							<div class="pic"><a href="javascript:;" class="bt">+</a></div>
+							<div class="pic"><a href="javascript:;" class="bt"><img src="../../images/common/profile_no.png" alt=""></a></div>
 							<div class="name"></div>
 							<div class="bts">
 								<a href="javascript:;" class="bt reg">Register</a>

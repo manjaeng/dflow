@@ -27,6 +27,8 @@
 						<ul>
 							<li><a class="bt" href="../setting/pwMod.jsp">비밀번호 변경</a></li>
 							<li><a class="bt" href="../setting/account.jsp">연결된 계정</a></li>
+							<li><a class="bt" href="../setting/my_review.jsp">쇼핑내역</a></li>
+							<li><a class="bt" href="../setting/myreward.jsp">내 리워드 관리</a></li>
 							<!-- <li><a class="bt" href="../setting/certiEmail.jsp">이메일 인증</a></li> -->
 							<!-- <li><a class="bt" href="../setting/cools.jsp">COOL한 게시물</a></li> -->
 						</ul>
@@ -54,7 +56,7 @@
 						</ul>
 					</li>
 					<li>
-						<a class="bt" href="javascript:;">셀러 계정 신청</a>
+						<a class="bt" href="javascript:;" onclick="sampleSellerAct();">셀러 계정 신청</a>
 					</li>
 					<li>
 						<a class="bt" href="javascript:;" onclick="sampleLogoutAct();">로그아웃</a>
@@ -71,6 +73,17 @@
 	</div>
 
 	<script>
+	var sampleSellerAct = function(){
+		ui.confirm({ // 컨펌 창 띄우기
+			msg:'<p>확인을 누르시면 <br>셀러 가입 웹페이지로 이동합니다.</p>',
+			ycb:function(){
+				// console.log('컨펌확인결과');
+			},
+			ncb:function(){
+				// console.log('컨펌취소결과');
+			}
+		});
+	}
 	var sampleLogoutAct = function(){
 		ui.confirm({ // 컨펌 창 띄우기
 			msg:'<p>로그아웃을 하시겠습니까?</p>',
@@ -79,11 +92,10 @@
 			},
 			ncb:function(){
 				// console.log('컨펌취소결과');
-			},
-			// ybt:'로그인하기',
-			// nbt:'닫기'
+			}
 		});
 	}
+
 	$(document).ready(function(){
 		
 	});

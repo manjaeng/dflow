@@ -48,7 +48,7 @@
 				</div>
 			</section>
 
-			<button type="button" onclick="testPicAdd()">추가</button>
+			<!-- <button type="button" onclick="testPicAdd()">추가</button> -->
 
 			<!-- <section class="steps st1">
 				<ul class="st">

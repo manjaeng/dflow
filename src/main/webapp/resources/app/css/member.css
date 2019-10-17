@@ -165,7 +165,7 @@
 .uiPrfeSet{margin-top: 0px;}
 .uiPrfeSet .user{padding: 0px 15px 0px 15px;}
 .uiPrfeSet .user .photo{position:relative;width: 62px;margin: auto;}
-.uiPrfeSet .user .photo .pic{position:relative;padding-bottom: calc(4% / 3.5 * 100);display:block; }
+.uiPrfeSet .user .photo .pic{position:relative;padding-bottom: calc(4% / 3.4 * 100);display:block;}
 .uiPrfeSet .user .photo .pic img{width: 100%;height: 100%;border-radius: 100%;position:absolute;left:0;top: 0px;width:100%;object-fit: cover;}
 .uiPrfeSet .user .photo .bts{position:absolute;right: -7px;bottom: -7px;}
 .uiPrfeSet .user .photo .bts .bt{width: 26px;height: 26px;display:block;font-size: 0px;background-size: 100% auto;}
@@ -365,7 +365,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.mdl.set .sec.mdls ul.list>li .box .pic{width:68px;position:relative;margin: auto;/* height: 76px; */}
 .contain.mdl.set .sec.mdls ul.list>li .box .pic .img{padding-bottom: calc(4% / 3.5 * 100);display: block;}
 .contain.mdl.set .sec.mdls ul.list>li .box .pic  img{position:absolute;left: 0px;top: 0px;object-fit: cover;border-radius: 100%;}
-.contain.mdl.set .sec.mdls ul.list>li .box .pic .bt{font-size: 0px;/* position:absolute; *//* left:0px; *//* top: 0px; */object-fit: cover;border-radius: 100%;width:100%;/* height:100%; *//* background-size: 22px auto; */padding-bottom: calc( 4% / 3.5 * 100 );display: block;/* overflow: hidden; *//* border-radius: 100%; */box-shadow: 0px 0px 1px rgba(0,0,0,0.8);}
+.contain.mdl.set .sec.mdls ul.list>li .box .pic .bt{font-size: 0px;/* position:absolute; *//* left:0px; *//* top: 0px; */object-fit: cover;border-radius: 100%;width:100%;/* height:100%; *//* background-size: 22px auto; */padding-bottom: calc( 4% / 3.5 * 100 );display: block;/* overflow: hidden; *//* border-radius: 100%; *//* box-shadow: 0px 0px 1px rgba(0,0,0,0.8); */}
 .contain.mdl.set .sec.mdls ul.list>li .box .name{ font-family:"BlairMd","NotoSansCJKkr"; margin-top: 5px; min-height: 22px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts{text-align: center;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt{width: 26px;height: 26px;display:inline-block;font-size: 0px;background: no-repeat center;background-size: 100% auto;overflow: hidden;vertical-align: middle;}
@@ -406,16 +406,21 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.mdl.reg .prfeForm .photo .bts .bt.mod{ background-image: url(../images/common/ico_pic_edit.png)}
 
 .contain.mdl.reg .prfeForm .list{margin-top: 30px;}
-.contain.mdl.reg .prfeForm .list>li{display: flex;min-height: 37px;padding-top: 0px;}
-.contain.mdl.reg .prfeForm .list>li .dt{font-size: 15px;color: #999999;margin-top: 8px;display:block;width: 80px;}
-.contain.mdl.reg .prfeForm .list>li .dd{position:relative;display: block;border-bottom: #cccccc solid 1px;width: 100%;}
+.contain.mdl.reg .prfeForm .list>li{/* display: flex; */min-height: 37px;padding-top: 0px;position: relative;}
+.contain.mdl.reg .prfeForm .list>li .dt{position:absolute;left:0px;top: 0px;font-size: 15px;color: #999999;margin-top: 8px;display:block;width: 80px;}
+.contain.mdl.reg .prfeForm .list>li .dd{display: block;border-bottom: #cccccc solid 1px;/* width: 100%; */margin-left: 80px;}
 .contain.mdl.reg .prfeForm .list>li .dd{}
-.contain.mdl.reg .prfeForm .list>li .dd .input{font-family:"BlairMd";height: 36px;}
+.contain.mdl.reg .prfeForm .list>li .dd .input{font-family:"BlairMd";height: 36px;color: #cccccc;}
 .contain.mdl.reg .prfeForm .list>li .dd .textarea{height: 60px;padding-top: 9px;}
 .contain.mdl.reg .prfeForm .list>li .dd .num{position:absolute;right: 0px;top: 36px;font-size: 12px;color: #999999;}
 .contain.mdl.reg .prfeForm .list>li .dd label + label{ margin-left: 30px;}
-.contain.mdl.reg .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;/* padding-left: 0px; */min-width:150px;font-family:"BlairMd";text-transform: uppercase;}
-.contain.mdl.reg .prfeForm .list>li.gender .dd{padding: 6px 0;}
+.contain.mdl.reg .prfeForm .list>li .dd .radio span{font-size: 14px;}
+.contain.mdl.reg .prfeForm .list>li .dd .radio span::before{vertical-align: -9px;}
+.contain.mdl.reg .prfeForm .list>li.nation{}
+.contain.mdl.reg .prfeForm .list>li.nation .dd{border-bottom-width: 0;width: 41%;padding-left: 14px;border: #cccccc solid 1px;border-width: 1px 0px;}
+.contain.mdl.reg .prfeForm .list>li .dd .select.nt{display: inline-block;width:initial;padding-left: 30px;min-width:150px;font-family:"BlairMd";text-transform: uppercase;}
+.contain.mdl.reg .prfeForm .list>li.gender .dd{padding: 6px 0;border-bottom-width: 0;}
+.contain.mdl.reg .prfeForm .msg{font-size: 11px;color: #999999;position:fixed;bottom: 80px;text-align: center;left:0;right: 0;}
 
 .contain.mdl.reg .sec.size{position:relative;z-index: 0;}
 .contain.mdl.reg .sec.size .filters{}
@@ -625,3 +630,85 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .acc_less .form_wrap > label{flex-basis:100%; padding-top: 20px; font-size: 12px;}
 
 .font_blairMd{font-family: "BlairMd";}
+
+
+/* 쇼핑 내역 */
+.contain.review{}
+.contain.review .sec.review{}
+.contain.review .sec.review .list{}
+.contain.review .sec.review .list>li{border-bottom: #000000 solid 1px;}
+.contain.review .sec.review .list>li .item{position:relative;padding: 28px 0px 28px 87px;}
+.contain.review .sec.review .list>li .item .img{position:absolute;left: 20px;top: 20px;width:50px;}
+.contain.review .sec.review .list>li .item .img .pic{position:absolute;left:0px;top: 1px;display: block;}
+.contain.review .sec.review .list>li .item .img .pic{padding-bottom: calc( 4% / 3.4 * 100);display: block;position: relative;width: 100%;}
+.contain.review .sec.review .list>li .item .img .pic img{/* width:40px; */border-radius: 100%;display: block;position: absolute;left: 0px;object-fit: cover;height: 100%;}
+
+.contain.review .sec.review .list>li .item .info{min-height: 50px;position:relative;line-height: 100%;}
+.contain.review .sec.review .list>li .item .info .tit{font-size: 12px;}
+.contain.review .sec.review .list>li .item .info .prc{font-size: 11px; color: #999999;}
+.contain.review .sec.review .list>li .item .info .prc .w{}
+.contain.review .sec.review .list>li .item .info .prc .p{font-family:"BlairMd";}
+.contain.review .sec.review .list>li .item .info .name{font-size: 11px;color: #999999;margin-top:0px; font-family:"BlairMd";}
+.contain.review .sec.review .list>li .item .info .remove{position:absolute;right: 20px;top: -13px;}
+.contain.review .sec.review .list>li .item .info .remove .bt.del{width:16px; height:16px; display:block; background: url(../images/common/review_btn_del.png)  no-repeat; background-size: 100% auto; font-size: 0;}
+.contain.review .sec.review .list>li .bts{}
+.contain.review .sec.review .list>li .bts .bt{font-size: 16px;border-top: #000000 solid 1px; display:block; height:35px; line-height: 35px; text-align:center;}
+.contain.review .sec.review .list>li .bts .bt.write{}
+.contain.review .sec.review .list>li .bts .bt.view{ color: #70f5c4;}
+
+
+.upload.photo{}
+.upload.photo .pics{position: relative;}
+.upload.photo .pics ul.list{display:flex;transform: translateX( calc(50% - 104px) );}
+.upload.photo .pics ul.list>li{width:188px;position: relative;margin: 0px 10px;}
+.upload.photo .pics ul.list>li:first-child{}
+.upload.photo .pics ul.list>li .img{display:block;padding-bottom: calc(4% / 3 * 100 );position: relative;border: #000000 solid 2px;}
+.upload.photo .pics ul.list>li .img a{}
+.upload.photo .pics ul.list>li .img img{position:absolute;left:0px;top: 0px;width:100%;object-fit: cover;height: 100%;}
+.upload.photo .pics ul.list>li .counts{font-family:"BlairMd","NotoSansCJKkr";text-align: center;line-height: 18px;margin-top: 15px;}
+.upload.photo .pics ul.list>li .counts .txt{}
+.upload.photo .pics ul.list>li .counts .cnt{}
+.upload.photo .pics ul.list>li .bts{position:absolute;right: 2px;top: 2px;z-index: 100;}
+.upload.photo .pics ul.list>li .bts .del{width: 30px;height: 30px;overflow:hidden;background: url(../images/common/intro_pic_del.png) no-repeat center;background-size: 30px auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;font-size: 0;display: block;}
+.upload.photo .pics ul.list>li .btnAdd{position:absolute;left:0px;top: 0px;bottom: 0px;display:block;height:100%;background: url(../images/common/intro_pic.png) no-repeat center;background-size: 74px auto;font-size: 0px;/* height: 100%; */width: 100%;}
+.upload.photo .pics ul.list>li .num{position:absolute;right: 10px; bottom: 10px; font-family:"BlairMd"; font-size: 8px; background:#70f5c4; padding: 0 5px;}
+.upload.photo .pics ul.list>li .tgs{position:absolute;left: 10px;bottom: 10px;width: 16px;height:16px;background:url(../images/common/ico_tag_stat.png) no-repeat #70f5c4;background-size: 100% auto;font-size: 0px;padding: 0 5px;}
+.upload.photo .pics ul.list>li .msg{text-align: center;line-height: 18px;margin-top: 15px;}
+.upload.photo .pics ul.list>li .msg .txt{display:inline-block;background-color: #f1f1f1;padding: 5px 10px;font-family:"BlairMd","NotoSansCJKkr";position:relative;border-radius: 2px;}
+.upload.photo .pics ul.list>li .msg .txt::before{transform: rotate(45deg);content:"";width:0px;height:0px;border: #f1f1f1 solid 2px;position:absolute;left: 13px;top: -3px;}
+.upload.photo .hdt{font-family:"BlairMd";font-size: 24px;min-height: 130px;text-align: center;padding-top: 0px;line-height: 110%;margin-right: 0%;position: relative;}
+.upload.photo .hdt em{position:relative; display: inline-block;}
+
+/* 리뷰등록 폼 */
+.contain.review.cate{}
+.contain.review.cate .forms{ padding-top: 40px; }
+.contain.review.cate .list{padding: 0px 0px 16px 0px;position: relative;z-index: 10;}
+.contain.review.cate .list>li{margin-top: 30px;}
+.contain.review.cate .list>li:first-child{margin-top: 0px;}
+.contain.review.cate .list>li .ht{font-size: 15px;margin-bottom: 11px;color: #000000;font-family:"BlairMd";padding: 0px 16px;}
+.contain.review.cate .list>li .ct{border: #000000 solid 1px;border-width: 1px 0px; }
+.contain.review.cate .list>li.text{}
+.contain.review.cate .list>li.text .ht{/* border-bottom: #000000 solid 1px; */}
+.contain.review.cate .list>li.text .ct{position:relative;margin: 0px 0px;padding: 10px 16px;}
+.contain.review.cate .list>li.text .ct .num{position:absolute;right: 16px;top: -32px;font-family:"BlairMd";color: #cccccc;font-size: 11px;}
+.contain.review.cate .list>li.text .ct .num.over{color: #70f5c4;}
+.contain.review.cate .list>li.text .ct .textarea{border: none;padding: 0px;height: 240px;overflow: hidden;}
+.contain.review.cate .list>li.items .item{position:relative;padding: 20px 0px 20px 70px;}
+.contain.review.cate .list>li.items .item .img{position:absolute;left: 16px;top: 20px;width: 37px;}
+.contain.review.cate .list>li.items .item .img .pic{position:absolute;left:0px;top: 1px;display: block;}
+.contain.review.cate .list>li.items .item .img .pic{padding-bottom: calc( 4% / 3.4 * 100);display: block;position: relative;width: 100%;}
+.contain.review.cate .list>li.items .item .img .pic img{/* width:40px; */border-radius: 100%;display: block;position: absolute;left: 0px;object-fit: cover;height: 100%;}
+
+.contain.review.cate .list>li.items .item .info{min-height: 50px;position:relative;line-height: 100%;padding-top: 8px;}
+.contain.review.cate .list>li.items .item .info .tit{font-size: 12px; font-family:"BlairMd"; text-transform: uppercase;}
+.contain.review.cate .list>li.items .item .info .desc{}
+.contain.review.cate .list>li.items .item .info .prc{font-size: 11px;color: #999999;display: inline-block;}
+.contain.review.cate .list>li.items .item .info .prc .w{}
+.contain.review.cate .list>li.items .item .info .prc .p{font-family:"BlairMd";}
+.contain.review.cate .list>li.items .item .info .name{font-size: 11px;color: #999999;margin-top:0px;font-family:"BlairMd";display: inline-block;}
+.contain.review.cate .list>li.items .item .info .remove{position:absolute;right: 20px;top: -13px;}
+.contain.review.cate .list>li.items .item .info .remove .bt.del{width:16px; height:16px; display:block; background: url(../images/common/review_btn_del.png)  no-repeat; background-size: 100% auto; font-size: 0;}
+.contain.review.cate .list .bts{}
+
+/* 리뷰리스트 */
+.contain.review .reviewList{margin-top: 10px;}

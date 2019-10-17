@@ -378,6 +378,9 @@ var ui = {
 				$(document).on("click",".uiLkSet>.info .desc a.more",function(e){
 					$(this).closest(".desc").removeClass("elips");
 				});
+				$(document).on("click",".uiLkItem>.info .desc a.more",function(e){
+					$(this).closest(".desc").removeClass("elips");
+				});
 				this.using();
 			},
 			using:function(){
@@ -388,6 +391,16 @@ var ui = {
 						$(this).closest(".desc").removeClass("elips");
 					}
 				});
+
+				$(".uiLkItem>.info .desc a.txt").each(function(){
+					if( $(this).height() > 40 ){
+						$(this).closest(".desc").addClass("elips");
+					}else{
+						$(this).closest(".desc").removeClass("elips");
+					}
+				});
+
+
 			}
 		},
 		tag:{
@@ -913,7 +926,7 @@ var ui = {
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
-				// zoom: true,
+				zoom: true,
 				lazy: true,
 				loop: false
             },
@@ -924,6 +937,7 @@ var ui = {
                 	var $this = $(this);
 					var idx = $this.closest("li").index();
 					if( $this.find(".swiper-slide").length == 1 ) _this.opt.loop = false ;
+					if( $this.find(".swiper-zoom-container").length == 0 ) _this.opt.zoom = false ;
 					if( $this.find(".swiper-slide").length >= 1 ) {
 						_this.slide[idx] = new Swiper( $this , _this.opt );
 						// console.log(_this.slide[i]);
