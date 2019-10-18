@@ -36,14 +36,14 @@
 								<li class="swiper-slide">
 									<div class="uiPhoto">
 										<div class="photo">
-											<span class="pic swiper-zoom-container"><img src="//placeimg.com/720/720/2" alt="사진"></span>
+											<span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/2" alt="사진"></span>
 										</div>
 									</div>
 								</li>
 								<li class="swiper-slide">
 									<div class="uiPhoto">
 										<div class="photo">
-											<span class="pic swiper-zoom-container"><img src="//placeimg.com/720/720/2" alt="사진"></span>
+											<span class="pic swiper-zoom-container"><img src="//placeimg.com/720/960/2" alt="사진"></span>
 										</div>
 									</div>
 								</li>

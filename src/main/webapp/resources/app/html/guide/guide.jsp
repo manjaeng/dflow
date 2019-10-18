@@ -428,12 +428,12 @@
 					<ul class="swiper-wrapper slide">
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/1" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/1" alt=""></span></a></div>
 							</div>
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/2" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/2" alt=""></span></a></div>
 							</div>
 						</li>
 					</ul>
@@ -452,7 +452,7 @@
 					<ul class="swiper-wrapper slide">
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/10" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/10" alt=""></span></a></div>
 								<div class="info">
 									<div class="name">뉴욕양키스 액센트 커브조절캡</div>
 									<div class="prc"><em class="p">59,000원</em></div>
@@ -461,7 +461,7 @@
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/11" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/11" alt=""></span></a></div>
 								<div class="info">
 									<div class="name">뉴욕양키스 액센트 커브조절캡</div>
 									<div class="prc"><em class="p">59,000원</em></div>
@@ -470,7 +470,7 @@
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/12" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/12" alt=""></span></a></div>
 								<div class="info">
 									<div class="name">뉴욕양키스 액센트 커브조절캡</div>
 									<div class="prc"><em class="p">59,000원</em></div>
@@ -479,7 +479,7 @@
 						</li>
 						<li class="swiper-slide">
 							<div class="item">
-								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/720/13" alt=""></span></a></div>
+								<div class="thumb"><a href="javascript:;"><span class="img"><img src="//placeimg.com/720/960/13" alt=""></span></a></div>
 								<div class="info">
 									<div class="name">액센트 커브조절캡</div>
 									<div class="prc"><em class="p">59,000원</em></div>
