@@ -215,7 +215,7 @@
 						<mark>../../html/mypage/model_edit.jsp</mark>
 					</li>
 					<li>
-						<h4>알림</h4> <em>ing</em>
+						<h4>알림</h4> <em>com</em>
 						<mark>../../html/mypage/alim.jsp</mark>
 					</li>
 				</ul>
@@ -252,7 +252,7 @@
 						<mark>../../html/setting/cools.jsp</mark>
 					</li>
 					<li>
-						<h4>알림설정</h4> <em>ing</em>
+						<h4>알림설정</h4> <em>com</em>
 						<mark>../../html/setting/setting_alim.jsp</mark>
 					</li>
 					<li>

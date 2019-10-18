@@ -21,7 +21,7 @@
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="javascript:;" class="bt view">내 리뷰 보기</a></div>
+	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -45,7 +45,7 @@
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="javascript:;" class="bt view">내 리뷰 보기</a></div>
+	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -69,5 +69,5 @@
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="javascript:;" class="bt view">내 리뷰 보기</a></div>
+	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>
