@@ -429,10 +429,11 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .uiTab.a{position:relative;height:40px;box-sizing:border-box;display: flex;}
 .uiTab.a:after{clear:both;content:"";display:block;font-size:0;height:0;line-height:0;visibility:hidden}
 .uiTab.a>li{position:relative;width:100%;}
-.uiTab.a>li>a{font-size: 13px;color:#333333;border:#cccccc solid 1px;background-color:#ffffff;border-width: 1px 0px;padding:0 7px;min-width:100px;height:40px;line-height: 35px;text-align:center;display: flex;font-family:"BlairMd";align-items: center;justify-content: center;text-transform: uppercase;}
+.uiTab.a>li>a{font-size: 13px;color:#333333;border:#cccccc solid 1px;background-color:#ffffff;border-width: 1px 0px 1px  1px;padding:0 7px;min-width:100px;height:40px;line-height: 35px;text-align:center;display: flex;font-family:"BlairMd";align-items: center;justify-content: center;text-transform: uppercase;}
+.uiTab.a>li:first-child>a{border-left-width: 0px;}
 .uiTab.a>li:last-child>a{}
-.uiTab.a>li.active>a{background-color: #70f5c4;color: #000000;border-bottom-width:0px;border-top-width: 0;}
-.uiTab.a>li.active + li>a{}
+.uiTab.a>li.active>a{background-color: #70f5c4;color: #000000;border-bottom-width:0px;border-top-width: 0; border-left-width: 0;}
+.uiTab.a>li.active + li>a{border-left-width: 0px;}
 
 
 /* 아코디언 UI */
@@ -689,10 +690,10 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 /* 팝업 레이어 typeB */
 .popLayer.b{white-space:nowrap;text-align:center;font-size: 0px;padding: 10px 0px;}
 .popLayer.b::after{content: '';width:0;height:100%;display:inline-block;vertical-align:middle;}
-.popLayer.b .pbd{ font-size:16px;display:inline-block;max-width: calc(100% - 30px);vertical-align: middle;text-align:left;white-space:normal;padding-top: 0;width: 100%;}
+.popLayer.b .pbd{font-size:16px;display:inline-block;max-width: calc(100% - 30px);vertical-align: middle;text-align:left;white-space:normal;padding-top: 0;width: 100%;}
 .popLayer.b .phd{position: relative;border-bottom-color: #c7c7c7;/* transform: translateY(110%);transition: transform 0.3s ease 0s; */}
 .popLayer.b .phd>.in{ position:relative;}
-.popLayer.b .phd .tit{ font-size: 18px;}
+.popLayer.b .phd .tit{font-size: 16px;}
 .popLayer.b .phd button.close{ background-image: url(../images/common/popLayerClose.png)}
 .popLayer.b .pct{max-height: 240px;min-height: 70px;}
 .popLayer.b .pct .poptents{}

@@ -585,51 +585,82 @@ body.my.list .header .bts .hisback{display:block;}
 
 /* 리워드 관리 */
 .contain.reward{}
-.contain.reward .sec_h1{ padding: 24px 0 33px; font-size: 16px; text-align: center; }
+.contain.reward .sec_h1{padding: 35px 0 33px;font-size: 16px;text-align: center; font-family:"BlairMd";}
 .contain.reward .sec_h1 .sub_pt{ display: inline-block; font-size: 16px; text-align: center; border-bottom: 1px solid #000; }
 .contain.reward .uiTab.a>li>a{padding: 0;}
 .contain.reward .uiTabPan .panel{padding: 0;border:0}
 .contain.reward .uiTabPan .pt_wrap{ overflow: hidden; position: relative; padding: 30px 20px;}
+.contain.reward .uiTabPan .pt_wrap h2{margin-bottom: 8px; font-family:"BlairMd";}
 .contain.reward .uiTabPan .pt_wrap dl{float: left; width: 35%;}
 .contain.reward .uiTabPan .pt_wrap dt{font-size: 12px;}
-.contain.reward .uiTabPan .pt_wrap .point_val{line-height: 40px}
+.contain.reward .uiTabPan .pt_wrap .point_val{line-height: 40px; font-family:"BlairMd";}
 .contain.reward .uiTabPan .pt_wrap .point_inp{ display: inline-block; width: 100%; margin-right: -15px;}
 .contain.reward .uiTabPan .pt_wrap .point_inp input{font-family: "BlairMd";}
-.contain.reward .uiTabPan .pt_wrap .btn{position: absolute; bottom: 30px; right: 20px;}
+.contain.reward .uiTabPan .pt_wrap .btn{position: absolute;bottom: 30px;right: 20px;padding: 0px 10px;font-size: 14px;}
 .contain.reward .uiTabPan .info_txt{ padding: 0 20px 30px; font-size: 12px; color: #999; text-align: center;}
 .contain.reward .uiTabPan .info_txt .require{ display: inline-block; color: #000; border-bottom: 1px solid #000;  font-weight: 100;}
-.contain.reward .uiTabPan .add_info{padding: 30px 20px; border-top: 1px solid #000;}
-.contain.reward .uiTabPan .add_info > p{ font-size: 12px; font-weight: normal; color: #999; }
+.contain.reward .uiTabPan .add_info{padding: 20px 20px 30px 20px;border-top: 1px solid #000;}
+.contain.reward .uiTabPan .add_info>strong{font-size: 13px;font-weight: normal;margin-bottom: 5px;display: block;}
+.contain.reward .uiTabPan .add_info>p{font-size: 11px;font-weight: normal;color: #999;}
+.contain.reward .uiTabPan .add_info>p span{ font-family:"BlairMd";}
 .contain.reward .uiTabPan .h_grp{padding: 30px 20px 15px;}
-.contain.reward .uiTabPan .h_grp > h2{padding: 0 0 14px;}
+.contain.reward .uiTabPan .h_grp>h2{padding: 0 0 14px; font-family:"BlairMd";}
 .contain.reward .uiTabPan .uiTab.b{ position: relative; box-sizing: border-box; display: flex; height: 33px;}
 .contain.reward .uiTabPan .uiTab.b>li{ position: relative; width: 100%;padding: 0 1px 0 0;}
 .contain.reward .uiTabPan .uiTab.b>li:last-child{ padding: 0;}
 .contain.reward .uiTabPan .uiTab.b>li>a{ min-width: auto; height: 33px; background: #d2d2d2; color: #fff; border-width: 1px 0px; font-size: 13px; line-height: 35px; text-align: center; display: flex; font-family: "BlairMd"; align-items: center; justify-content: center; text-transform: uppercase; }
 .contain.reward .uiTabPan .uiTab.b>li.active>a{background-color: #70f5c4; color: #000000; border-bottom-width: 0px; border-top-width: 0;}
 .contain.reward .uiTabPan .pt_list{border-top: 1px solid #000;}
-.contain.reward .uiTabPan .pt_list > ul > li{ display: flex; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid #000;  font-size: 11px; }
-.contain.reward .uiTabPan .pt_list > ul > li .info01{text-align: left;}
-.contain.reward .uiTabPan .pt_list > ul > li .info01 .date{color: #999;}
-.contain.reward .uiTabPan .pt_list > ul > li .info01 .bank{display: block;}
-.contain.reward .uiTabPan .pt_list > ul > li .info02{text-align: right;}
-.contain.reward .uiTabPan .pt_list > ul > li .info02 .point{display: block;color: #999;}
-.contain.reward .uiTabPan .pt_list > ul > li .info02 .total_pt{display: block;}
-.contain.reward .uiTabPan .pt_list > ul > li .info02 .total_pt >strong{font-size: 13px;}
+.contain.reward .uiTabPan .pt_list>ul>li{ display: flex; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid #000;  font-size: 11px; }
+.contain.reward .uiTabPan .pt_list>ul>li .info01{text-align: left;}
+.contain.reward .uiTabPan .pt_list>ul>li .info01 .date{color: #999;}
+.contain.reward .uiTabPan .pt_list>ul>li .info01 .bank{display: block;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02{text-align: right;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02 .point{display: block;color: #999;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02 .total_pt{display: block;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02 .total_pt >strong{font-size: 13px;}
 .contain.reward .uiTabPan .acc_has{padding: 0 20px 15px;}
 .contain.reward .uiTabPan .acc_has .p_txt{font-size: 11px;}
-.contain.reward .uiTabPan .form_wrap{ display: flex; justify-content: space-between; margin: 35px 0 0 0;}
-.contain.reward .uiTabPan .form_wrap > select{flex-basis: 104px; border-bottom: 1px solid #000;}
-.contain.reward .uiTabPan .form_wrap > .inp_wrap{flex-grow: 1; margin: 0 0 0 20px;}
+.contain.reward .uiTabPan .acc_less{padding-bottom: 20px;}
+.contain.reward .uiTabPan .form_wrap{display: flex;justify-content: space-between;margin: 30px 0 0 0;}
+.contain.reward .uiTabPan .form_wrap>select{flex-basis: 104px;border-bottom: 1px solid #000;}
+.contain.reward .uiTabPan .form_wrap>.inp_wrap{flex-grow: 1;margin: 0 0 0 20px;}
 
-.contain.reward .uiTabPan .acc_less .ing_account{padding: 15px 20px; font-size: 11px; border-top: 1px solid #0e0405; border-bottom: 1px solid #0e0405;}
-.contain.reward .uiTabPan .acc_less .ing_account > li{ display: flex; justify-content: space-between; }
-.contain.reward .uiTabPan .acc_less .ing_account > li .info01 > span{display: block;}
-.contain.reward .uiTabPan .acc_less .ing_account > li .acc_num{align-self: center}
-.contain.reward .uiTabPan .acc_less .form_wrap{ flex-wrap: wrap; margin: 0;padding: 0 20px; }
-.contain.reward .uiTabPan .acc_less .form_wrap > label{flex-basis:100%; padding-top: 20px; font-size: 12px;}
+.contain.reward .uiTabPan .ing_account{padding: 15px 20px;font-size: 11px;border-top: 1px solid #0e0405;border-bottom: 1px solid #0e0405;margin: 0px -20px;}
+.contain.reward .uiTabPan .ing_account>li{ display: flex; justify-content: space-between; }
+.contain.reward .uiTabPan .ing_account>li .info01>span{display: block;}
+.contain.reward .uiTabPan .ing_account>li .acc_num{align-self: center}
+
+/* .contain.reward .uiTabPan .acc_less .form_wrap{ flex-wrap: wrap; margin: 0;padding: 0 20px; }
+.contain.reward .uiTabPan .acc_less .form_wrap>label{flex-basis:100%; padding-top: 20px; font-size: 12px;} */
+
+.contain.reward .panel.sett{}
+.contain.reward .panel.sett .form_wrap{}
+.contain.reward .panel.sett .form_wrap .inp_wrap{}
+.contain.reward .panel.sett .form_wrap .inp_wrap .input{font-family:"BlairMd","NotoSansCJKkr";color: #181818;}
+.contain.reward .panel.sett .form_wrap .inp_wrap .input::-webkit-input-placeholder{ color: #181818;}
+.contain.reward .panel.sett .form_wrap .select{font-family:"BlairMd","NotoSansCJKkr";  padding-right: 0;width: 160px;}
+.contain.reward .panel.sett .h_grp{padding-bottom: 5px;}
+.contain.reward .panel.sett .p_txt{margin-bottom:20px;}
+
 
 .font_blairMd{font-family: "BlairMd";}
+
+/* 리워드 기간선택 */
+.popRwRange{}
+.popRwRange .pbd{width: 280px !important;}
+.popRwRange .phd .tit{font-weight:bold; text-align: center; padding-top: 15px;}
+.popRwRange .phd>.in{justify-content: center;}
+.popRwRange .phd .tit .s{font-weight:normal;font-size: 11px;color: #999999;}
+.popRwRange .dates{display:flex;justify-content: center;align-content: center;padding: 40px 10px 60px 10px;}
+.popRwRange .dates .sels{border: #cccccc solid 1px; border-width: 1px 0px; margin: 0px 10px; padding: 0px 10px;}
+.popRwRange .dates .sels .select{height:30px;color: #000000;}
+.popRwRange .dates .sels .select.yy{}
+.popRwRange .dates .sels .select.mm{}
+.popRwRange>.pbd>.pbt .bts .btn{ border-width:1px 0px  0px  0px;}
+.popRwRange .btnPopClose{display:none;}
+
+
 
 
 /* 쇼핑 내역 */

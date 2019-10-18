@@ -232,11 +232,11 @@
 						<mark>../../html/setting/pwMod.jsp</mark>
 					</li>
 					<li>
-						<h4>쇼핑 내역</h4> <em>ing</em>
+						<h4>쇼핑 내역</h4> <em>new</em>
 						<mark>../../html/setting/my_review.jsp</mark>
 					</li>
 					<li>
-						<h4>내 리워드 관리</h4> <em>ing</em>
+						<h4>내 리워드 관리</h4> <em>new</em>
 						<mark>../../html/setting/myreward.jsp</mark>
 					</li>
 					<li>

@@ -344,6 +344,7 @@
 			<ul class="uiTab type a">
 				<li class="active"><a href="javascript:;">탭메뉴1</a></li>
 				<li><a href="javascript:;">탭메뉴2</a></li>
+				<li><a href="javascript:;">탭메뉴3</a></li>
 			</ul>
 			
 			<p class="gap"></p>
