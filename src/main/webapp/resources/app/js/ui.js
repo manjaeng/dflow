@@ -406,7 +406,7 @@ var ui = {
 		tag:{
 			init:function(){
 				$(document).on("click",".uiPhoto .btsTag .bt.tag",function(e){
-					console.log("564456");
+					// console.log("564456");
 					var thisPhoto = $(this).closest(".uiPhoto");
 					if( thisPhoto.hasClass("active") ) {
 						thisPhoto.removeClass("active");
@@ -428,6 +428,20 @@ var ui = {
 			this.spinner.init();
 			this.star.init();
 			this.placeholder.init();
+			this.select.init();
+		},
+		select:{
+			init:function(){
+				$(document).on("change",".select",function(e){
+					console.log( $(this).find("option:selected[data-value]").data("value")   ); 
+				
+					if ($(this).find("option:selected[data-value]").data("value") == "selected") {
+						$(this).removeClass("seled");
+					}else{
+						$(this).addClass("seled");
+					}
+				});
+			}
 		},
 		placeholder:{ // uiIptPlc
 			init:function(){

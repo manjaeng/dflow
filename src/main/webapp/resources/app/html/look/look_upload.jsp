@@ -41,7 +41,7 @@
 							</div>
 							<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>
 							<div class="msg">
-								<div class="txt">tap photo <br> to tag items</div>
+								<a href="./look_tag.jsp" class="txt"> tap photo <br> to tag items </a>
 							</div>
 						</li>
 					</ul>
@@ -87,7 +87,7 @@
 				'</div>'+
 				'<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>'+
 				'<div class="msg">'+
-					'<div class="txt">tap photo <br> to tag items</div>'+
+					'<a href="./look_tag.jsp" class="txt"> tap photo <br> to tag items </a>'+
 				'</div>'+
 			'</li>';
 		$("#slideUploadPic .list").append( picHtml );

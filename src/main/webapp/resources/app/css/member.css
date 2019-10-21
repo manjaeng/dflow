@@ -591,29 +591,25 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .panel{padding: 0;border:0}
 .contain.reward .uiTabPan .pt_wrap{ overflow: hidden; position: relative; padding: 30px 20px;}
 .contain.reward .uiTabPan .pt_wrap h2{margin-bottom: 8px; font-family:"BlairMd";}
-.contain.reward .uiTabPan .pt_wrap dl{float: left; width: 35%;}
+.contain.reward .uiTabPan .pt_wrap dl{float: left;width: 33%;}
 .contain.reward .uiTabPan .pt_wrap dt{font-size: 12px;}
-.contain.reward .uiTabPan .pt_wrap .point_val{line-height: 40px; font-family:"BlairMd";}
-.contain.reward .uiTabPan .pt_wrap .point_inp{ display: inline-block; width: 100%; margin-right: -15px;}
-.contain.reward .uiTabPan .pt_wrap .point_inp input{font-family: "BlairMd";}
+.contain.reward .uiTabPan .pt_wrap .point_val{line-height: 40px;/* font-family:"BlairMd"; */}
+.contain.reward .uiTabPan .pt_wrap .point_inp{display: inline-block;width: 100%;margin-right: -15px;}
+.contain.reward .uiTabPan .pt_wrap .point_inp input{/* font-family: "BlairMd"; */}
 .contain.reward .uiTabPan .pt_wrap .btn{position: absolute;bottom: 30px;right: 20px;padding: 0px 10px;font-size: 14px;}
-.contain.reward .uiTabPan .info_txt{ padding: 0 20px 30px; font-size: 12px; color: #999; text-align: center;}
-.contain.reward .uiTabPan .info_txt .require{ display: inline-block; color: #000; border-bottom: 1px solid #000;  font-weight: 100;}
-.contain.reward .uiTabPan .add_info{padding: 20px 20px 30px 20px;border-top: 1px solid #000;}
-.contain.reward .uiTabPan .add_info>strong{font-size: 13px;font-weight: normal;margin-bottom: 5px;display: block;}
-.contain.reward .uiTabPan .add_info>p{font-size: 11px;font-weight: normal;color: #999;}
-.contain.reward .uiTabPan .add_info>p span{ font-family:"BlairMd";}
+.contain.reward .uiTabPan .info_txt{padding: 0 0px 30px;font-size: 12px;color: #999;text-align: center;}
+.contain.reward .uiTabPan .info_txt .require{display: inline-block;/* color: #000; *//* border-bottom: 1px solid #000; */font-weight: 100;text-decoration: underline;}
 .contain.reward .uiTabPan .h_grp{padding: 30px 20px 15px;}
-.contain.reward .uiTabPan .h_grp>h2{padding: 0 0 14px; font-family:"BlairMd";}
+.contain.reward .uiTabPan .h_grp>h2{padding: 0 0 14px;font-family:"BlairMd";}
 .contain.reward .uiTabPan .uiTab.b{ position: relative; box-sizing: border-box; display: flex; height: 33px;}
 .contain.reward .uiTabPan .uiTab.b>li{ position: relative; width: 100%;padding: 0 1px 0 0;}
 .contain.reward .uiTabPan .uiTab.b>li:last-child{ padding: 0;}
 .contain.reward .uiTabPan .uiTab.b>li>a{ min-width: auto; height: 33px; background: #d2d2d2; color: #fff; border-width: 1px 0px; font-size: 13px; line-height: 35px; text-align: center; display: flex; font-family: "BlairMd"; align-items: center; justify-content: center; text-transform: uppercase; }
 .contain.reward .uiTabPan .uiTab.b>li.active>a{background-color: #70f5c4; color: #000000; border-bottom-width: 0px; border-top-width: 0;}
 .contain.reward .uiTabPan .pt_list{border-top: 1px solid #000;}
-.contain.reward .uiTabPan .pt_list>ul>li{ display: flex; justify-content: space-between; padding: 15px 20px; border-bottom: 1px solid #000;  font-size: 11px; }
+.contain.reward .uiTabPan .pt_list>ul>li{display: flex;justify-content: space-between;padding: 10px 20px 15px 20px;border-bottom: 1px solid #000;font-size: 11px;}
 .contain.reward .uiTabPan .pt_list>ul>li .info01{text-align: left;}
-.contain.reward .uiTabPan .pt_list>ul>li .info01 .date{color: #999;}
+.contain.reward .uiTabPan .pt_list>ul>li .info01 .date{color: #999; font-family:"BlairMd";}
 .contain.reward .uiTabPan .pt_list>ul>li .info01 .bank{display: block;}
 .contain.reward .uiTabPan .pt_list>ul>li .info02{text-align: right;}
 .contain.reward .uiTabPan .pt_list>ul>li .info02 .point{display: block;color: #999;}
@@ -631,8 +627,26 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .ing_account>li .info01>span{display: block;}
 .contain.reward .uiTabPan .ing_account>li .acc_num{align-self: center}
 
-/* .contain.reward .uiTabPan .acc_less .form_wrap{ flex-wrap: wrap; margin: 0;padding: 0 20px; }
-.contain.reward .uiTabPan .acc_less .form_wrap>label{flex-basis:100%; padding-top: 20px; font-size: 12px;} */
+.contain.reward .panel.myrw{}
+.contain.reward .panel.myrw .pt_wrap{}
+.contain.reward .panel.myrw .pt_wrap dl{}
+.contain.reward .panel.myrw .pt_wrap dl.dl1{width: 33%;/* margin-right: 10%; */}
+.contain.reward .panel.myrw .pt_wrap dl.dl1 dt{}
+.contain.reward .panel.myrw .pt_wrap dl.dl1 dd{text-align: center;}
+.contain.reward .panel.myrw .pt_wrap dl.dl2{width: 33%;}
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dt{text-align: center;}
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dd{ text-align: center; }
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dd .point_val{display: inline-block;text-align:center;white-space: nowrap;}
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dd .point_val .point_inp{padding: 0 10px 0 10px;border-bottom: #000000 solid 1px;margin-right: 0;}
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dd .point_val .point_inp .input{}
+.contain.reward .panel.myrw .pt_wrap dl.dl2 dd .point_val .point_inp .p{display:inline-block; vertical-align:middle;}
+.contain.reward .panel.myrw .pt_wrap .point_inp{/* padding-right: 20px; */text-align: center;/* width: 100%; */}
+.contain.reward .panel.myrw .pt_wrap .point_inp .input{text-align: right;padding-right: 0px;border-bottom-width: 0px;width: 46px;display: inline-block;}
+.contain.reward .panel.myrw .add_info{}
+.contain.reward .panel.myrw .add_info{padding: 20px 20px 30px 20px;border-top: 1px solid #000;}
+.contain.reward .panel.myrw .add_info>strong{font-size: 13px;font-weight: normal;margin-bottom: 5px;display: block;}
+.contain.reward .panel.myrw .add_info>p{font-size: 11px;font-weight: normal;color: #999; margin: 20px 0px;}
+.contain.reward .panel.myrw .add_info>p span{}
 
 .contain.reward .panel.sett{}
 .contain.reward .panel.sett .form_wrap{}
@@ -641,8 +655,19 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .panel.sett .form_wrap .inp_wrap .input::-webkit-input-placeholder{ color: #181818;}
 .contain.reward .panel.sett .form_wrap .select{font-family:"BlairMd","NotoSansCJKkr";  padding-right: 0;width: 160px;}
 .contain.reward .panel.sett .h_grp{padding-bottom: 5px;}
+.contain.reward .panel.sett .h_grp>h2{font-family:"NotoSansCJKkr"; padding-bottom: 8px; font-size: 13px;}
 .contain.reward .panel.sett .p_txt{margin-bottom:20px;}
-
+.contain.reward .panel.sett .p_txt p{margin: 7px 0px; font-size: 11px;}
+.contain.reward .panel.sett .bk{overflow:hidden;position:relative;margin-top: 40px;}
+.contain.reward .panel.sett .bk .txt{ padding-top: 15px; font-size: 12px; }
+.contain.reward .panel.sett .bk .sel_wrap{float:left;width: 37%;border-bottom:1px solid #000;}
+.contain.reward .panel.sett .bk .sel_wrap .select{}
+.contain.reward .panel.sett .bk .inp_wrap{float:right;width: 57%;}
+.contain.reward .panel.sett .bk .inp_wrap .input{}
+.contain.reward .panel.sett .bk.none{margin-top: 40px;}
+.contain.reward .panel.sett .bk.none .sel_wrap .select{opacity:0.5;font-family:"BlairMd","NotoSansCJKkr";height: 39px;}
+.contain.reward .panel.sett .bk.none .sel_wrap .select.seled{ opacity:1;}
+.contain.reward .panel.sett .bk.set{margin-top: 5px;}
 
 .font_blairMd{font-family: "BlairMd";}
 

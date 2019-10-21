@@ -405,7 +405,7 @@
 /* 상품검색펍업 */
 .popSchItem.c{padding-bottom: 0px;}
 .popSchItem.c .pbd{bottom: 0px;width:100%;border-radius: 10px 10px 0px 0px;padding-top: 59px;}
-.popSchItem.c .pct{max-height: 326px !important;}
+.popSchItem.c .pct{max-height: 313px !important;}
 .popSchItem .sec.formSch{padding-top: 20px;background: #ffffff;z-index: 10;position: fixed;top: 0;}
 .popSchItem .sec.formSch .sch{margin: 0 16px;position:relative;}
 .popSchItem .sec.formSch .sch::before{color: #ff424d;font-family:"BlairMd";font-size: 20px;position:absolute;left:45px;top: 6px;}
@@ -414,8 +414,8 @@
 .popSchItem .sec.formSch .sch .bt.sch{display:none;}
 .popSchItem .sec.formSch .sch .bt.cancel{position:absolute;right: 1px;top: 13px;width: 25px;height: 16px;background:url(../images/common/recent_kwd_del.png) no-repeat;background-size: 100% auto;font-size: 0px;}
 
-.popSchItem .itemList{padding: 35px 0px;}
-.popSchItem .itemList .msgs{text-align: center;padding: 133px 0px;font-family:"BlairMd";}
+.popSchItem .itemList{padding: 30px 0px;}
+.popSchItem .itemList .msgs{text-align: center;padding: 114px 0px;font-family:"BlairMd";}
 .popSchItem .tlist{display:block;;position: relative;padding: 0 0px 0px 0px;}
 .popSchItem .tlist>li{margin-top: 13px;padding: 0px 20px;}
 .popSchItem .tlist>li:first-child{margin-top: 0px;}

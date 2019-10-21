@@ -36,26 +36,31 @@
                             <div class="tab_ct">
                                 <div class="pt_wrap">
                                     <h2 class="tit">REWARD EXCHANGE</h2>
-                                    <dl>
+                                    <dl class="dl1">
                                         <dt>지급 가능 포인트</dt>
                                         <dd><span class="point_val">65,000P</span></dd>
                                     </dl>
-                                    <dl>
+                                    <dl class="dl2">
                                         <dt>지급 신청 포인트</dt>
-                                        <dd ><span class=""><span class="point_inp"><input type="text" class="input" placeholder="12,000"></span>P</span></dd>
+                                        <dd >
+                                            <span class="point_val">
+                                                <span class="point_inp"><input type="text" class="input" value="65,000"><em class="p">P</em></span>
+                                            </span>
+                                        </dd>
                                     </dl>
                                     <a href="javascript:;" class="btn c sm">신청하기</a>
                                 </div>
-                                <p class="info_txt">리워드는 <span class="font_blairMd">10,000P</span> 이상부터, <span class="font_blairMd">1,000P</span> 단위로 지급 신청 가능합니다.
-                                    <br><strong class="require">리워드 지급을 위해서는 계좌 설정이 필요합니다.</strong>
+                                <p class="info_txt">리워드는 <span class="p">10,000P</span> 이상부터, <span class="p">1,000P</span> 단위로 지급 신청 가능합니다.
+                                    <br>리워드 지급을 위해서는 <strong class="require">계좌 설정</strong>이 필요합니다.
                                 </p>
 
                                 <div class="add_info">
                                     <strong>리워드란?</strong>
-                                    <p>회원님의 <span class="s">FAPEE</span> 활동으로 인한 홍보 효과에 대하여 <span class="s">FAPEE</span>와 제휴 쇼핑몰에서 드리는 소정의 포인트입니다.<br><br>
-                                    해당 포인트는 현금화하실 수 있으며 이를 위한 계좌 입금 신청 절차를 수행하시면 FAPEE에서 회원님의 계좌로 리워드를 지급해드립니다.<br><br>
-                                    신청은 <span class="s">10,000P</span>부터 <span class="s">1,000P</span> 단위로 가능합니다. <br><span class="s">1P</span> = 1원이며 포인트는 타인에게 양도하거나 대여할 수 없습니다.<br><br>
-                                    리워드는 매달 <span class="s">00</span>일 합산되어 당월 <span class="s">00</span>일에 회원님의 계좌로 입금됩니다.</p>
+                                    <p>회원님의 FAPEE 활동으로 인한 홍보 효과에 대하여<br> FAPEE와 제휴 쇼핑몰에서 드리는 소정의 포인트입니다.</p>
+                                    <p>해당 포인트는 현금화하실 수 있으며<br> 이를 위한 계좌 입금 신청 절차를 수행하시면<br> FAPEE에서 회원님의 계좌로 리워드를 지급해드립니다.</p>
+                                    <p>신청은 10,000P부터 1,000P 단위로 가능합니다. </p>
+                                    <p>1P = 1원이며 포인트는 타인에게 양도하거나 대여할 수 없습니다.</p>
+                                    <p>리워드는 매달 00일 합산되어<br> 당월 00일에 회원님의 계좌로 입금됩니다.</p>
                                 </div>
 
                             </div>
@@ -87,11 +92,31 @@
                                     <h2>리워드 계좌 관리</h2>
                                 </div>
                                 
-                                <div class="acc_has">
-                                    <!-- 개발자 전달 : 등록된 계좌 없을 시 -->
-                                    <p class="p_txt">회원님은 등록하신 계좌가 없습니다.<br><br>계좌를 등록하시고<br><span class="font_blairMd">FAPEE</span>의 리워드를 받아보세요!</p>
+                                <!-- 개발자 전달 : 등록된 계좌 없을 시 -->
+                                <div class="acc_has" id="testBankNone">
+                                    <div class="p_txt">
+                                        <p>회원님은 등록하신 계좌가 없습니다.</p>
+                                        <p>계좌를 등록하시고<br> FAPEE의 리워드를 받아보세요!</p>
+                                    </div>
+                               
                                     
-                                    <!-- 개발자 전달 : 등록된 계좌 있을 시 -->
+                                    <div class="bk none">
+                                        <div class="sel_wrap">
+                                            <select class="select">
+                                                <option selected data-value="selected">은행선택</option>
+                                                <option>KB국민은행</option>
+                                                <option>우리은행</option>
+                                            </select>
+                                        </div>
+                                        <span class="inp_wrap">
+                                            <input type="text" class="input" placeholder="계좌번호 입력">
+                                        </span>
+                                    </div>
+                                </div>
+                                
+                                <!-- 개발자 전달 : 등록된 계좌 있을 시 -->
+                                <div class="acc_has" id="testBankSet" style="display: none;">
+
                                     <ul class="ing_account">
                                         <li>
                                             <div class="info01">
@@ -103,13 +128,15 @@
                                         </li>
                                     </ul>
                                     
-                                    
-                                    <div class="form_wrap">
-                                        <select class="select">
-                                            <option selected disabled>은행선택</option>
-                                            <option>KB국민은행</option>
-                                            <option>우리은행</option>
-                                        </select>
+                                    <div class="bk set">
+                                        <div class="txt">계좌 변경 시</div>
+                                        <div class="sel_wrap">
+                                            <select class="select">
+                                                <option >은행선택</option>
+                                                <option selected>KB국민은행</option>
+                                                <option>우리은행</option>
+                                            </select>
+                                        </div>
                                         <span class="inp_wrap">
                                             <input type="text" class="input" placeholder="계좌번호 입력">
                                         </span>
@@ -119,7 +146,7 @@
                                 <div class="botFixed">
                                     <div class="in">
                                         <div class="btnSet fit">
-                                            <a href="javascript:;" class="btn xl b fill btnNext">확인</a>
+                                            <a href="javascript:;" class="btn xl b fill btnNext" onclick="$('#testBankNone').hide(); $('#testBankSet').show(); ">확인</a>
                                         </div>
                                     </div>
                                 </div>
@@ -226,7 +253,7 @@
 		};
 
 
-		
+
 
 	</script>
 	
