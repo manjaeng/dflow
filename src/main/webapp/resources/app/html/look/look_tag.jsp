@@ -137,7 +137,11 @@
 
 	<script>
 	function popSchItem(){
-		ui.popLayer.open('popSchItem');
+		ui.popLayer.open('popSchItem',{
+			ocb:function(){
+				$("#input_kwd").val("").trigger("input");
+			}
+		});
 	};
 	
 	function search_item(){

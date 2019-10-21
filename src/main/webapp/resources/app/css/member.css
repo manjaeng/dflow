@@ -632,7 +632,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .panel.myrw .pt_wrap dl{}
 .contain.reward .panel.myrw .pt_wrap dl.dl1{width: 33%;/* margin-right: 10%; */}
 .contain.reward .panel.myrw .pt_wrap dl.dl1 dt{}
-.contain.reward .panel.myrw .pt_wrap dl.dl1 dd{text-align: center;}
+.contain.reward .panel.myrw .pt_wrap dl.dl1 dd{text-align: center;padding-top: 3px;}
 .contain.reward .panel.myrw .pt_wrap dl.dl2{width: 33%;}
 .contain.reward .panel.myrw .pt_wrap dl.dl2 dt{text-align: center;}
 .contain.reward .panel.myrw .pt_wrap dl.dl2 dd{ text-align: center; }
