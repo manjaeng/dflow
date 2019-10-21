@@ -21,7 +21,8 @@
 		<main id="contents" class="contents">
 			
 			<section>
-                <h1 class="sec_h1 ">MY REWARD POINT
+                <h1 class="sec_h1 ">
+                    <span class="tit">MY REWARD POINT</span>
                     <span class="sub_pt ">TOTAL <span>65,350</span>P</span>
                 </h1>
                 
@@ -48,7 +49,7 @@
                                             </span>
                                         </dd>
                                     </dl>
-                                    <a href="javascript:;" class="btn c sm">신청하기</a>
+                                    <a href="javascript:;" class="btn c sm" onclick="testRegRwd();">신청하기</a>
                                 </div>
                                 <p class="info_txt">리워드는 <span class="p">10,000P</span> 이상부터, <span class="p">1,000P</span> 단위로 지급 신청 가능합니다.
                                     <br>리워드 지급을 위해서는 <strong class="require">계좌 설정</strong>이 필요합니다.
@@ -204,6 +205,16 @@
 	</div>
 
     <script>
+        var testRegRwd = function(){
+            ui.confirm({
+                msg:"<p>리워드 지급 신청을 위해서는 <br> 계좌 설정이 필요합니다.<br> 확인 버튼을 누르면 <br>계좌 설정 화면으로 이동 합니다.</p>",
+                ycb:function(){
+                    ui.tab.set( "tabPanelA3");
+                }
+            });
+        }
+
+
         var rewTabFnc = function(opt){  // 
             $("#his_list").empty();
             $(".uiLoadMore").addClass("active");

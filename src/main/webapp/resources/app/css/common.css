@@ -668,7 +668,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .popLayer{display:none;position:fixed;left:0px;right:0px;top:0px;bottom:0;z-index:1000;background-color: rgba(0,0,0,0.52);outline:none;}
 .popLayer>.pbd{background: #ffffff;position:relative;overflow: hidden;/* padding-top:50px; */min-width: 200px;}
 .popLayer>.pbd>.phd{height: 60px;position: relative;z-index: 90;}
-.popLayer>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 60px;background-color: #ffffff;box-sizing:border-box;/* border-bottom: #c7c7c7 solid 1px; */display: flex;align-items: center;}
+.popLayer>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 57px;background-color: #ffffff;box-sizing:border-box;/* border-bottom: #c7c7c7 solid 1px; */display: flex;align-items: center;}
 .popLayer>.pbd>.phd .tit{font-size: 20px;color:#000000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left: 15px;width: 100%;text-align: center;padding-top: 5px;}
 .popLayer>.pbd>.phd>.in>.btnPopClose,
 .popLayer>.pbd>.btnPopClose{position:absolute;right: 15px;top: 17px;width: 32px;height: 32px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 100% auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}

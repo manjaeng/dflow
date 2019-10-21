@@ -241,7 +241,18 @@
 
 		},
 		togDev: function () { // F4 키
-
+			var tUrl = window.location.href;
+			var tPort = window.location.port;
+			var tHost = window.location.host;
+			var tOrg = window.location.origin;
+			var tIp = window.location.hostname;
+			//console.log(tPort, tUrl);
+			if(tPort == "8081"){
+				location.href = tUrl.replace(tHost,"fapee.thenet-global.com:20080");
+			}
+			if(tOrg == "http://fapee.thenet-global.com:20080"){
+				location.href = tUrl.replace(tOrg,"http://10.120.180.246:8081");
+			}
 
 		}
 	}

@@ -543,6 +543,9 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.memdis .guds .t{font-size: 11px; color: #999999; padding:10px 0px;}
 .contain.memdis .agree{padding:5px 16px 5px 16px; font-size: 13px; border: solid #cccccc; border-width: 1px 0px; margin-bottom: 40px;}
 .contain.memdis .agree label{display:block;}
+
+
+/* 1:1 문의 */
 .contain.qna{}
 .contain.qna .sec.forms{margin:0px 16px; }
 .contain.qna .sec.forms ul.form{}
@@ -572,13 +575,12 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.qna .sec.qna .list + .uiLoadMore{ margin-top:calc(50vh - 110px );}
 .contain.qna .sec.qna .list.load + .uiLoadMore{margin-top:0px;}
 
+/* 1:1 문의 작성 */
 .popQnaWrite{}
 .popQnaWrite .sec.forms{margin:0px 16px;padding-top: 40px;}
 .popQnaWrite .sec.forms ul.form{}
 .popQnaWrite .sec.forms ul.form>li{margin-top: 40px;}
-.popQnaWrite .sec.forms ul.form>li:first-child{
-    margin-top: 0;
-}
+.popQnaWrite .sec.forms ul.form>li:first-child{ margin-top: 0; }
 .popQnaWrite .sec.forms ul.form>li .dt{font-family:"BlairMd";}
 .popQnaWrite .sec.forms ul.form>li .dt .select{ width:auto;}
 .popQnaWrite .sec.forms ul.form>li .dt input,
@@ -619,6 +621,7 @@ body.my.list .header .bts .hisback{display:block;}
 /* 리워드 관리 */
 .contain.reward{}
 .contain.reward .sec_h1{padding: 35px 0 33px;font-size: 16px;text-align: center; font-family:"BlairMd";}
+.contain.reward .sec_h1 .tit{display:block;}
 .contain.reward .sec_h1 .sub_pt{ display: inline-block; font-size: 16px; text-align: center; border-bottom: 1px solid #000; }
 .contain.reward .uiTab.a>li>a{padding: 0;}
 .contain.reward .uiTabPan .panel{padding: 0;border:0}
