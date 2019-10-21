@@ -34,7 +34,7 @@
 			</section>
 
 			<section class="sec write">
-				<div class="box">
+				<div class="box" id="reply_form">
 					<div class="pic"><div class="img"><img src="//placeimg.com/72/96/1" alt="사진"></div></div>
 					<div class="write">
 						<textarea class="ment"placeholder="댓글달기" id="input_reply"></textarea>
@@ -106,7 +106,14 @@
 
 
 	var testFncRply = function(){
-		$("#input_reply").focus().val("@JENNY ");
+		// $("#reply_form .write").prepend('<span class="name">JENNY</span>').addClass("mention");
+		$("#input_reply").focus().val("JENNY  ");
+	}
+	var testFncRpDel = function(){
+		
+		ui.confirm({
+			msg:"삭제하시겠습니까?"
+		});
 	}
 
 	

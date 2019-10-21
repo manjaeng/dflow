@@ -71,7 +71,7 @@
 							<div class="msgs" id="search_msg">Search  Your Items</div>
 							<ul class="tlist" id="search_res" style="display: none;">
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -80,7 +80,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -89,7 +89,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -98,7 +98,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -107,7 +107,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -116,7 +116,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="javascript:;" class="item" onclick="ui.popLayer.close('popSchItem');">
+									<a href="javascript:;" class="item" onclick="popSchItemSel();">
 										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
 										<div class="info">
 											<div class="name">호피무늬 스커트</div>
@@ -140,8 +140,14 @@
 		ui.popLayer.open('popSchItem',{
 			ocb:function(){
 				$("#input_kwd").val("").trigger("input");
+			},
+			ccb:function(){
+				$(".pageHd .bts .save").addClass("active");
 			}
 		});
+	};
+	function popSchItemSel(){
+		ui.popLayer.close('popSchItem');
 	};
 	
 	function search_item(){

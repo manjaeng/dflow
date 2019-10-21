@@ -224,7 +224,9 @@
 .contain.comment .sec.comt ul.list>li .comts .ment .info{font-size: 11px;display:flex;margin-top: 0px;}
 .contain.comment .sec.comt ul.list>li .comts .ment .info .time{color: #999999;padding:5px 0; margin-right: 15px;}
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns{}
+.contain.comment .sec.comt ul.list>li .comts .ment .info .btns .bt + .bt{margin-left: 10px;}
 .contain.comment .sec.comt ul.list>li .comts .ment .info .btns .bt.rp{color: #999999; display: inline-block;padding:5px 0;}
+.contain.comment .sec.comt ul.list>li .comts .ment .info .btns .bt.del{color: #999999; display: inline-block;padding:5px 0;}
 
 .contain.comment .sec.comt ul.list>li ul{margin-left: 40px;margin-top: 10px;}
 .contain.comment .sec.comt ul.list>li ul li{margin-top: 0px;}
@@ -245,6 +247,7 @@
 .contain.comment .sec.write .box .pic .img img{object-fit: cover;border-radius: 100%;position:absolute;left:0px;top: 0px;height: 100%;width: 100%;}
 .contain.comment .sec.write .box .write{margin: 0px 0 0px 52px;position:relative;padding: 11px 0 14px 0;}
 .contain.comment .sec.write .box .write::before{content:"";width:1px;/* height:22px; */background: #dddddd;position:absolute;left:0px;bottom: 14px;top: 14px;}
+.contain.comment .sec.write .box .write .name{position:absolute; left: 0; top: 1px;}
 .contain.comment .sec.write .box .write .ment{border: none;padding: 4px 80px 4px 10px;font-size: 13px;height: 30px;width: 100%;outline: none;resize: none;line-height: 170%;max-height: 185px;}
 .contain.comment .sec.write .box .write .send{width:90px;height:55px;position:absolute;right: 0px;bottom: 0px;color: #70f5c4;display:flex;align-items: center;justify-content: center;font-family:"BlairMd";font-size: 13px;}
 

@@ -400,7 +400,9 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .pageHd .bts .bt{}
 .pageHd .bts .hisback{position:absolute;left: 10px; top: 0px; width:44px;height:44px;display:block;background:url(../images/common/hisback.png) no-repeat;background-size:100% auto;font-size:0px;}
 .pageHd .bts .close{position:absolute;right: 5px; top: 0px; width:44px;height:44px;display:block;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 20px auto;font-size:0px;}
-.pageHd .bts .save{position:absolute;right: 10px;top: 0px;width:44px;height:44px;display:block;background: url(../images/common/btn_save.png) no-repeat center;background-size: 100% auto;font-size:0px;}
+.pageHd .bts .save{position:absolute;right: 10px;top: 0px;width:44px;height:44px;display:block;background: url(../images/common/btn_save.png) no-repeat ;background-size: 100% auto;font-size:0px;}
+.pageHd .bts .save.active{background-position-y: -50px;}
+.pageHd .bts .write{position:absolute;right: 10px;top: 0px;width:44px;height:44px;display:block;background: url(../images/common/btn_write.png) no-repeat ;background-size: 100% auto;font-size:0px;}
 .pageHd .tit{margin: 0 50px;font-size: 19px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;font-family: "BlairMd","NotoSansCJKkr";text-align: center;display: block;width: 100%;text-transform: uppercase;}
 .pageHd .set{position:absolute;right: 12px;top: calc(15px + env(safe-area-inset-top) );overflow:hidden;}
 .pageHd .set .bt{width: 32px;height: 32px;background: no-repeat;background-size:100% auto;font-size:0px;float: left;margin-left: 10px;}
@@ -440,7 +442,7 @@ html.lock {/* position: fixed; *//* width: 100%; *//* height: 100%; *//* overflo
 .uiAccd{}
 .uiAccd>li{border-bottom: #000000 solid 1px;}
 .uiAccd>li:first-child{border-top: #000000 solid 1px;}
-.uiAccd>li .hBox{padding: 8px 110px 9px 20px;position:relative;font-family: "BlairMd","NotoSansCJKkr";}
+.uiAccd>li .hBox{padding: 8px 20px 9px 99px;position:relative;font-family: "BlairMd","NotoSansCJKkr";}
 .uiAccd>li .hBox .btnTog{display:block;position:absolute;right:0px;top:0px;bottom:0px;padding: 12px;width:100%;font-size: 0px;box-sizing:border-box;text-align:right;background: none;border: none;}
 .uiAccd>li .hBox .btnTog:before{width:40px;height: 40px;background: url(../images/common/accd_ar.png) center 2px;background-size: 32px auto;position:absolute;right: 5px;top:0px;content:"";}
 .uiAccd>li.open .hBox{/* font-weight: bold; */}
@@ -665,11 +667,11 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 /* 팝업 레이어 */
 .popLayer{display:none;position:fixed;left:0px;right:0px;top:0px;bottom:0;z-index:1000;background-color: rgba(0,0,0,0.52);outline:none;}
 .popLayer>.pbd{background: #ffffff;position:relative;overflow: hidden;/* padding-top:50px; */min-width: 200px;}
-.popLayer>.pbd>.phd{height: 50px;position: relative;z-index: 90;}
-.popLayer>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 50px;background-color: #ffffff;box-sizing:border-box;/* border-bottom: #c7c7c7 solid 1px; */display: flex;align-items: center;}
-.popLayer>.pbd>.phd .tit{font-size: 20px;color:#000000;font-family:"CJ Medium";white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left: 15px;}
+.popLayer>.pbd>.phd{height: 60px;position: relative;z-index: 90;}
+.popLayer>.pbd>.phd>.in{position:fixed;left:0px;right:0px;top:0px;z-index:10;height: 60px;background-color: #ffffff;box-sizing:border-box;/* border-bottom: #c7c7c7 solid 1px; */display: flex;align-items: center;}
+.popLayer>.pbd>.phd .tit{font-size: 20px;color:#000000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left: 15px;width: 100%;text-align: center;padding-top: 5px;}
 .popLayer>.pbd>.phd>.in>.btnPopClose,
-.popLayer>.pbd>.btnPopClose{position:absolute;right: 15px;top: 8px;width: 32px;height: 32px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 100% auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}
+.popLayer>.pbd>.btnPopClose{position:absolute;right: 15px;top: 17px;width: 32px;height: 32px;text-indent:-9999px;overflow:hidden;background: url(../images/common/popLayerClose.png) no-repeat center;background-size: 100% auto;background-color:transparent;border:none;padding:0;cursor: pointer;z-index: 100;}
 .popLayer>.pbd>.pct{position: relative;}
 .popLayer>.pbd>.pbt{position:relative;width:100%;min-height: 40px;}
 .popLayer>.pbd>.pbt .bts {width:100%;display: flex;}

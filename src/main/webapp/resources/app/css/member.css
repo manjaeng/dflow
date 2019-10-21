@@ -555,6 +555,39 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.qna .sec.forms ul.form>li.memo .dd{margin: 10px -16px 0;}
 .contain.qna .sec.forms ul.form>li .dd .textarea{height:150px;padding: 9px 20px 9px 20px; border-color: #000000; border-width: 1px 0px;}
 
+.contain.qna{}
+.contain.qna .sec.qna{padding-top: 30px;}
+.contain.qna .sec.qna .list{ }
+.contain.qna .sec.qna .list>li .hBox{}
+.contain.qna .sec.qna .list>li .hBox .tit{max-width: calc(100% - 84px);vertical-align:middle;display:inline-block;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-family:"NotoSansCJKkr";}
+.contain.qna .sec.qna .list>li .hBox .date{color: #999999;font-size: 11px;position: absolute;left: 16px;width: 71px;text-align: right;top: 12px;}
+.contain.qna .sec.qna .list>li .hBox .rpd{display:inline-block;vertical-align:middle;margin-left: 2px;}
+.contain.qna .sec.qna .list>li .cBox{padding: 0;;}
+.contain.qna .sec.qna .list>li .cBox .q{padding: 15px 20px;}
+.contain.qna .sec.qna .list>li .cBox .q .tit{ border-bottom: #000000 solid 1px;padding-bottom: 5px;}
+.contain.qna .sec.qna .list>li .cBox .q .msg{padding: 15px 0px 0px 0px;}
+.contain.qna .sec.qna .list>li .cBox .a{padding: 15px 20px; border-top: #000000 solid 1px;}
+.contain.qna .sec.qna .list>li .cBox .a .tit{}
+.contain.qna .sec.qna .list>li .cBox .a .msg{}
+.contain.qna .sec.qna .list + .uiLoadMore{ margin-top:calc(50vh - 110px );}
+.contain.qna .sec.qna .list.load + .uiLoadMore{margin-top:0px;}
+
+.popQnaWrite{}
+.popQnaWrite .sec.forms{margin:0px 16px;padding-top: 40px;}
+.popQnaWrite .sec.forms ul.form{}
+.popQnaWrite .sec.forms ul.form>li{margin-top: 40px;}
+.popQnaWrite .sec.forms ul.form>li:first-child{
+    margin-top: 0;
+}
+.popQnaWrite .sec.forms ul.form>li .dt{font-family:"BlairMd";}
+.popQnaWrite .sec.forms ul.form>li .dt .select{ width:auto;}
+.popQnaWrite .sec.forms ul.form>li .dt input,
+.popQnaWrite .sec.forms ul.form>li .dt textarea{border: none;}
+.popQnaWrite .sec.forms ul.form>li.memo .dd{margin: 10px -16px 0;}
+.popQnaWrite .sec.forms ul.form>li .dd .textarea{height:150px;padding: 9px 20px 9px 20px; border-color: #000000; border-width: 1px 0px;}
+
+
+
 
 
 .contain.ver{}

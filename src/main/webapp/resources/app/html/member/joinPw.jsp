@@ -24,6 +24,7 @@
 						<span class="plc">PASSWORD</span>
 					</div>
 					<div class="msg_error show" id="msg_sample1">비밀번호 형식을 다시 확인해 주세요.</div>
+					<div class="msg_error show" id="msg_sample2">비밀번호를 입력해 주세요. </div>
 					<div class="msgs">비밀번호는 6자 이상의 영문, 숫자 조합으로 입력해주세요. </div>
 					<!-- <div class="agree">
 						<div class="txt">본인이 만 14세 이상인 것과 서비스 이용약관, <br> <a href="javascript:;">서비스이용약관, 개인정보보호정책</a>에 동의하십니까? </div>

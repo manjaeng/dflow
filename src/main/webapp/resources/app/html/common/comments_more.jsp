@@ -7,7 +7,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요. 미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요. </div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
@@ -48,7 +48,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요.</div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
@@ -61,7 +61,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요.</div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요.</div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요.</div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
@@ -100,7 +100,7 @@
 				<div class="text">미니스커트 어디서 샀는지 정보 좀 알 수 있을까요!  너무 예뻐요! 추가 내용입니다. 내용을 입력해 주세요.</div>
 				<div class="info">
 					<!-- <div class="time">2시간 전</div> -->
-					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a></div>
+					<div class="btns"><a class="bt rp" href="javascript:;" onclick="testFncRply();">답글달기</a> <a class="bt del" href="javascript:;" onclick="testFncRpDel();">삭제하기</a></div>
 				</div>
 			</div>
 		</div>
