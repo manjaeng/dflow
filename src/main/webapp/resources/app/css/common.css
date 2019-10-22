@@ -781,7 +781,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 
 .welcome{height:calc(100vh - 100px); text-align:center; font-family:"BlairMd"; text-transform: uppercase; display:flex; align-items: center; width:100%; align-content: center;}
 .welcome .msg{text-align:center; width:100%;}
-.welcome .msg .tit{font-size: 24px;word-spacing: -2px;letter-spacing: -0.01em;}
+.welcome .msg .tit{font-size: 24px;word-spacing: -2px;letter-spacing: -0.01em;margin-bottom: 20px;}
 .welcome .msg .txt{font-size: 13px;}
 
 
