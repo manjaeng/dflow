@@ -56,7 +56,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<button type="button" class="btn type b fill xl" onclick="location.href = './review_write.jsp';">NEXT</button>
+						<button type="button" class="btn type b fill xl" onclick="location.href = './my_review_write.jsp';">NEXT</button>
 					</div>
 				</div>
 			</section>
