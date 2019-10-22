@@ -139,7 +139,7 @@
                                             </select>
                                         </div>
                                         <span class="inp_wrap">
-                                            <input type="text" class="input" placeholder="계좌번호 입력">
+                                            <input type="text" class="input" placeholder="계좌번호 입력" value="431802-01-221325">
                                         </span>
                                     </div>
                                 </div>
@@ -207,7 +207,8 @@
     <script>
         var testRegRwd = function(){
             ui.confirm({
-                msg:"<p>리워드 지급 신청을 위해서는 <br> 계좌 설정이 필요합니다.<br> 확인 버튼을 누르면 <br>계좌 설정 화면으로 이동 합니다.</p>",
+                msg:"<h1>알림</h1>"+
+                    "<p>리워드 지급 신청을 위해서는 <br> 계좌 설정이 필요합니다.<br> 확인 버튼을 누르면 <br>계좌 설정 화면으로 이동 합니다.</p>",
                 ycb:function(){
                     ui.tab.set( "tabPanelA3");
                 }
