@@ -66,6 +66,9 @@
 			}
 		} catch (error) { }			
 
+		$(document).on("click", ".secLk.look .welcome , .sec.comt .nodata" ,function(e){
+			$(this).remove();
+		});
 
 	},
 	param:(function(a) { // URL에서 파라미터 읽어오기

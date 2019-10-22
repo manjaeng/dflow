@@ -21,6 +21,14 @@
 		<main id="contents" class="contents">
 
 			<section class="sec comt">
+				<div class="nodata">
+					<div class="msg">
+						<p class="txt">
+							There’s <br>
+							no comments yet
+						</p>
+					</div>
+				</div>
 				
 				<ul class="list" id="comment_list">
 					

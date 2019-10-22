@@ -774,10 +774,16 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 
 
 
-.noData{text-align: center;padding: 40px 0;position: relative;display: flex;align-content: center;flex-wrap: wrap;}
-.noData:before{width: 36px;height: 36px;display: block;margin: 0px auto 5px auto;background: url(../images/common/ico_warning.png) no-repeat;background-size: 100% auto;content: "";}
-.noData .tit{font-size: 17px;width: 100%;}
-.noData .msg{font-size: 11px;width: 100%; color: #666666; margin-top: 5px}
+.nodata{height:calc(100vh - 100px); text-align:center; font-family:"BlairMd"; text-transform: uppercase; display:flex; align-items: center; width:100%; align-content: center;}
+.nodata .msg{font-size: 17px;width: 100%;}
+.nodata .msg .tit{font-size: 24px;}
+.nodata .msg .txt{font-size: 13px;}
+
+.welcome{height:calc(100vh - 100px); text-align:center; font-family:"BlairMd"; text-transform: uppercase; display:flex; align-items: center; width:100%; align-content: center;}
+.welcome .msg{text-align:center; width:100%;}
+.welcome .msg .tit{font-size: 24px;word-spacing: -2px;letter-spacing: -0.01em;}
+.welcome .msg .txt{font-size: 13px;}
+
 
 /* 추가 메뉴 */
 .popOthers{}

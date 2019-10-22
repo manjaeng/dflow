@@ -139,7 +139,7 @@
                                             </select>
                                         </div>
                                         <span class="inp_wrap">
-                                            <input type="text" class="input" placeholder="계좌번호 입력" value="431802-01-221325">
+                                            <input type="text" class="input" placeholder="계좌번호 입력" value="43180201221325">
                                         </span>
                                     </div>
                                 </div>

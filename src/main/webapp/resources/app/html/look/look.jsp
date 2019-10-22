@@ -13,6 +13,16 @@
 	<div id="contain" class="contain look list">
 		<main id="contents" class="contents">
 			<section class="secLk look">
+				<div class="welcome">
+					<div class="msg">
+						<h2 class="tit">WELCOME TO FAPEE</h2>
+						<p class="txt">
+							When you follow people, <br>
+							You’ll see the fashions <br>
+							they post here.
+						</p>
+					</div>
+				</div>
 				<ul class="lookList" id="lookList"></ul>
 				<div class="uiLoadMore">
 					<em></em>
