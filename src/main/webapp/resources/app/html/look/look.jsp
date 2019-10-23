@@ -13,7 +13,7 @@
 	<div id="contain" class="contain look list">
 		<main id="contents" class="contents">
 			<section class="secLk look">
-				<div class="welcome">
+				<div class="welcome" style="display: none;">
 					<div class="msg">
 						<h2 class="tit">WELCOME TO FAPEE</h2>
 						<p class="txt">

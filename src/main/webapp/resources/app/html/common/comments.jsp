@@ -21,7 +21,7 @@
 		<main id="contents" class="contents">
 
 			<section class="sec comt">
-				<div class="nodata">
+				<div class="nodata" style="display: none;">
 					<div class="msg">
 						<p class="txt">
 							There’s <br>
