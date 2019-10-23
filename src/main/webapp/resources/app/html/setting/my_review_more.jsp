@@ -5,7 +5,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
@@ -29,7 +29,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
@@ -41,7 +41,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
@@ -53,7 +53,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>
@@ -65,7 +65,7 @@
 		<div class="info">
 			<div class="tit"><a href="javascript:;">레이녹스(맥시라펠더블하프)</a></div>
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
-			<div class="name">@blurryellow55</div>
+			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
 		</div>
 	</div>

@@ -32,7 +32,7 @@
 									<div class="tit">Product NAme</div>
 									<div class="desc">
 										<span class="prc"><em class="w">\</em><span class="p">38,000</span></span>
-										<span class="name">@blurryellow55</span>
+										<span class="name">blurryellow55</span>
 									</div>
 								</div>
 							</div>
