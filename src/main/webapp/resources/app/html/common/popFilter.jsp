@@ -64,8 +64,8 @@
 					<li class="gender">
 						<div class="ht">성별</div>
 						<div class="ct">
-							<label class="radio"><input type="radio" name="filter_gender"><span>여자</span></label>
-							<label class="radio"><input type="radio" name="filter_gender"><span>남자</span></label>
+							<label class="radio"><input type="radio" name="filter_gender"><span>FEMALE</span></label>
+							<label class="radio"><input type="radio" name="filter_gender"><span>MALE</span></label>
 						</div>
 					</li>
 					<li class="country">

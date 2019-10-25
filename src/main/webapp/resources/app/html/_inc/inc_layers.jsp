@@ -395,6 +395,52 @@ function popPrfPicMod(){
 </script>
 
 
+<!-- 사이즈가이드 -->
+<article class="popLayer a popSizeGud" id="popSizeGud">
+	<div class="pbd">
+		<div class="phd">
+			<div class="in">
+				
+				<button type="button" class="btnPopClose">닫기</button>
+			</div>
+		</div>
+		<div class="pct">
+			<main class="poptents">
+				<div class="hdt">SIZE introduction</div>
+				<div class="slideSizeGud" id="slideSizeGud">
+					<div class="swiper-container">
+						<ul class="swiper-wrapper slide">
+							<li class="swiper-slide">
+								<div class="gudimg"><img src="../../images/common/size_guide_female.png" alt=""></div>
+							</li>
+							<li class="swiper-slide">
+								<div class="gudimg"><img src="../../images/common/size_guide_male.png" alt=""></div>
+							</li>
+						</ul>
+						<div class="pagination"></div>
+					</div>						
+				</div>
+			</main>
+		</div>
+	</div>
+</article>
+<script>
+function popSizeGud(){
+	ui.popLayer.open('popSizeGud',{
+		ocb:function(){
+			console.log("popSizeGud 열림");
+		},
+		ccb:function(){
+			console.log("popSizeGud 닫힘");
+		}
+	});
+};
+$(document).ready(function(){
+	// popSizeGud();
+});
+</script>
+
+
 
 
 <!-- 팝레이어 샘플1 -->

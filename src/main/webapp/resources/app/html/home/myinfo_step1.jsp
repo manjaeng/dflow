@@ -30,8 +30,8 @@
 						<li class="gender">
 							<div class="dt">성별</div>
 							<div class="dd">
-								<label class="radio"><input type="radio" name="gender" checked><span>여자</span></label>
-								<label class="radio"><input type="radio" name="gender"><span>남자</span></label>
+								<label class="radio"><input type="radio" name="gender" checked><span>FEMALE</span></label>
+								<label class="radio"><input type="radio" name="gender"><span>MALE</span></label>
 							</div>
 						</li>
 						<li class="nation">

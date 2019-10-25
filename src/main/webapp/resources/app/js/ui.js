@@ -833,6 +833,7 @@ var ui = {
         	$(this.mnPic.els +" ul.slide" ).length && this.mnPic.using();
         	$(this.newBie.els +" ul.slide" ).length && this.newBie.using();
         	$(this.newUp.els +" ul.slide" ).length && this.newUp.using();
+        	$(this.sizeGud.els +" ul.slide" ).length && this.sizeGud.using();
         },
 		intPic:{  //  
             els: "#slideUploadPic.swiper-container",
@@ -926,6 +927,41 @@ var ui = {
         },
 		lookPic:{  // 
             els: ".slideLookPic .swiper-container:not(.swiper-container-horizontal)",
+            opt: {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				watchOverflow:true,
+				pagination: {
+					// type:'fraction',
+					el: '.pagination',
+					dynamicBullets:true,
+					//dynamicMainBullets:1
+				},
+                autoHeight:true,
+				autoplay:false,
+				preloadImages: true,
+				zoom: true,
+				lazy: true,
+				loop: false
+            },
+			slide:[],
+            using: function() {
+				var _this = this;
+				$(this.els).each(function(i){
+                	var $this = $(this);
+					var idx = $this.closest("li").index();
+					if( $this.find(".swiper-slide").length == 1 ) _this.opt.loop = false ;
+					if( $this.find(".swiper-zoom-container").length == 0 ) _this.opt.zoom = false ;
+					if( $this.find(".swiper-slide").length >= 1 ) {
+						_this.slide[idx] = new Swiper( $this , _this.opt );
+						// console.log(_this.slide[i]);
+                    }
+				});				
+			}
+        },
+		sizeGud:{  // 
+            els: ".slideSizeGud .swiper-container:not(.swiper-container-horizontal)",
             opt: {
 				slidesPerView: 1,
 				observer: true,

@@ -7,9 +7,9 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">WRITE</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">리뷰 작성 하기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -19,9 +19,9 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../look/review_view.jsp" class="bt view">REVIEW</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -31,9 +31,9 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">WRITE</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">리뷰 작성 하기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -43,9 +43,9 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../look/review_view.jsp" class="bt view">REVIEW</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -55,9 +55,9 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">WRITE</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../setting/my_review_upload.jsp" class="bt write">리뷰 작성 하기</a></div>
 </li>
 <li>
 	<div class="item">
@@ -67,7 +67,7 @@
 			<div class="prc"><em class="w">&#8361;</em><span class="p">38,000</span></div>
 			<div class="name">blurryellow55</div>
 			<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
+			<div class="bts"><a href="../look/review_view.jsp" class="bt view">REVIEW</a></div>
 		</div>
 	</div>
-	<div class="bts"><a href="../look/review_view.jsp" class="bt view">내 리뷰 보기</a></div>
 </li>

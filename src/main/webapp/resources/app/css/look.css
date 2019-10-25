@@ -385,9 +385,9 @@
 .uiPhoto.active .uiTag>.bt{background:#70f5c4;}
 
 
-.uiTag{position:absolute;left: 0%; top: 0%; margin: -8px 0 0  -8px;}
-.uiTag>.bt{width:16px; height:16px; border-radius: 100%; background:#d2d2d2; font-size: 0px; position:absolute;left: 0; top: 0;}
-.uiTag>.pop{transition-duration: 0.4s;transition-property: opacity;opacity:0;background:#70f5c4;border-radius: 3px;position:absolute;left: 0;bottom: auto;transform: translateX(-50%);margin-left: 5px;top: 28px;}
+.uiTag{position:absolute;left: 0%;top: 0%;margin: -5px 0 0  -5px;}
+.uiTag>.bt{width: 10px;height: 10px;border-radius: 100%;background:#d2d2d2;font-size: 0px;position:absolute;left: 0;top: 0;padding: 0;}
+.uiTag>.pop{transition-duration: 0.4s;transition-property: opacity;opacity:0;background:#70f5c4;border-radius: 3px;position:absolute;left: 0;bottom: auto;transform: translateX(-50%);margin-left: 3px;top: 21px;}
 .uiTag>.pop .pan{padding: 10px 10px 9px 10px;width: 119px;min-height: 41px;}
 .uiTag>.pop .pan::before{display:none;transform: rotate(45deg);content:"";width:0px;height:0px;border: #70f5c4 solid 4px;position:absolute;left: 50%;top: -3px;margin-left: -2px;}
 .uiTag>.pop .pan .close{width: 24px;height: 24px;position:absolute;right: -7px;top: -6px;background: url(../images/common/uiTag_close.png) no-repeat center center;background-size: 14px auto;font-size: 0px;content:"";display: inline-block;vertical-align: middle;margin: 0 5px 0 0px;}
@@ -398,12 +398,12 @@
 .uiTag>.pop .pan .info .pric .w::before{}
 
 .uiTag>.pop.left{}
-.uiTag>.pop.left{margin-left: 56px;}
+.uiTag>.pop.left{margin-left: 54px;}
 .uiTag>.pop.left .pan::before{left: 9px;bottom: -4px;top: auto;}
 .uiTag>.pop.right .pan::before{right: 8px;left:auto;bottom: -4px;top: auto;}
 .uiTag>.pop.top .pan::before{bottom:auto;top: -4px;}
-.uiTag>.pop.right{margin-left: -40px;}
-.uiTag>.pop.top{bottom:auto;top: 28px;}
+.uiTag>.pop.right{margin-left: -43px;}
+.uiTag>.pop.top{bottom:auto;top: 22px;}
 .uiTag>.pop.bot{margin-top: 0px;bottom: 11px;top: auto;}
 
 /* 상품검색펍업 */
@@ -431,7 +431,10 @@
 .popSchItem .tlist>li .item .info .name{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;color: #000000;}
 .popSchItem .tlist>li .item .info .pric{text-overflow:ellipsis;overflow:hidden;white-space:nowrap;/* color: #000000; */}
 
-
+.popSizeGud{}
+.popSizeGud .hdt{font-family:"BlairMd";  text-align: center; margin: 30px 0  50px; text-transform: uppercase; font-size: 13px;}
+.popSizeGud .slideSizeGud{ }
+.popSizeGud .slideSizeGud .swiper-container{padding-bottom: 30px;}
 
 /* 상세 보기 */
 

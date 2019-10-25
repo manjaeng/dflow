@@ -39,8 +39,8 @@
 					<li class="gender">
 						<span class="dt">성별</span>
 						<span class="dd">
-							<label class="radio"><input type="radio" name="gender1" checked="checked"><span>여자</span></label>
-							<label class="radio"><input type="radio" name="gender1"><span>남자</span></label>
+							<label class="radio"><input type="radio" name="gender1" checked="checked"><span>FEMALE</span></label>
+							<label class="radio"><input type="radio" name="gender1"><span>MALE</span></label>
 						</span>
 					</li>
 					<li class="nation">
