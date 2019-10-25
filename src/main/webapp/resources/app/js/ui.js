@@ -9,6 +9,7 @@ var ui = {
 		this.ly.init();
 		this.look.init();
 		this.form.init();
+		this.tog.init();
 		this.accd.init();
 		this.tab.init();
 		this.popLayer.init();
@@ -648,6 +649,38 @@ var ui = {
 		},
 		hide: function () {
 			$(".loadingBar").remove();
+		}
+	},
+	tog: { // 토글 UI
+		init: function() {
+			$(window).on("load", this.using);
+			this.set();
+		},
+		set:function(){
+			$("[data-ui-tog='ctn']").hide();
+			$("[data-ui-tog='ctn'].open").show();
+		},
+		using:function(){
+			$(document).on("click", "[data-ui-tog='btn']", function(e) {
+
+				var thisCtn = $(this).attr("href").replace("#","");
+				var thisEls = $(this);
+				if( thisEls.hasClass("open") ) {				
+					thisEls.removeClass("open");
+					$("#"+thisCtn).slideUp(100,function(){
+						$("#"+thisCtn).removeClass("open");
+						ui.popLayer.refresh();
+					});
+				}else{
+					thisEls.addClass("open");
+					$("#"+thisCtn).slideDown(100,function(){
+						$("#"+thisCtn).addClass("open");
+						ui.popLayer.refresh();
+					});
+				}
+
+				e.preventDefault();
+			});
 		}
 	},
 	accd: { // 아코디언 UI
@@ -1316,9 +1349,13 @@ var ui = {
 				});
 			}
 		},
-		refresh:function(id){
-			// $(window).trigger("resize");
-			ui.popLayer.scroll[id].refresh();
+		refresh:function(){
+			var iscr = Object.keys(this.scroll);
+			for (const key in iscr) {
+				var idx = iscr[key];
+				console.log(idx, iscr);
+				this.scroll[idx].refresh(); 
+			}
 		}
 	},
 	listMore: { // 더 불러오기 
