@@ -35,10 +35,10 @@
 						</li>
 						<li class="swiper-slide">
 							<div class="img">
-								<a href="./look_tag.jsp"><img src="//placeimg.com/380/500/1" alt=""></a>
+								<a href="javascript:;"><img src="//placeimg.com/380/500/1" alt=""></a>
 								<div class="num">1/10</div>
 							</div>
-							<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>
+							<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this);">삭제</a></div>
 						</li>
 					</ul>
 				</div>
@@ -56,7 +56,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<button type="button" class="btn type b fill xl" onclick="location.href = './my_review_write.jsp';">NEXT</button>
+						<button type="button" class="btn type b fill xl" onclick="location.href = '../setting/my_review_write.jsp';">NEXT</button>
 					</div>
 				</div>
 			</section>
@@ -77,10 +77,10 @@
 		var picHtml = 
 			'<li class="swiper-slide">'+
 				'<div class="img">'+
-					'<a href="./look_tag.jsp"><img src="//placeimg.com/380/500/2" alt=""></a>'+
+					'<a href="javascript:;"><img src="//placeimg.com/380/500/2" alt=""></a>'+
 					'<div class="num">1/10</div>'+
 				'</div>'+
-				'<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this)">삭제</a></div>'+
+				'<div class="bts"><a href="javascript:;" class="del" onclick="testPicDel(this);">삭제</a></div>'+
 			'</li>';
 		$("#slideUploadPic .list").append( picHtml );
 	}

@@ -422,6 +422,25 @@
 			</div>
 
 			<p class="gap"></p>
+			
+			<a href="#tog_sample1" data-ui-tog="btn" class="bt tog">토글버튼</a>
+			<div id="tog_sample1" data-ui-tog="ctn">
+				<p>토글내용 토글내용</p>
+				<p>토글내용 토글내용</p>
+			</div>
+
+			<div class="codeBox">
+				<div class="code">
+					<pre class="brush: html">
+						<a href="#tog_sample1" data-ui-tog="btn" class="bt tog">토글버튼</a>
+						<div id="tog_sample1" data-ui-tog="ctn">
+							<p>토글내용 토글내용</p>
+							<p>토글내용 토글내용</p>
+						</div></pre>
+				</div>
+			</div>
+
+			<p class="gap"></p>
 
 			<div class="slideSample1">
 				<div class="swiper-container">
