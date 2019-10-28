@@ -114,8 +114,8 @@
 
 
 	var testFncRply = function(){
-		// $("#reply_form .write").prepend('<span class="name">JENNY</span>').addClass("mention");
-		$("#input_reply").focus().val("JENNY  ");
+		$("#reply_form .write").prepend('<span class="name">JENNY</span>').addClass("mention");
+		$("#input_reply").focus().val();
 	}
 	var testFncRpDel = function(){
 		

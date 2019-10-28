@@ -16,21 +16,32 @@
 							<li class="gender">
 								<div class="ht"><span class="tit">성별</span></div>
 								<div class="ct">
-									<label class="radio"><input type="radio" name="filter_gender" checked><span>FEMALE</span></label>
-									<label class="radio"><input type="radio" name="filter_gender"><span>MALE</span></label>
+									<label class="radio"><input type="radio" name="filter_gender" value="female" checked><span>FEMALE</span></label>
+									<label class="radio"><input type="radio" name="filter_gender" value="male"><span>MALE</span></label>
 								</div>
 							</li>
 							<li class="hgt">
-								<div class="ht"><span class="tit">HEIGHT</span> <span class="unit"><select class="select"><option>CM</option><option>FT</option></select></span> </div>
-								<div class="ct">
-									<div class="uiSlider hgt">
-										<div class="height" id="sizeHeightSlider" data-amount="168">
+								<div class="ht"><span class="tit">HEIGHT</span> <span class="unit"><select id="hgt_unit" class="select"><option>CM</option><option>FT</option></select></span> </div>
+								<div class="ct cm" id="hgt_unit_box">
+									<div class="uiSlider hgt cm">
+										<div class="height" id="sizeHeightSliderCm" data-amount="168">
 											<em class="bar"></em>
 											<div class="ui-slider-handle"></div>
 											<div class="range_amount"></div>
 											<div class="nums">
 												<span class="num min">1M</span>
 												<span class="num max">2M<i></i></span>
+											</div>
+										</div>
+									</div>
+									<div class="uiSlider hgt ft">
+										<div class="height" id="sizeHeightSliderFt" data-amount="5.6">
+											<em class="bar"></em>
+											<div class="ui-slider-handle"></div>
+											<div class="range_amount"></div>
+											<div class="nums">
+												<span class="num min">3FT</span>
+												<span class="num max">6FT<i></i></span>
 											</div>
 										</div>
 									</div>
@@ -63,70 +74,22 @@
 									</div>
 								</div>
 							</li>
-							<!-- 
-							<li class="bra">
-								<div class="ht"><span class="tit">BRA</span></div>
-								<div class="ct">
-									<div class="slideSize cup swiper-container">
-										<ul class="list cup swiper-wrapper slide">
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">A</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">B</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">C</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">D</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">E</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">F</span></label></li>
-										</ul>
-									</div>
-									<div class="slideSize siz swiper-container">
-										<ul class="list siz swiper-wrapper slide">
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">60</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">65</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">70</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">75</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">80</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">85</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">90</span></label></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							<li class="bot">
-								<div class="ht"><span class="tit">BOTTOM</span></div>
-								<div class="ct">
-									<div class="slideSize bot swiper-container">
-										<ul class="list bot swiper-wrapper slide">
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">26</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">28</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">30</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">32</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">34</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">36</span></label></li>
-											<li class="swiper-slide"><label><input type="radio" name="size_bott"><span class="tit">38</span></label></li>
-										</ul>
-									</div>
-								</div>
-							</li>
-							-->
 							<li class="size bust">
-								<div class="ht"><span class="tit">Bust <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
+								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
-										<select class="select">
-											<option>50</option>
-										</select>
+										<input type="text" value="50">
 									</div>
-									<div class="num"><em class="n">19</em> <i class="s">CM</i></div>
+									<div class="num"><em class="n">50</em> <i class="s">CM</i></div>
 								</div>
 							</li>
 							<li class="size hip">
 								<div class="ht"><span class="tit">Hip <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
-										<select class="select">
-											<option>51</option>
-										</select>
+										<input type="text" value="51">
 									</div>
-									<div class="num"><em class="n">19</em> <i class="s">CM</i></div>
+									<div class="num"><em class="n">51</em> <i class="s">CM</i></div>
 								</div>
 							</li>
 						</ul>
@@ -144,9 +107,7 @@
 									<div class="ht"><span class="tit">Waist <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<select class="select">
-												<option>51</option>
-											</select>
+											<input type="text" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -155,9 +116,7 @@
 									<div class="ht"><span class="tit">Sleeve Length <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<select class="select">
-												<option>51</option>
-											</select>
+											<input type="text" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -166,9 +125,7 @@
 									<div class="ht"><span class="tit">Upper Arm <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<select class="select">
-												<option>51</option>
-											</select>
+											<input type="text" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -177,9 +134,7 @@
 									<div class="ht"><span class="tit">Thigh <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<select class="select">
-												<option>51</option>
-											</select>
+											<input type="text" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -207,5 +162,40 @@ var popSize = function(){
 		}
 	});
 	
+
+	$("#hgt_unit").on("change",function(){
+		console.log( this.value );
+		$("#hgt_unit_box").removeClass("cm ft");
+		if (this.value == "CM") {
+			$("#hgt_unit_box").addClass("cm");
+		}else{
+			$("#hgt_unit_box").addClass("ft");
+		}
+	});
+	
+	$(".filter>li.size .ht .unit .select").on("change",function(){
+		console.log( this.value );
+		if (this.value == "CM") {
+			$(this).closest("li.size").find(".ct .num .s").html("CM");
+		}else{
+			$(this).closest("li.size").find(".ct .num .s").html("FT");			
+		}
+	});
+	
+
+
+	$("input[name=filter_gender]").on("change",function(){
+		console.log( this.checked , this.value );
+		if (this.value == "female") {
+			$("#bustChest").html("BUST");
+		}else{
+			$("#bustChest").html("CHEST");
+		}
+	});
+
+
 };
+$(document).ready(function(){
+	// popSize();
+});
 </script>

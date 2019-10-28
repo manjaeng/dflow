@@ -1,4 +1,4 @@
-﻿////////////////////////////////////////
+////////////////////////////////////////
 // Author : 김기현 Kim KeeHyum
 // E-mail : kimkee@naver.com    
 // Date   : 2019-06-12 ~
@@ -88,23 +88,43 @@ var ui = {
 			this.slide.using();
 		},
 		height:function(){
-			var $slider = $("#sizeHeightSlider");
-			var bar = $slider.find("em.bar");
-			var handle = $slider.find(".range_amount");
-			$slider.slider({
-				value: $slider.attr("data-amount") ,
+			var $sliderCm = $("#sizeHeightSliderCm");
+			var barCm = $sliderCm.find("em.bar");
+			var handleCm = $sliderCm.find(".range_amount");
+			$sliderCm.slider({
+				value: $sliderCm.attr("data-amount") ,
 				min: 100,
 				max: 200,
 				step: 1,
 				create: function(event, ui) {
-					handle.html( $(this).slider( "value" ) + "<i>cm</i>");
-					bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+					handleCm.html( $(this).slider( "value" ) + "<i>cm</i>");
+					barCm.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				}
+			});
+			$sliderCm.on("slidechange slide", function( event, ui ) {
+				handleCm.html( ui.value + "<i>cm</i>");
+				barCm.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				$(this).attr("data-amount",ui.value);
+				// console.log(ui.value);
+			} );
+
+			var $sliderFt = $("#sizeHeightSliderFt");
+			var barFt = $sliderFt.find("em.bar");
+			var handleFt = $sliderFt.find(".range_amount");
+			$sliderFt.slider({
+				value: $sliderFt.attr("data-amount") ,
+				min: 3,
+				max: 6,
+				step: 0.1,
+				create: function(event, ui) {
+					handleFt.html( $(this).slider( "value" ) + "<i>ft</i>");
+					barFt.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
 				}
 			});
 
-			$slider.on("slidechange slide", function( event, ui ) {
-				handle.html( ui.value + "<i>cm</i>");
-				bar.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+			$sliderFt.on("slidechange slide", function( event, ui ) {
+				handleFt.html( ui.value + "<i>ft</i>");
+				barFt.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
 				$(this).attr("data-amount",ui.value);
 				// console.log(ui.value);
 			} );
@@ -434,7 +454,7 @@ var ui = {
 		select:{
 			init:function(){
 				$(document).on("change",".select",function(e){
-					console.log( $(this).find("option:selected[data-value]").data("value")   ); 
+					// console.log( $(this).find("option:selected[data-value]").data("value")   ); 
 				
 					if ($(this).find("option:selected[data-value]").data("value") == "selected") {
 						$(this).removeClass("seled");
