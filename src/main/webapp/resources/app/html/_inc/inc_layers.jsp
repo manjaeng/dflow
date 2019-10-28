@@ -459,14 +459,25 @@ $(document).ready(function(){
 				<input type="text" class="input">
 				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
-				<input type="text" class="input">
-				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd1"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd2"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd3"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd4"></div>
+				<p>내용</p>
 				<input type="text" class="input">
 				<p>내용</p><p>내용</p>
 				<label class="checkbox"><input type="checkbox"><span></span></label>
 				<label class="radio"><input type="radio"><span></span></label>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<input type="text" class="input">
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 			</main>
 		</div>
 		<div class="pbt">
@@ -489,7 +500,18 @@ $(document).ready(function(){
 		</div>
 		<div class="pct">
 			<main class="poptents">
-				
+				<p>sdfsdfsfsd</p>
+				<input type="text" class="input">
+				<label class="checkbox"><input type="checkbox" checked="checked"><span></span></label>
+				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd1"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd2"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd3"></div>
+				<p>내용</p>
+				<div style="position: relative;"><input type="text" class="input" value="dd4"></div>
+				<p>내용</p>
 				<p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p><p>내용</p>
 				<a class="btn" href="javascript:ui.popLayer.open('popSample3');">팝레이어2</a>
 				<p>sdfsdfsfsd</p>

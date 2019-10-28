@@ -113,8 +113,8 @@ var ui = {
 			var handleFt = $sliderFt.find(".range_amount");
 			$sliderFt.slider({
 				value: $sliderFt.attr("data-amount") ,
-				min: 3,
-				max: 6,
+				min: 3.3,
+				max: 7,
 				step: 0.1,
 				create: function(event, ui) {
 					handleFt.html( $(this).slider( "value" ) + "<i>ft</i>");
@@ -1244,6 +1244,19 @@ var ui = {
 				_this.history(true);
 			}
 
+			// 레이어팝업내에서 입력시 스크롤 조정
+			$(document).on("click", ".popLayer:visible>.pbd input:not(input:radio, input:checkbox) , .popLayer:visible>.pbd textarea"  , function(e) {
+				var els = $(this);
+				var id = $(this).closest(".popLayer").attr("id");
+				window.setTimeout(function(){
+					var myTop = els.offset().top - $("#"+id+" .phd").outerHeight() - $(window).scrollTop() -  _this.scroll[id].y - $("#"+id+">.pbd").position().top ;
+					var myMax = Math.abs( _this.scroll[id].maxScrollY );
+					console.log(myTop , myMax , _this.scroll[id].y , $("#"+id+" .phd").position().top );
+					if ( myTop >= myMax ) { myTop = myMax ; }
+					_this.scroll[id].scrollTo(0,-myTop);
+				},600);
+			});
+
 		},
 		history:function(){
 			var _this = this;
@@ -1306,16 +1319,7 @@ var ui = {
 				_this.lyScroll(id);
 			});
 
-			$(document).on("click focusin", "#"+id+">.pbd input:not(input:radio, input:checkbox) , #"+id+">.pbd textarea"  , function(e) {
-				var els = $(this);
-				window.setTimeout(function(){
-					var myTop = els.position().top - $(".popLayer .phd").outerHeight() ;
-					var myMax = Math.abs( _this.scroll[id].maxScrollY );
-					// console.log(myTop , myMax , _this.scroll[id].y);
-					if ( myTop >= myMax ) { myTop = myMax ; }
-					_this.scroll[id].scrollTo(0,-myTop);
-				},600);
-			});
+
 
 
 

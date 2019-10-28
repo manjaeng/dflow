@@ -681,7 +681,9 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .popLayer.a{}
 .popLayer.a .pbd{/* transform: translateY(110%);transition: transform 0.3s ease 0s; */}
 .popLayer.a .pct{/* max-height: calc(100vh - 50px); */}
-.popLayer.a .poptents{}
+.popLayer.a .poptents{
+    position: relative;
+}
 .popLayer.a .pbt{}
 .popLayer.a .pbt .bts{height: calc(60px + env(safe-area-inset-bottom) );}
 .popLayer.a .pbt .bts .btn{height: calc(60px + env(safe-area-inset-bottom) );padding-bottom: env(safe-area-inset-bottom);}
@@ -969,7 +971,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .uiSize .filter>li.size .ht{position:relative;}
 .uiSize .filter>li.size .ht .tit{}
 .uiSize .filter>li.size .ct{}
-.uiSize .filter>li.size .ct .amount{border: #ff424d solid 1px; margin: 0 -17px; text-align: center; position:relative;}
+.uiSize .filter>li.size .ct .amount{border: #ff424d solid 1px;margin: 0 -17px;text-align: center;position:relative;}
 .uiSize .filter>li.size .ct .amount .select{}
 .uiSize .filter>li.size .ct .amount .select{background-image: none;width: auto;font-family:"BlairMd";color:#ff424d;padding: 0 100px;font-size: 20px;height: 32px;}
 .uiSize .filter>li.size .ct .amount input{border-width: 0;height:32px;width: 60px;font-family: "BlairMd";font-size: 20px; text-align: center; color: #ff424d; outline: none;}

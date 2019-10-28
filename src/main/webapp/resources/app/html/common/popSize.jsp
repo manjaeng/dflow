@@ -41,7 +41,7 @@
 											<div class="range_amount"></div>
 											<div class="nums">
 												<span class="num min">3FT</span>
-												<span class="num max">6FT<i></i></span>
+												<span class="num max">7FT<i></i></span>
 											</div>
 										</div>
 									</div>
@@ -78,7 +78,7 @@
 								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
-										<input type="text" value="50">
+										<input type="text" value="50" id="bustinput">
 									</div>
 									<div class="num"><em class="n">50</em> <i class="s">CM</i></div>
 								</div>
