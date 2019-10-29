@@ -24,13 +24,13 @@
 				<div class="uiSize">
 					<div class="sets default">
 						<ul class="filter">
-							<!-- <li class="gender">
+							<li class="gender">
 								<div class="ht"><span class="tit">성별</span></div>
 								<div class="ct">
 									<label class="radio"><input type="radio" name="filter_gender" value="female" checked><span>FEMALE</span></label>
 									<label class="radio"><input type="radio" name="filter_gender" value="male"><span>MALE</span></label>
 								</div>
-							</li> -->
+							</li>
 							<li class="hgt">
 								<div class="ht"><span class="tit">HEIGHT</span> <span class="unit"><select id="hgt_unit" class="select"><option>CM</option><option>FT</option></select></span> </div>
 								<div class="ct cm" id="hgt_unit_box">
@@ -52,7 +52,7 @@
 											<div class="range_amount"></div>
 											<div class="nums">
 												<span class="num min">3FT</span>
-												<span class="num max">6FT<i></i></span>
+												<span class="num max">7FT<i></i></span>
 											</div>
 										</div>
 									</div>
@@ -89,7 +89,7 @@
 								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
-										<input type="text" value="50">
+										<input type="number" value="50" id="bustinput">
 									</div>
 									<div class="num"><em class="n">50</em> <i class="s">CM</i></div>
 								</div>
@@ -98,7 +98,7 @@
 								<div class="ht"><span class="tit">Hip <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
-										<input type="text" value="51">
+										<input type="number" value="51">
 									</div>
 									<div class="num"><em class="n">51</em> <i class="s">CM</i></div>
 								</div>
@@ -118,7 +118,7 @@
 									<div class="ht"><span class="tit">Waist <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<input type="text" value="21">
+											<input type="number" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -127,7 +127,7 @@
 									<div class="ht"><span class="tit">Sleeve Length <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<input type="text" value="21">
+											<input type="number" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -136,7 +136,7 @@
 									<div class="ht"><span class="tit">Upper Arm <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<input type="text" value="21">
+											<input type="number" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -145,7 +145,7 @@
 									<div class="ht"><span class="tit">Thigh <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
-											<input type="text" value="21">
+											<input type="number" value="21">
 										</div>
 										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
 									</div>
@@ -182,35 +182,6 @@
 	</div>
 
 	<script>
-	$("#hgt_unit").on("change",function(){
-		console.log( this.value );
-		$("#hgt_unit_box").removeClass("cm ft");
-		if (this.value == "CM") {
-			$("#hgt_unit_box").addClass("cm");
-		}else{
-			$("#hgt_unit_box").addClass("ft");
-		}
-	});
-	
-	$(".filter>li.size .ht .unit .select").on("change",function(){
-		console.log( this.value );
-		if (this.value == "CM") {
-			$(this).closest("li.size").find(".ct .num .s").html("CM");
-		}else{
-			$(this).closest("li.size").find(".ct .num .s").html("FT");			
-		}
-	});
-	
-
-
-	$("input[name=filter_gender]").on("change",function(){
-		console.log( this.checked , this.value );
-		if (this.value == "female") {
-			$("#bustChest").html("BUST");
-		}else{
-			$("#bustChest").html("CHEST");
-		}
-	});
 	
 	$(document).ready(function(){
 		ui.size.init();

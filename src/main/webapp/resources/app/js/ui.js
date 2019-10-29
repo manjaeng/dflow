@@ -86,6 +86,31 @@ var ui = {
 			this.height();
 			this.fit();
 			this.slide.using();
+
+			$(document).on("change",".uiSize #hgt_unit",function(){
+				var uiSize = $(".uiSize");
+				uiSize.find("#hgt_unit_box").removeClass("cm ft");
+				if (this.value == "CM") {
+					uiSize.find("#hgt_unit_box").addClass("cm");
+				}else{
+					uiSize.find("#hgt_unit_box").addClass("ft");
+				}
+			});
+			$(document).on("change",".uiSize .filter>li.size .ht .unit .select",function(){
+				$(this).closest("li.size").find(".ct .num .s").html(this.value);
+			});
+			$(document).on("input",".uiSize .filter>li.size .ct .amount input",function(){
+				console.log( this.value );
+				$(this).closest("li.size").find(".ct .num .n").html(this.value);
+			});
+			$(document).on("change",".uiSize input[name=filter_gender]",function(){
+				console.log( this.checked , this.value );
+				if (this.value == "female") {
+					$("#bustChest").html("BUST");
+				}else{
+					$("#bustChest").html("CHEST");
+				}
+			});
 		},
 		height:function(){
 			var $sliderCm = $("#sizeHeightSliderCm");

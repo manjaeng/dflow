@@ -424,7 +424,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.mdl.reg .prfeForm .msg{font-size: 11px;color: #999999;position:fixed;bottom: 80px;text-align: center;left:0;right: 0;}
 
 .contain.mdl.reg .sec.size{position:relative;z-index: 0;padding-top: 5px;}
-
+.contain.mdl.reg .sec.size .uiSize .filter>li.gender{display:none;}
 
 .contain.cools {}
 .contain.cools .coolList{}

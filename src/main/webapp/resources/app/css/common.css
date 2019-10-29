@@ -1003,7 +1003,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 .uiSize .detail .hdt{position:relative;padding: 30px 0px 25px;text-align: center;}
 .uiSize .detail .hdt .tit{font-family: "BlairMd"; font-size: 23px; color: #ff414d;}
 .uiSize .detail .hdt .btnTog{position:absolute;right: 0px;top: 30px;width: 100%;}
-.uiSize .detail .hdt .btnTog .bt.tog{font-size: 0; width:100%; height:32px; display:block;}
+.uiSize .detail .hdt .btnTog .bt.tog{font-size: 0;width:100%;height: 36px;display:block;}
 .uiSize .detail .hdt .btnTog .bt.tog::after{content:"";width:32px;height:32px;background:url(../images/common/btn_size_tog.png) no-repeat;background-size: 32px auto;display: block;position: absolute;right: 10px;top: 0px;}
 .uiSize .detail .hdt .btnTog .bt.tog.open::after{ background-position-y: -32px;}
 
