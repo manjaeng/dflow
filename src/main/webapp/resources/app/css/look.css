@@ -219,7 +219,7 @@
 .contain.comment .sec.comt ul.list>li .comts .pic{width: 36px;position:absolute;display:block;left:0px;top: 5px;height: auto;}
 .contain.comment .sec.comt ul.list>li .comts .pic .img{display: block;padding-bottom: calc(4% / 3.4 * 100);width: 100%;}
 .contain.comment .sec.comt ul.list>li .comts .pic .img img{object-fit: cover;border-radius: 100%;position:absolute;left:0px;top: 0px;height: 100%;width: 100%;}
-.contain.comment .sec.comt ul.list>li .comts .ment{margin-left: 50px;}
+.contain.comment .sec.comt ul.list>li .comts .ment{margin-left: 50px;min-height: 55px;}
 .contain.comment .sec.comt ul.list>li .comts .ment .name{font-size: 13px;font-family:"BlairMd","NotoSansCJKkr";display: inline-block;max-width: 100%;/* text-overflow: ellipsis; *//* white-space: nowrap; */overflow: hidden;vertical-align: middle;}
 .contain.comment .sec.comt ul.list>li .comts .ment .text{font-size: 11px; margin-top: 2px;}
 .contain.comment .sec.comt ul.list>li .comts .ment .info{font-size: 11px;display:flex;margin-top: 0px;}

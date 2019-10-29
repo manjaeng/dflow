@@ -62,13 +62,13 @@
 			</div>
 
 			
-			<section class="botFixed">
+			<!-- <section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
 						<a href="./model_reg1.jsp" class="btn type b fill xl">Done</a>
 					</div>
 				</div>
-			</section>
+			</section> -->
 
 		</main>
 	</div>

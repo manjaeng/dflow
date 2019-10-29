@@ -113,6 +113,7 @@ var ui = {
 			});
 		},
 		height:function(){
+			// CM 센치미터
 			var $sliderCm = $("#sizeHeightSliderCm");
 			var barCm = $sliderCm.find("em.bar");
 			var handleCm = $sliderCm.find(".range_amount");
@@ -123,18 +124,19 @@ var ui = {
 				step: 1,
 				create: function(event, ui) {
 					handleCm.html( $(this).slider( "value" ) + "<i>cm</i>");
-					barCm.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+					barCm.css("width", $(this).slider( "value" ) - 100 + "%");
 				}
 			});
 			$sliderCm.on("slidechange slide", function( event, ui ) {
 				handleCm.html( ui.value + "<i>cm</i>");
-				barCm.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				console.log($(this).slider( "value" ));
+				barCm.css("width", $(this).slider( "value" ) - 100 + "%");
 				$(this).attr("data-amount",ui.value);
 				// console.log(ui.value);
 			} );
 
+			// FT 피트
 			var $sliderFt = $("#sizeHeightSliderFt");
-			var barFt = $sliderFt.find("em.bar");
 			var handleFt = $sliderFt.find(".range_amount");
 			$sliderFt.slider({
 				value: $sliderFt.attr("data-amount") ,
@@ -142,16 +144,17 @@ var ui = {
 				max: 7,
 				step: 0.1,
 				create: function(event, ui) {
-					handleFt.html( $(this).slider( "value" ) + "<i>ft</i>");
-					barFt.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+					var valStr = String($(this).slider( "value" )).split(".");
+					if (!valStr[1]) {valStr[1] = ""; }
+					handleFt.html(valStr[0] +"<i>ft</i>"+ valStr[1]);
 				}
 			});
-
 			$sliderFt.on("slidechange slide", function( event, ui ) {
-				handleFt.html( ui.value + "<i>ft</i>");
-				barFt.css("width", $(this).slider( "value" ) / 200 * 100 + "%");
+				var valStr = String(ui.value).split(".");
+				// console.log(ui.value , valStr1 );
+				if (!valStr[1]) {valStr[1] = ""; }
+				handleFt.html(valStr[0] +"<i>ft</i>"+ valStr[1]);
 				$(this).attr("data-amount",ui.value);
-				// console.log(ui.value);
 			} );
 
 		},
@@ -1270,15 +1273,18 @@ var ui = {
 			}
 
 			// 레이어팝업내에서 입력시 스크롤 조정
-			$(document).on("click", ".popLayer:visible>.pbd input:not(input:radio, input:checkbox) , .popLayer:visible>.pbd textarea"  , function(e) {
+			var elsInput =  ".popLayer:visible input:not(input:radio, input:checkbox) ,"+
+							".popLayer:visible textarea ,"+
+							".popLayer:visible .iscPosit";
+			$(document).on("click", elsInput  , function(e) {
 				var els = $(this);
 				var id = $(this).closest(".popLayer").attr("id");
 				window.setTimeout(function(){
-					var myTop = els.offset().top - $("#"+id+" .phd").outerHeight() - $(window).scrollTop() -  _this.scroll[id].y - $("#"+id+">.pbd").position().top ;
+					var myTop = els.offset().top - $("#"+id+" .phd").outerHeight() - $(window).scrollTop() -  _this.scroll[id].y - $("#"+id+">.pbd").position().top - 10;
 					var myMax = Math.abs( _this.scroll[id].maxScrollY );
 					console.log(myTop , myMax , _this.scroll[id].y , $("#"+id+" .phd").position().top );
 					if ( myTop >= myMax ) { myTop = myMax ; }
-					_this.scroll[id].scrollTo(0,-myTop);
+					_this.scroll[id].scrollTo(0,-myTop,300);
 				},600);
 			});
 

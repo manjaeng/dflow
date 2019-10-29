@@ -62,9 +62,7 @@
 								<div class="ht"><span class="tit">AGE</span> </div>
 								<div class="ct">
 									<div class="amount">
-										<select class="select">
-											<option>28</option>
-										</select>
+										<input type="number" value="28">
 									</div>
 								</div>
 							</li>

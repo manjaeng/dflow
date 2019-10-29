@@ -604,9 +604,9 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .pt_list>ul>li .info01 .date{color: #999; font-family:"BlairMd";}
 .contain.reward .uiTabPan .pt_list>ul>li .info01 .bank{display: block;}
 .contain.reward .uiTabPan .pt_list>ul>li .info02{text-align: right;}
-.contain.reward .uiTabPan .pt_list>ul>li .info02 .point{display: block;color: #999;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02 .point{display: block;color: #999; font-family:"BlairMd";}
 .contain.reward .uiTabPan .pt_list>ul>li .info02 .total_pt{display: block;}
-.contain.reward .uiTabPan .pt_list>ul>li .info02 .total_pt >strong{font-size: 13px;}
+.contain.reward .uiTabPan .pt_list>ul>li .info02 .total_pt >strong{font-size: 13px; font-family:"BlairMd";}
 .contain.reward .uiTabPan .acc_has{padding: 0 20px 15px;}
 .contain.reward .uiTabPan .acc_has .p_txt{font-size: 11px;}
 .contain.reward .uiTabPan .acc_less{padding-bottom: 20px;}
