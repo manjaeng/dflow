@@ -21,7 +21,9 @@
 		<main id="contents" class="contents">
 
 			<section class="uiItemList reviewList">
-				
+				<div class="nodata">
+					<div class="msg">검색기록이 존재하지 않습니다.</div>
+				</div>
 				<ul class="list" id="review_list">
 					
 				</ul>

@@ -78,6 +78,9 @@
                                     </ul>
                                 </div>
                                 <div class="pt_list">
+                                    <div class="nodata">
+                                        <div class="msg">기록이 존재하지 않습니다.</div>
+                                    </div>
                                     <ul class="list" id="his_list"></ul>
                                     <div class="uiLoadMore">
                                         <em></em>

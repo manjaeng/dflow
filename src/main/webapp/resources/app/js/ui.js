@@ -1256,7 +1256,7 @@ var ui = {
 				$(this).find(".btnPopClose").trigger("click");
 			});
 
-			$(document).on("click", ".popLayer>.pbd", function(e) {
+			$(document).on("click", ".popLayer>.pbd , .btnPopClose", function(e) {
 				e.stopPropagation();
 			});
 

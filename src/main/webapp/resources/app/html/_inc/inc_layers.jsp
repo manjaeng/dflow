@@ -534,7 +534,7 @@ $(document).ready(function(){
 		</div>
 		<div class="pct">
 			<main class="poptents">
-				<img src="https://placeimg.com/640/640/any/5" alt="">
+				<img src="//placeimg.com/640/640/any/5" alt="">
 				<a class="btn" href="javascript:popMatching.using();">매칭</a>
 				<a class="btn" href="../look/look.jsp" onclick="ui.popLayer.close('popMatching')">이동</a>
 			</main>

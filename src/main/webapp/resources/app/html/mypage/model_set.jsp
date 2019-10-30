@@ -28,7 +28,7 @@
 				<ul class="list">
 					<li>
 						<div class="box">
-							<div class="pic"><a href="../mypage/model_edit.jsp" class="bt"><img src="https://placeimg.com/140/160/123" alt=""></a></div>
+							<div class="pic"><a href="../mypage/model_edit.jsp" class="bt"><img src="//placeimg.com/140/160/123" alt=""></a></div>
 							<div class="name">Jenny</div>
 							<div class="bts">
 								<a href="javascript:;" class="bt del">Delete</a>

@@ -308,6 +308,23 @@
 
 	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
+		<!-- 공지팝업 -->
+		<article class="popLayer b popNotice" id="popNotice">
+			<button type="button" class="btnPopClose">닫기</button>
+			<div class="pbd">
+				<div class="pct">
+					<main class="poptents">
+						<img src="//placeimg.com/640/640/any/5" alt="">
+					</main>
+				</div>
+				<div class="pbt">
+					<div class="bts">
+						<a href="javascript:;" class="btn lg a btnClose" onclick="ui.popLayer.close('popNotice');">다시보지않기</a>
+					</div>
+				</div>
+			</div>
+		</article>
+
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
 
@@ -319,6 +336,7 @@
 	$(document).ready(function(){
 		ui.nav.act("home");  // 하단 메뉴 활성화
 		ui.refresh.init(testRefresh);  //  pulldown 새로고침
+		ui.popLayer.open('popNotice');
 	});
 	</script>
 

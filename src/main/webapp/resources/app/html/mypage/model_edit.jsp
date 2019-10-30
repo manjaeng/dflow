@@ -27,7 +27,7 @@
 			
 			<section class="prfeForm">
 				<div class="photo">
-					<div class="pic"><img src="https://placeimg.com/160/160/1" alt=""></div>
+					<div class="pic"><img src="//placeimg.com/160/160/1" alt=""></div>
 					<div class="bts"><a href="javascript:;" class="bt mod">수정</a></div>
 				</div>
 				

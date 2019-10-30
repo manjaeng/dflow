@@ -228,6 +228,8 @@
 
 
 .contain.prf .prfList{}
+.contain.prf .prfList .nodata{height: calc(100vh - 390px);}
+.contain.prf .prfList .nodata .msg{ font-size: 12px;}
 .contain.prf .prfList .list.load{padding: 1px; background: #000000;}
 .contain.prf .prfList .list{display: block;position: relative;overflow: hidden;}
 .contain.prf .prfList .list>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden;margin-right: 0px;}
@@ -298,9 +300,11 @@ body.my.list .header .bts .hisback{display:block;}
 
 
 .contain.alim{}
+.contain.alim .contents{ padding-top: 20px;}
 .contain.alim .tabs{}
 .contain.alim .sec.notifi{}
 .contain.alim .sec.notifi .tabCtn{padding:10px 0px;}
+.contain.alim .sec.notifi .tabCtn .nodata{height: calc(100vh - 130px);/* margin-top: -30px; */}
 .contain.alim .sec.notifi .tabCtn .list{}
 .contain.alim .sec.notifi .tabCtn .list>li{padding: 10px 16px 10px 16px;}
 .contain.alim .sec.notifi .tabCtn .list>li:first-child{margin-top: 0px;}
@@ -351,7 +355,8 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span{width:50px;height:20px;background: url(../images/common/ico_my_follow.png) no-repeat;background-size: 100% auto;font-size: 0px;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox>span::before{display:none;}
 .contain.follow .sec.follow .tabCtn .list>li .item .foll .checkbox input:checked + span{ background-position-y: -30px;}
-.contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top:calc(50vh - 100px );}
+.contain.follow .sec.follow .tabCtn .nodata{height: calc(100vh - 190px);}
+.contain.follow .sec.follow .tabCtn .uiLoadMore{padding:0 8px;margin-top: calc(50vh - 140px );}
 .contain.follow .sec.follow .tabCtn .list.load + .uiLoadMore{margin-top: -35px;}
 
 
@@ -370,12 +375,8 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.mdl.set .sec.mdls ul.list>li .box .name{ font-family:"BlairMd","NotoSansCJKkr"; margin-top: 5px; min-height: 22px; text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts{text-align: center;}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt{width: 26px;height: 26px;display:inline-block;font-size: 0px;background: no-repeat center;background-size: 100% auto;overflow: hidden;vertical-align: middle;}
-
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt.reg{ background-image: url(../images/common/mdl_plus.png)}
 .contain.mdl.set .sec.mdls ul.list>li .box .bts .bt.del{ background-image: url(../images/common/mdl_del.png)}
-
-
-
 .contain.mdl.set .msgs{text-align: center;padding: 60px 0 30px 0px;font-size: 12px;color: #999999;}
 
 
@@ -426,8 +427,11 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.mdl.reg .sec.size{position:relative;z-index: 0;padding-top: 5px;}
 .contain.mdl.reg .sec.size .uiSize .filter>li.gender{display:none;}
 
+
+/* 쿨한 게시물 */
 .contain.cools {}
 .contain.cools .coolList{}
+.contain.cools .coolList .nodata{height: calc(100vh - 50px);/* margin-top: -30px; */}
 .contain.cools .coolList .list.load{background: #000000;}
 .contain.cools .coolList .list{display: block;position: relative;overflow: hidden;padding: 1px;}
 .contain.cools .coolList .list>li{width: calc(50% - 0px);margin-bottom:0px;float:left;overflow: hidden;margin-right: 0px;}
@@ -446,7 +450,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.cools .coolList .list.load + .uiLoadMore{margin-top:0px;}
 .contain.cools .tabCtn .uiLoadMore{padding:0 8px;}
 
-
+/* 알림설정 */
 .contain.setalim{}
 .contain.setalim .sec.alim{padding-top: 30px;}
 .contain.setalim .sec.alim .list{}
@@ -457,8 +461,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.setalim .sec.alim .list>li>ul{}
 .contain.setalim .sec.alim .list>li>ul>li{ position:relative;padding: 8px 65px 8px 25px;}
 
-
-
+/* 연결된 계정 */
 .contain.account{}
 .contain.account .sec.acc{padding-top: 39px;}
 .contain.account .sec.acc .list{}
@@ -471,24 +474,19 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.account .sec.acc .list>li.kakao .tit::before{background-image:url(../images/common/ico_kakaotalk.png);}
 .contain.account .sec.acc .list>li.facebook .tit::before{background-image:url(../images/common/ico_facebook.png);}
 
-
-
-
-
-
-
+/* 공지사항 */
 .contain.notice{}
-.contain.notice .sec.notice{padding-top: 30px;}
+.contain.notice .sec.notice{margin-top: 30px;}
+.contain.notice .sec.notice{ height: calc(100vh - 68px); }
+.contain.notice .sec.notice .nodata{height: calc(100vh - 50px);margin-top: -30px;}
 .contain.notice .sec.notice .list{ }
-.contain.notice .sec.notice .list>li .hBox{}
+.contain.notice .sec.notice .list>li .hBox{ padding-left: 20px; }
 .contain.notice .sec.notice .list>li .tit{width: 100%;}
 .contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 47px;width: 71px;text-align: right;top: 12px;}
 .contain.notice .sec.notice .list + .uiLoadMore{ margin-top:calc(50vh - 110px );}
 .contain.notice .sec.notice .list.load + .uiLoadMore{margin-top:0px;}
 
-
-
-
+/* 회원탈퇴 */
 .contain.memdis{}
 .contain.memdis .tops{color: #999999;text-align: center;padding: 40px 0 25px 0;}
 .contain.memdis .list{border-top: #000000 solid 1px;}
@@ -513,9 +511,8 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.qna .sec.forms ul.form>li .dt textarea{border: none;}
 .contain.qna .sec.forms ul.form>li.memo .dd{margin: 10px -16px 0;}
 .contain.qna .sec.forms ul.form>li .dd .textarea{height:150px;padding: 9px 20px 9px 20px; border-color: #000000; border-width: 1px 0px;}
-
-.contain.qna{}
 .contain.qna .sec.qna{padding-top: 30px;}
+.contain.qna .sec.qna .nodata{height: calc(100vh - 50px);margin-top: -30px;}
 .contain.qna .sec.qna .list{ }
 .contain.qna .sec.qna .list>li .hBox{}
 .contain.qna .sec.qna .list>li .hBox .tit{max-width: calc(100% - 84px);vertical-align:middle;display:inline-block;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-family:"NotoSansCJKkr";}
@@ -599,6 +596,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.reward .uiTabPan .uiTab.b>li>a{ min-width: auto; height: 33px; background: #d2d2d2; color: #fff; border-width: 1px 0px; font-size: 13px; line-height: 35px; text-align: center; display: flex; font-family: "BlairMd"; align-items: center; justify-content: center; text-transform: uppercase; }
 .contain.reward .uiTabPan .uiTab.b>li.active>a{background-color: #70f5c4; color: #000000; border-bottom-width: 0px; border-top-width: 0;}
 .contain.reward .uiTabPan .pt_list{border-top: 1px solid #000;}
+.contain.reward .uiTabPan .pt_list .nodata{height: calc(100vh - 338px);}
 .contain.reward .uiTabPan .pt_list>ul>li{display: flex;justify-content: space-between;padding: 10px 20px 15px 20px;border-bottom: 1px solid #000;font-size: 11px;}
 .contain.reward .uiTabPan .pt_list>ul>li .info01{text-align: left;}
 .contain.reward .uiTabPan .pt_list>ul>li .info01 .date{color: #999; font-family:"BlairMd";}
@@ -682,9 +680,8 @@ body.my.list .header .bts .hisback{display:block;}
 
 /* 쇼핑 내역 */
 .contain.review{}
-.contain.review .sec.review{
-    padding: 15px 0;
-}
+.contain.review .sec.review{ padding: 15px 0; }
+.contain.review .sec.review .nodata{ height: calc(100vh - 68px); }
 .contain.review .sec.review .list{}
 .contain.review .sec.review .list>li{}
 .contain.review .sec.review .list>li .item{position:relative;padding: 28px 0px 18px 87px;}
@@ -762,3 +759,4 @@ body.my.list .header .bts .hisback{display:block;}
 
 /* 리뷰리스트 */
 .contain.review .reviewList{margin-top: 10px;}
+.contain.review .reviewList .nodata{ height: calc(100vh - 68px); }

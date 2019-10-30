@@ -21,6 +21,9 @@
 		<main id="contents" class="contents">
 			
 			<div class="sec review">
+				<div class="nodata">
+					<div class="msg">쇼핑내역이 존재하지 않습니다.</div>
+				</div>
 				<ul class="list" data-accd="accd" id="my_review_list">
 
 				</ul>

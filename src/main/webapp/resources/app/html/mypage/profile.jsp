@@ -26,7 +26,7 @@
 			<section class="uiPrfeSet">
 				<div class="user">
 					<div class="photo">
-						<!-- <div class="pic"><a href="./profile_set.jsp"><img src="https://placeimg.com/160/160/1" alt=""></a></div> -->
+						<!-- <div class="pic"><a href="./profile_set.jsp"><img src="//placeimg.com/160/160/1" alt=""></a></div> -->
 						<div class="pic"><a href="./profile_set.jsp"><img src="../../images/common/profile_no.png" alt=""></a></div>
 					</div>
 					<div class="infos">
@@ -66,7 +66,9 @@
 			</section>
 
 			<section class="prfList">
-				
+				<div class="nodata">
+					<div class="msg">NO POSTS YET</div>
+				</div>
 				<ul class="list" id="look_list"></ul>
 				<div class="uiLoadMore">
 					<em></em><button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>

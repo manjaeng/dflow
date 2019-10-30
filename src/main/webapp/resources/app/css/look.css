@@ -36,13 +36,15 @@
 .contain.search .secResult .tags .tg>li .hash .tt{font-size: 12px;display: inline-block;vertical-align: 1px;}
 .contain.search .secResult .tags .tg>li .hash .del{width: 24px;height: 24px;background: url(../images/common/delete_hash.png ) no-repeat center center;background-size: 18px auto;position:absolute;right: -2px;top: -1px;font-size: 0px;}
 .contain.search .secResult .resultList{}
+.contain.search .secResult .resultList .nodata{ height: calc(100vh - 200px); }
 
 
-.contain.search .secResult.acct{padding: 10px 0px;}
-.contain.search .secResult .acctList{padding-top: 5px;}
+.contain.search .secResult.acct{padding: 0px 0px;}
+.contain.search .secResult.acct .nodata{height: calc(100vh - 200px);}
+.contain.search .secResult .acctList{padding-top: 0px;}
 .contain.search .secResult .acctList .list{display:block;;position: relative;padding: 0 0px 0px 0px;}
 .contain.search .secResult .acctList .list>li{margin-top: 13px;padding: 0px 20px;}
-.contain.search .secResult .acctList .list>li:first-child{margin-top: 0px;}
+.contain.search .secResult .acctList .list>li:first-child{margin-top: 15px;}
 .contain.search .secResult .acctList .list>li .item{position: relative;margin: auto;padding: 0 0px;color: #8a8a8a;display: flex;min-height: 57px;align-items: center;justify-content: space-between;}
 .contain.search .secResult .acctList .list>li .item .img{display:block;position:relative;width: 49px;position: absolute;left: 0px;top: 0px;}
 .contain.search .secResult .acctList .list>li .item .img>.lk{display: block;position: relative;height: 100%;width: 100%;overflow: hidden;padding-bottom: calc(4% / 3.5 * 100);}
@@ -443,3 +445,11 @@
 body.look.view{}
 body.look.view .header .bts .hisback{display:block;}
 .contain.look.view .lookList{ padding-bottom: 20px;}
+
+/* 룩 가이드팝업 */
+.popLookGud{}
+.popLookGud .btnPopClose{background: none;top: 17vw;width: 15vw;right: 3vw;height: 7vw;}
+.popLookGud .guides{}
+.popLookGud .guides img{
+    width: 100%;
+}

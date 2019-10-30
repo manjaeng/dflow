@@ -66,7 +66,7 @@
 			}
 		} catch (error) { }			
 
-		$(document).on("click", ".secLk.look .welcome , .sec.comt .nodata" ,function(e){
+		$(document).on("click", ".secLk.look .welcome , div.nodata " ,function(e){
 			$(this).remove();
 		});
 
@@ -181,7 +181,7 @@
 					}
 				}
 			}
-			var thisPg = window.location.pathname;
+			var thisPg = window.location.pathname.replace("/resources/app/","../../");
 
 			$(".linkHtml .cont ul ul>li").each(function () {
 				var text = $(this).find("em").text();

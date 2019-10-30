@@ -13,16 +13,22 @@
 	<div id="contain" class="contain look list">
 		<main id="contents" class="contents">
 			<section class="secLk look">
+
+				<!-- follow 피드 없을때  -->
 				<div class="welcome" style="display: none;">
 					<div class="msg">
 						<h2 class="tit">WELCOME TO FAPEE</h2>
-						<p class="txt">
-							When you follow people, <br>
-							You’ll see the fashions <br>
-							they post here.
-						</p>
+						<p class="txt"> When you follow people, <br> You’ll see the fashions <br> they post here. </p>
 					</div>
 				</div>
+				<!-- 즐겨찾기 피드 없을때  -->
+				<div class="welcome" style="display: none;">
+					<div class="msg">
+						<h2 class="tit">WELCOME TO FAPEE</h2>
+						<p class="txt"> Add people to your favorites.<br> You’ll see the fashions <br> they post here. </p>
+					</div>
+				</div>
+				
 				<ul class="lookList" id="lookList"></ul>
 				<div class="uiLoadMore">
 					<em></em>
@@ -34,6 +40,17 @@
 
 	<!-- 레이어팝업 자리 -->
 	<div class="popLayerArea">
+		<!-- 가이드 팝업 -->
+		<article class="popLayer a popLookGud" id="popLookGud">
+			<div class="pbd">
+				<div class="pct">
+					<main class="poptents">
+						<button type="button" class="btnPopClose">닫기</button>
+						<div class="guides"><img src="../../images/common/look_guide.png" alt=""></div>
+					</main>
+				</div>
+			</div>
+		</article>
 		<%@ include file="../_inc/inc_layers.jsp" %>
 	</div>
 
@@ -41,8 +58,8 @@
 	<script>
 		
 		var page = 0 ;
-		appendStat = true ;
-		addItemFnc = function(){
+		var appendStat = true ;
+		var addItemFnc = function(){
 			appendStat = false ;
 			$(".uiLoadMore").addClass("active");
 			$.ajax({
@@ -90,6 +107,7 @@
 		$(document).ready(function(){
 			ui.nav.act("look");  // 하단 메뉴 활성화
 			ui.refresh.init(testRefresh);  //  pulldown 새로고침
+			ui.popLayer.open('popLookGud');
 		});
 
 

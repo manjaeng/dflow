@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>S-HR MO Link</title>
+<title>MO Link</title>
 <meta charset="utf-8">
 <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width" id="viewport">
 <link href="../../images/common/favicon.ico" rel="shrtcut icon">
@@ -158,7 +158,7 @@
 						<mark>../../html/look/look.jsp</mark>
 					</li>
 					<li>
-						<h4>상품</h4> <em>new</em>
+						<h4>상품</h4> <em>com</em>
 						<mark>../../html/look/look_goods.jsp</mark>
 					</li>
 					<li>
@@ -174,11 +174,11 @@
 						<mark>../../html/look/look_cate.jsp</mark>
 					</li>
 					<li>
-						<h4>리뷰</h4> <em>new</em>
+						<h4>리뷰</h4> <em>com</em>
 						<mark>../../html/look/review.jsp</mark>
 					</li>
 					<li>
-						<h4>리뷰 상세</h4> <em>new</em>
+						<h4>리뷰 상세</h4> <em>com</em>
 						<mark>../../html/look/review_view.jsp</mark>
 					</li>
 				</ul>
@@ -232,11 +232,11 @@
 						<mark>../../html/setting/pwMod.jsp</mark>
 					</li>
 					<li>
-						<h4>쇼핑 내역</h4> <em>new</em>
+						<h4>쇼핑 내역</h4> <em>com</em>
 						<mark>../../html/setting/my_review.jsp</mark>
 					</li>
 					<li>
-						<h4>내 리워드 관리</h4> <em>new</em>
+						<h4>내 리워드 관리</h4> <em>com</em>
 						<mark>../../html/setting/myreward.jsp</mark>
 					</li>
 					<li>
