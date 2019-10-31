@@ -701,7 +701,7 @@ var ui = {
 	},
 	tog: { // 토글 UI
 		init: function() {
-			$(window).on("load", this.using);
+			this.using();
 			this.set();
 		},
 		set:function(){
@@ -733,8 +733,8 @@ var ui = {
 	},
 	accd: { // 아코디언 UI
 		init: function() {
-			$(window).on("load", this.using);
-			$(window).on("load", this.tbl);
+			this.using();
+			this.tbl();
 			this.set();
 		},
 		set:function(){
