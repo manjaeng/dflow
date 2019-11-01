@@ -61,7 +61,7 @@
 						</div>
 					</div>
 					<div class="review">
-						<div class="tit"><em class="t">REVEIW</em><i class="n">(13)</i> </div>
+						<div class="tit"><em class="t">REVIEW</em><i class="n">(13)</i> </div>
 						<div class="bts">
 							<a href="../look/review.jsp" class="bt more">MORE</a>
 						</div>
