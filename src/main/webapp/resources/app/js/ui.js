@@ -708,25 +708,29 @@ var ui = {
 			$("[data-ui-tog='ctn']").hide();
 			$("[data-ui-tog='ctn'].open").show();
 		},
+		open:function(id){
+			$("#"+id).slideDown(100,function(){
+				$("#"+id).addClass("open");
+				$("[data-ui-tog='btn'][href='#"+id+"']").addClass("open");
+			});
+		},
+		close:function(id){
+			$("#"+id).slideUp(100,function(){
+				$("#"+id).removeClass("open");
+				$("[data-ui-tog='btn'][href='#"+id+"']").removeClass("open");
+			});
+		},
 		using:function(){
+			var _this = this;
 			$(document).on("click", "[data-ui-tog='btn']", function(e) {
-
-				var thisCtn = $(this).attr("href").replace("#","");
-				var thisEls = $(this);
-				if( thisEls.hasClass("open") ) {				
-					thisEls.removeClass("open");
-					$("#"+thisCtn).slideUp(100,function(){
-						$("#"+thisCtn).removeClass("open");
-						ui.popLayer.refresh();
-					});
+				// console.log("클릭");
+				var id = $(this).attr("href").replace("#","");
+				var bt = $(this);
+				if( bt.hasClass("open") ) {				
+					_this.close(id);
 				}else{
-					thisEls.addClass("open");
-					$("#"+thisCtn).slideDown(100,function(){
-						$("#"+thisCtn).addClass("open");
-						ui.popLayer.refresh();
-					});
+					_this.open(id);
 				}
-
 				e.preventDefault();
 			});
 		}

@@ -59,9 +59,7 @@
 .popJoin .joinForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
 .popJoin .joinForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
 .popJoin .joinForm .form .uiIptPlc{}
-.popJoin .joinForm .form .uiIptPlc .plc{
-    text-transform: inherit;
-}
+.popJoin .joinForm .form .uiIptPlc .plc{ text-transform: inherit; }
 .popJoin .joinForm .form .uiIptPlc .input{}
 .popJoin .joinForm .form .uiIptPlc .time{position:absolute;top: 31px;right: 2px;color: #fd5555;font-size: 12px;}
 .popJoin .joinForm .form .msgs{margin-top: 8px; font-size: 12px; color: #999999;}
@@ -71,6 +69,8 @@
 .popJoin .joinForm .form .agree .txt{font-size: 12px;}
 .popJoin .joinForm .form .agree .txt a{text-decoration:underline;display: inline-block;vertical-align: middle;padding: 1px 0px;}
 .popJoin .joinForm .form .agree label.checkbox{position:absolute;right: 0px;top: 2px;}
+.popJoin.mo .joinForm .form .nation{ margin-top: 20px; border-bottom: #000000 solid 1px; }
+.popJoin.mo .joinForm .form .nation .select{/* font-family:"BlairMd"; *//* text-transform: uppercase; */}
 .popJoin.mo .joinForm .form .uiIptPlc.phone{}
 .popJoin.mo .joinForm .form .uiIptPlc.phone input{width: calc(100% - 91px);}
 .popJoin.mo .joinForm .form .uiIptPlc.phone .btnSend{position:absolute; right: 0px; bottom: 0px; width: 83px;}
@@ -93,13 +93,13 @@
 .contain.findPw .findForm .form .memcate{display:flex;justify-content: center;margin: 25px 0px 0px 0px;}
 .contain.findPw .findForm .form .memcate .radio{margin: 0 10px;font-size: 12px;}
 .contain.findPw .findForm .form .uiIptPlc{    margin-top: 10px;}
-.contain.findPw .findForm .form .uiIptPlc .plc{
-    text-transform: inherit;
-}
+.contain.findPw .findForm .form .uiIptPlc .plc{ text-transform: inherit; }
 .contain.findPw .findForm .form .uiIptPlc .input{}
 .contain.findPw .findForm .form .msgs{margin-top: 8px;font-size: 12px;}
 .contain.findPw .findForm .form .btns{margin-top: 20px;}
 .contain.findPw .findForm .form .btns .btn{width:100%;}
+.contain.findPw .findForm .form .nation{ margin-top: 20px; border-bottom: #000000 solid 1px; }
+.contain.findPw .findForm .form .nation .select{/* font-family:"BlairMd"; *//* text-transform: uppercase; */}
 .contain.findPw .findForm .form .uiIptPlc.phone{}
 .contain.findPw .findForm .form .uiIptPlc.phone input{width: calc(100% - 91px);}
 .contain.findPw .findForm .form .uiIptPlc.phone .btnSend{position:absolute; right: 0px; bottom: 0px; width: 83px;}

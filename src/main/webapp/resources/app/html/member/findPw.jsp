@@ -20,14 +20,16 @@
 				<div class="hdt"><em>비밀번호 재설정</em></div>
 				<div class="msg">가입 시 인증한 전화 번호를 입력하시면 <br> 본인 확인 코드를 보내드립니다. </div>
 				<div class="form">
+					<div class="nation">
+						<select class="select" id="nation_code"></select>
+					</div>			
 					<div class="uiIptPlc phone">
-						<input type="number" class="input" value="">
+						<input type="tel" class="input" id="my_phone_number">
 						<span class="plc">Mobile Phone</span>
 						<a href="javascript:;" class="btn c sm btnSend">SEND</a>
 					</div>
-					
 					<div class="uiIptPlc certi">
-						<input type="number" class="input" value="">
+						<input type="tel" class="input">
 						<span class="plc">Verification number </span>
 						<span class="time">2:59</span>
 					</div>
@@ -53,7 +55,22 @@
 	
 	
 	<script>
-		
+	var nationNumFnc = function(){
+		$.ajax({
+			type: "post",
+			url: "../common/nation.html",
+			dataType: "html",
+			success: function(html) {
+				$("#nation_code").append(html);
+			}
+		});	
+		$(document).on("change","#nation_code",function(e){
+			var ncode = $("#nation_code").val() + " ";
+			$("#my_phone_number").val( ncode ).focus();
+		});
+	};
+
+	nationNumFnc();	
 	</script>
 
 	<!--// 컨텐츠 끝 -->
