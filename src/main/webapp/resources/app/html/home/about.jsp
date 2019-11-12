@@ -29,7 +29,7 @@
 
 			<section class="sec c1">
 				<div class="in">
-					<div class="slide" id="slideAbout">
+					<div class="slideAbout" id="slideAbout">
 						<div class="swiper-container">
 							<ul class="swiper-wrapper slide">
 								<li class="swiper-slide">
