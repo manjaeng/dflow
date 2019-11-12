@@ -84,6 +84,10 @@
 						<mark>../../html/home/intro.jsp</mark>
 					</li>
 					<li>
+						<h4>패피소개</h4> <em>com</em>
+						<mark>../../html/home/about.jsp</mark>
+					</li>
+					<li>
 						<h4>정보입력1</h4> <em>com</em>
 						<mark>../../html/home/myinfo_step1.jsp</mark>
 					</li>

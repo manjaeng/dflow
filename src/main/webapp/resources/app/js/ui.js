@@ -1,5 +1,5 @@
 ////////////////////////////////////////
-// Author : 김기현 Kim KeeHyum
+// Author : 김기현 KimKeeHyum
 // E-mail : kimkee@naver.com    
 // Date   : 2019-06-12 ~
 ////////////////////////////////////////
@@ -20,6 +20,7 @@ var ui = {
 		this.dropDown.init();
 		this.getSafe.init();
 	},
+	about:{},
 	cm:{ // 공통
 		init:function(){
 			// $("select").selectmenu();
@@ -242,13 +243,12 @@ var ui = {
 			pullToRefresh({
 				container: document.querySelector('#contain'),
 				animates: ptrAnimatesMaterial2,
-				refresh() {
-					return new Promise(resolve => {
+				refresh: function() {
+					return new Promise( function(resolve){
 						setTimeout(resolve, 1500)
 						setTimeout(function(){
 							_this.pullCallback();
 						}, 1500)
-						
 					})
 				}
 			})
@@ -916,9 +916,10 @@ var ui = {
         	$(this.intPic.els +" ul.slide" ).length && this.intPic.using();
         	$(this.lookPic.els +" ul.slide" ).length && this.lookPic.using();
         	$(this.mnPic.els +" ul.slide" ).length && this.mnPic.using();
-        	$(this.newBie.els +" ul.slide" ).length && this.newBie.using();
-        	$(this.newUp.els +" ul.slide" ).length && this.newUp.using();
+        	// $(this.newBie.els +" ul.slide" ).length && this.newBie.using();
+        	// $(this.newUp.els +" ul.slide" ).length && this.newUp.using();
         	$(this.sizeGud.els +" ul.slide" ).length && this.sizeGud.using();
+			$(this.about.els +" ul.slide" ).length && this.about.using();
         },
 		intPic:{  //  
             els: "#slideUploadPic.swiper-container",
@@ -939,7 +940,7 @@ var ui = {
                 this.slide = new Swiper(this.els, this.opt);
 			}
         },
-		newBie:{  //  
+		newBie:{  //  html/home/home.jsp
             els: ".slideNewbie.swiper-container",
             opt: {
                 slidesPerView: "auto",
@@ -957,7 +958,7 @@ var ui = {
                 this.slide = new Swiper(this.els, this.opt);
 			}
         },
-		newUp:{  //  
+		newUp:{  //  html/home/home.jsp
             els: ".slideNewup.swiper-container",
             opt: {
                 slidesPerView: 2,
@@ -976,7 +977,7 @@ var ui = {
 			}
         },
 
-		mnPic:{  //  
+		mnPic:{  //  html/home/home.jsp
             els: ".slideMnPic .swiper-container:not(.swiper-container-horizontal)",
             opt: {
 				slidesPerView: 1,
@@ -1010,7 +1011,7 @@ var ui = {
 				});
 			}
         },
-		lookPic:{  // 
+		lookPic:{  // html/look/look.jsp
             els: ".slideLookPic .swiper-container:not(.swiper-container-horizontal)",
             opt: {
 				slidesPerView: 1,
@@ -1042,10 +1043,10 @@ var ui = {
 						_this.slide[idx] = new Swiper( $this , _this.opt );
 						// console.log(_this.slide[i]);
                     }
-				});				
+				});
 			}
         },
-		sizeGud:{  // 
+		sizeGud:{  // popSizeGud
             els: ".slideSizeGud .swiper-container:not(.swiper-container-horizontal)",
             opt: {
 				slidesPerView: 1,
@@ -1053,33 +1054,49 @@ var ui = {
 				observeParents: true,
 				watchOverflow:true,
 				pagination: {
-					// type:'fraction',
 					el: '.pagination',
-					dynamicBullets:true,
-					//dynamicMainBullets:1
+					clickable: true
 				},
                 autoHeight:true,
 				autoplay:false,
 				preloadImages: true,
-				zoom: true,
-				lazy: true,
 				loop: false
             },
 			slide:[],
             using: function() {
-				var _this = this;
-				$(this.els).each(function(i){
-                	var $this = $(this);
-					var idx = $this.closest("li").index();
-					if( $this.find(".swiper-slide").length == 1 ) _this.opt.loop = false ;
-					if( $this.find(".swiper-zoom-container").length == 0 ) _this.opt.zoom = false ;
-					if( $this.find(".swiper-slide").length >= 1 ) {
-						_this.slide[idx] = new Swiper( $this , _this.opt );
-						// console.log(_this.slide[i]);
-                    }
-				});				
+				if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+					this.opt.loop = false;
+				}
+				this.slide = new Swiper(this.els, this.opt);			
 			}
         },
+		about:{  //  /html/home/about.jsp
+			els: ".contain.about #slideAbout .swiper-container",
+			opt: {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				watchOverflow:true,
+				pagination: {
+					el: '.pagination',
+					clickable: true
+				},
+				navigation: {
+					nextEl: '.navigation .nav.next',
+					prevEl: '.navigation .nav.prev'
+				},
+				autoHeight:true,
+				autoplay:false,
+				preloadImages: false,
+				loop: false
+			},
+			using: function() {
+				if ( $(this.els).find(".swiper-slide").length <= 1 ) {
+					this.opt.loop = false;
+				}
+				this.slide = new Swiper(this.els, this.opt);
+			}
+		},
 		sample1:{  //  샘플1
             els: ".slideSample1 .swiper-container",
             opt: {
@@ -1410,7 +1427,7 @@ var ui = {
 		},
 		refresh:function(){
 			var iscr = Object.keys(this.scroll);
-			for (const key in iscr) {
+			for (var key in iscr) {
 				var idx = iscr[key];
 				console.log(idx, iscr);
 				this.scroll[idx].refresh(); 
