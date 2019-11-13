@@ -774,7 +774,7 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 
 
 
-.nodata{height: calc(100vh - 87px);text-align:center;font-family:"BlairMd";text-transform: uppercase;display:flex;align-items: center;width:100%;align-content: center;}
+.nodata{height: calc(100vh - 87px);text-align:center;font-family:"BlairMd";text-transform: uppercase;display:flex;align-items: center;width:100%;align-content: center;display: none;}
 .nodata .msg{font-size: 17px;width: 100%;}
 .nodata .msg .tit{font-size: 24px;}
 .nodata .msg .txt{font-size: 13px;}
@@ -1051,9 +1051,9 @@ body.my .floatNav .bt.prf{display:block;border-radius: 100%;}
 
 .popSearch .recent{}
 .popSearch .recent .ht{font-family:"BlairMd";color: #cccccc;padding: 7px 16px;font-size: 13px;}
-.popSearch .recent .list{}
-.popSearch .recent .list>li{border-top: #cfcfcf solid 1px;}
-.popSearch .recent .list>li:last-child{border-bottom: #cfcfcf solid 1px;}
+.popSearch .recent .list{border-top:#cfcfcf solid 1px;}
+.popSearch .recent .list>li{border-bottom: #cfcfcf solid 1px;}
+.popSearch .recent .list>li:last-child{}
 .popSearch .recent .list>li .box{font-family: "BlairMd","NotoSansCJKkr";position:relative;}
 .popSearch .recent .list>li .box .kwd{font-size: 13px;display:block;height: 37px;padding: 5px 0px 5px 16px;overflow:hidden;margin: 1px 0px 0px 0px;line-height: 210%;max-width: calc( 100vw - 125px );/* text-overflow: ellipsis; *//* white-space: nowrap; */color: #999999;}
 .popSearch .recent .list>li .box .date{font-size: 11px;color: #999999;position:absolute;right: 51px;top: 11px;}
