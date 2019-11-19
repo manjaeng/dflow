@@ -1088,7 +1088,7 @@ var ui = {
 				autoHeight:true,
 				autoplay:false,
 				preloadImages: false,
-				loop: false
+				loop: true
 			},
 			using: function() {
 				if ( $(this.els).find(".swiper-slide").length <= 1 ) {
