@@ -57,7 +57,7 @@
 									<div class="pic"><img src="../../images/about/c1_img_c4.png" alt=""></div>
 									<div class="desc">
 										<div class="tit">LOOK FEED</div>
-										<div class="msg">룩 피드에서는 ‘내가 올린 룩’과 ‘팔로우한 패피들의 룩’을 확인할 수 있습니다. <br> 실시간으로 패피들의 룩과 상품정보를 감상하고,<br> 내 사이즈와의 매칭률도 간편하게 확인할 수 있어요!</div>
+										<div class="msg">룩 피드에서는 ‘내가 올린 룩’과 ‘팔로우한 패피들의 룩’을 <br class="dn"> 확인할 수 있습니다. <br> 실시간으로 패피들의 룩과 상품정보를 감상하고,<br> 내 사이즈와의 매칭률도 간편하게 확인할 수 있어요!</div>
 									</div>
 								</li>
 								<li class="swiper-slide">
