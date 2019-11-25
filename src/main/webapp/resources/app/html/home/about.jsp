@@ -12,7 +12,7 @@
 	<div id="contain" class="contain about">
 		<main id="contents" class="contents">
 
-			<section class="sec c0 vs">
+			<section class="sec c0">
 				<div class="vsimg"><div class="img"></div></div>
 				<div class="in">
 					<div class="logo">FAPEE</div>
@@ -114,15 +114,15 @@
 						<div class="tit">GET <br>REWARDS</div>
 					</div>
 					<div class="set set1">
+						<img class="pic" src="../../images/about/c3_pic_1.png" alt="">
 						<div class="tit"><em>1</em>BUY NOW</div>
 						<div class="msg">패피에서 마음에 드는<br>상품을 구매한다.</div>
-						<img class="pic" src="../../images/about/c3_pic_1.png" alt="">
 						<img class="dec2" src="../../images/about/c3_deco_2.png" alt="">
 					</div>
 					<div class="set set2">
+						<img class="pic" src="../../images/about/c3_pic_2.png" alt="">
 						<div class="tit"><em>2</em> WRITE<br>A REVIEW</div>
 						<div class="msg">구매한 상품의 생생한<br>리뷰를 작성한다.</div>
-						<img class="pic" src="../../images/about/c3_pic_2.png" alt="">
 					</div>
 					<div class="set set3">
 						<div class="tit"><em>3</em> P.R!</div>
@@ -130,9 +130,9 @@
 						<img class="dec3" src="../../images/about/c3_deco_3.png" alt="">
 					</div>
 					<div class="set set4">
+						<img class="pic" src="../../images/about/c3_pic_3.png" alt="">
 						<div class="tit"><em>4</em> GET <br>REWARDS</div>
 						<div class="msg">내 리뷰를 통해 <br><u>판매가 이뤄지면</u> <br>리워드를 지급받는다.</div>
-						<img class="pic" src="../../images/about/c3_pic_3.png" alt="">
 					</div>
 				</div>
 			</section>
@@ -177,7 +177,7 @@
 				<div class="in">
 					<div class="logo">FAPEE</div>
 					<div class="copy">Copyright &copy; 2019 FAPEE All rights reserved.</div>
-					<div class="company">
+					<div class="info company">
 						<strong class="st">사업자 정보</strong>
 						<ul class="list">
 							<li>법인명: 패피(Fapee)</li>
@@ -186,14 +186,14 @@
 							<li>사업자등록번호 : 208-85-07375</li>
 						</ul>
 					</div>
-					<div class="partner">
+					<div class="info partner">
 						<strong class="st">제휴 및 기타 문의</strong>
 						<ul class="list">
 							<li>전화번호: 02-0000-0000</li>
 							<li>이메일 : gkfn77@inaen.co.kr </li>
 						</ul>
 					</div>
-					<div class="links">
+					<div class="info links">
 						<ul class="list">
 							<li><a href="javascript:;">서비스이용약관</a></li>
 							<li><a href="javascript:;">개인정보활용방침</a></li>
