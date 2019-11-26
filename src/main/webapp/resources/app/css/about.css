@@ -8,7 +8,7 @@
 .contain.about .sec.c0>.in{min-height: 956px;}
 .contain.about .sec.c0{ background: #000; }
 .contain.about .sec.c0 .vsimg{width: 100%;margin: auto;}
-.contain.about .sec.c0 .vsimg .img{background: url(../images/about/visual.jpg) no-repeat center top;position: absolute;left: 50%;top: 0;width: 1920px;transform: translateX(-50%);padding-bottom: 956px;background-size: contain;}
+.contain.about .sec.c0 .vsimg .img{background: url(../images/about/visual.jpg) repeat-x center top;position: absolute;left: 50%;top: 0;width: 100%;min-width: 1920px;transform: translateX(-50%);padding-bottom: 956px;background-size: contain;}
 .contain.about .sec.c0 .logo{position:absolute;left:15px;top: 45px;width:160px;height:64px;background:url(../images/about/logo.png) no-repeat;background-size: 100% auto;font-size: 0px;}
 .contain.about .sec.c0 .txt{padding-top: 420px;text-align:center;}
 .contain.about .sec.c0 .txt .tt{font-size: 75px;color: #70f0c4;font-family:"BlairMd";line-height: 100%;}
@@ -74,7 +74,7 @@
 .contain.about .sec.c3 .set .msg{font-size: 18px;line-height: 170%;margin-top: 10px;}
 .contain.about .sec.c3 .set1{position:absolute;left: 676px;top: 470px;}
 .contain.about .sec.c3 .set1 .pic{position:absolute;left: 185px;top: -360px;z-index: -1;}
-.contain.about .sec.c3 .set1 .dec2{position:absolute;left: -646px;top: -100px;}
+.contain.about .sec.c3 .set1 .dec2{position:absolute;left: -626px;top: -100px;}
 .contain.about .sec.c3 .set2{position:absolute;left: 230px;top: 690px;}
 .contain.about .sec.c3 .set2 .pic{position:absolute;left: 213px;top: -6px;}
 .contain.about .sec.c3 .set2 .dec3{position:absolute;left: -280px;top: 198px;}
@@ -143,66 +143,66 @@
 	.contain.about .sec.c2::before, 
 	.contain.about .sec.c2::after{height: 5vw;background-size: auto 10vw;background-position: center -5vw;}
 	.contain.about .sec.c2::after{ background-position: center 0vw; }
-	.contain.about .sec.c2 .hdt{left: calc( 165vw / 1280 * 100 );top: calc( 30vw / 1280 * 100 );}
-	.contain.about .sec.c2 .hdt .tit{font-size: calc( 55vw / 1280 * 100 );margin-top: calc( 20vw / 1280 * 100 );}
-	.contain.about .sec.c2 .hdt .dec1{width: calc( 186vw / 1280 * 100 );}
+	.contain.about .sec.c2 .hdt{left: calc( 100 / 1280 * 165vw );top: calc( 100 / 1280 * 30vw );}
+	.contain.about .sec.c2 .hdt .tit{font-size: calc( 100 / 1280 * 55vw );margin-top: calc( 100 / 1280 * 20vw );}
+	.contain.about .sec.c2 .hdt .dec1{width: calc( 100 / 1280 * 186vw );}
 	.contain.about .sec.c2 .hdt .msg{ font-size: 2vw; margin-top: 1.5vw; }
-	.contain.about .sec.c2 .hdt .dec2{left: calc( -120vw / 1280 * 100 );top: calc( 360vw / 1280 * 100 );width: calc( 234vw / 1280 * 100 );}
+	.contain.about .sec.c2 .hdt .dec2{left: calc( 100 / 1280 * -120vw );top: calc( 100 / 1280 * 360vw );width: calc( 100 / 1280 * 234vw );}
 	.contain.about .sec.c2 .set .tit{font-size: 2.7vw;}
 	.contain.about .sec.c2 .set .msg{font-size: 1.6vw;margin-top: 1.6vw;}
-	.contain.about .sec.c2 .set1{left: calc( 490vw / 1280 * 100 );top: calc( 410vw / 1280 * 100 );}
+	.contain.about .sec.c2 .set1{left: calc( 100 / 1280 * 490vw );top: calc( 100 / 1280 * 410vw );}
 	.contain.about .sec.c2 .set1 .pic{left: 31.2vw;width: 25.3vw;top: -23.6vw;}
-	.contain.about .sec.c2 .set1 .dec3{left: calc( -280vw / 1280 * 100 );top: calc( 198vw / 1280 * 100 );width: calc( 232vw / 1280 * 100 );}
-	.contain.about .sec.c2 .set2{left: calc( 165vw / 1280 * 100 );top: calc( 1000vw / 1280 * 100 );}
-	.contain.about .sec.c2 .set2 .pic{left: calc( 365vw / 1280 * 100 );top: calc( -290vw / 1280 * 100 );width: calc( 590vw / 1280 * 100 );}
+	.contain.about .sec.c2 .set1 .dec3{left: calc( 100 / 1280 * -280vw );top: calc( 100 / 1280 * 198vw );width: calc( 100 / 1280 * 232vw );}
+	.contain.about .sec.c2 .set2{left: calc( 100 / 1280 * 165vw );top: calc( 100 / 1280 * 1000vw );}
+	.contain.about .sec.c2 .set2 .pic{left: calc( 100 / 1280 * 365vw );top: calc( 100 / 1280 * -290vw );width: calc( 100 / 1280 * 590vw );}
 
 	/* c3 */
-	.contain.about .sec.c3{height:calc( 1508vw / 1280 * 100 );padding: calc( 100vw / 1280 * 100 ) 0;}
+	.contain.about .sec.c3{height:calc( 100 / 1280 * 1508vw );padding: calc( 100 / 1280 * 100vw ) 0;}
 	.contain.about .sec.c3 .hdt{}
-	.contain.about .sec.c3 .hdt{left: calc( 361vw / 1280 * 100 );top: 0px;}
-	.contain.about .sec.c3 .hdt .dec1{ width: calc( 66vw / 1280 * 100 ); }
-	.contain.about .sec.c3 .hdt .tit{font-size: calc( 55vw / 1280 * 100 );margin-top: calc( 20vw / 1280 * 100 );}
+	.contain.about .sec.c3 .hdt{left: calc( 100 / 1280 * 361vw );top: 0px;}
+	.contain.about .sec.c3 .hdt .dec1{ width: calc( 100 / 1280 * 66vw ); }
+	.contain.about .sec.c3 .hdt .tit{font-size: calc( 100 / 1280 * 55vw );margin-top: calc( 100 / 1280 * 20vw );}
 	.contain.about .sec.c3 .hdt .msg{font-size: 24px;line-height: 180%;margin-top: 20px;}
 	.contain.about .sec.c3 .hdt .dec2{left: -290px;top: 360px;}
-	.contain.about .sec.c3 .set .tit{font-size: calc( 24vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set .tit em{width: calc( 85vw / 1280 * 100 );height: auto;font-size: calc( 12vw / 1280 * 100 );padding: 0 calc( 14vw / 1280 * 100 );left: calc( -106vw / 1280 * 100 );top: calc( 5vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set .msg{font-size: calc( 18vw / 1280 * 100 );margin-top: calc( 10vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set1{left: calc( 676vw / 1280 * 100 );top: calc( 470vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set1 .pic{left: calc( 185vw / 1280 * 100 );top: calc( -360vw / 1280 * 100 );width: calc( 335vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set1 .dec2{left: calc( -646vw / 1280 * 100 );top: calc( -100vw / 1280 * 100 );width: calc( 237vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set2{left: calc( 230vw / 1280 * 100 );top: calc( 690vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set2 .pic{left: calc( 213vw / 1280 * 100 );top: calc( -6vw / 1280 * 100 );width: calc( 320vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set2 .dec3{left: calc( -280vw / 1280 * 100 );top: 198px;}
-	.contain.about .sec.c3 .set3{left: calc( 229vw / 1280 * 100 );top: calc( 958vw / 1280 * 100 );}
+	.contain.about .sec.c3 .set .tit{font-size: calc( 100 / 1280 * 24vw );}
+	.contain.about .sec.c3 .set .tit em{width: calc( 100 / 1280 * 85vw );height: auto;font-size: calc( 100 / 1280 * 12vw );padding: 0 calc( 100 / 1280 * 14vw );left: calc( 100 / 1280 * -106vw );top: calc( 100 / 1280 * 5vw );}
+	.contain.about .sec.c3 .set .msg{font-size: calc( 100 / 1280 * 18vw );margin-top: calc( 100 / 1280 * 10vw );}
+	.contain.about .sec.c3 .set1{left: calc( 100 / 1280 * 676vw );top: calc( 100 / 1280 * 470vw );}
+	.contain.about .sec.c3 .set1 .pic{left: calc( 100 / 1280 * 185vw );top: calc( 100 / 1280 * -360vw );width: calc( 100 / 1280 * 335vw );}
+	.contain.about .sec.c3 .set1 .dec2{left: calc( 100 / 1280 * -646vw );top: calc( 100 / 1280 * -100vw );width: calc( 100 / 1280 * 237vw );}
+	.contain.about .sec.c3 .set2{left: calc( 100 / 1280 * 230vw );top: calc( 100 / 1280 * 690vw );}
+	.contain.about .sec.c3 .set2 .pic{left: calc( 100 / 1280 * 213vw );top: calc( 100 / 1280 * -6vw );width: calc( 100 / 1280 * 320vw );}
+	.contain.about .sec.c3 .set2 .dec3{left: calc( 100 / 1280 * -280vw );top: 198px;}
+	.contain.about .sec.c3 .set3{left: calc( 100 / 1280 * 229vw );top: calc( 100 / 1280 * 958vw );}
 	.contain.about .sec.c3 .set3 .pic{left: 335px;top: -302px;}
-	.contain.about .sec.c3 .set3 .dec3{left: calc( 790vw / 1280 * 100 );top: calc( -150vw / 1280 * 100 );width: calc( 210vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set4{left: calc( 910vw / 1280 * 100 );top: calc( 1070vw / 1280 * 100 );}
-	.contain.about .sec.c3 .set4 .pic{left: calc( -429vw / 1280 * 100 );top: calc( -2vw / 1280 * 100 );width: calc( 320vw / 1280 * 100 );}
+	.contain.about .sec.c3 .set3 .dec3{left: calc( 100 / 1280 * 790vw );top: calc( 100 / 1280 * -150vw );width: calc( 100 / 1280 * 210vw );}
+	.contain.about .sec.c3 .set4{left: calc( 100 / 1280 * 910vw );top: calc( 100 / 1280 * 1070vw );}
+	.contain.about .sec.c3 .set4 .pic{left: calc( 100 / 1280 * -429vw );top: calc( 100 / 1280 * -2vw );width: calc( 100 / 1280 * 320vw );}
 	.contain.about .sec.c3 .set4 .dec3{left: -280px;top: 198px;}
 
 	/* c4 */
-	.contain.about .sec.c4{padding:calc( 80vw / 1280 * 100 ) 0px;}
-	.contain.about .sec.c4 .hdt{max-width: calc( 610vw / 1280 * 100 );margin: 0 auto calc( 50vw / 1280 * 100 ) auto;}
-	.contain.about .sec.c4 .hdt .tit{font-size: calc( 55vw / 1280 * 100 );margin-top: calc( 20vw / 1280 * 100 );}
-	.contain.about .sec.c4 .hdt .msg{font-size: calc( 20vw / 1280 * 100 );margin-top: calc( 20vw / 1280 * 100 );}
-	.contain.about .sec.c4 .hdt .mss{font-size: calc( 14vw / 1280 * 100 );margin-top: calc( 5vw / 1280 * 100 );}
-	.contain.about .sec.c4 .hdt .bts{left: calc( -60vw / 1280 * 100 ); bottom: calc( 37vw / 1280 * 100 ); }
-	.contain.about .sec.c4 .hdt .bts .bt.reg{width: auto;height: auto;font-size: calc( 18vw / 1280 * 100 );padding: calc( 10vw / 1280 * 100 ) 2vw;}
+	.contain.about .sec.c4{padding:calc( 100 / 1280 * 80vw ) 0px;}
+	.contain.about .sec.c4 .hdt{max-width: calc( 100 / 1280 * 610vw );margin: 0 auto calc( 100 / 1280 * 50vw ) auto;}
+	.contain.about .sec.c4 .hdt .tit{font-size: calc( 100 / 1280 * 55vw );margin-top: calc( 100 / 1280 * 20vw );}
+	.contain.about .sec.c4 .hdt .msg{font-size: calc( 100 / 1280 * 20vw );margin-top: calc( 100 / 1280 * 20vw );}
+	.contain.about .sec.c4 .hdt .mss{font-size: calc( 100 / 1280 * 14vw );margin-top: calc( 100 / 1280 * 5vw );}
+	.contain.about .sec.c4 .hdt .bts{left: calc( 100 / 1280 * -60vw ); bottom: calc( 100 / 1280 * 37vw ); }
+	.contain.about .sec.c4 .hdt .bts .bt.reg{width: auto;height: auto;font-size: calc( 100 / 1280 * 18vw );padding: calc( 100 / 1280 * 10vw ) 2vw;}
 	.contain.about .sec.c4 .mids{}
-	.contain.about .sec.c4 .mids img{left:-50%;width:calc( 2560vw / 1280 * 100 );}
-	.contain.about .sec.c4 .box{max-width: calc( 770vw / 1280 * 100 );margin: calc( 50vw / 1280 * 100 ) auto 0px auto;}
-	.contain.about .sec.c4 .box .set{padding-top: calc( 60vw / 1280 * 100 );width: calc( 280vw / 1280 * 100 );}
-	.contain.about .sec.c4 .box .set img{width:calc( 52vw / 1280 * 100 );}
-	.contain.about .sec.c4 .box .set .tit{font-size: calc( 20vw / 1280 * 100 );}
-	.contain.about .sec.c4 .box .set .msg{font-size: calc( 18vw / 1280 * 100 );margin-top: calc( 10vw / 1280 * 100 );}
+	.contain.about .sec.c4 .mids img{left:-50%;width:calc( 100 / 1280 * 2560vw );}
+	.contain.about .sec.c4 .box{max-width: calc( 100 / 1280 * 770vw );margin: calc( 100 / 1280 * 50vw ) auto 0px auto;}
+	.contain.about .sec.c4 .box .set{padding-top: calc( 100 / 1280 * 60vw );width: calc( 100 / 1280 * 280vw );}
+	.contain.about .sec.c4 .box .set img{width:calc( 100 / 1280 * 52vw );}
+	.contain.about .sec.c4 .box .set .tit{font-size: calc( 100 / 1280 * 20vw );}
+	.contain.about .sec.c4 .box .set .msg{font-size: calc( 100 / 1280 * 18vw );margin-top: calc( 100 / 1280 * 10vw );}
 
 	/* c5 */
-	.contain.about .sec.c5{padding: calc( 100vw / 1280 * 100 ) 0px;}
-	.contain.about .sec.c5 .icon{width: calc( 230vw / 1280 * 100 );margin: 0px auto calc( 10vw / 1280 * 100 ) auto;}
-	.contain.about .sec.c5 .txt{font-size: calc( 32vw / 1280 * 100 );}
+	.contain.about .sec.c5{padding: calc( 100 / 1280 * 100vw ) 0px;}
+	.contain.about .sec.c5 .icon{width: calc( 100 / 1280 * 230vw );margin: 0px auto calc( 100 / 1280 * 10vw ) auto;}
+	.contain.about .sec.c5 .txt{font-size: calc( 100 / 1280 * 32vw );}
 	.contain.about .sec.c5 .bts{ margin: 4vw -10px 0; }
-	.contain.about .sec.c5 .bts .bt{height: auto;padding: 8px 10px;margin: 0 10px;font-size: calc( 18vw / 1280 * 100 );min-width: 21vw;}
-	.contain.about .sec.c5 .bts .bt::before{width:calc( 32vw / 1280 * 100 ); height:calc( 32vw / 1280 * 100 ); margin-right: 10px;}
+	.contain.about .sec.c5 .bts .bt{height: auto;padding: 8px 10px;margin: 0 10px;font-size: calc( 100 / 1280 * 18vw );min-width: 21vw;}
+	.contain.about .sec.c5 .bts .bt::before{width:calc( 100 / 1280 * 32vw ); height:calc( 100 / 1280 * 32vw ); margin-right: 10px;}
 
 	/* c6 */
 	.contain.about .sec.c6 { padding: 50px 0px 80px 0px; }
@@ -251,7 +251,7 @@
 	.contain.about .sec.c3 .hdt{position:relative;left: auto; top: auto;}
 	.contain.about .sec.c3 .hdt .tit{font-size: 30px;}
 	.contain.about .sec.c3 .hdt .msg{font-size: 22px;}
-	.contain.about .sec.c3 .hdt .dec1{width: calc( 33px);}
+	.contain.about .sec.c3 .hdt .dec1{width: calc( 100 / 1280 * 33px);}
 	.contain.about .sec.c3 .hdt .dec2{right: 10%;top: 20px;left: auto;width: 23%;}
 	.contain.about .sec.c3 .set{position:relative;left: auto;top: auto;margin-top: 50px;overflow: hidden;}
 	.contain.about .sec.c3 .set .tit{font-size: 25px;}
