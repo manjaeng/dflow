@@ -30,7 +30,7 @@
 						<div class="pic"><a href="./profile_set.jsp"><img src="../../images/common/profile_no.png" alt=""></a></div>
 					</div>
 					<div class="infos">
-						<div class="name">Bluemoon</div>
+						<div class="name">Bluemoon <em class="ico seller">셀러</em></div>
 						<div class="summ">
 							<span class="nt">163cm</span>
 							<span class="nt">Korea</span>
