@@ -70,6 +70,7 @@
 					<div id="subPages3" class="collapse">
 						<ul class="nav">
 							<li><a href="/admin/look/list.do" class="look">LOOK 콘텐츠 목록</a></li>
+							
 						</ul>
 					</div>
 				</li>
@@ -79,8 +80,16 @@
 					<i class="icon-submenu lnr lnr-chevron-right"></i></a>
 					<div id="subPages4" class="collapse">
 						<ul class="nav">
-							<li><a href="/admin/match/list.do" class="match">매칭율 조건 관리</a></li>
-							<li><a href="/admin/style/list.do" class="style">스타일 조건 관리</a></li>
+							<li><a href="/admin/match/list.do" class="match">매칭율 조건 관리(필수)</a></li>
+							<li><a href="/admin/match/list2.do" class="match">매칭율 조건 관리(옵션)</a></li>
+							<li><a href="/admin/style/list.do" class="style1">스타일 조건 관리(HEIGHT)</a></li>
+							<li><a href="/admin/style/list.do" class="style2">스타일 조건 관리(AGE)</a></li>
+							<li><a href="/admin/style/list.do" class="style3">스타일 조건 관리(BUST)</a></li>
+							<li><a href="/admin/style/list.do" class="style4">스타일 조건 관리(HIP)</a></li>
+							<li><a href="/admin/style/list.do" class="style5">스타일 조건 관리(WAIST)</a></li>
+							<li><a href="/admin/style/list.do" class="style6">스타일 조건 관리(SLEEVE)</a></li>
+							<li><a href="/admin/style/list.do" class="style7">스타일 조건 관리(UPPERARM)</a></li>
+							<li><a href="/admin/style/list.do" class="style8">스타일 조건 관리(THIGH)</a></li>
 							<li><a href="/admin/tag/list.do" class="tag">태그 관리</a></li>
 						</ul>
 					</div>

@@ -1,26 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.co.thenet.fapee.look.service.impl.LookMapper">
+<mapper namespace="kr.co.thenet.fapee.match.service.impl.MatchMapper">
 
-	<select id="selectLookStyleList" resultType="egovMap">
-		SELECT  idKey
-			  , seq
-			  , style
-		  FROM fp_style
-		 ORDER BY seq
+	<select id="selectMatchStyleList" resultType="egovMap">
+		SELECT  idKey     ,
+                matchKey  ,
+                gender    ,
+				  hight1    ,
+				  hight2    ,
+				  age       ,
+				  bust1     ,
+				  bust2     ,
+				  hip1      ,
+				  hip2      ,
+				  waist1    ,
+				  waist2    ,
+				  sleeve1   ,
+				  sleeve2   ,
+				  upperarm1 ,
+				  upperarm2 ,
+				  thigh1    ,
+				  thigh2    
+		  FROM fp_model_match
+		 ORDER BY idKey
 	</select>
-	<select id="selectLookAllList" resultType="egovMap">
-		SELECT l.idKey
-			, u.userId
-			, s.style
-			, l.content
-			, l.createdate
-			, l.status
-		FROM fp_look as l
-		LEFT JOIN fp_user as u ON l.userIdKey = u.idKey
-		LEFT JOIN fp_style as s ON l.styleIdKey = s.idKey
-		ORDER BY idKey
+	<select id="selectMatchAllList" resultType="egovMap">
+		SELECT idKey     ,
+                matchKey  ,
+                gender    ,
+				  hight1    ,
+				  hight2    ,
+				  age       ,
+				  bust1     ,
+				  bust2     ,
+				  hip1      ,
+				  hip2      ,
+				  waist1    ,
+				  waist2    ,
+				  sleeve1   ,
+				  sleeve2   ,
+				  upperarm1 ,
+				  upperarm2 ,
+				  thigh1    ,
+				  thigh2    
+		  FROM fp_model_match
+		 ORDER BY idKey
 	</select>
 	<insert id="insertLook" parameterType="LookVO" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT INTO fp_look (

@@ -56,6 +56,15 @@ public class LookController {
 		return "look/list.admin";
 	}
 	
+	@GetMapping("/admin/look/list2.do")
+	public String lookList2(ModelMap model) throws Exception {
+		
+		List<EgovMap> lookList = lookService.selectLookAllList();
+		model.addAttribute("lookList", lookList);
+		
+		return "look/list2.admin";
+	}
+	
 	@GetMapping("/admin/look/add.do")
 	public String lookAdd(ModelMap model) throws Exception {
 		

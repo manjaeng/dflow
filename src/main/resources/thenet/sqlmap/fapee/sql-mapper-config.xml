@@ -7,5 +7,6 @@
 		<typeAlias alias="noticeVO"      type="kr.co.thenet.fapee.common.model.NoticeVO" />
 		<typeAlias alias="sessionVO"      type="kr.co.thenet.fapee.common.model.SessionVO" />
 		<typeAlias alias="LookVO" 			type="kr.co.thenet.fapee.common.model.LookVO"/>
+		<typeAlias alias="MatchVO" 			type="kr.co.thenet.fapee.common.model.MatchVO"/>
 	</typeAliases>
 </configuration>

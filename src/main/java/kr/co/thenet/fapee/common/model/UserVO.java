@@ -23,4 +23,5 @@ public class UserVO {
 	private int snsId;
 	private String deviceId;
 	private String status;
+	private String adminYn;
 }

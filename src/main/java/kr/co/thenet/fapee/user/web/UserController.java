@@ -1,9 +1,21 @@
 package kr.co.thenet.fapee.user.web;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.sns.AmazonSNS;
+import com.amazonaws.services.sns.AmazonSNSClient;
+import com.amazonaws.services.sns.AmazonSNSClientBuilder;
+import com.amazonaws.services.sns.model.MessageAttributeValue;
+import com.amazonaws.services.sns.model.PublishRequest;
+import com.amazonaws.services.sns.model.PublishResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -56,10 +68,30 @@ public class UserController {
 			
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
+
+
+            BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAYKPGWKE7FMLFRQU4", "JnlzgqptdEdWcAKWFSyztE1z6FvlDMTlPVibm1q5");
+            AmazonSNSClient snsClient = (AmazonSNSClient)AmazonSNSClientBuilder.standard()
+                    .withRegion("ap-northeast-1")
+                    .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
+
+
+            String message = "Pafee 인증번호는 [" + randomNum + "] 입니다.";
+            String phoneNumber = mobile;
+            Map<String, MessageAttributeValue> smsAttributes =
+                    new HashMap<String, MessageAttributeValue>();
+            smsAttributes.put("AWS.SNS.SMS.SenderID", new MessageAttributeValue()
+                    .withStringValue("fepeeSMS") //The sender ID shown on the device.
+                    .withDataType("String"));
+            PublishResult result = snsClient.publish(new PublishRequest()
+                    .withMessage(message)
+                    .withPhoneNumber(phoneNumber)
+                    .withMessageAttributes(smsAttributes));
+            log.info(result);
 			
-			return "send";
+			return "send:" + randomNum;
 		} else {
-			return "exist";
+			return "exist:ex";
 		}
 		
 	}
@@ -195,12 +227,41 @@ public class UserController {
 			
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
-			
-			return "send";
+
+			AmazonSNSClient snsClient = new AmazonSNSClient();
+			String message = "Pafee 인증번호는 [" + randomNum + "] 입니다.";
+			String phoneNumber = mobile;
+			Map<String, MessageAttributeValue> smsAttributes =
+					new HashMap<String, MessageAttributeValue>();
+            smsAttributes.put("AWS.SNS.SMS.SenderID", new MessageAttributeValue()
+                    .withStringValue("AKIAYKPGWKE7FMLFRQU4") //The sender ID shown on the device.
+                    .withDataType("String"));
+            smsAttributes.put("AWS.SNS.SMS.MaxPrice", new MessageAttributeValue()
+                    .withStringValue("0.50") //Sets the max price to 0.50 USD.
+                    .withDataType("Number"));
+            smsAttributes.put("AWS.SNS.SMS.SMSType", new MessageAttributeValue()
+                    .withStringValue("Promotional") //Sets the type to promotional.
+                    .withDataType("String"));
+            PublishResult result = snsClient.publish(new PublishRequest()
+                    .withMessage(message)
+                    .withPhoneNumber(phoneNumber)
+                    .withMessageAttributes(smsAttributes));
+            log.info(result);
+
+            return "send";
 		} else {
 			return "notExist";
 		}
 	}
+
+    public void sendSMSMessage(AmazonSNSClient snsClient, String message,
+                                      String phoneNumber, Map<String, MessageAttributeValue> smsAttributes) {
+        PublishResult result = snsClient.publish(new PublishRequest()
+                .withMessage(message)
+                .withPhoneNumber(phoneNumber)
+                .withMessageAttributes(smsAttributes));
+        log.info(result); // Prints the message ID.
+    }
 	
 	@PostMapping("/app/user/find_password2.do")
 	@ResponseBody

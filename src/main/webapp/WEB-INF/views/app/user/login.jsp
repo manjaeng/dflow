@@ -73,7 +73,7 @@
 					$('.id input').focus();
 					return false;
 				}
-				
+				/*
 				if(!(fp.util.checkRegEx('id',$id) || fp.util.checkRegEx('mobile',$id))) {
 					$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
 					$('#msg_error').addClass('show');
@@ -81,7 +81,7 @@
 					$('.id input').focus();
 					return false;
 				}
-				
+				*/
 				if($pw.length === 0) {
 					$("#input_sample1, #input_sample2").removeClass("no").addClass("on");
 					$('#msg_error').addClass('show');

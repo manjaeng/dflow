@@ -21,6 +21,7 @@
 		      ,snsId
 		      ,deviceId
 		      ,status
+		      ,adminYn
 		  FROM fp_user
 		 WHERE 1 = 1
 	 	<if test='idKey != null'>
@@ -48,6 +49,7 @@
 			,joinDate
 			,deviceId
 			,status
+			,adminYn
 		) VALUES (
 			 #{userId}
 			,#{password}
@@ -58,6 +60,7 @@
 			,now()
 			,#{deviceId}
 			,#{status}
+			,#{adminYn}
 		)
 	</insert>
 	
@@ -120,5 +123,106 @@
 		</trim>
 		WHERE idKey = #{idKey}
 	</update>
+	<insert id="insertUserModel" parameterType="egovMap">
+		INSERT into fp_user_model(
+                  modelName , 
+                  userKey   ,
+                  seq       ,
+                  height    ,    
+  				  age       ,       
+  				  fit       ,       
+  				  bra1      ,     
+  			      bra2      ,     
+                  bottom    
+		) VALUES (
+				  #{modelName} , 
+				  #{userKey}   ,
+				  #{seq}       ,
+                  #{height}    ,    
+  				  #{age}       ,       
+  				  #{fit}       ,       
+  				  #{bra1}      ,     
+  			      #{bra2}      ,     
+                  #{bottom}    
+		)
+	</insert>
+	
+	<delete id="deleteUserModel" parameterType="egovMap">
+		DELETE FROM fp_user_model
+         WHERE lookIdKey = #{lookIdKey} AND userKey = #{userKey}
+	</delete>
+	
+	<select id="selectUserModel" parameterType="egovMap" resultType="egovMap">
+		SELECT    idKey     ,
+				  modelName , 
+                  userKey   ,
+                  seq       ,
+                  height    ,    
+  				  age       ,       
+  				  fit       ,       
+  				  bra1      ,     
+  			      bra2      ,     
+                  bottom 
+		  FROM fp_user_model lc
+		  WHERE 1 = 1
+		  <if test='password != null'>
+	 		AND idKey = #{idKey}
+	 	 </if>
+	 	 <if test='password != null'>
+	 		AND userKey = #{userKey}
+	 	</if>
+		 ORDER BY lc.seq 
+		 
+	</select>
+	<insert id="insertUserModelMap" parameterType="egovMap">
+		INSERT into fp_look_porduct_map(
+				  lookIdKey   ,
+				  producIdKey ,
+				  xPoint      ,
+				  yPoint      ,
+				  productNum  ,
+				  productName ,
+				  produtPrice ,
+				  ProductUrl  ,
+				  useYn       ,
+				  createDate  ,
+		) VALUES (
+				  #{lookIdKey}   ,
+				  #{producIdKey} ,
+				  #{xPoint}      ,
+				  #{yPoint}      ,
+				  #{productNum}  ,
+				  #{productName} ,
+				  #{produtPrice} ,
+				  #{ProductUrl}  ,
+				  'Y'            ,
+			      now()
+		)
+	</insert>
+	
+	<delete id="deleteUserModelMap" parameterType="egovMap">
+		DELETE FROM fp_look_porduct_map
+         WHERE lookIdKey = #{lookIdKey} AND producIdKey = #{producIdKey}
+	</delete>
+	
+	<select id="selectUserModelMap" parameterType="egovMap" resultType="egovMap">
+		SELECT    idKey       ,
+				  lookIdKey   ,
+				  producIdKey ,
+				  xPoint      ,
+				  yPoint      ,
+				  productNum  ,
+				  productName ,
+				  produtPrice ,
+				  ProductUrl  ,
+				  useYn       ,
+				  createDate  ,
+		  FROM fp_look_porduct_map lc
+		  WHERE lc.producIdKey = #{producIdKey}
+		 ORDER BY lc.productNum 
+		 <if test="pageStart != null and pageSize != null">
+		 	LIMIT #{pageStart}, #{pageSize}
+		 </if>
+	</select>
 	
 </mapper>

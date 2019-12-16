@@ -60,7 +60,7 @@
 					$('.id input').focus();
 					return false;
 				}
-				
+				/*
 				if(!fp.util.checkRegEx('id',$id)) {
 					$(".id input").addClass("no");
 					$('#msg_existId').addClass('show');
@@ -68,7 +68,7 @@
 					$('.id input').focus();
 					return false;
 				}
-				
+				*/
 				$.ajax({
 					type : 'post',
 					url : '/app/user/join_id.do',

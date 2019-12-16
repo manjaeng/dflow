@@ -299,3 +299,27 @@ CREATE TABLE FP_Notice (
 );
 CREATE INDEX idx_startDate_FP_Notice ON FP_Notice(startDate);
 CREATE INDEX idx_endDate_FP_Notice ON FP_Notice(endDate);
+
+CREATE TABLE fp_look_porduct_map
+(
+  idKey       BIGINT AUTO_INCREMENT
+  COMMENT '맵핑IPkey'
+    PRIMARY KEY,
+  lookIdKey   BIGINT                  NOT NULL
+  COMMENT 'look id',
+  producIdKey BIGINT                  NOT NULL
+  COMMENT 'product id',
+  xPoint      INT DEFAULT '0'         NULL,
+  yPoint      INT DEFAULT '0'         NULL,
+  productNum  INT DEFAULT '1'         NULL,
+  productName TEXT DEFAULT 'NULL'     NULL,
+  produtPrice INT DEFAULT 'NULL'      NULL,
+  ProductUrl  TEXT DEFAULT 'NULL'     NULL,
+  useYn       TEXT DEFAULT 'NULL'     NULL,
+  createDate  DATETIME DEFAULT 'NULL' NULL,
+  CONSTRAINT FP_Look_Porduct_Map_idKey_uindex
+  UNIQUE (idKey),
+  CONSTRAINT FP_Look_Porduct_Map_lookIdKey_uindex
+  UNIQUE (lookIdKey)
+)
+  COMMENT 'one Look and three product mapping data';
