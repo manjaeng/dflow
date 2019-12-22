@@ -10,6 +10,8 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 public interface MyMapper {
 	EgovMap selectMyProfileInfo(long idKey) throws Exception;
 
+	List<EgovMap> selectUserModelInfo(long idKey) throws Exception;
+
 	int updateMyProfileInfo(EgovMap profileMap) throws Exception;
 
 	int selectMyFollowingCount(EgovMap egovMap) throws Exception;

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,6 +29,7 @@ import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
 import kr.co.thenet.fapee.user.service.UserService;
 
+@Log4j
 @Controller
 public class MyController {
 
@@ -426,6 +428,28 @@ public class MyController {
 		resultMap.put("followList", followList);
 		
 		return resultMap;
+	}
+
+	@GetMapping("/app/my/model_set.do")
+	public String modelList(HttpServletRequest req, ModelMap model) throws Exception {
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+			model.addAttribute("profileInfo", profileInfo);
+
+			List<EgovMap> userModelInfoList = myService.selectUserModelInfo(sessionVO.getIdKey());
+
+			model.addAttribute("userModelInfoList",userModelInfoList);
+
+			log.info("userModelInfo" + userModelInfoList);
+		}
+
+
+		return "my/model_set.app";
 	}
 	
 }

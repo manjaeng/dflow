@@ -24,6 +24,16 @@
 		 JOIN fp_user_profile up on u.idKey = up.userIdKey
 		WHERE u.idkey = #{_parameter}
 	</select>
+
+	<select id="selectUserModelInfo" resultType="egovMap">
+		SELECT  model.idKey
+		       ,model.imgUrl
+		       ,model.modelName
+		FROM fp_user_model_map map
+	    JOIN fp_user_model model on map.modelKey = model.idKey
+		WHERE map.uerKey =#{_parameter}
+		ORDER BY model.seq
+	</select>
 	
 	<update id="updateMyProfileInfo" parameterType="egovMap" >
 		UPDATE fp_user_profile

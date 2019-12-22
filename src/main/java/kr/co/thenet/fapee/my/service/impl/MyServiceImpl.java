@@ -24,6 +24,11 @@ public class MyServiceImpl implements MyService {
 	}
 
 	@Override
+	public List<EgovMap> selectUserModelInfo(long idKey) throws Exception{
+		return myMapper.selectUserModelInfo(idKey);
+	}
+
+	@Override
 	public boolean updateMyProfileInfo(EgovMap profileMap) throws Exception {
 
 		int result = 0;
