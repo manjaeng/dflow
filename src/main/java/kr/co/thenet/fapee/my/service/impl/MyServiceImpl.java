@@ -106,4 +106,21 @@ public class MyServiceImpl implements MyService {
 	public EgovMap selectMyFollowCount(EgovMap egovMap) throws Exception {
 		return myMapper.selectMyFollowCount(egovMap);
 	}
+
+	@Override
+	public EgovMap selectMyModel(EgovMap egovMap) throws Exception{
+		return myMapper.selectMyModel(egovMap);
+	}
+
+	@Override
+	public boolean updateModelInfo(EgovMap egovMap) throws Exception{
+
+		int result = myMapper.updateModelInfo(egovMap);
+
+		if(result == 1){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

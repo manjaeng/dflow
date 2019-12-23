@@ -23,4 +23,8 @@ public interface MyService {
 
 	EgovMap selectMyFollowCount(EgovMap egovMap) throws Exception;
 
+	EgovMap selectMyModel(EgovMap egovMap) throws Exception;
+
+	boolean updateModelInfo(EgovMap egovMap) throws Exception;
+
 }

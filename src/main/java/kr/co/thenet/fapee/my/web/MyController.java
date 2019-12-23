@@ -472,5 +472,49 @@ public class MyController {
 		return "f";
 
 	}
+
+	@GetMapping("/app/my/model_reg1.do")
+	public String modelReg2(HttpServletRequest req, ModelMap model) throws Exception {
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+			model.addAttribute("profileInfo", profileInfo);
+
+			profileInfo.put("modelKey" , req.getParameter("modelKey"));
+
+			EgovMap userModelInfo = myService.selectMyModel(profileInfo);
+
+			model.addAttribute("userModelInfo",userModelInfo);
+
+			log.info("userModelInfo" + userModelInfo);
+		}
+		return "my/model_reg1.app";
+	}
+
+	@GetMapping("/app/my/model_reg2.do")
+	public String modelReg1(HttpServletRequest req, ModelMap model) throws Exception {
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+			model.addAttribute("profileInfo", profileInfo);
+
+			profileInfo.put("modelKey" , req.getParameter("modelKey"));
+
+			EgovMap userModelInfo = myService.selectMyModel(profileInfo);
+
+			model.addAttribute("userModelInfo",userModelInfo);
+
+			log.info("userModelInfo" + userModelInfo);
+		}
+		return "my/model_reg2.app";
+	}
 	
 }

@@ -29,6 +29,7 @@
 		SELECT  model.idKey
 		       ,model.imgUrl
 		       ,model.modelName
+		       ,map.idKey as mapKey
 		FROM fp_user_model_map map
 	    JOIN fp_user_model model on map.modelKey = model.idKey
 		WHERE map.uerKey =#{_parameter}
@@ -39,7 +40,8 @@
 	<update id="updateUserModelMap" parameterType="egovMap" >
 		UPDATE fp_user_model_map map
 		SET map.useYn = #{useYn}
-		WHERE map.idKey = #{modelKey}
+		WHERE map.modelKey = #{modelKey}
+		AND map.userKey = ${idKey}
 	</update>
 	
 	<update id="updateMyProfileInfo" parameterType="egovMap" >
@@ -142,5 +144,83 @@
 			 		   </if>  
 		 	   ) followingCount
 	</select>
+	<select id="selectMyModel" resultType="egovMap" parameterType="egovMap">
+		SELECT
+		  idKey,
+		  userKey,
+		  seq,
+		  modelName,
+		  gender,
+		  height,
+		  age,
+		  fit,
+		  bra,
+		  brb,
+		  arms,
+		  forearm,
+		  hip,
+		  leg,
+		  lowerSize,
+		  shoulder,
+		  thigh,
+		  upperSize,
+		  waist,
+		  imgUrl,
+		  fitFr,
+		  braFr,
+		  brbFr,
+		  armsFr,
+		  forearmFr,
+		  hipFr,
+		  legFr,
+		  lowerSizeFr,
+		  shoulderFr,
+		  thighFr,
+		  upperSizeFr,
+		  waistFr,
+		  heightFr,
+		  sizeType
+		FROM fp_user_model
+		WHERE idKey = #{idKey}
+	</select>
+	<update id="updateModelInfo" parameterMap="egovMap">
+		UPDATE  fp_user_model
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="userKey!=null">userKey=#{userKey},</if>
+			<if test="seq!=null">seq=#{seq},</if>
+			<if test="modelName!=null">modelName=#{modelName},</if>
+			<if test="gender!=null">gender=#{gender},</if>
+			<if test="height!=null">height=#{height},</if>
+			<if test="age!=null">age=#{age},</if>
+			<if test="fit!=null">fit=#{fit},</if>
+			<if test="bra!=null">bra=#{bra},</if>
+			<if test="brb!=null">brb=#{brb},</if>
+			<if test="arms!=null">arms=#{arms},</if>
+			<if test="forearm!=null">forearm=#{forearm},</if>
+			<if test="hip!=null">hip=#{hip},</if>
+			<if test="leg!=null">leg=#{leg},</if>
+			<if test="lowerSize!=null">lowerSize=#{lowerSize},</if>
+			<if test="shoulder!=null">shoulder=#{shoulder},</if>
+			<if test="thigh!=null">thigh=#{thigh},</if>
+			<if test="upperSize!=null">upperSize=#{upperSize},</if>
+			<if test="waist!=null">waist=#{waist},</if>
+			<if test="imgUrl!=null">imgUrl=#{imgUrl},</if>
+			<if test="fitFr!=null">fitFr=#{fitFr},</if>
+			<if test="braFr!=null">braFr=#{braFr},</if>
+			<if test="brbFr!=null">brbFr=#{brbFr},</if>
+			<if test="armsFr!=null">armsFr=#{armsFr},</if>
+			<if test="forearmFr!=null">forearmFr=#{forearmFr},</if>
+			<if test="hipFr!=null">hipFr=#{hipFr},</if>
+			<if test="legFr!=null">legFr=#{legFr},</if>
+			<if test="lowerSizeFr!=null">lowerSizeFr=#{lowerSizeFr},</if>
+			<if test="shoulderFr!=null">shoulderFr=#{shoulderFr},</if>
+			<if test="thighFr!=null">thighFr=#{thighFr},</if>
+			<if test="upperSizeFr!=null">upperSizeFr=#{upperSizeFr},</if>
+			<if test="waistFr!=null">waistFr=#{waistFr},</if>
+			<if test="heightFr!=null">heightFr=#{heightFr},</if>
+			<if test="sizeType!=null">sizeType=#{sizeType},</if>
+		</trim>
+		WHERE idKey = #{idKey}
+	</update>
 	
 </mapper>
