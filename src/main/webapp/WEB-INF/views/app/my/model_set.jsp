@@ -70,6 +70,7 @@
                 url : '/app/my/updateUserModelMap.do',
                 data : modelData,
                 success : function(data) {
+                    console.dir(data);
                    alert('삭제되었습니다');
                 },
                 error: function(data) {

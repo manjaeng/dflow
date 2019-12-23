@@ -32,10 +32,7 @@ public class MyServiceImpl implements MyService {
 	public boolean  updateUserModelMap(EgovMap profileMap) throws Exception{
 
 		int result = 0;
-
-		if(profileMap.get("image") != null) {
-			result = myMapper.updateUserModelMap(profileMap);
-		}
+		result = myMapper.updateUserModelMap(profileMap);
 
 		if(result > 0) {
 			return true;

@@ -38,9 +38,7 @@
 
 	<update id="updateUserModelMap" parameterType="egovMap" >
 		UPDATE fp_user_model_map map
-		<trim prefix="SET" suffixOverrides=",">
-			<if test="useYn != null">map.useYn=#{useYn},</if>
-		</trim>
+		SET map.useYn = #{useYn}
 		WHERE map.idKey = #{modelKey}
 	</update>
 	
