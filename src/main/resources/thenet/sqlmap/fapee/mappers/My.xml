@@ -183,7 +183,7 @@
 		FROM fp_user_model
 		WHERE idKey = #{idKey}
 	</select>
-	<update id="updateModelInfo" parameterMap="egovMap">
+	<update id="updateModelInfo" parameterType="egovMap">
 		UPDATE  fp_user_model
 		<trim prefix="SET" suffixOverrides=",">
 			<if test="userKey!=null">userKey=#{userKey},</if>
