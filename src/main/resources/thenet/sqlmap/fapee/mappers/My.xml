@@ -32,8 +32,17 @@
 		FROM fp_user_model_map map
 	    JOIN fp_user_model model on map.modelKey = model.idKey
 		WHERE map.uerKey =#{_parameter}
+		AND map.useYn ='Y'
 		ORDER BY model.seq
 	</select>
+
+	<update id="updateUserModelMap" parameterType="egovMap" >
+		UPDATE fp_user_model_map map
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="useYn != null">map.useYn=#{useYn},</if>
+		</trim>
+		WHERE map.idKey = #{modelKey}
+	</update>
 	
 	<update id="updateMyProfileInfo" parameterType="egovMap" >
 		UPDATE fp_user_profile

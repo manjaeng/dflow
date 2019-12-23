@@ -12,6 +12,8 @@ public interface MyMapper {
 
 	List<EgovMap> selectUserModelInfo(long idKey) throws Exception;
 
+	int updateUserModelMap(EgovMap profileMap) throws Exception;
+
 	int updateMyProfileInfo(EgovMap profileMap) throws Exception;
 
 	int selectMyFollowingCount(EgovMap egovMap) throws Exception;

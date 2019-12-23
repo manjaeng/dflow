@@ -23,12 +23,12 @@
 			<div class="sec mdls">
 				<ul class="list">
 					<c:forEach var="model" items="${userModelInfoList}" varStatus="status">
-						<li>
+						<li id="<c:out value="${model.idKey}"/>">
 							<div class="box">
 								<div class="pic"><a href="<c:out value="${model.imgUrl}"/>" class="bt"><img src="<c:out value="${model.imgUrl}"/>" alt=""></a></div>
 								<div class="name"><c:out value="${model.modelName}"/></div>
 								<div class="bts">
-									<a href="javascript:;" class="bt del">Delete</a>
+									<a href="javascript:removeModel('<c:out value="${model.idKey}"/>')" class="bt del">Delete</a>
 								</div>
 							</div>
 						</li>
@@ -57,6 +57,29 @@
 	<script>
 
 	$(document).ready(function(){
+        removeModel = function(id){
+
+            var modelData = {
+
+                'modelKey' : id,
+				'useYn' : 'N'
+
+			}
+
+            fp.util.jsonAjax({
+                url : '/app/my/updateUserModelMap.do',
+                data : modelData,
+                success : function(data) {
+                   alert('삭제되었습니다');
+                },
+                error: function(data) {
+                    alert("error");
+                }
+            });
+
+            var liBox = document.getElementById(id);
+            liBox.innerHTML='';
+        }
 
 	});
 

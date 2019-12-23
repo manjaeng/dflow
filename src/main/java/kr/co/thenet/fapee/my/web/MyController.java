@@ -447,9 +447,30 @@ public class MyController {
 
 			log.info("userModelInfo" + userModelInfoList);
 		}
-
-
 		return "my/model_set.app";
+	}
+
+	@PostMapping("/app/my/updateUserModelMap.do")
+	@ResponseBody
+	public String updateUserModelMap(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+			profileMap.put("idKey", sessionVO.getIdKey());
+
+			boolean isSuccess = myService.updateUserModelMap(profileMap);
+
+			if (isSuccess) {
+				return "t";
+			} else {
+				return "f";
+			}
+		}
+
+		return "f";
+
 	}
 	
 }

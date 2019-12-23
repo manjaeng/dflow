@@ -9,6 +9,8 @@ public interface MyService {
 
 	List<EgovMap> selectUserModelInfo(long idKey) throws Exception;
 
+	boolean  updateUserModelMap(EgovMap profileMap) throws Exception;
+
 	boolean updateMyProfileInfo(EgovMap profileMap) throws Exception;
 
 	boolean selectMyFollowingCount(EgovMap egovMap) throws Exception;
