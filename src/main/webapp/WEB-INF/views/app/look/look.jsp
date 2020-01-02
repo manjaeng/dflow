@@ -32,9 +32,16 @@
 		addItemFnc = function(){
 			appendStat = false ;
 			$(".uiLoadMore").addClass("active");
+            var modelData = {
+
+                'pageSize' : 4,
+                'pageStart' : page
+
+            }
 			$.ajax({
 				type: "post",
-				url: "./look_more.jsp",
+				data: modelData,
+				url: "./look_more.do",
 				dataType: "html",
 				success: function(html) {
 					window.setTimeout(function(){

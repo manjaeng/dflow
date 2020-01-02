@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import kr.co.thenet.fapee.common.util.*;
+import lombok.extern.log4j.Log4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,13 +15,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.LookVO;
-import kr.co.thenet.fapee.common.util.Base64;
-import kr.co.thenet.fapee.common.util.EgovMap;
-import kr.co.thenet.fapee.common.util.FileUtils;
-import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.look.service.LookService;
 
+@Log4j
 @Controller
 public class LookController {
 
@@ -30,6 +30,27 @@ public class LookController {
 	public String look() throws Exception {
 		
 		return "look/look.app";
+	}
+
+	@PostMapping("/app/look/look_more.do")
+	public String lookMore(ModelMap model,  HttpServletRequest req) throws Exception {
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			EgovMap profileMap = new EgovMap();
+			profileMap.put("idKey", sessionVO.getIdKey());
+			profileMap.put("pageStart",  Integer.parseInt(req.getParameter("pageStart")));
+			//profileMap.put("pageStart",  0);
+			profileMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
+			//profileMap.put("pageSize", 4);
+
+			List<EgovMap> lookList = lookService.selectLookProfileList(profileMap);
+			model.addAttribute("lookList", lookList);
+			log.info("looklist" + lookList);
+		}
+
+		return "look/look_more.app";
 	}
 	
 	@GetMapping("/app/look/look_upload.do")
