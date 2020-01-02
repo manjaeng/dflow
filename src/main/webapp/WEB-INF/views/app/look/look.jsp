@@ -28,14 +28,19 @@
 	<script>
 		
 		var page = 0 ;
+		var startSize = 0;
 		appendStat = true ;
 		addItemFnc = function(){
 			appendStat = false ;
+            startSize = page * 4;
+            if(startSize > 0){
+                startSize = startSize +1;
+			}
 			$(".uiLoadMore").addClass("active");
             var modelData = {
 
                 'pageSize' : 4,
-                'pageStart' : page
+                'pageStart' : startSize
 
             }
 			$.ajax({
