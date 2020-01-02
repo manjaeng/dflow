@@ -10,8 +10,8 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<c:set var="imageList" value="${fn:split(look.image,',,,')}"/>
-													<span class="pic"><img src="${imageList[0]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+
+													<span class="pic"><img src="${look.image[0]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
 													<div class="uiTag" style="left: 50%; top: 45%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop" onclick="location.href='../look/look_goods.jsp';">
@@ -71,10 +71,11 @@
 												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
 											</div>
 										</li>
+										<c:if test="${fn:length(look.image)  > 1}">
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="//placeimg.com/720/960/3" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+													<span class="pic"><img src="${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">
@@ -90,10 +91,12 @@
 												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
 											</div>
 										</li>
+										</c:if>
+										<c:if test="${fn:length(look.image) > 2}">
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="//placeimg.com/720/960/4" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+													<span class="pic"><img src="${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">
@@ -109,6 +112,7 @@
 												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
 											</div>
 										</li>
+										</c:if>
 									</ul>
 									<div class="pagination"></div>
 								</div>
