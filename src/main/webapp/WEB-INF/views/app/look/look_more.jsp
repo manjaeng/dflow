@@ -11,7 +11,7 @@
 											<div class="uiPhoto">
 												<div class="photo">
 
-													<span class="pic"><img src="${look.image[0]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+													<span class="pic"><img src="${look.image[0]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 50%; top: 45%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop" onclick="location.href='../look/look_goods.jsp';">
@@ -75,7 +75,7 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+													<span class="pic"><img src="${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">
@@ -96,7 +96,7 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.jsp';"></span>
+													<span class="pic"><img src="${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.LookVO;
 import kr.co.thenet.fapee.look.service.LookService;
+import kr.co.thenet.fapee.my.service.MyService;
 
 @Log4j
 @Controller
@@ -25,6 +26,9 @@ public class LookController {
 
 	@Autowired
 	private LookService lookService;
+
+	@Autowired
+	private MyService myService;
 	
 	@GetMapping("/app/look/look.do")
 	public String look() throws Exception {
@@ -54,8 +58,21 @@ public class LookController {
 	}
 	
 	@GetMapping("/app/look/look_upload.do")
-	public String lookUpload() throws Exception {
-		
+	public String lookUpload(ModelMap model,  HttpServletRequest req) throws Exception {
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+			model.addAttribute("profileInfo", profileInfo);
+
+			List<EgovMap> userModelInfoList = myService.selectUserModelInfo(sessionVO.getIdKey());
+
+			model.addAttribute("userModelInfoList",userModelInfoList);
+
+			log.info("userModelInfo" + userModelInfoList);
+		}
 		return "look/look_upload.app";
 	}
 	

@@ -30,6 +30,9 @@
 		       ,model.imgUrl
 		       ,model.modelName
 		       ,map.idKey as mapKey
+		       ,model.height
+		       ,model.heightFr
+		       ,model.sizeType
 		FROM fp_user_model_map map
 	    JOIN fp_user_model model on map.modelKey = model.idKey
 		WHERE map.uerKey =#{_parameter}
