@@ -63,8 +63,8 @@
 								<ol class="mds">
 									<li>
 										<a href="javascript:;" class="box">
-											<span class="pic"><div class="img"><img src="//placeimg.com/60/70/1" alt=""></div></span>
-											<span class="name">JENNY <em class="ico seller">셀러</em></span>
+											<span class="pic"><div class="img"><img src="<c:out value="${profileInfo.imageUrl}"/>" alt=""></div></span>
+											<span class="name"><c:out value="${profileInfo.nickName}"/> <em class="ico seller">셀러</em></span>
 											<span class="info">160cm, KOREA</span>
 										</a>
 									</li>
