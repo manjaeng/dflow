@@ -33,9 +33,17 @@
 								<div class="sel">
 									<select class="select">
 										<option>KOREA</option>
-										<option>CHINA</option>
-										<option>JAPAN</option>
-										<option>INDIA</option>
+										<option value='CHINA'> CHINA</option>
+										<option value='JAPAN'> JAPAN</option>
+										<option value='TAIWAN'> TAIWAN</option>
+										<option value='INDONESIA'> INDONESIA</option>
+										<option value='HONGKONG'> HONGKONG</option>
+										<option value='SINGAPORE'> SINGAPORE</option>
+										<option value='MALAYSIA'> MALAYSIA</option>
+										<option value='THAILAND'> THAILAND</option>
+										<option value='PHILIPPINES'> PHILIPPINES</option>
+										<option value='VIETNAM'> VIETNAM</option>
+										<option value='INDIA'> INDIA</option>
 									</select>
 								</div>
 							</div>

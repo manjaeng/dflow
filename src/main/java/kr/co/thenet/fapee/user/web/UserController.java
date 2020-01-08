@@ -76,7 +76,7 @@ public class UserController {
                     .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
 
 
-            String message = "Pafee 인증번호는 [" + randomNum + "] 입니다.";
+            String message = "Fapee 인증번호는 [" + randomNum + "] 입니다.";
             String phoneNumber = mobile;
             Map<String, MessageAttributeValue> smsAttributes =
                     new HashMap<String, MessageAttributeValue>();
@@ -229,7 +229,7 @@ public class UserController {
 			log.info("randomNum : " + randomNum);
 
 			AmazonSNSClient snsClient = new AmazonSNSClient();
-			String message = "Pafee 인증번호는 [" + randomNum + "] 입니다.";
+			String message = "Fapee 인증번호는 [" + randomNum + "] 입니다.";
 			String phoneNumber = mobile;
 			Map<String, MessageAttributeValue> smsAttributes =
 					new HashMap<String, MessageAttributeValue>();
