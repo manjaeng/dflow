@@ -96,8 +96,8 @@
 			   ) isCool
 		      </if>
 		  FROM fp_user u
-		  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
-		  JOIN fp_user_profile up ON u.idKey = up.userIdKey
+		  OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
+		  OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
 		  JOIN fp_look l ON u.idKey = l.userIdKey 
 		  JOIN fp_style s ON l.styleIdKey = s.idKey
 		 WHERE u.idKey = #{idKey} AND l.status = 1
