@@ -22,4 +22,7 @@ public interface UserService {
 	int updateUserInfo(EgovMap userInfoMap) throws Exception;
 	
 	String updateUserLoginInfo(EgovMap egovMap) throws Exception;
+	
+	int updateUserWithdrawal(UserVO user) throws Exception;
+
 }

@@ -175,7 +175,7 @@ public class UserController {
 		
 		UserVO user = userService.selectUserLogin(loginMap);
 		
-		if(user == null) {
+		if(user == null || "9".equals(user.getStatus())) {	//9는 탈퇴상태.
 			return "f";
 		} else {
 			

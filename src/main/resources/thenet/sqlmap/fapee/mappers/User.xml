@@ -225,4 +225,11 @@
 		 </if>
 	</select>
 	
+	<update id="updateUserWithdrawal">
+		UPDATE fp_user SET 
+			  status			= '9'
+			, leaveReason		= #{leaveReason}
+		 WHERE idKey = #{idKey}   
+	</update>
+	
 </mapper>

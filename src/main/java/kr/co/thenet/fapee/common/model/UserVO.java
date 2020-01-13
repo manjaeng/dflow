@@ -24,4 +24,5 @@ public class UserVO {
 	private String deviceId;
 	private String status;
 	private String adminYn;
+	private String leaveReason;
 }

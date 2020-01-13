@@ -108,4 +108,11 @@ public class UserServiceImpl implements UserService {
 			return "success";
 		}
 	}
+
+
+	@Override
+	public int updateUserWithdrawal(UserVO user) throws Exception {
+		return userMapper.updateUserWithdrawal(user);
+	}
+
 }
