@@ -65,7 +65,7 @@
 						</li>
 				</ul>
 				<div class="memDis">
-					<a href="../member/memDis.jsp">회원탈퇴</a>
+					<a href="<c:url value='/app/user/memDis.do' />">회원탈퇴</a>
 				</div>
 			</section>
 
