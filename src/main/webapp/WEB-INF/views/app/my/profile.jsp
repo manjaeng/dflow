@@ -146,8 +146,8 @@ function popPrfOthers(){
 								
 								var tmp = '<li><div class="item"><span class="img">';
 								    tmp+= '<a class="lk" href="/app/my/profile/look_list.do?id='+ id +'">';
-								    tmp+= '<img src="${s3Url}' + e.image[0] + '" alt="">'; 
-								    
+								    tmp+= '<img src="' + e.image[0] + '" alt="">';
+
 								    if(e.image.length > 1) {
 								    	tmp+= '<span class="num"></span>';
 								    }

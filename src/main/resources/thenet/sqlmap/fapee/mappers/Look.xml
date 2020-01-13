@@ -96,11 +96,15 @@
 			   ) isCool
 		      </if>
 		  FROM fp_user u
-		  OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
-		  OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
-		  JOIN fp_look l ON u.idKey = l.userIdKey 
-		  JOIN fp_style s ON l.styleIdKey = s.idKey
-		 WHERE u.idKey = #{idKey} AND l.status = 1
+			INNER JOIN fp_look l ON u.idKey = l.userIdKey
+	  		LEFT OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
+		    LEFT OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
+		    LEFT JOIN fp_style s ON l.styleIdKey = s.idKey
+		 WHERE 1=1
+		 <if test="idKey != null">
+		  AND u.idKey = #{idKey}
+		 </if>
+		  AND l.status = 1
 		 ORDER BY l.createDate DESC
 		 <if test="pageStart != null and pageSize != null">
 		 	LIMIT #{pageStart}, #{pageSize}

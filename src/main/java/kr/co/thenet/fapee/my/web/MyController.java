@@ -59,6 +59,13 @@ public class MyController {
 
 				EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
 
+				EgovMap myLooksMap = new EgovMap();
+				myLooksMap.put("idKey", sessionVO.getIdKey());
+
+
+				List<EgovMap> lookList = lookService.selectLookProfileList(myLooksMap);
+				model.addAttribute("lookList", lookList);
+
 				model.addAttribute("isMyProfile", "true");
 				model.addAttribute("profileInfo", profileInfo);
 				model.addAttribute("profileNavClass", "my");
@@ -71,8 +78,11 @@ public class MyController {
 
 				UserVO userVO = userService.selectUserInfo(egovMap);
 
+
+
 				if (userVO != null) {
 					EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
+
 
 					if (SessionUtils.isLogin(req)) {
 						
@@ -87,6 +97,17 @@ public class MyController {
 							egovMap2.put("followUserIdKey", userVO.getIdKey());
 
 							boolean isFollowing = myService.selectMyFollowingCount(egovMap2);
+
+							EgovMap myLooksMap = new EgovMap();
+							myLooksMap.put("idKey", id);
+						//	myLooksMap.put("pageStart",  Integer.parseInt(req.getParameter("pageStart")));
+							//profileMap.put("pageStart",  0);
+						//	myLooksMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
+							//profileMap.put("pageSize", 4);
+
+							List<EgovMap> lookList = lookService.selectLookProfileList(myLooksMap);
+							model.addAttribute("lookList", lookList);
+
 
 							if (isFollowing) {
 								model.addAttribute("profileNavClass", "ing");
