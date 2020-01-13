@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.thenet.fapee.setting.service.impl.ReviewMapper">
+	
+	<select id="selectShoppingList" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
+		WITH list AS (
+			SELECT 
+				  pm.lookIdKey
+			    , rv.idKey				as reviewIdKey
+			    , pc.mapIdKey
+			    , pc.clickKey
+				, pm.producIdKey		as productIdKey
+			    , pm.productName
+			    , pc.createDate
+			    , pc.userIdKey
+			    , uo.userId				as lookUserId
+                , pc.price
+                , ur.userId
+			    , pm.useYn				as mapUseYn
+                , pd.salesStatus
+                , row_number() over(ORDER BY pc.clickDate desc, pc.clickKey desc) AS rnk
+                , count(*) over() AS totalRows
+			FROM fp_look_product_click			pc
+				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
+			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
+			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+				left outer join fp_product		pd on pc.pcode = pd.pcode
+			    left outer join fp_review		rv on pc.clickKey = rv.clickKey
+			WHERE pc.userIdKey	= #{idKey}
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<select id="selectShoppingInfo" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
+		SELECT 
+			  pm.lookIdKey
+		    , rv.idKey				as reviewIdKey
+		    , pc.mapIdKey
+		    , pc.clickKey
+			, pm.producIdKey		as productIdKey
+		    , pm.productName
+		    , pc.createDate
+		    , pc.userIdKey
+		    , uo.userId				as lookUserId
+            , pc.price
+            , ur.userId
+            
+            , rv.reviewName
+            , rv.reviewMsg
+            , rv.reviewDate
+            
+		    , pm.useYn				as mapUseYn
+            , pd.salesStatus
+		FROM fp_look_product_click			pc
+			inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
+		    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+			left outer join fp_look			lk on pm.lookIdKey = lk.idKey
+		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+			left outer join fp_product		pd on pc.pcode = pd.pcode
+		    left outer join fp_review		rv on pc.clickKey = rv.clickKey
+		WHERE pc.clickKey	= #{clickKey}
+ 	</select>
+	
+	<update id="insertReview" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+		INSERT INTO fp_review (
+			  lookIdKey
+			, clickKey
+			, userIdKey
+			, productIdKey
+			, reviewName
+			, reviewMsg
+			, reviewDate
+		) VALUES (
+			  #{lookIdKey}
+			, #{clickKey}
+			, #{userIdKey}
+			, #{productIdKey}
+			, #{reviewName}
+			, #{reviewMsg}
+			, now()
+		)
+	</update>
+	
+	<update id="updateReview" parameterType="kr.co.thenet.fapee.common.model.ReviewVO">
+		UPDATE fp_review SET 
+			  reviewName		= #{reviewName}
+			, reviewMsg			= #{reviewMsg}
+		WHERE clickKey 			= #{clickKey}
+   	</update>
+	
+	<select id="selectReviewList" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
+		WITH list AS (
+			SELECT 
+				  pm.lookIdKey
+			    , rv.idKey				as reviewIdKey
+			    , ri.imageUrl
+			    , ri.imageSrc
+			    , pc.mapIdKey
+			    , pc.clickKey
+				, pm.producIdKey		as productIdKey
+			    , pm.productName
+			    , pc.createDate
+			    , pc.userIdKey
+			    , uo.userId				as lookUserId
+                , pd.price
+                , ur.userId
+			    , pm.useYn				as mapUseYn
+                , pd.salesStatus
+                , row_number() over(ORDER BY pc.clickDate desc, pc.clickKey desc) AS rnk
+                , count(*) over() AS totalRows
+			FROM fp_look_product_click			pc
+			    inner join fp_review			rv on pc.clickKey = rv.clickKey
+			    inner join fp_review_image		ri on rv.idKey = ri.reviewIdKey and seq = 1
+				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
+			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
+			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+				left outer join fp_product		pd on pc.pcode = pd.pcode
+			WHERE rv.lookIdKey	= #{lookIdKey}
+			  AND rv.productIdKey = #{productIdKey}
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<select id="selectReviewInfo" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
+		SELECT 
+			  pm.lookIdKey
+		    , rv.idKey				as reviewIdKey
+		    , pc.mapIdKey
+		    , pc.clickKey
+			, pm.producIdKey		as productIdKey
+		    , pm.productName
+		    , pc.createDate
+		    , pc.userIdKey
+		    , uo.userId				as lookUserId
+            , pd.price
+            , ur.userId
+            
+            , rv.reviewName
+            , rv.reviewMsg
+            , rv.reviewDate
+            
+		    , pm.useYn				as mapUseYn
+            , pd.salesStatus
+		FROM fp_look_product_click			pc
+		    inner join fp_review			rv on pc.clickKey = rv.clickKey
+			inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
+		    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+			left outer join fp_look			lk on pm.lookIdKey = lk.idKey
+		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+			left outer join fp_product		pd on pc.pcode = pd.pcode
+		WHERE rv.idKey	= #{reviewIdKey}
+ 	</select>
+	
+	<select id="selectReviewImageList" resultType="kr.co.thenet.fapee.common.model.ReviewImageVO">
+		SELECT
+			   ri.reviewIdKey
+			 , ri.seq
+			 , ri.imageAlt
+			 , ri.imageUrl
+			 , ri.imageSrc
+		FROM fp_review_image ri
+		WHERE ri.reviewIdKey = #{reviewIdKey}
+ 		ORDER BY ri.reviewIdKey, ri.seq
+ 	</select>
+	
+	<insert id="insertReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewImageVO"> 
+		INSERT INTO fp_review_image (
+			  reviewIdKey
+			, seq
+			, imageAlt
+			, imageUrl
+			, imageSrc
+		) VALUES ( 
+			  #{reviewIdKey}
+			, #{seq}
+			, #{imageAlt}
+			, #{imageUrl}
+			, #{imageSrc}
+		)
+	</insert>
+	
+	<delete id="deleteReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+		DELETE
+		FROM fp_review_image
+		WHERE reviewIdKey = #{reviewIdKey}
+	</delete>
+
+</mapper>
