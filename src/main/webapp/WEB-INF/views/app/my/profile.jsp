@@ -10,7 +10,7 @@
 			</div>
 			<c:if test="${isMyProfile}">
 				<div class="set">
-					<a class="bt alim on" href="../mypage/alim.jsp">알림</a>
+					<a class="bt alim on" href="/app/my/alim.do">알림</a>
 					<a class="bt conf" href="/app/setting/setting.do">설정</a>
 				</div>
 			</c:if>
