@@ -19,6 +19,8 @@
 						<span class="bt">계정관리</span>
 						<ul>
 							<li><a class="bt" href="../setting/password_change.do">비밀번호 변경</a></li>
+							<li><a class="bt" href="/app/setting/my_review.do">쇼핑내역</a></li>
+							<li><a class="bt" href="/app/look/review.do?lookIdKey=2&productIdKey=PRD1910090000000001">리뷰목록(/app/look/review.do?lookIdKey=2&productIdKey=PRD1910090000000001)</a></li>
 						</ul>
 					</li>
 					<li>
