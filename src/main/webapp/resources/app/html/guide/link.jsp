@@ -281,6 +281,23 @@
 					</li>
 				</ul>
 			</li>
+			<li>
+				<h3><a href="javascript:;">메일링</a></h3>
+				<ul>
+					<li>
+						<h4>가입완료</h4> <em>com</em>
+						<mark>../../html/email/join.html</mark>
+					</li>
+					<li>
+						<h4>셀러가입완료</h4> <em>com</em>
+						<mark>../../html/email/join_seller.html</mark>
+					</li>
+					<li>
+						<h4>셀러가입반려</h4> <em>com</em>
+						<mark>../../html/email/join_seller_return.html</mark>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	</section>
 </div>
