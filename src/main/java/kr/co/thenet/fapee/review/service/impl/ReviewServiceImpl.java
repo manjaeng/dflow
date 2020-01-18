@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.DatatypeConverter;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -15,7 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.co.thenet.fapee.common.model.BaseSearchVO;
 import kr.co.thenet.fapee.common.model.ReviewImageVO;
 import kr.co.thenet.fapee.common.model.ReviewVO;
-import kr.co.thenet.fapee.common.util.Base64;
+import kr.co.thenet.fapee.common.util.Constants;
 import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.review.service.ReviewService;
 
@@ -67,20 +69,21 @@ public class ReviewServiceImpl implements ReviewService {
 				item.setReviewIdKey(data.getReviewIdKey());
 				item.setSeq(seq);
 
-				/*
 				String destPath = String.format("review/%s/%010d-%02d.png"
-												, LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
-												, data.getReviewIdKey()
-												, seq
+						, LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+						, data.getReviewIdKey()
+						, seq
 						);
-				item.setImageUrl(destPath);
+				
+				int startIdx = item.getImageSrc().indexOf(",") + 1;
+				byte[] imagedata = DatatypeConverter.parseBase64Binary(item.getImageSrc().substring(startIdx));
 
-				System.out.println(destPath);
-				S3Utils.uploadFile(destPath, Base64.decode(item.getImageSrc(), Base64.NO_WRAP));
+				item.setImageUrl(destPath);
+				//아마존 S3에 저장.
+				S3Utils.uploadFile(destPath, imagedata);
 				
 				item.setImageSrc(null);
-				*/
-				
+
 				reviewMapper.insertReviewImage(item);
 			}
 		}
@@ -106,14 +109,28 @@ public class ReviewServiceImpl implements ReviewService {
 	
 	@Override
 	public List<ReviewVO> selectReviewList(BaseSearchVO form) throws Exception {
-		return reviewMapper.selectReviewList(form);
+		List<ReviewVO> list = reviewMapper.selectReviewList(form);
+		for(ReviewVO item : list) {
+			if( !StringUtils.isEmpty(item.getImageUrl()) ) {
+				item.setImageUrl(String.format("%s%s", Constants.S3_URL, item.getImageUrl()));
+			}
+		}
+		return list;
 	}
 	
 	@Override
 	public ReviewVO selectReviewInfo(ReviewVO form) throws Exception {
 		ReviewVO review = reviewMapper.selectReviewInfo(form);
-		if(review.getReviewMsg() != null) review.setReviewMsgHtml(review.getReviewMsg().replaceAll("\n", "<br>"));
-		review.setImageList(reviewMapper.selectReviewImageList(review));
+		if(review != null) {
+			if(review.getReviewMsg() != null) review.setReviewMsgHtml(review.getReviewMsg().replaceAll("\n", "<br>"));
+			//리뷰 이미지 설정 및 S3 URL로 바꿈.
+			review.setImageList(reviewMapper.selectReviewImageList(review));
+			for(ReviewImageVO item : review.getImageList()) {
+				if( !StringUtils.isEmpty(item.getImageUrl()) ) {
+					item.setImageUrl(String.format("%s%s", Constants.S3_URL, item.getImageUrl()));
+				}
+			}
+		}
 
 		return review;
 	}

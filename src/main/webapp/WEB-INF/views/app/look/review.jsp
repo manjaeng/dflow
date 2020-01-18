@@ -136,7 +136,7 @@
 					row.show();
 
 					row.find('a:eq(0)').attr('href', '/app/look/review_view.do?reviewIdKey=' + item.reviewIdKey);
-					row.find('img:eq(0)').attr('src', item.imageSrc);
+					row.find('img:eq(0)').attr('src', item.imageUrl);
 					
 					$("#review_list").append(row).addClass("load");;
 				})

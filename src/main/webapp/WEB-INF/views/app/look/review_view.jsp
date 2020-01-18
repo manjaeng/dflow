@@ -33,7 +33,7 @@
 								<li class="swiper-slide">
 									<div class="uiPhoto">
 										<div class="photo">
-											<span class="pic swiper-zoom-container"><img src="${item.imageSrc}" alt="사진"></span>
+											<span class="pic swiper-zoom-container"><img src="${item.imageUrl}" alt="사진"></span>
 										</div>
 									</div>
 								</li>
