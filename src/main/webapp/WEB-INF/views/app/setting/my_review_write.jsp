@@ -35,7 +35,7 @@
 						<div class="ht">DETAIL</div>
 						<div class="ct">
 							<div class="num on">MAX 250</div>
-							<textarea class="textarea" id="reviewMsg" name="reviewMsg" ></textarea>
+							<textarea class="textarea" id="reviewMsg" name="reviewMsg" >${data.reviewMsg}</textarea>
 						</div>
 					</li>
 					
@@ -57,8 +57,12 @@
 	<script>
 	$(document).ready(function(){
 		$('a.save').click(function() {
-			var param = { clickKey: '${form.clickKey}', reviewMsg: $('#reviewMsg').val(), imageSrcList: $('#imageSrcList').val() };
-			
+			var param = { };
+				param.clickKey		= '${form.clickKey}';
+				param.reviewIdKey	= '${form.reviewIdKey}';
+				param.reviewMsg		= $('#reviewMsg').val();
+				param.imageSrcList	= $('#imageSrcList').val();
+				
 			$.post('/app/setting/rest/my_review_save.do', param, function(data) {
 				if(data.code==0) {
 					ui.alert({  // 알럿창 띄우기

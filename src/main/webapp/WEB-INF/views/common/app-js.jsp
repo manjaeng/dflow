@@ -10,6 +10,8 @@
 <script src="/resources/app/js/_common.js"></script>
 <script src="/resources/app/js/_native.js"></script>
 <script src="/resources/app/js/_init.js"></script>
+<script src="/resources/app/js/jquery.validate.min.js"></script>
+
 <!--script src="/resources/app/js/android.js"></script-->
 <script>
 function loadNativeJavaScript(isIOS) {

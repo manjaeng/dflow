@@ -19,11 +19,11 @@
 					<div class="msg">쇼핑내역이 존재하지 않습니다.</div>
 				</div>
 				<ul class="list" data-accd="accd" id="my_review_list">
-					<li class="list-template">
+					<li class="list-template" style="display: none;">
 						<div class="item">
-							<span class="img"><a class="pic" href="javascript:;"><img src="" alt=""></a></span>
+							<span class="img"><a class="pic profile" href="javascript:;"><img src="" alt=""></a></span>
 							<div class="info">
-								<div class="tit"><a href="javascript:;">제품명</a></div>
+								<div class="tit"><a class="product" href="javascript:;">제품명</a></div>
 								<div class="prc"><em class="w">&#8361;</em><span class="p">가격</span></div>
 								<div class="name">게시자</div>
 								<div class="remove"><a href="javascript:;" class="bt del">삭제</a></div>
@@ -56,6 +56,21 @@
 	});
 
 	$(document).ready(function(){
+		//프로필
+		$('body').delegate( 'a.profile', 'click', function() {
+			var row = $(this).closest('li');
+			var lookIdKey		= row.data('lookIdKey');
+			location.href = $.validator.format('/app/my/profile.do?id={0}', lookIdKey);
+		});
+		
+		//제품 상세
+		$('body').delegate( 'a.product', 'click', function() {
+			var row = $(this).closest('li');
+			var lookIdKey		= row.data('lookIdKey');
+			var productIdKey	= row.data('productIdKey');
+			//location.href = '/app/look/product.do?lookIdKey='+lookIdKey;
+		});
+		
 		//쓰기 버튼.
 		$('body').delegate( 'a.write', 'click', function() {
 			var row = $(this).closest('li');
@@ -65,17 +80,36 @@
 			var mapIdKey		= row.data('mapIdKey');
 			var reviewIdKey		= row.data('reviewIdKey');
 
-			if(reviewIdKey=='') {
-				location.href = '/app/setting/my_review_upload.do?clickKey='+clickKey;
+			if(reviewIdKey==null) {
+				location.href = $.validator.format('/app/setting/my_review_upload.do?clickKey={0}', clickKey);
 			}
 			else {
-				location.href = '/app/look/review_view.do?reviewIdKey='+reviewIdKey;
+				location.href = $.validator.format('/app/look/review_view.do?reviewIdKey={0}', reviewIdKey);
 			}
 		});
 		
 		//삭제 버튼.
 		$('body').delegate( 'a.del', 'click', function() {
-			alert('삭제 버튼');
+			var row = $(this).closest('li');
+			var clickKey		= row.data('clickKey');
+
+			var param = { clickKey: clickKey };
+			
+			$.post('/app/setting/rest/my_click_delete.do', param, function(data) {
+				if(data.code==0) {
+					ui.alert({  // 알럿창 띄우기
+						msg:'<p>삭제되었습니다.</P>' ,
+						ycb:function(){
+							location.reload();
+						},
+						ybt:'확인'
+					});	
+				}
+				else {
+					ui.alert({ msg: '<p>' + data.message + '</P>' });
+				}
+			}, 'json');
+
 		});
 		
 		$(".uiLoadMore").click( function(){
@@ -91,6 +125,7 @@
 				//alert(JSON.stringify(data.form));
 				$.each(data.list, function(idx, item) {
 					var row = listTemplate.clone(true).removeClass('list-template');
+					row.show();
 					
 					row.data('clickKey'		, item.clickKey);
 					row.data('productIdKey'	, item.productIdKey);
@@ -98,11 +133,13 @@
 					row.data('mapIdKey'		, item.mapIdKey);
 					row.data('reviewIdKey'	, item.reviewIdKey);
 
-					row.find('img:eq(0)').attr('src', 'https://placeimg.com/360/360/any/2');
+					row.find('img:eq(0)').attr('src', item.userImageUrl);
 					row.find('a:eq(1)').text(item.productName);
 					row.find('span.p').text(item.price.toLocaleString());
 					row.find('div.name').text(item.lookUserId);
-					row.find('a.write').text((item.reviewIdKey=='')? 'WRITE' : 'REVIEW');
+					row.find('a.write').text((item.reviewIdKey==null)? 'WRITE' : 'REVIEW');
+					//리뷰가 작성되었거나 정산 또는 리워드 대상인 경우 삭제 불가.
+					if(item.deletable==false) row.find('a.del').parent().remove();
 					
 					$("#my_review_list").append(row).addClass("load");;
 				})

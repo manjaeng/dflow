@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.CommonFunc;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
+import kr.co.thenet.fapee.common.util.MailUtils;
 import kr.co.thenet.fapee.user.service.UserService;
 
 @Service
@@ -36,6 +38,11 @@ public class UserServiceImpl implements UserService {
 		int insertcount = userMapper.insertUserInfo(user);
 		userMapper.updateUserFilterDeviceInfo(user);
 		userMapper.insertUserProfileInfo(user);
+		
+		String mailContent = MailUtils.getContent("join");
+		if( !(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(mailContent)) ) {
+			MailUtils.sendMail(user.getEmail(), "[FAPEE] 회원이 되신 것을 환영합니다.", mailContent);
+		}
 		
 		return insertcount;
 	}

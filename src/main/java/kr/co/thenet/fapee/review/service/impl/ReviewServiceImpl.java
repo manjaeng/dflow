@@ -1,10 +1,13 @@
-package kr.co.thenet.fapee.setting.service.impl;
+package kr.co.thenet.fapee.review.service.impl;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,7 +15,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import kr.co.thenet.fapee.common.model.BaseSearchVO;
 import kr.co.thenet.fapee.common.model.ReviewImageVO;
 import kr.co.thenet.fapee.common.model.ReviewVO;
-import kr.co.thenet.fapee.setting.service.ReviewService;
+import kr.co.thenet.fapee.common.util.Base64;
+import kr.co.thenet.fapee.common.util.S3Utils;
+import kr.co.thenet.fapee.review.service.ReviewService;
 
 @Service
 public class ReviewServiceImpl implements ReviewService {
@@ -32,7 +37,12 @@ public class ReviewServiceImpl implements ReviewService {
 	
 	@Override
 	public int saveReview(ReviewVO form) throws Exception {
+		
 		int cnt = reviewMapper.updateReview(form);
+		
+		//reviewIDKey가 있으면 내용만 수정이고... 이미지 수정은 없음.
+		if(form.getReviewIdKey()!=null) return cnt;
+		
 		if(cnt==0) {
 			ReviewVO data = reviewMapper.selectShoppingInfo(form);
 			data.setReviewName(form.getReviewName());
@@ -50,10 +60,27 @@ public class ReviewServiceImpl implements ReviewService {
 			ObjectMapper mapper = new ObjectMapper();
 			List<ReviewImageVO> imageList = mapper.readValue(form.getImageSrcList(), new TypeReference<ArrayList<ReviewImageVO>>() {});
 			
-			int seq = 1;
+			int seq = 0;
+			S3Utils.init();
 			for(ReviewImageVO item : imageList) {
+				seq++;
 				item.setReviewIdKey(data.getReviewIdKey());
-				item.setSeq(seq++);
+				item.setSeq(seq);
+
+				/*
+				String destPath = String.format("review/%s/%010d-%02d.png"
+												, LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"))
+												, data.getReviewIdKey()
+												, seq
+						);
+				item.setImageUrl(destPath);
+
+				System.out.println(destPath);
+				S3Utils.uploadFile(destPath, Base64.decode(item.getImageSrc(), Base64.NO_WRAP));
+				
+				item.setImageSrc(null);
+				*/
+				
 				reviewMapper.insertReviewImage(item);
 			}
 		}
@@ -61,9 +88,21 @@ public class ReviewServiceImpl implements ReviewService {
 		return cnt;
 	}
 	
-	;
 	
-	;
+	@Override
+	public int insertClickLog(ReviewVO form) throws Exception {
+		if( form.getReviewIdKey() != null ) {
+			form.setRewardCode(String.format("RD-%d", form.getReviewIdKey()));
+		}
+		return reviewMapper.insertClickLog(form);
+	}
+	
+	
+	@Override
+	public int deleteClickLog(ReviewVO form) throws Exception {
+		return reviewMapper.deleteClickLog(form);
+	}
+
 	
 	@Override
 	public List<ReviewVO> selectReviewList(BaseSearchVO form) throws Exception {

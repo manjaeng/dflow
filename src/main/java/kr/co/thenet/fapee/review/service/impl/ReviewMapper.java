@@ -1,4 +1,4 @@
-package kr.co.thenet.fapee.setting.service.impl;
+package kr.co.thenet.fapee.review.service.impl;
 
 import java.util.List;
 
@@ -18,6 +18,10 @@ public interface ReviewMapper {
 	int insertReview(ReviewVO form) throws Exception;
 	
 	int updateReview(ReviewVO form) throws Exception;
+	
+	int insertClickLog(ReviewVO form) throws Exception;
+	
+	int deleteClickLog(ReviewVO form) throws Exception;
 	
 	List<ReviewVO> selectReviewList(BaseSearchVO form) throws Exception;
 	

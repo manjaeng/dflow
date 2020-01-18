@@ -3,6 +3,9 @@ package kr.co.thenet.fapee.common.util;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import kr.co.thenet.fapee.common.model.SessionVO;
 
 
@@ -102,4 +105,21 @@ public class SessionUtils {
 		Object data = req.getSession().getAttribute(key);
 		return (data == null || "".equals(data)) ? true : false;
 	}
+	
+	
+	public static SessionVO getSessionData() {
+		HttpServletRequest req = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
+		return (SessionVO) getData(req, SESSION_DATA_KEY);
+	}
+	
+	public static Long getIdKey() {
+		SessionVO sessionData = getSessionData();
+		return (sessionData==null)? null : sessionData.getIdKey();
+	}
+	
+	public static String getUserId() {
+		SessionVO sessionData = getSessionData();
+		return (sessionData==null)? null : sessionData.getUserId();
+	}
+	
 }

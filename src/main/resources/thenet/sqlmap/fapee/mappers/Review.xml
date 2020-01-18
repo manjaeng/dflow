@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="kr.co.thenet.fapee.setting.service.impl.ReviewMapper">
+<mapper namespace="kr.co.thenet.fapee.review.service.impl.ReviewMapper">
 	
 	<select id="selectShoppingList" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
 		WITH list AS (
@@ -13,20 +13,26 @@
 				, pm.producIdKey		as productIdKey
 			    , pm.productName
 			    , pc.createDate
+			    , pc.settleYn
+			    , pc.rewardYn
 			    , pc.userIdKey
 			    , uo.userId				as lookUserId
                 , pc.price
                 , ur.userId
 			    , pm.useYn				as mapUseYn
                 , pd.salesStatus
+			    , up.imageUrl			as userImageUrl
+				, af.physicalFullPath	as productImageUrl
                 , row_number() over(ORDER BY pc.clickDate desc, pc.clickKey desc) AS rnk
                 , count(*) over() AS totalRows
 			FROM fp_look_product_click			pc
 				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
 			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
 				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
-			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
+			    left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
 				left outer join fp_product		pd on pc.pcode = pd.pcode
+				left outer join fp_attach_file	af on pd.mainImageId = af.grp
 			    left outer join fp_review		rv on pc.clickKey = rv.clickKey
 			WHERE pc.userIdKey	= #{idKey}
 		)
@@ -47,6 +53,8 @@
 		    , pm.productName
 		    , pc.createDate
 		    , pc.userIdKey
+		    , pc.settleYn
+		    , pc.rewardYn
 		    , uo.userId				as lookUserId
             , pc.price
             , ur.userId
@@ -57,12 +65,17 @@
             
 		    , pm.useYn				as mapUseYn
             , pd.salesStatus
+		    , up.imageUrl			as userImageUrl
+			, af.physicalFullPath	as productImageUrl
+				
 		FROM fp_look_product_click			pc
 			inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
 		    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
 			left outer join fp_look			lk on pm.lookIdKey = lk.idKey
-		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
+			left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
 			left outer join fp_product		pd on pc.pcode = pd.pcode
+			left outer join fp_attach_file	af on pd.mainImageId = af.grp
 		    left outer join fp_review		rv on pc.clickKey = rv.clickKey
 		WHERE pc.clickKey	= #{clickKey}
  	</select>
@@ -91,7 +104,16 @@
 		UPDATE fp_review SET 
 			  reviewName		= #{reviewName}
 			, reviewMsg			= #{reviewMsg}
-		WHERE clickKey 			= #{clickKey}
+	    <where>
+	         <choose>
+	            <when test="reviewIdKey != null and reviewIdKey != ''">
+	    			idKey		 		= #{reviewIdKey}
+	            </when>
+	            <otherwise>
+	    			clickKey 			= #{clickKey}
+	            </otherwise>
+	        </choose>
+	    </where>
    	</update>
 	
 	<select id="selectReviewList" resultType="kr.co.thenet.fapee.common.model.ReviewVO">
@@ -107,7 +129,10 @@
 			    , pm.productName
 			    , pc.createDate
 			    , pc.userIdKey
+			    , pc.settleYn
+			    , pc.rewardYn
 			    , uo.userId				as lookUserId
+			    , up.imageUrl			as userImageUrl
                 , pd.price
                 , ur.userId
 			    , pm.useYn				as mapUseYn
@@ -119,8 +144,9 @@
 			    inner join fp_review_image		ri on rv.idKey = ri.reviewIdKey and seq = 1
 				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
 			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+			    left outer join fp_user_profile	up on pc.userIdKey = up.userIdKey	/*구매자*/
 				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
-			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
 				left outer join fp_product		pd on pc.pcode = pd.pcode
 			WHERE rv.lookIdKey	= #{lookIdKey}
 			  AND rv.productIdKey = #{productIdKey}
@@ -142,7 +168,10 @@
 		    , pm.productName
 		    , pc.createDate
 		    , pc.userIdKey
+		    , pc.settleYn
+		    , pc.rewardYn
 		    , uo.userId				as lookUserId
+			, up.imageUrl			as userImageUrl
             , pd.price
             , ur.userId
             
@@ -156,8 +185,9 @@
 		    inner join fp_review			rv on pc.clickKey = rv.clickKey
 			inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
 		    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+			left outer join fp_user_profile	up on pc.userIdKey = up.userIdKey	/*구매자*/
 			left outer join fp_look			lk on pm.lookIdKey = lk.idKey
-		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*게시자*/
+		    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
 			left outer join fp_product		pd on pc.pcode = pd.pcode
 		WHERE rv.idKey	= #{reviewIdKey}
  	</select>
@@ -195,5 +225,43 @@
 		FROM fp_review_image
 		WHERE reviewIdKey = #{reviewIdKey}
 	</delete>
+	
+	<delete id="deleteClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+		DELETE
+		FROM fp_look_product_click
+		WHERE clickKey = #{clickKey}
+	</delete>
+	
+	<update id="insertClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+		INSERT INTO fp_look_product_click (
+			  mapIdKey
+			, pcode
+			, price
+			, feeRate
+			, rewardRate
+			, userIdKey
+			, clickDate
+			, rewardCode
+			, reviewKey
+			, createId
+			, createDate
+		)
+		SELECT 
+			  pm.idKey			as mapIdKey
+			, pm.producIdKey	as pcode
+		    , pd.price
+		    , pd.feeRate
+		    , pd.rewardRate
+		    , #{userIdKey}		as userIdKey
+		    , now()				as clickDate
+		    , #{rewardCode}		as rewardCode
+		    , #{reviewIdKey}	as reviewKey
+		    , #{userIdKey}		as createId
+		    , now()				as createDate
+		FROM fp_look_porduct_map	pm
+		  INNER JOIN fp_product		pd on pm.producIdKey = pd.pcode
+		WHERE pm.idKey			= #{mapIdKey}
+		  AND pm.producIdKey	= #{productIdKey}
+	</update>
 
 </mapper>

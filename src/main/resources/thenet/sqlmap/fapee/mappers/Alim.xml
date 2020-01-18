@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.thenet.fapee.my.service.impl.AlimMapper">
+	
+	<select id="selectAlimList" resultType="kr.co.thenet.fapee.common.model.AlimVO">
+		WITH list AS (
+			SELECT 
+				  am.idKey
+				, am.grp
+				, am.alimType
+				, am.title
+				, am.content
+				, am.linkUrl
+				, am.linkImageUrl
+				, am.receiverIdKey
+				, ur.userId				as receiverUserId
+				, am.receiveDate
+				, am.senderIdKey
+				, us.userId				as senderUserId
+				, up.nickName			as senderNickName
+				, up.imageUrl			as senderImageUrl
+				, am.sendDate
+                , row_number() over(ORDER BY am.idKey desc) AS rnk
+                , count(*) over() AS totalRows
+			FROM fp_alim						am
+			    left outer join fp_user			ur on am.receiverIdKey = ur.idKey	/*수신자*/
+			    left outer join fp_user			us on am.senderIdKey = us.idKey	/*송신자*/
+			    left outer join fp_user_profile	up on am.senderIdKey = up.userIdKey	/*송신자*/
+			WHERE am.receiverIdKey	= #{receiverIdKey}
+			  AND am.grp			= #{grp}
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<update id="insertAlim" parameterType="kr.co.thenet.fapee.common.model.AlimVO"> 
+		INSERT INTO fp_alim (
+			  idKey
+			, grp
+			, alimType
+			, title
+			, content
+			, linkUrl
+			, linkImageUrl
+			, receiverIdKey
+			, receiveDate
+			, senderIdKey
+			, sendDate
+		) VALUES ( 
+			  #{idKey}
+			, #{grp}
+			, #{alimType}
+			, #{title}
+			, #{content}
+			, #{linkUrl}
+			, #{linkImageUrl}
+			, #{receiverIdKey}
+			, null
+			, #{senderIdKey}
+			, now()
+		)
+	</update>
+	
+	<update id="updateReceiveDate" parameterType="kr.co.thenet.fapee.common.model.AlimVO"> 
+		UPDATE fp_alim SET
+			  receiveDate = now()
+		WHERE idKey = #{idKey}
+	</update>
+	
+	<select id="selectAlimSetting" resultType="kr.co.thenet.fapee.common.model.AlimSettingVO">
+		SELECT
+			  st.userIdKey
+			, st.myLookComment
+			, st.myCommentComent
+			, st.myCoolComment
+			, st.followMe
+			, st.coolMyLook
+			, st.appNotice
+			, st.appEvent
+		FROM fp_alim_setting st
+		WHERE userIdKey = #{userIdKey}
+ 	</select>
+	
+	<update id="insertAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO"> 
+		INSERT INTO fp_alim_setting (
+			  userIdKey
+			, myLookComment
+			, myCommentComent
+			, myCoolComment
+			, followMe
+			, coolMyLook
+			, appNotice
+			, appEvent
+		) VALUES ( 
+			  #{userIdKey}
+			, #{myLookComment}
+			, #{myCommentComent}
+			, #{myCoolComment}
+			, #{followMe}
+			, #{coolMyLook}
+			, #{appNotice}
+			, #{appEvent}
+		)
+	</update>
+	
+	<update id="updateAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO"> 
+		UPDATE fp_alim_setting SET 
+			  myLookComment		= #{myLookComment}
+			, myCommentComent	= #{myCommentComent}
+			, myCoolComment		= #{myCoolComment}
+			, followMe			= #{followMe}
+			, coolMyLook		= #{coolMyLook}
+			, appNotice			= #{appNotice}
+			, appEvent			= #{appEvent}
+		WHERE userIdKey = #{userIdKey}
+	</update>
+
+</mapper>

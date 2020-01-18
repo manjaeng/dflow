@@ -24,7 +24,7 @@
 						</ul>
 					</li>
 					<li>
-						<a class="bt" href="../setting/setting_alim.jsp">알림설정</a>
+						<a class="bt" href="/app/setting/setting_alim.do">알림설정</a>
 					<li>
 						<span class="bt">고객지원</span>
 						<ul>

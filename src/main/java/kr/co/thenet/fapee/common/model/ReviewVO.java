@@ -10,24 +10,29 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ReviewVO {
-	private long lookIdKey;
-	private long mapIdKey;
-	private long clickKey;
-	private long userIdKey;
+	private Long lookIdKey;
+	private Long mapIdKey;
+	private Long clickKey;
+	private Long userIdKey;
+	private String userImageUrl;
 	private String userId;
 	private String lookUserId;
 	private String productIdKey;
 	private String productName;
+	private String productImageUrl;
 	private long price;
 	
 	private String mapUseYn;		/*Y/N*/
 	private String salesStatus;		/*A/S, A이면 판매중, S는 판매중지*/
 	
-	private long reviewIdKey;
+	private Long reviewIdKey;
+	private String rewardCode;
 	private String reviewName;
 	private String reviewMsg;
 	private String reviewMsgHtml;
 	private String reviewDate;
+	private String settleYn;
+	private String rewardYn;
 
 	private String imageSrcList;
 	
@@ -38,5 +43,8 @@ public class ReviewVO {
 
 	private long totalRows;
 	private long rnk;
+	
+	private boolean isOwner = false;
+	private boolean isDeletable = false;
 	
 }

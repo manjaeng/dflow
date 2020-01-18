@@ -58,10 +58,18 @@ public class FileUtils {
 	
 	public static String getFileExtension(String str) {
 		String resultExtension = "";
-		if(str.toLowerCase().indexOf("png") != -1) {
+		if(str.toLowerCase().indexOf("image/png") != -1) {
+			resultExtension = ".png";
+		} else if(str.toLowerCase().indexOf("image/jpg") != -1 || str.toLowerCase().indexOf("image/jpeg") != -1) {
+			resultExtension = ".jpg";
+		} else if(str.toLowerCase().indexOf("image/gif") != -1) {
+				resultExtension = ".gif";
+		} else if(str.toLowerCase().indexOf("png") != -1) {
 			resultExtension = ".png";
 		} else if(str.toLowerCase().indexOf("jpg") != -1 || str.toLowerCase().indexOf("jpeg") != -1) {
 			resultExtension = ".jpg";
+		} else if(str.toLowerCase().indexOf("gif") != -1) {
+				resultExtension = ".gif";
 		} else {
 			resultExtension = ".exception";
 		}

@@ -1,4 +1,4 @@
-package kr.co.thenet.fapee.setting.service;
+package kr.co.thenet.fapee.review.service;
 
 import java.util.List;
 
@@ -12,6 +12,10 @@ public interface ReviewService {
 	ReviewVO selectShoppingInfo(ReviewVO form) throws Exception;
 	
 	int saveReview(ReviewVO form) throws Exception;
+	
+	int insertClickLog(ReviewVO form) throws Exception;
+	
+	int deleteClickLog(ReviewVO form) throws Exception;
 	
 	List<ReviewVO> selectReviewList(BaseSearchVO form) throws Exception;
 	
