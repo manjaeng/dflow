@@ -2,6 +2,7 @@ package kr.co.thenet.fapee.my.service.impl;
 
 import java.util.List;
 
+import kr.co.thenet.fapee.common.model.ModelVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -122,5 +123,10 @@ public class MyServiceImpl implements MyService {
 		}else{
 			return false;
 		}
+	}
+
+	@Override
+	public boolean insertModel(ModelVO modelVO) throws Exception{
+		return myMapper.insertModel(modelVO);
 	}
 }

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.UserVO;
+import kr.co.thenet.fapee.common.model.ModelVO;
 import kr.co.thenet.fapee.common.util.Base64;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
@@ -533,9 +534,21 @@ public class MyController {
 
 			model.addAttribute("userModelInfo",userModelInfo);
 
+
+
 			log.info("userModelInfo" + userModelInfo);
 		}
 		return "my/model_reg2.app";
+	}
+
+	@PostMapping("/app/my/modelregist.do")
+	@ResponseBody
+	public String lookRegist(@RequestBody ModelVO modelVO, HttpServletRequest req) throws Exception {
+
+
+		myService.insertModel(modelVO);
+
+		return "";
 	}
 	
 }

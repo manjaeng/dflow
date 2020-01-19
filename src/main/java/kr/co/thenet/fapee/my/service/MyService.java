@@ -2,6 +2,7 @@ package kr.co.thenet.fapee.my.service;
 
 import java.util.List;
 
+import kr.co.thenet.fapee.common.model.ModelVO;
 import kr.co.thenet.fapee.common.util.EgovMap;
 
 public interface MyService {
@@ -26,5 +27,7 @@ public interface MyService {
 	EgovMap selectMyModel(EgovMap egovMap) throws Exception;
 
 	boolean updateModelInfo(EgovMap egovMap) throws Exception;
+
+	boolean insertModel(ModelVO modelVO) throws Exception;
 
 }

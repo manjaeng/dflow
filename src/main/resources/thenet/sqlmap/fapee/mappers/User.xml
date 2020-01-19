@@ -231,5 +231,7 @@
 			, leaveReason		= #{leaveReason}
 		 WHERE idKey = #{idKey}   
 	</update>
+
+
 	
 </mapper>

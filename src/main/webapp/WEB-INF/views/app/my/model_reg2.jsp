@@ -15,7 +15,7 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-			
+
 			<section class="sec size">
 				<div class="uiSize">
 					<div class="sets default">
@@ -23,8 +23,9 @@
 							<li class="gender">
 								<div class="ht"><span class="tit">성별</span></div>
 								<div class="ct">
-									<label class="radio"><input type="radio" name="filter_gender" value="female" checked><span>FEMALE</span></label>
-									<label class="radio"><input type="radio" name="filter_gender" value="male"><span>MALE</span></label>
+									<label class="radio"><input type="radio" name="filter_gender" value="female"
+																<c:if test="${isFemale}">checked </c:if> > <span>FEMALE</span></label>
+									<label class="radio"><input type="radio" name="filter_gender" value="male" <c:if test="${!isFemale}">checked</c:if>><span>MALE</span></label>
 								</div>
 							</li>
 							<li class="hgt">
@@ -80,7 +81,7 @@
 								</div>
 							</li>
 							<li class="size bust">
-								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
+								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select" onChange="changeSizeType(this.options[this.selectedIndex].value);" ><option>CM</option><option>INCH</option></select></span> </div>
 								<div class="ct">
 									<div class="amount">
 										<input type="number" value="50" id="bustinput">
@@ -109,7 +110,7 @@
 						<div class="cdt" id="tog_detailsize" data-ui-tog="ctn">
 							<ul class="filter">
 								<li class="size">
-									<div class="ht"><span class="tit">Waist <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
+									<div class="ht"><span class="tit">Waist <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option  >INCH</option><option selected >CM</option></select></span> </div>
 									<div class="ct">
 										<div class="amount">
 											<input type="number" value="21">
@@ -161,7 +162,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="./profile.jsp" class="btn type d fill xl">Save</a>
+						<a href="javascript:saveModel()" class="btn type d fill xl">Save</a>
 					</div>
 				</div>
 			</section>
@@ -176,16 +177,38 @@
 	</div>
 
 	<script>
-	
-	$(document).ready(function(){
-		ui.size.init();
-	});
+	$(document).ready(function() {
+        ui.size.init();
+
+        changeSizeType = function (e) {
+            $('.select').val(e);
+            $('.bt help').onClick;
+        }
+
+        saveModel = function () {
+
+            fp.util.jsonAjax({
+                url: '/app/my/modelregist.do',
+                data: {
+                    userIdKey: idKey,
+                    styleIdKey: $("input[name=style_cate]:checked").val(),
+                    tags: tags,
+                    content: $(".textarea").val(),
+                    images: fp.data.look.images
+                },
+                success: function () {
+                    location.href = '/app/my/profile.do';
+                },
+                error: function () {
+                    alert("error");
+                }
+            });
+        }
+    });
 
 	</script>
 	
 	<!--// 컨텐츠 끝 -->
 
-
-	<%@ include file="/WEB-INF/views/common/app-menubar.jsp" %>
 </div>
 

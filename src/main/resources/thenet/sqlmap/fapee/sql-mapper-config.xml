@@ -8,5 +8,6 @@
 		<typeAlias alias="sessionVO"      type="kr.co.thenet.fapee.common.model.SessionVO" />
 		<typeAlias alias="LookVO" 			type="kr.co.thenet.fapee.common.model.LookVO"/>
 		<typeAlias alias="MatchVO" 			type="kr.co.thenet.fapee.common.model.MatchVO"/>
+		<typeAlias alias="ModelVO" 			type="kr.co.thenet.fapee.common.model.ModelVO"/>
 	</typeAliases>
 </configuration>
