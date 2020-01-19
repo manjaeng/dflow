@@ -43,10 +43,18 @@
 						<span class="dt">국가</span>
 						<span class="dd">
 							<select class="select nt">
-								<option>Korea</option>
-								<option>Korea</option>
-								<option>Korea</option>
-								<option>Korea</option>
+								<option>KOREA</option>
+										<option value='CHINA'> CHINA</option>
+										<option value='JAPAN'> JAPAN</option>
+										<option value='TAIWAN'> TAIWAN</option>
+										<option value='INDONESIA'> INDONESIA</option>
+										<option value='HONGKONG'> HONGKONG</option>
+										<option value='SINGAPORE'> SINGAPORE</option>
+										<option value='MALAYSIA'> MALAYSIA</option>
+										<option value='THAILAND'> THAILAND</option>
+										<option value='PHILIPPINES'> PHILIPPINES</option>
+										<option value='VIETNAM'> VIETNAM</option>
+										<option value='INDIA'> INDIA</option>
 							</select>
 						</span>
 					</li>
@@ -63,7 +71,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../mypage/model_reg2.jsp" class="btn type b fill xl">NEXT</a>
+						<a href="/app/my/model_reg1.do" class="btn type b fill xl">NEXT</a>
 					</div>
 				</div>
 			</section>
