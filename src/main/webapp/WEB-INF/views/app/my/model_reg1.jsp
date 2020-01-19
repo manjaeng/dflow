@@ -30,20 +30,20 @@
 				<ul class="list">
 					<li class="name">
 						<span class="dt">모델명</span>
-						<span class="dd"><input class="input bdn" type="text" value=""></span>
+						<span class="dd"><input id="modelName" class="input bdn" type="text" value=""></span>
 					</li>
 					<li class="gender">
 						<span class="dt">성별</span>
 						<span class="dd">
-							<label class="radio"><input type="radio" name="gender1" checked="checked"><span>FEMALE</span></label>
+							<label class="radio" ><input type="radio" id="isFemale" name="gender1" checked="checked"><span>FEMALE</span></label>
 							<label class="radio"><input type="radio" name="gender1"><span>MALE</span></label>
 						</span>
 					</li>
 					<li class="nation">
 						<span class="dt">국가</span>
 						<span class="dd">
-							<select class="select nt">
-								<option>KOREA</option>
+							<select class="select nt" id="nation">
+								<option value='KOREA' >KOREA</option>
 										<option value='CHINA'> CHINA</option>
 										<option value='JAPAN'> JAPAN</option>
 										<option value='TAIWAN'> TAIWAN</option>
@@ -71,7 +71,7 @@
 			<section class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="/app/my/model_reg1.do" class="btn type b fill xl">NEXT</a>
+						<a href="javascript:goTosecond()" class="btn type b fill xl">NEXT</a>
 					</div>
 				</div>
 			</section>
@@ -86,13 +86,23 @@
 
 	$(document).ready(function(){
 
+	    goTosecond = function(){
+	        var modelName= document.getElementById("modelName").value;
+	        var isFemale = document.getElementById("isFemale").checked;
+	        var nation = document.getElementById("nation").value;
+
+	        //alert(modelName + isFemale + nation);
+			location.href = "/app/my/model_reg2.do?modelName=" + modelName + "&isFemale=" +isFemale+ "&nation=" + nation
+
+		}
+
 	});
 
 	</script>
 	
 	<!--// 컨텐츠 끝 -->
 
-	<%@ include file="/WEB-INF/views/common/app-menubar.jsp" %>
+
 	
 </div>
 

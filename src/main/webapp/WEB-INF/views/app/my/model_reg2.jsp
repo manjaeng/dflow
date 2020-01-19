@@ -172,7 +172,7 @@
 
 	<div class="popLayerArea">
 		<!-- 레이어팝업 자리 -->
-		<%@ include file="../_inc/inc_layers.jsp" %>
+		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
 	</div>
 
 	<script>
