@@ -98,7 +98,8 @@ var ui = {
 				}
 			});
 			$(document).on("change",".uiSize .filter>li.size .ht .unit .select",function(){
-				$(this).closest("li.size").find(".ct .num .s").html(this.value);
+				$(".uiSize .filter>li.size").find(".ct .num .s").html(this.value);
+				$(".uiSize .filter>li.size .ht .unit .select").val(this.value).prop("selected", true);
 			});
 			$(document).on("input",".uiSize .filter>li.size .ct .amount input",function(){
 				console.log( this.value );
@@ -712,12 +713,14 @@ var ui = {
 			$("#"+id).slideDown(100,function(){
 				$("#"+id).addClass("open");
 				$("[data-ui-tog='btn'][href='#"+id+"']").addClass("open");
+				ui.popLayer.refresh();
 			});
 		},
 		close:function(id){
 			$("#"+id).slideUp(100,function(){
 				$("#"+id).removeClass("open");
 				$("[data-ui-tog='btn'][href='#"+id+"']").removeClass("open");
+				ui.popLayer.refresh();
 			});
 		},
 		using:function(){
