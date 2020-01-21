@@ -10,6 +10,7 @@
 			    , rv.idKey				as reviewIdKey
 			    , pc.mapIdKey
 			    , pc.clickKey
+			    , (case when pc.clickKey = rv.clickKey then 'Y' else 'N' end)	as clickReviewYn
 				, pm.producIdKey		as productIdKey
 			    , pm.productName
 			    , pc.createDate
@@ -33,7 +34,7 @@
 			    left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
 				left outer join fp_product		pd on pc.pcode = pd.pcode
 				left outer join fp_attach_file	af on pd.mainImageId = af.grp
-			    left outer join fp_review		rv on pc.clickKey = rv.clickKey
+		    	left outer join fp_review		rv on pm.lookIdKey = rv.lookIdKey and pc.pcode = rv.productIdKey and pc.userIdKey = rv.userIdKey
 			WHERE pc.userIdKey	= #{idKey}
 		)
 		SELECT list.*
@@ -49,6 +50,7 @@
 		    , rv.idKey				as reviewIdKey
 		    , pc.mapIdKey
 		    , pc.clickKey
+			, (case when pc.clickKey = rv.clickKey then 'Y' else 'N' end)	as clickReviewYn
 			, pm.producIdKey		as productIdKey
 		    , pm.productName
 		    , pc.createDate
@@ -76,7 +78,7 @@
 			left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
 			left outer join fp_product		pd on pc.pcode = pd.pcode
 			left outer join fp_attach_file	af on pd.mainImageId = af.grp
-		    left outer join fp_review		rv on pc.clickKey = rv.clickKey
+		    left outer join fp_review		rv on pm.lookIdKey = rv.lookIdKey and pc.pcode = rv.productIdKey and pc.userIdKey = rv.userIdKey
 		WHERE pc.clickKey	= #{clickKey}
  	</select>
 	
@@ -104,16 +106,7 @@
 		UPDATE fp_review SET 
 			  reviewName		= #{reviewName}
 			, reviewMsg			= #{reviewMsg}
-	    <where>
-	         <choose>
-	            <when test="reviewIdKey != null and reviewIdKey != ''">
-	    			idKey		 		= #{reviewIdKey}
-	            </when>
-	            <otherwise>
-	    			clickKey 			= #{clickKey}
-	            </otherwise>
-	        </choose>
-	    </where>
+	    WHERE idKey		 		= #{reviewIdKey}
    	</update>
 	
 	<select id="selectReviewList" resultType="kr.co.thenet.fapee.common.model.ReviewVO">

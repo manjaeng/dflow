@@ -33,6 +33,8 @@ public class ReviewVO {
 	private String reviewDate;
 	private String settleYn;
 	private String rewardYn;
+	
+	private String clickReviewYn;
 
 	private String imageSrcList;
 	

@@ -45,7 +45,7 @@ public class ReviewRestController {
 			if(StringUtils.isEmpty(item.getProductImageUrl())) {
 				item.setProductImageUrl(imageNoUrl);
 			}
-			if( !"Y".equals(item.getSettleYn()) && !"Y".equals(item.getRewardYn()) && item.getReviewIdKey()==null ) {
+			if( !"Y".equals(item.getSettleYn()) && !"Y".equals(item.getRewardYn()) && "N".equals(item.getClickReviewYn()) ) {
 				item.setDeletable(true);
 			}
 		});
