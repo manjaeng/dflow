@@ -534,7 +534,9 @@ public class MyController {
 
 			model.addAttribute("userModelInfo",userModelInfo);
 
-
+            model.addAttribute("modelName", req.getParameter("modelName"));
+            model.addAttribute("gender", req.getParameter("gender"));
+            model.addAttribute("nation", req.getParameter("nation"));
 
 			log.info("userModelInfo" + userModelInfo);
 		}
@@ -544,10 +546,11 @@ public class MyController {
 	@PostMapping("/app/my/modelregist.do")
 	@ResponseBody
 	public String lookRegist(@RequestBody ModelVO modelVO, HttpServletRequest req) throws Exception {
+		if (SessionUtils.isLogin(req)) {
+			modelVO.setUserKey(SessionUtils.getSessionData(req).getIdKey());
+			myService.insertModel(modelVO);
 
-
-		myService.insertModel(modelVO);
-
+		}
 		return "";
 	}
 	

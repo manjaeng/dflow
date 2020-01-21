@@ -149,41 +149,33 @@
 	</select>
 	<select id="selectMyModel" resultType="egovMap" parameterType="egovMap">
 		SELECT
-		  idKey,
-		  userKey,
-		  seq,
-		  modelName,
-		  gender,
-		  height,
-		  age,
-		  fit,
-		  bra,
-		  brb,
-		  arms,
-		  forearm,
-		  hip,
-		  leg,
-		  lowerSize,
-		  shoulder,
-		  thigh,
-		  upperSize,
-		  waist,
-		  imgUrl,
-		  fitFr,
-		  braFr,
-		  brbFr,
-		  armsFr,
-		  forearmFr,
-		  hipFr,
-		  legFr,
-		  lowerSizeFr,
-		  shoulderFr,
-		  thighFr,
-		  upperSizeFr,
-		  waistFr,
-		  heightFr,
-		  sizeType
-		FROM fp_user_model
+		  idKey      ,
+		  userKey    ,
+		  seq        ,
+		  imgUrl     ,
+		  modelName  ,
+		  gender     ,
+		  height     ,
+		  age        ,
+		  fit        ,
+		  bust       ,
+		  hip        ,
+		  waist      ,
+		  sleeve     ,
+		  arm        ,
+		  thigh      ,
+		  heightfr   ,
+		  fitfr      ,
+		  bustfr     ,
+		  hipfr      ,
+		  waistfr    ,
+		  sleevefr   ,
+		  armfr      ,
+		  thighfr    ,
+		  sizeType   ,
+		  heightType ,
+		  nation
+				FROM fp_user_model
 		WHERE idKey = #{idKey}
 	</select>
 	<update id="updateModelInfo" parameterType="egovMap">
@@ -196,105 +188,80 @@
 			<if test="height!=null">height=#{height},</if>
 			<if test="age!=null">age=#{age},</if>
 			<if test="fit!=null">fit=#{fit},</if>
-			<if test="bra!=null">bra=#{bra},</if>
-			<if test="brb!=null">brb=#{brb},</if>
-			<if test="arms!=null">arms=#{arms},</if>
-			<if test="forearm!=null">forearm=#{forearm},</if>
+			<if test="bust!=null">bust=#{bust},</if>
 			<if test="hip!=null">hip=#{hip},</if>
-			<if test="leg!=null">leg=#{leg},</if>
-			<if test="lowerSize!=null">lowerSize=#{lowerSize},</if>
-			<if test="shoulder!=null">shoulder=#{shoulder},</if>
-			<if test="thigh!=null">thigh=#{thigh},</if>
-			<if test="upperSize!=null">upperSize=#{upperSize},</if>
 			<if test="waist!=null">waist=#{waist},</if>
-			<if test="imgUrl!=null">imgUrl=#{imgUrl},</if>
-			<if test="fitFr!=null">fitFr=#{fitFr},</if>
-			<if test="braFr!=null">braFr=#{braFr},</if>
-			<if test="brbFr!=null">brbFr=#{brbFr},</if>
-			<if test="armsFr!=null">armsFr=#{armsFr},</if>
-			<if test="forearmFr!=null">forearmFr=#{forearmFr},</if>
-			<if test="hipFr!=null">hipFr=#{hipFr},</if>
-			<if test="legFr!=null">legFr=#{legFr},</if>
-			<if test="lowerSizeFr!=null">lowerSizeFr=#{lowerSizeFr},</if>
-			<if test="shoulderFr!=null">shoulderFr=#{shoulderFr},</if>
-			<if test="thighFr!=null">thighFr=#{thighFr},</if>
-			<if test="upperSizeFr!=null">upperSizeFr=#{upperSizeFr},</if>
-			<if test="waistFr!=null">waistFr=#{waistFr},</if>
-			<if test="heightFr!=null">heightFr=#{heightFr},</if>
+			<if test="sleeve!=null">sleeve=#{sleeve},</if>
+			<if test="arm!=null">arm=#{arm},</if>
+			<if test="thigh!=null">thigh=#{thigh},</if>
+			<if test="heightfr!=null">heightfr=#{heightfr},</if>
+			<if test="fitfr!=null">fitfr=#{fitfr},</if>
+			<if test="bustfr!=null">bustfr=#{bustfr},</if>
+			<if test="hipfr!=null">hipfr=#{hipfr},</if>
+			<if test="waistfr!=null">waistfr=#{waistfr},</if>
+			<if test="sleevefr!=null">sleevefr=#{sleevefr},</if>
+			<if test="armfr!=null">armfr=#{armfr},</if>
+			<if test="thighfr!=null">thighfr=#{thighfr},</if>
 			<if test="sizeType!=null">sizeType=#{sizeType},</if>
+			<if test="heightType!=null">heightType=#{heightType},</if>
+			<if test="nation!=null">nation=#{nation},</if>
 		</trim>
 		WHERE idKey = #{idKey}
 	</update>
 
 	<insert id="insertModel" parameterType="ModelVO" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT INTO fp_user_model (
-		userKey,
-		seq,
-		modelName,
-	    gender,
-		height,
-		age,
-		fit,
-		bra,
-		brb,
-		arms,
-		forearm,
-		hip,
-		leg,
-		shoulder,
-		thigh,
-		waist,
-		imgUrl,
-		fitFr,
-		braFr,
-		brbFr,
-		armsFr,
-		forearmFr,
-		hipFr,
-		legFr,
-		lowerSizeFr,
-		shoulderFr,
-		thighFr,
-		upperSizeFr,
-		waistFr,
-		sizeType,
-		heightFr,
-		lowerSize,
-		upperSize
+		  userKey    ,
+		  seq        ,
+		  imgUrl     ,
+		  modelName  ,
+		  gender     ,
+		  height     ,
+		  age        ,
+		  fit        ,
+		  bust       ,
+		  hip        ,
+		  waist      ,
+		  sleeve     ,
+		  arm        ,
+		  thigh      ,
+		  heightfr   ,
+		  fitfr      ,
+		  bustfr     ,
+		  hipfr      ,
+		  waistfr    ,
+		  sleevefr   ,
+		  armfr      ,
+		  thighfr    ,
+		  sizeType   ,
+		  heightType ,
+		  nation
 		) VALUES (
-		#{userKey},
-		#{seq},
-		#{modelName},
-	    #{gender},
-		#{height},
-		#{age},
-		#{fit},
-		#{bra},
-		#{brb},
-		#{arms},
-		#{forearm},
-		#{hip},
-		#{leg},
-		#{shoulder},
-		#{thigh},
-		#{waist},
-		#{imgUrl},
-		#{fitFr},
-		#{braFr},
-		#{brbFr},
-		#{armsFr},
-		#{forearmFr},
-		#{hipFr},
-		#{legFr},
-		#{lowerSizeFr},
-		#{shoulderFr},
-		#{thighFr},
-		#{upperSizeFr},
-		#{waistFr},
-		#{sizeType},
-		#{heightFr},
-		#{lowerSize},
-		#{upperSize}
+		  #{userKey}    ,
+		  #{seq}        ,
+		  #{imgUrl}     ,
+		  #{modelName}  ,
+		  #{gender}     ,
+		  #{height}     ,
+		  #{age}        ,
+		  #{fit}        ,
+		  #{bust}       ,
+		  #{hip}        ,
+		  #{waist}      ,
+		  #{sleeve}     ,
+		  #{arm}        ,
+		  #{thigh}      ,
+		  #{heightfr}   ,
+		  #{fitfr}      ,
+		  #{bustfr}     ,
+		  #{hipfr}      ,
+		  #{waistfr}    ,
+		  #{sleevefr}   ,
+		  #{armfr}      ,
+		  #{thighfr}    ,
+		  #{sizeType}   ,
+		  #{heightType} ,
+		  #{nation}
 		)
 	</insert>
 	
