@@ -25,6 +25,13 @@ public class IntroController {
 	
 	@Autowired
 	private UserService userService;
+
+	@GetMapping("/app/intro/intro.do")
+	public String intor(ModelMap model, HttpServletRequest req) throws Exception {
+
+			return "intro/intro.app";
+
+	}
 	
 	@GetMapping("/app/intro/step1.do")
 	public String step1(ModelMap model, HttpServletRequest req) throws Exception {
