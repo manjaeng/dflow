@@ -28,7 +28,12 @@ public class HomeController {
 	public String initHome(ModelMap model, HttpServletRequest req) throws Exception {
 		return "home/home.app";
 	}
-	
+	@GetMapping("/app/home/about.do")
+	public String aboutHome(ModelMap model, HttpServletRequest req) throws Exception {
+		return "home/about.app";
+	}
+
+
 	@GetMapping("/app/home/search_tag.do")
 	public String searchTag() throws Exception {
 		return "home/search_tag.app";
