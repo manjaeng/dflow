@@ -9,5 +9,7 @@
 		<typeAlias alias="LookVO" 			type="kr.co.thenet.fapee.common.model.LookVO"/>
 		<typeAlias alias="MatchVO" 			type="kr.co.thenet.fapee.common.model.MatchVO"/>
 		<typeAlias alias="ModelVO" 			type="kr.co.thenet.fapee.common.model.ModelVO"/>
+		<typeAlias alias="AttachFileVO"   type="kr.co.thenet.fapee.common.model.AttachFileVO"/>
+		<typeAlias alias="CodeVO" 			type="kr.co.thenet.fapee.common.model.CodeVO"/>
 	</typeAliases>
 </configuration>

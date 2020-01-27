@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.thenet.fapee.product.service.impl.ProductMapper">
+	
+	<select id="selectInspectionList" resultType="kr.co.thenet.fapee.product.model.ProductVO">
+		WITH list AS (
+			SELECT
+				  pd.pcode
+				, pd.createId
+				, pd.idKey
+				, ur.userId					AS sellerId
+				, su.shoppingMallName
+				, pd.pname
+				, pd.inspectionStatus
+				, c1.name					AS inspectionStatusName
+				, pd.inspectionId
+				, mu.userName				AS inspectionName
+				, pd.inspectionApplyDate
+				, pd.inspectionDate
+				, pd.price
+				, pd.feeRate
+				, pd.rewardRate
+                , row_number() over(ORDER BY pd.createDate desc) 				AS rnk
+                , count(*) over() 												AS totalRows
+				, sum(case when pd.inspectionStatus = 'S' then 1 end) over()	AS saveRows
+				, sum(case when pd.inspectionStatus = 'R' then 1 end) over()	AS rejectRows
+				, sum(case when pd.inspectionStatus = 'W' then 1 end) over()	AS waitRows
+			FROM fp_product						pd
+				INNER JOIN fp_user				ur ON pd.idKey = ur.idKey
+				INNER JOIN fp_seller_user		su ON pd.idKey = su.idKey
+				LEFT OUTER JOIN fp_mcp_user		mu ON pd.inspectionId = mu.userId
+				LEFT OUTER JOIN fp_code			c1 ON pd.inspectionStatus = c1.code AND c1.grp = 'ProductInspectionStatus'
+			WHERE pd.inspectionStatus != 'A'
+			<if test="idKey != null and idKey != '' ">
+				AND pd.idKey = #{idKey}
+			</if>
+			<if test="inspectionStatus != null and inspectionStatus != '' ">
+				AND pd.inspectionStatus = #{inspectionStatus}
+			</if>
+			<if test="frDate != null and frDate != '' ">
+				AND DATE_FORMAT(pd.createDate, '%Y-%m-%d') &gt;= #{frDate}
+			</if>
+			<if test="toDate != null and toDate != '' ">
+				AND DATE_FORMAT(pd.createDate, '%Y-%m-%d') &lt;= #{toDate}
+			</if>
+			<choose>
+				<when test="schField != null and schWord != null and schField.equals('PNM')">
+					AND pd.pname like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('SMN')">
+					AND su.shoppingMallName like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('BOW')">
+					AND su.bizOwner like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('BNO')">
+					AND su.bizNo like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('EML')">
+					AND ur.email like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schWord != null and schWord != '' ">
+					AND concat(pd.pname, '|', su.shoppingMallName, '|', su.bizOwner, '|', su.bizNo, '|', ur.email) like concat('%', #{schWord}, '%')
+				</when>
+			</choose>
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<select id="selectSalesList" resultType="kr.co.thenet.fapee.product.model.ProductVO">
+		WITH list AS (
+			SELECT
+				  pd.pcode
+				, pd.createId
+				, pd.idKey
+				, ur.userId					AS sellerId
+				, su.shoppingMallName
+				, pd.pname
+				, pd.salesStatus
+				, c1.name					AS salesStatusName
+				, pd.inspectionId
+				, mu.userName				AS inspectionName
+				, pd.inspectionDate
+				, pd.price
+				, pd.feeRate
+				, pd.rewardRate
+                , row_number() over(ORDER BY pd.createDate desc) 				AS rnk
+                , count(*) over() 												AS totalRows
+				, sum(case when pd.salesStatus = 'A' then 1 end) over()			AS salesRows
+				, sum(case when pd.salesStatus = 'S' then 1 end) over()			AS stopRows
+				, sum(case when pd.salesStatus = 'W' then 1 end) over()			AS waitRows
+			FROM fp_product						pd
+				INNER JOIN fp_user				ur ON pd.idKey = ur.idKey
+				INNER JOIN fp_seller_user		su ON pd.idKey = su.idKey
+				LEFT OUTER JOIN fp_mcp_user		mu ON pd.inspectionId = mu.userId
+				LEFT OUTER JOIN fp_code			c1 ON pd.salesStatus = c1.code AND c1.grp = 'ProductSalesStatus'
+			WHERE pd.inspectionStatus = 'A'
+			<if test="idKey != null and idKey != '' ">
+				AND pd.idKey = #{idKey}
+			</if>
+			<if test="inspectionStatus != null and inspectionStatus != '' ">
+				AND pd.inspectionStatus = #{inspectionStatus}
+			</if>
+			<if test="frDate != null and frDate != '' ">
+				AND DATE_FORMAT(pd.inspectionDate, '%Y-%m-%d') &gt;= #{frDate}
+			</if>
+			<if test="toDate != null and toDate != '' ">
+				AND DATE_FORMAT(pd.inspectionDate, '%Y-%m-%d') &lt;= #{toDate}
+			</if>
+			<choose>
+				<when test="schField != null and schWord != null and schField.equals('PNM')">
+					AND pd.pname like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('SMN')">
+					AND su.shoppingMallName like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('BOW')">
+					AND su.bizOwner like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('BNO')">
+					AND su.bizNo like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schField != null and schWord != null and schField.equals('EML')">
+					AND ur.email like concat('%', #{schWord}, '%')
+				</when>
+				<when test="schWord != null and schWord != '' ">
+					AND concat(pd.pname, '|', su.shoppingMallName, '|', su.bizOwner, '|', su.bizNo, '|', ur.email) like concat('%', #{schWord}, '%')
+				</when>
+			</choose>
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<select id="selectProductInfo" resultType="kr.co.thenet.fapee.product.model.ProductVO">
+		SELECT
+			  pd.pcode
+			, pd.idKey
+			, ur.userId						AS sellerId
+			, su.shoppingMallName
+			, su.shoppingMallUrl
+			, pd.pname
+			, pd.salesStatus
+			, c1.name						AS salesStatusName
+			, pd.stopReason
+			, pd.intro
+			, pd.salesDateFr
+			, pd.salesDateTo
+			, pd.chargerName
+			, pd.chargerTel
+			, pd.chargerEmail
+			, pd.price
+			, pd.feeRate
+			, pd.rewardRate
+			, pd.mainImageId
+			, pd.productImageId1
+			, pd.productImageId2
+			, pd.productImageId3
+			, pd.productImageId4
+			, f0.logicalFileName		AS mainImageName
+			, f1.logicalFileName		AS productImageName1
+			, f2.logicalFileName		AS productImageName2
+			, f3.logicalFileName		AS productImageName3
+			, f4.logicalFileName		AS productImageName4
+			, pd.linkUrl
+			, pd.requestComment
+			, pd.inspectionStatus
+			, c2.name						AS inspectionStatusName
+			, pd.inspectionApplyDate
+			, pd.rejectReason
+			, pd.inspectionId
+			, mu.userName					AS inspectionName
+			, pd.inspectionDate
+			, pd.createId
+			, pd.createDate
+			, pd.lastUpdateId
+			, pd.lastUpdateDate
+		FROM fp_product						pd
+			INNER JOIN fp_user				ur ON pd.idKey = ur.idKey
+			INNER JOIN fp_seller_user		su ON pd.idKey = su.idKey
+			LEFT OUTER JOIN fp_mcp_user		mu ON pd.inspectionId		= mu.userId
+			LEFT OUTER JOIN fp_code			c1 ON pd.salesStatus		= c1.code AND c1.grp = 'ProductSalesStatus'
+			LEFT OUTER JOIN fp_code			c2 ON pd.inspectionStatus	= c2.code AND c2.grp = 'ProductInspectionStatus'
+			LEFT OUTER JOIN fp_attach_file	f0 ON pd.mainImageId		= f0.grp AND f0.deleteYn = 'N'
+			LEFT OUTER JOIN fp_attach_file	f1 ON pd.productImageId1	= f1.grp AND f1.deleteYn = 'N'
+			LEFT OUTER JOIN fp_attach_file	f2 ON pd.productImageId2	= f2.grp AND f2.deleteYn = 'N'
+			LEFT OUTER JOIN fp_attach_file	f3 ON pd.productImageId3	= f3.grp AND f3.deleteYn = 'N'
+			LEFT OUTER JOIN fp_attach_file	f4 ON pd.productImageId4	= f4.grp AND f4.deleteYn = 'N'
+		WHERE pd.pcode		= #{dataKey}
+			<if test="idKey != null and idKey != '' ">
+				AND pd.idKey = #{idKey}
+			</if>
+ 	</select>
+	
+	<select id="selectNewPcode" resultType="string">
+		SELECT concat('PRD', date_format(now(),'%y%m%d'), right(concat('0000000000', ifnull(max(right(pcode, 10))+1, 1)),10)) as pcode FROM fp_product
+ 	</select>
+	
+	<insert id="insertProduct" parameterType="kr.co.thenet.fapee.product.model.ProductVO">
+		INSERT INTO fp_product(
+			  pcode
+			, idKey
+			, pname
+			, intro
+			, salesDateFr
+			, salesDateTo
+			, salesStatus
+			, chargerName
+			, chargerTel
+			, chargerEmail
+			, price
+			, feeRate
+			, rewardRate
+			, mainImageId
+			, productImageId1
+			, productImageId2
+			, productImageId3
+			, productImageId4
+			, linkUrl
+			, requestComment
+			, inspectionStatus
+			, inspectionApplyDate
+			, inspectionId
+			, inspectionDate
+			, createId
+			, createDate
+			, lastUpdateId
+			, lastUpdateDate
+		) VALUES (
+			  #{pcode}
+			, #{idKey}
+			, #{pname}
+			, #{intro}
+			, #{salesDateFr}
+			, #{salesDateTo}
+			, 'A'
+			, #{chargerName}
+			, #{chargerTel}
+			, #{chargerEmail}
+			, #{price}
+			, #{feeRate}
+			, #{rewardRate}
+			, #{mainImageId}
+			, #{productImageId1}
+			, #{productImageId2}
+			, #{productImageId3}
+			, #{productImageId4}
+			, #{linkUrl}
+			, #{requestComment}
+			, #{inspectionStatus}
+			, (case when #{inspectionStatus}='W' then now() else inspectionApplyDate end)
+			, #{inspectionId}
+			, now()
+			, #{createId}
+			, now()
+			, #{createId}
+			, now()
+  		)
+	</insert>
+	
+	<update id="updateProduct" parameterType="kr.co.thenet.fapee.product.model.ProductVO">
+		UPDATE fp_product SET
+			  idKey					= #{idKey}
+			, pname					= #{pname}
+			, intro					= #{intro}
+			, salesDateFr			= #{salesDateFr}
+			, salesDateTo			= #{salesDateTo}
+			, chargerName			= #{chargerName}
+			, chargerTel			= #{chargerTel}
+			, chargerEmail			= #{chargerEmail}
+			, price					= #{price}
+			, feeRate				= #{feeRate}
+			, rewardRate			= #{rewardRate}
+			, mainImageId			= #{mainImageId}
+			, productImageId1		= #{productImageId1}
+			, productImageId2		= #{productImageId2}
+			, productImageId3		= #{productImageId3}
+			, productImageId4		= #{productImageId4}
+			, linkUrl				= #{linkUrl}
+			, requestComment		= #{requestComment}
+			, inspectionStatus		= ifnull(#{inspectionStatus}, inspectionStatus)
+			, inspectionApplyDate	= (case when #{inspectionStatus}='W' then now() 
+											when #{inspectionStatus}='S' then null 
+											else inspectionApplyDate end)
+			, inspectionId			= (case when #{inspectionStatus}='W' then null else inspectionId end)
+			, inspectionDate		= (case when #{inspectionStatus}='W' then null else inspectionDate end)
+			, rejectReason			= (case when #{inspectionStatus}='W' then null else rejectReason end)
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE pcode					= #{pcode}
+ 	</update>
+	
+	<update id="updateProductInspectionStatus" parameterType="kr.co.thenet.fapee.product.model.ProductVO">
+		UPDATE fp_product SET
+			  inspectionStatus		= #{inspectionStatus}
+			, rejectReason			= #{rejectReason}
+			, inspectionId			= #{inspectionId}
+			, inspectionDate		= now()
+			, salesStatus			= (case when #{inspectionStatus}='A' then 'A' else salesStatus end)
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE pcode					= #{pcode}
+ 	</update>
+	
+	<update id="updateProductSalesStatus" parameterType="kr.co.thenet.fapee.product.model.ProductVO">
+		UPDATE fp_product SET
+			  salesStatus			= #{salesStatus}
+			, stopReason			= #{stopReason}
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE pcode					= #{pcode}
+ 	</update>
+	
+	<delete id="deleteProduct" parameterType="kr.co.thenet.fapee.product.model.ProductVO">
+		DELETE
+		FROM fp_product
+ 		WHERE pcode					= #{pcode}
+	</delete>
+	
+	<select id="selectProductCommentList" resultType="kr.co.thenet.fapee.product.model.ProductCommentVO">
+		SELECT
+			   pc.csKey
+			 , pc.pcode
+			 , pc.comment
+			 , pc.deleteYn
+			 , pc.createId
+			 , mu.userName			AS createName
+			 , pc.createDate
+			 , pc.lastUpdateId
+			 , pc.lastUpdateDate
+		FROM fp_product_comment 		pc
+			LEFT OUTER JOIN fp_mcp_user	mu ON pc.createId = mu.userId
+ 		WHERE pc.pcode = #{dataKey}
+ 		  AND (pc.deleteYn is null OR pc.deleteYn = 'N')
+	</select>
+	
+	<insert id="insertProductComment" parameterType="kr.co.thenet.fapee.product.model.ProductCommentVO">
+		INSERT INTO fp_product_comment(
+			  pcode
+			, comment
+			, deleteYn
+			, createId
+			, createDate
+			, lastUpdateId
+			, lastUpdateDate
+		) VALUES (
+			  #{pcode}
+			, #{comment}
+			, #{deleteYn}
+			, #{createId}
+			, now()
+			, #{createId}
+			, now()
+		)
+	</insert>
+	
+	<update id="deleteProductComment" parameterType="kr.co.thenet.fapee.product.model.ProductCommentVO">
+		UPDATE fp_product_comment SET
+			  deleteYn			= 'Y'
+			, lastUpdateId		= #{lastUpdateId}
+			, lastUpdateDate	= now()
+		WHERE csKey				= #{csKey}
+		  AND pcode				= #{pcode}
+	</update>
+	
+	<select id="selectProductLookList" resultType="kr.co.thenet.fapee.product.model.ProductLookVO">
+		WITH list AS (
+			SELECT
+				  pd.pcode
+				, pd.idKey
+				, pd.linkUrl
+				, lp.lookIdKey
+				, ur.userId					AS sellerId
+				, pd.pname
+				, su.shoppingMallName
+				, pd.lastUpdateDate			AS postDate
+				, pd.salesStatus			AS postStatus
+				, c1.name					AS postStatusName
+				, 0							AS totalClickCount
+                , row_number() over(ORDER BY pd.createDate desc) 				AS rnk
+                , count(*) over() 												AS totalRows
+			FROM fp_product						pd
+				INNER JOIN fp_look_porduct_map  lp ON pd.pcode = lp.producIdKey AND lp.useYn = 'Y'
+				LEFT OUTER JOIN fp_user			ur ON pd.idKey = ur.idKey
+				LEFT OUTER JOIN fp_seller_user	su ON pd.idKey = su.idKey
+				LEFT OUTER JOIN fp_mcp_user		mu ON pd.inspectionId = mu.userId
+				LEFT OUTER JOIN fp_code			c1 ON pd.salesStatus = c1.code AND c1.grp = 'ProductSalesStatus'
+			WHERE pd.pcode					= #{dataKey}
+			  AND pd.inspectionStatus	= 'A'
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+	</select>
+	
+	<select id="selectProductHistoryList" resultType="kr.co.thenet.fapee.product.model.ProductHistoryVO">
+		WITH list AS (
+			SELECT
+				  ph.pcode
+				, ph.changeDate
+				, ph.pname
+				, su.shoppingMallName
+				, ph.price
+				, ph.feeRate
+				, ph.rewardRate
+				, ph.linkUrl
+				, ph.inspectionStatus
+				, ph.salesStatus
+				, c1.name				AS salesStatusName
+				, ph.changeReason
+				, mu.userName			AS lastUpdateName
+				, ph.lastUpdateId
+				, ph.lastUpdateDate
+                , row_number() over(ORDER BY ph.changeDate desc) 				AS rnk
+                , count(*) over() 												AS totalRows
+			 FROM fp_product_history			ph
+	 			LEFT OUTER JOIN fp_mcp_user		mu ON ph.lastUpdateId	= mu.userId
+				LEFT OUTER JOIN fp_code			c1 ON ph.salesStatus	= c1.code	AND c1.grp = 'ProductSalesStatus'
+				LEFT OUTER JOIN fp_seller_user	su ON ph.idKey 			= su.idKey
+	 		WHERE ph.pcode = #{dataKey}
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+	</select>
+	
+	<insert id="insertProductHistory" parameterType="kr.co.thenet.fapee.product.model.ProductHistoryVO">
+		INSERT INTO fp_product_history(
+			  pcode
+			, changeDate
+			, pname
+			, price
+			, feeRate
+			, rewardRate
+			, linkUrl
+			, inspectionStatus
+			, salesStatus
+			, changeReason
+			, idKey
+			, originData
+			, lastUpdateId
+			, lastUpdateDate
+		) VALUES (
+			  #{pcode}
+			, now()
+			, #{pname}
+			, #{price}
+			, #{feeRate}
+			, #{rewardRate}
+			, #{linkUrl}
+			, #{inspectionStatus}
+			, #{salesStatus}
+			, #{changeReason}
+			, #{idKey}
+			, #{originData}
+			, #{lastUpdateId}
+			, now()
+		)
+	</insert>
+
+</mapper>
