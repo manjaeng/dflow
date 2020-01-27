@@ -29,7 +29,7 @@
 			<div class="botFixed">
 				<div class="in">
 					<div class="btnSet fit">
-						<a href="../home/home.jsp" class="btn xl e btnLater">LATER</a>
+						<a href="/app/home/home.do" class="btn xl e btnLater">LATER</a>
 						<a href="javascript:ui.loading.show('사이즈 등록 화면으로 <br> 이동합니다.');" class="btn xl b fill btnStart">START</a>
 					</div>
 				</div>
