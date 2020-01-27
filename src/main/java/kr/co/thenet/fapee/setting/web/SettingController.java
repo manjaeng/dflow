@@ -161,4 +161,14 @@ public class SettingController {
 		
 		return "redirect:/admin/setting/list.do";
 	}
+
+	@GetMapping("/app/setting/police1.do")
+	public String police1() throws Exception {
+		return "setting/police1.app";
+	}
+
+	@GetMapping("/app/setting/police2.do")
+	public String police2() throws Exception {
+		return "setting/police2.app";
+	}
 }

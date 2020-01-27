@@ -35,8 +35,8 @@
 					<li>
 						<span class="bt">이용가이드</span>
 						<ul>
-							<li><a class="bt" href="../setting/policy1.jsp">이용약관</a></li>
-							<li><a class="bt" href="../setting/policy2.jsp">개인정보취급방침</a></li>
+							<li><a class="bt" href="police1.jsp">이용약관</a></li>
+							<li><a class="bt" href="police2.jsp">개인정보취급방침</a></li>
 						</ul>
 					</li>
 					<li>

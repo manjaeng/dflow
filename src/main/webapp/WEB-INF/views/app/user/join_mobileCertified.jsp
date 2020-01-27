@@ -273,7 +273,7 @@
 					
 					<div class="agree">
 						<div class="txt">
-							본인이 만 14세 이상인 것과 서비스 이용약관, <br> <a href="javascript:;">서비스이용약관, 개인정보보호정책</a>에 동의하십니까? </div>
+							본인이 만 14세 이상인 것과 서비스 이용약관, <br> <a href="/app/setting/police1.do">서비스이용약관</a>, <a href="/app/setting/police2.do">개인정보보호정책</a>에 동의하십니까? </div>
 						<label class="checkbox"><input type="checkbox"><span></span></label>
 					</div>
 					<div class="msg_error" id="msg_agree">약관에 동의해 주세요.</div>
