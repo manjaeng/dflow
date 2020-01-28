@@ -49,6 +49,17 @@ public class SettingController {
 		return "setting/qna.app";
 	}
 	
+	@GetMapping("/app/setting/qna_list.do")
+	@ResponseBody
+	public List<EgovMap> qnaList(HttpServletRequest req) throws Exception {
+		EgovMap egovMap = new EgovMap();
+		egovMap.put("pageStart", Integer.valueOf(req.getParameter("pageStart")) * Constants.APP_NOTICE_PAGE_SIZE);
+		egovMap.put("pageSize", Constants.APP_NOTICE_PAGE_SIZE);
+		egovMap.put("userIdKey", SessionUtils.getIdKey());
+		return settingService.selectQnaServiceMyList(egovMap);
+		
+	}
+	
 	@PostMapping("/app/setting/qna.do")
 	@ResponseBody
 	public String qna(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {

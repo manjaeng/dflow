@@ -14,6 +14,8 @@ public interface SettingMapper {
 	List<EgovMap> selectQnaServiceAllList() throws Exception;
 	EgovMap            selectQnaServiceInfo(int idKey) throws Exception;
 	void                    updateQnaServiceInfo(EgovMap qnaAnswer) throws Exception;
-	
+
+	List<EgovMap> selectQnaServiceMyList(EgovMap egovMap) throws Exception;
+
 	List<EgovMap> selectSettingInfo() throws Exception;
 }

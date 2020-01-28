@@ -27,14 +27,9 @@
 		</main>
 	</div>
 
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
-	</div>
-
 	<script>
 
-	var page = -1 ;
+	var page = -1;
 	var appendStat = true ;
 	var addItemFnc = function(){
 		$(".uiLoadMore").addClass("active");
@@ -53,14 +48,14 @@
 						appendStat = false ;
 					} else {
 						$.each(data,function(i,e) {
-							var tmp ='<li><div class="hBox">';
+							var tmp ='<li class="rowitem"><div class="hBox toggle">';
 							    tmp+= '<span class="tit">';
 							    tmp+= e.title;
 							   	tmp+= '</span>';
 							    tmp+= '<span class="date">';
 							    tmp+= e.createDate;
 							    tmp+= '</span>'; 
-							    tmp+= '<a href="javascript:;" class="btnTog">열기</a>'; 
+							    //tmp+= '<a href="javascript:;" class="btnTog">열기</a>'; 
 							    tmp+= '</div><div class="cBox">'; 
 							    tmp+= e.content; 
 							    tmp+= '</div></li>';
@@ -96,6 +91,15 @@
 
 	$(document).ready(function(){
 		addItemFnc();
+		
+		$('.uiAccd').on('click', 'div.toggle', function() {
+			var $pnt = $(this).closest("li");
+			$(this).closest(".uiAccd").find("li.rowitem").find(".cBox").hide(200);
+			if ($pnt.children(".cBox").is(":hidden")) {
+				$pnt.addClass("open").children(".cBox").slideDown(200);
+			}
+		});
+		
 	});
 
 	</script>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.thenet.fapee.setting.service.impl.MyRewardMapper">
+	
+	<select id="selectRewardList" resultType="kr.co.thenet.fapee.common.model.RewardVO">
+		WITH list AS (
+			SELECT 
+				  pm.lookIdKey
+			    , rv.idKey				as reviewIdKey
+			    , pc.mapIdKey
+			    , pc.clickKey
+			    , (case when pc.clickKey = rv.clickKey then 'Y' else 'N' end)	as clickReviewYn
+				, pm.producIdKey		as productIdKey
+			    , pm.productName
+			    , pc.createDate
+			    , pc.settleYn
+			    , pc.rewardYn
+			    , pc.userIdKey
+			    , uo.userId				as lookUserId
+                , pc.price
+                , ur.userId
+			    , pm.useYn				as mapUseYn
+                , pd.salesStatus
+			    , up.imageUrl			as userImageUrl
+				, af.physicalFullPath	as productImageUrl
+                , row_number() over(ORDER BY pc.clickDate desc, pc.clickKey desc) AS rnk
+                , count(*) over() AS totalRows
+			FROM fp_look_product_click			pc
+				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
+			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
+				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
+			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
+			    left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
+				left outer join fp_product		pd on pc.pcode = pd.pcode
+				left outer join fp_attach_file	af on pd.mainImageId = af.grp
+		    	left outer join fp_review		rv on pm.lookIdKey = rv.lookIdKey and pc.pcode = rv.productIdKey and pc.userIdKey = rv.userIdKey
+			WHERE pc.userIdKey	= #{idKey}
+		)
+		SELECT list.*
+			, (totalRows - rnk + 1)		AS seq
+		FROM list
+		WHERE rnk BETWEEN #{frRow} AND #{toRow} 
+		ORDER BY rnk
+ 	</select>
+	
+	<select id="selectRewardAccountInfo" resultType="kr.co.thenet.fapee.common.model.RewardVO">
+		SELECT idKey
+			,  rewardBank
+			,  rewardAccountNo
+		FROM fp_user
+		WHERE idKey		 		= #{userIdKey}
+ 	</select>
+	
+	<update id="updateAccountInfo" parameterType="kr.co.thenet.fapee.common.model.RewardVO">
+		UPDATE fp_user SET 
+			  rewardBank		= #{rewardBank}
+			, rewardAccountNo	= #{rewardAccountNo}
+	    WHERE idKey		 		= #{userIdKey}
+   	</update>
+
+</mapper>

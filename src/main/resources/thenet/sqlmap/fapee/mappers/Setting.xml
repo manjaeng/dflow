@@ -29,6 +29,26 @@
 		LEFT JOIN fp_user as u ON q.userIdKey = u.idKey
 		ORDER BY q.idKey DESC 
 	</select>
+
+	<select id="selectQnaServiceMyList" resultType="egovMap">
+		SELECT q.idKey
+			, q.userIdKey
+			, u.userId
+			, q.title
+			, replace(q.content, '\n', '&lt;br&gt;')	as content
+			, date_format(q.createDate, '%Y-%m-%d')		as createDate
+			, date_format(q.answerDate, '%Y-%m-%d')		as answerDate
+			, replace(q.answer, '\n', '&lt;br&gt;')		as answer
+			, q.status
+		FROM fp_qna as q
+			LEFT JOIN fp_user as u ON q.userIdKey = u.idKey
+		WHERE q.userIdKey = #{userIdKey}
+		ORDER BY q.idKey DESC 
+		<if test="pageStart != null and pageSize != null">
+			LIMIT #{pageStart}, #{pageSize}
+		</if>
+	</select>
+	
 	<select id="selectQnaServiceInfo" parameterType="int" resultType="egovMap">
 		SELECT idKey
 			, userIdKey
