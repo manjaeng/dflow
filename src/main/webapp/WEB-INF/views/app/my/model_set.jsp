@@ -46,6 +46,17 @@
 							</c:if>
 						</c:if>
 					</c:forEach>
+					<c:if test="${userModelInfo eq null}">
+						<li>
+							<div class="box">
+								<div class="pic"><a href="javascript:;" class="bt"><img src="/resources/app/images/common/profile_no.png" alt=""></a></div>
+								<div class="name"></div>
+								<div class="bts">
+									<a href="/app/my/model_reg1.do" class="bt reg">Register</a>
+								</div>
+							</div>
+						</li>
+					</c:if>
 
 				</ul>
 			</div>
