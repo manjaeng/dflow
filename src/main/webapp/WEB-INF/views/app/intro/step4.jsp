@@ -48,7 +48,7 @@
 			
 			if(!fp.data.intro) {
 				console.log('데이터 없음');
-				pjax('/app/user/join_intro.do');
+				pjax('/app/home/home.do');
 				return false;
 			}
 			
