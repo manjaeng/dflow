@@ -29,7 +29,7 @@
 		SELECT  model.idKey
 		       ,model.imgUrl
 		       ,model.modelName
-		       ,map.idKey as mapKey
+		       ,1 as mapKey
 		       ,model.height
 		       ,model.heightFr
 		       ,model.sizeType
