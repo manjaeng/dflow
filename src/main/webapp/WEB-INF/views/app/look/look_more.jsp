@@ -10,11 +10,11 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-
-													<span class="pic"><img src="${look.image[0]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
+													<c:set var="mainLoopimageUrl" value="${s3Url}${look.image[0]}"/>
+													<span class="pic" id="${s3Url}"><img src="${mainLoopimageUrl}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 50%; top: 45%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop" onclick="location.href='../look/look_goods.jsp';">
+														<article class="pop" onclick="location.href='../look/look_goods.do';">
 															<div class="pan">
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -25,7 +25,7 @@
 													</div>
 													<div class="uiTag" style="left: 10%; top: 10%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop left top" onclick="location.href='../look/look_goods.jsp';">
+														<article class="pop left top" onclick="location.href='../look/look_goods.do';">
 															<div class="pan">fp_model_style_arms
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -36,7 +36,7 @@
 													</div>
 													<div class="uiTag" style="left: 80%; top: 22%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop right top" onclick="location.href='../look/look_goods.jsp';">
+														<article class="pop right top" onclick="location.href='../look/look_goods.do';">
 															<div class="pan">
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -75,7 +75,7 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
+													<span class="pic"><img src="${s3Url}${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">
@@ -96,7 +96,7 @@
 										<li class="swiper-slide">
 											<div class="uiPhoto">
 												<div class="photo">
-													<span class="pic"><img src="${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
+													<span class="pic"><img src="${s3Url}${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
 													<div class="uiTag" style="left: 30%; top: 30%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop left top">
@@ -119,7 +119,7 @@
 							</div>
 							<div class="match">
 								<div class="box mat"><a class="bt" href="javascript:;" data-match="75"><i class="bar"></i><em class="amt"></em> <span class="txt">MATCH?</span></a></div>
-								<div class="box sty"><a class="bt" href="../common/searchTag.jsp"><span class="txt">STYLE</span></a></div>
+								<div class="box sty"><a class="bt" href="../common/searchTag.do"><span class="txt">STYLE</span></a></div>
 							</div>
 							<div class="info">
 								<div class="user">
@@ -127,7 +127,7 @@
 										<span class="img"><img src="//placeimg.com/60/70" alt=""></span>
 
 									</a>
-									<a href="../mypage/profile.jsp" class="mem">
+									<a href="../my/profile.do" class="mem">
 										<div class="nm">JENNY  <em class="ico seller">셀러</em> </div>
 										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
 									</a>
@@ -142,16 +142,16 @@
 							<div class="data">
 								<ul class="dl">
 									<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
-									<li class="like"><a href="../common/cool.jsp" class="bt"><span>120</span></a></li>
-									<li class="reply"><a href="../common/comments.jsp" class="bt"><span>77</span></a></li>
+									<li class="like"><a href="../common/cool.do" class="bt"><span>120</span></a></li>
+									<li class="reply"><a href="../common/comments.do" class="bt"><span>77</span></a></li>
 									<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>
 								</ul>
 							</div>
 							<div class="tags">
 								<ul class="tg">
-									<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
-									<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
-									<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>
+									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#유니크스타일</em> </a></li>
+									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
+									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#호피무늬</em> </a></li>
 								</ul>
 							</div>
 						</div>

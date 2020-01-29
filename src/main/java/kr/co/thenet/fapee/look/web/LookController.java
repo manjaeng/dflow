@@ -48,7 +48,7 @@ public class LookController {
 			//profileMap.put("pageStart",  0);
 			profileMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
 			//profileMap.put("pageSize", 4);
-
+			model.addAttribute("s3Url",Constants.S3_URL);
 			List<EgovMap> lookList = lookService.selectLookProfileList(profileMap);
 			model.addAttribute("lookList", lookList);
 			log.info("looklist" + lookList);
