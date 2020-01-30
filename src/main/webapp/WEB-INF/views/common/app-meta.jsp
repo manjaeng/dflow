@@ -16,6 +16,7 @@
 <link href="/resources/app/css/member.css" rel="stylesheet">
 <link href="/resources/app/css/look.css" rel="stylesheet">
 <link href="/resources/app/css/home.css" rel="stylesheet">
+<link href="/resources/app/css/about.css" rel="stylesheet">
 
 <!-- Jqurey Core -->
 <script src="/resources/app/js/jquery-3.4.1.js"></script>
