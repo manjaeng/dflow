@@ -9,7 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import kr.co.thenet.fapee.common.model.RewardVO;
+import kr.co.thenet.fapee.common.model.BaseSearchVO;
+import kr.co.thenet.fapee.common.model.RewardAccountVO;
+import kr.co.thenet.fapee.common.model.RewardInoutVO;
 import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.home.service.CodeService;
 import kr.co.thenet.fapee.setting.service.MyRewardService;
@@ -27,16 +29,17 @@ public class MyRewardController {
 	
 	//내 리워드 내역
 	@GetMapping("/app/setting/myreward.do")
-	public String shoppingList(RewardVO form, Model model) throws Exception {
+	public String shoppingList(BaseSearchVO form, Model model) throws Exception {
 		
 		model.addAttribute("bankCodeList", codeService.selectCodeList("BankCode"));
 
-		form.setUserIdKey(SessionUtils.getIdKey());
-		RewardVO accountInfo = rewardService.selectRewardAccountInfo(form);
+		form.setIdKey(SessionUtils.getIdKey());
+		RewardAccountVO accountInfo = rewardService.selectRewardAccountInfo(form);
+		RewardInoutVO summary = rewardService.selectRewardSummary(form);
 		
 		model.addAttribute("account", accountInfo);
-		model.addAttribute("totalPoint", 0);
-		model.addAttribute("payablePoint", 0);
+		model.addAttribute("totalPoint", summary.getInTotalAmount());
+		model.addAttribute("payablePoint", (summary.getInTotalAmount()-summary.getOutTotalAmount()));
 		
 		List<String> yearList = new ArrayList<String>();
 		for(int i = LocalDate.now().getYear(); i >= 2019; i--) {

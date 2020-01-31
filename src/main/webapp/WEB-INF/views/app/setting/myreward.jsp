@@ -23,7 +23,7 @@
                 <article>
                     <ul class="uiTab type a">
                         <li class="active"><a href="#tabPanelA1">MY REWARD</a></li>
-                        <li class=""><a href="#tabPanelA2" onclick="rewTabFnc();">HISTORY</a></li>
+                        <li class=""><a href="#tabPanelA2" onclick="historyReload();">HISTORY</a></li>
                         <li class=""><a href="#tabPanelA3">SETTING</a></li>
                     </ul>
                     <div class="uiTabPan">
@@ -39,7 +39,7 @@
                                         <dt>지급 신청 포인트</dt>
                                         <dd >
                                             <span class="point_val">
-                                                <span class="point_inp"><input type="text" class="input" id="reqPoint" name="reqPoint" value=""><em class="p">P</em></span>
+                                                <span class="point_inp"><input type="text" class="input" id="amount" name="amount" value=""><em class="p">P</em></span>
                                             </span>
                                         </dd>
                                     </dl>
@@ -65,17 +65,31 @@
                                 <div class="h_grp">
                                     <h2 class="tit">REWARD HISTORY</h2>
                                     <ul class="uiTab type b">
-                                        <li class="active"><a href="javascript:;" data-search="1M">1개월</a></li>
-                                        <li><a href="javascript:;" data-search="3M">3개월</a></li>
-                                        <li><a href="javascript:;" data-search="6M">6개월</a></li>
+                                        <li class="active"><a href="javascript:;" data-period="1M">1개월</a></li>
+                                        <li><a href="javascript:;" data-period="3M">3개월</a></li>
+                                        <li><a href="javascript:;" data-period="6M">6개월</a></li>
                                         <li><a href="javascript:;" onclick="ui.popLayer.open('popRwRange')">이전내역</a></li>
                                     </ul>
                                 </div>
                                 <div class="pt_list">
                                     <div class="nodata">
+                                    	<br>
                                         <div class="msg">기록이 존재하지 않습니다.</div>
                                     </div>
-                                    <ul class="list" id="his_list"></ul>
+                                    <ul class="list" id="his_list">
+										<li class="list-template" style="display: none;">
+										    <span class="info01">
+										        <span class="date">2019.09.25</span>
+										        <span class="bank">KB국민은행</span>
+										        <span class="txt">리워드 지급 신청</span>
+										    </span>
+										    <span class="info02">
+										        <span class="point ">-12,000P</span>
+										        <span class="txt">포인트 차감<br><span class="">12,000</span>원 입금 대기 중</span>
+										        <span class="total_pt">합계 <strong class="">65,350P</strong></span>
+										    </span>
+										</li>
+                                    </ul>
                                     <div class="uiLoadMore">
                                         <em></em>
                                         <button type="button" class="btnLoad" id="btnListMore">불러오기</button>
@@ -163,7 +177,7 @@
                         <div class="dates">
                             <div class="sels">
                                 <select class="select yy">
-                                    <option>년도 선택</option>
+                                    <option value=''>년도 선택</option>
 									<c:forEach var="item" items="${yearList}">
 		                                <option value="${item}">${item}</option>
 									</c:forEach>
@@ -171,7 +185,7 @@
                             </div>
                             <div class="sels">
                                 <select class="select mm">
-                                    <option>월 선택</option>
+                                    <option value=''>월 선택</option>
 									<c:forEach var="item" items="${monthList}">
 		                                <option value="${item}">${item}</option>
 									</c:forEach>
@@ -183,7 +197,7 @@
                 <div class="pbt">
                     <div class="bts">
                         <a href="javascript:;" class="btn lg" onclick="ui.popLayer.close('popRwRange')">취소</a>
-                        <a href="javascript:;" class="btn a lg" onclick="ui.popLayer.close('popRwRange')">확인</a>
+                        <a href="javascript:;" class="btn a lg monthChoice">확인</a>
                     </div>
                 </div>
             </div>
@@ -192,8 +206,8 @@
 	</div>
 
     <script>
-        var rewTabFnc = function(opt){  // 
-            $("#his_list").empty();
+        var historyReload = function(opt){  // 
+            $("#his_list").find('li.rowitem').remove();
             $(".uiLoadMore").addClass("active");
             page = 0 ;          
 			$(".uiLoadMore").trigger('click');
@@ -214,20 +228,35 @@
     		}
     	});
 
+    	var yyyyMm = '1M';	//History 검색은 기본 한달임.
     	$(document).ready(function(){
     		//계좌 설정후 새로고침인 경우.
+    		if('${form.tab}'=='HISTORY') ui.tab.set( "tabPanelA2");
     		if('${form.tab}'=='ACCOUNT') ui.tab.set( "tabPanelA3");
     		
-    		$("a.withdrawal").click( function(){
-    			var payablePoint = ${payablePoint};
-    			
-    			if(payablePoint < 10000) {
-					ui.alert({  // 알럿창 띄우기
-						msg:'<p>10,000P 이상부터 1,000P 단위로 지급 신청 가능합니다.</p>'
-					});	
-					return;
+    		//검색기간(1개월,3개월,등) 탭을 클릭시.
+    		$('a[data-period]').click(function() {
+				yyyyMm = $(this).data('period');
+				historyReload();
+    		});
+    		
+    		//History 이전 내역 년월 선택.
+    		$('a.monthChoice').click(function() {
+    			var yy = $('select.yy').val();
+    			var mm = $('select.mm').val();
+    			if(yy=='' || mm=='') {
+					ui.alert({ msg: '<p>년도와 월을 모두 선택하세요.</P>' });
+    				return;
     			}
-    			
+    			else {
+    				yyyyMm = $.validator.format('{0}-{1}', yy, mm);	//검색기간을 yyyy-MM 형식으로 넘김.
+        			ui.popLayer.close('popRwRange');	
+    				historyReload();
+    			}
+    		});
+    		
+    		//출금신청.
+    		$('a.withdrawal').click( function(){
     			if('${account.rewardAccountNo}'=='') {
     	            ui.confirm({
     	                msg:"<h1>알림</h1>"+
@@ -239,17 +268,47 @@
 					return;
     			}
     			
+    			var msg = null;
+    			var payablePoint = ${payablePoint};
+    			var amount = $('#amount').val();
+    			
+    			if(payablePoint < 10000) msg = '10,000P 이상부터 1,000P 단위로 지급 신청 가능합니다.';
+    			else if(amount=='' || isNaN(amount)) msg = '요청 포인트를 숫자로 입력하세요';
+    			if(msg==null) {
+    				amount = parseInt(amount, 10);
+    				if(amount < 10000) msg = '10,000P 이상부터 1,000P 단위로 지급 신청 가능합니다.';
+    				else if((amount % 1000) != 0) msg = '1,000P 단위로 지급 신청 가능합니다.';
+    				else if(payablePoint < amount) msg = '신청 포인트는 지급 가능 포인트보다 작거나 같아야 합니다.';
+    			}
+    				
+    			if(msg != null) {
+					ui.alert({  // 알럿창 띄우기
+						msg: msg
+					});
+					//$('#amount').focus();
+					return;
+    			}
+    			
 				var param = { };
-					param.myLookComment		= $('#myLookComment').is(':checked')? 'Y':'N';
+					param.inOutFlag		= 'OUT';
+					param.amount		= amount;
+					param.bankName		= '${account.rewardBank}';
+					param.accountNo		= '${account.rewardAccountNo}';
+					param.remark		= '리워드 출금 신청';
 				
-				$.post('/app/setting/rest/setting_alim.do', param, function(data) {
+				$.post('/app/setting/rest/myrewardWithdrawal.do', param, function(data) {
 					if(data.code!=0) {
 						ui.alert({ msg: '<p>' + data.message + '</P>' });
 						if(data.code==401) location.href = '/app/user/login.do';
 					}
+					else {
+						historyReload();
+						ui.tab.set( "tabPanelA2");
+					}
 				}, 'json');
     		});
     		
+    		//출금계좌 정보 저장.
     		$("a.account").click( function(){
     			if($('#rewardBank').val()=='') {
 					ui.alert({  // 알럿창 띄우기
@@ -285,12 +344,13 @@
 				}, 'json');
     		});
     		
+    		//History 목록 조회.
     		$(".uiLoadMore").click( function(){
     			$('div.nodata').hide();
     			$(".uiLoadMore").addClass("active");
     			page ++ ;
     			
-    			var url = '/app/setting/rest/reward_history.do?page='+page;
+    			var url = $.validator.format('/app/setting/rest/reward_history.do?yyyyMm={0}&page={1}', yyyyMm, page);
     			$.get(url )
     			.done(function( data ) {
     				var listTemplate = $('li.list-template:first');
@@ -298,8 +358,34 @@
     				//alert(JSON.stringify(data.form));
     				$.each(data.list, function(idx, item) {
     					var row = listTemplate.clone(true).removeClass('list-template');
+    					row.addClass('rowitem');
     					row.show();
-    					
+
+						var info01 = row.find('span.info01');
+						var info02 = row.find('span.info02');
+						
+    					if(item.inOutFlag=='IN') {
+    						info01.find('span.date').text(item.inquireDate);
+    						info01.find('span.bank').text('FAPEE');
+    						info01.find('span.txt').text(item.remark);
+        					
+    						var amount = item.amount;
+    						info02.find('span.point').text(amount.toLocaleString());	//금액
+    						var msg = $.validator.format('포인트 적립<br><span class="">{0}</span>P 적립완료', amount.toLocaleString());
+    						info02.find('span.txt').html(msg);
+    						info02.find('span.total_pt').html('');	//합계 <strong class="">65,350P</strong>
+    					}
+    					else {
+    						info01.find('span.date').text(item.inquireDate);
+    						info01.find('span.bank').text(item.bank);
+    						info01.find('span.txt').text(item.remark);
+        					
+    						var amount = -(item.amount);
+    						info02.find('span.point').text(amount.toLocaleString());	//금액
+    						var msg = $.validator.format('포인트 차감<br><span class="">{0}</span>원 {1}', item.amount.toLocaleString(), item.processStatusName);
+    						info02.find('span.txt').html(msg);
+    						info02.find('span.total_pt').html('');	//합계 <strong class="">65,350P</strong>
+    					}
     					
     					$("#his_list").append(row).addClass("load");;
     				})

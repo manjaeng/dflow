@@ -27,6 +27,8 @@ public class BaseSearchVO {
 	private String schField;
 	private String schWord;
 
+	private String tab;
+
 	private int page = 1;
 	private int rows = 10;
 	private long totalRows = 0;

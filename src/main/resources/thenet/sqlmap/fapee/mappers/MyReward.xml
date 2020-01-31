@@ -3,39 +3,38 @@
 
 <mapper namespace="kr.co.thenet.fapee.setting.service.impl.MyRewardMapper">
 	
-	<select id="selectRewardList" resultType="kr.co.thenet.fapee.common.model.RewardVO">
+	<select id="selectRewardList" resultType="kr.co.thenet.fapee.common.model.RewardInoutVO">
 		WITH list AS (
-			SELECT 
-				  pm.lookIdKey
-			    , rv.idKey				as reviewIdKey
-			    , pc.mapIdKey
-			    , pc.clickKey
-			    , (case when pc.clickKey = rv.clickKey then 'Y' else 'N' end)	as clickReviewYn
-				, pm.producIdKey		as productIdKey
-			    , pm.productName
-			    , pc.createDate
-			    , pc.settleYn
-			    , pc.rewardYn
-			    , pc.userIdKey
-			    , uo.userId				as lookUserId
-                , pc.price
-                , ur.userId
-			    , pm.useYn				as mapUseYn
-                , pd.salesStatus
-			    , up.imageUrl			as userImageUrl
-				, af.physicalFullPath	as productImageUrl
-                , row_number() over(ORDER BY pc.clickDate desc, pc.clickKey desc) AS rnk
-                , count(*) over() AS totalRows
-			FROM fp_look_product_click			pc
-				inner join fp_look_porduct_map	pm on pc.mapIdKey = pm.idKey
-			    inner join fp_user				ur on pc.userIdKey = ur.idKey	/*구매자*/
-				left outer join fp_look			lk on pm.lookIdKey = lk.idKey
-			    left outer join fp_user			uo on lk.userIdKey = uo.idKey	/*판매자*/
-			    left outer join fp_user_profile	up on lk.userIdKey = up.userIdKey	/*판매자*/
-				left outer join fp_product		pd on pc.pcode = pd.pcode
-				left outer join fp_attach_file	af on pd.mainImageId = af.grp
-		    	left outer join fp_review		rv on pm.lookIdKey = rv.lookIdKey and pc.pcode = rv.productIdKey and pc.userIdKey = rv.userIdKey
-			WHERE pc.userIdKey	= #{idKey}
+			SELECT
+				  rw.wdKey
+				, rw.inOutFlag
+				, rw.inquireDate
+				, rw.idKey
+				, fu.userId
+				, rw.amount
+				, rw.bankName
+				, rw.accountNo
+				, rw.accountOwner
+				, rw.processStatus
+				, c1.name				AS processStatusName
+				, rw.processDate
+				, rw.createId
+				, rw.createDate
+				, rw.lastUpdateId
+				, mu.userName			AS lastUpdateName
+				, rw.remark
+				, rw.lastUpdateDate
+                , row_number() over(ORDER BY rw.inquireDate desc, rw.wdKey desc) 	AS rnk
+                , count(*) over() 											AS totalRows
+                , sum(case when rw.processStatus='W' then 1 else 0 end) over()	AS waitCount
+                , sum(case when rw.processStatus='C' then 1 else 0 end) over()	AS completeCount
+                , sum(case when rw.processStatus='N' then 1 else 0 end) over()	AS incompleteCount
+			FROM fp_reward_inout				rw
+ 				left outer join fp_user			fu on rw.idKey = fu.idKey
+ 				left outer join fp_mcp_user		mu on rw.lastUpdateId = mu.userId
+				LEFT OUTER JOIN fp_code			c1 ON rw.processStatus	= c1.code AND c1.grp = 'RewardWithdrawalStatus'
+			WHERE rw.idKey	= #{idKey}
+			  AND rw.inquireDate BETWEEN #{frDate} AND #{toDate}
 		)
 		SELECT list.*
 			, (totalRows - rnk + 1)		AS seq
@@ -44,15 +43,54 @@
 		ORDER BY rnk
  	</select>
 	
-	<select id="selectRewardAccountInfo" resultType="kr.co.thenet.fapee.common.model.RewardVO">
+	<select id="selectRewardSummary" resultType="kr.co.thenet.fapee.common.model.RewardInoutVO">
+		SELECT
+			  count(*)			as cnt
+			, sum(case when rw.inOutFlag='IN'	then rw.amount else 0 end)	AS inTotalAmount
+			, sum(case when rw.inOutFlag='OUT'	then rw.amount else 0 end)	AS outTotalAmount
+		FROM fp_reward_inout				rw
+		WHERE rw.idKey	= #{idKey}
+ 	</select>
+	
+	<insert id="insertRewardWithdrawal" parameterType="kr.co.thenet.fapee.common.model.RewardInoutVO">
+		INSERT INTO fp_reward_inout (
+			  inOutFlag
+			, inquireDate
+			, idKey
+			, amount
+			, bankName
+			, accountNo
+			, accountOwner
+			, processStatus
+			, processDate
+			, remark
+			, createId
+			, createDate
+		 ) VALUES ( 
+		   	  #{inOutFlag}
+			, now()
+			, #{idKey}
+			, #{amount}
+			, #{bankName}
+			, #{accountNo}
+			, #{accountOwner}
+			, 'W'
+			, now()
+			, #{remark}
+			, #{createId}
+			, now()
+		)
+	</insert>
+	
+	<select id="selectRewardAccountInfo" resultType="kr.co.thenet.fapee.common.model.RewardAccountVO">
 		SELECT idKey
 			,  rewardBank
 			,  rewardAccountNo
 		FROM fp_user
-		WHERE idKey		 		= #{userIdKey}
+		WHERE idKey		 		= #{idKey}
  	</select>
 	
-	<update id="updateAccountInfo" parameterType="kr.co.thenet.fapee.common.model.RewardVO">
+	<update id="updateAccountInfo" parameterType="kr.co.thenet.fapee.common.model.RewardAccountVO">
 		UPDATE fp_user SET 
 			  rewardBank		= #{rewardBank}
 			, rewardAccountNo	= #{rewardAccountNo}

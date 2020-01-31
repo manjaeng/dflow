@@ -7,12 +7,11 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class RewardVO {
+public class RewardAccountVO {
 	private Long userIdKey;
 	private String rewardBank;
 	private String rewardAccountNo;
 
 	private long totalRows;
 	private long rnk;
-	private String tab;
 }
