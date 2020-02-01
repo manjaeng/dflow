@@ -1,6 +1,6 @@
 ﻿
 <li>
-	<div class="hBox"><span class="date">2019.07.01</span> <span class="tit">[문의]비밀번호 변경이 안되요.</span> <span class="rpd">-답변완료</span> <a href="javascript:;" class="btnTog">열기</a></div>
+	<div class="hBox"><span class="date">2020.01.26</span> <span class="tit">[문의]비밀번호 변경이 안되요.</span> <span class="rpd">-답변완료</span> <a href="javascript:;" class="btnTog">열기</a></div>
 	<div class="cBox">
 		<div class="q">
 			<div class="tit">[문의]비밀번호 변격이 안되요.</div>

@@ -48,25 +48,28 @@
 						appendStat = false ;
 					} else {
 						$.each(data,function(i,e) {
-							var tmp ='<li class="rowitem"><div class="hBox toggle">';
+							var tmp ='<li class="except"><div class="hBox">';
 							    tmp+= '<span class="tit">';
 							    tmp+= e.title;
 							   	tmp+= '</span>';
 							    tmp+= '<span class="date">';
-							    tmp+= e.createDate;
+							    tmp+= e.createDate.replace(/-/g, '.');
 							    tmp+= '</span>'; 
-							    //tmp+= '<a href="javascript:;" class="btnTog">열기</a>'; 
+							    tmp+= '<a href="javascript:;" class="btnTog">열기</a>'; 
 							    tmp+= '</div><div class="cBox">'; 
 							    tmp+= e.content; 
 							    tmp+= '</div></li>';
 							    
-							$("#notice_list").append(tmp).addClass("load");
+							var obj = $(tmp);
+							obj.find('.cBox').hide();
+							
+							$("#notice_list").append(obj).addClass("load");
 						});
 						
 						appendStat = true ;
 					}
 					
-					ui.accd.set();
+					//ui.accd.set();
 					$(".uiLoadMore").removeClass("active");
 					
 				},500);
@@ -92,11 +95,14 @@
 	$(document).ready(function(){
 		addItemFnc();
 		
-		$('.uiAccd').on('click', 'div.toggle', function() {
+		$('body').delegate('.btnTog', 'click', function() {
 			var $pnt = $(this).closest("li");
-			$(this).closest(".uiAccd").find("li.rowitem").find(".cBox").hide(200);
-			if ($pnt.children(".cBox").is(":hidden")) {
-				$pnt.addClass("open").children(".cBox").slideDown(200);
+			var isHidden = $pnt.children(".cBox").is(":hidden");
+			$(this).closest(".uiAccd").find(">li").removeClass("open").children(".cBox").slideUp(100);
+			if (isHidden) {
+				window.setTimeout(function() {
+					$pnt.addClass("open").children(".cBox").slideDown(100);
+				}, 110);
 			}
 		});
 		

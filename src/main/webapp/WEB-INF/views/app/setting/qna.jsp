@@ -17,10 +17,12 @@
 				<div class="nodata">
 					<div class="msg">문의가 존재하지 않습니다.</div>
 				</div>
-				<ul class="uiAccd list load" data-accd="accd" id="qna_list">
-					<li class="list-template" style="display: none;">
-						<div class="hBox"><span class="date">-</span> <span class="tit">[문의]</span> <span class="rpd">-답변완료</span> </div>
-						<div class="cBox" style="display: none;">
+				<ul class="uiAccd list" data-accd="accd" id="qna_list">
+				</ul>
+				<ul class="list-template" style="display: none;">
+					<li>
+						<div class="hBox"><span class="date">-</span> <span class="tit">[문의]</span> <span class="rpd">-답변완료</span> <a href="javascript:;" class="btnTog">열기</a></div>
+						<div class="cBox">
 							<div class="q">
 								<div class="tit">[문의]</div>
 								<div class="msg">question</div>
@@ -30,7 +32,8 @@
 								<div class="msg">-answer-</div>
 							</div>
 						</div>
-					</li>				</ul>
+					</li>
+				</ul>
 				<div class="uiLoadMore">
 					<em></em><button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
 				</div>
@@ -126,17 +129,20 @@
 	                }
 				});
 			} else {
-				alert('값 입력해 주세요!')
+				alert('제목과 내용을 입력해 주세요!')
 			} 
             
             return false;
 		});
 		
-		$('.uiAccd').on('click', 'div.toggle', function() {
+		$('body').delegate('.btnTog', 'click', function() {
 			var $pnt = $(this).closest("li");
-			$(this).closest(".uiAccd").find("li.rowitem").find(".cBox").hide(200);
-			if ($pnt.children(".cBox").is(":hidden")) {
-				$pnt.addClass("open").children(".cBox").slideDown(200);
+			var isHidden = $pnt.children(".cBox").is(":hidden");
+			$(this).closest(".uiAccd").find(">li").removeClass("open").children(".cBox").slideUp(100);
+			if (isHidden) {
+				window.setTimeout(function() {
+					$pnt.addClass("open").children(".cBox").slideDown(100);
+				}, 110);
 			}
 		});
 
@@ -150,14 +156,14 @@
 			$.get(url )
 			.done(function( data ) {
 				//alert(JSON.stringify(data));
-				var listTemplate = $('li.list-template:first');
+				var listTemplate = $('ul.list-template').find('li');
 
 				$.each(data, function(idx, item) {
-					var row = listTemplate.clone(false).removeClass('list-template').addClass('rowitem');
-					row.find('div.hBox').addClass('toggle');
-					row.show();
+					var row = listTemplate.clone(false);
+					row.find('.cBox').hide();
+					row.addClass('except');	//기본 이벤트 안타게 처리함.
 
-					row.find('span.date').text(item.createDate);
+					row.find('span.date').text(item.createDate.replace(/-/g, '.'));
 					row.find('span.tit').text('[문의]' + item.title);
 					
 					var q = row.find('div.q');
@@ -176,7 +182,7 @@
 
 					q.find('div.tit').html('[문의]' + item.title);
 					q.find('div.msg').html(item.content);
-					
+
 					$("#qna_list").append(row);
 				})
 
@@ -191,12 +197,12 @@
 				$(".uiLoadMore").removeClass("active");
 
 				//전체 건수가 0인 경우.
-				if($("#qna_list").find('li.rowitem').length==0) {
+				if($("#qna_list").find('li').length==0) {
 					$('div.nodata').show();
 					return;
 				}
 
-			});
+			});	//End-of-$.get(url )
 		});
 		
 		//화면 로딩시 자동으로 목록 조회.
