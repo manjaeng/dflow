@@ -65,7 +65,7 @@
 	</insert>
 	
 	<select id="selectLookProfileList" resultType="egovMap">
-		SELECT u.idKey
+		SELECT l.idKey
 			  ,u.userId
 			  ,l.idKey AS lookIdkey
 			  ,l.content
@@ -105,6 +105,9 @@
 		  AND u.idKey = #{idKey}
 		 </if>
 		  AND l.status = 1
+		 <if test="lookId != null" >
+		  AND l.idKey = #{lookId}
+		 </if>
 		 ORDER BY l.createDate DESC
 		 <if test="pageStart != null and pageSize != null">
 		 	LIMIT #{pageStart}, #{pageSize}
@@ -171,8 +174,8 @@
 			l.content,
 			l.createDate,
 			s.style,
-			GROUP_CONCAT(DISTINCT imageUrl ORDER BY i.idKey SEPARATOR '%') AS images,
-			GROUP_CONCAT(DISTINCT tagName ORDER BY t.idKey SEPARATOR '%') AS tags
+			GROUP_CONCAT(DISTINCT imageUrl ORDER BY i.idKey SEPARATOR  ',,,') AS image,
+			GROUP_CONCAT(DISTINCT tagName ORDER BY t.idKey SEPARATOR  ',,,') AS tag
 			FROM fp_look AS l 
 			LEFT JOIN fp_look_image AS i ON l.idKey=i.lookIdKey
 			LEFT JOIN fp_user AS u ON l.userIdKey=u.idKey
