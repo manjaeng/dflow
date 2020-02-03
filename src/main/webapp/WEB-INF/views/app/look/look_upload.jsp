@@ -21,7 +21,9 @@
 
 			<div class="pics swiper-container" id="slideUploadPic">
 				<ul class="list swiper-wrapper slide">
-					<li class="swiper-slide"><div class="img"><a class="btnAdd" href="javascript:openPhotoMulti()">선택</a></div></li>
+					<li class="swiper-slide">
+						<div class="img"><a class="btnAdd" href="javascript:openPhotoMulti()">선택</a></div>
+					</li>
 				</ul>
 			</div>
 		</section>

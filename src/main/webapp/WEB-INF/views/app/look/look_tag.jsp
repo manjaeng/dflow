@@ -16,11 +16,12 @@
 			</div>
 		</div>
 		<main id="contents" class="contents">
-
+<c:forEach var="lookItem" items="${lookList}" varStatus="status">
 			<section class="sec tagset">
 				<div class="uiPhoto active">
 					<div class="photo">
-						<div class="pic"><img class="img" src="//placeimg.com/720/960/1" alt="사진"></div>
+						<c:set var="mainLoopimageUrl" value="${s3Url}${lookItem.image[0]}"/>
+						<div class="pic"><img class="img" src="${mainLoopimageUrl}" alt="사진" onClick="javascript:clickLook()"></div>
 						<div class="uiTag" style="left: 10%; top: 20%;">
 							<button class="bt" type="button">태그</button>
 							<article class="pop left top">
@@ -37,7 +38,7 @@
 				</div>
 			</section>
 
-
+</c:forEach>>
 			<div class="btsTag">
 				<a href="javascript:;" class="btAddTag" onclick="popSchItem();">tag items</a>
 			</div>
@@ -65,60 +66,18 @@
 						<div class="itemList">
 							<div class="msgs" id="search_msg">Search  Your Items</div>
 							<ul class="tlist" id="search_res" style="display: none;">
+								<c:forEach var="productItem" items="${data}" varStatus="status">
 								<li>
 									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
+										<span class="img"><span class="lk"><img src="${productItem.imageUrl}" alt=""></span></span>
 										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
+											<div class="name"><c:out value="${productItem.pname}"/></div>
+											<div class="pric"><em class="w">&#8361;</em><span class="p"><c:out value="${productItem.price}"/></span></div>
 										</div>
 									</a>
 								</li>
-								<li>
-									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
-										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
-										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
-										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
-										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="javascript:;" class="item" onclick="popSchItemSel();">
-										<span class="img"><span class="lk"><img src="//placeimg.com/100/120/any/1" alt=""></span></span>
-										<div class="info">
-											<div class="name">호피무늬 스커트</div>
-											<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-										</div>
-									</a>
-								</li>
+								</c:forEach>
+
 							</ul>
 						</div>
 
@@ -131,6 +90,7 @@
 	</div>
 
 	<script>
+	function lookClick(){};
 	function popSchItem(){
 		ui.popLayer.open('popSchItem',{
 			ocb:function(){

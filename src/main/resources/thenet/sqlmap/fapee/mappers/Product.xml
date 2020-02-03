@@ -26,6 +26,7 @@
 				, sum(case when pd.inspectionStatus = 'S' then 1 end) over()	AS saveRows
 				, sum(case when pd.inspectionStatus = 'R' then 1 end) over()	AS rejectRows
 				, sum(case when pd.inspectionStatus = 'W' then 1 end) over()	AS waitRows
+		        ,(SELECT physicalFullPath FROM fp_attach_file WHERE fileKey = pd.mainImageId) as imageUrl
 			FROM fp_product						pd
 				INNER JOIN fp_user				ur ON pd.idKey = ur.idKey
 				INNER JOIN fp_seller_user		su ON pd.idKey = su.idKey
@@ -33,7 +34,7 @@
 				LEFT OUTER JOIN fp_code			c1 ON pd.inspectionStatus = c1.code AND c1.grp = 'ProductInspectionStatus'
 			WHERE pd.inspectionStatus != 'A'
 			<if test="idKey != null and idKey != '' ">
-				AND pd.idKey = #{idKey}
+				AND ur.idKey = #{idKey}
 			</if>
 			<if test="inspectionStatus != null and inspectionStatus != '' ">
 				AND pd.inspectionStatus = #{inspectionStatus}

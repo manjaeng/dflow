@@ -227,8 +227,8 @@ public class LookController {
 	@GetMapping("/app/look/look_view.do")
 	public String lookView(ModelMap model,HttpServletRequest req) throws Exception {
 
-		long lookid = Long.parseLong(req.getParameter("lookId"));
-		EgovMap look = lookService.selectLookDetail(lookid);
+		long lookId = Long.parseLong(req.getParameter("lookId"));
+		EgovMap look = lookService.selectLookDetail(lookId);
 	//	model.addAttribute("look", look);
 
 
@@ -240,7 +240,7 @@ public class LookController {
 			profileMap.put("pageStart",  0);
 			//profileMap.put("pageStart",  0);
 			profileMap.put("pageSize", 10);
-			profileMap.put("lookId" , lookid);
+			profileMap.put("lookId" , lookId);
 			//profileMap.put("pageSize", 4);
 			model.addAttribute("s3Url",Constants.S3_URL);
 			List<EgovMap> lookList = lookService.selectLookProfileList(profileMap);
@@ -254,11 +254,41 @@ public class LookController {
 
 
 	@GetMapping("/app/look/look_tag.do")
-	public String lookTag(ModelMap model) throws Exception {
+	public String lookTag(ModelMap model, HttpServletRequest req ) throws Exception {
 
-		int idKey = (Integer)model.get("lookId");
-		EgovMap look = lookService.selectLookDetail(idKey);
+		long lookId = Long.parseLong(req.getParameter("lookId"));
+		EgovMap look = lookService.selectLookDetail(lookId);
 		model.addAttribute("look", look);
+
+		if (SessionUtils.isLogin(req)) {
+
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			EgovMap profileMap = new EgovMap();
+			profileMap.put("idKey", sessionVO.getIdKey());
+			profileMap.put("pageStart",  0);
+			//profileMap.put("pageStart",  0);
+			profileMap.put("pageSize", 10);
+			profileMap.put("lookId" , lookId);
+			//profileMap.put("pageSize", 4);
+			model.addAttribute("s3Url",Constants.S3_URL);
+			List<EgovMap> lookList = lookService.selectLookProfileList(profileMap);
+			model.addAttribute("lookList", lookList);
+			log.info("looklist" + lookList);
+
+			ProductSearchVO form = new ProductSearchVO();
+
+			form.setIdKey(sessionVO.getIdKey());
+
+			List<CodeVO> inspectionStatusList = codeService.selectCodeList("ProductInspectionStatus")
+					.stream().filter(v -> !"S".equals(v.getCode())).collect(Collectors.toList());
+			model.addAttribute("inspectionStatusList", inspectionStatusList);
+			model.addAttribute("form", form);
+
+			List<ProductVO> data = service.selectInspectionList(form);
+			model.addAttribute("data", data);
+
+
+		}
 
 		return "look/look_tag.app";
 	}

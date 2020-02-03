@@ -23,7 +23,7 @@
 											<div class="uiPhoto">
 												<div class="photo">
 													<c:set var="mainLoopimageUrl" value="${s3Url}${look.image[0]}"/>
-													<span class="pic" id="${s3Url}"><img src="${mainLoopimageUrl}" alt="사진" ></span>
+													<span class="pic" id="${s3Url}"><img src="${mainLoopimageUrl}" alt="사진"  href=onclick="location.href='../look/look_tag.do?lookId=${look.idKey}';"></span>
 													<div class="uiTag" style="left: 50%; top: 45%;">
 														<button class="bt" type="button">태그</button>
 														<article class="pop" onclick="location.href='../look/look_goods.do?productKey=PRD1910090000000001';">

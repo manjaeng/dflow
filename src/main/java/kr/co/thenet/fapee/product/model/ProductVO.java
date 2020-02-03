@@ -75,5 +75,7 @@ public class ProductVO {
 	private long waitRows;
 	private long salesRows;
 	private long stopRows;
+
+	private String imageUrl;
 	
 }
