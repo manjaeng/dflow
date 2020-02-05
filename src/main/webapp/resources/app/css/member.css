@@ -481,8 +481,8 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.notice .sec.notice .nodata{height: calc(100vh - 50px);margin-top: -30px;}
 .contain.notice .sec.notice .list{ }
 .contain.notice .sec.notice .list>li .hBox{ padding-left: 20px; }
-.contain.notice .sec.notice .list>li .tit{width: 100%;}
-.contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 47px;width: 71px;text-align: right;top: 12px;}
+.contain.notice .sec.notice .list>li .tit{width: 100%;padding-right: 110px;display: block;}
+.contain.notice .sec.notice .list>li .date{color: #999999;font-size: 11px;position: absolute;right: 44px;width: 85px;text-align: right;top: 12px;}
 .contain.notice .sec.notice .list + .uiLoadMore{ margin-top:calc(50vh - 110px );}
 .contain.notice .sec.notice .list.load + .uiLoadMore{margin-top:0px;}
 
@@ -516,7 +516,7 @@ body.my.list .header .bts .hisback{display:block;}
 .contain.qna .sec.qna .list{ }
 .contain.qna .sec.qna .list>li .hBox{}
 .contain.qna .sec.qna .list>li .hBox .tit{max-width: calc(100% - 84px);vertical-align:middle;display:inline-block;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;font-family:"NotoSansCJKkr";}
-.contain.qna .sec.qna .list>li .hBox .date{color: #999999;font-size: 11px;position: absolute;left: 16px;width: 71px;text-align: right;top: 12px;}
+.contain.qna .sec.qna .list>li .hBox .date{color: #999999;font-size: 11px;position: absolute;left: 16px;width: 85px;text-align: left;top: 12px;}
 .contain.qna .sec.qna .list>li .hBox .rpd{display:inline-block;vertical-align:middle;margin-left: 2px;}
 .contain.qna .sec.qna .list>li .cBox{padding: 0;;}
 .contain.qna .sec.qna .list>li .cBox .q{padding: 15px 20px;}

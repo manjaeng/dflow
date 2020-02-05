@@ -73,7 +73,7 @@ public class LookServiceImpl implements LookService{
 
 
 	@Override
-	public EgovMap selectLookDetail(int idKey) throws Exception {
+	public EgovMap selectLookDetail(long idKey) throws Exception {
 		
 		EgovMap lookDetail = lookMapper.selectLookDetail(idKey);
 		

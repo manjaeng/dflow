@@ -1,5 +1,17 @@
-﻿<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<div class="wrap" id="wrap">
+
+	<%@ include file="/WEB-INF/views/common/app-head.jsp" %>
+	
+	<!-- 컨텐츠 시작 -->
+	
+	<div id="contain" class="contain look view">
+		<main id="contents" class="contents">
+			<section class="secLk look">
+				<ul class="lookList" id="lookList">
 
 <c:forEach var="look" items="${lookList}" varStatus="status">
 					<li>
@@ -11,10 +23,10 @@
 											<div class="uiPhoto">
 												<div class="photo">
 													<c:set var="mainLoopimageUrl" value="${s3Url}${look.image[0]}"/>
-													<span class="pic" id="${s3Url}"><img src="${mainLoopimageUrl}" alt="사진" onclick="location.href='../look/look_view.do?lookId=${look.idKey}';"></span>
+													<span class="pic" id="${s3Url}"><img src="${mainLoopimageUrl}" alt="사진"  href=onclick="location.href='../look/look_tag.do?lookId=${look.idKey}';"></span>
 													<div class="uiTag" style="left: 50%; top: 45%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop" onclick="location.href='../look/look_goods.do';">
+														<article class="pop" onclick="location.href='../look/look_goods.do?productKey=PRD1910090000000001';">
 															<div class="pan">
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -47,7 +59,7 @@
 													</div>
 													<div class="uiTag" style="left: 15%; top: 80%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop left bot" onclick="location.href='../look/look_goods.jsp';">
+														<article class="pop left bot" onclick="location.href='../look/look_goods.do';">
 															<div class="pan">
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -58,7 +70,7 @@
 													</div>
 													<div class="uiTag" style="left: 92%; top: 90%;">
 														<button class="bt" type="button">태그</button>
-														<article class="pop right bot" onclick="location.href='../look/look_goods.jsp';">
+														<article class="pop right bot" onclick="location.href='../look/look_goods.do';">
 															<div class="pan">
 																<div class="info">
 																	<div class="name">호피무늬치마</div>
@@ -71,48 +83,7 @@
 												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
 											</div>
 										</li>
-										<c:if test="${fn:length(look.image)  > 1}">
-										<li class="swiper-slide">
-											<div class="uiPhoto">
-												<div class="photo">
-													<span class="pic"><img src="${s3Url}${look.image[1]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
-													<div class="uiTag" style="left: 30%; top: 30%;">
-														<button class="bt" type="button">태그</button>
-														<article class="pop left top">
-															<div class="pan">
-																<div class="info">
-																	<div class="name">호피무늬치마</div>
-																	<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-																</div>
-															</div>
-														</article>
-													</div>
-												</div>
-												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
-											</div>
-										</li>
-										</c:if>
-										<c:if test="${fn:length(look.image) > 2}">
-										<li class="swiper-slide">
-											<div class="uiPhoto">
-												<div class="photo">
-													<span class="pic"><img src="${s3Url}${look.image[2]}" alt="사진" onclick="location.href='../look/look_view.do';"></span>
-													<div class="uiTag" style="left: 30%; top: 30%;">
-														<button class="bt" type="button">태그</button>
-														<article class="pop left top">
-															<div class="pan">
-																<div class="info">
-																	<div class="name">호피무늬치마</div>
-																	<div class="pric"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
-																</div>
-															</div>
-														</article>
-													</div>
-												</div>
-												<div class="btsTag"><a href="javascript:;" class="bt tag">태그</a></div>
-											</div>
-										</li>
-										</c:if>
+
 									</ul>
 									<div class="pagination"></div>
 								</div>
@@ -133,10 +104,7 @@
 									</a>
 									<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 								</div>
-								<div class="desc">
-									<a href="javascript:;" class="txt">"${look.content}"</a>
-									<a href="javascript:;" class="more">더보기</a>
-								</div>
+
 								<!-- <div class="time">2일전</div> -->
 							</div>
 							<div class="data">
@@ -157,3 +125,27 @@
 						</div>
 					</li>
 </c:forEach>
+				</ul>
+			</section>
+		</main>
+	</div>
+
+	<!-- 레이어팝업 자리 -->
+	<div class="popLayerArea">
+		<%@ include file="/WEB-INF/views/common/app-layers.jsp" %>
+	</div>
+
+
+	<script>
+	$(document).ready(function(){
+		// ui.nav.act("look");  // 하단 메뉴 활성화
+	});
+	</script>
+
+
+
+	<!--// 컨텐츠 끝 -->
+	<%@ include file="/WEB-INF/views/common/app-menubar.jsp" %>
+
+</div>
+

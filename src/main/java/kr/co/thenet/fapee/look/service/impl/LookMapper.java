@@ -23,7 +23,7 @@ public interface LookMapper {
 	
 	int updateLookInfo(EgovMap updateLookInfo) throws Exception;
 	
-	EgovMap selectLookDetail(int idKey) throws Exception;
+	EgovMap selectLookDetail(long idKey) throws Exception;
 	List<EgovMap> selectLookCommentList(EgovMap egovMap) throws Exception;
 
 	int insertLookCommentInfo(EgovMap egovMap) throws Exception;
