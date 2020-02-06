@@ -104,6 +104,7 @@
 				data : {
 					userIdKey : idKey,
 					styleIdKey : $("input[name=style_cate]:checked").val(),
+					modelKey : fp.data.look.modelKey,
 					tags : tags,
 					content : $(".textarea").val(),
 					images : fp.data.look.images

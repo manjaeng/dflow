@@ -156,6 +156,7 @@ public class LookController {
 			}
 		}
 		look.setImages(images);
+
 		
 		lookService.insertLook(look);
 		

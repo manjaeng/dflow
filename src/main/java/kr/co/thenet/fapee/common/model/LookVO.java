@@ -13,6 +13,7 @@ public class LookVO {
 	private long idKey;
 	private long userIdKey;
 	private int styleIdKey;
+	private int modelKey;
 	private String content;
 	private List<String> tags;
 	private List<String> images;

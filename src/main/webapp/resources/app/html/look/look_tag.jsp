@@ -15,7 +15,7 @@
 			<div class="in">
 				<div class="bts">
 					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
-					<a href="./look_upload.jsp" class="bt save">저장</a>
+					<a href="./look_tag_reg.do" class="bt save">저장</a>
 				</div>
 				<h1 class="tit">Tag Items</h1>
 			</div>
@@ -25,7 +25,7 @@
 			<section class="sec tagset">
 				<div class="uiPhoto active">
 					<div class="photo">
-						<div class="pic"><img class="img" src="//placeimg.com/720/960/1" alt="사진"></div>
+						<div class="pic"><img class="img" src="//placeimg.com/720/960/1" alt="사진" onClick="javascript:click()"></div>
 						<div class="uiTag" style="left: 10%; top: 20%;">
 							<button class="bt" type="button">태그</button>
 							<article class="pop left top">
@@ -136,6 +136,10 @@
 	</div>
 
 	<script>
+
+	function click(){
+	    alert(event.offsetX +" " + event.offsetY);
+	}	;
 	function popSchItem(){
 		ui.popLayer.open('popSchItem',{
 			ocb:function(){

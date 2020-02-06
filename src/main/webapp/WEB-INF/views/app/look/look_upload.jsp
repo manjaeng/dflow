@@ -174,7 +174,7 @@
 				
 				fp.data.look = {
 						images: _images,
-                        modelid : modelid
+                        modelKey : modelid
 
 				};
 				
