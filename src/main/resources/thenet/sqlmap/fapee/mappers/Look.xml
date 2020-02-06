@@ -26,12 +26,14 @@
 		INSERT INTO fp_look (
 			userIdKey
 			,styleIdKey
+			,modelKey
 			,content
 			,createDate
 			,status
 		) VALUES (
 			#{userIdKey}
 			,#{styleIdKey}
+			,#{modelKey}
 			,#{content}
 			,now()
 			,1
