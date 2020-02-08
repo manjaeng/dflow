@@ -24,6 +24,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import kr.co.thenet.fapee.common.model.UploadFileVO;
+import kr.co.thenet.fapee.common.util.Constants;
+import kr.co.thenet.fapee.common.util.S3Utils;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -48,70 +50,70 @@ public class UploadRestController {
 		log.info("FileCount={}", form.getFiles().size());
 		
 		try {
-			String basePath = context.getRealPath("/").replaceAll("\\\\", "/");
-			String uploadPath = String.format("/upload-files/%s", LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd")));
+			//S3Utils 초기화
+			S3Utils.init();
 			
+			String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
+			String thumbnailSuffix = ".thumbnail.png";
+			
+			String savedFoler = null;
 			String savedPath = null;
+			int seq = 0;
 			List<UploadFileVO> fileList = new ArrayList<UploadFileVO>();
 			for(MultipartFile mfile : form.getFiles()) {
-				savedPath = String.format("%s/%s.%s"
-												, uploadPath
-												, UUID.randomUUID().toString()
-												, FilenameUtils.getExtension(mfile.getOriginalFilename()));
-				String fileFullPath = String.format("%s%s", basePath, savedPath).replaceAll("//", "/");
+				String originFileName = mfile.getOriginalFilename();
+				
+				//썸네일인 경우 SKIP.
+				if(originFileName.endsWith(thumbnailSuffix)) continue;
+				seq++;
 				
 			    String mimeType = new Tika().detect(mfile.getBytes());
-			    String contentType = (mimeType!=null && mimeType.startsWith("video"))? "video" : "image";
-
-				log.info("...{}", contentType);
-				log.info("...{}", mfile.getOriginalFilename());
-				log.info("...{}", savedPath);
-				log.info("...{}", fileFullPath);
-				
-				File file = new File(fileFullPath);
-				//오늘 날짜 폴더가 없는 경우 생성.
-				if( !file.getParentFile().exists() ) {
-					file.getParentFile().mkdirs();
-				}
-				mfile.transferTo(file);
+			    boolean isVideo = (mimeType!=null && mimeType.startsWith("video"));
 			    
-				fileList.add(UploadFileVO.of(mfile.getOriginalFilename(), savedPath, contentType));
-			}
+			    savedFoler = String.format("%s/%s"
+											, (isVideo)? "videos/app" : "images/app"
+											, today);
 
-			//비디오 파일들에 대해 썸네일 이미지를 찾아서 설정.
-			fileList.stream()
-				.filter(item -> "video".equals(item.getType()))
-				.forEach(video -> {
-					String videoName = FilenameUtils.getBaseName(video.getFileName());
-					UploadFileVO thumbnail = fileList.stream().filter(thumb -> {
-						String thumbName = String.format("%s.png", videoName);	//비디오명에 png를 붙여 썸네일을 찾는다.
-						return thumbName.equals(thumb.getFileName());
-					}).findFirst().orElse(null);
-					
-					//썸네일인 경우 해당 경로를 비디오의 썸네일 경로에 설정한다.
+			    savedPath = String.format("%s/%s.%s"
+												, savedFoler
+												, UUID.randomUUID().toString()
+												, FilenameUtils.getExtension(originFileName));
+				log.info("...{}", (isVideo)? "video" : "image");
+				log.info("...{}", originFileName);
+				log.info("...{}", savedPath);
+
+				//mfile.transferTo(file);
+				S3Utils.uploadFile(savedPath, mfile.getBytes(), mimeType);
+				
+				String viewUrl = String.format("%s%s", Constants.CDN_URL, savedPath);
+				UploadFileVO uploadInfo = UploadFileVO.of(originFileName, viewUrl, ((isVideo)? "video" : "image"), mimeType, seq);
+				
+				if(isVideo) {
+					String thumbnailName = String.format("%s%s", originFileName, thumbnailSuffix);
+					MultipartFile thumbnail = form.getFiles()
+												.stream()
+												.filter(v -> v.getOriginalFilename().equals(thumbnailName))
+												.findFirst().orElse(null);
 					if(thumbnail != null) {
-						thumbnail.setThumbnail(true);
-						video.setThumbnailPath(thumbnail.getSavedPath());
+						String thumbnailPath = String.format("%s%s", savedPath, thumbnailSuffix);
+						//썸네일 업로드
+					    String thumbMimeType = new Tika().detect(thumbnail.getBytes());
+						S3Utils.uploadFile(thumbnailPath, thumbnail.getBytes(), thumbMimeType);
+						//썸네일 경로 설정.
+						uploadInfo.setThumbnailPath(String.format("%s%s", viewUrl, thumbnailSuffix));
 					}
-				});
-			
-			//최종 목록 계산.
-			List<UploadFileVO> finalList = new ArrayList<UploadFileVO>();
-			int i = 0;
-			for(UploadFileVO item : fileList) {
-				if(item.isThumbnail()) continue;
-				i++;
-				item.setSeq(i);
-				finalList.add(item);
+				}
+			    
+				fileList.add(uploadInfo);
 			}
 			
 			result.put("result", 0);
-			result.put("list", finalList);
+			result.put("list", fileList);
 		}
 		catch(Exception e) {
 			log.error("ERROR-upload...{}", e);
 			result.put("result", 500);
-			result.put("message", "파일 처리중 오류가 발생하였습니다.");
+			result.put("message", String.format("파일 처리중 오류가 발생하였습니다.\\n%s", e.getMessage()));
 		}
 
 		return result;

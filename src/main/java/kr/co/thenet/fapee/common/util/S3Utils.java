@@ -23,9 +23,9 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 public class S3Utils {
 
 	private static final Logger log = LoggerFactory.getLogger(S3Utils.class);
-	private static final String BUCKET_NAME = "s3thenet";
-	private static final String ACCESS_KEY = "AKIAJJ2LEVJY6SB4KZVA";
-	private static final String SECRET_KEY = "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";
+	private static final String BUCKET_NAME = "fapee";
+	private static final String ACCESS_KEY = "AKIAIDXRWUFQTDDYTD5Q";
+	private static final String SECRET_KEY = "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";
 	
 	public static AmazonS3 s3Client;
 
@@ -107,6 +107,17 @@ public class S3Utils {
 		
 		s3Client.putObject(BUCKET_NAME, fileName, fis, metadata);
 	}
+	
+	public static void uploadFile(String fileName, byte [] bi, String mimeType) {
+		
+		InputStream fis = new ByteArrayInputStream(bi);
+		
+		ObjectMetadata metadata = new ObjectMetadata();
+		metadata.setContentLength(bi.length);
+		metadata.setContentType(mimeType);
+		
+		s3Client.putObject(BUCKET_NAME, fileName, fis, metadata);
+	}
 
 	public static void deleteFile(String filePath) {
 		String path = (filePath).replace(File.separatorChar, '/');
@@ -117,5 +128,6 @@ public class S3Utils {
 		String path = filePath.replace(File.separatorChar, '/');
 		return s3Client.generatePresignedUrl(new GeneratePresignedUrlRequest(BUCKET_NAME, path)).toString();
 	}
+
 
 }
