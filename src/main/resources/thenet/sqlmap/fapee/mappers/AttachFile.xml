@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.thenet.fapee.home.service.impl.AttachMapper">
+	
+	<select id="selectAttachList" resultType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		SELECT
+			  af.fileKey
+			, af.grp
+			, af.logicalFileName
+			, af.physicalFullPath
+			, af.size
+			, af.extension
+			, af.deleteYn
+			, af.createId
+			, af.createDate
+			, af.lastUpdateId
+			, af.lastUpdateDate
+		FROM fp_attach_file		af
+		WHERE grp			= #{grp} 
+		  AND deleteYn = 'N'
+ 	</select>
+	
+	<select id="selectAttachInfo" resultType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		SELECT
+			  af.fileKey
+			, af.grp
+			, af.logicalFileName
+			, af.physicalFullPath
+			, af.size
+			, af.extension
+			, af.deleteYn
+			, af.createId
+			, af.createDate
+			, af.lastUpdateId
+			, af.lastUpdateDate
+		FROM fp_attach_file		af
+		WHERE fileKey		= #{fileKey} 
+ 	</select>
+	
+	<select id="selectAttachInfoByGrp" resultType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		SELECT
+			  af.fileKey
+			, af.grp
+			, af.logicalFileName
+			, af.physicalFullPath
+			, af.size
+			, af.extension
+			, af.deleteYn
+			, af.createId
+			, af.createDate
+			, af.lastUpdateId
+			, af.lastUpdateDate
+		FROM fp_attach_file		af
+		WHERE grp		= #{grp} 
+		LIMIT 1
+ 	</select>
+	
+	<insert id="insertAttachFile" parameterType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		INSERT INTO fp_attach_file(
+			  grp
+			, logicalFileName
+			, physicalFullPath
+			, size
+			, extension
+			, deleteYn
+			, createId
+			, createDate
+			, lastUpdateId
+			, lastUpdateDate
+		) VALUES (
+			  #{grp}
+			, #{logicalFileName}
+			, #{physicalFullPath}
+			, #{size}
+			, #{extension}
+			, 'N'
+			, #{createId}
+			, now()
+			, #{lastUpdateId}
+			, now()
+ 		)
+	</insert>
+	
+	<update id="updateAttachFile" parameterType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		UPDATE fp_attach_file SET
+			  logicalFileName		= #{logicalFileName}
+			, physicalFullPath		= #{physicalFullPath}
+			, size					= #{size}
+			, extension				= #{extension}
+			, deleteYn				= 'N'
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE fileKey	= #{fileKey}
+	</update>
+	
+	<update id="updateAttachFileByGrp" parameterType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		UPDATE fp_attach_file SET
+			  logicalFileName		= #{logicalFileName}
+			, physicalFullPath		= #{physicalFullPath}
+			, size					= #{size}
+			, extension				= #{extension}
+			, deleteYn				= 'N'
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE grp		= #{grp}
+	</update>
+	
+	<update id="deleteAttachFile" parameterType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		UPDATE fp_attach_file SET
+			  deleteYn				= 'Y'
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE fileKey	= #{fileKey}
+	</update>
+	
+	<update id="deleteAttachFileByGrp" parameterType="kr.co.thenet.fapee.common.model.AttachFileVO">
+		UPDATE fp_attach_file SET
+			  deleteYn				= 'Y'
+			, lastUpdateId			= #{lastUpdateId}
+			, lastUpdateDate		= now()
+		WHERE grp		= #{grp}
+	</update>
+	
+</mapper>

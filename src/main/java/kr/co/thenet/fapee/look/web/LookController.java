@@ -301,8 +301,8 @@ public class LookController {
 			String productIKey = req.getParameter("productKey");
 
 			ProductSearchVO form = new ProductSearchVO();
-			form.setProductIdKey(productIKey);
-			form.setUserId(req.getSession().getId());
+			form.setDataKey(productIKey);
+			//form.setUserId(req.getSession().getId());
 
 			List<CodeVO> inspectionStatusList = codeService.selectCodeList("ProductInspectionStatus")
 					.stream().filter(v -> !"S".equals(v.getCode())).collect(Collectors.toList());
@@ -321,7 +321,7 @@ public class LookController {
 
 
 		}
-		return "look/look_cate.app";
+		return "look/look_goods.app";
 	}
 
 

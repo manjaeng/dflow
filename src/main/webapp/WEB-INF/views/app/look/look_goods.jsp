@@ -19,11 +19,11 @@
 				<div class="uiLkItem">
 					<div class="tops">
 						<div class="info">
-							<div class="code">PDT1909050002</div>
-							<div class="prc"><em class="w">&#8361;</em><span class="p">999,999,999</span></div>
+							<div class="code">${data.pcode}</div>
+							<div class="prc"><em class="w">&#8361;</em><span class="p">${data.price}</span></div>
 						</div>
 						<div class="bts">
-							<a href="javascript:;" class="bt buy"><em class="t">BUY NOW</em></a>
+							<a href="${data.shoppingMallUrl}" class="bt buy"><em class="t">BUY NOW</em></a>
 						</div>
 					</div>
 					<div class="slideLookPic" id="slideLookPic">
@@ -50,7 +50,7 @@
 
 					<div class="info">
 						<div class="name">
-							<a href="../mypage/profile.jsp" class="mem"><span class="nm">TNNYY</span></a>
+							<a href="../my/profile.do" class="mem"><span class="nm">TNNYY</span></a>
 						</div>
 						<div class="desc">
 							<a href="javascript:;" class="txt">디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장 디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장 디어클라우드에서 산 호피무니 미니스커트 인증! 블랙 가죽 슈즈와 매치하면 끝장</a>
