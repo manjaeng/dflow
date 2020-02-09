@@ -39,8 +39,7 @@
 	
 	<update id="insertAlim" parameterType="kr.co.thenet.fapee.common.model.AlimVO"> 
 		INSERT INTO fp_alim (
-			  idKey
-			, grp
+			  grp
 			, alimType
 			, title
 			, content
@@ -51,8 +50,7 @@
 			, senderIdKey
 			, sendDate
 		) VALUES ( 
-			  #{idKey}
-			, #{grp}
+			  #{grp}
 			, #{alimType}
 			, #{title}
 			, #{content}

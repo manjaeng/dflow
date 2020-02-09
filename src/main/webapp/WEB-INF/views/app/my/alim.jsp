@@ -17,8 +17,8 @@
 		<main id="contents" class="contents">
 			<div class="tabs">
 				<ul class="uiTab menu a">
-					<li grp="ME" class="me"><a href="alim.do?grp=ME">ME</a></li>
-					<li grp="NOTICE" class="fol"><a href="alim.do?grp=NOTICE">NOTICE</a></li>
+					<li grp="ME" class="me"><a href="javascript:void(0);" linkUrl="alim.do?grp=ME">ME</a></li>
+					<li grp="NOTICE" class="fol"><a href="javascript:void(0);" linkUrl="alim.do?grp=NOTICE">NOTICE</a></li>
 				</ul>
 				<script>
 					$('ul.uiTab').find('li').removeClass('active');
@@ -72,6 +72,11 @@
 	});
 
 	$(document).ready(function(){
+		//탭 클릭.
+		$('.uiTab').find('a').click(function() {
+			location.replace( $(this).attr('linkUrl') );
+		})
+		
 		//쓰기 버튼.
 		$('body').delegate( 'a.view', 'click', function() {
 			var row = $(this).closest('li');
