@@ -5,7 +5,7 @@
 	<c:set var="mainLoopimageUrl" value="${s3Url}${look.image[0]}"/>
 <li class="box">
 	<div class="item">
-		<span class="img"><a href="app/look/look_view.do?lookId=${look.idKey}"><img src="${mainLoopimageUrl}" alt=""></a></span>
+		<span class="img"><a href="/app/look/look_view.do?lookId=${look.idKey}"><img src="${mainLoopimageUrl}" alt=""></a></span>
 	</div>
 </li>
 

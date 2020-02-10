@@ -42,11 +42,13 @@
 	<script>
         var page = 0 ;
         var startSize = 0;
+        var selectTab = 'look';
 
         var schResultTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
+            selectTab = opt;
             var pageUrl={
                 look:"/app/look/search_more.do",
-                acct:"/app/look/search_more.do",
+                acct:"/app/look/searchUser.do",
             };
             $("#searchResult").attr("data-tab", opt);
 			var search = document.getElementById('input_kwd').value;
@@ -88,7 +90,7 @@
             }
             var pageUrl={
                 look:"/app/look/search_more.do",
-                acct:"/app/look/search_more.do",
+                acct:"/app/look/searchUser.do",
             };
             page ++ ;
             $.ajax({
@@ -173,7 +175,7 @@
 
         $(document).on("keyup","#input_kwd",function (e) {
             if( e.keyCode == 13 ) {
-                schResultTabFnc('look');
+                schResultTabFnc(selectTab);
             }
         });
         $(document).on("click","#btSchCancel",function (e) {
