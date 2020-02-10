@@ -25,4 +25,5 @@ public class UserVO {
 	private String status;
 	private String adminYn;
 	private String leaveReason;
+	private String userFilterIdKey;
 }

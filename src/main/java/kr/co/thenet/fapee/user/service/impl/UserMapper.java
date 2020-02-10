@@ -17,6 +17,8 @@ public interface UserMapper {
 	int insertUserInfo(UserVO user) throws Exception;
 
 	int insertUserFilterInfo(EgovMap introMap) throws Exception;
+	
+	EgovMap selectCountUserFilterInfo(EgovMap introMap) throws Exception;
 
 	int insertUserStyleList(EgovMap styleMap) throws Exception;
 

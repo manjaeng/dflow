@@ -2,6 +2,8 @@ package kr.co.thenet.fapee.user.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import kr.co.thenet.fapee.common.model.UserVO;
 import kr.co.thenet.fapee.common.util.EgovMap;
 
@@ -11,11 +13,11 @@ public interface UserService {
 
 	UserVO selectUserInfo(EgovMap egovMap) throws Exception;
 
-	int insertUserInfo(UserVO user) throws Exception;
+	int insertUserInfo(UserVO user, HttpServletRequest req) throws Exception;
 
 	UserVO selectUserLogin(EgovMap loginMap) throws Exception;
 	
-	boolean insertUserFilterInfo(EgovMap introMap) throws Exception;
+	boolean insertUserFilterInfo(EgovMap introMap, HttpServletRequest req) throws Exception;
 
 	int updateUserLastLoginInfo(long idKey) throws Exception;
 	

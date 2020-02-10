@@ -23,6 +23,7 @@
 		 JOIN fp_user_filter uf on u.idKey = uf.userIdKey
 		 JOIN fp_user_profile up on u.idKey = up.userIdKey
 		WHERE u.idkey = #{_parameter}
+		LIMIT 1
 	</select>
 
 	<select id="selectUserModelInfo" resultType="egovMap">

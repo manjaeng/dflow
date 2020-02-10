@@ -64,6 +64,14 @@
 		)
 	</insert>
 	
+	<select id="selectCountUserFilterInfo" parameterType="egovMap" resultType="egovMap">
+		SELECT	COUNT(*) AS count
+		FROM	fp_user_filter
+		WHERE	deviceId =  #{deviceId}
+		AND		gender = #{gender}
+		AND		country = #{country}
+	</select>
+	
 	<insert id="insertUserFilterInfo" parameterType="egovMap" useGeneratedKeys="true" keyProperty="idKey">
 		INSERT into fp_user_filter(
 			 deviceId
@@ -96,7 +104,7 @@
 	<update id="updateUserFilterDeviceInfo" parameterType="userVO">
 		UPDATE fp_user_filter
 		   SET userIdKey = #{idKey}
-		 WHERE deviceId = #{deviceId}
+		 WHERE idKey = #{userFilterIdKey}
 	</update>
 
 	<insert id="insertUserProfileInfo" parameterType="userVO">
@@ -231,7 +239,4 @@
 			, leaveReason		= #{leaveReason}
 		 WHERE idKey = #{idKey}   
 	</update>
-
-
-	
 </mapper>
