@@ -21,8 +21,9 @@ public class Constants {
 	public final static int APP_SEARCH_PAGE_SIZE = 13;
 	
 	// AWS S3 URL
-	public final static String S3_URL = "https://s3thenet.s3.ap-northeast-2.amazonaws.com/";
+	// public final static String S3_URL = "https://s3thenet.s3.ap-northeast-2.amazonaws.com/";
 	public final static String CDN_URL = "https://d263k2zkiwujsc.cloudfront.net/";
-	
+	public final static String S3_URL = "https://d263k2zkiwujsc.cloudfront.net/";
+
 	
 }
