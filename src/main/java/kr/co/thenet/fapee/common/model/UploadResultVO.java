@@ -13,6 +13,7 @@ public class UploadResultVO {
 	private String mimeType;
 	private String fileName;
 	private String savedPath;
+	private String videoTime;
 	private String thumbnailPath;
 
     public static UploadResultVO of(String fileName, String savedPath, String type, String mimeType, int seq) {
