@@ -76,6 +76,9 @@ public class UploadRestController {
 				if(form.getParam19() != null) uploadFiles.add(form.getParam19());
 			}
 			
+			//시간 목록이 null이면 빈 리스트 생성.
+			if(form.getTimes()==null) form.setTimes(new ArrayList<String>());
+			
 			log.info("FileCount={}", uploadFiles.size());
 			
 			String today = LocalDate.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
@@ -126,6 +129,16 @@ public class UploadRestController {
 						S3Utils.uploadFile(thumbnailPath, thumbnail.getBytes(), thumbMimeType);
 						//썸네일 경로 설정.
 						uploadInfo.setThumbnailPath(String.format("%s%s", viewUrl, thumbnailSuffix));
+					}
+					
+					//동영상 길이가 있으면 찾아서 설정.
+					String timeName = String.format("%s=", originFileName);
+					String videoTime = form.getTimes()
+										.stream()
+										.filter(v -> (v != null && v.startsWith(timeName)))
+										.findFirst().orElse(null);
+					if(videoTime != null) {
+						uploadInfo.setVideoTime(videoTime.split("=")[1]);
 					}
 				}
 			    

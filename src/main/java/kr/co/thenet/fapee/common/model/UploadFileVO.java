@@ -15,6 +15,7 @@ import lombok.ToString;
 public class UploadFileVO {
 	
 	private List<MultipartFile> files = new ArrayList<MultipartFile>();
+	private List<String> times = new ArrayList<String>();
 	
 	private MultipartFile param00;
 	private MultipartFile param01;
