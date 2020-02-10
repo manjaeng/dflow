@@ -149,9 +149,9 @@
 							</div>
 							<div class="tags">
 								<ul class="tg">
-									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#유니크스타일</em> </a></li>
-									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
-									<li><a href="../common/searchTag.do" class="hash"><em class="tt">#호피무늬</em> </a></li>
+									<c:forEach var="tagData" items="${look.tag}">
+									<li><a href="../common/searchTag.do?tag=${tagData}" class="hash"><em class="tt">#${tagData}</em> </a></li>
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
