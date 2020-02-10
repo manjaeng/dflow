@@ -107,7 +107,7 @@
 		  AND u.idKey = #{idKey}
 		 </if>
 		<if test="userId != null">
-			AND u.userId = #{userId}
+			AND (u.userId = #{userId} or up.nickName = = #{userId})
 		</if>
 		  AND l.status = 1
 		 <if test="lookId != null" >

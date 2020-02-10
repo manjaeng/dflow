@@ -128,8 +128,8 @@
 
 									</a>
 									<a href="../my/profile.do" class="mem">
-										<div class="nm">JENNY  <em class="ico seller">셀러</em> </div>
-										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
+										<div class="nm">${look.nickName}  <em class="ico seller">셀러</em> </div>
+										<div class="dt"><em class="k">170cm</em><em class="n">${look.country} </em></div>
 									</a>
 									<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 								</div>
