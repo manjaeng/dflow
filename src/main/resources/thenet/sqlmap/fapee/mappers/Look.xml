@@ -113,6 +113,9 @@
 		<if test="style != null">
 			AND s.style = #{style}
 		</if>
+		<if test="tag != null">
+			AND l.idKey in (select distinct tag.lookIdKey from fp_look_tag tag where tag.tagName = #{tag})
+		</if>
 		<if test="matchKey !=null">
 			AND l.modelKey IN  (
 			select   DISTINCT  model.idKey from fp_model_match mat, fp_user_model model, fp_user_model smodel

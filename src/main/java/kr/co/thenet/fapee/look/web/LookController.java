@@ -78,7 +78,35 @@ public class LookController {
 
 		return "look/look_more.app";
 	}
-	
+
+	@GetMapping("/app/look/search.do")
+	public String lookSearchTag(ModelMap model,  HttpServletRequest req) throws Exception {
+
+		model.addAttribute("tag", req.getParameter("tag"));
+		return "common/searchTag.app";
+	}
+
+	@PostMapping("/app/look/search_more.do")
+	public String lookSearchTagMore(ModelMap model,  HttpServletRequest req) throws Exception {
+
+
+		SessionVO sessionVO = SessionUtils.getSessionData(req);
+		EgovMap profileMap = new EgovMap();
+		profileMap.put("tag", req.getParameter("tag"));
+		profileMap.put("pageStart",  Integer.parseInt(req.getParameter("pageStart")));
+		//profileMap.put("pageStart",  0);
+		profileMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
+		//profileMap.put("pageSize", 4);
+		model.addAttribute("s3Url",Constants.S3_URL);
+		List<EgovMap> lookList = lookService.selectLookProfileList(profileMap);
+		model.addAttribute("lookList", lookList);
+		log.info("looklist" + lookList);
+
+
+
+		return "common/searchResult_look_more.app";
+	}
+
 	@GetMapping("/app/look/look_upload.do")
 	public String lookUpload(ModelMap model,  HttpServletRequest req) throws Exception {
 		if (SessionUtils.isLogin(req)) {

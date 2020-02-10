@@ -119,7 +119,7 @@
 							</div>
 							<div class="match">
 								<div class="box mat"><a class="bt" href="javascript:;" data-match="75"><i class="bar"></i><em class="amt"></em> <span class="txt">MATCH?</span></a></div>
-								<div class="box sty"><a class="bt" href="../common/searchTag.do"><span class="txt">STYLE</span></a></div>
+								<div class="box sty"><a class="bt" href="/app/look/search.do?tag=${look.tag[0]}"><span class="txt">STYLE</span></a></div>
 							</div>
 							<div class="info">
 								<div class="user">
