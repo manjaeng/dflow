@@ -150,7 +150,7 @@
 							<div class="tags">
 								<ul class="tg">
 									<c:forEach var="tagData" items="${look.tag}">
-									<li><a href="../common/searchTag.do?tag=${tagData}" class="hash"><em class="tt">#${tagData}</em> </a></li>
+									<li><a href="/app/look/search.do?tag=${tagData}" class="hash"><em class="tt">#${tagData}</em> </a></li>
 									</c:forEach>
 								</ul>
 							</div>
