@@ -86,6 +86,11 @@ public class LookController {
 		return "common/searchTag.app";
 	}
 
+	@GetMapping("/app/look/searchReasult.do")
+	public String searchReasult(ModelMap model,  HttpServletRequest req) throws Exception {
+		return "common/searchResult.app";
+	}
+
 	@PostMapping("/app/look/search_more.do")
 	public String lookSearchTagMore(ModelMap model,  HttpServletRequest req) throws Exception {
 
