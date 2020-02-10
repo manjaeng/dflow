@@ -4,7 +4,7 @@
 	<!-- <button type="button" class="bt refresh">Refresh</button> -->
 	<!-- <button type="button" class="bt top">TOP</button> -->
 	<!-- <button type="button" class="bt prf" onclick="togThumbMode();">Tog</button> -->
-	<a href="../common/search.jsp" class="bt sch">검색</a>
+	<a href="/app/look/searchReasult.do" class="bt sch">검색</a>
 </nav>
 
 <nav id="menubar" class="menubar">
