@@ -144,7 +144,7 @@ public class UserController {
 	@ResponseBody
 	public String joinComplete(@RequestBody UserVO user, HttpServletRequest req) throws Exception {
 		
-		int insertCount = userService.insertUserInfo(user);
+		int insertCount = userService.insertUserInfo(user, req);
 		
 		if (insertCount == 1) {
 			

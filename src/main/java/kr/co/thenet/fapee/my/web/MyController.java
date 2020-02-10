@@ -319,6 +319,8 @@ public class MyController {
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 
 			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+			//System.out.println("AA "+profileInfo.get("country"));
+			log.debug("AA "+profileInfo.get("country"));
 
 			model.addAttribute("profileInfo", profileInfo);
 		}

@@ -72,9 +72,9 @@ public class IntroController {
 	
 	@PostMapping("/app/intro/intro_complte.do")
 	@ResponseBody
-	public String introComplete(@RequestBody EgovMap introMap) throws Exception {
+	public String introComplete(@RequestBody EgovMap introMap, HttpServletRequest req) throws Exception {
 		
-		boolean isSuccess = userService.insertUserFilterInfo(introMap);
+		boolean isSuccess = userService.insertUserFilterInfo(introMap, req);
 
 		if(isSuccess) {
 			return "t";

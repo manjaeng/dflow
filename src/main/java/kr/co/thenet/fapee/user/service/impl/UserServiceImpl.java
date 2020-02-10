@@ -2,6 +2,8 @@ package kr.co.thenet.fapee.user.service.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -12,6 +14,8 @@ import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.MailUtils;
 import kr.co.thenet.fapee.user.service.UserService;
+
+import lombok.extern.log4j.Log4j;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -30,10 +34,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public int insertUserInfo(UserVO user) throws Exception {
+	public int insertUserInfo(UserVO user, HttpServletRequest req) throws Exception {
 		user.setPassword(CommonFunc.getHashedPassword(user.getPassword()));
 		user.setUserType("2");
 		user.setStatus("1");
+		user.setUserFilterIdKey(String.valueOf(req.getSession().getAttribute("temp_UserFilterIdKey")));
 		
 		int insertcount = userMapper.insertUserInfo(user);
 		userMapper.updateUserFilterDeviceInfo(user);
@@ -65,27 +70,30 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public boolean insertUserFilterInfo(EgovMap introMap) throws Exception {
-		
-		int insertCount = userMapper.insertUserFilterInfo(introMap);
-		
-		if(insertCount == 1) {
+	public boolean insertUserFilterInfo(EgovMap introMap, HttpServletRequest req) throws Exception {
+		//EgovMap count = userMapper.selectCountUserFilterInfo(introMap);
 
+		//if(Integer.valueOf(String.valueOf(count.get("count"))) < 1){
+		int insertCount = userMapper.insertUserFilterInfo(introMap);
+
+		if(insertCount == 1) {
 			String[] StyleArray = ((String)introMap.get("style")).split(",");
-			
+
 			EgovMap styleMap = new EgovMap();
 			styleMap.put("userFilterIdKey", introMap.get("idKey"));
 			styleMap.put("styleArray", StyleArray);
-			
+
 			int insertStyleCount = userMapper.insertUserStyleList(styleMap);
+			
+			req.getSession().setAttribute("temp_UserFilterIdKey", introMap.get("idKey"));
 			
 			if(insertStyleCount > 0) {
 				return true;
 			}
 		}
+		//}
 			
 		return false;
-	
 	}
 
 	@Override
