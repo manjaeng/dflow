@@ -1,9 +1,12 @@
 package kr.co.thenet.fapee.home.web;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -38,7 +41,14 @@ public class HomeController {
 	public String searchTag() throws Exception {
 		return "home/search_tag.app";
 	}
-	
+
+	@GetMapping("/app/home/version.do")
+	@ResponseBody
+	public String appVsesionSelect() throws Exception {
+		 Map<String,String> appversion =  homeService.selectVersion();
+		 return new ObjectMapper().writeValueAsString(appversion);
+	}
+
 	@GetMapping("/app/home/search_result_div.do")
 	public String searchResultDiv() throws Exception {
 		return "app/home/search_result_div";

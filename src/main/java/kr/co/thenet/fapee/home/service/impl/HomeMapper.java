@@ -2,6 +2,7 @@ package kr.co.thenet.fapee.home.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -17,4 +18,6 @@ public interface HomeMapper {
 	public List<EgovMap> selectHomeSearchList(EgovMap egovMap) throws Exception;
 	
 	public List<EgovMap> selectReportList(int reportType) throws Exception;
+
+	public Map<String,String> selectVersion() throws Exception;
 }

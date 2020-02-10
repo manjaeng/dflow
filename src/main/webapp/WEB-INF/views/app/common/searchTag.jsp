@@ -759,7 +759,7 @@
 					// 	$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
 					// }
 
-					
+
 					$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
 					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
 					appendStat = true ;

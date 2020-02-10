@@ -6,6 +6,10 @@
 	<select id="selectHomeUserList" resultType="map">
 		select sysdate()
 	</select>
+
+	<select id="selectVersion" resultType="map">
+		select version from fp_app_version order by idkey desc limit 1
+	</select>
 	
 	<insert id="insertReport" parameterType="egovMap">
 		INSERT INTO fp_report(

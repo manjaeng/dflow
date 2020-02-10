@@ -2,6 +2,7 @@ package kr.co.thenet.fapee.home.service.impl;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,12 @@ public class HomeServiceImpl implements HomeService {
 		List<EgovMap> reportList = homeMapper.selectReportList(reportType);
 		
 		return reportList;
+	}
+
+	@Override
+	public Map<String,String> selectVersion() throws Exception{
+		Map<String,String> version = homeMapper.selectVersion();
+		return version;
 	}
 	
 }
