@@ -60,21 +60,19 @@ public class UserController {
 		
 		UserVO user = userService.selectUserInfo(egovMap);
 		
-		if(user == null) {
-			
-			String randomNum = CommonUtils.getRandomNum(6);
-			
+		String randomNum = CommonUtils.getRandomNum(6);
+		
+		// 일단 전화번호 줄복 허용....
+		//if(user == null) {
 			SessionUtils.setData(req, "verification", randomNum);
 			
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
 
-
             BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAYKPGWKE7FMLFRQU4", "JnlzgqptdEdWcAKWFSyztE1z6FvlDMTlPVibm1q5");
             AmazonSNSClient snsClient = (AmazonSNSClient)AmazonSNSClientBuilder.standard()
                     .withRegion("ap-northeast-1")
                     .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
-
 
             String message = "Fapee 인증번호는 [" + randomNum + "] 입니다.";
             String phoneNumber = mobile;
@@ -90,9 +88,9 @@ public class UserController {
             log.info(result);
 			
 			return "send:" + randomNum;
-		} else {
-			return "exist:ex";
-		}
+		//} else {
+		//	return "exist:ex";
+		//}
 		
 	}
 	
@@ -228,27 +226,37 @@ public class UserController {
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
 
-			AmazonSNSClient snsClient = new AmazonSNSClient();
+			//AmazonSNSClient snsClient = new AmazonSNSClient();
+			BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIAYKPGWKE7FMLFRQU4", "JnlzgqptdEdWcAKWFSyztE1z6FvlDMTlPVibm1q5");
+            AmazonSNSClient snsClient = (AmazonSNSClient)AmazonSNSClientBuilder.standard()
+                    .withRegion("ap-northeast-1")
+                    .withCredentials(new AWSStaticCredentialsProvider(awsCreds)).build();
+			
 			String message = "Fapee 인증번호는 [" + randomNum + "] 입니다.";
 			String phoneNumber = mobile;
-			Map<String, MessageAttributeValue> smsAttributes =
-					new HashMap<String, MessageAttributeValue>();
+			
+			Map<String, MessageAttributeValue> smsAttributes = new HashMap<String, MessageAttributeValue>();
+			
             smsAttributes.put("AWS.SNS.SMS.SenderID", new MessageAttributeValue()
-                    .withStringValue("AKIAYKPGWKE7FMLFRQU4") //The sender ID shown on the device.
+                    //.withStringValue("AKIAYKPGWKE7FMLFRQU4") //The sender ID shown on the device.
+            		.withStringValue("fepeeSMS")
                     .withDataType("String"));
-            smsAttributes.put("AWS.SNS.SMS.MaxPrice", new MessageAttributeValue()
+            
+            /*smsAttributes.put("AWS.SNS.SMS.MaxPrice", new MessageAttributeValue()
                     .withStringValue("0.50") //Sets the max price to 0.50 USD.
                     .withDataType("Number"));
+            
             smsAttributes.put("AWS.SNS.SMS.SMSType", new MessageAttributeValue()
                     .withStringValue("Promotional") //Sets the type to promotional.
-                    .withDataType("String"));
+                    .withDataType("String"));*/
+            
             PublishResult result = snsClient.publish(new PublishRequest()
                     .withMessage(message)
                     .withPhoneNumber(phoneNumber)
                     .withMessageAttributes(smsAttributes));
             log.info(result);
 
-            return "send";
+            return "send:" + randomNum;
 		} else {
 			return "notExist";
 		}

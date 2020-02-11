@@ -946,7 +946,6 @@ function popPrfPicMod(){
 
 				var $nation = $('#nation_code').val();
 
-				
 				var $phone = $('.phone input').val();
 
 				if($phone.startsWith('0')){
@@ -976,22 +975,23 @@ function popPrfPicMod(){
 						//alert(data);
 						var res = data.split(":");
 						// alert(res[0]);
-						if(res[0] === 'exist') {
-							$(".phone input").addClass("no");
-							$('#msg_exist').addClass('show');
-							$('#msg_exist').text('이미 가입된 전화번호입니다.')
-							$('.findpws').show();
-							timer.destroy();
-							
-						} else if(res[0] === 'send') {
+						
+						// 테스트를 위해 전화번호 중복가입 가능하게 함
+						if(res[0] === 'send') {
 							fp.data.join = {
 								deviceId : 'emsdf1-saesd-vsdaf-esdfs',
-								mobile : $('.phone input').val()
+								mobile : $phone
 							};
 							
 							$('.msgcode').show();
 							timer.start();
 							alert(res[1]);
+						}else if(res[0] === 'exist'){
+							$(".phone input").addClass("no");
+							$('#msg_exist').addClass('show');
+							$('#msg_exist').text('이미 가입된 전화번호입니다.')
+							$('.findpws').show();
+							timer.destroy();
 						}
 					}
 				});

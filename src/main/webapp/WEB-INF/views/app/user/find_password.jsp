@@ -16,8 +16,8 @@
 				<div class="msg">가입 시 인증한 전화 번호를 입력하시면 <br> 본인 확인 코드를 보내드립니다. </div>
 
 				<div class="form">
-				<div class="nation">
-					<select class="select" id="nation_code">
+					<div class="nation">
+						<select class="select" id="nation_code">
 
 						<option value="93">Afghanistan +93</option>
 						<option value="355">Albania +355</option>
@@ -255,29 +255,28 @@
 						<option value="260">Zambia +260</option>
 						<option value="263">Zimbabwe +263</option>
 					</select>
-				</div>
-				<div class="uiIptPlc phone">
-					<input type="number" class="input" value="">
-					<span class="plc">Mobile Phone</span>
-					<a href="javascript:;" class="btn c sm btnSend">SEND</a>
-				</div>
+					</div>
+					<div class="uiIptPlc phone">
+						<input type="number" class="input" value="">
+						<span class="plc">Mobile Phone</span>
+						<a href="javascript:;" class="btn c sm btnSend">SEND</a>
+					</div>
 
-				<div class="uiIptPlc certi">
-					<input type="number" class="input" value="">
-					<span class="plc">Verification number </span>
-					<span class="time" style="display:none;">2:59</span>
+					<div class="uiIptPlc certi">
+						<input type="number" class="input" value="">
+						<span class="plc">Verification number </span>
+						<span class="time" style="display:none;">2:59</span>
+					</div>
+					<div class="msgcode" style="display:none;">해당 번호로 코드를 전송하였습니다.</div>
+					<div class="msg_error" id="msg_exist"></div>
 				</div>
-				<div class="msgcode" style="display:none;">해당 번호로 코드를 전송하였습니다.</div>
-				<div class="msg_error" id="msg_exist"></div>
-
-</div>
 				<div class="botFixed">
 					<div class="in">
 						<div class="btnSet fit">
 							<a href="javascript:;" class="btn xl b fill">NEXT</a>
 						</div>
 					</div>
-			</div>
+				</div>
 		</main>
 	</div>
 
@@ -373,6 +372,7 @@
 		</div>
 	</div>
 </article>
+
 <script>
 var popFilter = function(){
 	ui.popLayer.open('popFilter',{
@@ -922,7 +922,6 @@ function popPrfPicMod(){
 			};
 			
 			$('.phone a').click(function() {
-				
 				$(".phone input, .certi input").removeClass("no");
 				
 				$('.msgcode').hide();
@@ -936,7 +935,6 @@ function popPrfPicMod(){
 
                 var $nation = $('#nation_code').val();
 
-
                 var $phone = $('.phone input').val();
 
                 if($phone.startsWith('0')){
@@ -944,8 +942,8 @@ function popPrfPicMod(){
                 }
 
                 $phone = $nation + $phone;
-
-
+                
+                /*
                 if(!fp.util.checkRegEx('mobile',$phone)) {
 					$(".phone input").addClass("no");
 					timer2.destroy();
@@ -955,6 +953,7 @@ function popPrfPicMod(){
 					
 					return false;
 				}
+                */
 				
 				$.ajax({
 					type : 'post',
@@ -963,10 +962,12 @@ function popPrfPicMod(){
 						'mobile' : $phone
 					},
 					success: function(data) {
-						if(data === 'send') {
+						var res = data.split(":");
+						if(res[0] === 'send') {
 							$('.msgcode').show();
 							timer2.start();
-						} else if(data === 'notExist') {
+							alert(res[1]);
+						} else if(res[0] === 'notExist') {
 							$(".phone input").addClass("no");
 							$('#msg_check').addClass('show');
 							$('#msg_check').text('등록 되지 않은정보입니다.')
