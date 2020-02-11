@@ -66,6 +66,7 @@
 .contain.search .secResult .tabCtn .list.load + .uiLoadMore{margin-top:0px;}
 
 .contain.search.tag  .uiItemList .uiLoadMore{margin-top: calc(50vh - 130px );}
+.contain.search.tag  .uiItemList .list.load + .uiLoadMore{margin-top:0px;}
 
 /* 룩셋 */
 .uiLkSet{}
