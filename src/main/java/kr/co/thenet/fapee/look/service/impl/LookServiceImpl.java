@@ -1,5 +1,6 @@
 package kr.co.thenet.fapee.look.service.impl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -51,16 +52,25 @@ public class LookServiceImpl implements LookService{
 		
 		List<EgovMap> lookProfileList = lookMapper.selectLookProfileList(egovMap);
 		
-		lookProfileList.forEach(e -> {
-			String[] imageArray = ((String)e.get("image")).split(",,,");
-			String[] tagArray = ((String)e.get("tag")).split(",,,");
-			
-			List<String> image = Arrays.asList(imageArray);
-			List<String> tag = Arrays.asList(tagArray);
-			
-			e.put("image", image);
-			e.put("tag", tag);
-		});
+		if(lookProfileList != null){
+			lookProfileList.forEach(e -> {
+				List<String> image = new ArrayList<String>();
+				List<String> tag = new ArrayList<String>();
+						
+				if(e.get("image") != null){
+					String[] imageArray = ((String)e.get("image")).split(",,,");
+					image = Arrays.asList(imageArray);
+				}
+				
+				if(e.get("tag") != null){
+					String[] tagArray = ((String)e.get("tag")).split(",,,");
+					tag = Arrays.asList(tagArray);
+				}
+				
+				e.put("image", image);
+				e.put("tag", tag);
+			});
+		}
 		
 		
 		return lookMapper.selectLookProfileList(egovMap);

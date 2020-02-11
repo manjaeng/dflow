@@ -96,7 +96,7 @@
 		      </if>
 		  FROM fp_user u
 			INNER JOIN fp_look l ON u.idKey = l.userIdKey
-			INNER JOIN fp_look_tag t ON t.lookIdKey = l.userIdKey 
+			LEFT OUTER  JOIN fp_look_tag t ON t.lookIdKey = l.userIdKey 
 	  		LEFT OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
 		    LEFT OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
 		    LEFT JOIN fp_style s ON l.styleIdKey = s.idKey
