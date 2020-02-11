@@ -87,7 +87,7 @@
 				  WHERE lookIdKey = l.idKey
 				  GROUP BY lookIdKey) AS image
 			  ,GROUP_CONCAT(t.tagName ORDER BY t.idKey SEPARATOR ',,,') AS tag
-			  <if test='sessionIdKey != null'>
+			  <if test="sessionIdKey != null and sessionIdKey != ''">
 		      ,(
 				 SELECT count(*)
 		  		   FROM fp_look_cool
