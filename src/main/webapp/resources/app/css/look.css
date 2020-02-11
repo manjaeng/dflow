@@ -62,9 +62,10 @@
 .contain.search .secResult .acctList .uiLoadMore{padding:0 8px;margin-top: -15px;}
 
 .contain.search .secResult .tabCtn .resultList .uiLoadMore{ margin-top:calc(50vh - 190px );}
-.contain.search.tag .secResult .tabCtn .resultList .uiLoadMore{margin-top: calc(50vh - 130px );}
 .contain.search .secResult .tabCtn .acctList .uiLoadMore{ margin-top:calc(50vh - 140px );}
 .contain.search .secResult .tabCtn .list.load + .uiLoadMore{margin-top:0px;}
+
+.contain.search.tag  .uiItemList .uiLoadMore{margin-top: calc(50vh - 130px );}
 
 /* 룩셋 */
 .uiLkSet{}

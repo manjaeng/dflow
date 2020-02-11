@@ -19,7 +19,21 @@
 		</div>
 		<main id="contents" class="contents">
 			
-			<section class="secResult" id="searchResult"></section>
+			<section class="secResult">
+				
+				<div class="uiItemList">
+					<div class="nodata">
+						<div class="msg">검색기록이 존재하지 않습니다.</div>
+					</div>
+					<ul class="list" id="tag_list">
+						<!-- ./searchTag_more.jsp -->
+					</ul>
+					<div class="uiLoadMore">
+						<em></em> <button type="button" class="btnLoad" onclick="addItemFnc()" id="btnListMore">불러오기</button>
+					</div>
+				</div>
+				
+			</section>
 
 		</main>
 	</div>
@@ -30,56 +44,20 @@
 	</div>
 
 	<script>
-	var schResultTabFnc = function(opt){  // 탭메뉴 클릭시 페이지 불러오기
-		var pageUrl={
-			look:"./searchResult_look.jsp",
-			acct:"./searchResult_acct.jsp",
-		};
-		$("#searchResult").attr("data-tab", opt);
-		$.ajax({
-			type: "post",
-			url: pageUrl[opt],
-			dataType: "html",
-			success: function(html) {			
-				$(".tabsSch>.uiTab>li."+opt).addClass("active").siblings("li").removeClass("active");
-				$("#searchResult").html(html);
-				// look_grid_set();
-				addItemFnc(opt);
-				$("#searchResult").removeClass("look , acct").addClass(opt);
-				appendStat = true ;
-				page = 1 ;
-				console.log( "현재탭 =" , opt );
-			}
-		});	
-	}
 
 	var page = 0 ;
 	var appendStat = true ;
-	var addItemFnc = function(opt){
+	var addItemFnc = function(){
 		$(".uiLoadMore").addClass("active");
-		var pageUrl={
-			look:"./searchResult_look_more.jsp",
-			acct:"./searchResult_acct_more.jsp",
-		};
 		page ++ ;
 		$.ajax({
 			type: "post",
-			url: pageUrl[opt],
+			url: "./searchTag_more.jsp",
 			dataType: "html",
 			success: function(html) {
 				window.setTimeout(function(){
-					
-					// if (opt == 'look') { // LOOK 일때 append
-					// 	$items = $(html);
-					// 	$look_grid.append( $items ).masonry( 'appended', $items );
-					// 	$look_grid.masonry('layout');
-					// }
-					// if (opt == 'acct') { // Account 일때 append
-					// 	$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
-					// }
-
-					$(".secResult .tabCtn."+opt+" .list").append(html).addClass("load");
-					console.log("페이징 = " + page +" + "+ pageUrl[opt]);
+					$("#tag_list").append(html).addClass("load");
+					console.log("페이징 = " + page );
 					appendStat = true ;
 					if (page >= 3) {
 						console.log("끝");
@@ -88,7 +66,7 @@
 						page = 0 ;
 					}
 					$(".uiLoadMore").removeClass("active");
-					
+
 				},500);
 			},
 			error:function(error){
@@ -100,22 +78,14 @@
 		});	
 	};
 
-	var look_grid_set = function(){  //  그리드 플러그인 셋팅
-		$look_grid = $('#dp_list').masonry({
-			itemSelector: '#dp_list .box',
+	var look_grid_set = function(){  //  masonry 플러그인 적용
+		$look_grid = $('#tag_list').masonry({
+			itemSelector: '#tag_list .box',
 			percentPosition: true,
 			gutter:0,
 			transitionDuration: 700
 		});
-
-		$look_grid.on( 'click', '.del', function(event) {
-			$look_grid.masonry( 'remove', $(event.currentTarget).closest(".box")  );		
-			window.setTimeout(function(){
-				$look_grid.masonry('layout');
-			},750);
-		});
 	}
-
 
 
 	$(document).ready(function(){
@@ -124,18 +94,15 @@
 			var docH = $(document).height();
 			var scr = $(window).scrollTop() + $(window).height() + $("#menubar").outerHeight() + 30;
 			// console.log(docH,scr);
-			var tabAct = $("#searchResult").attr("data-tab");
 			if (docH <= scr  && appendStat == true) {
 				console.log("바닥sss");
-				addItemFnc(tabAct);
+				addItemFnc();
 				appendStat = false;
 			}
 		});
-
-		schResultTabFnc('look'); 
+		addItemFnc();
 
 	});
-
 
 
 	</script>
