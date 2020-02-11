@@ -86,10 +86,7 @@
 				  FROM fp_look_image
 				  WHERE lookIdKey = l.idKey
 				  GROUP BY lookIdKey) AS image
-			  ,(SELECT GROUP_CONCAT(tagName ORDER BY idKey SEPARATOR ',,,')
-				  FROM fp_look_tag
-				  WHERE lookIdKey = l.idKey
-				  GROUP BY lookIdKey) AS tag
+			  ,GROUP_CONCAT(t.tagName ORDER BY t.idKey SEPARATOR ',,,') AS tag
 			  <if test='sessionIdKey != null'>
 		      ,(
 				 SELECT count(*)
@@ -99,27 +96,28 @@
 		      </if>
 		  FROM fp_user u
 			INNER JOIN fp_look l ON u.idKey = l.userIdKey
+			INNER JOIN fp_look_tag t ON t.lookIdKey = l.userIdKey 
 	  		LEFT OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
 		    LEFT OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
 		    LEFT JOIN fp_style s ON l.styleIdKey = s.idKey
 		 WHERE 1=1
-		 <if test="idKey != null">
+		 <if test="idKey != null and idKey != ''">
 		  AND u.idKey = #{idKey}
 		 </if>
-		<if test="userId != null">
+		<if test="userId != null and userId != ''">
 			AND (u.userId = #{userId} or up.nickName = #{userId})
 		</if>
 		  AND l.status = 1
-		 <if test="lookId != null" >
+		 <if test="lookId != null and lookId != ''" >
 		  AND l.idKey = #{lookId}
 		 </if>
-		<if test="style != null">
+		<if test="style != null and style != ''">
 			AND s.style = #{style}
 		</if>
-		<if test="tag != null">
+		<if test="tag != null and tag != ''">
 			AND l.idKey in (select distinct tag.lookIdKey from fp_look_tag tag where tag.tagName = #{tag})
 		</if>
-		<if test="matchKey !=null">
+		<if test="matchKey !=null and matchKey != ''">
 			AND l.modelKey IN  (
 			select   DISTINCT  model.idKey from fp_model_match mat, fp_user_model model, fp_user_model smodel
 			where mat.matchKey = #{matchKey}  and mat.gender = model.gender
@@ -132,7 +130,7 @@
 			)
 		</if>
 		 ORDER BY l.createDate DESC
-		 <if test="pageStart != null and pageSize != null">
+		 <if test="pageStart != null and pagerStart != '' and pageSize != null and pageSize != ''">
 		 	LIMIT #{pageStart}, #{pageSize}
 		 </if>
 	</select>
