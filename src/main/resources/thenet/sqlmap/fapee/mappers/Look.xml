@@ -67,6 +67,7 @@
 	</insert>
 	
 	<select id="selectLookProfileList" resultType="egovMap">
+		SELECT aa.* from (
 		SELECT l.idKey
 			  ,u.userId
 			  ,l.idKey AS lookIdkey
@@ -86,7 +87,7 @@
 				  FROM fp_look_image
 				  WHERE lookIdKey = l.idKey
 				  GROUP BY lookIdKey) AS image
-			  ,GROUP_CONCAT(t.tagName ORDER BY t.idKey SEPARATOR ',,,') AS tag
+			  ,(SELECT GROUP_CONCAT(tagName ORDER BY idKey SEPARATOR ',,,')  FROM fp_look_tag WHERE lookIdKey = l.idKey) AS tag 
 			  <if test="sessionIdKey != null and sessionIdKey != ''">
 		      ,(
 				 SELECT count(*)
@@ -96,7 +97,6 @@
 		      </if>
 		  FROM fp_user u
 			INNER JOIN fp_look l ON u.idKey = l.userIdKey
-			LEFT OUTER  JOIN fp_look_tag t ON t.lookIdKey = l.userIdKey 
 	  		LEFT OUTER  JOIN fp_user_filter uf ON u.idKey = uf.userIdKey
 		    LEFT OUTER  JOIN fp_user_profile up ON u.idKey = up.userIdKey
 		    LEFT JOIN fp_style s ON l.styleIdKey = s.idKey
@@ -133,6 +133,7 @@
 		 <if test="pageStart != null and pagerStart != '' and pageSize != null and pageSize != ''">
 		 	LIMIT #{pageStart}, #{pageSize}
 		 </if>
+		 )aa WHERE IFNULL(aa.lookIdKey, '') != ''
 	</select>
 	
 	<update id="updateLookInfo" parameterType="EgovMap">
