@@ -700,7 +700,8 @@ function popPrfPicMod(){
 	}
 	
 	function openPhotoMulti() {
-		showPhotoForPickupMulti(onPhotoSelected)
+		//showPhotoForPickupMulti(onPhotoSelected)
+		showPhotoForPickup(onPhotoSelected, "0","3")
 	}
 	
 	var deletePicture = function(els){
