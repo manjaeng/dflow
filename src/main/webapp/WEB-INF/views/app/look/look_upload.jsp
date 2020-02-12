@@ -162,7 +162,8 @@
 		}
 		
 		function openPhotoMulti() {
-			showPhotoForPickupMulti(onPhotoSelected)
+			//showPhotoForPickupMulti(onPhotoSelected)
+			showPhotoForPickupMulti(onPhotoSelected, "0", "10")
 		}
 		
 		var deletePicture = function(els){

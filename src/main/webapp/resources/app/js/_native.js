@@ -59,8 +59,12 @@ function setNativeData(key, value) {
 	oHybridNative.exec(undefined, undefined, "App", "setData", [key, value])
 }
 
-function showPhotoForPickupMulti(callbackfunc) {
-	oHybridNative.exec(callbackfunc, undefined, "Photo", "PickupMulti", [])
+function showPhotoForPickup(callbackfunc, startIndex, maxCount) {
+	oHybridNative.exec(callbackfunc, undefined, "Photo", "PickupPhoto", [startIndex, maxCount])
+}
+
+function showPhotoForPickupMulti(callbackfunc, startIndex, maxCount) {
+	oHybridNative.exec(callbackfunc, undefined, "Photo", "PickupMulti", [startIndex, maxCount])
 }
 
 function openSystemSharePopup(callbackfunc) {

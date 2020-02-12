@@ -113,7 +113,8 @@
 			}
 		}
 		function openPhotoMulti() {
-			showPhotoForPickupMulti(onPhotoSelected)
+			//showPhotoForPickupMulti(onPhotoSelected)
+			showPhotoForPickup(onPhotoSelected, "0", "1")
 		}
 		$(function() {
 			$('#profileEditBtn').click(function() {
