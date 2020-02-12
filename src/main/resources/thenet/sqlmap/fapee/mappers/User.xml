@@ -24,18 +24,19 @@
 		      ,adminYn
 		  FROM fp_user
 		 WHERE 1 = 1
-	 	<if test='idKey != null'>
+	 	<if test="idKey != null and idKey != ''">
 	 		AND idKey = #{idKey}
 	 	</if>
-	 	<if test='userId != null'>
+	 	<if test="userId != null and userId != ''">
 	 		AND userId = #{userId}
 	 	</if>
-	 	<if test='password != null'>
+	 	<if test="password != null and password != ''">
 	 		AND password = #{password}
 	 	</if>
-	 	<if test='mobile != null'>
+	 	<if test="mobile != null and mobile != ''">
 	 		AND mobile = #{mobile}
 	 	</if>
+	 	 LIMIT 1
 	</select>
 	
 	<insert id="insertUserInfo" parameterType="userVO" useGeneratedKeys="true" keyProperty="idKey">
@@ -126,10 +127,16 @@
 	<update id="updateUserInfo" parameterType="egovMap">
 		UPDATE fp_user
 		<trim prefix="SET" prefixOverrides=",">
-			<if test="status != null">,status = #{status}</if>
-			<if test="password != null">,password = #{password}</if>
+			<if test="status != null and status != ''">,status = #{status}</if>
+			<if test="password != null and password != ''">,password = #{password}</if>
 		</trim>
-		WHERE idKey = #{idKey}
+		WHERE 1=1
+		  <if test="idKey != null and idKey != ''">
+		  AND idKey = #{idKey}
+		  </if>
+		  <if test="mobile != null and mobile != ''">
+		  AND mobile = #{mobile}
+		  </if>
 	</update>
 	<insert id="insertUserModel" parameterType="egovMap">
 		INSERT into fp_user_model(

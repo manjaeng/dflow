@@ -210,7 +210,6 @@ public class UserController {
 	@PostMapping("/app/user/find_password.do")
 	@ResponseBody
 	public String findPassword(@RequestParam String mobile, HttpServletRequest req) throws Exception {
-		
 		EgovMap egovMap = new EgovMap();
 		egovMap.put("mobile", mobile);
 		
@@ -222,6 +221,8 @@ public class UserController {
 			
 			SessionUtils.setData(req, "verification_pw", randomNum);
 			SessionUtils.setData(req, "pw_idKey", user.getIdKey());
+			SessionUtils.setData(req, "pw_mobile", mobile);
+			
 			
 			log.info("moblile : " + mobile);
 			log.info("randomNum : " + randomNum);
@@ -291,12 +292,13 @@ public class UserController {
 	public String findPasswordReset(@RequestParam String password, HttpServletRequest req) throws Exception {
 		if(!SessionUtils.isEmpty(req, "pw_idKey")) {
 			EgovMap map = new EgovMap();
-			map.put("idKey", SessionUtils.getData(req, "pw_idKey"));
+			//map.put("idKey", SessionUtils.getData(req, "pw_idKey"));
 			map.put("password", CommonFunc.getHashedPassword(password));
+			map.put("mobile", SessionUtils.getData(req, "pw_mobile"));
 			
 			int updateCount = userService.updateUserInfo(map);
 			
-			if(updateCount == 1) {
+			if(updateCount > 0) {
 				SessionUtils.removeSession(req);
 				return "t";
 			} else {
