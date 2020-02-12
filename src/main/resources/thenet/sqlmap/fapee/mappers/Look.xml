@@ -113,7 +113,7 @@
 		 </if>
 		<if test="style != null and style != ''">
 			AND s.style = #{style}
-		</if>
+		</if> 
 		<if test="tag != null and tag != ''">
 			AND l.idKey in (select distinct tag.lookIdKey from fp_look_tag tag where tag.tagName = #{tag})
 		</if>
