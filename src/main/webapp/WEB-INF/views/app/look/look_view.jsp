@@ -14,6 +14,7 @@
 				<ul class="lookList" id="lookList">
 
 <c:forEach var="look" items="${lookList}" varStatus="status">
+
 					<li>
 						<div class="uiLkSet">
 							<div class="slideLookPic" id="slideLookPic">
@@ -94,14 +95,26 @@
 							</div>
 							<div class="info">
 								<div class="user">
-									<a href="../mypage/profile.jsp" class="pic">
+									<c:choose>
+									<c:when test="${look.userId == sessionScope.__sessiondata__.userId}">
+									<a href="../my/profile.do" class="pic">
 										<span class="img"><img src="//placeimg.com/60/70" alt=""></span>
-
 									</a>
 									<a href="../my/profile.do" class="mem">
-										<div class="nm">JENNY  <em class="ico seller">셀러</em> </div>
-										<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
+										<div class="nm">>${look.nickName}  <em class="ico seller">셀러</em> </div>
+										<div class="dt"><em class="k">170cm</em><em class="n">${look.country}</em></div>
 									</a>
+									</c:when>
+									<c:otherwise>
+									<a href="../my/profile.do?id=${look.userId}" class="pic">
+										<span class="img"><img src="//placeimg.com/60/70" alt=""></span>
+									</a>
+									<a href="../my/profile.do?id=${look.userId}" class="mem">
+										<div class="nm">>${look.nickName}  <em class="ico seller">셀러</em> </div>
+										<div class="dt"><em class="k">170cm</em><em class="n">${look.country}</em></div>
+									</a>
+									</c:otherwise>
+									</c:choose>
 									<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
 								</div>
 

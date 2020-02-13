@@ -193,6 +193,7 @@
 	<select id="selectLookDetail" resultType="egovMap">
 		SELECT 
 			u.userId,
+			u.idKey AS userIdKey,
 			l.content,
 			l.createDate,
 			s.style,

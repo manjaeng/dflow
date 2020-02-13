@@ -101,7 +101,7 @@ public class LookController {
 		model.addAttribute("lookList", lookList);
 		log.info("looklist" + lookList);
 
-		return "common/searchResult_look_more.app";
+		return "common/searchResult_acct_more.app";
 	}
 
 	@GetMapping("/app/look/searchReasult.do")
@@ -288,7 +288,8 @@ public class LookController {
 
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 			EgovMap profileMap = new EgovMap();
-			profileMap.put("idKey", sessionVO.getIdKey());
+			//profileMap.put("idKey", sessionVO.getIdKey());
+			profileMap.put("idKey", look.get("userIdKey"));
 			profileMap.put("pageStart",  0);
 			//profileMap.put("pageStart",  0);
 			profileMap.put("pageSize", 10);
