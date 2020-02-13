@@ -49,8 +49,12 @@ public class LookServiceImpl implements LookService{
 
 	@Override
 	public List<EgovMap> selectLookProfileList(EgovMap egovMap) throws Exception {
+		if(egovMap.get("idKey") != null && !egovMap.get("idKey").equals("")){
+			egovMap.put("userId", "");
+		}
 		
 		List<EgovMap> lookProfileList = lookMapper.selectLookProfileList(egovMap);
+		
 		
 		if(lookProfileList != null){
 			lookProfileList.forEach(e -> {

@@ -80,7 +80,6 @@ public class MyController {
 				UserVO userVO = userService.selectUserInfo(egovMap);
 
 
-
 				if (userVO != null) {
 					EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
 
