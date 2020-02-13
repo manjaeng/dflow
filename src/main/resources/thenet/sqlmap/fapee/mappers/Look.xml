@@ -133,7 +133,10 @@
 		 <if test="pageStart != null and pagerStart != '' and pageSize != null and pageSize != ''">
 		 	LIMIT #{pageStart}, #{pageSize}
 		 </if>
-		 )aa WHERE IFNULL(aa.lookIdKey, '') != ''
+		 )aa 
+		 <if test="userId != null and userId != ''">
+		 WHERE IFNULL(aa.lookIdKey, '') != ''
+		 </if>
 	</select>
 	
 	<update id="updateLookInfo" parameterType="EgovMap">

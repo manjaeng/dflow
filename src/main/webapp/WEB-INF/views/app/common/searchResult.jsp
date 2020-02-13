@@ -52,6 +52,12 @@
             };
             $("#searchResult").attr("data-tab", opt);
 			var search = document.getElementById('input_kwd').value;
+			
+			if($.trim(search) == ''){
+				console.log("no keyword");
+				return false;
+			}
+			
             var modelData = {
 
                 'pageSize' : 4,
