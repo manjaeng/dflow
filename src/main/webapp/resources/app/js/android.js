@@ -68,7 +68,7 @@ oHybridNative.nativeFetchMessages = function() {
 }
 
 oHybridNative.nativeCallback = function(callbackId, status, args) {
-	alert('결과 수신.');
+	alert(args);
 	var success = status === 0 || status === 1
 	var func = oHybridNative.callbacks[callbackId]
 	if (func) {
