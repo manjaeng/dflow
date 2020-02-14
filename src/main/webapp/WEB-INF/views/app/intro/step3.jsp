@@ -684,6 +684,7 @@ function popPrfPicMod(){
 
 	<script>
 	var onPhotoSelected = function(success, status, photos) {
+		alert("onPhotoSelected::결과수진");
 		if (success && photos) {
 			for (var ii=0; ii<photos.length; ii++) {
 				var picHtml = '<li class="swiper-slide">' + 
