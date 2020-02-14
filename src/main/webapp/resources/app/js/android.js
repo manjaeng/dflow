@@ -67,11 +67,9 @@ oHybridNative.nativeFetchMessages = function() {
 	return json
 }
 
-oHybridNative.nativeCallback = function(callbackId, status, args) {
-	
+oHybridNative.nativeCallback = function(callbackId, status, args) {	
 	var success = status === 0 || status === 1
 	var func = oHybridNative.callbacks[callbackId]
-	alert(callbackId);
 	if (func) {
 		if (success) {
 			if (func.success) {
