@@ -39,4 +39,9 @@ public interface LookMapper {
 	int deleteLookScrapInfo(EgovMap egovMap) throws Exception;
 
 	List<EgovMap> selectLookCoolList(EgovMap egovMap) throws Exception;
+	
+	List<EgovMap> selectLookImageList(EgovMap egovMap) throws Exception;
+	
+	List<EgovMap> selectLookTagList(EgovMap egovMap) throws Exception;
+	
 }

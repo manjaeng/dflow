@@ -65,4 +65,73 @@
 		ORDER BY r.reportDate DESC
 	</select>
 	
+	<select id="selectRecentTag" resultType="egovMap">
+	<![CDATA[
+		SELECT tagName
+			, sum(case when createDate >= (INTERVAL -1 DAY + now()) then 1 else 0 end)	as cnt
+			, count(*)	as cnt2
+		FROM fp_look_tag
+		GROUP BY tagName
+		ORDER BY 2 desc, 3 desc
+		limit 1
+	]]>
+	</select>
+	
+	<select id="selectLookListByFit" resultType="egovMap">
+		SELECT fl.idKey		as lookIdKey
+			,  fl.userIdKey
+			,  ur.userId
+			,  i2.imageUrl
+			,  i2.mimeType
+		FROM fp_look fl
+			LEFT JOIN fp_user as ur ON fl.userIdKey = ur.idKey
+			INNER JOIN (
+				SELECT lookIdKey
+					, min(idKey) as idKey
+				FROM fp_look_image 
+                group by lookIdKey
+			)								i1 ON fl.idKey = i1.lookIdKey
+			INNER JOIN fp_look_image	i2 ON i1.lookIdKey = i2.lookIdKey AND i1.idKey = i2.idKey
+		ORDER BY fl.createDate desc
+		limit 3
+	</select>
+	
+	<select id="selectLookListByMaybe" resultType="egovMap">
+		SELECT fl.idKey		as lookIdKey
+			,  i2.imageUrl
+			,  i2.mimeType
+		FROM fp_look fl
+			INNER JOIN (
+				SELECT lookIdKey
+					, min(idKey) as idKey
+				FROM fp_look_image 
+                group by lookIdKey
+			)								i1 ON fl.idKey = i1.lookIdKey
+			INNER JOIN fp_look_image	i2 ON i1.lookIdKey = i2.lookIdKey AND i1.idKey = i2.idKey
+		ORDER BY fl.createDate desc
+		limit 20
+	</select>
+	
+	<select id="selectLookListByRecentTag" parameterType="egovMap" resultType="egovMap">
+		SELECT fl.idKey		as lookIdKey
+			,  i2.imageUrl
+			,  i2.mimeType
+		FROM fp_look fl
+			INNER JOIN (
+				SELECT lookIdKey
+					, min(idKey) as idKey
+				FROM fp_look_image 
+                group by lookIdKey
+			)								i1 ON fl.idKey = i1.lookIdKey
+			INNER JOIN fp_look_image	i2 ON i1.lookIdKey = i2.lookIdKey AND i1.idKey = i2.idKey
+		WHERE fl.idKey in (
+			SELECT tg.lookIdKey
+		    FROM fp_look_tag	tg
+			WHERE tg.tagName = #{tagName}
+		    ORDER BY tg.createDate desc
+		)
+		ORDER BY fl.createDate desc
+		limit 9
+	</select>
+	
 </mapper>

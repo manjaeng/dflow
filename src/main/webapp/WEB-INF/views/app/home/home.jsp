@@ -26,45 +26,46 @@
 
 			<section class="secMn post">
 				<ul class="postList" id="postList">
-					<li></li>
-					<li></li>
-					<li></li>
+					<c:forEach var="item" items="${fitLookList}">
+						<li>
+							<div class="uiMnSet">
+								<div class="slideMnPic" id="slideMnPic">
+									<div class="swiper-container">
+										<ul class="swiper-wrapper slide">
+											<c:forEach var="image" items="${item.imageList}">
+												<li class="swiper-slide"><a href="/app/look/look_view.do?lookId=${item.lookIdKey}">
+													<span class="pic swiper-zoom-container"><img src="${image.imageUrl}" alt="사진"></span></a></li>
+											</c:forEach>
+										</ul>
+										<div class="pagination"></div>
+									</div>						
+								</div>
+								<div class="info">
+									<div class="user">
+										<a href="/app/my/profile.do?id=${item.userIdKey}" class="pic"><span class="img"><img src="//placeimg.com/60/70" alt=""></span></a>
+										<a href="/app/my/profile.do?id=${item.userIdKey}" class="mem">
+											<div class="nm">${item.userId}</div>
+											<div class="dt"><em class="k">170cm</em><em class="n">Korea</em></div>
+										</a>
+										<div class="bts"><a href="javascript:;" class="bt more" onclick="ui.popLayer.open('popOthers');">더보기</a></div>
+									</div>
+								</div>
+								<div class="tags">
+									<ul class="tg">
+											<c:forEach var="tag" items="${item.tagList}">
+												<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#${tag.tagName}</em> </a></li>
+											</c:forEach>
+									</ul>
+								</div>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
 				<!-- <div class="uiListMore">
 					<em></em>
 					<a class="btMore" href="javascript:;" onclick="addItemFnc_post(this)"><em class="tt">더보기</em><i class="num">(5/20)</i></a>
 				</div> -->
 			</section>
-			<script>
-				var page_post = 0 ;
-				var appendStat_post = true ;
-				var addItemFnc_post = function(els){
-					$thisEls = $(els).closest(".uiListMore");
-					appendStat_post = false ;
-					$thisEls.addClass("active");
-					$.ajax({
-						type: "post",
-						url: "./home_more_post.jsp",
-						dataType: "html",
-						success: function(html) {
-							window.setTimeout(function(){
-								page_post ++ ;
-								$("#postList").append(html).addClass("load");
-								console.log("페이징 = " + page_post);
-								appendStat_post = true ;
-								if (page_post >= 3) {
-									console.log("끝");
-									$thisEls.addClass("hide");
-									appendStat_post = false ;
-								}
-								ui.slides.mnPic.using();
-								$thisEls.removeClass("active");
-								
-							},500);
-						}
-					});	
-				};
-			</script>
 
 			<section class="secMn match">
 				<div class="hdt"><p>Maybe it's right <br> for you</p></div>
@@ -72,109 +73,84 @@
 					<a href="javascript:;" onclick="popMatching.using();" class="dd"><em class="tt">매칭율</em><i class="nm" id="match_amount">85%</i></a>
 					<a href="javascript:;" onclick="popMyStyle();" class="dd"><em class="tt">선호스타일</em><i class="nm" id="mystyle_chk">ON</i></a>
 				</div> -->
-				<ul class="matchList" id="matchList">
+				<ul class="maybe-template" style="display:none;">
 					<li>
-						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"></span></a></span></div>
+						<div class="item"><span class="img"><a href="/app/look/look_view.do?lookId=#lookId"><img src="#imageUrl" alt=""><span class="num"></span></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="/app/look/look_view.do?lookId=#lookId"><img src="#imageUrl" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="/app/look/look_view.do?lookId=#lookId"><img src="#imageUrl" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""></a></span></div>
+						<div class="item"><span class="img"><a href="/app/look/look_view.do?lookId=#lookId"><img src="#imageUrl" alt=""></a></span></div>
 					</li>
 					<li>
-						<div class="item"><span class="img"><a href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""><span class="num"></span></a></span></div>
+						<div class="item"><span class="img"><a href="/app/look/look_view.do?lookId=#lookId"><img src="#imageUrl" alt=""><span class="num"></span></a></span></div>
 					</li>
 				</ul>
+				<ul class="matchList" id="matchList">
+				</ul>
 				<div class="uiListMore">
-					<em></em><a class="btMore" href="javascript:;" onclick="addItemFnc_match(this)"><em class="tt">더보기</em></a>
+					<em></em><a class="btMore" href="javascript:void(0);"><em class="tt">더보기</em></a>
 				</div>
 			</section>
 
 			<script>
-				var page_match = 0 ;
-				var appendStat_match = true ;
-				var addItemFnc_match = function(els){
-					$thisEls = $(els).closest(".uiListMore");
-					appendStat_match = false ;
-					$thisEls.addClass("active");
-					$.ajax({
-						type: "post",
-						url: "./home_more_match.jsp",
-						dataType: "html",
-						success: function(html) {
-							window.setTimeout(function(){
-								page_match ++ ;
-								$("#matchList").append(html).addClass("load");
-								console.log("페이징 = " + page_match);
-								appendStat_match = true ;
-								if (page_match >= 3) {
-									console.log("끝");
-									$thisEls.addClass("hide");
-									appendStat_match = false ;
-								}
-								$thisEls.removeClass("active");
-								
-							},500);
+				var maybeList = [];
+				<c:forEach var="item" items="${maybeLookList}">
+					maybeList.push({ lookIdKey: '${item.lookIdKey}', imageUrl: '${item.imageUrl}' });
+				</c:forEach>
+			
+				$(document).ready(function() {
+					var page = 0;
+					var templateList = $('ul.maybe-template');
+					var matchList = $('#matchList');
+					matchList.empty();
+					
+					$('a.btMore').click(function() {
+						if(maybeList.length==0) {
+							$('a.btMore').hide();
+							return;
 						}
-					});	
-				};
+
+						var startIdx = (page*5);
+						for(var i=0; i<5; i++) {
+							var pos = startIdx + i;
+							item = maybeList[pos];
+							var li = templateList.find( $.validator.format('li:eq({0})', i) ).clone(true);
+							li.find('a:eq(0)').attr('href', $.validator.format('/app/look/look_view.do?lookId={0}', item.lookIdKey) );
+							li.find('img:eq(0)').attr('src', item.imageUrl );
+							//alert(li.html());
+							matchList.append(li);
+							
+							if((pos+1) >= maybeList.length) {
+								$('a.btMore').hide();
+								break;
+							}
+						}
+						page++;
+					})
+					
+					//로딩시 연관컨텐츠 첫페이지.
+					$('a.btMore').trigger('click');
+				})
 			</script>
 
 			<section class="secMn hash">
 				<div class="pgtd">
-					<div class="tit">#저녁모임</div>
+					<div class="tit">#${recentTag.tagName}</div>
 					<div class="bts"><a class="link" href="../common/searchTag.jsp">전체보기</a></div>
 				</div>
 				<ul class="hashList" id="hashList">
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/1" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/2" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/3" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/4" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/5" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/6" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/7" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/8" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
-					<li>
-						<div class="item">
-							<span class="img"><a class="lk" href="../look/look_view.jsp"><img src="//placeimg.com/360/480/any/9" alt=""><span class="num"></span></a></span>
-						</div>
-					</li>
+					<c:forEach var="item" items="${tagLookList}">
+						<li>
+							<div class="item"> 
+								<span class="img"><a class="lk" href="/app/look/look_view.do?lookId=${item.lookIdKey}"><img src="${item.imageUrl}" alt=""><span class="num"></span></a></span>
+							</div>
+						</li>
+					</c:forEach>
 				</ul>
 			</section>
 

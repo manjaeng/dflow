@@ -20,4 +20,15 @@ public interface HomeMapper {
 	public List<EgovMap> selectReportList(int reportType) throws Exception;
 
 	public Map<String,String> selectVersion() throws Exception;
+
+	//최적 컨텐츠 3개.
+	List<EgovMap> selectLookListByFit(EgovMap egovMap) throws Exception;
+
+	//연관 컨텐츠 3개.
+	List<EgovMap> selectLookListByMaybe(EgovMap egovMap) throws Exception;
+
+	EgovMap selectRecentTag() throws Exception;
+
+	List<EgovMap> selectLookListByRecentTag(EgovMap egovMap) throws Exception;
+
 }

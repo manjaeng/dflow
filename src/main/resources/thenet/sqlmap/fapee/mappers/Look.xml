@@ -331,4 +331,20 @@
 		  AND lookIdKey	= #{lookIdKey}
 	</delete>
 	
+	<select id="selectLookImageList" resultType="egovMap">
+		SELECT 
+			li.imageUrl,
+			li.mimeType,
+			li.seq
+		FROM fp_look_image li
+		WHERE li.lookIdKey= #{lookIdKey}
+	</select>
+	
+	<select id="selectLookTagList" resultType="egovMap">
+		SELECT 
+			lt.tagName
+		FROM fp_look_tag lt
+		WHERE lt.lookIdKey= #{lookIdKey}
+	</select>
+	
 </mapper>
