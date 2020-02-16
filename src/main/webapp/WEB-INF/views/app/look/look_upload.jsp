@@ -147,7 +147,7 @@
 		var onPhotoSelected = function(success, status, photos) {
 		    alert('collabek');
 		    alert('isSucess' +  success );
-		    alert(photos);
+		    alert(photos.list[0].fileName);
 			if (success && photos) {
 				for (var ii=0; ii<photos.length; ii++) {
 				    alert(photos[ii]);
