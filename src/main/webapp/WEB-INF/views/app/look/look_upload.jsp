@@ -147,6 +147,7 @@
 		var onPhotoSelected = function(success, status, photos) {
 			if (success && photos) {
 				for (var ii=0; ii<photos.length; ii++) {
+				    alert(photos[ii]);
 					_images.push(photos[ii]);
 					var picHtml = '<li class="swiper-slide">' + 
 									'<div class="img">' +
@@ -156,6 +157,7 @@
 										'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>' +
 									'</div>' +
 								'</li>';
+					alert(picHtml);
 					$("#slideUploadPic .list").append( picHtml );
 				}
 			}
