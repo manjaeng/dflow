@@ -145,13 +145,13 @@
 
 		var _images = [];
 		var onPhotoSelected = function(success, status, photos) {
-		    alert('collabek');
-		    alert('isSucess' +  success );
-		    alert(photos.list[0].fileName);
+		    //alert('collabek');
+		   // alert('isSucess' +  success );
+		    //alert(photos.list[0].fileName);
 			if (success && photos) {
-				for (var ii=0; ii<photos.length; ii++) {
-				    alert(photos[ii]);
-					_images.push(photos[ii]);
+				for (var ii=0; ii<photos.list.length; ii++) {
+				   // alert(photos[ii]);
+					_images.push(photos[ii].savedPath);
 					var picHtml = '<li class="swiper-slide">' + 
 									'<div class="img">' +
 										'<img src="' + photos[ii] + '">' +
