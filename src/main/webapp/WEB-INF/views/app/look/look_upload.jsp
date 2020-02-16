@@ -150,7 +150,7 @@
 					_images.push(photos[ii]);
 					var picHtml = '<li class="swiper-slide">' + 
 									'<div class="img">' +
-										'<img src="data:image/jpeg;base64,' + photos[ii] + '">' +
+										'<img src="' + photos[ii] + '">' +
 									'</div>' +
 									'<div class="bts">' +
 										'<a href="javascript:;" class="del" onclick="deletePicture(this)">삭제</a>' +
