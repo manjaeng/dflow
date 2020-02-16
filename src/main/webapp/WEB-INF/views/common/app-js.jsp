@@ -12,6 +12,8 @@
 <script src="/resources/app/js/_init.js"></script>
 <script src="/resources/app/js/jquery.validate.min.js"></script>
 
+<script src="/resources/app/js/_look_common_action.js"></script>
+
 <!--script src="/resources/app/js/android.js"></script-->
 <script>
 function loadNativeJavaScript(isIOS) {

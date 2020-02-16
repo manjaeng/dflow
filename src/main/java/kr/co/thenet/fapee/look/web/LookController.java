@@ -66,6 +66,9 @@ public class LookController {
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 			EgovMap profileMap = new EgovMap();
 			profileMap.put("idKey", sessionVO.getIdKey());
+			
+			profileMap.put("favorite", req.getParameter("favorite"));
+			
 			profileMap.put("pageStart",  Integer.parseInt(req.getParameter("pageStart")));
 			//profileMap.put("pageStart",  0);
 			profileMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
@@ -374,6 +377,31 @@ public class LookController {
 
 		}
 		return "look/look_goods.app";
+	}
+	
+	@PostMapping("/app/look/look_favorite.do")
+	@ResponseBody
+	public String lookFavorite(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+
+		boolean isSuccess = false;
+		
+		if (SessionUtils.isLogin(req)) {
+			SessionVO sessionVO = SessionUtils.getSessionData(req);
+			egovMap.put("userIdKey", sessionVO.getIdKey());
+			
+			//삭제된 데이터가 없으면 등록.
+			isSuccess = lookService.deleteLookScrapInfo(egovMap);
+			if(isSuccess) {
+				return "delete";
+			}
+			else {
+				isSuccess = lookService.insertLookScrapInfo(egovMap);
+				return (isSuccess) ? "insert" : "error";
+			}
+		}
+		else {
+			return "login";
+		}
 	}
 
 

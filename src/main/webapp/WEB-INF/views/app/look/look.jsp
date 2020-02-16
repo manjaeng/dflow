@@ -663,7 +663,7 @@ function popPrfPicMod(){
 			}
 			$(".uiLoadMore").addClass("active");
             var modelData = {
-
+				'favorite' : '${param.favorite}',
                 'pageSize' : 4,
                 'pageStart' : startSize
 

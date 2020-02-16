@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <nav id="floatNav" class="floatNav">
 	<!-- <button type="button" class="bt refresh">Refresh</button> -->
 	<!-- <button type="button" class="bt top">TOP</button> -->
@@ -13,7 +14,17 @@
 			<li class="home"><a href="/app/home/home.do">HOME</a></li>
 			<!-- <li class="adds"><a href="javascript:;" onclick="popLookReg();">[<em>+</em>]</a></li> -->
 			<li class="adds"><a href="/app/look/look_upload.do">[<em>+</em>]</a></li>
-			<li class="look"><a href="/app/look/look.do" id="btnLookAct">LOOK</a></li>
+			<c:choose>
+				<c:when test="${empty param.favorite || param.favorite=='Y'}">
+					<c:set var="favoriteYn" scope="session" value="N"/>
+				</c:when>
+				<c:otherwise>
+					<c:set var="favoriteYn" scope="session" value="Y"/>
+				</c:otherwise>
+			</c:choose>
+			<li class="look"><a id="btnLookAct" 
+								class="<c:if test='${param.favorite=="Y"}'>favorite</c:if>"
+								href="/app/look/look.do?favorite=${favoriteYn}">LOOK</a></li>
 			<li class="mypg"><a href="/app/my/profile.do">MY</a></li>
 		</ul>
 	</div>

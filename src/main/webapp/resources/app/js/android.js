@@ -67,7 +67,15 @@ oHybridNative.nativeFetchMessages = function() {
 	return json
 }
 
+var dup = false;
 oHybridNative.nativeCallback = function(callbackId, status, args) {	
+	//0.2 초내에 이벤트가 다시 발생하면 무시.
+	if(dup) return;
+	dup = true;
+	window.setTimeout(function() {
+		dup = false;
+	}, 200);
+
 	var success = status === 0 || status === 1
 	var func = oHybridNative.callbacks[callbackId]
 	if (func) {

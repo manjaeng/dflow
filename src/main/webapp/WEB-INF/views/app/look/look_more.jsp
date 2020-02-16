@@ -144,7 +144,7 @@
 									<li class="cool"><a href="javascript:;" class="bt"><span>쿨</span></a></li>
 									<li class="like"><a href="../common/cool.do" class="bt"><span>${look.coolCount}</span></a></li>
 									<li class="reply"><a href="../common/comments.do" class="bt"><span>${look.commentCount}</span></a></li>
-									<li class="scrap"><a href="javascript:;" class="bt">저장</a></li>
+									<li class="scrap"><a href="javascript:;" class="bt ${look.favoriteOn}" data-idkey="${look.idKey}">저장</a></li>
 								</ul>
 							</div>
 							<div class="tags">
