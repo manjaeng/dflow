@@ -75,5 +75,11 @@
 		SELECT *
 			FROM fp_admin_setting 
 	</select>
+
+	<select id="selectCommCode" resultType="egovMap">
+		SELECT *
+		FROM df_comm_code
+		WHERE grp_code_no = #{grpCodeNo}
+	</select>
 	
 </mapper>

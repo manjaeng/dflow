@@ -82,7 +82,7 @@
 		WHERE pc.clickKey	= #{clickKey}
  	</select>
 	
-	<update id="insertReview" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+	<update id="insertReview" parameterType="kr.co.thenet.fapee.common.model.ReviewVO">
 		INSERT INTO fp_review (
 			  lookIdKey
 			, clickKey
@@ -197,7 +197,7 @@
  		ORDER BY ri.reviewIdKey, ri.seq
  	</select>
 	
-	<insert id="insertReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewImageVO"> 
+	<insert id="insertReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewImageVO">
 		INSERT INTO fp_review_image (
 			  reviewIdKey
 			, seq
@@ -213,19 +213,19 @@
 		)
 	</insert>
 	
-	<delete id="deleteReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+	<delete id="deleteReviewImage" parameterType="kr.co.thenet.fapee.common.model.ReviewVO">
 		DELETE
 		FROM fp_review_image
 		WHERE reviewIdKey = #{reviewIdKey}
 	</delete>
 	
-	<delete id="deleteClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+	<delete id="deleteClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO">
 		DELETE
 		FROM fp_look_product_click
 		WHERE clickKey = #{clickKey}
 	</delete>
 	
-	<update id="insertClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO"> 
+	<update id="insertClickLog" parameterType="kr.co.thenet.fapee.common.model.ReviewVO">
 		INSERT INTO fp_look_product_click (
 			  mapIdKey
 			, pcode

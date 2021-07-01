@@ -242,7 +242,7 @@
 .contain.myinfo .sec.myinfo .form .account{ font-family:"BlairMd"; text-transform: uppercase; text-align: center;}
 .contain.myinfo .sec.myinfo .form .account a{padding: 5px 0px;display:block;font-size: 12px;text-decoration: underline;}
 
-.contain.myinfo .sec .hdt{font-family:"BlairMd";font-size: 24px;min-height: 96px;text-align: center;padding-top: 0px;/* margin-top: -5px; */line-height: 110%;}
+.contain.myinfo .sec .hdt{font-family:"BlairMd";font-size: 24px;min-height: 96px;text-align: center;padding-top: 50px;/* margin-top: -5px; */line-height: 110%;}
 
 .contain.myinfo .steps{height: 38px;}
 .contain.myinfo .steps ul.st{display:flex;border-top: #000000 solid 1px;align-items: center;height: 38px;position:fixed;left:0;right:0px;bottom: 60px;}

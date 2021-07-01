@@ -1031,7 +1031,7 @@ function popPrfPicMod(){
 					$('#msg_exist').text('인증코드를 다시 보내주세요.');
 					return false;
 				}
-				
+
 				if($verification.length === 0) {
 					$(".certi input").addClass("no");
 					$('.msgcode').hide();
@@ -1040,7 +1040,7 @@ function popPrfPicMod(){
 					 $('.certi input').focus();
 					return false;
 				}
-				
+				*/
 				$.ajax({
 					type : 'post',
 					url : '/app/user/join_mobileCertified2.do',
@@ -1068,4 +1068,60 @@ function popPrfPicMod(){
 			
 		});
 	</script>
+
+	<script>
+		$(function() {
+
+			$('.fit a').click(function() {
+
+				if(!fp.data.join) {
+					console.log('데이터 없음');
+					pjax('/app/user/join_intro.do');
+					return false;
+				}
+
+				var $email = $('.email input').val();
+
+				if($email.length === 0) {
+					$('#msg_existEmail').addClass('show');
+					$('#msg_existEmail').text('이메일을 입력해주세요.');
+					$('.email input').focus();
+					return false;
+				}
+
+				if(!fp.util.checkRegEx('email',$email)) {
+					$('#msg_existEmail').addClass('show');
+					$('#msg_existEmail').text('이메일 형식을 다시 확인해주세요.');
+					$('.email input').focus();
+					return false;
+				}
+
+				fp.data.join.email = $email;
+				ui.loading.show()
+
+
+				fp.util.jsonAjax({
+					url : '/app/user/join_complete.do',
+					data : fp.data.join,
+					success : function(data) {
+						if(data === "t") {
+							fp.data.join = null;
+							pjax('/app/home/home.do');
+
+							setTimeout(function(){
+								ui.loading.hide();
+							},500);
+						}
+					},
+					error : function(x, s, e) {
+						console.log(x);
+					}
+				});
+
+				return false;
+			});
+
+		});
+	</script>
+
 </div>

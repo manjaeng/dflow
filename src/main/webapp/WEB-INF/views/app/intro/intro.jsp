@@ -10,7 +10,7 @@
 
 				<article class="intro" id="intro">
 					<div class="msg">FIND YOUR FIT</div>
-					<a href="../home/home.jsp" class="logo">FAPEE</a>
+					<a href="../home/home.jsp" class="logo">DFLOW</a>
 					<div class="box bx1">
 						<span class="line L1"></span>
 						<span class="line L2"></span>
@@ -447,7 +447,7 @@ function popAccus(){
 	<div class="pbd">
 		<div class="phd">
 			<div class="in">
-				<h1 class="tit">FAPEE 매칭율</h1>
+				<h1 class="tit">매칭율</h1>
 				<button type="button" class="btnPopClose">닫기</button>
 			</div>
 		</div>
@@ -685,7 +685,7 @@ function popPrfPicMod(){
                 console.log("이동");
                 setTimeout(function(){
 
-                    location.href = "/app/intro/step1.do";
+                    location.href = "/app/home/home.do";
                 },100);
             });
         }

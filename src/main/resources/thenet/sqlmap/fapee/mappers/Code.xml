@@ -4,14 +4,12 @@
 <mapper namespace="kr.co.thenet.fapee.home.service.impl.CodeMapper">
 	
 	<select id="selectCodeList" resultType="kr.co.thenet.fapee.common.model.CodeVO">
-		SELECT grp
-			, code
-			, name
-			, name2
-			, name3
-		FROM fp_code
-		WHERE grp = #{grp}
-		ORDER BY sortOrder is null, sortOrder, grp, code
+		SELECT grp_code_no
+			, code_no
+			, code_nm
+		FROM df_comm_code
+		WHERE grp_code_no = #{grp}
+		ORDER BY sort_order is null, sort_order, grp_code_no, code_no
 	</select>
 	
 </mapper>

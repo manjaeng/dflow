@@ -37,7 +37,7 @@
 		ORDER BY rnk
  	</select>
 	
-	<update id="insertAlim" parameterType="kr.co.thenet.fapee.common.model.AlimVO"> 
+	<update id="insertAlim" parameterType="kr.co.thenet.fapee.common.model.AlimVO">
 		INSERT INTO fp_alim (
 			  grp
 			, alimType
@@ -63,7 +63,7 @@
 		)
 	</update>
 	
-	<update id="updateReceiveDate" parameterType="kr.co.thenet.fapee.common.model.AlimVO"> 
+	<update id="updateReceiveDate" parameterType="kr.co.thenet.fapee.common.model.AlimVO">
 		UPDATE fp_alim SET
 			  receiveDate = now()
 		WHERE idKey = #{idKey}
@@ -83,7 +83,7 @@
 		WHERE userIdKey = #{userIdKey}
  	</select>
 	
-	<update id="insertAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO"> 
+	<update id="insertAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO">
 		INSERT INTO fp_alim_setting (
 			  userIdKey
 			, myLookComment
@@ -105,7 +105,7 @@
 		)
 	</update>
 	
-	<update id="updateAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO"> 
+	<update id="updateAlimSetting" parameterType="kr.co.thenet.fapee.common.model.AlimSettingVO">
 		UPDATE fp_alim_setting SET 
 			  myLookComment		= #{myLookComment}
 			, myCommentComent	= #{myCommentComent}
