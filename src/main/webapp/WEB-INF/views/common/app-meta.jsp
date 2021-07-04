@@ -9,6 +9,7 @@
 <link href="/resources/app/images/common/favicon.png" rel="apple-touch-icon-precomposed">
 
 <!-- CSS Import -->
+<!--
 <link href="/resources/app/css/jquery-ui.css" rel="stylesheet">
 <link href="/resources/app/css/swiper.css" rel="stylesheet">
 <link href="/resources/app/css/base.css" rel="stylesheet">
@@ -17,11 +18,10 @@
 <link href="/resources/app/css/look.css" rel="stylesheet">
 <link href="/resources/app/css/home.css" rel="stylesheet">
 <link href="/resources/app/css/about.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<link href="/resources/app/assets/css/material-dashboard.css" rel="stylesheet" />
-
+-->
+<link href="/resources/app/css/bootstrap.css" rel="stylesheet">
 <!-- Jqurey Core -->
 <script src="/resources/app/js/jquery-3.4.1.js"></script>
 <script src="/resources/app/js/jquery-ui.js"></script>
 <script src="/resources/app/js/jquery.ui.touch-punch.js"></script>
+<script src="/resources/app/js/bootstrap.js"></script>

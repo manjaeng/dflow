@@ -1,6 +1,14 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<link href="/resources/app/css/jquery-ui.css" rel="stylesheet">
+<link href="/resources/app/css/swiper.css" rel="stylesheet">
+<link href="/resources/app/css/base.css" rel="stylesheet">
+<link href="/resources/app/css/common.css" rel="stylesheet">
+<link href="/resources/app/css/member.css" rel="stylesheet">
+<link href="/resources/app/css/look.css" rel="stylesheet">
+<link href="/resources/app/css/home.css" rel="stylesheet">
+<link href="/resources/app/css/about.css" rel="stylesheet">
 <div class="wrap" id="wrap">
 	<div id="contain" class="contain popJoinPre">
 		<div class="pageHd">
