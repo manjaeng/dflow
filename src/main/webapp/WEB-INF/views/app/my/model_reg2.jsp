@@ -1,856 +1,353 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<div class="wrap" id="wrap">
-	
-	<!-- 컨텐츠 시작 -->
-	<div id="contain" class="contain mdl reg r2">
-		<div class="pageHd">
-			<div class="in">
-				<div class="bts">
-					<a href="javascript:history.back();" class="bt hisback">뒤로</a>
-				</div>
-				<h1 class="tit">Model Register</h1>
-			</div>
-		</div>
-		<main id="contents" class="contents">
-		<input type="hidden" name="modelName" id="modelName" value='<c:out value="${modelName}"/>'/>
-		<input type="hidden" name="nation" id="nation" value='<c:out value="${nation}"/>' />
-		<input type="hidden" name="imageUrl" id="imageUrl" value='<c:out value="${imageUrl}"/>' />
-			<section class="sec size">
-				<div class="uiSize">
-					<div class="sets default">
-						<ul class="filter">
-							<li class="gender">
-								<div class="ht"><span class="tit">성별</span></div>
-								<div class="ct">
-									<label class="radio"><input type="radio" name="filter_gender" value="female" id="isFemale"
-																<c:if test="${isFemale eq 'true'}">checked </c:if> > <span>FEMALE</span></label>
-									<label class="radio"><input type="radio" name="filter_gender" value="male" <c:if test="${isFemale eq 'false'}">checked</c:if>><span>MALE</span></label>
-								</div>
-							</li>
-							<li class="hgt">
-								<div class="ht"><span class="tit">HEIGHT</span> <span class="unit"><select id="hgt_unit" class="select" ><option value="1" selected="selected" >CM</option><optionv value="2">FT</optionv></select></span> </div>
-								<div class="ct cm" id="hgt_unit_box">
-									<div class="uiSlider hgt cm">
-										<div class="height" id="sizeHeightSliderCm" data-amount="168">
-											<em class="bar"></em>
-											<div class="ui-slider-handle"></div>
-											<div class="range_amount" id="height"></div>
-											<div class="nums">
-												<span class="num min">1M</span>
-												<span class="num max">2M<i></i></span>
-											</div>
-										</div>
-									</div>
-									<div class="uiSlider hgt ft">
-										<div class="height" id="sizeHeightSliderFt" data-amount="5.6">
-											<em class="bar"></em>
-											<div class="ui-slider-handle"></div>
-											<div class="range_amount" id="brbFr"></div>
-											<div class="nums">
-												<span class="num min">3FT</span>
-												<span class="num max">7FT<i></i></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="size age">
-								<div class="ht"><span class="tit">AGE</span> </div>
-								<div class="ct">
-									<div class="amount">
-										<input type="number" name="age" id="age" value="28">
-									</div>
-								</div>
-							</li>
-							<li class="fit">
-								<div class="ht"><span class="tit">Fit</span></div>
-								<div class="ct">
-									<div class="uiSlider fit">
-										<div class="fit" id="sizeFittSlider" data-amount="50">
-											<em class="bar"></em>
-											<div class="ui-slider-handle"></div>
-											<!-- <div class="range_amount"></div> -->
-											<div class="nums">
-												<span class="num min">Tight</span>
-												<span class="num mid">FIT</span>
-												<span class="num max">Loose</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="size bust">
-								<div class="ht"><span class="tit"><em id="bustChest"> Bust</em> <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select" id="sizeType"><option value="1">CM</option><option value="2">INCH</option></select></span> </div>
-								<div class="ct">
-									<div class="amount">
-										<input type="number" value="50" id="bust">
-									</div>
-									<div class="num"><em class="n">50</em> <i class="s">CM</i></div>
-								</div>
-							</li>
-							<li class="size hip">
-								<div class="ht"><span class="tit">Hip <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>CM</option><option>INCH</option></select></span> </div>
-								<div class="ct">
-									<div class="amount">
-										<input type="number" value="51" id="hip">
-									</div>
-									<div class="num"><em class="n">51</em> <i class="s">CM</i></div>
-								</div>
-							</li>
-						</ul>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<link rel="stylesheet" type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+<link href="/resources/app/assets/css/material-dashboard.css" rel="stylesheet"/>
 
-					</div>
-
-					<div class="sets detail">
-						<div class="hdt">
-							<span class="tit">DETAIL SIZE</span>
-							<div class="btnTog"><a href="#tog_detailsize" data-ui-tog="btn" class="bt tog">열기</a></div>
-						</div>
-						<div class="cdt" id="tog_detailsize" data-ui-tog="ctn">
-							<ul class="filter">
-								<li class="size">
-									<div class="ht"><span class="tit">Waist <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
-									<div class="ct">
-										<div class="amount">
-											<input type="number" value="21" id="waist">
-										</div>
-										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
-									</div>
-								</li>
-								<li class="size">
-									<div class="ht"><span class="tit">Sleeve Length <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
-									<div class="ct">
-										<div class="amount">
-											<input type="number" value="21" id="sleeve">
-										</div>
-										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
-									</div>
-								</li>
-								<li class="size">
-									<div class="ht"><span class="tit">Upper Arm <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
-									<div class="ct">
-										<div class="amount">
-											<input type="number" value="21" id="arm">
-										</div>
-										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
-									</div>
-								</li>
-								<li class="size">
-									<div class="ht"><span class="tit">Thigh <a href="javascript:;" class="bt help" onclick="ui.popLayer.open('popSizeGud');">?</a></span> <span class="unit"><select class="select"><option>INCH</option><option>CM</option></select></span> </div>
-									<div class="ct">
-										<div class="amount">
-											<input type="number" value="21" id="thigh">
-										</div>
-										<div class="num"><em class="n">21</em> <i class="s">INCH</i></div>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+<div class="wrapper ">
+    <%@ include file="/WEB-INF/views/app/common/sellerSidebar.jsp" %>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <%@ include file="/WEB-INF/views/app/common/sellerNav.jsp" %>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header card-header-warning">
+                                <div class="nav-tabs-navigation">
+                                    <div class="nav-tabs-wrapper">
+                                        <span class="nav-tabs-title">상품등록</span>
+                                        <ul class="nav nav-tabs" data-tabs="tabs">
 
 
-			<section class="steps st2">
-				<ul class="st">
-					<li>1</li>
-					<li>2</li>
-				</ul>
-			</section>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">상품명</label>
+                                            <input type="text" class="form-control" name="productName" maxlength="100">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">카테고리</label>
+                                            <input type="text" class="form-control" name="productCategory">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">한줄 상품명</label>
+                                            <input type="text" class="form-control" name="productName" maxlength="200">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">상품 정상가</label>
+                                            <input type="number" class="form-control" name="productPrice">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">상품 상품판매가</label>
+                                            <input type="number" class="form-control" name="salePrice">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">재고 수량</label>
+                                            <input type="number" class="form-control" name="stock">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label class="bmd-label-floating">상품 Tags</label>
+                                            <input type="text" class="form-control" name="productTag" maxlength="200">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>상품 설명</label>
+                                            <div class="form-group bmd-form-group">
+                                                <label class="bmd-label-floating">상품을 소개할수 있습니다</label>
+                                                <textarea class="form-control" rows="5" maxlength="2000"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-			<section class="botFixed">
-				<div class="in">
-					<div class="btnSet fit">
-						<a href="javascript:saveModel()" class="btn type d fill xl">Save</a>
-					</div>
-				</div>
-			</section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="float-left">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    Dflow Tim
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Contect Us
+                                </a>
+                            </li>
 
-		</main>
-	</div>
+                        </ul>
+                    </nav>
+                    <div class="copyright float-right">
+                        &copy;
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        , made with <i class="material-icons">favorite</i> by
+                        <a href="" target="_blank">Dflow</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
 
+    <!-- Core JS Files -->
+    <script src="/resources/app/assets/js/core/jquery.min.js"></script>
+    <script src="/resources/app/assets/js/core/popper.min.js"></script>
+    <script src="/resources/app/assets/js/core/bootstrap-material-design.min.js"></script>
+    <script src="/resources/app/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!-- Plugin for the momentJs -->
+    <script src="/resources/app/assets/js/plugins/moment.min.js"></script>
+    <!-- Plugin for Sweet Alert -->
+    <script src="/resources/app/assets/js/plugins/sweetalert2.js"></script>
+    <!-- Forms Validations Plugin -->
+    <script src="/resources/app/assets/js/plugins/jquery.validate.min.js"></script>
+    <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
+    <script src="/resources/app/assets/js/plugins/jquery.bootstrap-wizard.js"></script>
+    <!-- Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+    <script src="/resources/app/assets/js/plugins/bootstrap-selectpicker.js"></script>
+    <!-- Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
+    <script src="/resources/app/assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!-- DataTables.net Plugin, full documentation here: https://datatables.net/ -->
+    <script src="/resources/app/assets/js/plugins/jquery.dataTables.min.js"></script>
+    <!-- Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs -->
+    <script src="/resources/app/assets/js/plugins/bootstrap-tagsinput.js"></script>
+    <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+    <script src="/resources/app/assets/js/plugins/jasny-bootstrap.min.js"></script>
+    <!-- Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar -->
+    <script src="/resources/app/assets/js/plugins/fullcalendar.min.js"></script>
+    <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
+    <script src="/resources/app/assets/js/plugins/jquery-jvectormap.js"></script>
+    <!-- Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="/resources/app/assets/js/plugins/nouislider.min.js"></script>
+    <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+    <!-- Library for adding dinamically elements -->
+    <script src="/resources/app/assets/js/plugins/arrive.min.js"></script>
 
-	<div class="popLayerArea">
-		<!-- 레이어팝업 자리 -->
-		<!-- 필터 -->
-<article class="popLayer a popFilter" id="popFilter">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="phd">
-			<div class="hdt">
-				<h1 class="title">FILTER</h1>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="filters">
-					<li class="match">
-						<div class="ht">MATCH</div>
-						<div class="ct">
-							<div class="uiSlider range">
-								<div class="match" id="filtMatchSlider" data-amount-min="65"  data-amount-max="100" >
-									<div class="ui-slider-handle"></div>
-									<div class="range_amount"></div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="style">
-						<!-- <div class="ht">STYLE</div> -->
-						<div class="ct">
-							<ul class="list">
-								<li>
-									<label><input type="checkbox"><span class="tit">Casual</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Girly</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Tomboy</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Business</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Chic</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Bohemian</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Sexy</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Punk</span></label>
-								</li>
-								<li>
-									<label><input type="checkbox"><span class="tit">Sporty</span></label>
-								</li>
-							</ul>
-						</div>
-					</li>
-					<!-- <li class="keyword">
-						<div class="ct">
-							<input type="search" class="input key" placeholder="검색어 입력">
-						</div>
-					</li>
-					<li class="gender">
-						<div class="ht">성별</div>
-						<div class="ct">
-							<label class="radio"><input type="radio" name="filter_gender"><span>여자</span></label>
-							<label class="radio"><input type="radio" name="filter_gender"><span>남자</span></label>
-						</div>
-					</li>
-					<li class="country">
-						<div class="ht">국가</div>
-						<div class="ct">
-							<select class="select">
-								<option>Korea</option>
-								<option>Korea</option>
-							</select>
-						</div>
-					</li> -->
-				</ul>
-			</main>
-		</div>
-		<div class="pbt">
-			<div class="in">
-				<div class="bts">
-					<a class="btn xl d btnSave" href="javascript:;" onclick="ui.popLayer.close('popFilter');">SAVE</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<script>
-var popFilter = function(){
-	ui.popLayer.open('popFilter',{
-		ocb: function(){
-			ui.filter.init();	
-		}
-	});
-	
-};
-</script>
+    <!-- Chartist JS -->
+    <script src="/resources/app/assets/js/plugins/chartist.min.js"></script>
+    <!-- Notifications Plugin -->
+    <script src="/resources/app/assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="/resources/app/assets/js/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
 
-<!-- 사이즈 -->
-<article class="popLayer a popSize" id="popSize">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="phd">
-			<div class="hdt">
-				<h1 class="title">MY SIZE</h1>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="filters">
-					<li class="hgt">
-						<div class="ht">HEIGHT</div>
-						<div class="ct">
-							<div class="uiSlider hgt">
-								<div class="height" id="sizeHeightSlider" data-amount="168">
-									<em class="bar"></em>
-									<div class="ui-slider-handle"></div>
-									<div class="range_amount"></div>
-									<div class="nums">
-										<span class="num min">1M</span>
-										<span class="num max">2M<i></i></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="age">
-						<div class="ht">AGE</div>
-						<div class="ct">
-							<select class="select">
-								<c:forEach begin="15" end="60" var="i">
-									<option><c:out value="${i}"/></option>
-								</c:forEach>
-							</select>
-						</div>
-					</li>
-					<li class="fit">
-						<div class="ht">Fit</div>
-						<div class="ct">
-							<div class="uiSlider fit">
-								<div class="fit" id="sizeFittSlider" data-amount="50">
-									<em class="bar"></em>
-									<div class="ui-slider-handle"></div>
-									<!-- <div class="range_amount"></div> -->
-									<div class="nums">
-										<span class="num min">Tight</span>
-										<span class="num mid">FIT</span>
-										<span class="num max">Oversized<i></i></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</li>
-					<li class="bra">
-						<div class="ht">BRA</div>
-						<div class="ct">
-							<div class="slideSize cup swiper-container">
-								<ul class="list cup swiper-wrapper slide">
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">A</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">B</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">C</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">D</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">E</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">F</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">G</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_bra"><span class="tit">H</span></label></li>
-								</ul>
-							</div>
-							<div class="slideSize siz swiper-container">
-								<ul class="list siz swiper-wrapper slide">
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">60</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">65</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">70</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">75</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">80</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">85</span></label></li>
-									<li class="swiper-slide"><label><input type="radio" name="size_siz"><span class="tit">90</span></label></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class="bot">
-						<div class="ht">BOTTOM</div>
-						<div class="ct">
-							<div class="slideSize bot swiper-container">
-								<ul class="list bot swiper-wrapper slide">
+    <script>
+        $(document).ready(function () {
+            $().ready(function () {
+                $sidebar = $('.sidebar');
 
-									<c:forEach begin="20" end="39" var="i">
-										<li class="swiper-slide">
-											<label><input type="radio" name="size_bott">
-												<span class="tit"><c:out value="${i}"/></span>
-											</label>
-										</li>
-									</c:forEach>									
-								</ul>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</main>
-		</div>
-		<div class="pbt">
-			<div class="in">
-				<div class="bts">
-					<a class="btn xl d btnSave" href="javascript:;" onclick="ui.popLayer.close('popSize');">SAVE</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</article>
-<script>
-var popSize = function(){
-	ui.popLayer.open('popSize',{
-		ocb: function(){
-			ui.size.init();
-		}
-	});
-	
-};
-</script>
+                $sidebar_img_container = $sidebar.find('.sidebar-background');
 
-<!-- 검색 -->
-<article class="popLayer a popSearch" id="popSearch">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="phd">
-			<div class="hdt">
-				<h1 class="title">SEARCH</h1>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				
-				<div class="sec formSch">
-					<div class="sch">
-						<input type="search" class="input key" id="input_kwd" placeholder="#@" value="">
-						<a href="javascript:;" class="bt sch">SEARCH</a>			
-						<a href="javascript:;" class="bt cancel" id="btSchCancel">CANCEL</a>					
-					</div>
-				</div>
+                $full_page = $('.full-page');
 
-				<div class="tags">
-					<ul class="tg">
-						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#유니크스타일</em> </a></li>
-						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#톰보이스타일</em> </a></li>
-						<li><a href="../common/searchTag.jsp" class="hash"><em class="tt">#호피무늬</em> </a></li>
-					</ul>
-				</div>
+                $sidebar_responsive = $('body > .navbar-collapse');
 
-				<div class="recent">
-					<div class="ht">RECENT</div>
-					<ul class="list">
-						<li>
-							<div class="box">
-								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
-								<span class="date">2019.07.01</span>
-								<a href="javascript:;" class="del">삭제</a>
-							</div>
-						</li>
-						<li>
-							<div class="box">
-								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
-								<span class="date">2019.07.01</span>
-								<a href="javascript:;" class="del">삭제</a>
-							</div>
-						</li>
-						<li>
-							<div class="box">
-								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
-								<span class="date">2019.07.01</span>
-								<a href="javascript:;" class="del">삭제</a>
-							</div>
-						</li>
-						<li>
-							<div class="box">
-								<a href="../common/searchResult.jsp" class="kwd">TOMBOY</a>
-								<span class="date">2019.07.01</span>
-								<a href="javascript:;" class="del">삭제</a>
-							</div>
-						</li>
-						<li class="nodata">
-							<div class="msg">검색기록이 존재하지 않습니다.</div>
-						</li>
-					</ul>
-				</div>
-				
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-var popSearch = function(){
-	ui.popLayer.open('popSearch',{
-		ocb: function(){
-			ui.filter.match();	
-		}
-	});
-	
-};
-$(document).ready(function(){
-	// popSearch();
+                window_width = $(window).width();
 
-	// $(document).on("keyup","#input_kwd",function (e) {
-	// 	if( e.keyCode == 13 ) {
-	// 		window.location.href = '../common/searchResult.jsp';
-	// 	}
-	// });
-	// $(document).on("click","#btSchCancel",function (e) {
+                fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
-	// 	$("#input_kwd").val("")
+                if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
+                    if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
+                        $('.fixed-plugin .dropdown').addClass('open');
+                    }
 
-	// });
-
-
-
-});
-</script>
-
-
-<!--  추가 메뉴 popOthers -->
-<article class="popLayer c popOthers" id="popOthers">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li><a href="javascript:;" class="bt">EDIT</a></li>
-					<li class="st"><a href="javascript:;" class="bt">DELETE</a></li>
-					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popOthers');">COPY LINK</a></li>
-					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popOthers');">COPY PROFILE LINK</a></li>
-					<li><a href="javascript:;" class="bt" onclick="popShare(); ui.popLayer.close('popOthers');">SHARE</a></li>
-					<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popOthers');">REPORT</a></li>
-				</ul>
-			</main>
-		</div>
-	</div>
-</article>
-
-<!-- 신고 하기  -->
-<article class="popLayer c popAccus" id="popAccus">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li class="st"><a href="javascript:postReport(1);" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s Spam</a></li>
-					<li class="st"><a href="javascript:postReport(2);" onclick="ui.toast({msg:'<p>Thanks for letting us know.</p>'}); ui.popLayer.close('popAccus');" class="bt">It’s appropriate</a></li>
-				</ul>
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-var postReport = function(status) {
-	var postUrl = "/app/home/report.do";
-
-	fp.util.jsonAjax({
-		url:postUrl,
-		data : {
-			idKey : fp.data.targetIdKey,
-			detail : status,
-			type : fp.data.reportType,
-			userIdKey : '${sessionScope.__sessiondata__.idKey}'
-		},
-		success:function() {
-			/* alert("success"); */
-		},
-		error:function() {
-			/* alert("error"); */
-		}
-	});
-}
-
-function popAccus(){
-	ui.popLayer.open('popAccus',{
-		zIndex : 1500,
-		ocb:function(){
-			console.log("신고하기팝업 열림");
-			// ui.popLayer.close('popPrfOthers');
-		},
-		ccb:function(){
-			console.log("신고하기팝업 닫힘");
-		}
-	});
-};
-</script>
-
-
-
-
-<!-- 매칭율 -->
-<article class="popLayer c popMatching" id="popMatching">
-	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">FAPEE 매칭율</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				
-				<p>내용</p>
-				<p>내용</p>
-				<div class="uiSlider">
-					<div class="mat" id="popMatchSlider" data-amount="85">
-						<em class="bar"></em>
-						<div class="ui-slider-handle"><span class="match-handle"></span></div>
-						<div class="nums">
-							<span class="num min">0</span>
-							<span class="ds">~</span>
-							<span class="num max">100<i>%</i></span>
-						</div>
-					</div>
-				</div>
-				<p>내용</p>
-				<div class="botBts">
-					<div class="btnSet">
-					<a href="javascript:;" class="btn type a btnFind" onclick="ui.popLayer.close('popMatching')">다시찾기</a></div>
-				</div>		
-				
-			</main>
-		</div>
-	</div>
-</article>
-
-<script>
-var popMatching={
-	using:function(){
-		ui.popLayer.open('popMatching',{
-			ocb:function(){
-				popMatching.slider();
-				console.log("매칭 열림");
-			},
-			ccb:function(){
-				console.log("매칭 닫힘");
-			}
-		});
-	},
-	slider:function(){
-		var $slider = $("#popMatchSlider");
-		var bar = $slider.find("em.bar");
-		var handle = $slider.find(".match-handle");
-		$slider.slider({
-			value: $slider.attr("data-amount") ,
-			min: 0,
-			max: 100,
-			step: 1,
-			create: function(event, ui) {
-				handle.text( $(this).slider( "value" ) + "%");
-				bar.css("width", $(this).slider( "value" ) + "%");
-			}
-		});
-
-		$slider.on("slidechange slide", function( event, ui ) {
-			handle.text( ui.value + "%");
-			bar.css("width", $(this).slider( "value" ) + "%");
-			$(this).attr("data-amount",ui.value);
-			$("#match_amount").text(  ui.value + "%"  );
-			// console.log(ui.value);
-		} );
-		// console.log("매칭 오픈");
-	}
-};
-$(document).ready(function(){
-	popMatching.slider();
-});
-</script>
-
-
-
-
-
-<!-- 선호스타일 -->
-<article class="popLayer c popMyStyle" id="popMyStyle">
-	<div class="pbd">
-		<div class="phd">
-			<div class="in">
-				<h1 class="tit">선호스타일</h1>
-				<button type="button" class="btnPopClose">닫기</button>
-			</div>
-		</div>
-		<div class="pct">
-			<main class="poptents">
-				
-				<div class="uiChk"><input type="checkbox" checked="checked"><em></em></div>
-				<p>내용</p>
-				<div class="botBts">
-					<div class="btnSet">
-					<a href="javascript:;" class="btn type a btnFind" onclick="ui.popLayer.close('popMyStyle')">확인</a></div>
-				</div>	
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-function popMyStyle(){
-	ui.popLayer.open('popMyStyle',{
-		ocb:function(){
-			console.log("선호스타일 열림");
-		},
-		ccb:function(){
-			console.log("선호스타일 닫힘");
-		}
-	});
-};
-</script>
-
-
-
-
-
-<!-- 프로필 기타 팝업 -->
-<article class="popLayer c popPrfOthers" id="popPrfOthers">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li><a href="javascript:;" class="bt" onclick="testUrlCopy(); ui.popLayer.close('popPrfOthers');">COPY PROFILE LINK</a></li>
-					<li><a href="javascript:;" onclick="popShare(); ui.popLayer.close('popPrfOthers');" class="bt">SHARE</a></li>
-					<c:if test="${!isMyProfile}">
-						<li class="st"><a href="javascript:;" class="bt" onclick="popAccus(); ui.popLayer.close('popPrfOthers');">REPORT</a></li>
-					</c:if>
-				</ul>	
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-function popPrfOthers(){
-	ui.popLayer.open('popPrfOthers',{
-		ocb:function(){
-			console.log("프로필 기타팝업 열림");
-		},
-		ccb:function(){
-			console.log("11");
-		}
-	});
-};
-</script>
-
-
-
-
-
-
-<!-- 공유하기 팝업 -->
-<article class="popLayer c popShare" id="popShare">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li class="twitter"><a href="javascript:;" class="bt">TWITTER</a></li>
-					<li class="katalk"><a href="javascript:;" class="bt">KAKAOTALK</a></li>
-					<li class="facebook"><a href="javascript:;" class="bt">FACEBOOK</a></li>
-					<li class="kastory"><a href="javascript:;" class="bt">KAKAOSTORY</a></li>
-				</ul>	
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-function popShare(){
-	// ui.popLayer.open('popShare',{
-	// 	ocb:function(){
-	// 		// ui.popLayer.close('popPrfOthers');
-	// 		console.log("공유하기 열림");
-	// 	},
-	// 	ccb:function(){
-	// 		console.log("공유하기 닫힘");
-	// 	}
-	// });
-};
-</script>
-
-
-
-<script>
-function testUrlCopy() {
-	// 클립보드로 복사하는 기능을 생성
-	var aux = document.createElement("input"); // 글을 쓸 수 있는 란을 만든다.
-	aux.setAttribute("value", window.location.href); // 지정된 요소의 값을 할당 한다.
-	document.body.appendChild(aux); // bdy에 추가한다.
-	aux.select(); // 지정된 내용을 강조한다.
-	document.execCommand("copy"); // 텍스트를 카피 하는 변수를 생성
-	document.body.removeChild(aux); // body 로 부터 다시 반환 한다.
-	console.log(aux.value);
-
-	ui.toast({msg:'<p>Link copied to clipboard</p>'});
-}
-</script>
-
-
-
-
-<!-- 프로필사진변경 -->
-<article class="popLayer c popPrfPicMod" id="popPrfPicMod">
-	<div class="pbd">
-		<button type="button" class="btnPopClose">닫기</button>
-		<div class="pct">
-			<main class="poptents">
-				<ul class="list">
-					<li><a href="javascript:openPhotoMulti()" class="bt">CHANGE PHOTO</a></li>
-					<li><a href="javascript:;" class="bt">DELETE PHOTO</a></li>
-				</ul>
-			</main>
-		</div>
-	</div>
-</article>
-<script>
-function popPrfPicMod(){
-	ui.popLayer.open('popPrfPicMod',{
-		ocb:function(){
-			console.log("프로필사진변경 열림");
-		},
-		ccb:function(){
-			console.log("프로필사진변경 닫힘");
-		}
-	});
-};
-</script>
-	</div>
-
-	<script>
-	$(document).ready(function() {
-        ui.size.init();
-
-        saveModel = function () {
-
-            fp.util.jsonAjax({
-                url: '/app/my/modelregist.do',
-                data: {
-                    modelName : document.getElementById("modelName").value,
-                    nation : document.getElementById("nation").value,
-                    imageUrl : document.getElementById("imageUrl").value,
-                    gender: document.getElementById("isFemale").checked,
-                    height: document.getElementById("sizeHeightSliderCm").getAttribute("data-amount"),
-                    age: document.getElementById("age").value,
-                    fit: document.getElementById("sizeFittSlider").getAttribute("data-amount"),
-					bust: document.getElementById("bust").value,
-                    hip: document.getElementById("hip").value,
-                    waist: document.getElementById("waist").value,
-                    sleeve: document.getElementById("sleeve").value,
-                    arm: document.getElementById("arm").value,
-                    thigh: document.getElementById("thigh").value,
-
-                    heightfr: document.getElementById("sizeHeightSliderFt").getAttribute("data-amount"),
-
-                    bustfr: document.getElementById("bust").value,
-                    hipfr: document.getElementById("hip").value,
-                    waistfr: document.getElementById("waist").value,
-                    sleevefr: document.getElementById("sleeve").value,
-                    armfr: document.getElementById("arm").value,
-                    thighfr: document.getElementById("thigh").value,
-
-                    sizeType: document.getElementById("sizeType").value,
-                    heightType: document.getElementById("hgt_unit").value
-                },
-                success: function () {
-                    location.href = '/app/my/profile.do';
-                },
-                error: function () {
-                    alert("error");
                 }
+
+                let locationPath = window.location.pathname;
+                let navItems = $(".nav-item");
+                navItems.each(function (i) {
+                    if ($(this).children('a').attr('href') == locationPath) {
+                        $(this).addClass('active');
+                    }
+                });
+
+                $('.fixed-plugin a').click(function (event) {
+                    // Alex if we click on switch, stop propagation of the event, so the dropdown will not be hide, otherwise we set the  section active
+                    if ($(this).hasClass('switch-trigger')) {
+                        if (event.stopPropagation) {
+                            event.stopPropagation();
+                        } else if (window.event) {
+                            window.event.cancelBubble = true;
+                        }
+                    }
+                });
+
+                $('.fixed-plugin .active-color span').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-color', new_color);
+                    }
+
+                    if ($full_page.length != 0) {
+                        $full_page.attr('filter-color', new_color);
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.attr('data-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .background-color .badge').click(function () {
+                    $(this).siblings().removeClass('active');
+                    $(this).addClass('active');
+
+                    var new_color = $(this).data('background-color');
+
+                    if ($sidebar.length != 0) {
+                        $sidebar.attr('data-background-color', new_color);
+                    }
+                });
+
+                $('.fixed-plugin .img-holder').click(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $(this).parent('li').siblings().removeClass('active');
+                    $(this).parent('li').addClass('active');
+
+
+                    var new_image = $(this).find("img").attr('src');
+
+                    if ($sidebar_img_container.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        $sidebar_img_container.fadeOut('fast', function () {
+                            $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                            $sidebar_img_container.fadeIn('fast');
+                        });
+                    }
+
+                    if ($full_page_background.length != 0 && $('.switch-sidebar-image input:checked').length != 0) {
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $full_page_background.fadeOut('fast', function () {
+                            $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                            $full_page_background.fadeIn('fast');
+                        });
+                    }
+
+                    if ($('.switch-sidebar-image input:checked').length == 0) {
+                        var new_image = $('.fixed-plugin li.active .img-holder').find("img").attr('src');
+                        var new_image_full_page = $('.fixed-plugin li.active .img-holder').find('img').data('src');
+
+                        $sidebar_img_container.css('background-image', 'url("' + new_image + '")');
+                        $full_page_background.css('background-image', 'url("' + new_image_full_page + '")');
+                    }
+
+                    if ($sidebar_responsive.length != 0) {
+                        $sidebar_responsive.css('background-image', 'url("' + new_image + '")');
+                    }
+                });
+
+                $('.switch-sidebar-image input').change(function () {
+                    $full_page_background = $('.full-page-background');
+
+                    $input = $(this);
+
+                    if ($input.is(':checked')) {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar_img_container.fadeIn('fast');
+                            $sidebar.attr('data-image', '#');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page_background.fadeIn('fast');
+                            $full_page.attr('data-image', '#');
+                        }
+
+                        background_image = true;
+                    } else {
+                        if ($sidebar_img_container.length != 0) {
+                            $sidebar.removeAttr('data-image');
+                            $sidebar_img_container.fadeOut('fast');
+                        }
+
+                        if ($full_page_background.length != 0) {
+                            $full_page.removeAttr('data-image', '#');
+                            $full_page_background.fadeOut('fast');
+                        }
+
+                        background_image = false;
+                    }
+                });
+
+                $('.switch-sidebar-mini input').change(function () {
+                    $body = $('body');
+
+                    $input = $(this);
+
+                    if (md.misc.sidebar_mini_active == true) {
+                        $('body').removeClass('sidebar-mini');
+                        md.misc.sidebar_mini_active = false;
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar();
+
+                    } else {
+
+                        $('.sidebar .sidebar-wrapper, .main-panel').perfectScrollbar('destroy');
+
+                        setTimeout(function () {
+                            $('body').addClass('sidebar-mini');
+
+                            md.misc.sidebar_mini_active = true;
+                        }, 300);
+                    }
+
+                    // we simulate the window Resize so the charts will get updated in realtime.
+                    var simulateWindowResize = setInterval(function () {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 180);
+
+                    // we stop the simulation of Window Resize after the animations are completed
+                    setTimeout(function () {
+                        clearInterval(simulateWindowResize);
+                    }, 1000);
+
+                });
             });
-        }
-    });
-
-	</script>
-	
-	<!--// 컨텐츠 끝 -->
-
-</div>
-
+        });
+    </script>

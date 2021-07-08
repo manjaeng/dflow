@@ -25,5 +25,8 @@ public class Constants {
 	public final static String CDN_URL = "https://d263k2zkiwujsc.cloudfront.net/";
 	public final static String S3_URL = "https://d263k2zkiwujsc.cloudfront.net/";
 
+	public final static String STYLE_LIST_CD = "0001";
+	public final static String PRODUCT_TYPE_CD = "0002";
+
 	
 }

@@ -5,17 +5,18 @@
 <script src="/resources/app/js/pullToRefresh.js"></script>
 <script src="/resources/app/js/jquery-listswipe.js"></script>
 <script src="/resources/app/js/autosize.js"></script>
+-->
 <script src="/resources/app/js/ui.js"></script>
 
-<script src="/resources/app/js/jquery.pjax.js"></script>
+<!--<script src="/resources/app/js/jquery.pjax.js"></script> -->
 <script src="/resources/app/js/_common.js"></script>
 <script src="/resources/app/js/_native.js"></script>
 <script src="/resources/app/js/_init.js"></script>
 <script src="/resources/app/js/jquery.validate.min.js"></script>
 
 <script src="/resources/app/js/_look_common_action.js"></script>
-<script src="/resources/app/js/bootstrap.js"></script>
--->
+<!--<script src="/resources/app/js/bootstrap.js"></script-->
+
 <!--script src="/resources/app/js/android.js"></script-->
 
 <script>

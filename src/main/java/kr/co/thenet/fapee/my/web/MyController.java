@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import kr.co.thenet.fapee.common.model.CodeVO;
+import kr.co.thenet.fapee.home.service.CodeService;
 import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
 import kr.co.thenet.fapee.user.service.UserService;
@@ -42,6 +44,9 @@ public class MyController {
 	
 	@Autowired
 	private LookService lookService;
+
+	@Autowired
+	private CodeService codeService;
 	
 	@ModelAttribute
 	public void addModelMap(ModelMap model) throws Exception {
@@ -49,11 +54,8 @@ public class MyController {
 	}
 
 	@GetMapping("/app/my/profile.do")
-	public String profile(@RequestParam(required = false) String id, ModelMap model, HttpServletRequest req)
+	public String profile( ModelMap model, HttpServletRequest req)
 			throws Exception {
-
-		if (id == null) {
-			// 나의 프로필
 			if (SessionUtils.isLogin(req)) {
 
 				SessionVO sessionVO = SessionUtils.getSessionData(req);
@@ -63,69 +65,22 @@ public class MyController {
 				EgovMap myLooksMap = new EgovMap();
 				myLooksMap.put("idKey", sessionVO.getIdKey());
 
+				List<CodeVO>  productType = codeService.selectCodeList("0001");
+				model.addAttribute("productType", productType);
 
+				List<CodeVO> styleList = codeService.selectCodeList("0002");
+				model.addAttribute("styleList", styleList);
+
+				UserVO user = userService.selectUserInfo(myLooksMap);
+				UserVO companyUser = userService.selectUserCompany(user);
 				List<EgovMap> lookList = lookService.selectLookProfileList(myLooksMap);
-				model.addAttribute("lookList", lookList);
-				model.addAttribute("userId", "true");
-				model.addAttribute("isMyProfile", "true");
-				model.addAttribute("profileInfo", sessionVO.getIdKey());
-				model.addAttribute("profileNavClass", "my");
+				model.addAttribute("user", user);
+				model.addAttribute("companyUser", companyUser);
+			}else{
+				return "user/login.app";
 			}
-		} else {
-			// 타인 프로필
-			if (!CommonUtils.isNumeric(id)) {
-				EgovMap egovMap = new EgovMap();
-				egovMap.put("userId", id);
 
-				UserVO userVO = userService.selectUserInfo(egovMap);
-
-
-				if (userVO != null) {
-					EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
-
-
-					if (SessionUtils.isLogin(req)) {
-						
-						SessionVO sessionVO = SessionUtils.getSessionData(req);
-						
-						if(sessionVO.getUserId().equals(id)) {
-							model.addAttribute("isMyProfile", "true");
-							model.addAttribute("profileNavClass", "my");
-						} else {
-							EgovMap egovMap2 = new EgovMap();
-							egovMap2.put("userIdKey", sessionVO.getIdKey());
-							egovMap2.put("followUserIdKey", userVO.getIdKey());
-
-							boolean isFollowing = myService.selectMyFollowingCount(egovMap2);
-
-							EgovMap myLooksMap = new EgovMap();
-							myLooksMap.put("idKey", id);
-						//	myLooksMap.put("pageStart",  Integer.parseInt(req.getParameter("pageStart")));
-							//profileMap.put("pageStart",  0);
-						//	myLooksMap.put("pageSize", Integer.parseInt(req.getParameter("pageSize")));
-							//profileMap.put("pageSize", 4);
-
-							List<EgovMap> lookList = lookService.selectLookProfileList(myLooksMap);
-							model.addAttribute("lookList", lookList);
-
-
-							if (isFollowing) {
-								model.addAttribute("profileNavClass", "ing");
-							}
-						}
-
-					}
-
-					model.addAttribute("profileInfo", profileInfo);
-
-				} else {
-					// 존재하지 않는 계정
-				}
-
-			}
-		}
-
-		return "my/profile.app";
+		return "my/profile_edit.app";
 	}
 	
 	@PostMapping("/app/my/profile/look_thum.do")
@@ -503,17 +458,7 @@ public class MyController {
 
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 
-			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
 
-			model.addAttribute("profileInfo", profileInfo);
-
-			profileInfo.put("modelKey" , req.getParameter("modelKey"));
-
-			EgovMap userModelInfo = myService.selectMyModel(profileInfo);
-
-			model.addAttribute("userModelInfo",userModelInfo);
-
-			log.info("userModelInfo" + userModelInfo);
 		}
 		return "my/model_reg1.app";
 	}
@@ -525,21 +470,6 @@ public class MyController {
 
 			SessionVO sessionVO = SessionUtils.getSessionData(req);
 
-			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-
-			model.addAttribute("profileInfo", profileInfo);
-
-			profileInfo.put("modelKey" , req.getParameter("modelKey"));
-
-			EgovMap userModelInfo = myService.selectMyModel(profileInfo);
-
-			model.addAttribute("userModelInfo",userModelInfo);
-
-            model.addAttribute("modelName", req.getParameter("modelName"));
-            model.addAttribute("gender", req.getParameter("gender"));
-            model.addAttribute("nation", req.getParameter("nation"));
-
-			log.info("userModelInfo" + userModelInfo);
 		}
 		return "my/model_reg2.app";
 	}

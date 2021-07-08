@@ -1,6 +1,7 @@
 package kr.co.thenet.fapee.common.model;
 
 import java.util.Date;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +12,7 @@ import lombok.ToString;
 @ToString
 public class UserVO {
 	private long idKey;
+	private long userKey;
 	private String userId;
 	private String password;
 	private String userType;
@@ -26,4 +28,28 @@ public class UserVO {
 	private String adminYn;
 	private String leaveReason;
 	private String userFilterIdKey;
+	private String bizNo;
+	private String company;
+	private String file ;
+	private String fileName;
+	private String fileUrl;
+
+	private String bankName;
+	private String bankCode;
+	private String bankCount;
+
+	private String postCode;
+	private String fullAddr;
+	private String firstAddr;
+	private String secondAddr;
+
+	private String checkAgree2;
+	private String checkAgree1;
+	private String marketingAgree;
+
+	private String comPhone;
+
+	private String rePassword ;
+	private List<String> productType;
+	private List<String> styleList;
 }

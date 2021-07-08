@@ -30,21 +30,50 @@ public class UserServiceImpl implements UserService {
 	public UserVO selectUserInfo(EgovMap egovMap) throws Exception {
 		return userMapper.selectUserInfo(egovMap);
 	}
+	@Override
+	public UserVO selectUserCompany(UserVO user) throws Exception{
+		return userMapper.selectUserCompany(user);
+	}
 
 	@Override
 	public int insertUserInfo(UserVO user, HttpServletRequest req) throws Exception {
 		user.setPassword(CommonFunc.getHashedPassword(user.getPassword()));
-		user.setUserType("2");
+		user.setUserType("02");
 		user.setStatus("1");
 		user.setUserFilterIdKey(String.valueOf(req.getSession().getAttribute("temp_UserFilterIdKey")));
 		
 		int insertcount = userMapper.insertUserInfo(user);
-		userMapper.updateUserFilterDeviceInfo(user);
-		userMapper.insertUserProfileInfo(user);
-		
-		String mailContent = MailUtils.getContent("join");
-		if( !(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(mailContent)) ) {
-			MailUtils.sendMail(user.getEmail(), "[FAPEE] 회원이 되신 것을 환영합니다.", mailContent);
+		EgovMap egovMap = new EgovMap();
+		egovMap.put("userId", user.getUserId());
+		UserVO newUser = userMapper.selectUserInfo(egovMap);
+
+		long idKey = newUser.getIdKey();
+		user.setUserKey(idKey);
+
+		userMapper.insertUserCompany(user);
+		if(user.getProductType()!= null && !user.getProductType().isEmpty()) {
+			for (String code : user.getProductType()) {
+				egovMap.put("userKey", idKey);
+				egovMap.put("grpCodeNo", "0001");
+				egovMap.put("codeNo", code);
+				userMapper.insertDfUserCodeMap(egovMap);
+			}
+		}
+		if(user.getStyleList() !=null && !user.getStyleList().isEmpty()) {
+			for (String code : user.getStyleList()) {
+				egovMap.put("userKey", idKey);
+				egovMap.put("grpCodeNo", "0002");
+				egovMap.put("codeNo", code);
+				userMapper.insertDfUserCodeMap(egovMap);
+			}
+		}
+		try {
+			String mailContent = MailUtils.getContent("join");
+			if (!(StringUtils.isEmpty(user.getEmail()) || StringUtils.isEmpty(mailContent))) {
+				MailUtils.sendMail(user.getEmail(), "[Dflow] 회원이 되신 것을 환영합니다.", mailContent);
+			}
+		}catch (Exception e){
+			e.getMessage();
 		}
 		
 		return insertcount;

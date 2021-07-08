@@ -10,19 +10,25 @@
   </a></div>
   <div class="sidebar-wrapper">
     <ul class="nav">
-      <li class="nav-item  ">
-        <a class="nav-link" href="./dashboard.html">
+      <li class="nav-item">
+        <a class="nav-link" href="/app/my/model_reg1.do">
           <i class="material-icons">dashboard</i>
+          <p>상품관리</p>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/app/my/model_reg2.do">
+          <i class="material-icons">add_to_photos</i>
           <p>상품등록</p>
         </a>
       </li>
-      <li class="nav-item active ">
-        <a class="nav-link" href="./user.html">
+      <li class="nav-item">
+        <a class="nav-link" href="/app/my/profile.do">
           <i class="material-icons">person</i>
           <p>계정관리</p>
         </a>
       </li>
-      <li class="nav-item ">
+      <li class="nav-item">
         <a class="nav-link" href="./tables.html">
           <i class="material-icons">content_paste</i>
           <p>주문현황</p>

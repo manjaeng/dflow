@@ -24,4 +24,3 @@
 <script src="/resources/app/js/jquery-3.4.1.js"></script>
 <script src="/resources/app/js/jquery-ui.js"></script>
 <script src="/resources/app/js/jquery.ui.touch-punch.js"></script>
-<script src="/resources/app/js/bootstrap.js"></script>

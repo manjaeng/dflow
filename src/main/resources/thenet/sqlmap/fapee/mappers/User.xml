@@ -161,6 +161,87 @@
                   #{bottom}    
 		)
 	</insert>
+	<insert id="updatetUserCompany" parameterType="userVO">
+		UPDATE  df_user_company
+		SET
+				bizNo = #{bizNo},
+				comPhone = #{comPhone},
+				postCode = #{postCode},
+				fullAddr =	#{fullAddr},
+				firstAddr = #{firstAddr},
+				secondAddr =	#{secondAddr},
+				bankCode = 	#{bankCode},
+				bankName = 	#{bankName},
+				bankCount =	#{bankCount},
+				fileName = #{fileName},
+				fileUrl	 =	#{fileUrl}
+		WHERE 	idKey = #{idKey}
+	</insert>
+	<select id="selectUserCompany" parameterType="userVO" resultType="userVO">
+		select userkey,
+			   bizNo,
+			   company,
+			   comPhone,
+			   postCode,
+			   fullAddr,
+			   firstAddr,
+			   secondAddr,
+			   bankCode,
+			   bankName,
+			   bankCount,
+			   fileName,
+			   fileUrl
+		FROM df_user_company
+		WHERE idKey = #{idKey}
+	</select>
+	<update id="insertUserCompany" parameterType="userVO">
+		INSERT into df_user_company(
+			userkey,
+			bizNo,
+			company,
+			comPhone,
+			postCode,
+			fullAddr,
+			firstAddr,
+			secondAddr,
+			bankCode,
+			bankName,
+			bankCount,
+			fileName,
+			fileUrl
+		)VALUES (
+					#{userKey},
+					#{bizNo},
+					#{company},
+					#{comPhone},
+					#{postCode},
+					#{fullAddr},
+					#{firstAddr},
+					#{secondAddr},
+					#{bankCode},
+					#{bankName},
+					#{bankCount},
+					#{fileName},
+					#{fileUrl}
+				)
+	</update>
+	<insert id="insertDfUserCodeMap" parameterType="egovMap">
+		INSERT into DF_USER_CODE_MAP(
+		                             userKey,
+		                             grp_code_no,
+		                             code_no
+		)VALUES (
+		         #{userKey},
+		         #{grpCodeNo},
+		         #{codeNo}
+				)
+
+
+	</insert>
+	<delete id="deleteDfuserCodeMap" parameterType="egovMap">
+		DELETE FROM DF_USER_CODE_MAP
+		WHERE userKey = #{userKey}
+	</delete>
 	
 	<delete id="deleteUserModel" parameterType="egovMap">
 		DELETE FROM fp_user_model

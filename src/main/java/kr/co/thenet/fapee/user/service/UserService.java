@@ -12,6 +12,7 @@ public interface UserService {
 	List<UserVO> selectUserList() throws Exception;
 
 	UserVO selectUserInfo(EgovMap egovMap) throws Exception;
+	UserVO selectUserCompany(UserVO user) throws Exception;
 
 	int insertUserInfo(UserVO user, HttpServletRequest req) throws Exception;
 

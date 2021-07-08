@@ -31,8 +31,21 @@
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label class="bmd-label-floating">사용자 유형</label>
-												<input type="text" class="form-control">
+												<div class="dropdown" id="sellerType">
+													<input type="hidden" name="userType" value="02"
+														   id="hiddenSellerType">
+													<a class="btn btn-secondary dropdown-toggle" href=""
+													   id="addrDropdownSellerType" data-toggle="dropdown">
+														<i class="material-icons">supervisor_account</i>
+														사용자 유형을 선택하세요.
+													</a>
+													<ul class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
+														<li><a class="dropdown-item seller-type"
+															   data_value="01">일반회원</a></li>
+														<li><a class="dropdown-item seller-type"
+															   data_value="02">셀러회원</a></li>
+													</ul>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -159,7 +172,7 @@
 										</div>
 										<div class="col-md-4">
 											<div class="form-group">
-												<label class="bmd-label-floating">상세주소</label>
+												<label class="bmd-label-floating">기본주소</label>
 												<input type="text" class="form-control">
 											</div>
 										</div>
@@ -183,53 +196,50 @@
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>취급품목</label>
-												<table class="table">
-													<c:forEach var="item" items="${productType}">
-														<tr class="style">
-															<td>
-															<div class="form-check">
-																<label class="form-check-label">
-																	<input class="form-check-input" type="checkbox" value='<c:out value="${item.code_no}"/>'>
-																	<span class="form-check-sign">
-																	<span class="check"></span>
-																  </span>
-																</label>
-															</div>
-															</td>
-															<td>
-															<span class="tit"><c:out value="${item.code_nm}"/></span>
-															</td>
-														</tr>
-													</c:forEach>
-												</table>
 											</div>
 										</div>
+									</div>
+									<div class="row">
+										<c:forEach var="item" items="${productType}">
+											<div class="col-md-2">
+												<div class="form-group">
+													<div class="form-check">
+														<label class="form-check-label">
+															<input class="form-check-input" type="checkbox" name="productType"
+																   value='<c:out value="${item.code_no}"/>'>
+															<span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                         </span>
+															<c:out value="${item.code_nm}"/>
+														</label>
+													</div>
+												</div>
+											</div>
+										</c:forEach>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group">
 												<label>제품스타일</label>
-												<table class="table">
-													<c:forEach var="item" items="${styleList}">
-														<tr class="style">
-															<td>
-																<div class="form-check">
-																	<label class="form-check-label">
-																		<input class="form-check-input" type="checkbox" value='<c:out value="${item.code_no}"/>'>
-																		<span class="form-check-sign">
-																	<span class="check"></span>
-																  </span>
-																	</label>
-																</div>
-															</td>
-															<td>
-																<span class="tit"><c:out value="${item.code_nm}"/></span>
-															</td>
-														</tr>
-													</c:forEach>
-												</table>
 											</div>
 										</div>
+									</div>
+									<div class="row">
+										<c:forEach var="item" items="${styleList}">
+											<div class="col-md-2">
+												<div class="form-group">
+													<div class="form-check">
+														<label class="form-check-label">
+															<input class="form-check-input" type="checkbox" name="styleList"
+																   value='<c:out value="${item.code_no}"/>'>
+															<span class="form-check-sign">
+                                                            <span class="check"></span>
+                                                        </span><c:out value="${item.code_nm}"/>
+														</label>
+													</div>
+												</div>
+											</div>
+										</c:forEach>
 									</div>
 									<button type="submit" class="btn btn-primary pull-right">업체정보수정</button>
 									<div class="clearfix"></div>
@@ -333,7 +343,7 @@
 			fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
 
 			if (window_width > 767 && fixed_plugin_open == 'Dashboard') {
-				if ($('., fixed-plugin .dropdown').hasClass('show-dropdown')) {
+				if ($('.fixed-plugin .dropdown').hasClass('show-dropdown')) {
 					$('.fixed-plugin .dropdown').addClass('open');
 				}
 

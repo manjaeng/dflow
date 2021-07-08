@@ -13,6 +13,7 @@ public interface UserMapper {
 	List<UserVO> selectUserList() throws Exception;
 	
 	UserVO selectUserInfo(EgovMap egovMap) throws Exception;
+	UserVO selectUserCompany(UserVO user) throws Exception;
 
 	int insertUserInfo(UserVO user) throws Exception;
 
@@ -33,5 +34,9 @@ public interface UserMapper {
 	int updateUserInfo(EgovMap updateUserInfo) throws Exception;
 
 	int updateUserWithdrawal(UserVO user) throws Exception;
+	int insertUserCompany(UserVO user) throws Exception;
+	int updatetUserCompany(UserVO user) throws Exception;
+	int insertDfUserCodeMap(EgovMap profileMap) throws Exception;
+	int deleteDfuserCodeMap(EgovMap profileMap) throws Exception;
 	
 }

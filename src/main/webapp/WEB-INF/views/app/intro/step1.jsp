@@ -432,7 +432,7 @@
 		<div class="col-xl-2 col-lg-3 col-md-4 col-6">
 			<div class="product" data-aos="zoom-in" data-aos-delay="0">
 				<div class="product-image mb-md-3"><a href="detail-1.html">
-					<div class="product-swap-image"><img class="img-fluid product-swap-image-front" src="/resources/app/images/main/product/0027211800_1_2_1.jpg" alt="product"/><img class="img-fluid" src="/resources/app/images/main/product/0027211800_2_1_1.jpg" alt="product"/></div></a>
+					<div class="product-swap-image"><img class="img-fluid product-swap-image-front" src="/resources/app/images/main/product/0027211800_1_2_1.jpeg" alt="product"/><img class="img-fluid" src="/resources/app/images/main/product/0027211800_2_1_1.jpeg" alt="product"/></div></a>
 					<div class="product-hover-overlay"><a class="text-dark text-sm" href="#">
 						<svg class="svg-icon text-hover-primary svg-icon-heavy d-sm-none">
 							<use xlink:href="#retail-bag-1"> </use>
@@ -457,7 +457,7 @@
 		<div class="col-xl-2 col-lg-3 col-md-4 col-6">
 			<div class="product" data-aos="zoom-in" data-aos-delay="0">
 				<div class="product-image mb-md-3"><a href="detail-1.html">
-					<div class="product-swap-image"><img class="img-fluid product-swap-image-front" src="/resources/app/images/main/product/0144074800_1_1_1.jpg" alt="product"/><img class="img-fluid" src="/resources/app/images/main/product/0144074800_2_1_1.jpg" alt="product"/></div></a>
+					<div class="product-swap-image"><img class="img-fluid product-swap-image-front" src="/resources/app/images/main/product/0144074800_1_1_1.jpeg" alt="product"/><img class="img-fluid" src="/resources/app/images/main/product/0144074800_2_1_1.jpeg" alt="product"/></div></a>
 					<div class="product-hover-overlay"><a class="text-dark text-sm" href="#">
 						<svg class="svg-icon text-hover-primary svg-icon-heavy d-sm-none">
 							<use xlink:href="#retail-bag-1"> </use>
