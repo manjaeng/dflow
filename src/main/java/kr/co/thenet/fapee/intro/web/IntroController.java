@@ -47,12 +47,8 @@ public class IntroController {
 	
 	@GetMapping("/app/intro/step1.do")
 	public String step1(ModelMap model, HttpServletRequest req) throws Exception {
-		if (SessionUtils.isLogin(req)) {
-			return  "home/home.app";
-		}else {
-			return "intro/step1.app";
+				return "intro/step1.app";
 		}
-	}
 	
 	@GetMapping("/app/intro/step2.do")
 	public String step2(ModelMap model, HttpServletRequest req) throws Exception {
@@ -65,9 +61,6 @@ public class IntroController {
 		if (SessionUtils.isLogin(req)) {
 			return  "home/home.app";
 		}else {
-
-
-
 			return "intro/step2.app";
 		}
 

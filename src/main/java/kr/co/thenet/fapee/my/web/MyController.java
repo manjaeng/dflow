@@ -1,5 +1,6 @@
 package kr.co.thenet.fapee.my.web;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -36,453 +37,546 @@ import kr.co.thenet.fapee.common.util.SessionUtils;
 @Controller
 public class MyController {
 
-	@Autowired
-	private MyService myService;
+    @Autowired
+    private MyService myService;
 
-	@Autowired
-	private UserService userService;
-	
-	@Autowired
-	private LookService lookService;
+    @Autowired
+    private UserService userService;
 
-	@Autowired
-	private CodeService codeService;
-	
-	@ModelAttribute
-	public void addModelMap(ModelMap model) throws Exception {
-		model.addAttribute("s3Url",Constants.S3_URL);
-	}
+    @Autowired
+    private LookService lookService;
 
-	@GetMapping("/app/my/profile.do")
-	public String profile( ModelMap model, HttpServletRequest req)
-			throws Exception {
-			if (SessionUtils.isLogin(req)) {
+    @Autowired
+    private CodeService codeService;
 
-				SessionVO sessionVO = SessionUtils.getSessionData(req);
+    @GetMapping("/app/my/profile.do")
+    public String profile(ModelMap model, HttpServletRequest req)
+            throws Exception {
+        if (SessionUtils.isLogin(req)) {
 
-				EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            EgovMap userMap = new EgovMap();
+            userMap.put(Constants.USER_idKey, sessionVO.getIdKey());
+            userMap.put(Constants.USER_userKey, sessionVO.getIdKey());
+            userMap.put(Constants.USER_grpCodeNo, Constants.PRODUCT_TYPE_CD);
 
-				EgovMap myLooksMap = new EgovMap();
-				myLooksMap.put("idKey", sessionVO.getIdKey());
+            List<CodeVO> productType = codeService.selectCodeList(Constants.PRODUCT_TYPE_CD);
+            List<EgovMap> produceMapList = userService.selectDfUserCodeMap(userMap);
+            for (CodeVO vo : productType) {
+                for(EgovMap map : produceMapList){
+                    if(((String)map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
+                        vo.setChekYn(Constants.CODE_CHECK_YES);
+                    }
+                }
+            }
+            model.addAttribute(Constants.PRODUCT_TYPE_NM, productType);
 
-				List<CodeVO>  productType = codeService.selectCodeList("0001");
-				model.addAttribute("productType", productType);
+            List<CodeVO> styleList = codeService.selectCodeList(Constants.STYLE_LIST_CD);
+            userMap.put(Constants.USER_grpCodeNo, Constants.STYLE_LIST_CD);
+            List<EgovMap> styleMapList = userService.selectDfUserCodeMap(userMap);
+            for (CodeVO vo : styleList) {
+                for(EgovMap map : styleMapList){
+                    if(((String)map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
+                        vo.setChekYn(Constants.CODE_CHECK_YES);
+                    }
+                }
+            }
+            model.addAttribute(Constants.STYLE_LIST_MM, styleList);
 
-				List<CodeVO> styleList = codeService.selectCodeList("0002");
-				model.addAttribute("styleList", styleList);
+            List<CodeVO> mallList = codeService.selectCodeList(Constants.MALL_LIST_CD);
+            model.addAttribute(Constants.MALL_LIST_MM, mallList);
 
-				UserVO user = userService.selectUserInfo(myLooksMap);
-				UserVO companyUser = userService.selectUserCompany(user);
-				List<EgovMap> lookList = lookService.selectLookProfileList(myLooksMap);
-				model.addAttribute("user", user);
-				model.addAttribute("companyUser", companyUser);
-			}else{
-				return "user/login.app";
-			}
+            UserVO user = userService.selectUserInfo(userMap);
+            user.setUserKey(user.getIdKey());
+            UserVO companyUser = userService.selectUserCompany(user);
+            model.addAttribute("user", user);
+            model.addAttribute("companyUser", companyUser);
+        } else {
+            return "user/login.app";
+        }
 
-		return "my/profile_edit.app";
-	}
-	
-	@PostMapping("/app/my/profile/look_thum.do")
-	@ResponseBody
-	public List<EgovMap> profileLookThum(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
-		
-		List<EgovMap> lookList = null;
-		
-		int pageStart = (int)egovMap.get("pageStart");
-		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
-		egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
-		
-		
-		if ("".equals(egovMap.get("userId"))) {
-			if (SessionUtils.isLogin(req)) {
-				
-				SessionVO sessionVO = SessionUtils.getSessionData(req);
-				
-				egovMap.put("idKey", sessionVO.getIdKey());
-				
-				lookList = lookService.selectLookProfileList(egovMap);
-			}
-		} else {
-			
-			String userId = (String)egovMap.get("userId");
-			
-			if (!CommonUtils.isNumeric(userId)) {
-				UserVO userVO = userService.selectUserInfo(egovMap);
-				
-				egovMap.put("idKey", userVO.getIdKey());
-				
-				lookList = lookService.selectLookProfileList(egovMap);
-			}
-		}
-		return lookList;
-	}
-	
-	@GetMapping("/app/my/profile/look_list.do")
-	public String profileLookDeatilList() throws Exception {
-		return "my/profile_look.app";
-	}
-	
-	@PostMapping("/app/my/profile/look_list.do")
-	@ResponseBody
-	public List<EgovMap> profileLookList(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
-		
-		List<EgovMap> lookList = null;
-		
-		int pageStart = (int)egovMap.get("pageStart");
-		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
-		egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
-		
-			
-		String userId = (String)egovMap.get("userId");
-		
-		if (!CommonUtils.isNumeric(userId)) {
-			UserVO userVO = userService.selectUserInfo(egovMap);
-			
-			egovMap.put("idKey", userVO.getIdKey());
-			
-			if (SessionUtils.isLogin(req)) {
-				SessionVO sessionVO = SessionUtils.getSessionData(req);
-				egovMap.put("sessionIdKey", sessionVO.getIdKey());
-			}
-			
-			lookList = lookService.selectLookProfileList(egovMap);
-		}
-	
-		return lookList;
-	}
-	
-	@PostMapping("/app/my/profile/look_{clickedBtn}_edit.do")
-	@ResponseBody
-	public String profileLookCoolAndScrapEdit(@RequestBody EgovMap egovMap, HttpServletRequest req, @PathVariable String clickedBtn) throws Exception {
+        return "my/profile_edit.app";
+    }
 
-		String type = (String) egovMap.get("type");
-		boolean isSuccess = false;
-		
-		if (SessionUtils.isLogin(req)) {
-			
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			egovMap.put("userIdKey", sessionVO.getIdKey());
-			
-			
-			if ("cool".equals(clickedBtn)) {
-				
-				if ("insert".equals(type)) {
-					isSuccess = lookService.insertLookCoolInfo(egovMap);
-				} else if ("delete".equals(type)) {
-					isSuccess = lookService.deleteLookCoolInfo(egovMap);
-				}
-				
-			} else if ("scrap".equals(clickedBtn)) {
-				
-				if ("insert".equals(type)) {
-					isSuccess = lookService.insertLookScrapInfo(egovMap);
-				} else if ("delete".equals(type)) {
-					isSuccess = lookService.deleteLookScrapInfo(egovMap);
-				}
-				
-			}
-		}
-		
-		if (isSuccess) {
-			return "t";
-		} else {
-			return "f";
-		}
-	}
-	
-	@GetMapping("/app/my/profile/look_comment.do")
-	public String profileLookComment(ModelMap model, HttpServletRequest req) throws Exception {
-		
-		if (SessionUtils.isLogin(req)) {
-			
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			
-			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-			
-			model.addAttribute("ajaxUrl","/app/my/profile/look_comment.do");
-			model.addAttribute("profileInfo", profileInfo);
-		}
-		
-		return "look/look_comment.app";
-	}
-	
-	@PostMapping("/app/my/profile/look_comment.do")
-	@ResponseBody
-	public List<EgovMap> profileLookComment(@RequestBody EgovMap egovMap) throws Exception {
-		
-		int pageStart = (int)egovMap.get("pageStart");
-		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
-		egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
-		
-		List<EgovMap> lookList = lookService.selectLookCommentList(egovMap);
-		
-		return lookList;
-	}
-	
-	@PostMapping("/app/my/profile/add_look_comment.do")
-	@ResponseBody
-	public String profileAddLookComment(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
-		
-		if (SessionUtils.isLogin(req)) {
+    @PostMapping("/app/my/updateUser.do")
+    @ResponseBody
+    public String updateUser(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+        String result = "";
+        if (SessionUtils.isLogin(req)) {
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            EgovMap ego = new EgovMap();
+            ego.put(Constants.USER_idKey, sessionVO.getIdKey());
+            UserVO oldUser = userService.selectUserInfo(ego);
 
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			
-			egovMap.put("userIdKey", sessionVO.getIdKey());
-			
-			boolean isSuccess = lookService.insertLookCommentInfo(egovMap);
-			
-			if (isSuccess) {
-				return "t";
-			} else {
-				return "f";
-			}
-		}
-		
-		return "f";
-	}
-	
-	@GetMapping("/app/my/profile/look_cool.do")
-	public String profileLookCool(ModelMap model, HttpServletRequest req) throws Exception {
-		return "look/look_cool.app";
-	}
-	
-	@PostMapping("/app/my/profile/look_cool.do")
-	@ResponseBody
-	public List<EgovMap> profileLookCool(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception{
-		
-		int pageStart = (int)egovMap.get("pageStart");
-		egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
-		egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
-		
-		if (SessionUtils.isLogin(req)) {
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			egovMap.put("sessionIdKey", sessionVO.getIdKey());
-		}
-		
-		List<EgovMap> cooList = lookService.selectLookCoolList(egovMap);
-		
-		return cooList;
-	}
+            if (!((String) egovMap.get(Constants.USER_userType)).equals(oldUser.getUserType())) {
+                oldUser.setUserType((String) egovMap.get(Constants.USER_userType));
+            }
+            if (!((String) egovMap.get(Constants.USER_email)).equals(oldUser.getEmail())) {
+                oldUser.setEmail((String) egovMap.get(Constants.USER_email));
+            }
+            if (!((String) egovMap.get(Constants.USER_userName)).equals(oldUser.getUserName())) {
+                oldUser.setUserName((String) egovMap.get(Constants.USER_userName));
+            }
+            if (!((String) egovMap.get(Constants.USER_mobile)).equals(oldUser.getMobile())) {
+                oldUser.setMobile((String) egovMap.get(Constants.USER_mobile));
+            }
+            if (!((String) egovMap.get(Constants.USER_fullAddr)).equals(oldUser.getFullAddr())) {
+                oldUser.setFullAddr((String) egovMap.get(Constants.USER_fullAddr));
+            }
+            int count = userService.updateUserProfileInfo(oldUser);
+            if (count == 1) {
+                result = "success";
+            } else {
+                result = "error";
+            }
+        }
+        return result;
+    }
+    @PostMapping("/app/my/updateCompany.do")
+    @ResponseBody
+    public String updateUserCompany(@RequestBody UserVO userVO, HttpServletRequest req) throws Exception {
+        String result = "";
+        if (SessionUtils.isLogin(req)) {
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            EgovMap ego = new EgovMap();
+            ego.put(Constants.USER_idKey, sessionVO.getIdKey());
+            UserVO oldUser = userService.selectUserInfo(ego);
+            //UserVO userVO = getUserFormReq(req);
+            userVO.setUserKey(oldUser.getIdKey());
+            int count = userService.updateUserCompany(userVO);
+            if (count == 1) {
+                result = "success";
+            } else {
+                result = "error";
+            }
+        }
+        return result;
+    }
 
-	@GetMapping("/app/my/profile_edit.do")
-	public String profileEdit(HttpServletRequest req, ModelMap model) throws Exception {
+    @ModelAttribute
+    public void addModelMap(ModelMap model) throws Exception {
+        model.addAttribute("s3Url", Constants.S3_URL);
+    }
+    private UserVO getUserFormReq(HttpServletRequest req) {
+        UserVO user = new UserVO();
+        user.setUserId(req.getParameter("userId"));
+        user.setUserType(req.getParameter("userType"));
+        user.setEmail(req.getParameter("email"));
+        user.setBankCode(req.getParameter("bankCode"));
+        user.setBankCount(req.getParameter("bankCount"));
+        user.setBankName(req.getParameter("bankName"));
+        user.setBizNo(req.getParameter("bizNo"));
+        user.setCompany(req.getParameter("company"));
+        user.setFirstAddr(req.getParameter("firstAddr"));
+        user.setFullAddr(req.getParameter("fullAddr"));
+        user.setMobile(req.getParameter("mobile"));
+        user.setPassword(req.getParameter("password"));
+        user.setPostCode(req.getParameter("postCode"));
+        user.setProductType(Arrays.asList(req.getParameter("productType")));
+        user.setStyleList(Arrays.asList(req.getParameter("styleList")));
+        user.setUserName(req.getParameter("userName"));
+        user.setMarketingAgree(req.getParameter("marketingAgree"));
+        user.setCheckAgree1(req.getParameter("checkAgree1"));
+        user.setCheckAgree2(req.getParameter("checkAgree2"));
+        return user;
+    }
 
-		if (SessionUtils.isLogin(req)) {
+    @PostMapping("/app/my/profile/look_thum.do")
+    @ResponseBody
+    public List<EgovMap> profileLookThum(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
 
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
+        List<EgovMap> lookList = null;
 
-			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-			//System.out.println("AA "+profileInfo.get("country"));
-			log.debug("AA "+profileInfo.get("country"));
-
-			model.addAttribute("profileInfo", profileInfo);
-		}
-
-		return "my/profile_edit.app";
-	}
-
-	@PostMapping("/app/my/profile_edit.do")
-	@ResponseBody
-	public String profileEdit(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
-
-		String pathPrefix = "pf_Images/";
-		String destinationFile = "";
-		
-		if (SessionUtils.isLogin(req)) {
-
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-
-			profileMap.put("idKey", sessionVO.getIdKey());
-			
-			if(profileMap.get("image") != null) {
-
-				String imageUrl = profileMap.get("image").toString();
-				S3Utils.init();
-				
-				destinationFile = FileUtils.Base64ToDestinationFile("userId",imageUrl,pathPrefix);
-				profileMap.put("imageUrl", destinationFile);
-				
-				S3Utils.uploadFile(destinationFile, Base64.decode(imageUrl,Base64.NO_WRAP));
-				
-				myService.updateMyProfileInfo(profileMap);
-				
-				return destinationFile;
-				
-			} else {
-				boolean isSuccess = myService.updateMyProfileInfo(profileMap);
-
-				if (isSuccess) {
-					return "t";
-				} else {
-					return "f";
-				}
-			}
-		}
-
-		return "f";
-
-	}
-
-	@PostMapping("/app/my/follow_edit.do")
-	@ResponseBody
-	public String followEdit(@RequestBody EgovMap followMap, HttpServletRequest req) throws Exception {
-
-		String type = (String) followMap.get("type");
-		boolean isSuccess = false;
-		
-		if (SessionUtils.isLogin(req)) {
-			
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			UserVO userVO = userService.selectUserInfo(followMap);
-			
-
-			EgovMap egovMap = new EgovMap();
-			egovMap.put("userIdKey", sessionVO.getIdKey());
-			egovMap.put("followUserIdKey", userVO.getIdKey());
-			
-			if ("insert".equals(type)) {
-				isSuccess = myService.insertMyFollwInfo(egovMap);
-			} else if ("delete".equals(type)) {
-				isSuccess = myService.deleteMyFollwInfo(egovMap);
-			}
-		}
-		
-		if (isSuccess) {
-			return "t";
-		} else {
-			return "f";
-		}
-	}
-	
-	@GetMapping("/app/my/follow.do")
-	public String follow(@RequestParam(required = true) String id, ModelMap model) throws Exception {
-		
-		EgovMap egovMap = new EgovMap();
-		egovMap.put("userId", id);
-
-		UserVO userVO = userService.selectUserInfo(egovMap);
-		EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
-		
-		model.addAttribute("profileInfo", profileInfo);
-		
-		return "my/follow.app";
-	}
-	
-	@GetMapping("/app/my/follow_div.do")
-	public String followDiv() throws Exception {
-		return "app/my/follow_div";
-	}
-	
-	@PostMapping("/app/my/followList.do")
-	@ResponseBody
-	public EgovMap followList(@RequestBody EgovMap egovMap,HttpServletRequest req) throws Exception {
-		
-		int pageStart = (int)egovMap.get("pageStart");
-		String type = (String) egovMap.get("type");
-		
-		egovMap.put("pageStart", pageStart * Constants.APP_FOLLOW_PAGE_SIZE);
-		egovMap.put("pageSize", Constants.APP_FOLLOW_PAGE_SIZE);
-		
-		if ("fwers".equals(type)) {
-			egovMap.put("type","fwers");
-		} else if ("fwing".equals(type)) {
-			egovMap.put("type","fwing");
-		}
-		
-		UserVO userVO = userService.selectUserInfo(egovMap);
-		egovMap.put("idKey", userVO.getIdKey());
-		
-		if (SessionUtils.isLogin(req)) {
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-			egovMap.put("sessionIdKey", sessionVO.getIdKey());
-		}
-		
-		EgovMap followCountMap = myService.selectMyFollowCount(egovMap);
-		List<EgovMap> followList = myService.selectMyFollowList(egovMap);
-		
-		EgovMap resultMap = new EgovMap();
-		resultMap.put("followCountMap", followCountMap);
-		resultMap.put("followList", followList);
-		
-		return resultMap;
-	}
-
-	@GetMapping("/app/my/model_set.do")
-	public String modelList(HttpServletRequest req, ModelMap model) throws Exception {
-
-		if (SessionUtils.isLogin(req)) {
-
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-
-			EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
-
-			model.addAttribute("profileInfo", profileInfo);
-
-			List<EgovMap> userModelInfoList = myService.selectUserModelInfo(sessionVO.getIdKey());
-
-			model.addAttribute("userModelInfoList",userModelInfoList);
-
-			log.info("userModelInfo" + userModelInfoList);
-		}
-		return "my/model_set.app";
-	}
-
-	@PostMapping("/app/my/updateUserModelMap.do")
-	@ResponseBody
-	public String updateUserModelMap(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
-
-		if (SessionUtils.isLogin(req)) {
-
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
-
-			profileMap.put("idKey", sessionVO.getIdKey());
-
-			boolean isSuccess = myService.updateUserModelMap(profileMap);
-
-			if (isSuccess) {
-				return "t";
-			} else {
-				return "f";
-			}
-		}
-
-		return "f";
-
-	}
-
-	@GetMapping("/app/my/model_reg1.do")
-	public String modelReg2(HttpServletRequest req, ModelMap model) throws Exception {
-
-		if (SessionUtils.isLogin(req)) {
-
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
+        int pageStart = (int) egovMap.get("pageStart");
+        egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
+        egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
 
 
-		}
-		return "my/model_reg1.app";
-	}
+        if ("".equals(egovMap.get("userId"))) {
+            if (SessionUtils.isLogin(req)) {
 
-	@GetMapping("/app/my/model_reg2.do")
-	public String modelReg1(HttpServletRequest req, ModelMap model) throws Exception {
+                SessionVO sessionVO = SessionUtils.getSessionData(req);
 
-		if (SessionUtils.isLogin(req)) {
+                egovMap.put("idKey", sessionVO.getIdKey());
 
-			SessionVO sessionVO = SessionUtils.getSessionData(req);
+                lookList = lookService.selectLookProfileList(egovMap);
+            }
+        } else {
 
-		}
-		return "my/model_reg2.app";
-	}
+            String userId = (String) egovMap.get("userId");
 
-	@PostMapping("/app/my/modelregist.do")
-	@ResponseBody
-	public String lookRegist(@RequestBody ModelVO modelVO, HttpServletRequest req) throws Exception {
-		if (SessionUtils.isLogin(req)) {
-			modelVO.setUserKey(SessionUtils.getSessionData(req).getIdKey());
-			myService.insertModel(modelVO);
+            if (!CommonUtils.isNumeric(userId)) {
+                UserVO userVO = userService.selectUserInfo(egovMap);
 
-		}
-		return "";
-	}
-	
+                egovMap.put("idKey", userVO.getIdKey());
+
+                lookList = lookService.selectLookProfileList(egovMap);
+            }
+        }
+        return lookList;
+    }
+
+
+    @PostMapping("/app/my/profile/look_list.do")
+    @ResponseBody
+    public List<EgovMap> profileLookList(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+
+        List<EgovMap> lookList = null;
+
+        int pageStart = (int) egovMap.get("pageStart");
+        egovMap.put("pageStart", pageStart * Constants.APP_LOOK_PAGE_SIZE);
+        egovMap.put("pageSize", Constants.APP_LOOK_PAGE_SIZE);
+
+
+        String userId = (String) egovMap.get("userId");
+
+        if (!CommonUtils.isNumeric(userId)) {
+            UserVO userVO = userService.selectUserInfo(egovMap);
+
+            egovMap.put("idKey", userVO.getIdKey());
+
+            if (SessionUtils.isLogin(req)) {
+                SessionVO sessionVO = SessionUtils.getSessionData(req);
+                egovMap.put("sessionIdKey", sessionVO.getIdKey());
+            }
+
+            lookList = lookService.selectLookProfileList(egovMap);
+        }
+
+        return lookList;
+    }
+
+    @PostMapping("/app/my/profile/look_{clickedBtn}_edit.do")
+    @ResponseBody
+    public String profileLookCoolAndScrapEdit(@RequestBody EgovMap egovMap, HttpServletRequest req, @PathVariable String clickedBtn) throws Exception {
+
+        String type = (String) egovMap.get("type");
+        boolean isSuccess = false;
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            egovMap.put("userIdKey", sessionVO.getIdKey());
+
+
+            if ("cool".equals(clickedBtn)) {
+
+                if ("insert".equals(type)) {
+                    isSuccess = lookService.insertLookCoolInfo(egovMap);
+                } else if ("delete".equals(type)) {
+                    isSuccess = lookService.deleteLookCoolInfo(egovMap);
+                }
+
+            } else if ("scrap".equals(clickedBtn)) {
+
+                if ("insert".equals(type)) {
+                    isSuccess = lookService.insertLookScrapInfo(egovMap);
+                } else if ("delete".equals(type)) {
+                    isSuccess = lookService.deleteLookScrapInfo(egovMap);
+                }
+
+            }
+        }
+
+        if (isSuccess) {
+            return "t";
+        } else {
+            return "f";
+        }
+    }
+
+    @GetMapping("/app/my/profile/look_comment.do")
+    public String profileLookComment(ModelMap model, HttpServletRequest req) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+            model.addAttribute("ajaxUrl", "/app/my/profile/look_comment.do");
+            model.addAttribute("profileInfo", profileInfo);
+        }
+
+        return "look/look_comment.app";
+    }
+
+    @PostMapping("/app/my/profile/look_comment.do")
+    @ResponseBody
+    public List<EgovMap> profileLookComment(@RequestBody EgovMap egovMap) throws Exception {
+
+        int pageStart = (int) egovMap.get("pageStart");
+        egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+        egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+
+        List<EgovMap> lookList = lookService.selectLookCommentList(egovMap);
+
+        return lookList;
+    }
+
+    @PostMapping("/app/my/profile/add_look_comment.do")
+    @ResponseBody
+    public String profileAddLookComment(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            egovMap.put("userIdKey", sessionVO.getIdKey());
+
+            boolean isSuccess = lookService.insertLookCommentInfo(egovMap);
+
+            if (isSuccess) {
+                return "t";
+            } else {
+                return "f";
+            }
+        }
+
+        return "f";
+    }
+
+    @GetMapping("/app/my/profile/look_cool.do")
+    public String profileLookCool(ModelMap model, HttpServletRequest req) throws Exception {
+        return "look/look_cool.app";
+    }
+
+    @PostMapping("/app/my/profile/look_cool.do")
+    @ResponseBody
+    public List<EgovMap> profileLookCool(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+
+        int pageStart = (int) egovMap.get("pageStart");
+        egovMap.put("pageStart", pageStart * Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+        egovMap.put("pageSize", Constants.APP_LOOK_COMMENT_PAGE_SIZE);
+
+        if (SessionUtils.isLogin(req)) {
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            egovMap.put("sessionIdKey", sessionVO.getIdKey());
+        }
+
+        List<EgovMap> cooList = lookService.selectLookCoolList(egovMap);
+
+        return cooList;
+    }
+
+    @GetMapping("/app/my/profile_edit.do")
+    public String profileEdit(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+            //System.out.println("AA "+profileInfo.get("country"));
+            log.debug("AA " + profileInfo.get("country"));
+
+            model.addAttribute("profileInfo", profileInfo);
+        }
+
+        return "my/profile_edit.app";
+    }
+
+    @PostMapping("/app/my/profile_edit.do")
+    @ResponseBody
+    public String profileEdit(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
+
+        String pathPrefix = "pf_Images/";
+        String destinationFile = "";
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            profileMap.put("idKey", sessionVO.getIdKey());
+
+            if (profileMap.get("image") != null) {
+
+                String imageUrl = profileMap.get("image").toString();
+                S3Utils.init();
+
+                destinationFile = FileUtils.Base64ToDestinationFile("userId", imageUrl, pathPrefix);
+                profileMap.put("imageUrl", destinationFile);
+
+                S3Utils.uploadFile(destinationFile, Base64.decode(imageUrl, Base64.NO_WRAP));
+
+                myService.updateMyProfileInfo(profileMap);
+
+                return destinationFile;
+
+            } else {
+                boolean isSuccess = myService.updateMyProfileInfo(profileMap);
+
+                if (isSuccess) {
+                    return "t";
+                } else {
+                    return "f";
+                }
+            }
+        }
+
+        return "f";
+
+    }
+
+    @PostMapping("/app/my/follow_edit.do")
+    @ResponseBody
+    public String followEdit(@RequestBody EgovMap followMap, HttpServletRequest req) throws Exception {
+
+        String type = (String) followMap.get("type");
+        boolean isSuccess = false;
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            UserVO userVO = userService.selectUserInfo(followMap);
+
+
+            EgovMap egovMap = new EgovMap();
+            egovMap.put("userIdKey", sessionVO.getIdKey());
+            egovMap.put("followUserIdKey", userVO.getIdKey());
+
+            if ("insert".equals(type)) {
+                isSuccess = myService.insertMyFollwInfo(egovMap);
+            } else if ("delete".equals(type)) {
+                isSuccess = myService.deleteMyFollwInfo(egovMap);
+            }
+        }
+
+        if (isSuccess) {
+            return "t";
+        } else {
+            return "f";
+        }
+    }
+
+    @GetMapping("/app/my/follow.do")
+    public String follow(@RequestParam(required = true) String id, ModelMap model) throws Exception {
+
+        EgovMap egovMap = new EgovMap();
+        egovMap.put("userId", id);
+
+        UserVO userVO = userService.selectUserInfo(egovMap);
+        EgovMap profileInfo = myService.selectMyProfileInfo(userVO.getIdKey());
+
+        model.addAttribute("profileInfo", profileInfo);
+
+        return "my/follow.app";
+    }
+
+    @GetMapping("/app/my/follow_div.do")
+    public String followDiv() throws Exception {
+        return "app/my/follow_div";
+    }
+
+    @PostMapping("/app/my/followList.do")
+    @ResponseBody
+    public EgovMap followList(@RequestBody EgovMap egovMap, HttpServletRequest req) throws Exception {
+
+        int pageStart = (int) egovMap.get("pageStart");
+        String type = (String) egovMap.get("type");
+
+        egovMap.put("pageStart", pageStart * Constants.APP_FOLLOW_PAGE_SIZE);
+        egovMap.put("pageSize", Constants.APP_FOLLOW_PAGE_SIZE);
+
+        if ("fwers".equals(type)) {
+            egovMap.put("type", "fwers");
+        } else if ("fwing".equals(type)) {
+            egovMap.put("type", "fwing");
+        }
+
+        UserVO userVO = userService.selectUserInfo(egovMap);
+        egovMap.put("idKey", userVO.getIdKey());
+
+        if (SessionUtils.isLogin(req)) {
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            egovMap.put("sessionIdKey", sessionVO.getIdKey());
+        }
+
+        EgovMap followCountMap = myService.selectMyFollowCount(egovMap);
+        List<EgovMap> followList = myService.selectMyFollowList(egovMap);
+
+        EgovMap resultMap = new EgovMap();
+        resultMap.put("followCountMap", followCountMap);
+        resultMap.put("followList", followList);
+
+        return resultMap;
+    }
+
+    @GetMapping("/app/my/model_set.do")
+    public String modelList(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            EgovMap profileInfo = myService.selectMyProfileInfo(sessionVO.getIdKey());
+
+            model.addAttribute("profileInfo", profileInfo);
+
+            List<EgovMap> userModelInfoList = myService.selectUserModelInfo(sessionVO.getIdKey());
+
+            model.addAttribute("userModelInfoList", userModelInfoList);
+
+            log.info("userModelInfo" + userModelInfoList);
+        }
+        return "my/model_set.app";
+    }
+
+    @PostMapping("/app/my/updateUserModelMap.do")
+    @ResponseBody
+    public String updateUserModelMap(@RequestBody EgovMap profileMap, HttpServletRequest req) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+            profileMap.put("idKey", sessionVO.getIdKey());
+
+            boolean isSuccess = myService.updateUserModelMap(profileMap);
+
+            if (isSuccess) {
+                return "t";
+            } else {
+                return "f";
+            }
+        }
+
+        return "f";
+
+    }
+
+    @GetMapping("/app/my/model_reg1.do")
+    public String modelReg2(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+
+        }
+        return "my/model_reg1.app";
+    }
+
+    @GetMapping("/app/my/model_reg2.do")
+    public String modelReg1(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+
+        }
+        return "my/model_reg2.app";
+    }
+
+    @PostMapping("/app/my/modelregist.do")
+    @ResponseBody
+    public String lookRegist(@RequestBody ModelVO modelVO, HttpServletRequest req) throws Exception {
+        if (SessionUtils.isLogin(req)) {
+            modelVO.setUserKey(SessionUtils.getSessionData(req).getIdKey());
+            myService.insertModel(modelVO);
+
+        }
+        return "";
+    }
+
 }

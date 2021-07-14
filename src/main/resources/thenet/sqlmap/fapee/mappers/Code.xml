@@ -2,14 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.co.thenet.fapee.home.service.impl.CodeMapper">
-	
-	<select id="selectCodeList" resultType="kr.co.thenet.fapee.common.model.CodeVO">
-		SELECT grp_code_no
-			, code_no
-			, code_nm
-		FROM df_comm_code
-		WHERE grp_code_no = #{grp}
-		ORDER BY sort_order is null, sort_order, grp_code_no, code_no
-	</select>
-	
+
+    <select id="selectCodeList" resultType="kr.co.thenet.fapee.common.model.CodeVO">
+        SELECT grp_code_no
+             , code_no
+             , code_nm
+             , code_data
+             , code_data_desc
+        FROM df_comm_code
+        WHERE grp_code_no = #{grp}
+        AND   use_yn = 'Y'
+        ORDER BY sort_order is null, sort_order, grp_code_no, code_no
+    </select>
 </mapper>

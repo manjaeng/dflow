@@ -3,13 +3,10 @@ package kr.co.thenet.fapee.common.model;
 import java.util.Date;
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
-@Getter
-@Setter
-@ToString
+@Data
+@NoArgsConstructor
 public class UserVO {
 	private long idKey;
 	private long userKey;
@@ -52,4 +49,5 @@ public class UserVO {
 	private String rePassword ;
 	private List<String> productType;
 	private List<String> styleList;
+
 }

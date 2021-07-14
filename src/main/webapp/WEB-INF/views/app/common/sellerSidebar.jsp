@@ -13,43 +13,43 @@
       <li class="nav-item">
         <a class="nav-link" href="/app/my/model_reg1.do">
           <i class="material-icons">dashboard</i>
-          <p>상품관리</p>
+          <p style="font-weight: bold">상품관리</p>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/app/my/model_reg2.do">
           <i class="material-icons">add_to_photos</i>
-          <p>상품등록</p>
+          <p style="font-weight: bold">상품등록</p>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/app/my/profile.do">
           <i class="material-icons">person</i>
-          <p>계정관리</p>
+          <p style="font-weight: bold">계정관리</p>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="./tables.html">
           <i class="material-icons">content_paste</i>
-          <p>주문현황</p>
+          <p style="font-weight: bold">주문현황</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="./typography.html">
           <i class="material-icons">local_shipping</i>
-          <p>배송현황</p>
+          <p style="font-weight: bold">배송현황</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="./notifications.html">
           <i class="material-icons">notifications</i>
-          <p>공지사항</p>
+          <p style="font-weight: bold">공지사항</p>
         </a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="./rtl.html">
           <i class="material-icons">language</i>
-          <p>Q/A</p>
+          <p style="font-weight: bold">Q/A</p>
         </a>
       </li>
 

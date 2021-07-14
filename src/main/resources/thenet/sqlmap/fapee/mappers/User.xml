@@ -2,329 +2,343 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="kr.co.thenet.fapee.user.service.impl.UserMapper">
-	
-	<select id="selectUserList" resultType="userVO">
-		SELECT *
-		  FROM fp_user
-	</select>
-	
-	<select id="selectUserInfo" resultType="userVO" parameterType="egovMap">
-		SELECT idKey
-		      ,userId
-		      ,password
-		      ,userType
-		      ,mobile
-		      ,email
-		      ,lastLoginDate
-		      ,joinDate
-		      ,snsType
-		      ,snsId
-		      ,deviceId
-		      ,status
-		      ,adminYn
-		  FROM fp_user
-		 WHERE 1 = 1
-	 	<if test="idKey != null and idKey != ''">
-	 		AND idKey = #{idKey}
-	 	</if>
-	 	<if test="userId != null and userId != ''">
-	 		AND userId = #{userId}
-	 	</if>
-	 	<if test="password != null and password != ''">
-	 		AND password = #{password}
-	 	</if>
-	 	<if test="mobile != null and mobile != ''">
-	 		AND mobile = #{mobile}
-	 	</if>
-	 	 LIMIT 1
-	</select>
-	
-	<insert id="insertUserInfo" parameterType="userVO" useGeneratedKeys="true" keyProperty="idKey">
-		INSERT into fp_user(
-			 userId
-			,password
-			,userType
-			,mobile
-			,email
-			,lastLoginDate
-			,joinDate
-			,deviceId
-			,status
-			,adminYn
-		) VALUES (
-			 #{userId}
-			,#{password}
-			,#{userType}
-			,#{mobile}
-			,#{email}
-			,now()
-			,now()
-			,#{deviceId}
-			,#{status}
-			,#{adminYn}
-		)
-	</insert>
-	
-	<select id="selectCountUserFilterInfo" parameterType="egovMap" resultType="egovMap">
-		SELECT	COUNT(*) AS count
-		FROM	fp_user_filter
-		WHERE	deviceId =  #{deviceId}
-		AND		gender = #{gender}
-		AND		country = #{country}
-	</select>
-	
-	<insert id="insertUserFilterInfo" parameterType="egovMap" useGeneratedKeys="true" keyProperty="idKey">
-		INSERT into fp_user_filter(
-			 deviceId
-			,gender
-			,country
-		) VALUES (
-			 #{deviceId}
-			,#{gender}
-			,#{country}
-		)
-	</insert>
-	
-	<insert id="insertUserStyleList" parameterType="egovMap">
-		INSERT into fp_style_choose(
-			 styleIdKey
-			,userFilterIdKey
-		) VALUES 
-		<foreach collection="styleArray" item="item" index="i" separator=",">
-			(#{item},#{userFilterIdKey})
-       	</foreach>
-		
-	</insert>
-	
-	<update id="updateUserLastLoginInfo">
-		UPDATE fp_user
-		   SET lastLoginDate = now()
-		 WHERE idKey = #{_parameter}   
-	</update>
-	
-	<update id="updateUserFilterDeviceInfo" parameterType="userVO">
-		UPDATE fp_user_filter
-		   SET userIdKey = #{idKey}
-		 WHERE idKey = #{userFilterIdKey}
-	</update>
 
-	<insert id="insertUserProfileInfo" parameterType="userVO">
-		INSERT into fp_user_profile(
-			userIdKey
-		   ,nickName
-		) VALUES (
-			#{idKey}
-		   ,#{userName}
-		)
-	</insert>
-	
-	<update id="updateUserFilterCountryInfo" parameterType="egovMap">
-		UPDATE fp_user_filter
-		   SET country = #{country}
-		 WHERE userIdKey = #{idKey}
-	</update>
-	
-	<update id="updateUserInfo" parameterType="egovMap">
-		UPDATE fp_user
-		<trim prefix="SET" prefixOverrides=",">
-			<if test="status != null and status != ''">,status = #{status}</if>
-			<if test="password != null and password != ''">,password = #{password}</if>
-		</trim>
-		WHERE 1=1
-		  <if test="idKey != null and idKey != ''">
-		  AND idKey = #{idKey}
-		  </if>
-		  <if test="mobile != null and mobile != ''">
-		  AND mobile = #{mobile}
-		  </if>
-	</update>
-	<insert id="insertUserModel" parameterType="egovMap">
-		INSERT into fp_user_model(
-                  modelName , 
-                  userKey   ,
-                  seq       ,
-                  height    ,    
-  				  age       ,       
-  				  fit       ,       
-  				  bra1      ,     
-  			      bra2      ,     
-                  bottom    
-		) VALUES (
-				  #{modelName} , 
-				  #{userKey}   ,
-				  #{seq}       ,
-                  #{height}    ,    
-  				  #{age}       ,       
-  				  #{fit}       ,       
-  				  #{bra1}      ,     
-  			      #{bra2}      ,     
-                  #{bottom}    
-		)
-	</insert>
-	<insert id="updatetUserCompany" parameterType="userVO">
-		UPDATE  df_user_company
-		SET
-				bizNo = #{bizNo},
-				comPhone = #{comPhone},
-				postCode = #{postCode},
-				fullAddr =	#{fullAddr},
-				firstAddr = #{firstAddr},
-				secondAddr =	#{secondAddr},
-				bankCode = 	#{bankCode},
-				bankName = 	#{bankName},
-				bankCount =	#{bankCount},
-				fileName = #{fileName},
-				fileUrl	 =	#{fileUrl}
-		WHERE 	idKey = #{idKey}
-	</insert>
-	<select id="selectUserCompany" parameterType="userVO" resultType="userVO">
-		select userkey,
-			   bizNo,
-			   company,
-			   comPhone,
-			   postCode,
-			   fullAddr,
-			   firstAddr,
-			   secondAddr,
-			   bankCode,
-			   bankName,
-			   bankCount,
-			   fileName,
-			   fileUrl
-		FROM df_user_company
-		WHERE idKey = #{idKey}
-	</select>
-	<update id="insertUserCompany" parameterType="userVO">
-		INSERT into df_user_company(
-			userkey,
-			bizNo,
-			company,
-			comPhone,
-			postCode,
-			fullAddr,
-			firstAddr,
-			secondAddr,
-			bankCode,
-			bankName,
-			bankCount,
-			fileName,
-			fileUrl
-		)VALUES (
-					#{userKey},
-					#{bizNo},
-					#{company},
-					#{comPhone},
-					#{postCode},
-					#{fullAddr},
-					#{firstAddr},
-					#{secondAddr},
-					#{bankCode},
-					#{bankName},
-					#{bankCount},
-					#{fileName},
-					#{fileUrl}
-				)
-	</update>
-	<insert id="insertDfUserCodeMap" parameterType="egovMap">
-		INSERT into DF_USER_CODE_MAP(
-		                             userKey,
-		                             grp_code_no,
-		                             code_no
-		)VALUES (
-		         #{userKey},
-		         #{grpCodeNo},
-		         #{codeNo}
-				)
+    <select id="selectUserList" resultType="userVO">
+        SELECT *
+        FROM fp_user
+    </select>
 
+    <select id="selectUserInfo" resultType="userVO" parameterType="egovMap">
+        SELECT idKey
+        ,userId
+        ,password
+        ,userType
+        ,mobile
+        ,email
+        ,lastLoginDate
+        ,joinDate
+        ,snsType
+        ,snsId
+        ,deviceId
+        ,status
+        ,adminYn
+        ,userName
+        ,fullAddr
+        FROM fp_user
+        WHERE 1 = 1
+        <if test="idKey != null and idKey != ''">
+            AND idKey = #{idKey}
+        </if>
+        <if test="userId != null and userId != ''">
+            AND userId = #{userId}
+        </if>
+        <if test="password != null and password != ''">
+            AND password = #{password}
+        </if>
+        <if test="mobile != null and mobile != ''">
+            AND mobile = #{mobile}
+        </if>
+        LIMIT 1
+    </select>
 
-	</insert>
-	<delete id="deleteDfuserCodeMap" parameterType="egovMap">
-		DELETE FROM DF_USER_CODE_MAP
-		WHERE userKey = #{userKey}
-	</delete>
-	
-	<delete id="deleteUserModel" parameterType="egovMap">
-		DELETE FROM fp_user_model
-         WHERE lookIdKey = #{lookIdKey} AND userKey = #{userKey}
-	</delete>
-	
-	<select id="selectUserModel" parameterType="egovMap" resultType="egovMap">
-		SELECT    idKey     ,
-				  modelName , 
-                  userKey   ,
-                  seq       ,
-                  height    ,    
-  				  age       ,       
-  				  fit       ,       
-  				  bra1      ,     
-  			      bra2      ,     
-                  bottom 
-		  FROM fp_user_model lc
-		  WHERE 1 = 1
-		  <if test='password != null'>
-	 		AND idKey = #{idKey}
-	 	 </if>
-	 	 <if test='password != null'>
-	 		AND userKey = #{userKey}
-	 	</if>
-		 ORDER BY lc.seq 
-		 
-	</select>
-	<insert id="insertUserModelMap" parameterType="egovMap">
-		INSERT into fp_look_porduct_map(
-				  lookIdKey   ,
-				  producIdKey ,
-				  xPoint      ,
-				  yPoint      ,
-				  productNum  ,
-				  productName ,
-				  produtPrice ,
-				  ProductUrl  ,
-				  useYn       ,
-				  createDate  ,
-		) VALUES (
-				  #{lookIdKey}   ,
-				  #{producIdKey} ,
-				  #{xPoint}      ,
-				  #{yPoint}      ,
-				  #{productNum}  ,
-				  #{productName} ,
-				  #{produtPrice} ,
-				  #{ProductUrl}  ,
-				  'Y'            ,
-			      now()
-		)
-	</insert>
-	
-	<delete id="deleteUserModelMap" parameterType="egovMap">
-		DELETE FROM fp_look_porduct_map
-         WHERE lookIdKey = #{lookIdKey} AND producIdKey = #{producIdKey}
-	</delete>
-	
-	<select id="selectUserModelMap" parameterType="egovMap" resultType="egovMap">
-		SELECT    idKey       ,
-				  lookIdKey   ,
-				  producIdKey ,
-				  xPoint      ,
-				  yPoint      ,
-				  productNum  ,
-				  productName ,
-				  produtPrice ,
-				  ProductUrl  ,
-				  useYn       ,
-				  createDate  ,
-		  FROM fp_look_porduct_map lc
-		  WHERE lc.producIdKey = #{producIdKey}
-		 ORDER BY lc.productNum 
-		 <if test="pageStart != null and pageSize != null">
-		 	LIMIT #{pageStart}, #{pageSize}
-		 </if>
-	</select>
-	
-	<update id="updateUserWithdrawal">
-		UPDATE fp_user SET 
-			  status			= '9'
-			, leaveReason		= #{leaveReason}
-		 WHERE idKey = #{idKey}   
-	</update>
+    <insert id="insertUserInfo" parameterType="userVO" useGeneratedKeys="true" keyProperty="idKey">
+        INSERT into fp_user( userId
+                           , password
+                           , userType
+                           , mobile
+                           , email
+                           , lastLoginDate
+                           , joinDate
+                           , deviceId
+                           , status
+                           , adminYn
+                           , userName
+                           , fullAddr)
+        VALUES ( #{userId}
+               , #{password}
+               , #{userType}
+               , #{mobile}
+               , #{email}
+               , now()
+               , now()
+               , #{deviceId}
+               , #{status}
+               , #{adminYn}
+               , #{userName}
+               , #{fullAddr})
+    </insert>
+
+    <select id="selectCountUserFilterInfo" parameterType="egovMap" resultType="egovMap">
+        SELECT COUNT(*) AS count
+        FROM fp_user_filter
+        WHERE deviceId = #{deviceId}
+          AND gender = #{gender}
+          AND country = #{country}
+    </select>
+
+    <select id="isDuplicateCheck" parameterType="egovMap" resultType="egovMap">
+        SELECT COUNT(*) AS count
+        FROM fp_user
+        WHERE userId = #{userId}
+    </select>
+
+    <insert id="insertUserFilterInfo" parameterType="egovMap" useGeneratedKeys="true" keyProperty="idKey">
+        INSERT into fp_user_filter( deviceId
+                                  , gender
+                                  , country)
+        VALUES ( #{deviceId}
+               , #{gender}
+               , #{country})
+    </insert>
+
+    <insert id="insertUserStyleList" parameterType="egovMap">
+        INSERT into fp_style_choose(
+        styleIdKey
+        ,userFilterIdKey
+        ) VALUES
+        <foreach collection="styleArray" item="item" index="i" separator=",">
+            (#{item},#{userFilterIdKey})
+        </foreach>
+
+    </insert>
+
+    <update id="updateUserLastLoginInfo">
+        UPDATE fp_user
+        SET lastLoginDate = now()
+        WHERE idKey = #{_parameter}
+    </update>
+
+    <update id="updateUserFilterDeviceInfo" parameterType="userVO">
+        UPDATE fp_user_filter
+        SET userIdKey = #{idKey}
+        WHERE idKey = #{userFilterIdKey}
+    </update>
+
+    <insert id="insertUserProfileInfo" parameterType="userVO">
+        INSERT into fp_user_profile( userIdKey
+                                   , nickName)
+        VALUES ( #{idKey}
+               , #{userName})
+    </insert>
+
+    <update id="updateUserFilterCountryInfo" parameterType="egovMap">
+        UPDATE fp_user_filter
+        SET country = #{country}
+        WHERE userIdKey = #{idKey}
+    </update>
+
+    <update id="updateUserInfo" parameterType="egovMap">
+        UPDATE fp_user
+        <trim prefix="SET" prefixOverrides=",">
+            <if test="status != null and status != ''">,status = #{status}</if>
+            <if test="password != null and password != ''">,password = #{password}</if>
+        </trim>
+        WHERE 1=1
+        <if test="idKey != null and idKey != ''">
+            AND idKey = #{idKey}
+        </if>
+        <if test="mobile != null and mobile != ''">
+            AND mobile = #{mobile}
+        </if>
+    </update>
+    <update id="updateUserProfileInfo" parameterType="userVO">
+        UPDATE fp_user
+        <trim prefix="SET" prefixOverrides=",">
+            <if test="userType != null and userType != ''">,userType = #{userType}</if>
+            <if test="mobile != null and mobile != ''">,mobile = #{mobile}</if>
+            <if test="email != null and email != ''">,email = #{email}</if>
+            <if test="fullAddr != null and fullAddr != ''">,fullAddr = #{fullAddr}</if>
+            <if test="userName != null and userName != ''">,userName = #{userName}</if>
+        </trim>
+        WHERE idKey = #{idKey}
+    </update>
+    <insert id="insertUserModel" parameterType="egovMap">
+        INSERT into fp_user_model(modelName,
+                                  userKey,
+                                  seq,
+                                  height,
+                                  age,
+                                  fit,
+                                  bra1,
+                                  bra2,
+                                  bottom)
+        VALUES (#{modelName},
+                #{userKey},
+                #{seq},
+                #{height},
+                #{age},
+                #{fit},
+                #{bra1},
+                #{bra2},
+                #{bottom})
+    </insert>
+    <update id="updatetUserCompany" parameterType="userVO">
+        UPDATE df_user_company
+        SET
+        bizNo = #{bizNo},
+        comPhone = #{comPhone},
+        postCode = #{postCode},
+        fullAddr = #{fullAddr},
+        firstAddr = #{firstAddr},
+        secondAddr = #{secondAddr},
+        bankCode = #{bankCode},
+        bankName = #{bankName},
+        bankCount = #{bankCount},
+        fileName = #{fileName}
+        <if test='fileUrl != null'>
+            ,fileUrl = #{fileUrl}
+        </if>
+        WHERE userKey = #{userKey}
+    </update>
+    <select id="selectUserCompany" parameterType="userVO" resultType="userVO">
+        select userkey,
+               bizNo,
+               company,
+               comPhone,
+               postCode,
+               fullAddr,
+               firstAddr,
+               secondAddr,
+               bankCode,
+               bankName,
+               bankCount,
+               fileName,
+               fileUrl
+        FROM df_user_company
+        WHERE userKey = #{userKey}
+    </select>
+    <update id="insertUserCompany" parameterType="userVO">
+        INSERT into df_user_company(userkey,
+                                    bizNo,
+                                    company,
+                                    comPhone,
+                                    postCode,
+                                    fullAddr,
+                                    firstAddr,
+                                    secondAddr,
+                                    bankCode,
+                                    bankName,
+                                    bankCount,
+                                    fileName,
+                                    fileUrl)
+        VALUES (#{userKey},
+                #{bizNo},
+                #{company},
+                #{comPhone},
+                #{postCode},
+                #{fullAddr},
+                #{firstAddr},
+                #{secondAddr},
+                #{bankCode},
+                #{bankName},
+                #{bankCount},
+                #{fileName},
+                #{fileUrl})
+    </update>
+    <insert id="insertDfUserCodeMap" parameterType="egovMap">
+        INSERT into DF_USER_CODE_MAP(userKey,
+                                     grp_code_no,
+                                     code_no)
+        VALUES (#{userKey},
+                #{grpCodeNo},
+                #{codeNo})
+    </insert>
+    <select id="selectDfUserCodeMap" parameterType="egovMap" resultType="egovMap">
+        SELECT code_no
+        FROM DF_USER_CODE_MAP
+        WHERE userKey = #{userKey}
+          AND grp_code_no = #{grpCodeNo}
+    </select>
+    <delete id="deleteDfuserCodeMap" parameterType="egovMap">
+        DELETE
+        FROM DF_USER_CODE_MAP
+        WHERE userKey = #{userKey}
+          AND grp_code_no = #{grpCodeNo}
+    </delete>
+
+    <delete id="deleteUserModel" parameterType="egovMap">
+        DELETE
+        FROM fp_user_model
+        WHERE lookIdKey = #{lookIdKey}
+          AND userKey = #{userKey}
+    </delete>
+
+    <select id="selectUserModel" parameterType="egovMap" resultType="egovMap">
+        SELECT idKey ,
+        modelName ,
+        userKey ,
+        seq ,
+        height ,
+        age ,
+        fit ,
+        bra1 ,
+        bra2 ,
+        bottom
+        FROM fp_user_model lc
+        WHERE 1 = 1
+        <if test='password != null'>
+            AND idKey = #{idKey}
+        </if>
+        <if test='password != null'>
+            AND userKey = #{userKey}
+        </if>
+        ORDER BY lc.seq
+
+    </select>
+    <insert id="insertUserModelMap" parameterType="egovMap">
+        INSERT into fp_look_porduct_map(lookIdKey,
+                                        producIdKey,
+                                        xPoint,
+                                        yPoint,
+                                        productNum,
+                                        productName,
+                                        produtPrice,
+                                        ProductUrl,
+                                        useYn,
+                                        createDate,)
+        VALUES (#{lookIdKey},
+                #{producIdKey},
+                #{xPoint},
+                #{yPoint},
+                #{productNum},
+                #{productName},
+                #{produtPrice},
+                #{ProductUrl},
+                'Y',
+                now())
+    </insert>
+
+    <delete id="deleteUserModelMap" parameterType="egovMap">
+        DELETE
+        FROM fp_look_porduct_map
+        WHERE lookIdKey = #{lookIdKey}
+          AND producIdKey = #{producIdKey}
+    </delete>
+
+    <select id="selectUserModelMap" parameterType="egovMap" resultType="egovMap">
+        SELECT idKey ,
+        lookIdKey ,
+        producIdKey ,
+        xPoint ,
+        yPoint ,
+        productNum ,
+        productName ,
+        produtPrice ,
+        ProductUrl ,
+        useYn ,
+        createDate ,
+        FROM fp_look_porduct_map lc
+        WHERE lc.producIdKey = #{producIdKey}
+        ORDER BY lc.productNum
+        <if test="pageStart != null and pageSize != null">
+            LIMIT #{pageStart}, #{pageSize}
+        </if>
+    </select>
+
+    <update id="updateUserWithdrawal">
+        UPDATE fp_user
+        SET status      = '9'
+          , leaveReason = #{leaveReason}
+        WHERE idKey = #{idKey}
+    </update>
 </mapper>

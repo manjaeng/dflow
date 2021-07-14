@@ -20,53 +20,60 @@
                             <div class="card-header card-header-warning">
                                 <div class="nav-tabs-navigation">
                                     <div class="nav-tabs-wrapper">
-                                        <span class="nav-tabs-title">상품정보</span>
+                                        <span class="nav-tabs-title" style="font-weight: bold">상품정보</span>
                                         <ul class="nav nav-tabs" data-tabs="tabs">
                                             <li class="nav-item">
                                                 <div class="dropdown" id="sellerType">
                                                     <input type="hidden" name="userType" value="02"
                                                            id="hiddenSellerType">
                                                     <a class="btn btn-secondary dropdown-toggle" href="#none"
-                                                       id="addrDropdownSellerType" data-toggle="dropdown">
+                                                       id="addrDropdownSellerType" data-toggle="dropdown"
+                                                       aria-haspopup="true" aria-expanded="false">
                                                         <i class="material-icons">account_tree</i>
                                                         상품카테고리
                                                     </a>
-                                                    <ul class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
-                                                        <li><a class="dropdown-item seller-type" data_value="01">의류</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type" data_value="02">뷰티</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type"
-                                                               data_value="02">악세사리</a></li>
-                                                        <li><a class="dropdown-item seller-type" data_value="02">신발</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type" data_value="02">가방</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type" data_value="02">기타</a>
-                                                        </li>
-                                                    </ul>
+                                                    <div class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
+                                                        <a class="dropdown-item seller-type" data_value="01"
+                                                           href="#none">의류</a>
+                                                        <a class="dropdown-item seller-type" data_value="02"
+                                                           href="#none">뷰티</a>
+                                                        <a class="dropdown-item seller-type"
+                                                           data_value="02" href="#none">악세사리</a>
+                                                        <a class="dropdown-item seller-type" data_value="02"
+                                                           href="#none">신발</a>
+                                                        <a class="dropdown-item seller-type" data_value="02"
+                                                           href="#none">가방</a>
+                                                        <a class="dropdown-item seller-type" data_value="02"
+                                                           href="#none">기타</a>
+
+                                                    </div>
                                                 </div>
                                             </li>
                                             <li class="nav-item">
-                                                <div class="dropdown" id="producctStatus">
-                                                    <input type="hidden" name="userType" value="02"
-                                                           id="hiddenProductStatus">
-                                                    <a class="btn btn-secondary dropdown-toggle" href="#none"
-                                                       id="addrDropdownProductStatus" data-toggle="dropdown">
-                                                        <i class="material-icons">sell</i>
-                                                        상품상태
-                                                    </a>
-                                                    <ul class="dropdown-menu"
-                                                        aria-labelledby="addrDropdownProductStatus">
-                                                        <li><a class="dropdown-item seller-type" data_value="01">판매중</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type"
-                                                               data_value="02">판매중지</a></li>
-                                                        <li><a class="dropdown-item seller-type" data_value="02">종료</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item seller-type"
-                                                               data_value="02">재고없음</a></li>
-                                                    </ul>
+                                                <div class="dropdown bootstrap-select">
+                                                    <select class="selectpicker" data-size="7"  data-style="btn btn-primary" title="Single Select" tabindex="-98">
+                                                        <option class="bs-title-option" value=""></option>
+                                                        <option disabled="" selected="">상품상태</option>
+                                                        <option value="2">판매중</option>
+                                                        <option value="3">판매중지</option>
+                                                        <option value="4">판매종료</option>
+                                                        <option value="5">승인중</option>
+                                                        <option value="6">승인요청</option>
+                                                        <option value="6">재고없음</option>
+                                                    </select>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <div class="dropdown bootstrap-select">
+                                                    <select class="selectpicker" data-size="7"  data-style="btn btn-primary" title="Single Select" tabindex="-98">
+                                                        <option class="bs-title-option" value=""></option>
+                                                        <option disabled="" selected="">Single Option</option>
+                                                        <option value="2">Foobar</option>
+                                                        <option value="3">Is great</option>
+                                                        <option value="4">Is bum</option>
+                                                        <option value="5">Is wow</option>
+                                                        <option value="6">boom</option>
+                                                    </select>
                                                 </div>
                                             </li>
 
@@ -85,8 +92,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-2">
-                                        <a class="btn btn-info btn-block" href="#none" onclick="duplCheck('top','left')">
-                                            검색<div class="ripple-container"></div></a>
+                                        <a class="btn btn-info btn-block" href="#none"
+                                           onclick="duplCheck('top','left')">
+                                            검색
+                                            <div class="ripple-container"></div>
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="table-responsive">

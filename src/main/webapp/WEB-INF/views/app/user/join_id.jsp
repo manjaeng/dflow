@@ -5,7 +5,7 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 <link href="/resources/app/assets/css/material-dashboard.css" rel="stylesheet"/>
-<script src="/resources/app/js/bootstrap.js"></script>
+<!--script src="/resources/app/js/bootstrap.js"></script-->
 <div class="wrapper ">
     <%@ include file="/WEB-INF/views/app/common/sellerSidebar.jsp" %>
     <div class="main-panel">
@@ -19,86 +19,106 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title">사용자 동의</h4>
+                                    <h4 class="card-title" style="font-weight: bold">사용자 동의</h4>
                                     <p class="card-category">개인정보이용 및 사용약관에 동의해주세요.</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="accordion" id="accordionExample">
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingOne">
-                                                        <button  class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                                                aria-expanded="false" aria-controls="collapseOne">
-                                                            이용약관 동의(필수)
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapseOne" class="accordion-collapse collapse"
-                                                         aria-labelledby="headingOne"
-                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body">
-                                                            <strong>이용약관 동의(필수)</strong>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                           value='Y' name="checkAgree1">
-                                                                    <span class="form-check-sign">
+                                            <div id="accordion" role="tablist">
+                                                <div class="card card-collapse">
+                                                    <div class="card-header" role="tab" id="headingOne">
+                                                        <h6 class="mb-0">
+                                                            <a data-toggle="collapse" href="#collapseOne"
+                                                               aria-expanded="false" aria-controls="collapseOne">
+                                                                이용약관 동의(필수)
+                                                                <i class="material-icons">keyboard_arrow_down</i>
+                                                            </a>
+                                                        </h6>
+                                                    </div>
+
+                                                    <div id="collapseOne" class="collapse" role="tabpanel"
+                                                         aria-labelledby="headingOne" data-parent="#accordion">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="form-group bmd-form-group">
+                                                                    <strong>이용약관 동의(필수)</strong>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group bmd-form-group">
+                                                                    <div class="form-check">
+                                                                        <label class="form-check-label">
+                                                                            <input required="true" aria-required="true"
+                                                                                   class="form-check-input"
+                                                                                   type="checkbox"
+                                                                                   value='Y' name="checkAgree1">
+                                                                            <span class="form-check-sign">
 																	    <span class="check"></span>
 																    </span>
-                                                                    동의함
-                                                                </label>
+                                                                            동의함
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <%@ include file="/WEB-INF/views/app/user/appr1.jsp" %>
-
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingTwo">
-                                                        <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                                                aria-expanded="false" aria-controls="collapseTwo">
-                                                            개인정보 수집 동의(필수)
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapseTwo" class="accordion-collapse collapse"
-                                                         aria-labelledby="headingTwo"
-                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body">
-                                                            <strong>개인정보 수집 동의(필수)</strong>
-                                                            <div class="form-check">
-                                                                <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                           value='Y' name="checkAgree2">
-                                                                    <span class="form-check-sign">
+                                                <div class="card card-collapse">
+                                                    <div class="card-header" role="tab" id="headingTwo">
+                                                        <h6 class="mb-0">
+                                                            <a class="collapsed" data-toggle="collapse"
+                                                               href="#collapseTwo" aria-expanded="false"
+                                                               aria-controls="collapseTwo">
+                                                                개인정보 수집 동의(필수)
+                                                                <i class="material-icons">keyboard_arrow_down</i>
+                                                            </a>
+                                                        </h6>
+                                                    </div>
+                                                    <div id="collapseTwo" class="collapse" role="tabpanel"
+                                                         aria-labelledby="headingTwo" data-parent="#accordion">
+                                                        <div class="card-body">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-check">
+                                                                        <label class="form-check-label">
+                                                                            <input required="true" aria-required="true"
+                                                                                   class="form-check-input"
+                                                                                   type="checkbox"
+                                                                                   value='Y' name="checkAgree2">
+                                                                            동의함
+                                                                            <span class="form-check-sign">
 																	    <span class="check"></span>
 																    </span>
-                                                                    동의함
-                                                                </label>
+                                                                        </label>
+                                                                    </div>
+                                                                    <%@ include
+                                                                            file="/WEB-INF/views/app/user/appr2.jsp" %>
+                                                                </div>
                                                             </div>
-                                                            <%@ include file="/WEB-INF/views/app/user/appr1.jsp" %>
-
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="accordion-item">
-                                                    <h2 class="accordion-header" id="headingThree">
-                                                        <button class="accordion-button collapsed" type="button"
-                                                                data-bs-toggle="collapse"
-                                                                data-bs-target="#collapseThree" aria-expanded="false"
-                                                                aria-controls="collapseThree">
-                                                            마케팅정보 수신 동의(선택)
-                                                        </button>
-                                                    </h2>
-                                                    <div id="collapseThree" class="accordion-collapse collapse"
-                                                         aria-labelledby="headingThree"
-                                                         data-bs-parent="#accordionExample">
-                                                        <div class="accordion-body">
+                                                <div class="card card-collapse">
+                                                    <div class="card-header" role="tab" id="headingThree">
+                                                        <h6 class="mb-0">
+                                                            <a class="collapsed" data-toggle="collapse"
+                                                               href="#collapseThree" aria-expanded="false"
+                                                               aria-controls="collapseThree">
+                                                                마케팅정보 수신 동의(선택)
+                                                                <i class="material-icons">keyboard_arrow_down</i>
+                                                            </a>
+                                                        </h6>
+                                                    </div>
+                                                    <div id="collapseThree" class="collapse" role="tabpanel"
+                                                         aria-labelledby="headingThree" data-parent="#accordion">
+                                                        <div class="card-body">
                                                             <strong> 마케팅정보 수신 동의(선택)</strong> 마케팅정보 수신동의 내용
                                                             <div class="form-check">
                                                                 <label class="form-check-label">
-                                                                    <input class="form-check-input" type="checkbox"
+                                                                    <input required="true" aria-required="true"
+                                                                           class="form-check-input" type="checkbox"
                                                                            value='Y' name="marketingAgree">
                                                                     <span class="form-check-sign">
 																	    <span class="check"></span>
@@ -122,63 +142,96 @@
 
                             <div class="card">
                                 <div class="card-header card-header-primary">
-                                    <h4 class="card-title">회원정보 등록</h4>
+                                    <h4 class="card-title" style="font-weight: bold">회원정보 등록</h4>
                                     <p class="card-category">회원정보를 등록해 주세요</p>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">로그인ID</label>
-                                                <input type="text" class="form-control" name="userId">
 
+                                            <div class="form-group" id="userIdGroup">
+                                                <label class="bmd-label-floating">로그인ID</label>
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="userId"
+                                                       onkeypress="userIdKeyUp()"
+                                                >
+                                                <span class="form-control-feedback">
+                                                    <i class="material-icons">done</i>
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <a class="btn btn-info btn-block" href="#none" onclick="duplCheck('top','left')">
-                                                중복획인<div class="ripple-container"></div></a>
+                                            <a class="btn btn-info btn-sm" href="#none"
+                                               onclick="duplCheck('top','left')">
+                                                중복획인
+                                                <div class="ripple-container"></div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
+                                            <div class="form-group bmd-form-group">
+                                                <div class="dropdown bootstrap-select">
+                                                    <select class="selectpicker" data-size="7"
+                                                            data-style="btn btn-primary"
+                                                            title="Single Select" tabindex="-98">
+                                                        <option disabled="" selected="">사용자유형</option>
+                                                        <option value="01">일반회원</option>
+                                                        <option value="02">셀러회원</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!--
                                             <div class="form-group">
                                                 <div class="dropdown" id="sellerType">
-                                                    <input type="hidden" name="userType" value="02"
+                                                    <input required="true" aria-required="true" type="hidden" name="userType" value="02"
                                                            id="hiddenSellerType">
-                                                    <a class="btn btn-secondary dropdown-toggle" href=""
-                                                       id="addrDropdownSellerType" data-toggle="dropdown">
+                                                    <a class="btn btn-secondary dropdown-toggle" href="" type="button"
+                                                       id="addrDropdownSellerType" data-toggle="dropdown"
+                                                       aria-haspopup="true" aria-expanded="false">
                                                         <i class="material-icons">supervisor_account</i>
                                                         사용자 유형을 선택하세요.
                                                     </a>
-                                                    <ul class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
-                                                        <li><a class="dropdown-item seller-type"
-                                                               data_value="01">일반회원</a></li>
-                                                        <li><a class="dropdown-item seller-type"
-                                                               data_value="02">셀러회원</a></li>
-                                                    </ul>
+                                                    <div class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
+                                                        <a class="dropdown-item seller-type" heef="#none"
+                                                           data_value="01">일반회원</a>
+                                                        <a class="dropdown-item seller-type" heef="#none"
+                                                           data_value="02">셀러회원</a>
+                                                    </div>
                                                 </div>
                                             </div>
+                                            -->
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Password</label>
-                                                <input type="password" class="form-control" name="password">
+                                            <div class="form-group bmd-form-group">
+                                                <label for="examplePassword" class="bmd-label-floating">Password</label>
+                                                <input required="true" aria-required="true" id="examplePassword"
+                                                       type="password" class="form-control" name="password">
+                                                <label id="examplePassword-error" class="error"
+                                                       for="examplePassword"></label>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">Re Password</label>
-                                                <input type="Password" class="form-control" name="rePassword">
+                                            <div class="form-group bmd-form-group">
+                                                <label for="examplePassword2" class="bmd-label-floating">Confirm
+                                                    Password</label>
+                                                <input required="true" aria-required="true" id="examplePassword2"
+                                                       equalto="#examplePassword" type="Password" class="form-control"
+                                                       name="rePassword">
+                                                <label id="examplePassword-error2" class="error"
+                                                       for="examplePassword2"></label>
                                             </div>
                                         </div>
+                                        ´
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Email</label>
-                                                <input type="email" class="form-control" name="email">
+                                                <input required="true" aria-required="true" type="email"
+                                                       class="form-control" name="email">
                                             </div>
                                         </div>
                                     </div>
@@ -186,13 +239,15 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Name</label>
-                                                <input type="text" class="form-control" name="userName">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="userName">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">전화번호</label>
-                                                <input type="text" class="form-control" name="mobile">
+                                                <input required="true" aria-required="true" type="tel"
+                                                       class="form-control" name="mobile">
                                             </div>
                                         </div>
                                     </div>
@@ -200,7 +255,8 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">주소</label>
-                                                <input type="text" class="form-control" name="fullAddr">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="fullAddr">
                                             </div>
                                         </div>
                                     </div>
@@ -209,31 +265,33 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <div class="card">
-                                <div class="card-header card-header-primary">
-                                    <h4 class="card-title">업체정보 등록</h4>
-                                    <p class="card-category">셀러회원은 업체정보를 등록해주세요</p>
+                                <div class="card-header card-header-primary card-header-text">
+                                    <div class="card-icon">
+                                        <i class="material-icons">shop</i>
+                                    </div>
                                 </div>
                                 <div class="card-body">
-
                                     <div class="row">
-                                        <div class="col-md-5">
+                                        <div class="col-md-12">
+                                            <h6>업체정보 등록</h6>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">회사명</label>
-                                                <input type="text" class="form-control" name="company">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="company">
                                             </div>
                                         </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">사업자등록번호</label>
-                                                <input type="text" class="form-control" name="bizNo">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
+
+                                        <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">회사전화번호</label>
-                                                <input type="text" class="form-control" name="comPhone">
+                                                <input required="true" aria-required="true" type="tel"
+                                                       class="form-control" name="comPhone">
                                             </div>
                                         </div>
                                     </div>
@@ -241,52 +299,32 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">거래은행</label>
-                                                <input type="text" class="form-control" name="bankName">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="bankName">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">은행계좌번호</label>
-                                                <input type="text" class="form-control" name="bankCount">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="bankCount">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <label for="select">회사주소</label>
-                                                <div class="dropdown" name="store_name" id="select">
-                                                    <a class="btn btn-secondary dropdown-toggle" href=""
-                                                       id="addrDropdownMenuLink" data-toggle="dropdown">
-                                                        <i class="material-icons">shop</i>
-                                                        매장위치를 선택하세요
-                                                    </a>
-                                                    <ul class="dropdown-menu" aria-labelledby="addrDropdownMenuLink">
-                                                        <li><a class="dropdown-item" value="디오트">디오트</a></li>
-                                                        <li><a class="dropdown-item" value="청평화">청평화</a></li>
-                                                        <li><a class="dropdown-item" value="누죤">누죤</a></li>
-                                                        <li><a class="dropdown-item" value="DDP 패션몰(유어스)">DDP
-                                                            패션몰(유어스)</a></li>
-                                                        <li><a class="dropdown-item" value="APM">APM</a></li>
-                                                        <li><a class="dropdown-item" value="APM 럭스">APM 럭스</a></li>
-                                                        <li><a class="dropdown-item" value="APM PLACE">APM PLACE</a>
-                                                        </li>
-                                                        <li><a class="dropdown-item" value="디자이너클럽">디자이너클럽</a></li>
-                                                        <li><a class="dropdown-item" value="퀸즈스퀘어">퀸즈스퀘어</a></li>
-                                                        <li><a class="dropdown-item" value="팀204">팀204</a></li>
-                                                        <li><a class="dropdown-item" value="제일평화">제일평화</a></li>
-                                                        <li><a class="dropdown-item" value="남평화">남평화</a></li>
-                                                        <li><a class="dropdown-item" value="동평화">동평화</a></li>
-                                                        <li><a class="dropdown-item" value="신평화">신평화</a></li>
-                                                        <li><a class="dropdown-item" value="스튜디오W">스튜디오W</a></li>
-                                                        <li><a class="dropdown-item" value="테크노">테크노</a></li>
-                                                        <li><a class="dropdown-item" value="DWP">DWP</a></li>
-                                                        <li><a class="dropdown-item" value="벨포스트">벨포스트</a></li>
-                                                        <li><a class="dropdown-item" value="해양">해양</a></li>
-                                                        <li><a class="dropdown-item" value="엘리시움">엘리시움</a></li>
-                                                        <li><a class="dropdown-item" value="맥스타일">맥스타일</a></li>
-                                                        <li><a class="dropdown-item" value="etc">기타(직접입력)</a></li>
-                                                    </ul>
+                                                <div class="dropdown bootstrap-select">
+                                                    <select class="selectpicker" data-size="7"
+                                                            data-style="btn btn-primary" title="Single Select"
+                                                            tabindex="-98" id="mallListSel" onChange="changeMall()">
+                                                        <option disabled="" selected=""> 매장위치</option>
+                                                        <c:forEach var="item" items="${mallList}">
+                                                            <option value="<c:out value="${item.code_no}"/>" data-post="<c:out value="${item.code_data}"/>" data_addr="<c:out value="${item.code_data_desc}"/>">
+                                                                <c:out value="${item.code_nm}"/>
+                                                            </option>
+                                                        </c:forEach>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -295,31 +333,25 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">우편번호</label>
-                                                <input type="text" class="form-control" name="postCode">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="postCode" id="postInput">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">기본 주소</label>
-                                                <input type="text" class="form-control" name="firstAddr">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="firstAddr" id="addrInput">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">기타 주소</label>
-                                                <input type="text" class="form-control" name="secondAddr">
+                                                <input required="true" aria-required="true" type="text"
+                                                       class="form-control" name="secondAddr">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="file">사업자등록증업로드</label>
-                                                <input type="file" id="file" class="form-control-file" name="file">
-                                            </div>
-                                        </div>
-                                    </div>
-
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -333,7 +365,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" name="productType"
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   name="productType"
                                                                    value='<c:out value="${item.code_no}"/>'>
                                                             <span class="form-check-sign">
                                                             <span class="check"></span>
@@ -358,7 +391,8 @@
                                                 <div class="form-group">
                                                     <div class="form-check">
                                                         <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox" name="styleList"
+                                                            <input class="form-check-input" type="checkbox"
+                                                                   name="styleList"
                                                                    value='<c:out value="${item.code_no}"/>'>
                                                             <span class="form-check-sign">
                                                             <span class="check"></span>
@@ -369,10 +403,56 @@
                                             </div>
                                         </c:forEach>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header card-header-primary card-header-text">
+                                    <div class="card-icon">
+                                        <i class="material-icons">work_outline</i>
+                                    </div>
+                                </div>
+                                <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a type="button" href="#none" id="joinButton"
+                                            <h6>사업자등록증 등록</h6>
+                                            <div class="fileinput fileinput-new text-center"
+                                                 data-provides="fileinput">
+                                                <div class="fileinput-new thumbnail img-raised">
+                                                    <img src="/resources/app/images/dflow/business_license.jpeg"
+                                                         rel="nofollow" alt="...">
+                                                </div>
+                                                <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
+                                                <div>
+                                                    <span class="btn btn-raised btn-round btn-default btn-file">
+                                                        <span class="fileinput-new">Select image</span>
+                                                        <span class="fileinput-exists">Change</span>
+                                                        <input required="true" aria-required="true" type="file"
+                                                               name="file"/>
+                                                    </span>
+                                                    <a href="#pablo"
+                                                       class="btn btn-danger btn-round fileinput-exists"
+                                                       data-dismiss="fileinput">
+                                                        <i class="fa fa-times"></i> Remove</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <a href="#none" id="joinButton"
                                                class="btn btn-primary btn-block">회원가입</a>
+
+
                                             <div class="clearfix"></div>
                                         </div>
                                     </div>

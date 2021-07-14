@@ -175,7 +175,7 @@ md = {
 
     }, {
       type: type[color],
-      timer: 30000,
+      timer: 3000,
       placement: {
         from: from,
         align: align

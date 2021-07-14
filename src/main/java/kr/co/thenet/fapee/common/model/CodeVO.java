@@ -12,4 +12,7 @@ public class CodeVO {
 	private String code_no;
 	private String code_nm;
 	private long idKey;
+	private String chekYn;
+	private String code_data;
+	private String code_data_desc;
 }

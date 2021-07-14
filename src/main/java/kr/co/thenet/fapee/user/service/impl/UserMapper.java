@@ -10,33 +10,42 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 @Mapper
 public interface UserMapper {
 
-	List<UserVO> selectUserList() throws Exception;
-	
-	UserVO selectUserInfo(EgovMap egovMap) throws Exception;
-	UserVO selectUserCompany(UserVO user) throws Exception;
+    List<UserVO> selectUserList() throws Exception;
 
-	int insertUserInfo(UserVO user) throws Exception;
+    UserVO selectUserInfo(EgovMap egovMap) throws Exception;
 
-	int insertUserFilterInfo(EgovMap introMap) throws Exception;
-	
-	EgovMap selectCountUserFilterInfo(EgovMap introMap) throws Exception;
+    UserVO selectUserCompany(UserVO user) throws Exception;
 
-	int insertUserStyleList(EgovMap styleMap) throws Exception;
+    int insertUserInfo(UserVO user) throws Exception;
 
-	int updateUserLastLoginInfo(long idKey)throws Exception;
+    int insertUserFilterInfo(EgovMap introMap) throws Exception;
 
-	int updateUserFilterDeviceInfo(UserVO user) throws Exception;
+    EgovMap selectCountUserFilterInfo(EgovMap introMap) throws Exception;
 
-	int insertUserProfileInfo(UserVO user) throws Exception;
-	
-	int updateUserFilterCountryInfo(EgovMap profileMap) throws Exception;
+    int insertUserStyleList(EgovMap styleMap) throws Exception;
 
-	int updateUserInfo(EgovMap updateUserInfo) throws Exception;
+    int updateUserLastLoginInfo(long idKey) throws Exception;
 
-	int updateUserWithdrawal(UserVO user) throws Exception;
-	int insertUserCompany(UserVO user) throws Exception;
-	int updatetUserCompany(UserVO user) throws Exception;
-	int insertDfUserCodeMap(EgovMap profileMap) throws Exception;
-	int deleteDfuserCodeMap(EgovMap profileMap) throws Exception;
-	
+    int updateUserFilterDeviceInfo(UserVO user) throws Exception;
+
+    int insertUserProfileInfo(UserVO user) throws Exception;
+
+    int updateUserFilterCountryInfo(EgovMap profileMap) throws Exception;
+
+    int updateUserInfo(EgovMap updateUserInfo) throws Exception;
+
+    int updateUserWithdrawal(UserVO user) throws Exception;
+
+    int insertUserCompany(UserVO user) throws Exception;
+
+    int updatetUserCompany(UserVO user) throws Exception;
+
+    int insertDfUserCodeMap(EgovMap profileMap) throws Exception;
+
+    int deleteDfuserCodeMap(EgovMap profileMap) throws Exception;
+
+    EgovMap isDuplicateCheck(EgovMap egovMap) throws Exception;
+    List<EgovMap> selectDfUserCodeMap(EgovMap egovMap) throws Exception;
+
+    int updateUserProfileInfo(UserVO userVo) throws Exception;
 }

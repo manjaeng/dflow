@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1">
 
-	<display-name>Fapee_Server</display-name>
+	<display-name>Dflow_Server</display-name>
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -47,5 +47,9 @@
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
+
+	<error-page>
+		<location>/error.do</location>
+	</error-page>
 
 </web-app>

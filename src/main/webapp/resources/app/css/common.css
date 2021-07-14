@@ -17,7 +17,7 @@ button{cursor:pointer;background: none;border: none;}
 
 .btn.a{border-color: #000000;background-color: #000000;color:#ffffff;}
 .btn.b{border-color: #70f5c4;background-color: #ffffff;color: #70f5c4;}
-.btn.b.fill{background-color: #70f5c4;color: #000000;}
+.btn.b.fill{background-color: #9c27b0;color: #ffffff;}
 .btn.c{border-color: #000000;background-color:#ffffff;color: #000000;}
 .btn.d{border-color: #ff424d;background-color: #ff424d;color:#ffffff;}
 .btn.e{border-color: #e4e4e4;background-color: #e4e4e4;color: #000000;}

@@ -14,6 +14,7 @@ import com.amazonaws.services.sns.model.PublishRequest;
 import com.amazonaws.services.sns.model.PublishResult;
 import kr.co.thenet.fapee.common.model.AttachFileVO;
 import kr.co.thenet.fapee.common.model.CodeVO;
+import kr.co.thenet.fapee.common.util.*;
 import kr.co.thenet.fapee.home.service.AttachService;
 import kr.co.thenet.fapee.home.service.CodeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.co.thenet.fapee.common.model.SessionVO;
 import kr.co.thenet.fapee.common.model.UserVO;
-import kr.co.thenet.fapee.common.util.CommonFunc;
-import kr.co.thenet.fapee.common.util.CommonUtils;
-import kr.co.thenet.fapee.common.util.EgovMap;
-import kr.co.thenet.fapee.common.util.SessionUtils;
 import kr.co.thenet.fapee.user.service.UserService;
 import lombok.extern.log4j.Log4j;
 import org.springframework.web.multipart.MultipartFile;
@@ -49,6 +46,58 @@ public class UserController {
     @Autowired
     private AttachService attachService;
 
+    @GetMapping("/app/user/join_id.do")
+    public String joinId(ModelMap model, HttpServletRequest req) throws Exception {
+
+        List<CodeVO> productType = codeService.selectCodeList(Constants.PRODUCT_TYPE_CD);
+        model.addAttribute(Constants.PRODUCT_TYPE_NM, productType);
+
+        List<CodeVO> styleList = codeService.selectCodeList(Constants.STYLE_LIST_CD);
+        model.addAttribute(Constants.STYLE_LIST_MM, styleList);
+
+        List<CodeVO> mallList = codeService.selectCodeList(Constants.MALL_LIST_CD);
+        model.addAttribute(Constants.MALL_LIST_MM, mallList);
+
+        return "user/join_id.app";
+    }
+
+    @PostMapping("/app/user/join_complete.do")
+    @ResponseBody
+    public String joinComplete(HttpServletRequest req) throws Exception {
+        int k = 0;
+        int insertCount = 0;
+        UserVO user = getUserFormReq(req);
+        insertCount = userService.insertUserInfo(user, req);
+        try {
+            MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) req;
+            Iterator i = multipartRequest.getFileNames();
+            while (i.hasNext()) {
+                String fileName = (String) i.next();
+                MultipartFile multipartFile = multipartRequest.getFile(fileName);
+                AttachFileVO attachFileVO = AttachFileVO.of(multipartFile, "BizInfo");
+                attachService.saveImageFileByGrp(attachFileVO);
+                user.setFileUrl(attachFileVO.getPhysicalFullPath());
+                userService.updateUserCompany(user);
+            }
+        } catch (Exception ex) {
+            log.debug(ex.getMessage());
+        }
+        if (insertCount == 1) {
+
+            SessionVO sessionVO = new SessionVO();
+            sessionVO.setIdKey(user.getIdKey());
+            sessionVO.setUserId(user.getUserId());
+            sessionVO.setUserType(user.getUserType());
+            sessionVO.setMobile(user.getMobile());
+            sessionVO.setEmail(user.getEmail());
+            sessionVO.setDeviceId(user.getDeviceId());
+            SessionUtils.setSessionData(req, sessionVO);
+            return "success";
+        } else {
+            return "error";
+        }
+    }
+
     @GetMapping("/app/user/join_intro.do")
     public String joinIntro() throws Exception {
         return "user/join_intro.app";
@@ -59,7 +108,24 @@ public class UserController {
         return "user/join_mobileCertified.app";
     }
 
-    @PostMapping("/app/user/join_mobileCertified.do")
+    @PostMapping("/app/user/idCheck.do")
+    @ResponseBody
+    public String isDuplicateCheck(@RequestParam String userId, HttpServletRequest req) throws Exception {
+    String result = "";
+        EgovMap egovMap = new EgovMap();
+        egovMap.put("userId", userId);
+        EgovMap duplCount = userService.isDuplicateCheck(egovMap);
+
+    if((long)duplCount.get("count") > 0){
+        result = "error";
+    }else{
+        result = "success";
+    }
+
+    return  result;
+    }
+
+        @PostMapping("/app/user/join_mobileCertified.do")
     @ResponseBody
     public String joinMobileCertified(@RequestParam String mobile, HttpServletRequest req) throws Exception {
 
@@ -114,17 +180,7 @@ public class UserController {
         return "f";
     }
 
-    @GetMapping("/app/user/join_id.do")
-    public String joinId(ModelMap model, HttpServletRequest req) throws Exception {
 
-        List<CodeVO> productType = codeService.selectCodeList("0001");
-        model.addAttribute("productType", productType);
-
-        List<CodeVO> styleList = codeService.selectCodeList("0002");
-        model.addAttribute("styleList", styleList);
-
-        return "user/join_id.app";
-    }
 
     @PostMapping("/app/user/join_id.do")
     @ResponseBody
@@ -152,40 +208,7 @@ public class UserController {
         return "user/join_email.app";
     }
 
-    @PostMapping("/app/user/join_complete.do")
-    @ResponseBody
-    public String joinComplete(HttpServletRequest req) throws Exception {
-        int k = 0;
-        int insertCount = 0;
-        UserVO user = getUserFormReq(req);
-        insertCount = userService.insertUserInfo(user, req);
-        try {
-            MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) req;
-            Iterator i = multipartRequest.getFileNames();
-            while (i.hasNext()) {
-                String fileName = (String) i.next();
-                MultipartFile multipartFile = multipartRequest.getFile(fileName);
-                AttachFileVO attachFileVO = AttachFileVO.of(multipartFile, "BizInfo");
-                attachService.saveImageFileByGrp(attachFileVO);
-            }
-        } catch (Exception ex) {
-            log.debug(ex.getMessage());
-        }
-        if (insertCount == 1) {
 
-            SessionVO sessionVO = new SessionVO();
-            sessionVO.setIdKey(user.getIdKey());
-            sessionVO.setUserId(user.getUserId());
-            sessionVO.setUserType(user.getUserType());
-            sessionVO.setMobile(user.getMobile());
-            sessionVO.setEmail(user.getEmail());
-            sessionVO.setDeviceId(user.getDeviceId());
-            SessionUtils.setSessionData(req, sessionVO);
-            return "success";
-        } else {
-            return "error";
-        }
-    }
 
     private UserVO getUserFormReq(HttpServletRequest req) {
         UserVO user = new UserVO();

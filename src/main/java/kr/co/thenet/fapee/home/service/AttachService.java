@@ -22,4 +22,6 @@ public interface AttachService {
 
 	int deleteAttachFile(String grp) throws Exception;
 
+	String saveBizLicenseEmg(AttachFileVO form) throws Exception;	//TO S3 Bucket.
+
 }
