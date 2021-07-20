@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ErrorController {
     @GetMapping("/error.do")
     public String defaultError() {
-        return "redirect:/app/intor/strp1.do";
+        return "error/error";
     }
 
     @GetMapping("/no-resource")
