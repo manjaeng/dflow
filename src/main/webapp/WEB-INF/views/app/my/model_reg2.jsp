@@ -14,6 +14,7 @@
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
+                <form method="POST" enctype="multipart/form-data" id="fileUploadForm">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -41,7 +42,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="image1"/>
                                                     </span>
                                                 <a href="#pablo"
                                                    class="btn btn-danger btn-round fileinput-exists"
@@ -55,14 +56,14 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">상품명</label>
-                                                    <input type="text" class="form-control" name="productName"
+                                                    <input type="text" class="form-control" name="pname"
                                                            maxlength="100">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">카테고리</label>
-                                                    <input type="text" class="form-control" name="productCategory">
+                                                    <input type="text" class="form-control" name="category">
                                                 </div>
                                             </div>
                                         </div>
@@ -70,7 +71,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">한줄 상품명</label>
-                                                    <input type="text" class="form-control" name="productName"
+                                                    <input type="text" class="form-control" name="pcomment"
                                                            maxlength="200">
                                                 </div>
                                             </div>
@@ -79,13 +80,13 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">상품 정상가</label>
-                                                    <input type="number" class="form-control" name="productPrice">
+                                                    <input type="number" class="form-control" name="price">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">상품 상품판매가</label>
-                                                    <input type="number" class="form-control" name="salePrice">
+                                                    <input type="number" class="form-control" name="dprice">
                                                 </div>
                                             </div>
                                         </div>
@@ -93,7 +94,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">재고 수량</label>
-                                                    <input type="number" class="form-control" name="stock">
+                                                    <input type="number" class="form-control" name="pstock">
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +104,9 @@
                                                     <label for="exampleFormControlSelect2">제품에 사용 될 사이즈를 전부
                                                         선택하세요</label>
                                                     <select multiple class="form-control selectpicker"
-                                                            data-style="btn btn-link" id="exampleFormControlSelect2">
+                                                            data-style="btn btn-link" id="exampleFormControlSelect2"
+                                                    name="psize"
+                                                    >
                                                         <option>S</option>
                                                         <option>M</option>
                                                         <option>L</option>
@@ -122,7 +125,7 @@
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <label class="bmd-label-floating">색상</label>
-                                                    <input type="text" class="form-control" name="productTag"
+                                                    <input type="text" class="form-control" name="pcolor"
                                                            maxlength="200">
                                                 </div>
                                             </div>
@@ -133,7 +136,7 @@
                                                     <h6>Tags</h6>
                                                     <span class="border-bottom">
                                                     <input type="text" value="" class="form-control tagsinput"
-                                                           data-role="tagsinput" data-color="info">
+                                                           data-role="tagsinput" data-color="info" name="ptag">
                                                     </span>
                                                 </div>
                                             </div>
@@ -144,7 +147,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group bmd-form-group">
                                             <label class="bmd-label-floating">5줄 상품 소개</label>
-                                            <textarea class="form-control" rows="5" maxlength="2000"></textarea>
+                                            <textarea class="form-control" rows="5" maxlength="2000" name="lcomment"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -162,7 +165,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="image2"/>
                                                     </span>
                                                 <a href="#pablo"
                                                    class="btn btn-danger btn-round fileinput-exists"
@@ -184,7 +187,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="image3"/>
                                                     </span>
                                                 <a href="#pablo"
                                                    class="btn btn-danger btn-round fileinput-exists"
@@ -206,7 +209,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="image4"/>
                                                     </span>
                                                 <a href="#pablo"
                                                    class="btn btn-danger btn-round fileinput-exists"
@@ -228,7 +231,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input type="file" name="file"/>
+                                                        <input type="file" name="image5"/>
                                                     </span>
                                                 <a href="#pablo"
                                                    class="btn btn-danger btn-round fileinput-exists"
@@ -238,10 +241,28 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <a href="#none" id="joinButton"
+                                                           class="btn btn-warning btn-block">상품등록</a>
+
+
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
         <footer class="footer">
@@ -499,3 +520,5 @@
         });
     });
 </script>
+<script type="text/javascript" src="/resources/app/js/jquery.form.min.js"></script>
+<script src="/resources/app/my/model_reg.js"></script>

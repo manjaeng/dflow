@@ -38,6 +38,15 @@ public class SalesController {
         return "product/detail.app";
     }
 
+    @GetMapping("/detailModelPreview.do")
+    public String DetailModedelPreview(ProductSearchVO form, Model model) throws Exception {
+        ProductVO product = service.selectProductInfo(form);
+        model.addAttribute("product", product);
+        return "product/detailPreview.app";
+    }
+
+
+
     @GetMapping("/list.do")
     public String list(ProductSearchVO form, Model model) throws Exception {
         model.addAttribute("salesStatusList", codeService.selectCodeList("ProductSalesStatus"));
@@ -57,10 +66,10 @@ public class SalesController {
         model.addAttribute("stopRows", 0);
         model.addAttribute("waitRows", 0);
         if (list.size() > 0) {
-            form.setTotalRows(list.get(0).getTotalRows());
-            model.addAttribute("salesRows", list.get(0).getSalesRows());
-            model.addAttribute("stopRows", list.get(0).getStopRows());
-            model.addAttribute("waitRows", list.get(0).getWaitRows());
+      //      form.setTotalRows(list.get(0).getTotalRows());
+      //      model.addAttribute("salesRows", list.get(0).getSalesRows());
+      //      model.addAttribute("stopRows", list.get(0).getStopRows());
+      //      model.addAttribute("waitRows", list.get(0).getWaitRows());
         }
         model.addAttribute("list", list);
 
@@ -76,11 +85,11 @@ public class SalesController {
         model.addAttribute("data", data);
         model.addAttribute("commentList", service.selectProductCommentList(form));
 
-        model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
-        model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
-        model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
-        model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
-        model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
+    //    model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
+    //    model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
+     //   model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
+    //    model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
+     //   model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
 
         return "sales/view.mcp";
     }
@@ -100,11 +109,11 @@ public class SalesController {
         }
         model.addAttribute("list", list);
 
-        model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
-        model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
-        model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
-        model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
-        model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
+    //    model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
+    //    model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
+    //    model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
+    //    model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
+   //     model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
 
         return "sales/look.mcp";
     }
@@ -124,11 +133,11 @@ public class SalesController {
         }
         model.addAttribute("list", list);
 
-        model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
-        model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
-        model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
-        model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
-        model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
+    //    model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
+    //    model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
+    //    model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
+     //   model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
+     //   model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
 
         return "sales/history.mcp";
     }

@@ -122,218 +122,45 @@
                                         </th>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>
-                                                1
-                                            </td>
-                                            <td>
-                                                Dakota Rice
-                                            </td>
-                                            <td>
-                                                Niger
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="상품정보를 재홀용하여 신규 상품을 만듭니다">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="기존 상품을 수정합니다">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
+                                        <c:forEach var="item" items="${productList}">
+                                            <tr>
+                                                <td>
+                                                    <c:out value="${item.idKey}"/>
+                                                </td>
+                                                <td>
+                                                    <c:out value="${item.pname}"/>
+                                                </td>
+                                                <td>
+                                                    <c:out value="${item.category}"/>
+                                                </td>
+                                                <td class="text-primary">
+                                                    <c:out value="${item.dprice}"/>
+                                                </td>
+                                                <td>
+                                                    <c:out value="${item.status}"/>
+                                                </td>
+                                                <td class="td-actions text-right">
+                                                    <button type="button" rel="tooltip" title=""
+                                                            class="btn btn-warning btn-link btn-sm"
+                                                            data-original-title="상품정보를 재홀용하여 신규 상품을 만듭니다">
+                                                        <i class="material-icons">recycling</i>
+                                                    </button>
+                                                    <button type="button" rel="tooltip" title=""
+                                                            class="btn btn-primary btn-link btn-sm"
+                                                            data-original-title="기존 상품을 수정합니다">
+                                                        <i class="material-icons">edit</i>
+                                                    </button>
 
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="상품상세화면을 미리볼수 있습니다">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
+                                                    <a type="button" rel="tooltip" title=""
+                                                       href="/app/sales/detailModelPreview.do?productNo= <c:out value="${item.idKey}"/>"
+                                                            class="btn btn-info btn-link btn-sm"
+                                                            data-original-title="상품상세화면을 미리볼수 있습니다">
+                                                        <i class="material-icons">preview</i>
+                                                    </a>
+                                                </td>
 
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>
-                                                Minerva Hooper
-                                            </td>
-                                            <td>
-                                                Curaçao
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>
-                                                Sage Rodriguez
-                                            </td>
-                                            <td>
-                                                Netherlands
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>
-                                                Philip Chaney
-                                            </td>
-                                            <td>
-                                                Korea, South
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                5
-                                            </td>
-                                            <td>
-                                                Doris Greene
-                                            </td>
-                                            <td>
-                                                Malawi
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">edit</i>
-
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                6
-                                            </td>
-                                            <td>
-                                                Mason Porter
-                                            </td>
-                                            <td>
-                                                Chile
-                                            </td>
-                                            <td class="text-primary">
-                                                $36,738
-                                            </td>
-                                            <td>
-                                                판매중
-                                            </td>
-                                            <td class="td-actions text-right">
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-warning btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">recycling</i>
-                                                </button>
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-primary btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">edit</i>
-                                                </button>
-
-                                                <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-info btn-link btn-sm"
-                                                        data-original-title="Edit Task">
-                                                    <i class="material-icons">preview</i>
-                                                </button>
-                                            </td>
-
-                                        </tr>
+                                            </tr>
+                                        </c:forEach>
                                         </tbody>
                                     </table>
 

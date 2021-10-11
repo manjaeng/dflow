@@ -1,11 +1,11 @@
 package kr.co.thenet.fapee.my.web;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 import javax.servlet.http.HttpServletRequest;
 
-import kr.co.thenet.fapee.common.model.CodeVO;
+import kr.co.thenet.fapee.common.model.*;
+import kr.co.thenet.fapee.home.service.AttachService;
 import kr.co.thenet.fapee.home.service.CodeService;
 import kr.co.thenet.fapee.look.service.LookService;
 import kr.co.thenet.fapee.my.service.MyService;
@@ -22,9 +22,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import kr.co.thenet.fapee.common.model.SessionVO;
-import kr.co.thenet.fapee.common.model.UserVO;
-import kr.co.thenet.fapee.common.model.ModelVO;
 import kr.co.thenet.fapee.common.util.Base64;
 import kr.co.thenet.fapee.common.util.CommonUtils;
 import kr.co.thenet.fapee.common.util.Constants;
@@ -32,6 +29,8 @@ import kr.co.thenet.fapee.common.util.EgovMap;
 import kr.co.thenet.fapee.common.util.FileUtils;
 import kr.co.thenet.fapee.common.util.S3Utils;
 import kr.co.thenet.fapee.common.util.SessionUtils;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 @Log4j
 @Controller
@@ -49,6 +48,103 @@ public class MyController {
     @Autowired
     private CodeService codeService;
 
+    @Autowired
+    private AttachService attachService;
+
+    @GetMapping("/app/my/model_reg1.do")
+    public String modelReg2(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            List<EgovMap> productList = myService.selectUserModelInfo(sessionVO.getIdKey());
+
+            model.addAttribute("productList", productList);
+            return "my/model_reg1.app";
+        }else{
+
+            return "user/login.app";
+        }
+
+    }
+
+    @GetMapping("/app/my/model_reg2.do")
+    public String modelReg1(HttpServletRequest req, ModelMap model) throws Exception {
+
+        if (SessionUtils.isLogin(req)) {
+
+            SessionVO sessionVO = SessionUtils.getSessionData(req);
+            return "my/model_reg2.app";
+        }else{
+
+            return "user/login.app";
+        }
+
+    }
+
+    @PostMapping("/app/my/reg_complete.do")
+    @ResponseBody
+    public String joinComplete(HttpServletRequest req) throws Exception {
+        if (SessionUtils.isLogin(req)) {
+            int k = 0;
+            boolean insertCount = false;
+            ProductVO product = getProductFormReq(req);
+            product.setUserKey(SessionUtils.getIdKey());
+
+            try {
+                MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) req;
+                Iterator i = multipartRequest.getFileNames();
+                EgovMap listUrl = new EgovMap();
+                while (i.hasNext()) {
+                    String fileName = (String)i.next();
+                    MultipartFile multipartFile = multipartRequest.getFile(fileName);
+                    AttachFileVO attachFileVO = AttachFileVO.of(multipartFile, "Product");
+                    attachService.saveImageFileByGrp(attachFileVO);
+                    listUrl.put(fileName, attachFileVO.getPhysicalFullPath());
+                    switch(fileName){
+                        case "image1":
+                            product.setImage1(attachFileVO.getPhysicalFullPath());
+                        case "image2":
+                            product.setImage2(attachFileVO.getPhysicalFullPath());
+                        case "image3":
+                            product.setImage3(attachFileVO.getPhysicalFullPath());
+                        case "image4":
+                            product.setImage4(attachFileVO.getPhysicalFullPath());
+                        case "image5":
+                            product.setImage5(attachFileVO.getPhysicalFullPath());
+                    }
+                }
+            } catch (Exception ex) {
+                log.debug(ex.getMessage());
+                ex.printStackTrace();
+            }
+            insertCount = myService.insertModel(product);
+            if (insertCount) {
+                return "success";
+            } else {
+                return "error";
+            }
+        }else{
+            return "false";
+        }
+    }
+
+    private ProductVO getProductFormReq(HttpServletRequest req) {
+        ProductVO product = new ProductVO();
+          product.setCategory(req.getParameter("category"));
+        product.setPname(req.getParameter("pname"));
+        product.setCategory(req.getParameter("category"));
+        product.setPrice(Integer.parseInt(req.getParameter("price")));
+        product.setDprice(Integer.parseInt(req.getParameter("dprice")));
+        product.setPcomment(req.getParameter("pcomment"));
+        product.setPstock(req.getParameter("pstock"));
+        product.setPsize(req.getParameter("pzize"));
+        product.setPcomment(req.getParameter("pcolor"));
+        product.setPtag(req.getParameter("ptag"));
+        product.setLcomment(req.getParameter("lcomment"));
+        return product;
+    }
+
     @GetMapping("/app/my/profile.do")
     public String profile(ModelMap model, HttpServletRequest req)
             throws Exception {
@@ -59,28 +155,35 @@ public class MyController {
             userMap.put(Constants.USER_idKey, sessionVO.getIdKey());
             userMap.put(Constants.USER_userKey, sessionVO.getIdKey());
             userMap.put(Constants.USER_grpCodeNo, Constants.PRODUCT_TYPE_CD);
+            List<CodeVO> productType = new ArrayList<CodeVO>();
+            List<CodeVO> styleList = new ArrayList<CodeVO>();
 
-            List<CodeVO> productType = codeService.selectCodeList(Constants.PRODUCT_TYPE_CD);
-            List<EgovMap> produceMapList = userService.selectDfUserCodeMap(userMap);
-            for (CodeVO vo : productType) {
-                for(EgovMap map : produceMapList){
-                    if(((String)map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
-                        vo.setChekYn(Constants.CODE_CHECK_YES);
+            try {
+                productType = codeService.selectCodeList(Constants.PRODUCT_TYPE_CD);
+                List<EgovMap> produceMapList = userService.selectDfUserCodeMap(userMap);
+                for (CodeVO vo : productType) {
+                    for (EgovMap map : produceMapList) {
+                        if (((String) map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
+                            vo.setChekYn(Constants.CODE_CHECK_YES);
+                        }
                     }
                 }
+
+
+                styleList = codeService.selectCodeList(Constants.STYLE_LIST_CD);
+                userMap.put(Constants.USER_grpCodeNo, Constants.STYLE_LIST_CD);
+                List<EgovMap> styleMapList = userService.selectDfUserCodeMap(userMap);
+                for (CodeVO vo : styleList) {
+                    for (EgovMap map : styleMapList) {
+                        if (((String) map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
+                            vo.setChekYn(Constants.CODE_CHECK_YES);
+                        }
+                    }
+                }
+            }catch(Exception e){
+
             }
             model.addAttribute(Constants.PRODUCT_TYPE_NM, productType);
-
-            List<CodeVO> styleList = codeService.selectCodeList(Constants.STYLE_LIST_CD);
-            userMap.put(Constants.USER_grpCodeNo, Constants.STYLE_LIST_CD);
-            List<EgovMap> styleMapList = userService.selectDfUserCodeMap(userMap);
-            for (CodeVO vo : styleList) {
-                for(EgovMap map : styleMapList){
-                    if(((String)map.get(Constants.COMMON_CODE_NO)).equals(vo.getCode_no())) {
-                        vo.setChekYn(Constants.CODE_CHECK_YES);
-                    }
-                }
-            }
             model.addAttribute(Constants.STYLE_LIST_MM, styleList);
 
             List<CodeVO> mallList = codeService.selectCodeList(Constants.MALL_LIST_CD);
@@ -545,35 +648,14 @@ public class MyController {
 
     }
 
-    @GetMapping("/app/my/model_reg1.do")
-    public String modelReg2(HttpServletRequest req, ModelMap model) throws Exception {
 
-        if (SessionUtils.isLogin(req)) {
-
-            SessionVO sessionVO = SessionUtils.getSessionData(req);
-
-
-        }
-        return "my/model_reg1.app";
-    }
-
-    @GetMapping("/app/my/model_reg2.do")
-    public String modelReg1(HttpServletRequest req, ModelMap model) throws Exception {
-
-        if (SessionUtils.isLogin(req)) {
-
-            SessionVO sessionVO = SessionUtils.getSessionData(req);
-
-        }
-        return "my/model_reg2.app";
-    }
 
     @PostMapping("/app/my/modelregist.do")
     @ResponseBody
     public String lookRegist(@RequestBody ModelVO modelVO, HttpServletRequest req) throws Exception {
         if (SessionUtils.isLogin(req)) {
             modelVO.setUserKey(SessionUtils.getSessionData(req).getIdKey());
-            myService.insertModel(modelVO);
+           // myService.insertModel(modelVO);
 
         }
         return "";

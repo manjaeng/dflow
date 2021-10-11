@@ -41,6 +41,10 @@ public class IntroController {
 	@GetMapping("/app/intro/intro2.do")
 	public String intor2(ModelMap model, HttpServletRequest req) throws Exception {
 
+		String reqUrl = req.getServerName();
+		if(reqUrl.contains(".jp")){
+			return "redirect:/app/intro/step1.do";
+		}
 		return "intro/intro2.app";
 
 	}

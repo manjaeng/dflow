@@ -3,265 +3,260 @@
 
 <mapper namespace="kr.co.thenet.fapee.my.service.impl.MyMapper">
 
-	<select id="selectMyProfileInfo" resultType="egovMap">
-		SELECT u.idKey
-			  ,u.userId
-			  ,u.userType
-			  ,u.status
-			  ,uf.gender
-			  ,uf.country
-			  ,(SELECT COUNT(*) 
-		 		  FROM fp_follow 
-		 		 WHERE followUserIdKey = #{_parameter}) followerCount
-		 	  ,(SELECT COUNT(*) 
-		 		  FROM fp_follow 
-		 		 WHERE userIdKey = #{_parameter}) followingCount
-			  ,up.nickName
-			  ,up.content
-			  ,up.imageUrl
-		 FROM fp_user u
-		 JOIN fp_user_filter uf on u.idKey = uf.userIdKey
-		 JOIN fp_user_profile up on u.idKey = up.userIdKey
-		WHERE u.idkey = #{_parameter}
-		LIMIT 1
-	</select>
+    <select id="selectMyProfileInfo" resultType="egovMap">
+        SELECT u.idKey
+             , u.userId
+             , u.userType
+             , u.status
+             , uf.gender
+             , uf.country
+             , (SELECT COUNT(*)
+                FROM fp_follow
+                WHERE followUserIdKey = #{_parameter}) followerCount
+             , (SELECT COUNT(*)
+                FROM fp_follow
+                WHERE userIdKey = #{_parameter})       followingCount
+             , up.nickName
+             , up.content
+             , up.imageUrl
+        FROM fp_user u
+                 JOIN fp_user_filter uf on u.idKey = uf.userIdKey
+                 JOIN fp_user_profile up on u.idKey = up.userIdKey
+        WHERE u.idkey = #{_parameter} LIMIT 1
+    </select>
 
-	<select id="selectUserModelInfo" resultType="egovMap">
-		SELECT  model.idKey
-		       ,model.imgUrl
-		       ,model.modelName
-		       ,1 as mapKey
-		       ,model.height
-		       ,model.heightFr
-		       ,model.sizeType
-		FROM fp_user_model model
-		WHERE model.userKey =#{_parameter}
-		ORDER BY model.seq
-	</select>
+    <select id="selectUserModelInfo" resultType="egovMap">
+        SELECT idKey
+             , userKey
+             , pname
+             , category
+             , price
+             , dprice
+             , pcomment
+             , pstock
+             , psize
+             , pcolor
+             , ptag
+             , image1
+             , image2
+             , image3
+             , image4
+             , image5
+             , status
+        FROM df_product model
+        WHERE model.userKey = #{_parameter}
+        ORDER BY model.pname
+    </select>
 
-	<update id="updateUserModelMap" parameterType="egovMap" >
-		UPDATE fp_user_model_map map
-		SET map.useYn = #{useYn}
-		WHERE map.modelKey = #{modelKey}
-		AND map.userKey = ${idKey}
-	</update>
-	
-	<update id="updateMyProfileInfo" parameterType="egovMap" >
-		UPDATE fp_user_profile
-		<trim prefix="SET" suffixOverrides=",">
-			<if test="nickName != null">nickName=#{nickName},</if>
-			<if test="content != null">content=#{content},</if>
-			<if test="imageUrl != null">imageUrl = #{imageUrl},</if>
-		</trim>
-		 WHERE userIdKey = #{idKey}
-	</update>
-	
-	<select id="selectMyFollowingCount" parameterType="egovMap" resultType="int">
-		SELECT count(*)
-  		  FROM fp_follow
- 		 WHERE userIdKey = #{userIdKey} AND followUserIdKey = #{followUserIdKey}
-	</select>
-	
-	<insert id="insertMyFollwInfo" parameterType="egovMap">
-		INSERT into fp_follow(
-			 userIdKey
-			,followUserIdKey
-			,followDate
-		) VALUES (
-			 #{userIdKey}
-			,#{followUserIdKey}
-			,now()
-		)
-	</insert>
-	
-	<delete id="deleteMyFollwInfo" parameterType="egovMap">
-		DELETE FROM fp_follow
-         WHERE userIdKey = #{userIdKey} AND followUserIdKey = #{followUserIdKey}
-	</delete>
-	
-	<select id="selectMyFollowList" parameterType="egovMap" resultType="egovMap">
-		SELECT f.userIdKey
-			  ,f.followUserIdKey
-		      ,u.userId
-		      ,up.imageUrl
-		      <if test='sessionIdKey != null'>
-		      ,(
-				 SELECT count(*)
-		  		   FROM fp_follow
-		 		  WHERE userIdKey = #{sessionIdKey} 
-		 		  <choose>
-		 		  	<when test='type == "fwers"'>
-		 		  		AND followUserIdKey = u.idKey
-		 		  	</when>
-		 		  	<when test='type == "fwing"'>
-		 		  		AND followUserIdKey = f.followUserIdKey
-		 		  	</when>
-		 		  </choose>
-			   ) isFollow
-		      </if>
-		  FROM fp_follow f
-		  LEFT JOIN fp_user u ON <choose>
-		 		 				 	<when test='type == "fwers"'>
-		 		  						f.userIdKey = u.idKey
-		 		  					</when>
-		 		  					<when test='type == "fwing"'>
-		 		  						f.followUserIdKey = u.idKey
-		 		  					</when>
-		 		 				 </choose>
-		  LEFT JOIN fp_user_profile up ON u.idKey = up.userIdKey
-		 WHERE 1=1 <if test="searchId != ''">
-		 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
-		 		   </if>
-		 		
-		 		   <choose>
-		 			<when test='type == "fwers"'>
-		 		  		AND f.followUserIdKey = #{idKey}
-		 		  	</when>
-		 		  	<when test='type == "fwing"'>
-		 		  		AND f.userIdKey = #{idKey}
-		 		  	</when>
-		 		  </choose>
-		 ORDER BY f.followDate desc
-		 <if test="pageStart != null and pageSize != null">
-		 	LIMIT #{pageStart}, #{pageSize}
-		 </if>
-	</select>
-	
-	<select id="selectMyFollowCount" resultType="egovMap" parameterType="egovMap">
-		SELECT (SELECT COUNT(*) 
-		 		  FROM fp_follow f
-		 		  JOIN fp_user u ON f.userIdKey = u.idKey
-		 		 WHERE followUserIdKey = #{idKey}
-			 			<if test="searchId != ''">
-			 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
-			 		   </if> 
-		 		 
-		 	   ) followerCount
-		 	  ,(SELECT COUNT(*) 
-		 		  FROM fp_follow f
-		 		  JOIN fp_user u ON f.followUserIdKey = u.idKey
-		 		 WHERE userIdKey = #{idKey}
-			 			<if test="searchId != ''">
-			 		   		AND u.userId LIKE CONCAT('%', #{searchId},'%')
-			 		   </if>  
-		 	   ) followingCount
-	</select>
-	<select id="selectMyModel" resultType="egovMap" parameterType="egovMap">
-		SELECT
-		  idKey      ,
-		  userKey    ,
-		  seq        ,
-		  imgUrl     ,
-		  modelName  ,
-		  gender     ,
-		  height     ,
-		  age        ,
-		  fit        ,
-		  bust       ,
-		  hip        ,
-		  waist      ,
-		  sleeve     ,
-		  arm        ,
-		  thigh      ,
-		  heightfr   ,
-		  fitfr      ,
-		  bustfr     ,
-		  hipfr      ,
-		  waistfr    ,
-		  sleevefr   ,
-		  armfr      ,
-		  thighfr    ,
-		  sizeType   ,
-		  heightType ,
-		  nation
-				FROM fp_user_model
-		WHERE idKey = #{idKey}
-	</select>
-	<update id="updateModelInfo" parameterType="egovMap">
-		UPDATE  fp_user_model
-		<trim prefix="SET" suffixOverrides=",">
-			<if test="userKey!=null">userKey=#{userKey},</if>
-			<if test="seq!=null">seq=#{seq},</if>
-			<if test="modelName!=null">modelName=#{modelName},</if>
-			<if test="gender!=null">gender=#{gender},</if>
-			<if test="height!=null">height=#{height},</if>
-			<if test="age!=null">age=#{age},</if>
-			<if test="fit!=null">fit=#{fit},</if>
-			<if test="bust!=null">bust=#{bust},</if>
-			<if test="hip!=null">hip=#{hip},</if>
-			<if test="waist!=null">waist=#{waist},</if>
-			<if test="sleeve!=null">sleeve=#{sleeve},</if>
-			<if test="arm!=null">arm=#{arm},</if>
-			<if test="thigh!=null">thigh=#{thigh},</if>
-			<if test="heightfr!=null">heightfr=#{heightfr},</if>
-			<if test="fitfr!=null">fitfr=#{fitfr},</if>
-			<if test="bustfr!=null">bustfr=#{bustfr},</if>
-			<if test="hipfr!=null">hipfr=#{hipfr},</if>
-			<if test="waistfr!=null">waistfr=#{waistfr},</if>
-			<if test="sleevefr!=null">sleevefr=#{sleevefr},</if>
-			<if test="armfr!=null">armfr=#{armfr},</if>
-			<if test="thighfr!=null">thighfr=#{thighfr},</if>
-			<if test="sizeType!=null">sizeType=#{sizeType},</if>
-			<if test="heightType!=null">heightType=#{heightType},</if>
-			<if test="nation!=null">nation=#{nation},</if>
-		</trim>
-		WHERE idKey = #{idKey}
-	</update>
+    <update id="updateUserModelMap" parameterType="egovMap">
+        UPDATE fp_user_model_map map
+        SET map.useYn = #{useYn}
+        WHERE map.modelKey = #{modelKey}
+          AND map.userKey = ${idKey}
+    </update>
 
-	<insert id="insertModel" parameterType="ModelVO" useGeneratedKeys="true" keyProperty="idKey">
-		INSERT INTO fp_user_model (
-		  userKey    ,
-		  seq        ,
-		  imgUrl     ,
-		  modelName  ,
-		  gender     ,
-		  height     ,
-		  age        ,
-		  fit        ,
-		  bust       ,
-		  hip        ,
-		  waist      ,
-		  sleeve     ,
-		  arm        ,
-		  thigh      ,
-		  heightfr   ,
-		  fitfr      ,
-		  bustfr     ,
-		  hipfr      ,
-		  waistfr    ,
-		  sleevefr   ,
-		  armfr      ,
-		  thighfr    ,
-		  sizeType   ,
-		  heightType ,
-		  nation
-		) VALUES (
-		  #{userKey}    ,
-		  #{seq}        ,
-		  #{imgUrl}     ,
-		  #{modelName}  ,
-		  #{gender}     ,
-		  #{height}     ,
-		  #{age}        ,
-		  #{fit}        ,
-		  #{bust}       ,
-		  #{hip}        ,
-		  #{waist}      ,
-		  #{sleeve}     ,
-		  #{arm}        ,
-		  #{thigh}      ,
-		  #{heightfr}   ,
-		  #{fitfr}      ,
-		  #{bustfr}     ,
-		  #{hipfr}      ,
-		  #{waistfr}    ,
-		  #{sleevefr}   ,
-		  #{armfr}      ,
-		  #{thighfr}    ,
-		  #{sizeType}   ,
-		  #{heightType} ,
-		  #{nation}
-		)
-	</insert>
-	
+    <update id="updateMyProfileInfo" parameterType="egovMap">
+        UPDATE fp_user_profile
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="nickName != null">nickName=#{nickName},</if>
+            <if test="content != null">content=#{content},</if>
+            <if test="imageUrl != null">imageUrl = #{imageUrl},</if>
+        </trim>
+        WHERE userIdKey = #{idKey}
+    </update>
+
+    <select id="selectMyFollowingCount" parameterType="egovMap" resultType="int">
+        SELECT count(*)
+        FROM fp_follow
+        WHERE userIdKey = #{userIdKey}
+          AND followUserIdKey = #{followUserIdKey}
+    </select>
+
+    <insert id="insertMyFollwInfo" parameterType="egovMap">
+        INSERT into fp_follow( userIdKey
+                             , followUserIdKey
+                             , followDate)
+        VALUES ( #{userIdKey}
+               , #{followUserIdKey}
+               , now())
+    </insert>
+
+    <delete id="deleteMyFollwInfo" parameterType="egovMap">
+        DELETE
+        FROM fp_follow
+        WHERE userIdKey = #{userIdKey}
+          AND followUserIdKey = #{followUserIdKey}
+    </delete>
+
+    <select id="selectMyFollowList" parameterType="egovMap" resultType="egovMap">
+        SELECT f.userIdKey
+        ,f.followUserIdKey
+        ,u.userId
+        ,up.imageUrl
+        <if test='sessionIdKey != null'>
+            ,(
+            SELECT count(*)
+            FROM fp_follow
+            WHERE userIdKey = #{sessionIdKey}
+            <choose>
+                <when test='type == "fwers"'>
+                    AND followUserIdKey = u.idKey
+                </when>
+                <when test='type == "fwing"'>
+                    AND followUserIdKey = f.followUserIdKey
+                </when>
+            </choose>
+            ) isFollow
+        </if>
+        FROM fp_follow f
+        LEFT JOIN fp_user u ON
+        <choose>
+            <when test='type == "fwers"'>
+                f.userIdKey = u.idKey
+            </when>
+            <when test='type == "fwing"'>
+                f.followUserIdKey = u.idKey
+            </when>
+        </choose>
+        LEFT JOIN fp_user_profile up ON u.idKey = up.userIdKey
+        WHERE 1=1
+        <if test="searchId != ''">
+            AND u.userId LIKE CONCAT('%', #{searchId},'%')
+        </if>
+
+        <choose>
+            <when test='type == "fwers"'>
+                AND f.followUserIdKey = #{idKey}
+            </when>
+            <when test='type == "fwing"'>
+                AND f.userIdKey = #{idKey}
+            </when>
+        </choose>
+        ORDER BY f.followDate desc
+        <if test="pageStart != null and pageSize != null">
+            LIMIT #{pageStart}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="selectMyFollowCount" resultType="egovMap" parameterType="egovMap">
+        SELECT (SELECT COUNT(*)
+        FROM fp_follow f
+        JOIN fp_user u ON f.userIdKey = u.idKey
+        WHERE followUserIdKey = #{idKey}
+        <if test="searchId != ''">
+            AND u.userId LIKE CONCAT('%', #{searchId},'%')
+        </if>
+
+        ) followerCount
+        ,(SELECT COUNT(*)
+        FROM fp_follow f
+        JOIN fp_user u ON f.followUserIdKey = u.idKey
+        WHERE userIdKey = #{idKey}
+        <if test="searchId != ''">
+            AND u.userId LIKE CONCAT('%', #{searchId},'%')
+        </if>
+        ) followingCount
+    </select>
+    <select id="selectMyModel" resultType="egovMap" parameterType="egovMap">
+        SELECT idKey,
+               userKey,
+               seq,
+               imgUrl,
+               modelName,
+               gender,
+               height,
+               age,
+               fit,
+               bust,
+               hip,
+               waist,
+               sleeve,
+               arm,
+               thigh,
+               heightfr,
+               fitfr,
+               bustfr,
+               hipfr,
+               waistfr,
+               sleevefr,
+               armfr,
+               thighfr,
+               sizeType,
+               heightType,
+               nation
+        FROM fp_user_model
+        WHERE idKey = #{idKey}
+    </select>
+    <update id="updateModelInfo" parameterType="egovMap">
+        UPDATE fp_user_model
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="userKey!=null">userKey=#{userKey},</if>
+            <if test="seq!=null">seq=#{seq},</if>
+            <if test="modelName!=null">modelName=#{modelName},</if>
+            <if test="gender!=null">gender=#{gender},</if>
+            <if test="height!=null">height=#{height},</if>
+            <if test="age!=null">age=#{age},</if>
+            <if test="fit!=null">fit=#{fit},</if>
+            <if test="bust!=null">bust=#{bust},</if>
+            <if test="hip!=null">hip=#{hip},</if>
+            <if test="waist!=null">waist=#{waist},</if>
+            <if test="sleeve!=null">sleeve=#{sleeve},</if>
+            <if test="arm!=null">arm=#{arm},</if>
+            <if test="thigh!=null">thigh=#{thigh},</if>
+            <if test="heightfr!=null">heightfr=#{heightfr},</if>
+            <if test="fitfr!=null">fitfr=#{fitfr},</if>
+            <if test="bustfr!=null">bustfr=#{bustfr},</if>
+            <if test="hipfr!=null">hipfr=#{hipfr},</if>
+            <if test="waistfr!=null">waistfr=#{waistfr},</if>
+            <if test="sleevefr!=null">sleevefr=#{sleevefr},</if>
+            <if test="armfr!=null">armfr=#{armfr},</if>
+            <if test="thighfr!=null">thighfr=#{thighfr},</if>
+            <if test="sizeType!=null">sizeType=#{sizeType},</if>
+            <if test="heightType!=null">heightType=#{heightType},</if>
+            <if test="nation!=null">nation=#{nation},</if>
+        </trim>
+        WHERE idKey = #{idKey}
+    </update>
+
+    <insert id="insertModel" parameterType="ModelVO" useGeneratedKeys="true" keyProperty="idKey">
+        INSERT INTO DF_PRODUCT (userKey,
+                                   pname,
+                                   category,
+                                   price,
+                                   dprice,
+                                   pcomment,
+                                   pstock,
+                                   psize,
+                                   pcolor,
+                                   ptag,
+                                   image1,
+                                   image2,
+                                   image3,
+                                   image4,
+                                   image5,
+                                   status,
+                                   lcomment,
+                                   regDate,
+                                   regId)
+        VALUES (#{userKey},
+                #{pname},
+                #{category},
+                #{price},
+                #{dprice},
+                #{pcomment},
+                #{pstock},
+                #{psize},
+                #{pcolor},
+                #{ptag},
+                #{image1},
+                #{image2},
+                #{image3},
+                #{image4},
+                #{image5},
+                #{status},
+                #{lcomment},
+                now(),
+                #{userKey})
+    </insert>
+
 </mapper>

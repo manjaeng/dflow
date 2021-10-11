@@ -3,6 +3,7 @@ package kr.co.thenet.fapee.my.service.impl;
 import java.util.List;
 
 import kr.co.thenet.fapee.common.model.ModelVO;
+import kr.co.thenet.fapee.common.model.ProductVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import kr.co.thenet.fapee.common.util.EgovMap;
@@ -31,6 +32,6 @@ public interface MyMapper {
 
 	int updateModelInfo(EgovMap profileMap) throws Exception;
 
-	boolean insertModel(ModelVO modelVO) throws Exception;
+	boolean insertModel(ProductVO modelVO) throws Exception;
 
 }

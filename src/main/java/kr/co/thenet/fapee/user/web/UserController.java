@@ -61,6 +61,22 @@ public class UserController {
         return "user/join_id.app";
     }
 
+    @GetMapping("/app/user/join_id2.do")
+    public String joinId2(ModelMap model, HttpServletRequest req) throws Exception {
+
+        List<CodeVO> productType = codeService.selectCodeList(Constants.PRODUCT_TYPE_CD);
+        model.addAttribute(Constants.PRODUCT_TYPE_NM, productType);
+
+        List<CodeVO> styleList = codeService.selectCodeList(Constants.STYLE_LIST_CD);
+        model.addAttribute(Constants.STYLE_LIST_MM, styleList);
+
+        List<CodeVO> mallList = codeService.selectCodeList(Constants.MALL_LIST_CD);
+        model.addAttribute(Constants.MALL_LIST_MM, mallList);
+
+        return "user/join_id2.app";
+    }
+
+
     @PostMapping("/app/user/join_complete.do")
     @ResponseBody
     public String joinComplete(HttpServletRequest req) throws Exception {
@@ -125,7 +141,7 @@ public class UserController {
     return  result;
     }
 
-        @PostMapping("/app/user/join_mobileCertified.do")
+    @PostMapping("/app/user/join_mobileCertified.do")
     @ResponseBody
     public String joinMobileCertified(@RequestParam String mobile, HttpServletRequest req) throws Exception {
 

@@ -77,5 +77,24 @@ public class ProductVO {
 	private long stopRows;
 
 	private String imageUrl;
+
+//	private long idKey;
+	private long userKey;
+//	private String pname;
+	private String category;
+
+	private int dprice;
+	private String pcomment;
+	private String pstock;
+	private String psize;
+	private String pcolor;
+	private String ptag;
+	private String image1;
+	private String image2;
+	private String image3;
+	private String image4;
+	private String image5;
+	private String status;
+	private String lcomment;
 	
 }

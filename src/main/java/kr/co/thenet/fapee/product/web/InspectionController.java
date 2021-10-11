@@ -53,10 +53,10 @@ public class InspectionController {
 		model.addAttribute("rejectRows", 0);
 		model.addAttribute("waitRows", 0);
 		if(list.size() > 0) {
-			form.setTotalRows(list.get(0).getTotalRows());
-			model.addAttribute("saveRows", list.get(0).getSaveRows());
-			model.addAttribute("rejectRows", list.get(0).getRejectRows());
-			model.addAttribute("waitRows", list.get(0).getWaitRows());
+		//	form.setTotalRows(list.get(0).getTotalRows());
+		//	model.addAttribute("saveRows", list.get(0).getSaveRows());
+		//	model.addAttribute("rejectRows", list.get(0).getRejectRows());
+		//	model.addAttribute("waitRows", list.get(0).getWaitRows());
 		}
 		model.addAttribute("list", list);
 
@@ -75,11 +75,11 @@ public class InspectionController {
 		model.addAttribute("data", data);
 		model.addAttribute("commentList", service.selectProductCommentList(form));
 		
-		model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
-		model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
-		model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
-		model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
-		model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
+	//	model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
+	//	model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
+	//	model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
+	//	model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
+	//	model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
 
 		return "inspection/view.mcp";
 	}
@@ -94,11 +94,11 @@ public class InspectionController {
 		model.addAttribute("data", data);
 		model.addAttribute("commentList", service.selectProductCommentList(form));
 		
-		model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
-		model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
-		model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
-		model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
-		model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
+	//	model.addAttribute("mainImage", attachService.selectAttachInfoByGrp(data.getMainImageId()));
+	//	model.addAttribute("productImage1", attachService.selectAttachInfoByGrp(data.getProductImageId1()));
+	//	model.addAttribute("productImage2", attachService.selectAttachInfoByGrp(data.getProductImageId2()));
+	//	model.addAttribute("productImage3", attachService.selectAttachInfoByGrp(data.getProductImageId3()));
+	//	model.addAttribute("productImage4", attachService.selectAttachInfoByGrp(data.getProductImageId4()));
 
 		return "inspection/regist.mcp";
 	}

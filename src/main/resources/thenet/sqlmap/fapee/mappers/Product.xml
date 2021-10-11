@@ -142,63 +142,25 @@
  	</select>
 	
 	<select id="selectProductInfo" resultType="kr.co.thenet.fapee.product.model.ProductVO">
-		SELECT
-			  pd.pcode
-			, pd.idKey
-			, ur.userId						AS sellerId
-			, su.shoppingMallName
-			, su.shoppingMallUrl
-			, pd.pname
-			, pd.salesStatus
-			, c1.name						AS salesStatusName
-			, pd.stopReason
-			, pd.intro
-			, pd.salesDateFr
-			, pd.salesDateTo
-			, pd.chargerName
-			, pd.chargerTel
-			, pd.chargerEmail
-			, pd.price
-			, pd.feeRate
-			, pd.rewardRate
-			, pd.mainImageId
-			, pd.productImageId1
-			, pd.productImageId2
-			, pd.productImageId3
-			, pd.productImageId4
-			, f0.logicalFileName		AS mainImageName
-			, f1.logicalFileName		AS productImageName1
-			, f2.logicalFileName		AS productImageName2
-			, f3.logicalFileName		AS productImageName3
-			, f4.logicalFileName		AS productImageName4
-			, pd.linkUrl
-			, pd.requestComment
-			, pd.inspectionStatus
-			, c2.name						AS inspectionStatusName
-			, pd.inspectionApplyDate
-			, pd.rejectReason
-			, pd.inspectionId
-			, mu.userName					AS inspectionName
-			, pd.inspectionDate
-			, pd.createId
-			, pd.createDate
-			, pd.lastUpdateId
-			, pd.lastUpdateDate
-		FROM fp_product						pd
-			INNER JOIN fp_user				ur ON pd.idKey = ur.idKey
-			INNER JOIN fp_seller_user		su ON pd.idKey = su.idKey
-			LEFT OUTER JOIN fp_mcp_user		mu ON pd.inspectionId		= mu.userId
-			LEFT OUTER JOIN fp_code			c1 ON pd.salesStatus		= c1.code AND c1.grp = 'ProductSalesStatus'
-			LEFT OUTER JOIN fp_code			c2 ON pd.inspectionStatus	= c2.code AND c2.grp = 'ProductInspectionStatus'
-			LEFT OUTER JOIN fp_attach_file	f0 ON pd.mainImageId		= f0.grp AND f0.deleteYn = 'N'
-			LEFT OUTER JOIN fp_attach_file	f1 ON pd.productImageId1	= f1.grp AND f1.deleteYn = 'N'
-			LEFT OUTER JOIN fp_attach_file	f2 ON pd.productImageId2	= f2.grp AND f2.deleteYn = 'N'
-			LEFT OUTER JOIN fp_attach_file	f3 ON pd.productImageId3	= f3.grp AND f3.deleteYn = 'N'
-			LEFT OUTER JOIN fp_attach_file	f4 ON pd.productImageId4	= f4.grp AND f4.deleteYn = 'N'
-		WHERE pd.pcode		= #{dataKey}
-			<if test="idKey != null and idKey != '' ">
-				AND pd.idKey = #{idKey}
-			</if>
+		SELECT idKey
+			 , userKey
+			 , pname
+			 , category
+			 , price
+			 , dprice
+			 , pcomment
+			 , pstock
+			 , psize
+			 , pcolor
+			 , ptag
+			 , image1
+			 , image2
+			 , image3
+			 , image4
+			 , image5
+			 , status
+		FROM df_product model
+        WHERE idKey = #{productNo}
  	</select>
 	
 	<select id="selectNewPcode" resultType="string">

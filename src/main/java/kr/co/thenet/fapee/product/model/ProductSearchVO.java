@@ -12,5 +12,6 @@ public class ProductSearchVO extends BaseSearchVO {
 	private String bizOwnership;
 	private String inspectionStatus;
 	private String salesStatus;
+	private String productNo;
 }
 
