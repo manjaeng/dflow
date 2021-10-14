@@ -236,8 +236,10 @@ public class UserController {
         user.setBankName(req.getParameter("bankName"));
         user.setBizNo(req.getParameter("bizNo"));
         user.setCompany(req.getParameter("company"));
+        user.setComPhone(req.getParameter("comPhone"));
         user.setFirstAddr(req.getParameter("firstAddr"));
-        user.setFullAddr(req.getParameter("fullAddr"));
+        user.setSecondAddr(req.getParameter("secondAddr"));
+
         user.setMobile(req.getParameter("mobile"));
         user.setPassword(req.getParameter("password"));
         user.setPostCode(req.getParameter("postCode"));

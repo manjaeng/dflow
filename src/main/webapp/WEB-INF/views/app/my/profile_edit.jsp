@@ -76,15 +76,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">주소</label>
-                                                <input type="text" class="form-control"
-                                                       value="<c:out value="${user.fullAddr}"/>" name="fullAddr">
-                                            </div>
-                                        </div>
-                                    </div>
 
                                     <button type="submit" class="btn btn-primary pull-right" id="userEditBtn">개인정보 수정
                                     </button>
