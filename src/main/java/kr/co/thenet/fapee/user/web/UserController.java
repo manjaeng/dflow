@@ -79,7 +79,7 @@ public class UserController {
 
     @PostMapping("/app/user/join_complete.do")
     @ResponseBody
-    public String joinComplete(HttpServletRequest req) throws Exception {
+    public String joinComplete(HttpServletRequest req ) throws Exception {
         int k = 0;
         int insertCount = 0;
         UserVO user = getUserFormReq(req);
@@ -243,8 +243,9 @@ public class UserController {
         user.setMobile(req.getParameter("mobile"));
         user.setPassword(req.getParameter("password"));
         user.setPostCode(req.getParameter("postCode"));
-        user.setProductType(Arrays.asList(req.getParameter("productType")));
-        user.setStyleList(Arrays.asList(req.getParameter("styleList")));
+
+        user.setProductType(Arrays.asList(req.getParameterValues("productType")));
+        user.setStyleList(Arrays.asList(req.getParameterValues("styleList")));
         user.setUserName(req.getParameter("userName"));
         user.setMarketingAgree(req.getParameter("marketingAgree"));
         user.setCheckAgree1(req.getParameter("checkAgree1"));
