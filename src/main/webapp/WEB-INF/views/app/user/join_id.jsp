@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a href="/app/user/join_id2.do" id="joinButton"
+                                            <a href="#none" id="agreeButton"
                                                class="btn btn-primary btn-block">회원정보입력</a>
 
 
@@ -228,3 +228,22 @@
 <script type="text/javascript" src="/resources/app/js/jquery.form.min.js"></script>
 <script src="/resources/app/user/join_id.js"></script>
 </div>
+<script>
+
+    $(function () {
+        $('#agreeButton').click(function (event) {
+            if(!($("input[name=checkAgree1]").is(":checked"))){
+                alert("이용약관에 동의 해 주세요");
+                return;
+            }
+            if(!($("input[name=checkAgree2]").is(":checked")) ){
+                alert("개인정보 수집에 동의해 주세요");
+                return;
+            }
+
+            location.href="/app/user/join_id2.do";
+        });
+
+    })
+
+</script>

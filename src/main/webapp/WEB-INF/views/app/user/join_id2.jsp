@@ -27,7 +27,7 @@
                                             <div class="form-group" id="userIdGroup">
                                                 <label class="bmd-label-floating">로그인ID</label>
                                                 <input required="true" aria-required="true" type="text"
-                                                       class="form-control" name="userId"
+                                                       class="form-control" name="userId" id="userId"
                                                        onkeypress="userIdKeyUp()"
                                                 >
                                                 <span class="form-control-feedback">
@@ -56,26 +56,6 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <!--
-                                            <div class="form-group">
-                                                <div class="dropdown" id="sellerType">
-                                                    <input required="true" aria-required="true" type="hidden" name="userType" value="02"
-                                                           id="hiddenSellerType">
-                                                    <a class="btn btn-secondary dropdown-toggle" href="" type="button"
-                                                       id="addrDropdownSellerType" data-toggle="dropdown"
-                                                       aria-haspopup="true" aria-expanded="false">
-                                                        <i class="material-icons">supervisor_account</i>
-                                                        사용자 유형을 선택하세요.
-                                                    </a>
-                                                    <div class="dropdown-menu" aria-labelledby="addrDropdownSellerType">
-                                                        <a class="dropdown-item seller-type" heef="#none"
-                                                           data_value="01">일반회원</a>
-                                                        <a class="dropdown-item seller-type" heef="#none"
-                                                           data_value="02">셀러회원</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            -->
                                         </div>
                                     </div>
                                     <div class="row">
@@ -83,7 +63,9 @@
                                             <div class="form-group bmd-form-group">
                                                 <label for="examplePassword" class="bmd-label-floating">Password</label>
                                                 <input required="true" aria-required="true" id="examplePassword"
-                                                       type="password" class="form-control" name="password">
+                                                       type="password" class="form-control" name="password"
+                                                       onblur="check_pw()"
+                                                >
                                                 <label id="examplePassword-error" class="error"
                                                        for="examplePassword"></label>
                                             </div>
@@ -94,19 +76,22 @@
                                                     Password</label>
                                                 <input required="true" aria-required="true" id="examplePassword2"
                                                        equalto="#examplePassword" type="Password" class="form-control"
-                                                       name="rePassword">
+                                                       name="rePassword"
+                                                       onblur="check_pw()"
+                                                >
                                                 <label id="examplePassword-error2" class="error"
                                                        for="examplePassword2"></label>
-                                            </div>
+                                            </div><span id="check"></span>
                                         </div>
-                                        ´
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Email</label>
                                                 <input required="true" aria-required="true" type="email"
-                                                       class="form-control" name="email">
+                                                       class="form-control" name="email" id="email"
+                                                onblur="check_email()"
+                                                >
                                             </div>
                                         </div>
                                     </div>
@@ -115,23 +100,15 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">Name</label>
                                                 <input required="true" aria-required="true" type="text"
-                                                       class="form-control" name="userName">
+                                                       class="form-control" name="userName" id="userName">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="bmd-label-floating">전화번호</label>
+                                                <label class="bmd-label-floating">휴대전화번호</label>
                                                 <input required="true" aria-required="true" type="tel"
+                                                       id = "mobile"
                                                        class="form-control" name="mobile">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="bmd-label-floating">주소</label>
-                                                <input required="true" aria-required="true" type="text"
-                                                       class="form-control" name="fullAddr">
                                             </div>
                                         </div>
                                     </div>
@@ -158,6 +135,7 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">회사명</label>
                                                 <input required="true" aria-required="true" type="text"
+                                                       id = 'company'
                                                        class="form-control" name="company">
                                             </div>
                                         </div>
@@ -166,6 +144,7 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">회사전화번호</label>
                                                 <input required="true" aria-required="true" type="tel"
+                                                       id = 'comPhone'
                                                        class="form-control" name="comPhone">
                                             </div>
                                         </div>
@@ -175,6 +154,7 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">거래은행</label>
                                                 <input required="true" aria-required="true" type="text"
+                                                       id = 'bankName'
                                                        class="form-control" name="bankName">
                                             </div>
                                         </div>
@@ -182,6 +162,7 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">은행계좌번호</label>
                                                 <input required="true" aria-required="true" type="text"
+                                                       id="bankCount"
                                                        class="form-control" name="bankCount">
                                             </div>
                                         </div>
@@ -223,6 +204,7 @@
                                             <div class="form-group">
                                                 <label class="bmd-label-floating">기타 주소</label>
                                                 <input required="true" aria-required="true" type="text"
+                                                       id="exAddr"
                                                        class="form-control" name="secondAddr">
                                             </div>
                                         </div>
@@ -291,6 +273,16 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label class="bmd-label-floating">사업자등록번호</label>
+                                                <input required="true" aria-required="true" type="text"
+                                                       id="bizNo"
+                                                       class="form-control" name="bizNo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
                                             <h6>사업자등록증 등록</h6>
                                             <div class="fileinput fileinput-new text-center"
                                                  data-provides="fileinput">
@@ -303,7 +295,7 @@
                                                     <span class="btn btn-raised btn-round btn-default btn-file">
                                                         <span class="fileinput-new">Select image</span>
                                                         <span class="fileinput-exists">Change</span>
-                                                        <input required="true" aria-required="true" type="file"
+                                                        <input required="true" aria-required="true" type="file" id="fileUpload"
                                                                name="file"/>
                                                     </span>
                                                     <a href="#pablo"

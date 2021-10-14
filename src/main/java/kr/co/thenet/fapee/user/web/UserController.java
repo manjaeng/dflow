@@ -247,6 +247,7 @@ public class UserController {
         user.setMarketingAgree(req.getParameter("marketingAgree"));
         user.setCheckAgree1(req.getParameter("checkAgree1"));
         user.setCheckAgree2(req.getParameter("checkAgree2"));
+        user.setBizNo(req.getParameter("bizNo"));
         return user;
     }
 
